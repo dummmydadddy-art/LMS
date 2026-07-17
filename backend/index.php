@@ -1718,6 +1718,17 @@ try {
             }
             
             $certId = 'CERT_' . strtoupper(substr(md5($input['student_id'] . $input['course_id'] . time()), 0, 10));
+            
+            // Build dynamic absolute URL for QR code (so mobile phone cameras can scan and open it)
+            $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+            $host = $_SERVER['HTTP_HOST'];
+            
+            // If running locally, route backend port (8000) to React frontend port (5173)
+            if ($host === 'localhost:8000' || $host === '127.0.0.1:8000') {
+                $host = 'localhost:5173';
+            }
+            
+            $absoluteVerificationUrl = $protocol . "://" . $host . "/verify-certificate/" . $certId;
             $verificationUrl = "/verify-certificate/" . $certId;
             
             $certData = [
@@ -1725,7 +1736,7 @@ try {
                 'course_id' => $input['course_id'],
                 'certificate_id' => $certId,
                 'verification_url' => $verificationUrl,
-                'qr_code_url' => 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' . urlencode($verificationUrl)
+                'qr_code_url' => 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' . urlencode($absoluteVerificationUrl)
             ];
             
             if (!empty($input['completion_date'])) {
