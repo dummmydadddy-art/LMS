@@ -329,7 +329,7 @@ const TeacherDashboard: React.FC = () => {
       if (res.data?.success) {
         fetchLiveSessions();
         if (activeLiveSession && activeLiveSession.id === sessionId) {
-          setActiveLiveSession(prev => prev ? { ...prev, status } : null);
+          setActiveLiveSession((prev: any) => prev ? { ...prev, status } : null);
         }
       }
     } catch (err) {
@@ -343,7 +343,7 @@ const TeacherDashboard: React.FC = () => {
       if (res.data?.success) {
         fetchLiveSessions();
         if (activeLiveSession && activeLiveSession.id === sessionId) {
-          setActiveLiveSession(prev => prev ? { ...prev, chat_enabled: !currentVal } : null);
+          setActiveLiveSession((prev: any) => prev ? { ...prev, chat_enabled: !currentVal } : null);
         }
       }
     } catch (err) {
@@ -357,7 +357,7 @@ const TeacherDashboard: React.FC = () => {
       if (res.data?.success) {
         fetchLiveSessions();
         if (activeLiveSession && activeLiveSession.id === sessionId) {
-          setActiveLiveSession(prev => prev ? { ...prev, raise_hand_enabled: !currentVal } : null);
+          setActiveLiveSession((prev: any) => prev ? { ...prev, raise_hand_enabled: !currentVal } : null);
         }
       }
     } catch (err) {
@@ -518,7 +518,7 @@ const TeacherDashboard: React.FC = () => {
       if (res.data?.success) {
         fetchLiveSessions();
         if (activeLiveSession && activeLiveSession.id === sessionId) {
-          setActiveLiveSession(prev => prev ? { ...prev, voice_enabled: !currentVal } : null);
+          setActiveLiveSession((prev: any) => prev ? { ...prev, voice_enabled: !currentVal } : null);
         }
       }
     } catch (err) {
