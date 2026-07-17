@@ -1,0 +1,29 @@
+# Dependency directories
+node_modules/
+frontend/node_modules/
+
+# Production build outputs
+dist/
+frontend/dist/
+frontend/dist-ssr/
+
+# Local env files
+*.local
+.env
+.env.*
+
+# Backend temporary cache/logs
+backend/.token_cache/
+backend/last_otp.txt
+backend/settings.json
+
+# IDEs & System files
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.log
