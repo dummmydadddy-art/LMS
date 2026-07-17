@@ -86,8 +86,8 @@ def main():
         upload_directory(ftp, dist_dir)
         
         ftp.quit()
-        print("\n🎉 FTP upload completed successfully!")
-        print("🚀 Deployment finished! Both frontend and backend are now hosted at https://cosmosdigital.in")
+        print("\n[SUCCESS] FTP upload completed successfully!")
+        print("[SUCCESS] Deployment finished! Both frontend and backend are now hosted at https://cosmosdigital.in")
     except Exception as e:
         print(f"FTP Error: {e}")
         sys.exit(1)

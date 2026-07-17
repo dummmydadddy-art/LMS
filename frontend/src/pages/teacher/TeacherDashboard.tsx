@@ -46,6 +46,7 @@ const TeacherDashboard: React.FC = () => {
   const [notifications, setNotifications] = useState<any[]>([]);
 
   // Selection configurations for UI forms
+  const [selectedAttendanceCourse, setSelectedAttendanceCourse] = useState('');
   const [selectedBatch, setSelectedBatch] = useState('');
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().substring(0, 10));
   const [attendanceRecords, setAttendanceRecords] = useState<any[]>([]); // Array of {student_id, status: 'PRESENT' | 'ABSENT'}
@@ -1043,6 +1044,21 @@ const TeacherDashboard: React.FC = () => {
         <div className="space-y-6">
           <div className="glass-card p-6 flex flex-col md:flex-row gap-4 items-end">
             <div className="flex-1 space-y-1">
+              <label className="text-xs font-semibold text-slate-400 uppercase">Select Course</label>
+              <select
+                value={selectedAttendanceCourse}
+                onChange={e => {
+                  setSelectedAttendanceCourse(e.target.value);
+                  setSelectedBatch('');
+                  setAttendanceRecords([]);
+                }}
+                className="w-full glass-input bg-dark-900"
+              >
+                <option value="">Choose Course</option>
+                {courses.map(c => <option key={c.id} value={c.id}>{c.course_name}</option>)}
+              </select>
+            </div>
+            <div className="flex-1 space-y-1">
               <label className="text-xs font-semibold text-slate-400 uppercase">Select Batch</label>
               <select
                 value={selectedBatch}
@@ -1051,9 +1067,12 @@ const TeacherDashboard: React.FC = () => {
                   setAttendanceRecords([]);
                 }}
                 className="w-full glass-input bg-dark-900"
+                disabled={!selectedAttendanceCourse}
               >
                 <option value="">Choose Batch</option>
-                {batches.map(b => <option key={b.id} value={b.id}>{b.batch_name}</option>)}
+                {batches
+                  .filter(b => b.course_id === selectedAttendanceCourse)
+                  .map(b => <option key={b.id} value={b.id}>{b.batch_name}</option>)}
               </select>
             </div>
             <div className="flex-1 space-y-1">
