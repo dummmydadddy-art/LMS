@@ -180,8 +180,9 @@ try {
             // 5. Try to send email
             $subject = "LMS Password Reset OTP";
             $message = "Your verification OTP is: " . $otp . "\nThis OTP is valid for 5 minutes.";
-            $headers = "From: no-reply@cosmos.com\r\nReply-To: no-reply@cosmos.com\r\n";
-            $mailSent = @mail($email, $subject, $message, $headers);
+            $headers = "From: noreply@cosmosdigital.in\r\nReply-To: noreply@cosmosdigital.in\r\n";
+            $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+            $mailSent = @mail($email, $subject, $message, $headers, "-f noreply@cosmosdigital.in");
 
             echo json_encode([
                 'success' => true,
