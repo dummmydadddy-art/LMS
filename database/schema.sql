@@ -1,4 +1,4 @@
--- Supabase PostgreSQL database schema for Cosmos Digital LMS
+-- Supabase PostgreSQL database schema for LMS
 -- This script sets up the 24 tables, relationships, and triggers.
 
 -- Enable UUID extension if not enabled

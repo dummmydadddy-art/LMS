@@ -1,5 +1,5 @@
 <?php
-// Cosmos Digital LMS Supabase Database Helper
+// LMS Supabase Database Helper
 
 require_once 'config.php';
 

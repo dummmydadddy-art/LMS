@@ -1,8 +1,8 @@
-# Cosmos Digital LMS
+# LMS
 
 An enterprise-grade, multi-portal Learning Management System (LMS) designed to facilitate a complete digital classroom ecosystem. The platform connects Administrators, Teachers, and Students into a cohesive, interactive environment.
 
-A comprehensive widescreen presentation detailing all pages and features can be found in the root directory: [Cosmos_Digital_LMS_Presentation.pptx](./Cosmos_Digital_LMS_Presentation.pptx).
+A comprehensive widescreen presentation detailing all pages and features can be found in the root directory.
 
 ---
 

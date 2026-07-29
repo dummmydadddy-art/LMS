@@ -581,7 +581,7 @@ const StudentDashboard: React.FC = () => {
           key: rp.key_id,
           amount: rp.amount,
           currency: rp.currency,
-          name: "Cosmos Digital LMS",
+          name: "LMS",
           description: "Course Fees Payment",
           order_id: rp.order_id,
           handler: async function (response: any) {
@@ -1116,7 +1116,7 @@ const StudentDashboard: React.FC = () => {
 
       {/* Certificate Preview Modal */}
       {previewCert && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-950/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay">
           <div className="relative w-full max-w-3xl bg-amber-50/95 text-amber-950 p-8 md:p-12 border-[16px] border-double border-amber-850 rounded-lg shadow-2xl space-y-6 text-center font-serif">
             <button 
               onClick={() => setPreviewCert(null)}
@@ -1126,7 +1126,7 @@ const StudentDashboard: React.FC = () => {
             </button>
 
             <div className="space-y-1">
-              <h2 className="text-2xl md:text-3xl font-extrabold tracking-widest text-amber-900">COSMOS DIGITAL</h2>
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-widest text-amber-900">LMS</h2>
               <p className="text-[10px] md:text-xs tracking-wider uppercase font-sans text-amber-800 font-bold">Coding & Technology Training Institute</p>
             </div>
 
@@ -1172,7 +1172,7 @@ const StudentDashboard: React.FC = () => {
 
       {/* --- VIDEO PLAYER MODAL --- */}
       {activeVideo && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-950/85 backdrop-blur-md">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay">
           <div className="glass-card max-w-3xl w-full p-6 space-y-4 relative border-slate-800 shadow-2xl">
             <button
               onClick={() => setActiveVideo(null)}

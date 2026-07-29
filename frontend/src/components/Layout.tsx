@@ -246,9 +246,9 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
       <aside className="hidden lg:flex flex-col w-64 glass-card border-y-0 border-l-0 rounded-none h-screen sticky top-0 bg-dark-900/40 backdrop-blur-xl">
         <div className="h-16 flex items-center gap-3 px-6 border-b border-slate-800/80">
           <div className="h-8 w-8 rounded-lg overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10">
-            <img src="/logo.png" alt="Cosmos LMS" className="h-6 w-6 object-contain" />
+            <img src="/logo.png" alt="LMS" className="h-6 w-6 object-contain" />
           </div>
-          <span className="font-bold text-lg text-slate-100">Cosmos LMS</span>
+          <span className="font-bold text-lg text-slate-100">LMS</span>
         </div>
 
         <nav className="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto">
@@ -297,16 +297,16 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
       {/* Sidebar - Mobile toggle */}
       {sidebarOpen && (
         <div className="lg:hidden fixed inset-0 z-50 flex">
-          <div className="fixed inset-0 bg-dark-950/80 backdrop-blur-sm" onClick={() => setSidebarOpen(false)}></div>
+          <div className="fixed inset-0 modal-overlay" onClick={() => setSidebarOpen(false)}></div>
           <aside className="w-64 glass-card border-y-0 border-l-0 rounded-none h-full relative flex flex-col bg-dark-900">
             <div className="h-16 flex items-center justify-between px-6 border-b border-slate-800/80">
               <div className="flex items-center gap-3">
                 <div className="h-8 w-8 rounded-lg overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10">
-                  <img src="/logo.png" alt="Cosmos LMS" className="h-6 w-6 object-contain" />
+                  <img src="/logo.png" alt="LMS" className="h-6 w-6 object-contain" />
                 </div>
-                <span className="font-bold text-lg text-slate-100">Cosmos LMS</span>
+                <span className="font-bold text-lg text-slate-100">LMS</span>
               </div>
-              <button onClick={() => setSidebarOpen(false)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setSidebarOpen(false)} className="text-slate-400 hover:text-slate-900">
                 <X className="h-5 w-5" />
               </button>
             </div>
@@ -366,7 +366,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
           <div className="flex items-center gap-4">
             <button
               onClick={() => setSidebarOpen(true)}
-              className="lg:hidden text-slate-400 hover:text-white"
+              className="lg:hidden text-slate-400 hover:text-slate-900"
             >
               <Menu className="h-6 w-6" />
             </button>
@@ -382,7 +382,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
                 onClick={() => {
                   setNotificationsOpen(!notificationsOpen);
                 }}
-                className="h-10 w-10 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 flex items-center justify-center text-slate-300 hover:text-white transition-colors relative"
+                className="h-10 w-10 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 flex items-center justify-center text-slate-300 hover:text-slate-900 transition-colors relative"
               >
                 <Bell className="h-5 w-5" />
                 {unreadCount > 0 && (
@@ -411,7 +411,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
                       )}
                       <button
                         onClick={() => setNotificationsOpen(false)}
-                        className="text-slate-400 hover:text-white text-xs transition-colors"
+                        className="text-slate-400 hover:text-slate-900 text-xs transition-colors"
                       >
                         Close
                       </button>
@@ -458,7 +458,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
 
             <button
               onClick={() => setProfileModalOpen(true)}
-              className="h-10 w-10 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 flex items-center justify-center text-slate-300 hover:text-white transition-colors"
+              className="h-10 w-10 rounded-xl bg-slate-800/60 hover:bg-slate-800 border border-slate-700/50 flex items-center justify-center text-slate-300 hover:text-slate-900 transition-colors"
               title="View Profile"
             >
               <User className="h-5 w-5" />
@@ -474,7 +474,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
 
       {/* User profile & password update modal */}
       {profileModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-950/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay">
           <div className="glass-card w-full max-w-md overflow-hidden flex flex-col relative bg-dark-900 border-slate-800 shadow-2xl">
             <div className="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-900/40">
               <div>
@@ -491,7 +491,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
                   setProfileMsg('');
                   setProfileError('');
                 }}
-                className="text-slate-400 hover:text-white border border-slate-800 hover:bg-slate-800 p-2 rounded-xl transition-colors"
+                className="text-slate-400 hover:text-slate-900 border border-slate-800 hover:bg-slate-800 p-2 rounded-xl transition-colors"
               >
                 <X className="h-5 w-5" />
               </button>

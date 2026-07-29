@@ -72,22 +72,22 @@ def main():
 
     # 3. FTP Connection
     print("Connecting to FTP...")
-    ftp_host = "cosmosdigital.in"
-    ftp_user = "cosmosdigital@cosmosdigital.in"
-    ftp_pass = "W%veHMGtm;Qf]T1}"
+    ftp_host = ""
+    ftp_user = ""
+    ftp_pass = ""
     
     try:
         ftp = ftplib.FTP(ftp_host)
         ftp.login(user=ftp_user, passwd=ftp_pass)
         print("Logged in successfully!")
         
-        # Upload dist contents to root of FTP (corresponds to public_html/cosmosdigital.in)
+        # Upload dist contents to root of FTP (corresponds to public_html)
         print("Uploading build files...")
         upload_directory(ftp, dist_dir)
         
         ftp.quit()
         print("\n[SUCCESS] FTP upload completed successfully!")
-        print("[SUCCESS] Deployment finished! Both frontend and backend are now hosted at https://cosmosdigital.in")
+        print("[SUCCESS] Deployment finished! Frontend and backend deployed successfully.")
     except Exception as e:
         print(f"FTP Error: {e}")
         sys.exit(1)

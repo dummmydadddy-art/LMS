@@ -1,5 +1,5 @@
 <?php
-// Cosmos Digital LMS Main Router & Controller
+// LMS Main Router & Controller
 
 require_once 'config.php';
 require_once 'db.php';
@@ -16,7 +16,8 @@ function supabaseCreateUser($email, $password, $metadata = []) {
     ];
     
     // Call Supabase Auth Admin API
-    $authUrl = "https://ljwjyxzkwxyxksfqsgzm.supabase.co/auth/v1/admin/users";
+    global $SUPABASE_PROJECT_URL;
+    $authUrl = rtrim($SUPABASE_PROJECT_URL, '/') . "/auth/v1/admin/users";
     global $SUPABASE_SERVICE_ROLE_KEY;
     
     $ch = curl_init($authUrl);
@@ -45,7 +46,8 @@ function supabaseCreateUser($email, $password, $metadata = []) {
 
 function supabaseDeleteUser($userId) {
     global $SUPABASE_SERVICE_ROLE_KEY;
-    $authUrl = "https://ljwjyxzkwxyxksfqsgzm.supabase.co/auth/v1/admin/users/" . $userId;
+    global $SUPABASE_PROJECT_URL;
+    $authUrl = rtrim($SUPABASE_PROJECT_URL, '/') . "/auth/v1/admin/users/" . $userId;
     
     $ch = curl_init($authUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -70,7 +72,8 @@ function supabaseDeleteUser($userId) {
 
 function supabaseUpdateAuthUser($userId, $data) {
     global $SUPABASE_SERVICE_ROLE_KEY;
-    $authUrl = "https://ljwjyxzkwxyxksfqsgzm.supabase.co/auth/v1/admin/users/" . $userId;
+    global $SUPABASE_PROJECT_URL;
+    $authUrl = rtrim($SUPABASE_PROJECT_URL, '/') . "/auth/v1/admin/users/" . $userId;
     
     $ch = curl_init($authUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -180,9 +183,9 @@ try {
             // 5. Try to send email
             $subject = "LMS Password Reset OTP";
             $message = "Your verification OTP is: " . $otp . "\nThis OTP is valid for 5 minutes.";
-            $headers = "From: noreply@cosmosdigital.in\r\nReply-To: noreply@cosmosdigital.in\r\n";
+            $headers = "From: noreply@lms.com\r\nReply-To: noreply@lms.com\r\n";
             $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-            $mailSent = @mail($email, $subject, $message, $headers, "-f noreply@cosmosdigital.in");
+            $mailSent = @mail($email, $subject, $message, $headers, "-f noreply@lms.com");
 
             echo json_encode([
                 'success' => true,
@@ -739,7 +742,7 @@ try {
             if ($certCheck['success'] && !empty($certCheck['data'])) {
                 // Preserve student profile & certificates; deactivate account and change credentials
                 $randomPassword = bin2hex(random_bytes(16)) . 'A1!';
-                $randomEmail = 'archived_' . time() . '_' . $targetUserId . '@cosmos-archived.com';
+                $randomEmail = 'archived_' . time() . '_' . $targetUserId . '@lms-archived.com';
 
                 // Update Supabase Auth credentials
                 $authUpdate = supabaseUpdateAuthUser($targetUserId, [

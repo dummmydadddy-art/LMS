@@ -1,5 +1,5 @@
 <?php
-// Cosmos Digital LMS Payment Gateway Abstraction Layer
+// LMS Payment Gateway Abstraction Layer
 
 require_once 'db.php';
 
@@ -225,7 +225,7 @@ function generateInvoice($studentId, $amount, $transactionId) {
         'amount' => $amount,
         'transaction_id' => $transactionId,
         'status' => 'PAID',
-        'item' => 'Cosmos Digital LMS Course Fee'
+        'item' => 'LMS Course Fee'
     ];
 }
 
@@ -240,7 +240,7 @@ function downloadReceipt($transactionId) {
     $invoice = generateInvoice($txn['student_id'], $txn['amount'], $transactionId);
     
     return [
-        'receipt_title' => 'Cosmos Digital LMS Payment Receipt',
+        'receipt_title' => 'LMS Payment Receipt',
         'invoice' => $invoice,
         'payment_method' => $txn['payment_method'],
         'payment_status' => $txn['payment_status'],

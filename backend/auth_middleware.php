@@ -1,5 +1,5 @@
 <?php
-// Cosmos Digital LMS Auth Middleware
+// LMS Auth Middleware
 
 require_once 'config.php';
 require_once 'db.php';
@@ -54,7 +54,8 @@ function verifyToken() {
     }
 
     // Call Supabase Auth endpoint to verify JWT
-    $authUrl = "https://ljwjyxzkwxyxksfqsgzm.supabase.co/auth/v1/user";
+    global $SUPABASE_PROJECT_URL;
+    $authUrl = rtrim($SUPABASE_PROJECT_URL, '/') . "/auth/v1/user";
     
     $ch = curl_init($authUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

@@ -187,9 +187,9 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
       <div className="w-full max-w-md glass-card p-8 relative">
         <div className="flex flex-col items-center mb-8">
           <div className="h-16 w-16 rounded-2xl overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10 mb-4">
-            <img src="/logo.png" alt="Cosmos LMS" className="h-12 w-12 object-contain" />
+            <img src="/logo.png" alt="LMS" className="h-12 w-12 object-contain" />
           </div>
-          <h2 className="text-2xl font-bold bg-gradient-to-r from-slate-100 to-slate-400 bg-clip-text text-transparent">Cosmos Digital LMS</h2>
+          <h2 className="text-2xl font-bold bg-gradient-to-r from-slate-100 to-slate-400 bg-clip-text text-transparent">LMS</h2>
           <p className="text-slate-400 text-sm mt-1">Sign in to access your digital classroom</p>
         </div>
 
@@ -268,25 +268,48 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
           <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider text-center mb-4">Quick Demo Logins</h4>
           <div className="grid grid-cols-3 gap-2.5">
             <button
-              onClick={() => handleQuickLogin('admin@cosmos.com')}
+              onClick={() => handleQuickLogin('admin@lms.com')}
               className="text-xs py-2 px-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 transition-colors"
               disabled={loading}
             >
               Super Admin
             </button>
             <button
-              onClick={() => handleQuickLogin('teacher@cosmos.com')}
+              onClick={() => handleQuickLogin('teacher@lms.com')}
               className="text-xs py-2 px-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 transition-colors"
               disabled={loading}
             >
               Teacher
             </button>
             <button
-              onClick={() => handleQuickLogin('student@cosmos.com')}
+              onClick={() => handleQuickLogin('student@lms.com')}
               className="text-xs py-2 px-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 transition-colors"
               disabled={loading}
             >
               Student
+            </button>
+          </div>
+          <div className="grid grid-cols-3 gap-2.5 mt-2.5">
+            <button
+              onClick={() => handleQuickLogin('Mukul-admin@lms.com')}
+              className="text-xs py-2 px-2.5 rounded-lg bg-primary-600/10 hover:bg-primary-600/20 border border-primary-500/20 text-primary-400 transition-colors"
+              disabled={loading}
+            >
+              Mukul Admin
+            </button>
+            <button
+              onClick={() => handleQuickLogin('Mukul-teacher@lms.com')}
+              className="text-xs py-2 px-2.5 rounded-lg bg-primary-600/10 hover:bg-primary-600/20 border border-primary-500/20 text-primary-400 transition-colors"
+              disabled={loading}
+            >
+              Mukul Teacher
+            </button>
+            <button
+              onClick={() => handleQuickLogin('Mukul-student@lms.com')}
+              className="text-xs py-2 px-2.5 rounded-lg bg-primary-600/10 hover:bg-primary-600/20 border border-primary-500/20 text-primary-400 transition-colors"
+              disabled={loading}
+            >
+              Mukul Student
             </button>
           </div>
           <p className="text-[10px] text-slate-500 text-center mt-3">Default Password: <span className="font-mono text-slate-400">Password123</span></p>
@@ -295,7 +318,7 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
 
       {/* Forgot Password Modal */}
       {forgotModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-950/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay">
           <div className="glass-card w-full max-w-md overflow-hidden flex flex-col relative bg-dark-900 border-slate-800 shadow-2xl">
             <div className="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-900/40">
               <div>
@@ -304,7 +327,7 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
               </div>
               <button
                 onClick={() => setForgotModalOpen(false)}
-                className="text-slate-400 hover:text-white border border-slate-800 hover:bg-slate-800 p-2 rounded-xl transition-colors"
+                className="text-slate-400 hover:text-slate-900 border border-slate-800 hover:bg-slate-800 p-2 rounded-xl transition-colors"
                 disabled={forgotLoading}
               >
                 <X className="h-5 w-5" />
@@ -330,7 +353,7 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
                     <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Email Address / User ID</label>
                     <input
                       type="text"
-                      placeholder="e.g. student@cosmos.com"
+                      placeholder="e.g. student@lms.com"
                       value={resetEmail}
                       onChange={e => setResetEmail(e.target.value)}
                       className="w-full glass-input text-sm text-slate-200"

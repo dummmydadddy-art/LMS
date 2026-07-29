@@ -1,5 +1,5 @@
 -- Supabase Database Security & Performance Remediation Patch
--- Run this script in the Supabase SQL Editor (https://supabase.com/dashboard) for your project: ljwjyxzkwxyxksfqsgzm
+-- Run this script in the Supabase SQL Editor (https://supabase.com/dashboard) for your project
 
 -- 1. Fix RLS Disabled errors on live session tables
 ALTER TABLE IF EXISTS public.live_sessions ENABLE ROW LEVEL SECURITY;

@@ -1,7 +1,7 @@
 <?php
-// Cosmos Digital LMS - Basic Api Diagnostics
+// LMS - Basic Api Diagnostics
 header("Content-Type: text/plain");
-echo "Cosmos Digital LMS Backend Services: ACTIVE\n";
+echo "LMS Backend Services: ACTIVE\n";
 echo "PHP Version: " . phpversion() . "\n";
 
 require_once 'db.php';

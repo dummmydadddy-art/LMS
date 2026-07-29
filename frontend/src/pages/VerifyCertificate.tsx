@@ -40,9 +40,9 @@ const VerifyCertificate: React.FC = () => {
       <div className="w-full max-w-lg glass-card p-8 text-center relative border-primary-500/20">
         <div className="flex flex-col items-center mb-6">
           <div className="h-16 w-16 rounded-2xl overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10 mb-4">
-            <img src="/logo.png" alt="Cosmos LMS" className="h-12 w-12 object-contain" />
+            <img src="/logo.png" alt="LMS" className="h-12 w-12 object-contain" />
           </div>
-          <h2 className="text-xl font-bold bg-gradient-to-r from-slate-100 to-slate-400 bg-clip-text text-transparent">Cosmos Digital Registry</h2>
+          <h2 className="text-xl font-bold bg-gradient-to-r from-slate-100 to-slate-400 bg-clip-text text-transparent">LMS Registry</h2>
           <p className="text-slate-400 text-xs mt-0.5">Public Certificate Verification Portal</p>
         </div>
 
@@ -94,7 +94,7 @@ const VerifyCertificate: React.FC = () => {
             </div>
 
             <div className="pt-4 text-[10px] text-slate-500">
-              Verified on Cosmos Digital LMS Blockchain Registry on {new Date(certificate.created_at).toLocaleString()}
+              Verified on LMS Certificate Registry on {new Date(certificate.created_at).toLocaleString()}
             </div>
           </div>
         )}

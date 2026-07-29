@@ -1879,7 +1879,7 @@ const TeacherDashboard: React.FC = () => {
                             });
                             setShowForm(true);
                           }}
-                          className="text-slate-400 hover:text-white"
+                          className="text-slate-400 hover:text-slate-900"
                           title="Edit Slot"
                         >
                           <Edit3 className="h-4.5 w-4.5" />
@@ -2224,7 +2224,7 @@ const TeacherDashboard: React.FC = () => {
 
           {/* Student details popup modal */}
           {selectedStudentDetails && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-950/80 backdrop-blur-sm">
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay">
               <div className="glass-card w-full max-w-4xl max-h-[85vh] overflow-hidden flex flex-col relative bg-dark-900 border-slate-800 shadow-2xl">
                 <div className="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-900/40">
                   <div>
@@ -2233,7 +2233,7 @@ const TeacherDashboard: React.FC = () => {
                   </div>
                   <button
                     onClick={() => setSelectedStudentDetails(null)}
-                    className="text-slate-400 hover:text-white border border-slate-800 hover:bg-slate-800 p-2 rounded-xl transition-colors"
+                    className="text-slate-400 hover:text-slate-900 border border-slate-800 hover:bg-slate-800 p-2 rounded-xl transition-colors"
                   >
                     <XCircle className="h-5 w-5" />
                   </button>

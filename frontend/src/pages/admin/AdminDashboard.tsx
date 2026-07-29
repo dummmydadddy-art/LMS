@@ -934,7 +934,7 @@ const AdminDashboard: React.FC = () => {
                     <h4 className="font-bold text-slate-100 text-base mt-2">{course.course_name}</h4>
                   </div>
                   <div className="flex gap-2">
-                    <button onClick={() => { setCourseForm(course); setShowForm(true); }} className="text-slate-400 hover:text-white"><Edit3 className="h-4 w-4" /></button>
+                    <button onClick={() => { setCourseForm(course); setShowForm(true); }} className="text-slate-400 hover:text-slate-900"><Edit3 className="h-4 w-4" /></button>
                     <button onClick={() => handleCourseDelete(course.id)} className="text-red-400 hover:text-red-300"><Trash2 className="h-4 w-4" /></button>
                   </div>
                 </div>
@@ -1026,7 +1026,7 @@ const AdminDashboard: React.FC = () => {
                     <td className="table-cell text-xs text-slate-400">{batch.start_date} to {batch.end_date}</td>
                     <td className="table-cell">
                       <div className="flex gap-3">
-                        <button onClick={() => { setBatchForm(batch); setShowForm(true); }} className="text-slate-400 hover:text-white"><Edit3 className="h-4.5 w-4.5" /></button>
+                        <button onClick={() => { setBatchForm(batch); setShowForm(true); }} className="text-slate-400 hover:text-slate-900"><Edit3 className="h-4.5 w-4.5" /></button>
                         <button onClick={() => handleBatchDelete(batch.id)} className="text-red-400 hover:text-red-300"><Trash2 className="h-4.5 w-4.5" /></button>
                       </div>
                     </td>
@@ -1060,7 +1060,7 @@ const AdminDashboard: React.FC = () => {
                 </div>
                 <div className="space-y-1">
                   <label className="text-xs font-semibold text-slate-400">Email Address</label>
-                  <input type="email" placeholder="john@cosmos.com" value={teacherForm.email} onChange={e => setTeacherForm({...teacherForm, email: e.target.value})} className="w-full glass-input" required />
+                  <input type="email" placeholder="john@lms.com" value={teacherForm.email} onChange={e => setTeacherForm({...teacherForm, email: e.target.value})} className="w-full glass-input" required />
                 </div>
                 <div className="space-y-1">
                   <label className="text-xs font-semibold text-slate-400">Password {teacherForm.id && '(Optional)'}</label>
@@ -1808,7 +1808,7 @@ const AdminDashboard: React.FC = () => {
                             });
                             setShowForm(true);
                           }}
-                          className="text-slate-400 hover:text-white"
+                          className="text-slate-400 hover:text-slate-900"
                           title="Edit Slot"
                         >
                           <Edit3 className="h-4 w-4" />
@@ -2128,7 +2128,7 @@ const AdminDashboard: React.FC = () => {
       )}
       {/* Revenue & Outstanding Fees detail modal */}
       {feeModalType && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-950/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay">
           <div className="glass-card w-full max-w-3xl max-h-[85vh] overflow-hidden flex flex-col relative bg-dark-900 border-slate-800 shadow-2xl">
             <div className="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-900/40">
               <div>
@@ -2143,7 +2143,7 @@ const AdminDashboard: React.FC = () => {
               </div>
               <button
                 onClick={() => setFeeModalType(null)}
-                className="text-slate-400 hover:text-white border border-slate-800 hover:bg-slate-800 p-2 rounded-xl transition-colors"
+                className="text-slate-400 hover:text-slate-900 border border-slate-800 hover:bg-slate-800 p-2 rounded-xl transition-colors"
               >
                 <XCircle className="h-5 w-5" />
               </button>
