@@ -2,9 +2,9 @@
 // LMS Configuration
 
 // Enable error reporting for development (disable in production)
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+error_reporting(0);
 
 // Load deployment variables
 $APP_NAME = "LMS";
@@ -16,8 +16,8 @@ $SUPABASE_ANON_KEY = "sb_publishable_nKnJWB2nMK1c_EORxrhr_w_PPvsvPSJ";
 $SUPABASE_SERVICE_ROLE_KEY = getenv("SUPABASE_SERVICE_ROLE_KEY") ?: "";
 
 // Payment gateway variables
-$PAYMENT_GATEWAY_KEY = "";
-$PAYMENT_GATEWAY_SECRET = "";
+$PAYMENT_GATEWAY_KEY = getenv("PAYMENT_GATEWAY_KEY") ?: "";
+$PAYMENT_GATEWAY_SECRET = getenv("PAYMENT_GATEWAY_SECRET") ?: "";
 
 // Helper headers
 header("Access-Control-Allow-Origin: *");

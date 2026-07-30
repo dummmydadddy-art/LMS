@@ -37,7 +37,7 @@ function verifyToken() {
     }
 
     // --- TOKEN CACHE OPTIMIZATION ---
-    $cacheDir = __DIR__ . '/.token_cache';
+    $cacheDir = '/tmp/.token_cache';
     if (!is_dir($cacheDir)) {
         @mkdir($cacheDir, 0777, true);
     }

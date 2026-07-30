@@ -1,0 +1,3 @@
+- Frontend uses modern React + TypeScript with Vite conventions and Tailwind styling.
+- Backend configuration is split across `backend/config.php`, `backend/db.php`, and related PHP entrypoints.
+- The repo is mixed PHP/TypeScript, so changes should preserve the existing split between API logic and UI pages.

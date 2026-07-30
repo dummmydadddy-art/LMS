@@ -1,0 +1,14 @@
+{
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-community/php@0.7.1",
+      "includeFiles": "backend/**"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index.php" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ]
+}

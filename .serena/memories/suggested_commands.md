@@ -1,0 +1,4 @@
+- Frontend dev: `cd frontend` then `npm install` and `npm run dev`.
+- Frontend checks: `cd frontend` then `npm run build` and `npm run lint`.
+- Backend dev: `backend/start-backend.ps1` or `php -S localhost:8000` from `backend/`.
+- Git on Windows: use `git -C "D:\Collage project\Learning Management System" ...` when you need to target this repo explicitly.

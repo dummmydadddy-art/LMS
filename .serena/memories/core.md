@@ -1,0 +1,3 @@
+- LMS is a two-part workspace: `backend/` PHP API gateway and `frontend/` Vite React app.
+- Root also contains `deploy.py` plus `database/` schema/remediation SQL scripts.
+- Main user-facing portals are admin, teacher, student, and certificate verification.
