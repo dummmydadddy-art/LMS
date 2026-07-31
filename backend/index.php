@@ -166,7 +166,7 @@ try {
             $expiresAt = time() + 300; // 5 minutes validity
 
             // 3. Save to local otps.json cache file
-            $otpFile = '/tmp/otps.json';
+            $otpFile = __DIR__ . '/otps.json';
             $otps = [];
             if (file_exists($otpFile)) {
                 $otps = json_decode(file_get_contents($otpFile), true) ?: [];
@@ -178,7 +178,7 @@ try {
             file_put_contents($otpFile, json_encode($otps, JSON_PRETTY_PRINT));
 
             // 4. Log OTP to last_otp.txt for development testing
-            file_put_contents('/tmp/last_otp.txt', $otp);
+            file_put_contents(__DIR__ . '/last_otp.txt', $otp);
 
             // 5. Try to send email
             $subject = "LMS Password Reset OTP";
@@ -1325,7 +1325,7 @@ try {
 
         // --- SYSTEM SETTINGS ---
         case ($route === '/api/settings' && $method === 'GET'):
-            $settingsFile = '/tmp/settings.json';
+            $settingsFile = __DIR__ . '/settings.json';
             $settings = ['digital_payment_enabled' => true];
             if (file_exists($settingsFile)) {
                 $settings = json_decode(file_get_contents($settingsFile), true) ?: ['digital_payment_enabled' => true];
@@ -1335,7 +1335,7 @@ try {
 
         case ($route === '/api/settings' && $method === 'POST'):
             requireRole(['SUPER_ADMIN']);
-            $settingsFile = '/tmp/settings.json';
+            $settingsFile = __DIR__ . '/settings.json';
             $settings = ['digital_payment_enabled' => true];
             if (file_exists($settingsFile)) {
                 $settings = json_decode(file_get_contents($settingsFile), true) ?: ['digital_payment_enabled' => true];
