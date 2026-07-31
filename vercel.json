@@ -2,13 +2,8 @@
   "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist",
   "functions": {
-    "api/index.php": {
-      "runtime": "vercel-php@0.9.0",
-      "includeFiles": "backend/**"
-    },
-    "api/test.php": {
-      "runtime": "vercel-php@0.9.0",
-      "includeFiles": "backend/**"
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.4"
     }
   },
   "rewrites": [
