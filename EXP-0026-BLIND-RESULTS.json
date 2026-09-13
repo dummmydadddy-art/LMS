@@ -1,0 +1,95 @@
+{
+    "experiment_tag": "EXP-0026-BLIND-RESULTS",
+    "timestamp": "2026-09-13T07:39:58Z",
+    "elapsed_seconds": 65.3,
+    "total_cases": 1000,
+    "overall_accuracy": "57.90%",
+    "macro_f1": "56.85%",
+    "primary_gates": {
+        "false_acceptance_rate_far": {
+            "value": "23.33%",
+            "ci_95": "[18.90%, 28.44%]",
+            "target": "<= 15.00%",
+            "passed": false
+        },
+        "refutation_recall": {
+            "value": "30.00%",
+            "ci_95": "[25.09%, 35.41%]",
+            "target": ">= 80.00%",
+            "passed": false
+        },
+        "false_refutation_rate_frr": {
+            "value": "0.00%",
+            "ci_95": "[0.00%, 3.70%]",
+            "target": "<= 5.00%",
+            "passed": true
+        },
+        "unknown_recall": {
+            "value": "100.00%",
+            "ci_95": "[98.12%, 100.00%]",
+            "target": ">= 95.00%",
+            "passed": true
+        },
+        "evidence_used_invariant": {
+            "value": "100.00%",
+            "target": "100.00%",
+            "passed": true
+        }
+    },
+    "confusion_matrix": {
+        "SUPPORTED": {
+            "SUPPORTED": 253,
+            "REFUTED": 30,
+            "NOT_ESTABLISHED": 117
+        },
+        "REFUTED": {
+            "SUPPORTED": 84,
+            "REFUTED": 126,
+            "NOT_ESTABLISHED": 190
+        },
+        "NOT_ESTABLISHED": {
+            "SUPPORTED": 0,
+            "REFUTED": 0,
+            "NOT_ESTABLISHED": 200
+        }
+    },
+    "class_f1_scores": {
+        "SUPPORTED": {
+            "precision": "75.07%",
+            "recall": "63.25%",
+            "f1": "68.66%"
+        },
+        "REFUTED": {
+            "precision": "80.77%",
+            "recall": "31.50%",
+            "f1": "45.32%"
+        },
+        "NOT_ESTABLISHED": {
+            "precision": "39.45%",
+            "recall": "100.00%",
+            "f1": "56.58%"
+        }
+    },
+    "category_metrics": {
+        "supported_curriculum_recall": "51.00%",
+        "mixed_compound_refutation_rate": "36.00%"
+    },
+    "mechanism_evasion_breakdown": {
+        "COVERED": {
+            "total": 680,
+            "accuracy": "64.26%",
+            "refuted": 134,
+            "refutation_rate": "19.71%",
+            "supported": 300,
+            "not_established": 246
+        },
+        "UNCOVERED": {
+            "total": 320,
+            "accuracy": "44.38%",
+            "refuted": 22,
+            "refutation_rate": "6.88%",
+            "supported": 37,
+            "not_established": 261
+        }
+    }
+}
