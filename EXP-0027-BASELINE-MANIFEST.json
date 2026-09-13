@@ -1,0 +1,73 @@
+{
+  "manifest_version": "EXP-0027-BASELINE-MANIFEST",
+  "timestamp": "2026-09-13T07:51:46.005Z",
+  "target_experiment": "EXP-0027",
+  "audit_subject": "Hybrid Evidence-Grounded NLI Verifier",
+  "git_metadata": {
+    "baseline_commit": "7dd8eae488e04bc5dc0872e3f7bc0c6692972724",
+    "active_branch": "exp-0027",
+    "parent_branch": "exp-0026"
+  },
+  "runtime_environment": {
+    "node_version": "v24.11.0",
+    "php_version": "8.3.32",
+    "ollama_version": "ollama version is 0.34.0",
+    "python_312_path": "C:\\Users\\Mukul\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "python_torch_version": "2.9.1",
+    "python_transformers_version": "5.11.0",
+    "python_sentence_transformers": "5.5.1",
+    "embedding_model": "nomic-embed-text (768-dim)",
+    "generation_model": "llama3.2:latest (3B parameters)"
+  },
+  "architecture_configuration": {
+    "gateway_port": 8000,
+    "worker_count": 8,
+    "fast_workers": [
+      8001,
+      8002,
+      8003,
+      8004,
+      8005,
+      8006
+    ],
+    "generation_workers": [
+      8007,
+      8008
+    ],
+    "load_balancer_policy": "healthy-aware least-loaded with fair tie-breaking",
+    "concurrency_ceiling": 6
+  },
+  "cryptographic_hashes": {
+    "active_verifier": {
+      "file": "backend/rag_premise_verifier.php",
+      "sha256": "83a8a1860ea8dd4a81ae81fd20907e6a41fd238ebd7c90c3790ad2027e5f41cb"
+    },
+    "database": {
+      "file": "database/rag_materials.sqlite3",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "corpus": {
+      "version_tag": "1789199698190",
+      "file": "database/rag_corpus_version.txt",
+      "sha256": "a5fb73d9256a60e8487520bc1d398edae01994abced180f5ed69403c976a855e"
+    }
+  },
+  "active_feature_flags": {
+    "ENABLE_INPUT_SANITY": true,
+    "ENABLE_TYPO_NORMALIZATION": true,
+    "ENABLE_SEMANTIC_RERANK": true,
+    "ENABLE_DYNAMIC_K": true,
+    "ENABLE_ENTITY_MEMORY": true,
+    "ENABLE_PREMISE_VERIFIER": true,
+    "ENABLE_CITATION_ENFORCEMENT": true,
+    "ENABLE_CURRICULUM_BOUNDARY": true,
+    "ENABLE_RATE_LIMIT": true,
+    "ENABLE_WARMUP": true
+  },
+  "safety_invariants": {
+    "production_repository_unmodified": false,
+    "production_path": "d:/Collage project/EduConnect-LMS-Production",
+    "verifier_logic_frozen_at_baseline": true,
+    "feature_flags_immutable_over_http": true
+  }
+}
