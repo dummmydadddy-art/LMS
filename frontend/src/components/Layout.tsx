@@ -245,9 +245,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
       {/* Sidebar - Desktop */}
       <aside className="hidden lg:flex flex-col w-64 glass-card border-y-0 border-l-0 rounded-none h-screen sticky top-0 bg-dark-900/40 backdrop-blur-xl">
         <div className="h-16 flex items-center gap-3 px-6 border-b border-slate-800/80">
-          <div className="h-8 w-8 rounded-lg overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10">
-            <img src="/logo.png" alt="LMS" className="h-6 w-6 object-contain" />
-          </div>
+          <div className="h-8 w-8 rounded-lg overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10"></div>
           <span className="font-bold text-lg text-slate-100">LMS</span>
         </div>
 
@@ -301,9 +299,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
           <aside className="w-64 glass-card border-y-0 border-l-0 rounded-none h-full relative flex flex-col bg-dark-900">
             <div className="h-16 flex items-center justify-between px-6 border-b border-slate-800/80">
               <div className="flex items-center gap-3">
-                <div className="h-8 w-8 rounded-lg overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10">
-                  <img src="/logo.png" alt="LMS" className="h-6 w-6 object-contain" />
-                </div>
+                <div className="h-8 w-8 rounded-lg overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10"></div>
                 <span className="font-bold text-lg text-slate-100">LMS</span>
               </div>
               <button onClick={() => setSidebarOpen(false)} className="text-slate-400 hover:text-slate-900">

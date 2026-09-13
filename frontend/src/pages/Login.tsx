@@ -186,9 +186,7 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
 
       <div className="w-full max-w-md glass-card p-8 relative">
         <div className="flex flex-col items-center mb-8">
-          <div className="h-16 w-16 rounded-2xl overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10 mb-4">
-            <img src="/logo.png" alt="LMS" className="h-12 w-12 object-contain" />
-          </div>
+          <div className="h-16 w-16 rounded-2xl overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10 mb-4"></div>
           <h2 className="text-2xl font-bold bg-gradient-to-r from-slate-100 to-slate-400 bg-clip-text text-transparent">LMS</h2>
           <p className="text-slate-400 text-sm mt-1">Sign in to access your digital classroom</p>
         </div>
