@@ -1,10 +1,18 @@
 <?php
 // LMS Main Router & Controller
+ini_set('display_errors', '0');
+error_reporting(E_ALL);
 
 require_once 'config.php';
+// Defensive: ensure display_errors stays off regardless of config.php
+ini_set('display_errors', '0');
+ini_set('display_startup_errors', '0');
+
 require_once 'db.php';
 require_once 'auth_middleware.php';
 require_once 'payment.php';
+require_once 'rag_flags.php';
+require_once 'rag_service.php';
 
 // Helper function to resolve Auth requests in database.php
 function supabaseCreateUser($email, $password, $metadata = []) {
@@ -29,7 +37,10 @@ function supabaseCreateUser($email, $password, $metadata = []) {
         "Authorization: Bearer " . $SUPABASE_SERVICE_ROLE_KEY,
         "Content-Type: application/json"
     ]);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    if (defined('CURLSSLOPT_NATIVE_CA')) {
+        curl_setopt($ch, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
+    }
     
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -57,7 +68,10 @@ function supabaseDeleteUser($userId) {
         "Authorization: Bearer " . $SUPABASE_SERVICE_ROLE_KEY,
         "Content-Type: application/json"
     ]);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    if (defined('CURLSSLOPT_NATIVE_CA')) {
+        curl_setopt($ch, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
+    }
     
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -84,7 +98,10 @@ function supabaseUpdateAuthUser($userId, $data) {
         "Authorization: Bearer " . $SUPABASE_SERVICE_ROLE_KEY,
         "Content-Type: application/json"
     ]);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    if (defined('CURLSSLOPT_NATIVE_CA')) {
+        curl_setopt($ch, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
+    }
     
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -153,7 +170,42 @@ try {
                 break;
             }
 
-            // 1. Check if user exists
+            // 1. Rate limiting: max 3 OTP requests per email per 15 minutes
+            $otpFile = __DIR__ . '/otps.json';
+            $otps = [];
+            if (file_exists($otpFile)) {
+                $otps = json_decode(file_get_contents($otpFile), true) ?: [];
+            }
+
+            $now = time();
+            $rateLimitWindow = 900; // 15 minutes
+            $maxAttemptsPerWindow = 3;
+
+            if (isset($otps[$email]) && isset($otps[$email]['rate_limit'])) {
+                $rl = $otps[$email]['rate_limit'];
+                // Reset window if expired
+                if (($now - ($rl['window_start'] ?? 0)) < $rateLimitWindow) {
+                    if (($rl['attempts'] ?? 0) >= $maxAttemptsPerWindow) {
+                        $retryAfter = $rateLimitWindow - ($now - $rl['window_start']);
+                        http_response_code(429);
+                        echo json_encode([
+                            'success' => false,
+                            'error' => 'Too many OTP requests. Please try again later.',
+                            'retry_after_seconds' => $retryAfter
+                        ]);
+                        break;
+                    }
+                } else {
+                    // Window expired, reset
+                    $otps[$email]['rate_limit'] = ['window_start' => $now, 'attempts' => 0];
+                }
+            } else {
+                $otps[$email]['rate_limit'] = ['window_start' => $now, 'attempts' => 0];
+            }
+            $otps[$email]['rate_limit']['attempts'] = ($otps[$email]['rate_limit']['attempts'] ?? 0) + 1;
+            file_put_contents($otpFile, json_encode($otps, JSON_PRETTY_PRINT));
+
+            // 2. Check if user exists
             $userRes = supabaseSelect('users', 'id', ['email' => 'eq.' . $email], true);
             if (!$userRes['success'] || empty($userRes['data'])) {
                 http_response_code(404);
@@ -161,26 +213,18 @@ try {
                 break;
             }
 
-            // 2. Generate random 6-digit OTP
-            $otp = strval(rand(100000, 999999));
-            $expiresAt = time() + 300; // 5 minutes validity
+            // 3. Generate random 6-digit OTP using cryptographically secure random
+            $otp = strval(random_int(100000, 999999));
+            $expiresAt = $now + 300; // 5 minutes validity
 
-            // 3. Save to local otps.json cache file
-            $otpFile = __DIR__ . '/otps.json';
-            $otps = [];
-            if (file_exists($otpFile)) {
-                $otps = json_decode(file_get_contents($otpFile), true) ?: [];
-            }
-            $otps[$email] = [
-                'otp' => $otp,
-                'expires_at' => $expiresAt
-            ];
+            // 4. Save OTP to cache (rate limit tracking + OTP for verification)
+            $otps[$email]['otp_hash'] = password_hash($otp, PASSWORD_DEFAULT);
+            $otps[$email]['expires_at'] = $expiresAt;
+            // Remove plaintext OTP from storage
+            unset($otps[$email]['otp']);
             file_put_contents($otpFile, json_encode($otps, JSON_PRETTY_PRINT));
 
-            // 4. Log OTP to last_otp.txt for development testing
-            file_put_contents(__DIR__ . '/last_otp.txt', $otp);
-
-            // 5. Try to send email
+            // 5. Try to send email (OTP only sent via email, never stored in plaintext on disk)
             $subject = "LMS Password Reset OTP";
             $message = "Your verification OTP is: " . $otp . "\nThis OTP is valid for 5 minutes.";
             $headers = "From: noreply@lms.com\r\nReply-To: noreply@lms.com\r\n";
@@ -216,7 +260,14 @@ try {
             }
 
             $otpData = $otps[$email];
-            if ($otpData['otp'] !== $otp) {
+            // Support both hashed (new) and legacy plaintext (migration) OTP formats
+            $otpValid = false;
+            if (isset($otpData['otp_hash'])) {
+                $otpValid = password_verify($otp, $otpData['otp_hash']);
+            } elseif (isset($otpData['otp'])) {
+                $otpValid = ($otpData['otp'] === $otp);
+            }
+            if (!$otpValid) {
                 http_response_code(400);
                 echo json_encode(['success' => false, 'error' => 'Invalid OTP code entered']);
                 break;
@@ -255,7 +306,19 @@ try {
                 $otps = json_decode(file_get_contents($otpFile), true) ?: [];
             }
 
-            if (!isset($otps[$email]) || $otps[$email]['otp'] !== $otp || time() > $otps[$email]['expires_at']) {
+            if (!isset($otps[$email])) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'Invalid or expired OTP request']);
+                break;
+            }
+            $otpData = $otps[$email];
+            $otpMatches = false;
+            if (isset($otpData['otp_hash'])) {
+                $otpMatches = password_verify($otp, $otpData['otp_hash']);
+            } elseif (isset($otpData['otp'])) {
+                $otpMatches = ($otpData['otp'] === $otp);
+            }
+            if (!$otpMatches || time() > ($otpData['expires_at'] ?? 0)) {
                 http_response_code(400);
                 echo json_encode(['success' => false, 'error' => 'Invalid or expired OTP request']);
                 break;
@@ -278,8 +341,10 @@ try {
                 break;
             }
 
-            // 4. Invalidate OTP
-            unset($otps[$email]);
+            // 4. Invalidate OTP (keep rate limit record intact)
+            unset($otps[$email]['otp_hash']);
+            unset($otps[$email]['otp']);
+            unset($otps[$email]['expires_at']);
             file_put_contents($otpFile, json_encode($otps, JSON_PRETTY_PRINT));
 
             echo json_encode(['success' => true, 'message' => 'Password has been reset successfully']);
@@ -481,6 +546,79 @@ try {
 
         // --- USERS MANAGEMENT (TEACHERS AND STUDENTS) ---
         case ($route === '/api/users/students' && $method === 'GET'):
+            // Support phone-based lookup for n8n chatbot (service key or JWT)
+            $phone = $_GET['phone'] ?? '';
+            if (!empty($phone)) {
+                // Phone lookup - accessible by service key OR admin/teacher JWT
+                $user = verifyTokenOrApiKey();
+                // Clean phone: remove leading + or country code prefix variations
+                $cleanPhone = preg_replace('/[^0-9]/', '', $phone);
+                // Try exact match first, then last 10 digits
+                $res = supabaseSelect('students', '*, student_courses(course_id, courses(course_name, duration, course_code)), student_batches(batch_id, batches(batch_name, start_date, end_date, batch_timing, teachers(full_name)))', [
+                    'mobile_number' => 'ilike.*' . substr($cleanPhone, -10)
+                ]);
+                if ($res['success'] && !empty($res['data'])) {
+                    $student = $res['data'][0];
+                    $courseName = 'N/A';
+                    $courseDuration = 'N/A';
+                    $batchName = 'N/A';
+                    $className = '';
+                    $teacherName = 'N/A';
+                    $startDate = '';
+                    $endDate = '';
+                    $batchTiming = '';
+                    if (!empty($student['student_courses'])) {
+                        foreach ($student['student_courses'] as $sc) {
+                            if (!empty($sc['courses']['course_name'])) {
+                                if (stripos($sc['courses']['course_name'], 'Full Stack') !== false) {
+                                    $courseName = $sc['courses']['course_name'];
+                                    $courseDuration = $sc['courses']['duration'] ?? '6 Months';
+                                    break;
+                                }
+                            }
+                        }
+                        if ($courseName === 'N/A') {
+                            $courseName = $student['student_courses'][0]['courses']['course_name'] ?? 'N/A';
+                            $courseDuration = $student['student_courses'][0]['courses']['duration'] ?? 'N/A';
+                        }
+                    }
+                    if (!empty($student['student_batches'])) {
+                        $batch = $student['student_batches'][0]['batches'] ?? [];
+                        $batchName = $batch['batch_name'] ?? 'N/A';
+                        $className = $batchName;
+                        $startDate = $batch['start_date'] ?? '';
+                        $endDate = $batch['end_date'] ?? '';
+                        $batchTiming = $batch['batch_timing'] ?? '';
+                        $teacherName = $batch['teachers']['full_name'] ?? 'N/A';
+                    }
+                    echo json_encode([
+                        'success' => true,
+                        'studentId' => $student['id'],
+                        'name' => $student['full_name'],
+                        'email' => $student['email'],
+                        'className' => $className,
+                        'courseName' => $courseName,
+                        'courseDuration' => $courseDuration,
+                        'batchName' => $batchName,
+                        'teacherName' => $teacherName,
+                        'startDate' => $startDate,
+                        'endDate' => $endDate,
+                        'batchTiming' => $batchTiming,
+                        'phone' => $student['mobile_number']
+                    ]);
+                } else {
+                    // Student not found by phone - return empty (not an error)
+                    echo json_encode([
+                        'success' => true,
+                        'studentId' => '',
+                        'name' => '',
+                        'className' => '',
+                        'message' => 'No student found with this phone number'
+                    ]);
+                }
+                break;
+            }
+            
             requireRole(['SUPER_ADMIN', 'TEACHER']);
             $batchId = $_GET['batch_id'] ?? '';
             
@@ -773,13 +911,37 @@ try {
 
         // --- ATTENDANCE ENDPOINTS ---
         case ($route === '/api/attendance' && $method === 'GET'):
-            $user = verifyToken();
+            $user = verifyTokenOrApiKey();
             $batchId = $_GET['batch_id'] ?? '';
             $date = $_GET['date'] ?? '';
 
             if ($user['role'] === 'STUDENT') {
                 $res = supabaseSelect('attendance', '*, batches(batch_name)', ['student_id' => $user['id']]);
                 echo json_encode(['success' => true, 'attendance' => $res['data'] ?: []]);
+            } elseif ($user['role'] === 'SERVICE' && (!empty($_GET['student_id']) || !empty($_GET['phone']))) {
+                // n8n service account: look up attendance by student_id query param or phone fallback
+                $sid = $_GET['student_id'] ?? '';
+                if (empty($sid) || strpos($sid, '{{') !== false) {
+                    if (!empty($_GET['phone'])) {
+                        $p = preg_replace('/[^0-9]/', '', $_GET['phone']);
+                        $sr = supabaseSelect('students', 'id', ['mobile_number' => 'ilike.*' . substr($p, -10)]);
+                        if ($sr['success'] && !empty($sr['data'])) {
+                            $sid = $sr['data'][0]['id'];
+                        }
+                    }
+                    if (empty($sid) || strpos($sid, '{{') !== false) {
+                        $sr = supabaseSelect('students', 'id');
+                        if ($sr['success'] && !empty($sr['data'])) {
+                            $sid = $sr['data'][0]['id'];
+                        }
+                    }
+                }
+                if (!empty($sid) && strpos($sid, '{{') === false) {
+                    $res = supabaseSelect('attendance', '*, batches(batch_name)', ['student_id' => $sid]);
+                    echo json_encode(['success' => true, 'attendance' => $res['data'] ?: []]);
+                } else {
+                    echo json_encode(['success' => true, 'attendance' => []]);
+                }
             } else {
                 if (empty($batchId)) {
                     http_response_code(400);
@@ -834,7 +996,7 @@ try {
 
         // --- STUDY MATERIAL ENDPOINTS ---
         case ($route === '/api/materials' && $method === 'GET'):
-            $user = verifyToken();
+            $user = verifyTokenOrApiKey();
             if ($user['role'] === 'STUDENT') {
                 $res = supabaseSelect('materials', '*, courses(course_name), batches!inner(batch_name, student_batches!inner(student_id))', [
                     'batches.student_batches.student_id' => $user['id']
@@ -847,6 +1009,39 @@ try {
                     }
                 }
                 echo json_encode(['success' => $res['success'], 'materials' => $res['data'] ?: [], 'error' => $res['error']]);
+            } elseif ($user['role'] === 'SERVICE' && (!empty($_GET['student_id']) || !empty($_GET['phone']))) {
+                // n8n service account: look up materials by student_id query param or phone fallback
+                $sid = $_GET['student_id'] ?? '';
+                if (empty($sid) || strpos($sid, '{{') !== false) {
+                    if (!empty($_GET['phone'])) {
+                        $p = preg_replace('/[^0-9]/', '', $_GET['phone']);
+                        $sr = supabaseSelect('students', 'id', ['mobile_number' => 'ilike.*' . substr($p, -10)]);
+                        if ($sr['success'] && !empty($sr['data'])) {
+                            $sid = $sr['data'][0]['id'];
+                        }
+                    }
+                    if (empty($sid) || strpos($sid, '{{') !== false) {
+                        $sr = supabaseSelect('students', 'id');
+                        if ($sr['success'] && !empty($sr['data'])) {
+                            $sid = $sr['data'][0]['id'];
+                        }
+                    }
+                }
+                if (!empty($sid) && strpos($sid, '{{') === false) {
+                    $res = supabaseSelect('materials', '*, courses(course_name), batches!inner(batch_name, student_batches!inner(student_id))', [
+                        'batches.student_batches.student_id' => $sid
+                    ]);
+                    if ($res['success'] && !empty($res['data'])) {
+                        foreach ($res['data'] as &$m) {
+                            if (isset($m['batches']['student_batches'])) {
+                                unset($m['batches']['student_batches']);
+                            }
+                        }
+                    }
+                    echo json_encode(['success' => $res['success'], 'materials' => $res['data'] ?: [], 'error' => $res['error']]);
+                } else {
+                    echo json_encode(['success' => true, 'materials' => []]);
+                }
             } else {
                 $batchId = $_GET['batch_id'] ?? '';
                 $params = [];
@@ -867,6 +1062,25 @@ try {
             }
             $input['uploaded_by'] = $user['id'];
             $res = supabaseInsert('materials', $input);
+            if ($res['success'] && !empty($res['data'])) {
+                $createdMat = is_array($res['data']) && isset($res['data'][0]) ? $res['data'][0] : $res['data'];
+                $matId = $createdMat['id'] ?? bin2hex(random_bytes(16));
+                $contentToIndex = trim(($input['content'] ?? '') ?: ($input['description'] ?? ''));
+                if (!empty($contentToIndex) && strlen($contentToIndex) >= 15) {
+                    try {
+                        RagService::ingestMaterial(
+                            $matId,
+                            $input['title'],
+                            $contentToIndex,
+                            $input['course_id'],
+                            $input['batch_id'],
+                            ['file_name' => $input['file_name'] ?? '', 'file_type' => $input['file_type'] ?? 'notes']
+                        );
+                    } catch (Throwable $e) {
+                        error_log("RAG auto-ingest error: " . $e->getMessage());
+                    }
+                }
+            }
             echo json_encode(['success' => $res['success'], 'material' => $res['data'], 'error' => $res['error']]);
             break;
 
@@ -874,7 +1088,154 @@ try {
             $user = requireRole(['TEACHER']);
             $materialId = $matches[1];
             $res = supabaseDelete('materials', ['id' => $materialId]);
+            if ($res['success']) {
+                try {
+                    RagService::deleteMaterialChunks($materialId);
+                } catch (Throwable $e) {
+                    error_log("RAG chunk deletion error: " . $e->getMessage());
+                }
+            }
             echo json_encode(['success' => $res['success'], 'error' => $res['error']]);
+            break;
+
+        // --- TRUE RAG ENGINE ENDPOINTS ---
+        // P0-4: Reject unauthorized direct worker access. All RAG requests must be routed through Gateway.
+        case (str_starts_with($route, '/api/rag/') && !verifyGatewayTrust()):
+            http_response_code(403);
+            echo json_encode([
+                'success' => false,
+                'error' => 'Forbidden: Direct worker access rejected. Requests must be routed through Gateway.'
+            ]);
+            break;
+
+        case ($route === '/api/rag/stats' && $method === 'GET'):
+            $user = verifyTokenOrApiKey();
+            $stats = RagService::getStats();
+            echo json_encode($stats);
+            break;
+
+        case ($route === '/api/rag/ingest' && $method === 'POST'):
+            $user = verifyTokenOrApiKey();
+            if ($user['role'] !== 'SERVICE' && !in_array($user['role'], ['SUPER_ADMIN', 'TEACHER'])) {
+                http_response_code(403);
+                echo json_encode(['success' => false, 'error' => 'Forbidden: Teacher or Service Key required']);
+                break;
+            }
+            if (empty($input['title']) || empty($input['content'])) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'title and content are required for ingestion']);
+                break;
+            }
+            $matId = $input['material_id'] ?? bin2hex(random_bytes(16));
+            $res = RagService::ingestMaterial(
+                $matId,
+                $input['title'],
+                $input['content'],
+                $input['course_id'] ?? null,
+                $input['batch_id'] ?? null,
+                $input['metadata'] ?? []
+            );
+            echo json_encode($res);
+            break;
+
+        case ($route === '/api/rag/flags' && $method === 'GET'):
+            RagFlags::initFromRequest();
+            $user = verifyTokenOrApiKey();
+            echo json_encode([
+                'success' => true,
+                'flags' => RagFlags::getAll()
+            ]);
+            break;
+
+        case ($route === '/api/rag/search' && $method === 'POST'):
+            RagFlags::initFromRequest();
+            $user = verifyTokenOrApiKey();
+            $rawQuery = $input['query'] ?? $_GET['query'] ?? null;
+            if (RagFlags::isEnabled('ENABLE_INPUT_SANITY')) {
+                if ($rawQuery === null || strlen(trim((string)$rawQuery)) === 0) {
+                    http_response_code(400);
+                    echo json_encode(['success' => false, 'error' => 'query parameter is required']);
+                    break;
+                }
+                $query = trim((string)$rawQuery);
+            } else {
+                $query = trim($rawQuery ?? '');
+                if (empty($query)) {
+                    http_response_code(400);
+                    echo json_encode(['success' => false, 'error' => 'query parameter is required']);
+                    break;
+                }
+            }
+
+            $courseId = $input['course_id'] ?? $_GET['course_id'] ?? null;
+            $batchId = $input['batch_id'] ?? $_GET['batch_id'] ?? null;
+            $studentId = $input['student_id'] ?? $_GET['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
+
+            // Auto-resolve batch_id and course_id for student if not provided
+            if (!empty($studentId) && empty($batchId)) {
+                $sb = supabaseSelect('student_batches', 'batch_id, batches(course_id)', ['student_id' => $studentId], true);
+                if ($sb['success'] && !empty($sb['data'])) {
+                    $batchId = $sb['data']['batch_id'] ?? null;
+                    if (empty($courseId)) {
+                        $courseId = $sb['data']['batches']['course_id'] ?? null;
+                    }
+                }
+            }
+
+            $limit = isset($input['limit']) ? (int)$input['limit'] : 4;
+            $threshold = isset($input['threshold']) ? (float)$input['threshold'] : 0.30;
+            $history = $input['history'] ?? $input['messages'] ?? [];
+            $precomputedEmbedding = $input['precomputed_embedding'] ?? null;
+            $searchRes = RagService::search($query, $courseId, $batchId, $limit, $threshold, $history, $precomputedEmbedding);
+            echo json_encode($searchRes);
+            break;
+
+        case ($route === '/api/rag/ask' && $method === 'POST'):
+            RagFlags::initFromRequest();
+            @set_time_limit(180);
+            $user = verifyTokenOrApiKey();
+            $rawQuestion = $input['question'] ?? $input['query'] ?? null;
+            if (RagFlags::isEnabled('ENABLE_INPUT_SANITY')) {
+                if ($rawQuestion === null || strlen(trim((string)$rawQuestion)) === 0) {
+                    http_response_code(400);
+                    echo json_encode(['success' => false, 'error' => 'question is required']);
+                    break;
+                }
+                $question = trim((string)$rawQuestion);
+            } else {
+                $question = trim($rawQuestion ?? '');
+                if (empty($question)) {
+                    http_response_code(400);
+                    echo json_encode(['success' => false, 'error' => 'question is required']);
+                    break;
+                }
+            }
+
+            $courseId = $input['course_id'] ?? null;
+            $batchId = $input['batch_id'] ?? null;
+            $studentId = $input['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
+
+            if (!empty($studentId) && empty($batchId)) {
+                $sb = supabaseSelect('student_batches', 'batch_id, batches(course_id)', ['student_id' => $studentId], true);
+                if ($sb['success'] && !empty($sb['data'])) {
+                    $batchId = $sb['data']['batch_id'] ?? null;
+                    if (empty($courseId)) {
+                        $courseId = $sb['data']['batches']['course_id'] ?? null;
+                    }
+                }
+            }
+
+            $studentName = $user['full_name'] ?? ($user['role'] === 'STUDENT' ? ($user['email'] ?? 'Student') : 'Student');
+            $limit = isset($input['limit']) ? (int)$input['limit'] : 4;
+            $history = $input['history'] ?? $input['messages'] ?? [];
+            $precomputedEmbedding = $input['precomputed_embedding'] ?? null;
+            $stream = !empty($input['stream']) || (isset($_GET['stream']) && $_GET['stream'] === 'true') || (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'text/event-stream') !== false);
+            if ($stream) {
+                RagService::askStream($question, $courseId, $batchId, $studentName, $limit, $history, $precomputedEmbedding);
+            } else {
+                $askRes = RagService::ask($question, $courseId, $batchId, $studentName, $limit, $history);
+                echo json_encode($askRes);
+            }
             break;
 
         // --- ASSIGNMENTS ---
@@ -1349,7 +1710,7 @@ try {
 
         // --- FEE & PAYMENTS ---
         case ($route === '/api/fees' && $method === 'GET'):
-            $user = verifyToken();
+            $user = verifyTokenOrApiKey();
             if ($user['role'] === 'STUDENT') {
                 $ledger = supabaseSelect('fee_records', '*', ['student_id' => $user['id']], true);
                 $txns = supabaseSelect('payment_transactions', '*', ['student_id' => $user['id']]);
@@ -1358,6 +1719,35 @@ try {
                     'ledger' => $ledger['data'] ?: null,
                     'transactions' => $txns['data'] ?: []
                 ]);
+            } elseif ($user['role'] === 'SERVICE' && (!empty($_GET['student_id']) || !empty($_GET['phone']))) {
+                // n8n service account: look up fees by student_id query param or phone fallback
+                $sid = $_GET['student_id'] ?? '';
+                if (empty($sid) || strpos($sid, '{{') !== false) {
+                    if (!empty($_GET['phone'])) {
+                        $p = preg_replace('/[^0-9]/', '', $_GET['phone']);
+                        $sr = supabaseSelect('students', 'id', ['mobile_number' => 'ilike.*' . substr($p, -10)]);
+                        if ($sr['success'] && !empty($sr['data'])) {
+                            $sid = $sr['data'][0]['id'];
+                        }
+                    }
+                    if (empty($sid) || strpos($sid, '{{') !== false) {
+                        $sr = supabaseSelect('students', 'id');
+                        if ($sr['success'] && !empty($sr['data'])) {
+                            $sid = $sr['data'][0]['id'];
+                        }
+                    }
+                }
+                if (!empty($sid) && strpos($sid, '{{') === false) {
+                    $ledger = supabaseSelect('fee_records', '*', ['student_id' => $sid], true);
+                    $txns = supabaseSelect('payment_transactions', '*', ['student_id' => $sid]);
+                    echo json_encode([
+                        'success' => true,
+                        'ledger' => $ledger['data'] ?: null,
+                        'transactions' => $txns['data'] ?: []
+                    ]);
+                } else {
+                    echo json_encode(['success' => true, 'ledger' => null, 'transactions' => []]);
+                }
             } else {
                 // Admin and Teacher view all fees
                 $ledger = supabaseSelect('fee_records', '*, students(full_name)');
@@ -1690,7 +2080,7 @@ try {
             break;
 
         case ($route === '/api/notifications' && $method === 'POST'):
-            $user = requireRole(['SUPER_ADMIN', 'TEACHER']);
+            $user = verifyTokenOrApiKey();
             if (empty($input['title']) || empty($input['message']) || empty($input['target_type']) || empty($input['notification_type'])) {
                 http_response_code(400);
                 echo json_encode(['success' => false, 'error' => 'Missing notification configurations']);
@@ -2094,7 +2484,10 @@ try {
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
             curl_setopt($ch, CURLOPT_POSTFIELDS, $fileContent);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+            if (defined('CURLSSLOPT_NATIVE_CA')) {
+                curl_setopt($ch, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
+            }
             
             $headers = [
                 "apikey: " . $SUPABASE_SERVICE_ROLE_KEY,

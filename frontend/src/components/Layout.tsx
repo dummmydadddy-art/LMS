@@ -22,8 +22,10 @@ import {
   CheckCircle,
   HelpCircle,
   AlertCircle,
-  Video
+  Video,
+  Sparkles
 } from 'lucide-react';
+import AiTutorModal from './AiTutorModal';
 
 interface LayoutProps {
   user: {
@@ -42,6 +44,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const [showAiTutor, setShowAiTutor] = useState(false);
   const [notifications, setNotifications] = useState<any[]>([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [readNotifications, setReadNotifications] = useState<string[]>([]);
@@ -127,6 +130,12 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
       setPasswordLoading(false);
     }
   };
+
+  useEffect(() => {
+    const handleOpenTutor = () => setShowAiTutor(true);
+    window.addEventListener('open-ai-tutor', handleOpenTutor);
+    return () => window.removeEventListener('open-ai-tutor', handleOpenTutor);
+  }, []);
 
   useEffect(() => {
     if (user) {
@@ -270,6 +279,17 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
               </button>
             );
           })}
+
+          <div className="pt-3 mt-3 border-t border-slate-800/80">
+            <button
+              onClick={() => setShowAiTutor(true)}
+              className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-blue-600/90 to-indigo-600/90 hover:from-blue-500 hover:to-indigo-500 shadow-md shadow-indigo-600/20 transition-all border border-indigo-400/20 group"
+            >
+              <Sparkles className="h-4 w-4 text-yellow-300 animate-pulse" />
+              <span>AI Course Tutor</span>
+              <span className="ml-auto text-[9px] bg-white/20 text-white uppercase px-1.5 py-0.5 rounded font-mono font-bold">RAG</span>
+            </button>
+          </div>
         </nav>
 
         <div className="p-4 border-t border-slate-800/80 bg-dark-950/20">
@@ -331,6 +351,20 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
                   </button>
                 );
               })}
+
+              <div className="pt-3 mt-3 border-t border-slate-800/80">
+                <button
+                  onClick={() => {
+                    setShowAiTutor(true);
+                    setSidebarOpen(false);
+                  }}
+                  className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-blue-600/90 to-indigo-600/90 hover:from-blue-500 hover:to-indigo-500 shadow-md shadow-indigo-600/20 transition-all border border-indigo-400/20 group"
+                >
+                  <Sparkles className="h-4 w-4 text-yellow-300 animate-pulse" />
+                  <span>AI Course Tutor</span>
+                  <span className="ml-auto text-[9px] bg-white/20 text-white uppercase px-1.5 py-0.5 rounded font-mono font-bold">RAG</span>
+                </button>
+              </div>
             </nav>
 
             <div className="p-4 border-t border-slate-800/80 bg-dark-950/20">
@@ -599,6 +633,23 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
           </div>
         </div>
       )}
+
+      {/* Floating AI Course Tutor Button */}
+      <button
+        onClick={() => setShowAiTutor(true)}
+        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-xs shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all border border-indigo-400/30 group"
+        title="Ask AI Course Tutor (RAG)"
+      >
+        <Sparkles className="w-4 h-4 text-yellow-300 animate-pulse" />
+        <span className="font-bold">Ask AI Tutor</span>
+        <span className="text-[9px] bg-white/20 px-1.5 py-0.5 rounded-full font-mono font-bold">RAG</span>
+      </button>
+
+      {/* Global AI Course Tutor Modal */}
+      <AiTutorModal
+        isOpen={showAiTutor}
+        onClose={() => setShowAiTutor(false)}
+      />
     </div>
   );
 };

@@ -21,7 +21,8 @@ import {
   MessageSquare,
   Hand,
   Mic,
-  Square
+  Square,
+  Sparkles
 } from 'lucide-react';
 
 const StudentDashboard: React.FC = () => {
@@ -730,7 +731,16 @@ const StudentDashboard: React.FC = () => {
 
           <div className="lg:col-span-2 space-y-4">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/60 pb-3">
-              <h3 className="text-sm font-bold text-slate-300">Materials Vault - {activeCourse?.course_name}</h3>
+              <div className="flex items-center gap-3">
+                <h3 className="text-sm font-bold text-slate-300">Materials Vault - {activeCourse?.course_name}</h3>
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent('open-ai-tutor'))}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-500 hover:to-indigo-500 transition shadow-sm"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
+                  AI Course Tutor (RAG)
+                </button>
+              </div>
               <div className="flex flex-wrap gap-1.5">
                 {[
                   { id: 'all', label: 'All Resources' },

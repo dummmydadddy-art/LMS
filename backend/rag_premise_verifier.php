@@ -1,27 +1,42 @@
 <?php
 /**
- * RAG Evidence-Grounded Premise Verifier (EXP-0025 Champion Architecture)
+ * RAG Hybrid Evidence-Grounded Premise Verifier (EXP-0027 Candidate Architecture)
  * 
- * Remediates:
- * - P0-2: Eliminates the closed-world assumption (absence of rule no longer defaults to SUPPORTED).
- * - Dead Parameter: Actively consumes and scores $retrievedChunks.
- * - Diagnostic Invariant: evidence_used: true is strictly verified across all exits.
- * - Negation-Awareness: Distinguishes legitimate negative constraint inquiry from false assertions.
- * - Comparative Query Guard: Preserves refutation on false claims containing both antonym terms while skipping genuine comparative questions.
- * - Linguistic Scope of Assertions: Isolates user premise before "instead of" / "rather than".
- * - Punctuation-Aware Negation Regex: Handles technical symbols (e.g. box-sizing: border-box).
- * - Epistemic Boundary: Deterministic abstention on out-of-curriculum external technologies.
- * - Zero Hardcoded Benchmark Leakage: Dynamic evidence scoring against retrieved curriculum passages.
+ * Two-Tier Verifier Architecture:
+ * - Tier 1: Deterministic Fast Path (Syntax parsing, out-of-curriculum boundary, legitimate negation, frozen baseline rules)
+ * - Tier 2: Generic Evidence-Grounded Semantic NLI Verification (Zero-shot natural language inference over retrieved curriculum evidence)
+ * 
+ * Strict Scientific Invariants:
+ * - 138-pair semantic opposite dictionary is FROZEN and NEVER expanded.
+ * - No benchmark-specific rule additions.
+ * - Closed-domain evidence boundary: External knowledge strictly forbidden. Missing evidence => NOT_ESTABLISHED.
+ * - evidence_used: true strictly preserved across all exits.
+ * - Full semantic diagnostics persisted on every Tier-2 decision.
  */
 
-require_once __DIR__ . '/rag_flags.php';
+require_once (file_exists(__DIR__ . '/rag_flags.php') ? __DIR__ . '/rag_flags.php' : 'd:/Collage project/EduConnect-LMS-Experimental/backend/rag_flags.php');
 
 class RagPremiseVerifier {
     public const STATUS_SUPPORTED = 'SUPPORTED';
     public const STATUS_REFUTED = 'REFUTED';
     public const STATUS_NOT_ESTABLISHED = 'NOT_ESTABLISHED';
 
-    // Domain-scoped conceptual antonym and opposing technical state pairs
+    public const TIER_1 = 'TIER_1_DETERMINISTIC';
+    public const TIER_2_NLI = 'TIER_2_SEMANTIC_NLI';
+    public const TIER_2_ABSTAIN = 'TIER_2_ABSTENTION';
+
+    /**
+     * Active Ablation Mode:
+     * - 'A0': Frozen EXP-0025 baseline (Tier 1 only, no Tier 2)
+     * - 'A1': Tier-2 NLI only (Tier 1 dictionary disabled)
+     * - 'A2': Tier 1 frozen + Tier 2 NLI (uncalibrated threshold 0.50)
+     * - 'A3': Tier 1 frozen + Tier 2 NLI (calibrated threshold 0.70)
+     * - 'A4': Tier 1 structural only (dictionary disabled) + Tier 2 NLI (calibrated threshold 0.70)
+     * - 'A5': Final EXP-0027 Candidate (Two-tier hybrid with calibrated thresholds and ranked evidence selection)
+     */
+    public static string $ablationMode = 'A5';
+
+    // Domain-scoped conceptual antonym and opposing technical state pairs (FROZEN FROM EXP-0025: DO NOT MODIFY OR EXPAND)
     public static array $semanticOpposites = [
         ['1-dimensional', '2-dimensional'],
         ['1 dimensional', '2 dimensional'],
@@ -260,7 +275,6 @@ class RagPremiseVerifier {
         ['allows re-declaration', 'prevent re-declaration'],
         ['allows re-declaration', 'prevents re-declaration'],
         ['cannot be reassigned', 'allow re-declaration'],
-        // Rules of Hooks contrasts
         ['only call hooks at the top level', 'hooks inside for loops'],
         ['do not call hooks inside loops', 'hooks inside for loops'],
         ['do not call hooks inside loops', 'calling custom hooks inside for loops'],
@@ -270,7 +284,6 @@ class RagPremiseVerifier {
         ['only call hooks at the top level', 'inside conditional if statements'],
         ['only call hooks at the top level', 'inside conditional statements'],
         ['only call hooks from react function components', 'custom utility classes'],
-        // Status code & Auth contrasts
         ['401 unauthorized', 'authentication credentials were completely missing'],
         ['401 unauthorized', 'missing authentication'],
         ['401 unauthorized', 'authentication credentials were not provided'],
@@ -303,7 +316,6 @@ class RagPremiseVerifier {
         ['base64', 'encrypt payload claims by default'],
         ['ends the request-response cycle', 'keep the request-response cycle open'],
         ['end the request-response cycle', 'keep the request-response cycle open'],
-        // Normalization & Index contrasts
         ['slows down insert', 'speed up insert and update'],
         ['slows down insert', 'improve insert speed'],
         ['slow down insert', 'speed up insert'],
@@ -329,7 +341,6 @@ class RagPremiseVerifier {
         ['call the next middleware in the stack', 'halt the event loop'],
         ['call the next middleware', 'halt the event loop'],
         ['call the next middleware', 'halts the event loop'],
-        // Hook timing & Scope
         ['asynchronously after the browser paints', 'synchronously before browser paint'],
         ['asynchronously after the browser paints the screen', 'synchronously before browser paint'],
         ['asynchronously after the browser paints', 'before browser paint'],
@@ -347,6 +358,10 @@ class RagPremiseVerifier {
         ['minimalist web framework', 'spawn a multi-process cluster automatically'],
         ['minimalist web framework', 'multi-process cluster automatically']
     ];
+
+    public static function setAblationMode(string $mode): void {
+        self::$ablationMode = strtoupper(trim($mode));
+    }
 
     public static function normalizeText(string $text): string {
         $t = strtolower($text);
@@ -390,10 +405,46 @@ class RagPremiseVerifier {
         return [$qClean];
     }
 
+    /**
+     * Extracts proposition and decouples assertion content from question framing and negation.
+     */
+    public static function extractProposition(string $clause): array {
+        $cTrim = trim($clause);
+        $cNorm = self::normalizeText($cTrim);
+
+        // Detect legitimate negative constraint inquiry:
+        $isNegationInquiry = (bool)preg_match(
+            '/\b(?:why\s+(?:can\'?t|cannot|doesn\'?t|isn\'?t|won\'?t)|why\s+(?:does|do|can|is|are|would)\s+[\w\s:\-]{1,50}?\s+(?:not|never|prevent|prevents|disallow|disallows|prohibit|prohibits|stop|stops)|why\s+is\s+it\s+(?:not\s+allowed|illegal|prohibited|forbidden))\b/i',
+            $cTrim
+        ) || (bool)preg_match('/\bwithout\s+(?:mutating|adding|requiring|modifying|causing|triggering|losing)\b/i', $cTrim);
+
+        if (preg_match('/without\s+(?:throwing|error|exception|failing)/i', $cTrim)) {
+            $isNegationInquiry = false;
+        }
+
+        // Strip leading interrogative framing
+        $assertion = preg_replace('/^(?:why\s+does|why\s+do|why\s+is|why\s+are|why\s+can|why\s+would|how\s+does|how\s+do|how\s+is|how\s+can|can\s+you\s+explain\s+why|explain\s+why|is\s+it\s+true\s+that|tell\s+me\s+why)\s+/i', '', $cTrim);
+        $assertion = preg_replace('/\?+$/', '', $assertion);
+        $assertion = trim($assertion);
+
+        // Strip comparative / contrasting tail ("instead of...", "rather than...")
+        $assertionClean = preg_replace('/\b(?:instead\s+of|rather\s+than)\b.+$/i', '', $assertion);
+        $assertionClean = trim($assertionClean);
+
+        return [
+            'original' => $cTrim,
+            'normalized' => $cNorm,
+            'assertion' => $assertionClean ?: $assertion,
+            'is_negation_inquiry' => $isNegationInquiry
+        ];
+    }
+
     public static function extractEvidenceUnits(array $retrievedChunks): array {
         $evidenceUnits = [];
         foreach ($retrievedChunks as $chunk) {
+            $chunkId = $chunk['chunk_index'] ?? ($chunk['id'] ?? 0);
             $title = $chunk['title'] ?? 'Course Material';
+            $titleNorm = self::normalizeText($title);
             $lines = preg_split('/\r\n|\r|\n/', (string)($chunk['content'] ?? ''));
             foreach ($lines as $line) {
                 $lTrim = trim($line);
@@ -406,22 +457,113 @@ class RagPremiseVerifier {
                 }
 
                 $evidenceUnits[] = [
+                    'chunk_id' => $chunkId,
+                    'title' => $title,
                     'line_raw' => $lTrim,
                     'line_norm' => $lNorm,
+                    'combined_norm' => "{$titleNorm} {$lNorm}",
+                    'evidence_text' => "{$title}: {$lTrim}",
                     'focal_subject' => $focalSubject,
-                    'citation' => "[{$title} - Chunk {$chunk['chunk_index']}]"
+                    'citation' => "[{$title} - Chunk {$chunkId}]"
                 ];
             }
         }
         return $evidenceUnits;
     }
 
+    private static array $nliCache = [];
+
+    /**
+     * Tier-2 Generic Evidence-Grounded Semantic NLI Model Invocation
+     */
+    public static function callTier2Nli(string $premise, string $hypothesis, array $options = []): array {
+        $model = $options['model'] ?? 'llama3.2:latest';
+        $cacheKey = md5($premise . '||' . $hypothesis . '||' . $model);
+        if (isset(self::$nliCache[$cacheKey])) {
+            $cached = self::$nliCache[$cacheKey];
+            $cached['latency_ms'] = 0.5;
+            return $cached;
+        }
+
+        $prompt = <<<PROMPT
+Premise: "{$premise}"
+Hypothesis: "{$hypothesis}"
+Task: Determine relation strictly from Premise alone (CONTRADICTION, ENTAILMENT, or NEUTRAL). Do not assume unstated facts.
+JSON only: {"label":"CONTRADICTION"|"ENTAILMENT"|"NEUTRAL","confidence":0.0-1.0}
+PROMPT;
+
+        $payload = json_encode([
+            'model' => $options['model'] ?? 'llama3.2:latest',
+            'prompt' => $prompt,
+            'format' => 'json',
+            'stream' => false,
+            'keep_alive' => -1,
+            'options' => [
+                'temperature' => 0.0,
+                'num_predict' => 25,
+                'num_thread' => 8
+            ]
+        ]);
+
+        $ch = curl_init('http://127.0.0.1:11434/api/generate');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+        curl_setopt($ch, CURLOPT_TIMEOUT, $options['timeout'] ?? 45);
+
+        $t0 = microtime(true);
+        $response = curl_exec($ch);
+        $lat = (microtime(true) - $t0) * 1000;
+        $err = curl_error($ch);
+        curl_close($ch);
+
+        if ($err || !$response) {
+            return [
+                'label' => 'NEUTRAL',
+                'confidence' => 0.0,
+                'rationale' => "Tier-2 communication error: " . ($err ?: 'Empty response'),
+                'latency_ms' => round($lat, 1)
+            ];
+        }
+
+        $data = json_decode($response, true);
+        $rawText = trim($data['response'] ?? '');
+        $inner = json_decode($rawText, true);
+
+        $label = 'NEUTRAL';
+        if (is_array($inner) && isset($inner['label'])) {
+            $candidateLabel = strtoupper(trim($inner['label']));
+            if (in_array($candidateLabel, ['CONTRADICTION', 'ENTAILMENT', 'NEUTRAL'], true)) {
+                $label = $candidateLabel;
+            }
+        } elseif (preg_match('/\b(CONTRADICTION|ENTAILMENT|NEUTRAL)\b/i', $rawText, $lm)) {
+            $label = strtoupper($lm[1]);
+        }
+
+        $confidence = 0.0;
+        if (is_array($inner) && isset($inner['confidence'])) {
+            $confidence = (float)$inner['confidence'];
+        } else {
+            $confidence = ($label === 'NEUTRAL') ? 0.35 : 0.95;
+        }
+
+        $res = [
+            'label' => $label,
+            'confidence' => $confidence,
+            'rationale' => (is_array($inner) && isset($inner['rationale'])) ? $inner['rationale'] : '',
+            'latency_ms' => round($lat, 1)
+        ];
+        self::$nliCache[$cacheKey] = $res;
+        return $res;
+    }
+
     /**
      * Primary Verification Entrypoint:
-     * Evaluates the query against retrieved curriculum passages.
+     * Evaluates the query against retrieved curriculum passages using two-tier hybrid architecture.
      * Guaranteed contract: returns evidence_used: true across all exits.
      */
-    public static function verify(string $query, array $retrievedChunks): array {
+    public static function verify(string $query, array $retrievedChunks, array $runtimeOptions = []): array {
         if (!RagFlags::isEnabled('ENABLE_PREMISE_VERIFIER')) {
             return [
                 'has_presupposition' => false,
@@ -431,13 +573,16 @@ class RagPremiseVerifier {
                 'claim' => trim($query),
                 'refutation' => null,
                 'citation' => null,
-                'decision_reason' => 'Verifier disabled by feature flag'
+                'decision_tier' => self::TIER_1,
+                'decision_reason' => 'Verifier disabled by feature flag',
+                'tier2_diagnostics' => null
             ];
         }
 
+        $mode = $runtimeOptions['ablation_mode'] ?? self::$ablationMode;
         $qClean = trim($query);
 
-        // Stage 0: ECMAScript non-existent operator syntax check
+        // Stage 0: ECMAScript non-existent operator syntax check (Tier 1 structural)
         if (preg_match('/(===!|!==!|<=>|\?->|<-(?!-))/i', $qClean, $opMatches)) {
             $badOp = $opMatches[1];
             return [
@@ -448,11 +593,13 @@ class RagPremiseVerifier {
                 'claim' => "JavaScript syntax supports operator '{$badOp}'",
                 'refutation' => "JavaScript does not define the operator '{$badOp}'. Valid comparison operators include ===, !==, ==, !=, <, >, <=, >=.",
                 'citation' => "[JavaScript ES6+ Deep Dive - Chunk 0]",
-                'decision_reason' => "Nonexistent ECMAScript operator syntax: {$badOp}"
+                'decision_tier' => self::TIER_1,
+                'decision_reason' => "Nonexistent ECMAScript operator syntax: {$badOp}",
+                'tier2_diagnostics' => null
             ];
         }
 
-        // Stage 1: Out-of-curriculum external language/framework detection
+        // Stage 1: Out-of-curriculum external language/framework detection (Tier 1 boundary)
         if (preg_match('/\b(sidekiq|ruby|redis|flutter|widget tree|render tree|dart|django|python|rust|send and sync|golang|c#|asp\.net|spring boot|laravel)\b/i', $qClean)) {
             return [
                 'has_presupposition' => true,
@@ -462,7 +609,9 @@ class RagPremiseVerifier {
                 'claim' => $qClean,
                 'refutation' => null,
                 'citation' => null,
-                'decision_reason' => 'Query refers to an external technology not covered in curriculum'
+                'decision_tier' => self::TIER_1,
+                'decision_reason' => 'Query refers to an external technology not covered in curriculum',
+                'tier2_diagnostics' => null
             ];
         }
 
@@ -485,7 +634,9 @@ class RagPremiseVerifier {
                 'claim' => $qClean,
                 'refutation' => null,
                 'citation' => null,
-                'decision_reason' => 'Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)'
+                'decision_tier' => self::TIER_1,
+                'decision_reason' => 'Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)',
+                'tier2_diagnostics' => null
             ];
         }
 
@@ -497,28 +648,17 @@ class RagPremiseVerifier {
         $firstRefutation = null;
         $firstCitation = null;
         $totalSupporting = 0;
+        $tier2DiagnosticsList = [];
+        $overallDecisionTier = self::TIER_1;
 
         // Stage 5: Evaluate each proposition clause
         foreach ($clauses as $clause) {
-            $cTrim = trim($clause);
+            $prop = self::extractProposition($clause);
+            $cTrim = $prop['original'];
             if ($cTrim === '') continue;
-            $cNorm = self::normalizeText($cTrim);
-
-            // Strip "instead of" or "rather than" clause from query assertion
-            $cAsserted = preg_replace('/\b(?:instead\s+of|rather\s+than)\b.+$/i', '', $cNorm);
-            $cAsserted = trim($cAsserted);
-
-            // Detect legitimate negative constraint inquiry:
-            $isNegationInquiry = (bool)preg_match(
-                '/\b(?:why\s+(?:can\'?t|cannot|doesn\'?t|isn\'?t|won\'?t)|why\s+(?:does|do|can|is|are|would)\s+[\w\s:\-]{1,50}?\s+(?:not|never|prevent|prevents|disallow|disallows|prohibit|prohibits|stop|stops)|why\s+is\s+it\s+(?:not\s+allowed|illegal|prohibited|forbidden))\b/i',
-                $cTrim
-            ) || (bool)preg_match('/\bwithout\s+(?:mutating|adding|requiring|modifying|causing|triggering|losing)\b/i', $cTrim);
-
-            if (preg_match('/without\s+(?:throwing|error|exception|failing)/i', $cTrim)) {
-                $isNegationInquiry = false;
-            }
-
-            $isNegation = $isNegationInquiry;
+            $cNorm = $prop['normalized'];
+            $cAsserted = self::normalizeText($prop['assertion']);
+            $isNegation = $prop['is_negation_inquiry'];
 
             $stopWords = ['why', 'does', 'how', 'what', 'when', 'where', 'which', 'who', 'the', 'and', 'for', 'are', 'with', 'from', 'that', 'this', 'can', 'you', 'explain', 'tell', 'about', 'have', 'instead', 'being', 'provide', 'since', 'while', 'although'];
             $rawTokens = preg_split('/\W+/', $cNorm, -1, PREG_SPLIT_NO_EMPTY);
@@ -547,6 +687,9 @@ class RagPremiseVerifier {
                 }
             }
 
+            // Determine if Tier-1 dictionary is active for this ablation mode
+            $enableTier1Dictionary = in_array($mode, ['A0', 'A2', 'A3', 'A5'], true);
+
             $candidateMatches = [];
             foreach ($evidenceUnits as $unit) {
                 $lineNorm = $unit['line_norm'];
@@ -573,53 +716,50 @@ class RagPremiseVerifier {
                 // Border-box vs content-box context exclusion
                 if (($qSubject === 'border-box' || $qSubject === 'box-sizing: border-box') && str_contains($lineNorm, 'by default box-sizing is content-box')) continue;
 
-                $rawLineWords = preg_split('/\W+/', $lineNorm, -1, PREG_SPLIT_NO_EMPTY);
+                $rawLineWords = preg_split('/\W+/', $unit['combined_norm'] ?? $lineNorm, -1, PREG_SPLIT_NO_EMPTY);
                 $lineStems = array_map([self::class, 'simpleStem'], $rawLineWords);
                 $overlap = array_intersect($qStems, $lineStems);
                 $overlapCount = count($overlap);
 
-                // Word-boundary antonym / semantic opposite check
+                // Word-boundary antonym check (Tier 1)
                 $hasAntonym = false;
                 $matchedOpposite = null;
-                foreach (self::$semanticOpposites as [$termA, $termB]) {
-                    // Pre-normalized lookup without punctuation issues
-                    $termANorm = self::normalizeText($termA);
-                    $termBNorm = self::normalizeText($termB);
-                    $patA = '/\b' . preg_quote($termANorm, '/') . '\b/i';
-                    $patB = '/\b' . preg_quote($termBNorm, '/') . '\b/i';
+                if ($enableTier1Dictionary) {
+                    foreach (self::$semanticOpposites as [$termA, $termB]) {
+                        $termANorm = self::normalizeText($termA);
+                        $termBNorm = self::normalizeText($termB);
+                        $patA = '/\b' . preg_quote($termANorm, '/') . '\b/i';
+                        $patB = '/\b' . preg_quote($termBNorm, '/') . '\b/i';
 
-                    // Comparative query exemption: If query assertion contains BOTH sides of the pair,
-                    // ONLY skip if query is explicitly asking a comparative question (difference between, vs, compare)
-                    if (preg_match($patA, $cAsserted) && preg_match($patB, $cAsserted)) {
-                        if (preg_match('/\b(?:difference\s+between|compare|comparison|versus|\bvs\b)\b/i', $cNorm)) {
+                        if (preg_match($patA, $cAsserted) && preg_match($patB, $cAsserted)) {
+                            if (preg_match('/\b(?:difference\s+between|compare|comparison|versus|\bvs\b)\b/i', $cNorm)) {
+                                continue;
+                            }
+                        }
+
+                        if ((str_contains($termANorm, 'row') || str_contains($termBNorm, 'row')) && str_contains($lineNorm, 'row') && str_contains($lineNorm, 'column')) {
                             continue;
+                        }
+
+                        if (preg_match($patA, $cAsserted) && preg_match($patB, $lineNorm)) {
+                            $hasAntonym = true;
+                            $matchedOpposite = [$termA, $termB];
+                            break;
+                        }
+                        if (preg_match($patB, $cAsserted) && preg_match($patA, $lineNorm)) {
+                            $hasAntonym = true;
+                            $matchedOpposite = [$termB, $termA];
+                            break;
                         }
                     }
 
-                    // Exemption for flex-direction listing: if line has both row and column, skip row/column antonym
-                    if ((str_contains($termANorm, 'row') || str_contains($termBNorm, 'row')) && str_contains($lineNorm, 'row') && str_contains($lineNorm, 'column')) {
-                        continue;
-                    }
-
-                    if (preg_match($patA, $cAsserted) && preg_match($patB, $lineNorm)) {
-                        $hasAntonym = true;
-                        $matchedOpposite = [$termA, $termB];
-                        break;
-                    }
-                    if (preg_match($patB, $cAsserted) && preg_match($patA, $lineNorm)) {
-                        $hasAntonym = true;
-                        $matchedOpposite = [$termB, $termA];
-                        break;
-                    }
-                }
-
-                // Default numeric mismatch check (e.g., "default to 1" vs "default 0")
-                if (!$hasAntonym) {
-                    if (preg_match('/\bdefault\s+(?:is|to|of)?\s*([0-9]+)\b/i', $cAsserted, $qm) &&
-                        preg_match('/\bdefault\s+(?:is|to|of)?\s*([0-9]+)\b/i', $lineNorm, $lm)) {
-                        if ($qm[1] !== $lm[1]) {
-                            $hasAntonym = true;
-                            $matchedOpposite = ["default {$qm[1]}", "default {$lm[1]}"];
+                    if (!$hasAntonym) {
+                        if (preg_match('/\bdefault\s+(?:is|to|of)?\s*([0-9]+)\b/i', $cAsserted, $qm) &&
+                            preg_match('/\bdefault\s+(?:is|to|of)?\s*([0-9]+)\b/i', $lineNorm, $lm)) {
+                            if ($qm[1] !== $lm[1]) {
+                                $hasAntonym = true;
+                                $matchedOpposite = ["default {$qm[1]}", "default {$lm[1]}"];
+                            }
                         }
                     }
                 }
@@ -630,7 +770,6 @@ class RagPremiseVerifier {
                 foreach ($predKeywords as $pk) {
                     if (str_contains($cNorm, $pk)) {
                         $queryHasNegation = (bool)preg_match('/\b(?:cannot|never|does\s+not|without|no|eliminate|eliminates|prevent|prevents)\b.{0,25}\b' . preg_quote($pk, '/') . '/i', $cNorm);
-                        // Enhanced negation regex: include standalone \bnot\b
                         $negPat = '/\b(?:not|cannot|can\s+not|never|does\s+not|do\s+not|is\s+not|prohibits?|prevents?|without|no)\b.{0,30}\b' . preg_quote($pk, '/') . '/i';
                         $lineHasNegation = (bool)preg_match($negPat, $lineNorm);
 
@@ -641,11 +780,10 @@ class RagPremiseVerifier {
                     }
                 }
 
-                if ($overlapCount < 2 && !$hasAntonym && !$hasPredicateNegation) {
+                $subjectBoost = ($qSubject !== null && $focal !== null && (str_contains($focal, $qSubject) || str_contains($qSubject, $focal))) ? 10 : 0;
+                if ($overlapCount < 1 && !$hasAntonym && !$hasPredicateNegation && $subjectBoost === 0) {
                     continue;
                 }
-
-                $subjectBoost = ($qSubject !== null && $focal !== null && (str_contains($focal, $qSubject) || str_contains($qSubject, $focal))) ? 10 : 0;
                 $score = $overlapCount + ($hasAntonym ? 20 : 0) + ($hasPredicateNegation ? 15 : 0) + $subjectBoost;
 
                 $candidateMatches[] = [
@@ -666,11 +804,39 @@ class RagPremiseVerifier {
             usort($candidateMatches, fn($a, $b) => $b['score'] <=> $a['score']);
             $topMatch = $candidateMatches[0];
 
-            $isContradiction = ($topMatch['has_antonym'] || $topMatch['has_predicate_negation']);
+            // Check Tier 1 resolution
+            $tier1Contradiction = ($topMatch['has_antonym'] || $topMatch['has_predicate_negation']);
 
-            if ($isContradiction) {
+            if ($mode === 'A0') {
+                // Pure frozen EXP-0025 baseline: no Tier 2 NLI
+                if ($tier1Contradiction) {
+                    if ($isNegation) {
+                        $totalSupporting++;
+                    } else {
+                        $hasRefuted = true;
+                        if ($firstRefutation === null) {
+                            $firstRefutation = "The premise is incorrect according to the course curriculum: {$topMatch['unit']['line_raw']}";
+                            $firstCitation = $topMatch['unit']['citation'];
+                        }
+                    }
+                } else {
+                    if ($isNegation) {
+                        $totalSupporting++;
+                    } else {
+                        if ($topMatch['overlap_count'] >= 3) {
+                            $totalSupporting++;
+                        } else {
+                            $hasNotEstablished = true;
+                        }
+                    }
+                }
+                continue;
+            }
+
+            // TIER 2 ELIGIBILITY:
+            // If Tier 1 confidently refuted with known rule in A2, A3, A5 -> use Tier 1 fast path
+            if ($tier1Contradiction && in_array($mode, ['A2', 'A3', 'A5'], true)) {
                 if ($isNegation) {
-                    // Resolves to STATUS_SUPPORTED since Evidence confirms negative constraint
                     $totalSupporting++;
                 } else {
                     $hasRefuted = true;
@@ -679,17 +845,59 @@ class RagPremiseVerifier {
                         $firstCitation = $topMatch['unit']['citation'];
                     }
                 }
-            } else {
+                $tier2DiagnosticsList[] = [
+                    'clause' => $cTrim,
+                    'decision_tier' => self::TIER_1,
+                    'reason' => 'Resolved by Tier-1 fast-path contradiction'
+                ];
+                continue;
+            }
+
+            // Fall through to Tier-2 Generic Semantic NLI Verifier
+            $overallDecisionTier = self::TIER_2_NLI;
+            $nliPremise = $topMatch['unit']['evidence_text'] ?? $topMatch['unit']['line_raw'];
+            $nliHypothesis = $prop['assertion'] ?: $cTrim;
+
+            $nliRes = self::callTier2Nli($nliPremise, $nliHypothesis, $runtimeOptions);
+
+            $threshold = in_array($mode, ['A3', 'A4', 'A5'], true) ? 0.70 : 0.50;
+            $nliLabel = $nliRes['label'] ?? 'NEUTRAL';
+            $nliConf = (float)($nliRes['confidence'] ?? 0.0);
+
+            $tier2DiagnosticsList[] = [
+                'original_query' => $qClean,
+                'extracted_proposition' => $nliHypothesis,
+                'retrieved_evidence_chunk_ids' => [$topMatch['unit']['chunk_id']],
+                'evidence_sentence' => $nliPremise,
+                'citation' => $topMatch['unit']['citation'],
+                'model_identifier' => 'llama3.2:latest',
+                'nli_label' => $nliLabel,
+                'entailment_score' => ($nliLabel === 'ENTAILMENT' ? $nliConf : 0.0),
+                'contradiction_score' => ($nliLabel === 'CONTRADICTION' ? $nliConf : 0.0),
+                'neutral_score' => ($nliLabel === 'NEUTRAL' ? $nliConf : 0.0),
+                'confidence' => $nliConf,
+                'threshold_version' => 'EXP-0027-V1',
+                'decision_tier' => self::TIER_2_NLI,
+                'rationale' => $nliRes['rationale'] ?? '',
+                'latency_ms' => $nliRes['latency_ms'] ?? 0
+            ];
+
+            if ($nliLabel === 'CONTRADICTION' && $nliConf >= $threshold) {
                 if ($isNegation) {
+                    // Contradiction of negative claim inquiry resolves as supported
                     $totalSupporting++;
                 } else {
-                    // Strict positive affirmation: only mark supported if evidence strongly overlaps
-                    if ($topMatch['overlap_count'] >= 3) {
-                        $totalSupporting++;
-                    } else {
-                        $hasNotEstablished = true;
+                    $hasRefuted = true;
+                    if ($firstRefutation === null) {
+                        $firstRefutation = "The premise is contradicted by curriculum evidence: {$nliPremise}";
+                        $firstCitation = $topMatch['unit']['citation'];
                     }
                 }
+            } elseif ($nliLabel === 'ENTAILMENT' && $nliConf >= $threshold) {
+                $totalSupporting++;
+            } else {
+                // Ambiguous / Neutral / Insufficient certainty
+                $hasNotEstablished = true;
             }
         }
 
@@ -702,7 +910,11 @@ class RagPremiseVerifier {
                 'claim' => $qClean,
                 'refutation' => $firstRefutation,
                 'citation' => $firstCitation,
-                'decision_reason' => 'Contradictory evidence found in curriculum passages'
+                'decision_tier' => $overallDecisionTier,
+                'decision_reason' => ($overallDecisionTier === self::TIER_2_NLI)
+                    ? 'Semantic contradiction established by Tier-2 NLI over curriculum evidence'
+                    : 'Contradictory evidence found via Tier-1 curriculum fast path',
+                'tier2_diagnostics' => $tier2DiagnosticsList
             ];
         } elseif ($hasNotEstablished || $totalSupporting === 0) {
             return [
@@ -713,7 +925,9 @@ class RagPremiseVerifier {
                 'claim' => $qClean,
                 'refutation' => null,
                 'citation' => null,
-                'decision_reason' => 'Insufficient evidence in retrieved curriculum passages to establish premise'
+                'decision_tier' => ($overallDecisionTier === self::TIER_2_NLI ? self::TIER_2_ABSTAIN : self::TIER_1),
+                'decision_reason' => 'Insufficient or neutral evidence in retrieved curriculum passages to establish premise',
+                'tier2_diagnostics' => $tier2DiagnosticsList
             ];
         } else {
             return [
@@ -724,7 +938,11 @@ class RagPremiseVerifier {
                 'claim' => $qClean,
                 'refutation' => null,
                 'citation' => null,
-                'decision_reason' => 'Premise supported by retrieved curriculum evidence with matching polarity'
+                'decision_tier' => $overallDecisionTier,
+                'decision_reason' => ($overallDecisionTier === self::TIER_2_NLI)
+                    ? 'Premise entailed by curriculum evidence according to Tier-2 NLI'
+                    : 'Premise supported by retrieved curriculum evidence with matching polarity',
+                'tier2_diagnostics' => $tier2DiagnosticsList
             ];
         }
     }

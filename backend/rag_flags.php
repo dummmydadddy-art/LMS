@@ -70,9 +70,30 @@ class RagFlags {
 
         // P0 Security Lockdown (EXP-0024):
         // External clients cannot arbitrarily mutate flags.
-        // Must possess authoritative service key.
-        $serviceKey = $_SERVER['HTTP_X_SERVICE_KEY'] ?? $_SERVER['X_SERVICE_KEY'] ?? null;
-        $isAuthorizedAdmin = ($serviceKey === 'lms-n8n-service-key-2026');
+        // Must possess authoritative service key AND request must come via gateway.
+        $configuredServiceKey = getenv('LMS_SERVICE_API_KEY') ?: '';
+        $configuredGatewayTrust = getenv('LMS_GATEWAY_TRUST_TOKEN') ?: '';
+
+        $headers = function_exists('getallheaders') ? getallheaders() : [];
+        $serviceKey = null;
+        $gatewayTrust = null;
+        foreach ($headers as $k => $v) {
+            $lower = strtolower($k);
+            if ($lower === 'x-service-key') $serviceKey = $v;
+            if ($lower === 'x-gateway-trust') $gatewayTrust = $v;
+        }
+        if (!$serviceKey) $serviceKey = $_SERVER['HTTP_X_SERVICE_KEY'] ?? $_SERVER['X_SERVICE_KEY'] ?? null;
+        if (!$gatewayTrust) $gatewayTrust = $_SERVER['HTTP_X_GATEWAY_TRUST'] ?? null;
+
+        // Require both valid service key AND gateway trust (prevents direct worker bypass)
+        $isAuthorizedAdmin = (
+            !empty($configuredServiceKey) &&
+            !empty($serviceKey) &&
+            hash_equals($configuredServiceKey, $serviceKey) &&
+            !empty($configuredGatewayTrust) &&
+            !empty($gatewayTrust) &&
+            hash_equals($configuredGatewayTrust, $gatewayTrust)
+        );
 
         if (!$isAuthorizedAdmin) {
             self::logSecurityEvent('UNAUTHORIZED_FLAG_MUTATION_ATTEMPT', [
