@@ -1,0 +1,71 @@
+{
+    "experiment": "EXP-0027",
+    "timestamp": "2026-09-15T10:59:51+00:00",
+    "commit": "dea0027104b6fa138d88e039aa5463fdf7422cdb",
+    "branch": "exp-0027",
+    "repository": "d:/Collage project/EduConnect-LMS-Experimental",
+    "verifier_file": "backend/rag_premise_verifier.php",
+    "verifier_lines": 950,
+    "model": {
+        "name": "llama3.2:latest",
+        "backend": "ollama",
+        "endpoint": "http://127.0.0.1:11434/api/generate",
+        "temperature": 0,
+        "num_predict": 25,
+        "num_thread": 8,
+        "format": "json",
+        "keep_alive": -1,
+        "prompt": "Premise: \"{premise}\"\nHypothesis: \"{hypothesis}\"\nTask: Determine relation strictly from Premise alone (CONTRADICTION, ENTAILMENT, or NEUTRAL). Do not assume unstated facts.\nJSON only: {\"label\":\"CONTRADICTION\"|\"ENTAILMENT\"|\"NEUTRAL\",\"confidence\":0.0-1.0}"
+    },
+    "modes": {
+        "A0": "Tier-1 only (frozen EXP-0025 baseline, 138-pair dictionary ON, Tier-2 OFF)",
+        "A1": "Tier-2 only (138-pair dictionary OFF, threshold 0.50)",
+        "A4": "Structural + Tier-2 (138-pair dictionary OFF, threshold 0.70)",
+        "A5": "Full Two-Tier Hybrid (138-pair dictionary ON, Tier-2 ON, threshold 0.70, candidate)"
+    },
+    "cache_protocol": {
+        "type": "In-memory PHP per-process array cache keyed by md5(premise || hypothesis || model)",
+        "evaluation_isolation": "Explicit ReflectionProperty cache reset before each ablation mode run",
+        "cold_first_call_tracked": true,
+        "uncached_latency_threshold_ms": 1
+    },
+    "datasets": [
+        {
+            "name": "BLIND",
+            "file": "EXP-0027-BLIND-DATASET.json",
+            "cases": 1000,
+            "sha256": "599B018097EAF56E817302B1BA6DCEE0A91CF773FD7E89898BB9FFCDAA87A9DB"
+        },
+        {
+            "name": "CROSS-DOMAIN",
+            "file": "EXP-0027-CROSS-DOMAIN-DATASET.json",
+            "cases": 200,
+            "sha256": "55DDFC52D1FA557CBF4E42D3788938E7151BFEC1214B4D3142511228C1437238"
+        },
+        {
+            "name": "LEAVEOUT",
+            "file": "EXP-0027-LEAVEOUT-DATASET.json",
+            "cases": 300,
+            "sha256": "7CEDCEFCA1FA7F95B4954A93EEB428B2DA2D93C24EA374CD4DE6151120C0F54A"
+        },
+        {
+            "name": "POLARITY",
+            "file": "EXP-0027-POLARITY-DATASET.json",
+            "cases": 200,
+            "sha256": "0FBE22E07FC372B6DEBB1B0C5F12AC5917A996C85D47E2247C749C63004E7B7A"
+        },
+        {
+            "name": "PARAPHRASE",
+            "file": "EXP-0027-PARAPHRASE-DATASET.json",
+            "cases": 300,
+            "sha256": "8BEE0785E60E40340961EE88F499DA519776539E77701D36F442F4AAA9E59F63"
+        },
+        {
+            "name": "OOD",
+            "file": "EXP-0027-OOD-DATASET.json",
+            "cases": 200,
+            "sha256": "9DA525333226F652EDA737E65FA9D11A6E68727536F77646F9BFAE65FADECD48"
+        }
+    ],
+    "total_evaluation_runs": 8800
+}
