@@ -1,0 +1,4202 @@
+[
+    {
+        "id": "EXP28-CONTRA-001",
+        "module": "HTML_CSS",
+        "query": "Does the semantic <nav> element represent the main unique text of the document rather than site links?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-002",
+        "module": "HTML_CSS",
+        "query": "Why does the <header> element house the copyright notices and author credentials instead of navigation?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-003",
+        "module": "HTML_CSS",
+        "query": "Does the <footer> tag represent an independently syndicateable blog entry or forum post?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-004",
+        "module": "HTML_CSS",
+        "query": "Does the <article> element define introductory navigation menus across the website?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-005",
+        "module": "HTML_CSS",
+        "query": "Why does the <section> tag represent only site links and skip thematic grouping?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-006",
+        "module": "HTML_CSS",
+        "query": "Does HTML5 permit putting five <main> tags in a single page to separate minor paragraphs?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-007",
+        "module": "HTML_CSS",
+        "query": "Why does the CSS flex-wrap property restrict items to stay on a single line permanently?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-008",
+        "module": "HTML_CSS",
+        "query": "Does display: flex cause child elements to disregard all flex-basis dimensions?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-009",
+        "module": "HTML_CSS",
+        "query": "Why does flex-grow: 0 instruct an item to expand and consume all available empty room?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-010",
+        "module": "HTML_CSS",
+        "query": "Does flex-shrink: 0 require a child to shrink to zero pixels upon narrow viewport widths?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-011",
+        "module": "HTML_CSS",
+        "query": "Does the CSS gap property insert margins along the exterior boundary of the container?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-012",
+        "module": "HTML_CSS",
+        "query": "Why does grid-column: span 2 delete the two neighboring column tracks?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-013",
+        "module": "HTML_CSS",
+        "query": "Does repeat(auto-fit, minmax(280px, 1fr)) mandate explicit pixel widths for all viewports?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-014",
+        "module": "HTML_CSS",
+        "query": "Does the margin layer sit between the content and the padding inside the element border?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-015",
+        "module": "HTML_CSS",
+        "query": "Does the padding area surround the outside of the border to space neighboring containers?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-016",
+        "module": "HTML_CSS",
+        "query": "Why does semantic markup confuse assistive screen reading tools during landmark parsing?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-017",
+        "module": "HTML_CSS",
+        "query": "Does the <main> element structure concluding footer notes and licensing declarations?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-018",
+        "module": "HTML_CSS",
+        "query": "Does flex-basis define the maximum allowable expansion size after extra room is assigned?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-019",
+        "module": "JAVASCRIPT",
+        "query": "Does an arrow function establish its own dynamic binding for the this identifier?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-020",
+        "module": "JAVASCRIPT",
+        "query": "Does invoking an arrow function with the new keyword construct a valid prototype instance?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-021",
+        "module": "JAVASCRIPT",
+        "query": "Does a variable declared with const allow assigning an entirely different string later?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-022",
+        "module": "JAVASCRIPT",
+        "query": "Why does accessing an identifier in the temporal dead zone evaluate cleanly to undefined?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-023",
+        "module": "JAVASCRIPT",
+        "query": "Does the spread syntax convert an object into an executable function statement?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-024",
+        "module": "JAVASCRIPT",
+        "query": "Does object destructuring forbid assigning default fallback values to missing properties?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-025",
+        "module": "JAVASCRIPT",
+        "query": "Does array destructuring require every single member of the array to be bound to a distinct name?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-026",
+        "module": "JAVASCRIPT",
+        "query": "Does Promise.all proceed to fulfill successfully even when one of the promises rejects?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-027",
+        "module": "JAVASCRIPT",
+        "query": "Does the await keyword pause the entire Node.js event loop across all connected clients?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-028",
+        "module": "JAVASCRIPT",
+        "query": "Does the spread operator copy nested objects down through all reference levels?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-029",
+        "module": "JAVASCRIPT",
+        "query": "Does accessing an undeclared identifier in a scope create a global property?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-030",
+        "module": "JAVASCRIPT",
+        "query": "Why does a fulfilled Promise transition to a rejected state upon calling resolve twice?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-031",
+        "module": "JAVASCRIPT",
+        "query": "Does the V8 engine process file system inputs directly without communicating with Libuv?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-032",
+        "module": "JAVASCRIPT",
+        "query": "Does array destructuring swap the order of elements when assigning to bracketed variables?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-033",
+        "module": "JAVASCRIPT",
+        "query": "Does the spread operator merge two objects by discarding properties with matching keys?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-034",
+        "module": "JAVASCRIPT",
+        "query": "Does invoking resolve in a new Promise reject the promise if no string is provided?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-035",
+        "module": "REACT",
+        "query": "Does calling useState within if blocks adhere to the standard Rules of Hooks?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-036",
+        "module": "REACT",
+        "query": "Can React hooks be invoked from standard plain utility helper functions outside of components?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-037",
+        "module": "REACT",
+        "query": "Does calling hooks inside a standard for loop preserve hook call order across renders?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-038",
+        "module": "REACT",
+        "query": "Does modifying the .current attribute of a ref trigger an immediate component update cycle?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-039",
+        "module": "REACT",
+        "query": "Does an empty dependency array cause useEffect to execute on every single state update?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-040",
+        "module": "REACT",
+        "query": "Does useEffect with dependencies execute prior to DOM mounting on the screen?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-041",
+        "module": "REACT",
+        "query": "Does useCallback return the executed return value of the wrapped callback function?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-042",
+        "module": "REACT",
+        "query": "Does the useContext consumer necessitate passing props through every intermediary parent?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-043",
+        "module": "REACT",
+        "query": "Does useState return a single scalar reference instead of a paired value and dispatcher?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-044",
+        "module": "REACT",
+        "query": "Does useRef store values in localStorage to preserve data across separate browser sessions?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-045",
+        "module": "REACT",
+        "query": "Does React 18 execute state dispatchers one by one without grouping updates together?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-046",
+        "module": "REACT",
+        "query": "Does useMemo persist its calculated values across separate browser tabs via IndexedDB?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-047",
+        "module": "REACT",
+        "query": "Does the useContext Provider share data with elements positioned above it in the tree?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-048",
+        "module": "REACT",
+        "query": "Does calling a state dispatcher with an identical object reference force a component update?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-049",
+        "module": "REACT",
+        "query": "Does the ref object discard its .current value whenever a child component updates?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-050",
+        "module": "NODEJS",
+        "query": "Does Libuv execute user JavaScript scripts concurrently across sixteen worker threads?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-051",
+        "module": "NODEJS",
+        "query": "Does the Node.js event loop execute all timers ahead of any main script instructions?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-052",
+        "module": "NODEJS",
+        "query": "Does the Express app.listen call trigger all registered HTTP route handlers upon server startup?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-053",
+        "module": "NODEJS",
+        "query": "Does a middleware function that omits next() forward the request automatically to the route?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-054",
+        "module": "NODEJS",
+        "query": "Does the npm configuration manifest embed the compiled binary executables of every installed module?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-055",
+        "module": "NODEJS",
+        "query": "Does the HTTP GET method delete stored entries from the database?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-056",
+        "module": "NODEJS",
+        "query": "Does the HTTP POST method retrieve existing records without creating new entities?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-057",
+        "module": "NODEJS",
+        "query": "Does the HTTP PUT method apply small individual attribute patches to an existing entity?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-058",
+        "module": "NODEJS",
+        "query": "Does the HTTP PATCH method replace the entire resource entity with blank defaults?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-059",
+        "module": "NODEJS",
+        "query": "Does the HTTP 404 status code indicate that the server experienced an unexpected internal crash?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-060",
+        "module": "NODEJS",
+        "query": "Does the HTTP 201 status code signify that an endpoint was missing from the server?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-061",
+        "module": "NODEJS",
+        "query": "Does the HTTP 401 status code indicate that an authenticated user lacks teacher permissions?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-062",
+        "module": "NODEJS",
+        "query": "Does the HTTP 500 status code indicate that the client submitted an invalid input field?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-063",
+        "module": "NODEJS",
+        "query": "Does standard REST architecture require client applications to directly execute raw SQL queries over HTTP?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-064",
+        "module": "NODEJS",
+        "query": "Does the end user application directly decode the secret cryptographic key of a bearer token?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-065",
+        "module": "DATABASE",
+        "query": "Does a relational primary key permit null entries across rows in a table?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-066",
+        "module": "DATABASE",
+        "query": "Does a foreign key constraint allow child records to reference non-existent parent identifiers?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-067",
+        "module": "DATABASE",
+        "query": "Does a Many-to-Many relationship store all paired IDs in a single scalar column?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-068",
+        "module": "DATABASE",
+        "query": "Does First Normal Form encourage storing comma-separated lists of values inside a single column?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-069",
+        "module": "DATABASE",
+        "query": "Does Second Normal Form permit non-key attributes to depend on only a piece of a composite key?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-070",
+        "module": "DATABASE",
+        "query": "Does a unique constraint permit entering unlimited identical values in a column?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-071",
+        "module": "DATABASE",
+        "query": "Why is dropping database constraints recommended to improve relational consistency?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-072",
+        "module": "DATABASE",
+        "query": "Does Write-Ahead Logging write committed transactions to disk only after the server reboots?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-073",
+        "module": "DATABASE",
+        "query": "Does database normalization introduce duplicated column groups across tables?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-074",
+        "module": "DATABASE",
+        "query": "Does creating indexes on a table accelerate the throughput of rapid INSERT operations?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-075",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if the semantic <nav> element represent the main unique text of the document rather than site links?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-076",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if the <header> element house the copyright notices and author credentials instead of navigation?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-077",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if the <footer> tag represent an independently syndicateable blog entry or forum post?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-078",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if the <article> element define introductory navigation menus across the website?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-079",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if the <section> tag represent only site links and skip thematic grouping?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-080",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if hTML5 permit putting five <main> tags in a single page to separate minor paragraphs?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-081",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if the CSS flex-wrap property restrict items to stay on a single line permanently?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-082",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if display: flex cause child elements to disregard all flex-basis dimensions?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-083",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if flex-grow: 0 instruct an item to expand and consume all available empty room?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-084",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if flex-shrink: 0 require a child to shrink to zero pixels upon narrow viewport widths?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-085",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if the CSS gap property insert margins along the exterior boundary of the container?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-086",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if grid-column: span 2 delete the two neighboring column tracks?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-087",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if repeat(auto-fit, minmax(280px, 1fr)) mandate explicit pixel widths for all viewports?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-088",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if the margin layer sit between the content and the padding inside the element border?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-089",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if the padding area surround the outside of the border to space neighboring containers?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-090",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if semantic markup confuse assistive screen reading tools during landmark parsing?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-091",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if the <main> element structure concluding footer notes and licensing declarations?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-092",
+        "module": "HTML_CSS",
+        "query": "Can you clarify if flex-basis define the maximum allowable expansion size after extra room is assigned?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-093",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if an arrow function establish its own dynamic binding for the this identifier?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-094",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if invoking an arrow function with the new keyword construct a valid prototype instance?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-095",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if a variable declared with const allow assigning an entirely different string later?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-096",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if accessing an identifier in the temporal dead zone evaluate cleanly to undefined?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-097",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if the spread syntax convert an object into an executable function statement?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-098",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if object destructuring forbid assigning default fallback values to missing properties?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-099",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if array destructuring require every single member of the array to be bound to a distinct name?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-100",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if promise.all proceed to fulfill successfully even when one of the promises rejects?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-101",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if the await keyword pause the entire Node.js event loop across all connected clients?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-102",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if the spread operator copy nested objects down through all reference levels?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-103",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if accessing an undeclared identifier in a scope create a global property?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-104",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if a fulfilled Promise transition to a rejected state upon calling resolve twice?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-105",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if the V8 engine process file system inputs directly without communicating with Libuv?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-106",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if array destructuring swap the order of elements when assigning to bracketed variables?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-107",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if the spread operator merge two objects by discarding properties with matching keys?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-108",
+        "module": "JAVASCRIPT",
+        "query": "Can you clarify if invoking resolve in a new Promise reject the promise if no string is provided?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-109",
+        "module": "REACT",
+        "query": "Can you clarify if calling useState within if blocks adhere to the standard Rules of Hooks?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-110",
+        "module": "REACT",
+        "query": "Can you clarify if react hooks be invoked from standard plain utility helper functions outside of components?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-111",
+        "module": "REACT",
+        "query": "Can you clarify if calling hooks inside a standard for loop preserve hook call order across renders?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-112",
+        "module": "REACT",
+        "query": "Can you clarify if modifying the .current attribute of a ref trigger an immediate component update cycle?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-113",
+        "module": "REACT",
+        "query": "Can you clarify if an empty dependency array cause useEffect to execute on every single state update?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-114",
+        "module": "REACT",
+        "query": "Can you clarify if useEffect with dependencies execute prior to DOM mounting on the screen?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-115",
+        "module": "REACT",
+        "query": "Can you clarify if useCallback return the executed return value of the wrapped callback function?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-116",
+        "module": "REACT",
+        "query": "Can you clarify if the useContext consumer necessitate passing props through every intermediary parent?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-117",
+        "module": "REACT",
+        "query": "Can you clarify if useState return a single scalar reference instead of a paired value and dispatcher?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-118",
+        "module": "REACT",
+        "query": "Can you clarify if useRef store values in localStorage to preserve data across separate browser sessions?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-119",
+        "module": "REACT",
+        "query": "Can you clarify if react 18 execute state dispatchers one by one without grouping updates together?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-120",
+        "module": "REACT",
+        "query": "Can you clarify if useMemo persist its calculated values across separate browser tabs via IndexedDB?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-121",
+        "module": "REACT",
+        "query": "Can you clarify if the useContext Provider share data with elements positioned above it in the tree?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-122",
+        "module": "REACT",
+        "query": "Can you clarify if calling a state dispatcher with an identical object reference force a component update?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-123",
+        "module": "REACT",
+        "query": "Can you clarify if the ref object discard its .current value whenever a child component updates?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-124",
+        "module": "NODEJS",
+        "query": "Can you clarify if libuv execute user JavaScript scripts concurrently across sixteen worker threads?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-125",
+        "module": "NODEJS",
+        "query": "Can you clarify if the Node.js event loop execute all timers ahead of any main script instructions?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-126",
+        "module": "NODEJS",
+        "query": "Can you clarify if the Express app.listen call trigger all registered HTTP route handlers upon server startup?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-127",
+        "module": "NODEJS",
+        "query": "Can you clarify if a middleware function that omits next() forward the request automatically to the route?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-128",
+        "module": "NODEJS",
+        "query": "Can you clarify if the npm configuration manifest embed the compiled binary executables of every installed module?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-129",
+        "module": "NODEJS",
+        "query": "Can you clarify if the HTTP GET method delete stored entries from the database?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-130",
+        "module": "NODEJS",
+        "query": "Can you clarify if the HTTP POST method retrieve existing records without creating new entities?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-131",
+        "module": "NODEJS",
+        "query": "Can you clarify if the HTTP PUT method apply small individual attribute patches to an existing entity?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-132",
+        "module": "NODEJS",
+        "query": "Can you clarify if the HTTP PATCH method replace the entire resource entity with blank defaults?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-133",
+        "module": "NODEJS",
+        "query": "Can you clarify if the HTTP 404 status code indicate that the server experienced an unexpected internal crash?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-134",
+        "module": "NODEJS",
+        "query": "Can you clarify if the HTTP 201 status code signify that an endpoint was missing from the server?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-135",
+        "module": "NODEJS",
+        "query": "Can you clarify if the HTTP 401 status code indicate that an authenticated user lacks teacher permissions?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-136",
+        "module": "NODEJS",
+        "query": "Can you clarify if the HTTP 500 status code indicate that the client submitted an invalid input field?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-137",
+        "module": "NODEJS",
+        "query": "Can you clarify if standard REST architecture require client applications to directly execute raw SQL queries over HTTP?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-138",
+        "module": "NODEJS",
+        "query": "Can you clarify if the end user application directly decode the secret cryptographic key of a bearer token?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-139",
+        "module": "DATABASE",
+        "query": "Can you clarify if a relational primary key permit null entries across rows in a table?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-140",
+        "module": "DATABASE",
+        "query": "Can you clarify if a foreign key constraint allow child records to reference non-existent parent identifiers?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-141",
+        "module": "DATABASE",
+        "query": "Can you clarify if a Many-to-Many relationship store all paired IDs in a single scalar column?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-142",
+        "module": "DATABASE",
+        "query": "Can you clarify if first Normal Form encourage storing comma-separated lists of values inside a single column?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-143",
+        "module": "DATABASE",
+        "query": "Can you clarify if second Normal Form permit non-key attributes to depend on only a piece of a composite key?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-144",
+        "module": "DATABASE",
+        "query": "Can you clarify if a unique constraint permit entering unlimited identical values in a column?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-145",
+        "module": "DATABASE",
+        "query": "Can you clarify if why is dropping database constraints recommended to improve relational consistency?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-146",
+        "module": "DATABASE",
+        "query": "Can you clarify if write-Ahead Logging write committed transactions to disk only after the server reboots?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-147",
+        "module": "DATABASE",
+        "query": "Can you clarify if database normalization introduce duplicated column groups across tables?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-148",
+        "module": "DATABASE",
+        "query": "Can you clarify if creating indexes on a table accelerate the throughput of rapid INSERT operations?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-149",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that the semantic <nav> element represent the main unique text of the document rather than site links?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-150",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that the <header> element house the copyright notices and author credentials instead of navigation?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-151",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that the <footer> tag represent an independently syndicateable blog entry or forum post?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-152",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that the <article> element define introductory navigation menus across the website?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-153",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that the <section> tag represent only site links and skip thematic grouping?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-154",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that hTML5 permit putting five <main> tags in a single page to separate minor paragraphs?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-155",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that the CSS flex-wrap property restrict items to stay on a single line permanently?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-156",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that display: flex cause child elements to disregard all flex-basis dimensions?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-157",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that flex-grow: 0 instruct an item to expand and consume all available empty room?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-158",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that flex-shrink: 0 require a child to shrink to zero pixels upon narrow viewport widths?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-159",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that the CSS gap property insert margins along the exterior boundary of the container?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-160",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that grid-column: span 2 delete the two neighboring column tracks?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-161",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that repeat(auto-fit, minmax(280px, 1fr)) mandate explicit pixel widths for all viewports?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-162",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that the margin layer sit between the content and the padding inside the element border?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-163",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that the padding area surround the outside of the border to space neighboring containers?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-164",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that semantic markup confuse assistive screen reading tools during landmark parsing?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-165",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that the <main> element structure concluding footer notes and licensing declarations?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-166",
+        "module": "HTML_CSS",
+        "query": "Is it accurate that flex-basis define the maximum allowable expansion size after extra room is assigned?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-167",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that an arrow function establish its own dynamic binding for the this identifier?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-168",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that invoking an arrow function with the new keyword construct a valid prototype instance?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-169",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that a variable declared with const allow assigning an entirely different string later?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-170",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that accessing an identifier in the temporal dead zone evaluate cleanly to undefined?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-171",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that the spread syntax convert an object into an executable function statement?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-172",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that object destructuring forbid assigning default fallback values to missing properties?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-173",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that array destructuring require every single member of the array to be bound to a distinct name?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-174",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that promise.all proceed to fulfill successfully even when one of the promises rejects?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-175",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that the await keyword pause the entire Node.js event loop across all connected clients?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-176",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that the spread operator copy nested objects down through all reference levels?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-177",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that accessing an undeclared identifier in a scope create a global property?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-178",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that a fulfilled Promise transition to a rejected state upon calling resolve twice?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-179",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that the V8 engine process file system inputs directly without communicating with Libuv?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-180",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that array destructuring swap the order of elements when assigning to bracketed variables?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-181",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that the spread operator merge two objects by discarding properties with matching keys?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-182",
+        "module": "JAVASCRIPT",
+        "query": "Is it accurate that invoking resolve in a new Promise reject the promise if no string is provided?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-183",
+        "module": "REACT",
+        "query": "Is it accurate that calling useState within if blocks adhere to the standard Rules of Hooks?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-184",
+        "module": "REACT",
+        "query": "Is it accurate that react hooks be invoked from standard plain utility helper functions outside of components?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-185",
+        "module": "REACT",
+        "query": "Is it accurate that calling hooks inside a standard for loop preserve hook call order across renders?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-186",
+        "module": "REACT",
+        "query": "Is it accurate that modifying the .current attribute of a ref trigger an immediate component update cycle?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-187",
+        "module": "REACT",
+        "query": "Is it accurate that an empty dependency array cause useEffect to execute on every single state update?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-188",
+        "module": "REACT",
+        "query": "Is it accurate that useEffect with dependencies execute prior to DOM mounting on the screen?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-189",
+        "module": "REACT",
+        "query": "Is it accurate that useCallback return the executed return value of the wrapped callback function?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-190",
+        "module": "REACT",
+        "query": "Is it accurate that the useContext consumer necessitate passing props through every intermediary parent?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-191",
+        "module": "REACT",
+        "query": "Is it accurate that useState return a single scalar reference instead of a paired value and dispatcher?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-192",
+        "module": "REACT",
+        "query": "Is it accurate that useRef store values in localStorage to preserve data across separate browser sessions?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-193",
+        "module": "REACT",
+        "query": "Is it accurate that react 18 execute state dispatchers one by one without grouping updates together?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-194",
+        "module": "REACT",
+        "query": "Is it accurate that useMemo persist its calculated values across separate browser tabs via IndexedDB?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-195",
+        "module": "REACT",
+        "query": "Is it accurate that the useContext Provider share data with elements positioned above it in the tree?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-196",
+        "module": "REACT",
+        "query": "Is it accurate that calling a state dispatcher with an identical object reference force a component update?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-197",
+        "module": "REACT",
+        "query": "Is it accurate that the ref object discard its .current value whenever a child component updates?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-198",
+        "module": "NODEJS",
+        "query": "Is it accurate that libuv execute user JavaScript scripts concurrently across sixteen worker threads?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-199",
+        "module": "NODEJS",
+        "query": "Is it accurate that the Node.js event loop execute all timers ahead of any main script instructions?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-CONTRA-200",
+        "module": "NODEJS",
+        "query": "Is it accurate that the Express app.listen call trigger all registered HTTP route handlers upon server startup?",
+        "expected": "REFUTED",
+        "category": "SEMANTIC_CONTRADICTION"
+    },
+    {
+        "id": "EXP28-POLAR-001",
+        "module": "JAVASCRIPT",
+        "query": "Why can't an identifier declared with const be assigned an entirely new value?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-002",
+        "module": "JAVASCRIPT",
+        "query": "Why can't arrow functions construct instances when invoked with the new keyword?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-003",
+        "module": "JAVASCRIPT",
+        "query": "Why can't variables declared with let be accessed ahead of their declaration line?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-004",
+        "module": "JAVASCRIPT",
+        "query": "Why can't functions declared within curly braces be observed outside their enclosing statement?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-005",
+        "module": "JAVASCRIPT",
+        "query": "Why does Promise.all avoid waiting when a constituent promise encounters a rejection?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-006",
+        "module": "REACT",
+        "query": "Why can't React developers invoke hooks within if blocks?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-007",
+        "module": "REACT",
+        "query": "Why can't functional components call custom hooks inside standard for loops?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-008",
+        "module": "REACT",
+        "query": "Why can't hooks be called from standard vanilla helper classes outside of components?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-009",
+        "module": "REACT",
+        "query": "Why does an empty dependency list prevent useEffect from firing on subsequent updates?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-010",
+        "module": "REACT",
+        "query": "Why does modifying ref.current avoid triggering an immediate component update cycle?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-011",
+        "module": "HTML_CSS",
+        "query": "Why can't an HTML5 document contain more than one single <main> element?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-012",
+        "module": "HTML_CSS",
+        "query": "Why does the CSS gap property avoid inserting margins on the outer container edge?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-013",
+        "module": "HTML_CSS",
+        "query": "Why does flex-wrap: nowrap prevent flex children from flowing onto multiple lines?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-014",
+        "module": "HTML_CSS",
+        "query": "Why does the <nav> element exclude non-navigational structural paragraphs?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-015",
+        "module": "HTML_CSS",
+        "query": "Why does the <footer> tag avoid housing primary introductory document headings?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-016",
+        "module": "NODEJS",
+        "query": "Why can't an Express error middleware function omit the initial err parameter?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-017",
+        "module": "NODEJS",
+        "query": "Why does omitting the next() call inside middleware prevent forwarding to subsequent routes?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-018",
+        "module": "NODEJS",
+        "query": "Why does the HTTP GET method avoid deleting stored table entries?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-019",
+        "module": "NODEJS",
+        "query": "Why does the HTTP 401 status code refuse requests lacking valid identity tokens?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-020",
+        "module": "NODEJS",
+        "query": "Why does the HTTP 403 status code deny actions when credentials lack teacher rights?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-021",
+        "module": "DATABASE",
+        "query": "Why can't a relational primary key contain null values in table rows?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-022",
+        "module": "DATABASE",
+        "query": "Why does a foreign key constraint prohibit pointing to non-existent parent identifiers?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-023",
+        "module": "DATABASE",
+        "query": "Why does First Normal Form prohibit storing comma-separated values in a single column?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-024",
+        "module": "DATABASE",
+        "query": "Why does Second Normal Form forbid non-key fields depending on a piece of a composite key?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-025",
+        "module": "DATABASE",
+        "query": "Why does Third Normal Form prohibit non-key fields depending on other non-key fields?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-026",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain why can't an identifier declared with const be assigned an entirely new value?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-027",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain why can't arrow functions construct instances when invoked with the new keyword?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-028",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain why can't variables declared with let be accessed ahead of their declaration line?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-029",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain why can't functions declared within curly braces be observed outside their enclosing statement?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-030",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain why does Promise.all avoid waiting when a constituent promise encounters a rejection?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-031",
+        "module": "REACT",
+        "query": "Can you explain why can't React developers invoke hooks within if blocks?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-032",
+        "module": "REACT",
+        "query": "Can you explain why can't functional components call custom hooks inside standard for loops?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-033",
+        "module": "REACT",
+        "query": "Can you explain why can't hooks be called from standard vanilla helper classes outside of components?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-034",
+        "module": "REACT",
+        "query": "Can you explain why does an empty dependency list prevent useEffect from firing on subsequent updates?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-035",
+        "module": "REACT",
+        "query": "Can you explain why does modifying ref.current avoid triggering an immediate component update cycle?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-036",
+        "module": "HTML_CSS",
+        "query": "Can you explain why can't an HTML5 document contain more than one single <main> element?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-037",
+        "module": "HTML_CSS",
+        "query": "Can you explain why does the CSS gap property avoid inserting margins on the outer container edge?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-038",
+        "module": "HTML_CSS",
+        "query": "Can you explain why does flex-wrap: nowrap prevent flex children from flowing onto multiple lines?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-039",
+        "module": "HTML_CSS",
+        "query": "Can you explain why does the <nav> element exclude non-navigational structural paragraphs?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-040",
+        "module": "HTML_CSS",
+        "query": "Can you explain why does the <footer> tag avoid housing primary introductory document headings?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-041",
+        "module": "NODEJS",
+        "query": "Can you explain why can't an Express error middleware function omit the initial err parameter?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-042",
+        "module": "NODEJS",
+        "query": "Can you explain why does omitting the next() call inside middleware prevent forwarding to subsequent routes?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-043",
+        "module": "NODEJS",
+        "query": "Can you explain why does the HTTP GET method avoid deleting stored table entries?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-044",
+        "module": "NODEJS",
+        "query": "Can you explain why does the HTTP 401 status code refuse requests lacking valid identity tokens?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-045",
+        "module": "NODEJS",
+        "query": "Can you explain why does the HTTP 403 status code deny actions when credentials lack teacher rights?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-046",
+        "module": "DATABASE",
+        "query": "Can you explain why can't a relational primary key contain null values in table rows?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-047",
+        "module": "DATABASE",
+        "query": "Can you explain why does a foreign key constraint prohibit pointing to non-existent parent identifiers?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-048",
+        "module": "DATABASE",
+        "query": "Can you explain why does First Normal Form prohibit storing comma-separated values in a single column?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-049",
+        "module": "DATABASE",
+        "query": "Can you explain why does Second Normal Form forbid non-key fields depending on a piece of a composite key?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-050",
+        "module": "DATABASE",
+        "query": "Can you explain why does Third Normal Form prohibit non-key fields depending on other non-key fields?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-051",
+        "module": "JAVASCRIPT",
+        "query": "How come can't an identifier declared with const be assigned an entirely new value?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-052",
+        "module": "JAVASCRIPT",
+        "query": "How come can't arrow functions construct instances when invoked with the new keyword?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-053",
+        "module": "JAVASCRIPT",
+        "query": "How come can't variables declared with let be accessed ahead of their declaration line?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-054",
+        "module": "JAVASCRIPT",
+        "query": "How come can't functions declared within curly braces be observed outside their enclosing statement?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-055",
+        "module": "JAVASCRIPT",
+        "query": "How come does Promise.all avoid waiting when a constituent promise encounters a rejection?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-056",
+        "module": "REACT",
+        "query": "How come can't React developers invoke hooks within if blocks?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-057",
+        "module": "REACT",
+        "query": "How come can't functional components call custom hooks inside standard for loops?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-058",
+        "module": "REACT",
+        "query": "How come can't hooks be called from standard vanilla helper classes outside of components?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-059",
+        "module": "REACT",
+        "query": "How come does an empty dependency list prevent useEffect from firing on subsequent updates?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-060",
+        "module": "REACT",
+        "query": "How come does modifying ref.current avoid triggering an immediate component update cycle?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-061",
+        "module": "HTML_CSS",
+        "query": "How come can't an HTML5 document contain more than one single <main> element?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-062",
+        "module": "HTML_CSS",
+        "query": "How come does the CSS gap property avoid inserting margins on the outer container edge?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-063",
+        "module": "HTML_CSS",
+        "query": "How come does flex-wrap: nowrap prevent flex children from flowing onto multiple lines?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-064",
+        "module": "HTML_CSS",
+        "query": "How come does the <nav> element exclude non-navigational structural paragraphs?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-065",
+        "module": "HTML_CSS",
+        "query": "How come does the <footer> tag avoid housing primary introductory document headings?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-066",
+        "module": "NODEJS",
+        "query": "How come can't an Express error middleware function omit the initial err parameter?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-067",
+        "module": "NODEJS",
+        "query": "How come does omitting the next() call inside middleware prevent forwarding to subsequent routes?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-068",
+        "module": "NODEJS",
+        "query": "How come does the HTTP GET method avoid deleting stored table entries?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-069",
+        "module": "NODEJS",
+        "query": "How come does the HTTP 401 status code refuse requests lacking valid identity tokens?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-070",
+        "module": "NODEJS",
+        "query": "How come does the HTTP 403 status code deny actions when credentials lack teacher rights?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-071",
+        "module": "DATABASE",
+        "query": "How come can't a relational primary key contain null values in table rows?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-072",
+        "module": "DATABASE",
+        "query": "How come does a foreign key constraint prohibit pointing to non-existent parent identifiers?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-073",
+        "module": "DATABASE",
+        "query": "How come does First Normal Form prohibit storing comma-separated values in a single column?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-074",
+        "module": "DATABASE",
+        "query": "How come does Second Normal Form forbid non-key fields depending on a piece of a composite key?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-075",
+        "module": "DATABASE",
+        "query": "How come does Third Normal Form prohibit non-key fields depending on other non-key fields?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-076",
+        "module": "JAVASCRIPT",
+        "query": "Is it established why can't an identifier declared with const be assigned an entirely new value?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-077",
+        "module": "JAVASCRIPT",
+        "query": "Is it established why can't arrow functions construct instances when invoked with the new keyword?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-078",
+        "module": "JAVASCRIPT",
+        "query": "Is it established why can't variables declared with let be accessed ahead of their declaration line?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-079",
+        "module": "JAVASCRIPT",
+        "query": "Is it established why can't functions declared within curly braces be observed outside their enclosing statement?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-080",
+        "module": "JAVASCRIPT",
+        "query": "Is it established why does Promise.all avoid waiting when a constituent promise encounters a rejection?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-081",
+        "module": "REACT",
+        "query": "Is it established why can't React developers invoke hooks within if blocks?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-082",
+        "module": "REACT",
+        "query": "Is it established why can't functional components call custom hooks inside standard for loops?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-083",
+        "module": "REACT",
+        "query": "Is it established why can't hooks be called from standard vanilla helper classes outside of components?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-084",
+        "module": "REACT",
+        "query": "Is it established why does an empty dependency list prevent useEffect from firing on subsequent updates?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-085",
+        "module": "REACT",
+        "query": "Is it established why does modifying ref.current avoid triggering an immediate component update cycle?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-086",
+        "module": "HTML_CSS",
+        "query": "Is it established why can't an HTML5 document contain more than one single <main> element?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-087",
+        "module": "HTML_CSS",
+        "query": "Is it established why does the CSS gap property avoid inserting margins on the outer container edge?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-088",
+        "module": "HTML_CSS",
+        "query": "Is it established why does flex-wrap: nowrap prevent flex children from flowing onto multiple lines?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-089",
+        "module": "HTML_CSS",
+        "query": "Is it established why does the <nav> element exclude non-navigational structural paragraphs?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-090",
+        "module": "HTML_CSS",
+        "query": "Is it established why does the <footer> tag avoid housing primary introductory document headings?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-091",
+        "module": "NODEJS",
+        "query": "Is it established why can't an Express error middleware function omit the initial err parameter?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-092",
+        "module": "NODEJS",
+        "query": "Is it established why does omitting the next() call inside middleware prevent forwarding to subsequent routes?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-093",
+        "module": "NODEJS",
+        "query": "Is it established why does the HTTP GET method avoid deleting stored table entries?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-094",
+        "module": "NODEJS",
+        "query": "Is it established why does the HTTP 401 status code refuse requests lacking valid identity tokens?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-095",
+        "module": "NODEJS",
+        "query": "Is it established why does the HTTP 403 status code deny actions when credentials lack teacher rights?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-096",
+        "module": "DATABASE",
+        "query": "Is it established why can't a relational primary key contain null values in table rows?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-097",
+        "module": "DATABASE",
+        "query": "Is it established why does a foreign key constraint prohibit pointing to non-existent parent identifiers?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-098",
+        "module": "DATABASE",
+        "query": "Is it established why does First Normal Form prohibit storing comma-separated values in a single column?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-099",
+        "module": "DATABASE",
+        "query": "Is it established why does Second Normal Form forbid non-key fields depending on a piece of a composite key?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-100",
+        "module": "DATABASE",
+        "query": "Is it established why does Third Normal Form prohibit non-key fields depending on other non-key fields?",
+        "expected": "SUPPORTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-101",
+        "module": "JAVASCRIPT",
+        "query": "Does JavaScript not prohibit reassigning variables declared with const?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-102",
+        "module": "JAVASCRIPT",
+        "query": "Is it false that arrow functions lack the ability to create objects when invoked with new?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-103",
+        "module": "JAVASCRIPT",
+        "query": "Does the temporal dead zone not restrict accessing let identifiers ahead of declaration?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-104",
+        "module": "JAVASCRIPT",
+        "query": "Is it untrue that Promise.all rejects immediately upon an initial promise rejection?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-105",
+        "module": "JAVASCRIPT",
+        "query": "Does Promise.race not settle as soon as the earliest promise settles?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-106",
+        "module": "REACT",
+        "query": "Does React not disallow invoking hooks within if blocks?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-107",
+        "module": "REACT",
+        "query": "Is it false that hooks must be invoked at the top level of function components?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-108",
+        "module": "REACT",
+        "query": "Does updating a ref.current property not avoid triggering a component update?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-109",
+        "module": "REACT",
+        "query": "Is it untrue that an empty dependency list causes useEffect to fire only on mount?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-110",
+        "module": "REACT",
+        "query": "Does useContext not enable sharing values without passing props down through intermediaries?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-111",
+        "module": "HTML_CSS",
+        "query": "Does HTML5 not disallow placing five <main> elements in a single document?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-112",
+        "module": "HTML_CSS",
+        "query": "Is it false that the <footer> element houses author credentials and copyright notices?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-113",
+        "module": "HTML_CSS",
+        "query": "Does display: flex not initiate a flexible layout context for immediate children?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-114",
+        "module": "HTML_CSS",
+        "query": "Does the CSS gap property not define spacing without adding margins to outer boundaries?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-115",
+        "module": "HTML_CSS",
+        "query": "Is it untrue that <article> represents an independently distributable composition?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-116",
+        "module": "NODEJS",
+        "query": "Does Express error handling middleware not require declaring four distinct parameters?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-117",
+        "module": "NODEJS",
+        "query": "Does the HTTP 404 status code not signify that the targeted resource was missing?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-118",
+        "module": "NODEJS",
+        "query": "Does HTTP GET not represent a read-only retrieval action that avoids deleting records?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-119",
+        "module": "NODEJS",
+        "query": "Is it false that tampering with JWT payload contents invalidates the token proof?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-120",
+        "module": "NODEJS",
+        "query": "Does the HTTP request header not serve as the standard transport for bearer tokens?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-121",
+        "module": "DATABASE",
+        "query": "Does a primary key constraint not prohibit redundant and null values across table rows?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-122",
+        "module": "DATABASE",
+        "query": "Does a foreign key not establish referential links to valid parent primary keys?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-123",
+        "module": "DATABASE",
+        "query": "Does First Normal Form not require every table column to hold indivisible data values?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-124",
+        "module": "DATABASE",
+        "query": "Does Write-Ahead Logging not ensure committed transaction updates survive sudden power loss?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-125",
+        "module": "DATABASE",
+        "query": "Does an index structure not allow rapid range searches without inspecting every row?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-126",
+        "module": "JAVASCRIPT",
+        "query": "Can you confirm if does JavaScript not prohibit reassigning variables declared with const?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-127",
+        "module": "JAVASCRIPT",
+        "query": "Can you confirm if is it false that arrow functions lack the ability to create objects when invoked with new?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-128",
+        "module": "JAVASCRIPT",
+        "query": "Can you confirm if does the temporal dead zone not restrict accessing let identifiers ahead of declaration?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-129",
+        "module": "JAVASCRIPT",
+        "query": "Can you confirm if is it untrue that Promise.all rejects immediately upon an initial promise rejection?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-130",
+        "module": "JAVASCRIPT",
+        "query": "Can you confirm if does Promise.race not settle as soon as the earliest promise settles?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-131",
+        "module": "REACT",
+        "query": "Can you confirm if does React not disallow invoking hooks within if blocks?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-132",
+        "module": "REACT",
+        "query": "Can you confirm if is it false that hooks must be invoked at the top level of function components?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-133",
+        "module": "REACT",
+        "query": "Can you confirm if does updating a ref.current property not avoid triggering a component update?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-134",
+        "module": "REACT",
+        "query": "Can you confirm if is it untrue that an empty dependency list causes useEffect to fire only on mount?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-135",
+        "module": "REACT",
+        "query": "Can you confirm if does useContext not enable sharing values without passing props down through intermediaries?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-136",
+        "module": "HTML_CSS",
+        "query": "Can you confirm if does HTML5 not disallow placing five <main> elements in a single document?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-137",
+        "module": "HTML_CSS",
+        "query": "Can you confirm if is it false that the <footer> element houses author credentials and copyright notices?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-138",
+        "module": "HTML_CSS",
+        "query": "Can you confirm if does display: flex not initiate a flexible layout context for immediate children?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-139",
+        "module": "HTML_CSS",
+        "query": "Can you confirm if does the CSS gap property not define spacing without adding margins to outer boundaries?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-140",
+        "module": "HTML_CSS",
+        "query": "Can you confirm if is it untrue that <article> represents an independently distributable composition?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-141",
+        "module": "NODEJS",
+        "query": "Can you confirm if does Express error handling middleware not require declaring four distinct parameters?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-142",
+        "module": "NODEJS",
+        "query": "Can you confirm if does the HTTP 404 status code not signify that the targeted resource was missing?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-143",
+        "module": "NODEJS",
+        "query": "Can you confirm if does HTTP GET not represent a read-only retrieval action that avoids deleting records?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-144",
+        "module": "NODEJS",
+        "query": "Can you confirm if is it false that tampering with JWT payload contents invalidates the token proof?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-145",
+        "module": "NODEJS",
+        "query": "Can you confirm if does the HTTP request header not serve as the standard transport for bearer tokens?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-146",
+        "module": "DATABASE",
+        "query": "Can you confirm if does a primary key constraint not prohibit redundant and null values across table rows?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-147",
+        "module": "DATABASE",
+        "query": "Can you confirm if does a foreign key not establish referential links to valid parent primary keys?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-148",
+        "module": "DATABASE",
+        "query": "Can you confirm if does First Normal Form not require every table column to hold indivisible data values?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-149",
+        "module": "DATABASE",
+        "query": "Can you confirm if does Write-Ahead Logging not ensure committed transaction updates survive sudden power loss?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-POLAR-150",
+        "module": "DATABASE",
+        "query": "Can you confirm if does an index structure not allow rapid range searches without inspecting every row?",
+        "expected": "REFUTED",
+        "category": "POLARITY_NEGATION"
+    },
+    {
+        "id": "EXP28-PARA-001",
+        "module": "HTML_CSS",
+        "query": "With respect to document composition, in what way does <header> encompass introductory material?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-002",
+        "module": "HTML_CSS",
+        "query": "Could you elaborate on how <main> encapsulates content that is wholly distinct from headers?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-003",
+        "module": "HTML_CSS",
+        "query": "Regarding flexible containers, how does flex-wrap permit child elements to span multiple rows?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-004",
+        "module": "HTML_CSS",
+        "query": "In what manner does the CSS gap property establish spacing between siblings cleanly?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-005",
+        "module": "HTML_CSS",
+        "query": "From an architectural perspective, how does <article> represent independently distributable content?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-006",
+        "module": "JAVASCRIPT",
+        "query": "In terms of modern scope rules, how does let restrict visibility to the surrounding curly brackets?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-007",
+        "module": "JAVASCRIPT",
+        "query": "Could you detail how object destructuring unpacks values directly into named variables?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-008",
+        "module": "JAVASCRIPT",
+        "query": "Regarding function parameters, in what manner does rest syntax condense parameters into an array?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-009",
+        "module": "JAVASCRIPT",
+        "query": "How does Promise.allSettled guarantee waiting for all operations regardless of outcome?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-010",
+        "module": "REACT",
+        "query": "In what manner does useState provide a dedicated dispatcher function alongside current state?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-011",
+        "module": "REACT",
+        "query": "Regarding side effects, how does an empty dependency array ensure execution occurs upon mount?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-012",
+        "module": "REACT",
+        "query": "Could you explain how useRef holds a persistent DOM reference via its current attribute?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-013",
+        "module": "REACT",
+        "query": "In terms of component communication, how does useContext eliminate manual parameter passing?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-014",
+        "module": "NODEJS",
+        "query": "In what way does the Libuv thread pool manage file system operations outside the main thread?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-015",
+        "module": "NODEJS",
+        "query": "How does Express middleware access the incoming request and outgoing response objects?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-016",
+        "module": "NODEJS",
+        "query": "With respect to API design, how does HTTP POST designate the creation of a fresh record?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-017",
+        "module": "NODEJS",
+        "query": "Could you elaborate on how HTTP 404 communicates that a target entity cannot be located?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-018",
+        "module": "NODEJS",
+        "query": "Regarding token validation, in what manner does the server verify identity via cryptographic signatures?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-019",
+        "module": "DATABASE",
+        "query": "In terms of relational schema design, how does a junction table connect Many-to-Many entities?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-020",
+        "module": "DATABASE",
+        "query": "With respect to normalization rules, how does 1NF enforce indivisible column entries?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-021",
+        "module": "DATABASE",
+        "query": "Regarding transactional reliability, how does Write-Ahead Logging guarantee data persistence?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-022",
+        "module": "HTML_CSS",
+        "query": "Specifically, with respect to document composition, in what way does <header> encompass introductory material?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-023",
+        "module": "HTML_CSS",
+        "query": "Specifically, could you elaborate on how <main> encapsulates content that is wholly distinct from headers?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-024",
+        "module": "HTML_CSS",
+        "query": "Specifically, regarding flexible containers, how does flex-wrap permit child elements to span multiple rows?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-025",
+        "module": "HTML_CSS",
+        "query": "Specifically, in what manner does the CSS gap property establish spacing between siblings cleanly?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-026",
+        "module": "HTML_CSS",
+        "query": "Specifically, from an architectural perspective, how does <article> represent independently distributable content?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-027",
+        "module": "JAVASCRIPT",
+        "query": "Specifically, in terms of modern scope rules, how does let restrict visibility to the surrounding curly brackets?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-028",
+        "module": "JAVASCRIPT",
+        "query": "Specifically, could you detail how object destructuring unpacks values directly into named variables?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-029",
+        "module": "JAVASCRIPT",
+        "query": "Specifically, regarding function parameters, in what manner does rest syntax condense parameters into an array?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-030",
+        "module": "JAVASCRIPT",
+        "query": "Specifically, how does Promise.allSettled guarantee waiting for all operations regardless of outcome?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-031",
+        "module": "REACT",
+        "query": "Specifically, in what manner does useState provide a dedicated dispatcher function alongside current state?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-032",
+        "module": "REACT",
+        "query": "Specifically, regarding side effects, how does an empty dependency array ensure execution occurs upon mount?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-033",
+        "module": "REACT",
+        "query": "Specifically, could you explain how useRef holds a persistent DOM reference via its current attribute?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-034",
+        "module": "REACT",
+        "query": "Specifically, in terms of component communication, how does useContext eliminate manual parameter passing?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-035",
+        "module": "NODEJS",
+        "query": "Specifically, in what way does the Libuv thread pool manage file system operations outside the main thread?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-036",
+        "module": "NODEJS",
+        "query": "Specifically, how does Express middleware access the incoming request and outgoing response objects?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-037",
+        "module": "NODEJS",
+        "query": "Specifically, with respect to API design, how does HTTP POST designate the creation of a fresh record?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-038",
+        "module": "NODEJS",
+        "query": "Specifically, could you elaborate on how HTTP 404 communicates that a target entity cannot be located?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-039",
+        "module": "NODEJS",
+        "query": "Specifically, regarding token validation, in what manner does the server verify identity via cryptographic signatures?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-040",
+        "module": "DATABASE",
+        "query": "Specifically, in terms of relational schema design, how does a junction table connect Many-to-Many entities?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-041",
+        "module": "DATABASE",
+        "query": "Specifically, with respect to normalization rules, how does 1NF enforce indivisible column entries?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-042",
+        "module": "DATABASE",
+        "query": "Specifically, regarding transactional reliability, how does Write-Ahead Logging guarantee data persistence?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-043",
+        "module": "HTML_CSS",
+        "query": "Specifically, with respect to document composition, in what way does <header> encompass introductory material?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-044",
+        "module": "HTML_CSS",
+        "query": "Specifically, could you elaborate on how <main> encapsulates content that is wholly distinct from headers?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-045",
+        "module": "HTML_CSS",
+        "query": "Specifically, regarding flexible containers, how does flex-wrap permit child elements to span multiple rows?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-046",
+        "module": "HTML_CSS",
+        "query": "Specifically, in what manner does the CSS gap property establish spacing between siblings cleanly?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-047",
+        "module": "HTML_CSS",
+        "query": "Specifically, from an architectural perspective, how does <article> represent independently distributable content?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-048",
+        "module": "JAVASCRIPT",
+        "query": "Specifically, in terms of modern scope rules, how does let restrict visibility to the surrounding curly brackets?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-049",
+        "module": "JAVASCRIPT",
+        "query": "Specifically, could you detail how object destructuring unpacks values directly into named variables?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-050",
+        "module": "JAVASCRIPT",
+        "query": "Specifically, regarding function parameters, in what manner does rest syntax condense parameters into an array?",
+        "expected": "SUPPORTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-051",
+        "module": "HTML_CSS",
+        "query": "With respect to document composition, does the <header> tag function as the concluding copyright section?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-052",
+        "module": "HTML_CSS",
+        "query": "Could you elaborate on why <main> elements should be duplicated five times across a single document?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-053",
+        "module": "HTML_CSS",
+        "query": "In what manner does the CSS gap property apply heavy margins to the exterior container boundary?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-054",
+        "module": "HTML_CSS",
+        "query": "From an architectural perspective, does <nav> encapsulate full standalone blog articles?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-055",
+        "module": "JAVASCRIPT",
+        "query": "In terms of modern scope rules, does const allow identifiers to be assigned fresh string values later?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-056",
+        "module": "JAVASCRIPT",
+        "query": "Could you detail how arrow functions instantiate fresh prototypes when invoked with new?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-057",
+        "module": "JAVASCRIPT",
+        "query": "How does Promise.all proceed with fulfillment even when a supplied promise rejects?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-058",
+        "module": "JAVASCRIPT",
+        "query": "With respect to execution flow, does accessing let ahead of declaration evaluate cleanly to undefined?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-059",
+        "module": "REACT",
+        "query": "In what manner does invoking useState within if blocks follow approved hook rules?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-060",
+        "module": "REACT",
+        "query": "Regarding side effects, does an empty dependency array cause useEffect to execute on every state change?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-061",
+        "module": "REACT",
+        "query": "Could you explain why modifying ref.current triggers an immediate UI update cycle across the app?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-062",
+        "module": "REACT",
+        "query": "In terms of component communication, does useContext require passing props through every intermediate node?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-063",
+        "module": "NODEJS",
+        "query": "In what way does the Libuv thread pool execute all user scripts across sixteen parallel threads?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-064",
+        "module": "NODEJS",
+        "query": "With respect to API design, does HTTP GET serve as the standard mechanism for deleting table rows?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-065",
+        "module": "NODEJS",
+        "query": "Could you elaborate on how HTTP 404 indicates an unexpected internal server crash?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-066",
+        "module": "DATABASE",
+        "query": "In terms of relational schema design, does a primary key permit null entries across rows in a table?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-067",
+        "module": "DATABASE",
+        "query": "With respect to normalization rules, does 1NF encourage storing comma-separated values in one column?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-068",
+        "module": "HTML_CSS",
+        "query": "From a technical standpoint, with respect to document composition, does the <header> tag function as the concluding copyright section?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-069",
+        "module": "HTML_CSS",
+        "query": "From a technical standpoint, could you elaborate on why <main> elements should be duplicated five times across a single document?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-070",
+        "module": "HTML_CSS",
+        "query": "From a technical standpoint, in what manner does the CSS gap property apply heavy margins to the exterior container boundary?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-071",
+        "module": "HTML_CSS",
+        "query": "From a technical standpoint, from an architectural perspective, does <nav> encapsulate full standalone blog articles?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-072",
+        "module": "JAVASCRIPT",
+        "query": "From a technical standpoint, in terms of modern scope rules, does const allow identifiers to be assigned fresh string values later?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-073",
+        "module": "JAVASCRIPT",
+        "query": "From a technical standpoint, could you detail how arrow functions instantiate fresh prototypes when invoked with new?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-074",
+        "module": "JAVASCRIPT",
+        "query": "From a technical standpoint, how does Promise.all proceed with fulfillment even when a supplied promise rejects?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-075",
+        "module": "JAVASCRIPT",
+        "query": "From a technical standpoint, with respect to execution flow, does accessing let ahead of declaration evaluate cleanly to undefined?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-076",
+        "module": "REACT",
+        "query": "From a technical standpoint, in what manner does invoking useState within if blocks follow approved hook rules?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-077",
+        "module": "REACT",
+        "query": "From a technical standpoint, regarding side effects, does an empty dependency array cause useEffect to execute on every state change?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-078",
+        "module": "REACT",
+        "query": "From a technical standpoint, could you explain why modifying ref.current triggers an immediate UI update cycle across the app?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-079",
+        "module": "REACT",
+        "query": "From a technical standpoint, in terms of component communication, does useContext require passing props through every intermediate node?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-080",
+        "module": "NODEJS",
+        "query": "From a technical standpoint, in what way does the Libuv thread pool execute all user scripts across sixteen parallel threads?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-081",
+        "module": "NODEJS",
+        "query": "From a technical standpoint, with respect to API design, does HTTP GET serve as the standard mechanism for deleting table rows?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-082",
+        "module": "NODEJS",
+        "query": "From a technical standpoint, could you elaborate on how HTTP 404 indicates an unexpected internal server crash?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-083",
+        "module": "DATABASE",
+        "query": "From a technical standpoint, in terms of relational schema design, does a primary key permit null entries across rows in a table?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-084",
+        "module": "DATABASE",
+        "query": "From a technical standpoint, with respect to normalization rules, does 1NF encourage storing comma-separated values in one column?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-085",
+        "module": "HTML_CSS",
+        "query": "From a technical standpoint, with respect to document composition, does the <header> tag function as the concluding copyright section?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-086",
+        "module": "HTML_CSS",
+        "query": "From a technical standpoint, could you elaborate on why <main> elements should be duplicated five times across a single document?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-087",
+        "module": "HTML_CSS",
+        "query": "From a technical standpoint, in what manner does the CSS gap property apply heavy margins to the exterior container boundary?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-088",
+        "module": "HTML_CSS",
+        "query": "From a technical standpoint, from an architectural perspective, does <nav> encapsulate full standalone blog articles?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-089",
+        "module": "JAVASCRIPT",
+        "query": "From a technical standpoint, in terms of modern scope rules, does const allow identifiers to be assigned fresh string values later?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-090",
+        "module": "JAVASCRIPT",
+        "query": "From a technical standpoint, could you detail how arrow functions instantiate fresh prototypes when invoked with new?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-091",
+        "module": "JAVASCRIPT",
+        "query": "From a technical standpoint, how does Promise.all proceed with fulfillment even when a supplied promise rejects?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-092",
+        "module": "JAVASCRIPT",
+        "query": "From a technical standpoint, with respect to execution flow, does accessing let ahead of declaration evaluate cleanly to undefined?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-093",
+        "module": "REACT",
+        "query": "From a technical standpoint, in what manner does invoking useState within if blocks follow approved hook rules?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-094",
+        "module": "REACT",
+        "query": "From a technical standpoint, regarding side effects, does an empty dependency array cause useEffect to execute on every state change?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-095",
+        "module": "REACT",
+        "query": "From a technical standpoint, could you explain why modifying ref.current triggers an immediate UI update cycle across the app?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-096",
+        "module": "REACT",
+        "query": "From a technical standpoint, in terms of component communication, does useContext require passing props through every intermediate node?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-097",
+        "module": "NODEJS",
+        "query": "From a technical standpoint, in what way does the Libuv thread pool execute all user scripts across sixteen parallel threads?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-098",
+        "module": "NODEJS",
+        "query": "From a technical standpoint, with respect to API design, does HTTP GET serve as the standard mechanism for deleting table rows?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-099",
+        "module": "NODEJS",
+        "query": "From a technical standpoint, could you elaborate on how HTTP 404 indicates an unexpected internal server crash?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-PARA-100",
+        "module": "DATABASE",
+        "query": "From a technical standpoint, in terms of relational schema design, does a primary key permit null entries across rows in a table?",
+        "expected": "REFUTED",
+        "category": "PARAPHRASE"
+    },
+    {
+        "id": "EXP28-NEUT-001",
+        "module": "HTML_CSS",
+        "query": "How does WebGL hardware acceleration compare with CSS 3D transforms for battery efficiency?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-002",
+        "module": "HTML_CSS",
+        "query": "Why does the browser paint pipeline prioritize GPU compositing over CPU rasterization in Safari?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-003",
+        "module": "HTML_CSS",
+        "query": "Does the Shadow DOM encapsulation model prevent CSS leakages in Web Components?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-004",
+        "module": "HTML_CSS",
+        "query": "How does the CSS Houdini Typed OM API improve style recalculation throughput?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-005",
+        "module": "HTML_CSS",
+        "query": "Why does CSS Subgrid inherit line names from parent grids in Firefox but not older Chrome?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-006",
+        "module": "JAVASCRIPT",
+        "query": "Does the V8 Turbofan compiler optimize polymorphic inline caches for monomorphic calls?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-007",
+        "module": "JAVASCRIPT",
+        "query": "How does the WebAssembly memory allocation boundary prevent buffer overflows in C modules?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-008",
+        "module": "JAVASCRIPT",
+        "query": "Why does WeakRef allow garbage collection of objects holding DOM element pointers?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-009",
+        "module": "JAVASCRIPT",
+        "query": "How does the ECMAScript temporal proposal handle timezone daylight saving transitions?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-010",
+        "module": "REACT",
+        "query": "How does the React 19 compiler transform JSX into memoized computational trees automatically?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-011",
+        "module": "REACT",
+        "query": "Why does React Server Components streaming serialize HTML chunks via Flight protocol?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-012",
+        "module": "REACT",
+        "query": "How does the useActionState hook manage pending transitions for form submit handlers?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-013",
+        "module": "REACT",
+        "query": "Why does React concurrent mode utilize cooperative scheduling via MessageChannel?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-014",
+        "module": "NODEJS",
+        "query": "How does the Node.js diagnostics channel publish trace events for APM monitoring agents?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-015",
+        "module": "NODEJS",
+        "query": "Why does the Node.js test runner module execute suites in isolated worker threads?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-016",
+        "module": "NODEJS",
+        "query": "Does the Node.js permission model restrict file system access based on path flags?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-017",
+        "module": "NODEJS",
+        "query": "How does HTTP/2 multiplexed streaming prevent head-of-line blocking in Express servers?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-018",
+        "module": "NODEJS",
+        "query": "Why does Libuv utilize epoll on Linux versus kqueue on BSD for event demultiplexing?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-019",
+        "module": "DATABASE",
+        "query": "How does PostgreSQL logical replication transmit WAL change streams to subscriber clusters?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-020",
+        "module": "DATABASE",
+        "query": "Why does PostgreSQL declarative partitioning prune partition tables during planning?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-021",
+        "module": "DATABASE",
+        "query": "Does the pg_stat_statements extension record query execution time across parameter values?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-022",
+        "module": "DATABASE",
+        "query": "How does PostgreSQL multi-version concurrency control vacuum dead tuples from disk?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-023",
+        "module": "DATABASE",
+        "query": "Why does the PostgreSQL autovacuum daemon trigger transaction ID wraparound protection?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-024",
+        "module": "HTML_CSS",
+        "query": "Can you explain whether how does WebGL hardware acceleration compare with CSS 3D transforms for battery efficiency?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-025",
+        "module": "HTML_CSS",
+        "query": "Can you explain whether why does the browser paint pipeline prioritize GPU compositing over CPU rasterization in Safari?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-026",
+        "module": "HTML_CSS",
+        "query": "Can you explain whether does the Shadow DOM encapsulation model prevent CSS leakages in Web Components?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-027",
+        "module": "HTML_CSS",
+        "query": "Can you explain whether how does the CSS Houdini Typed OM API improve style recalculation throughput?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-028",
+        "module": "HTML_CSS",
+        "query": "Can you explain whether why does CSS Subgrid inherit line names from parent grids in Firefox but not older Chrome?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-029",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain whether does the V8 Turbofan compiler optimize polymorphic inline caches for monomorphic calls?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-030",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain whether how does the WebAssembly memory allocation boundary prevent buffer overflows in C modules?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-031",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain whether why does WeakRef allow garbage collection of objects holding DOM element pointers?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-032",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain whether how does the ECMAScript temporal proposal handle timezone daylight saving transitions?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-033",
+        "module": "REACT",
+        "query": "Can you explain whether how does the React 19 compiler transform JSX into memoized computational trees automatically?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-034",
+        "module": "REACT",
+        "query": "Can you explain whether why does React Server Components streaming serialize HTML chunks via Flight protocol?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-035",
+        "module": "REACT",
+        "query": "Can you explain whether how does the useActionState hook manage pending transitions for form submit handlers?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-036",
+        "module": "REACT",
+        "query": "Can you explain whether why does React concurrent mode utilize cooperative scheduling via MessageChannel?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-037",
+        "module": "NODEJS",
+        "query": "Can you explain whether how does the Node.js diagnostics channel publish trace events for APM monitoring agents?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-038",
+        "module": "NODEJS",
+        "query": "Can you explain whether why does the Node.js test runner module execute suites in isolated worker threads?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-039",
+        "module": "NODEJS",
+        "query": "Can you explain whether does the Node.js permission model restrict file system access based on path flags?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-040",
+        "module": "NODEJS",
+        "query": "Can you explain whether how does HTTP/2 multiplexed streaming prevent head-of-line blocking in Express servers?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-041",
+        "module": "NODEJS",
+        "query": "Can you explain whether why does Libuv utilize epoll on Linux versus kqueue on BSD for event demultiplexing?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-042",
+        "module": "DATABASE",
+        "query": "Can you explain whether how does PostgreSQL logical replication transmit WAL change streams to subscriber clusters?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-043",
+        "module": "DATABASE",
+        "query": "Can you explain whether why does PostgreSQL declarative partitioning prune partition tables during planning?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-044",
+        "module": "DATABASE",
+        "query": "Can you explain whether does the pg_stat_statements extension record query execution time across parameter values?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-045",
+        "module": "DATABASE",
+        "query": "Can you explain whether how does PostgreSQL multi-version concurrency control vacuum dead tuples from disk?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-046",
+        "module": "DATABASE",
+        "query": "Can you explain whether why does the PostgreSQL autovacuum daemon trigger transaction ID wraparound protection?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-047",
+        "module": "HTML_CSS",
+        "query": "Is it documented whether how does WebGL hardware acceleration compare with CSS 3D transforms for battery efficiency?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-048",
+        "module": "HTML_CSS",
+        "query": "Is it documented whether why does the browser paint pipeline prioritize GPU compositing over CPU rasterization in Safari?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-049",
+        "module": "HTML_CSS",
+        "query": "Is it documented whether does the Shadow DOM encapsulation model prevent CSS leakages in Web Components?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-050",
+        "module": "HTML_CSS",
+        "query": "Is it documented whether how does the CSS Houdini Typed OM API improve style recalculation throughput?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-051",
+        "module": "HTML_CSS",
+        "query": "Is it documented whether why does CSS Subgrid inherit line names from parent grids in Firefox but not older Chrome?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-052",
+        "module": "JAVASCRIPT",
+        "query": "Is it documented whether does the V8 Turbofan compiler optimize polymorphic inline caches for monomorphic calls?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-053",
+        "module": "JAVASCRIPT",
+        "query": "Is it documented whether how does the WebAssembly memory allocation boundary prevent buffer overflows in C modules?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-054",
+        "module": "JAVASCRIPT",
+        "query": "Is it documented whether why does WeakRef allow garbage collection of objects holding DOM element pointers?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-055",
+        "module": "JAVASCRIPT",
+        "query": "Is it documented whether how does the ECMAScript temporal proposal handle timezone daylight saving transitions?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-056",
+        "module": "REACT",
+        "query": "Is it documented whether how does the React 19 compiler transform JSX into memoized computational trees automatically?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-057",
+        "module": "REACT",
+        "query": "Is it documented whether why does React Server Components streaming serialize HTML chunks via Flight protocol?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-058",
+        "module": "REACT",
+        "query": "Is it documented whether how does the useActionState hook manage pending transitions for form submit handlers?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-059",
+        "module": "REACT",
+        "query": "Is it documented whether why does React concurrent mode utilize cooperative scheduling via MessageChannel?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-060",
+        "module": "NODEJS",
+        "query": "Is it documented whether how does the Node.js diagnostics channel publish trace events for APM monitoring agents?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-061",
+        "module": "NODEJS",
+        "query": "Is it documented whether why does the Node.js test runner module execute suites in isolated worker threads?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-062",
+        "module": "NODEJS",
+        "query": "Is it documented whether does the Node.js permission model restrict file system access based on path flags?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-063",
+        "module": "NODEJS",
+        "query": "Is it documented whether how does HTTP/2 multiplexed streaming prevent head-of-line blocking in Express servers?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-064",
+        "module": "NODEJS",
+        "query": "Is it documented whether why does Libuv utilize epoll on Linux versus kqueue on BSD for event demultiplexing?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-065",
+        "module": "DATABASE",
+        "query": "Is it documented whether how does PostgreSQL logical replication transmit WAL change streams to subscriber clusters?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-066",
+        "module": "DATABASE",
+        "query": "Is it documented whether why does PostgreSQL declarative partitioning prune partition tables during planning?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-067",
+        "module": "DATABASE",
+        "query": "Is it documented whether does the pg_stat_statements extension record query execution time across parameter values?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-068",
+        "module": "DATABASE",
+        "query": "Is it documented whether how does PostgreSQL multi-version concurrency control vacuum dead tuples from disk?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-069",
+        "module": "DATABASE",
+        "query": "Is it documented whether why does the PostgreSQL autovacuum daemon trigger transaction ID wraparound protection?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-070",
+        "module": "HTML_CSS",
+        "query": "From an engineering standpoint, how does WebGL hardware acceleration compare with CSS 3D transforms for battery efficiency?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-071",
+        "module": "HTML_CSS",
+        "query": "From an engineering standpoint, why does the browser paint pipeline prioritize GPU compositing over CPU rasterization in Safari?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-072",
+        "module": "HTML_CSS",
+        "query": "From an engineering standpoint, does the Shadow DOM encapsulation model prevent CSS leakages in Web Components?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-073",
+        "module": "HTML_CSS",
+        "query": "From an engineering standpoint, how does the CSS Houdini Typed OM API improve style recalculation throughput?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-074",
+        "module": "HTML_CSS",
+        "query": "From an engineering standpoint, why does CSS Subgrid inherit line names from parent grids in Firefox but not older Chrome?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-075",
+        "module": "JAVASCRIPT",
+        "query": "From an engineering standpoint, does the V8 Turbofan compiler optimize polymorphic inline caches for monomorphic calls?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-076",
+        "module": "JAVASCRIPT",
+        "query": "From an engineering standpoint, how does the WebAssembly memory allocation boundary prevent buffer overflows in C modules?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-077",
+        "module": "JAVASCRIPT",
+        "query": "From an engineering standpoint, why does WeakRef allow garbage collection of objects holding DOM element pointers?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-078",
+        "module": "JAVASCRIPT",
+        "query": "From an engineering standpoint, how does the ECMAScript temporal proposal handle timezone daylight saving transitions?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-079",
+        "module": "REACT",
+        "query": "From an engineering standpoint, how does the React 19 compiler transform JSX into memoized computational trees automatically?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-080",
+        "module": "REACT",
+        "query": "From an engineering standpoint, why does React Server Components streaming serialize HTML chunks via Flight protocol?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-081",
+        "module": "REACT",
+        "query": "From an engineering standpoint, how does the useActionState hook manage pending transitions for form submit handlers?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-082",
+        "module": "REACT",
+        "query": "From an engineering standpoint, why does React concurrent mode utilize cooperative scheduling via MessageChannel?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-083",
+        "module": "NODEJS",
+        "query": "From an engineering standpoint, how does the Node.js diagnostics channel publish trace events for APM monitoring agents?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-084",
+        "module": "NODEJS",
+        "query": "From an engineering standpoint, why does the Node.js test runner module execute suites in isolated worker threads?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-085",
+        "module": "NODEJS",
+        "query": "From an engineering standpoint, does the Node.js permission model restrict file system access based on path flags?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-086",
+        "module": "NODEJS",
+        "query": "From an engineering standpoint, how does HTTP/2 multiplexed streaming prevent head-of-line blocking in Express servers?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-087",
+        "module": "NODEJS",
+        "query": "From an engineering standpoint, why does Libuv utilize epoll on Linux versus kqueue on BSD for event demultiplexing?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-088",
+        "module": "DATABASE",
+        "query": "From an engineering standpoint, how does PostgreSQL logical replication transmit WAL change streams to subscriber clusters?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-089",
+        "module": "DATABASE",
+        "query": "From an engineering standpoint, why does PostgreSQL declarative partitioning prune partition tables during planning?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-090",
+        "module": "DATABASE",
+        "query": "From an engineering standpoint, does the pg_stat_statements extension record query execution time across parameter values?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-091",
+        "module": "DATABASE",
+        "query": "From an engineering standpoint, how does PostgreSQL multi-version concurrency control vacuum dead tuples from disk?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-092",
+        "module": "DATABASE",
+        "query": "From an engineering standpoint, why does the PostgreSQL autovacuum daemon trigger transaction ID wraparound protection?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-093",
+        "module": "HTML_CSS",
+        "query": "In modern production deployments, how does WebGL hardware acceleration compare with CSS 3D transforms for battery efficiency?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-094",
+        "module": "HTML_CSS",
+        "query": "In modern production deployments, why does the browser paint pipeline prioritize GPU compositing over CPU rasterization in Safari?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-095",
+        "module": "HTML_CSS",
+        "query": "In modern production deployments, does the Shadow DOM encapsulation model prevent CSS leakages in Web Components?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-096",
+        "module": "HTML_CSS",
+        "query": "In modern production deployments, how does the CSS Houdini Typed OM API improve style recalculation throughput?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-097",
+        "module": "HTML_CSS",
+        "query": "In modern production deployments, why does CSS Subgrid inherit line names from parent grids in Firefox but not older Chrome?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-098",
+        "module": "JAVASCRIPT",
+        "query": "In modern production deployments, does the V8 Turbofan compiler optimize polymorphic inline caches for monomorphic calls?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-099",
+        "module": "JAVASCRIPT",
+        "query": "In modern production deployments, how does the WebAssembly memory allocation boundary prevent buffer overflows in C modules?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-NEUT-100",
+        "module": "JAVASCRIPT",
+        "query": "In modern production deployments, why does WeakRef allow garbage collection of objects holding DOM element pointers?",
+        "expected": "NOT_ESTABLISHED",
+        "category": "INSUFFICIENT_EVIDENCE_NEUTRAL"
+    },
+    {
+        "id": "EXP28-TRAP-001",
+        "module": "HTML_CSS",
+        "query": "Is it true that an element with display: flex can hold children that specify flex-basis dimensions?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-002",
+        "module": "HTML_CSS",
+        "query": "Can a grid container utilize repeat(3, 1fr) to establish three columns of equal width?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-003",
+        "module": "HTML_CSS",
+        "query": "Is it valid for semantic <article> tags to represent independently syndicateable blog compositions?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-004",
+        "module": "HTML_CSS",
+        "query": "Does the CSS gap property establish uniform spacing between flex items without applying outer margins?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-005",
+        "module": "HTML_CSS",
+        "query": "Can an HTML5 document contain a <footer> element that holds copyright notices and author details?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-006",
+        "module": "HTML_CSS",
+        "query": "Is it true that the <nav> element designates a dedicated section of primary navigation links?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-007",
+        "module": "HTML_CSS",
+        "query": "Can flex-wrap: wrap permit flex items to break across multiple lines when width is constrained?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-008",
+        "module": "HTML_CSS",
+        "query": "Can grid-column: span 2 cause a grid item to stretch across two separate column tracks?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-009",
+        "module": "HTML_CSS",
+        "query": "Is it true that semantic tags aid screen reader tools in parsing document landmarks?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-010",
+        "module": "JAVASCRIPT",
+        "query": "Can an object declared with const have individual properties modified without reassigning the variable?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-011",
+        "module": "JAVASCRIPT",
+        "query": "Is it true that arrow functions inherit the this binding from their enclosing lexical context?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-012",
+        "module": "JAVASCRIPT",
+        "query": "Can the spread operator expand elements of an array when building a fresh composite array?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-013",
+        "module": "JAVASCRIPT",
+        "query": "Is it true that accessing let identifiers inside the temporal dead zone throws a reference error?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-014",
+        "module": "JAVASCRIPT",
+        "query": "Can object destructuring extract properties into local variables while applying default values?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-015",
+        "module": "JAVASCRIPT",
+        "query": "Is it true that rest parameters collect multiple function parameters into a true array instance?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-016",
+        "module": "JAVASCRIPT",
+        "query": "Can Promise.race resolve or reject as soon as the first constituent promise settles?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-017",
+        "module": "JAVASCRIPT",
+        "query": "Is it true that a Promise transitions between pending, fulfilled, and rejected states?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-018",
+        "module": "REACT",
+        "query": "Is it true that an empty dependency list causes useEffect to execute exactly once upon mount?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-019",
+        "module": "REACT",
+        "query": "Can useRef hold a reference to an underlying DOM node via its current field?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-020",
+        "module": "REACT",
+        "query": "Is it true that useContext allows nested descendants to consume values without manual prop passing?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-021",
+        "module": "REACT",
+        "query": "Can useMemo memoize the result of an expensive calculation based on specific dependencies?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-022",
+        "module": "REACT",
+        "query": "Is it true that useCallback preserves function definitions between renders for child components?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-023",
+        "module": "REACT",
+        "query": "Can a component maintain multiple distinct useState calls within its top-level body?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-024",
+        "module": "REACT",
+        "query": "Is it true that React rules prohibit invoking hooks within if blocks?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-025",
+        "module": "NODEJS",
+        "query": "Can an Express application register custom middleware functions via the app.use method?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-026",
+        "module": "NODEJS",
+        "query": "Can middleware functions invoke next() to pass request execution to the next handler in line?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-027",
+        "module": "NODEJS",
+        "query": "Is it true that HTTP POST serves as the standard verb for creating a fresh resource on the server?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-028",
+        "module": "NODEJS",
+        "query": "Can a REST API respond with an HTTP 404 status code when a requested record does not exist?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-029",
+        "module": "NODEJS",
+        "query": "Is it true that HTTP 201 signifies that a new resource was successfully created by the server?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-030",
+        "module": "NODEJS",
+        "query": "Is it true that HTTP 401 signifies that authentication credentials were missing or invalid?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-031",
+        "module": "DATABASE",
+        "query": "Can a table in a relational database specify a primary key to uniquely identify every record?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-032",
+        "module": "DATABASE",
+        "query": "Can a junction table with composite keys connect two tables in a Many-to-Many relationship?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-033",
+        "module": "DATABASE",
+        "query": "Is it true that First Normal Form requires every column in a table to hold indivisible values?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-034",
+        "module": "DATABASE",
+        "query": "Is it true that Write-Ahead Logging writes committed transactions to disk to survive power loss?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-035",
+        "module": "DATABASE",
+        "query": "Can a database transaction be rolled back completely if an intermediate SQL statement fails?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-036",
+        "module": "DATABASE",
+        "query": "Is it true that a unique index constraint guarantees that values in a column remain distinct?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-037",
+        "module": "HTML_CSS",
+        "query": "Can you explain if an element with display: flex can hold children that specify flex-basis dimensions?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-038",
+        "module": "HTML_CSS",
+        "query": "Can you explain if a grid container utilize repeat(3, 1fr) to establish three columns of equal width?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-039",
+        "module": "HTML_CSS",
+        "query": "Can you explain if is it valid for semantic <article> tags to represent independently syndicateable blog compositions?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-040",
+        "module": "HTML_CSS",
+        "query": "Can you explain if the CSS gap property establish uniform spacing between flex items without applying outer margins?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-041",
+        "module": "HTML_CSS",
+        "query": "Can you explain if an HTML5 document contain a <footer> element that holds copyright notices and author details?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-042",
+        "module": "HTML_CSS",
+        "query": "Can you explain if the <nav> element designates a dedicated section of primary navigation links?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-043",
+        "module": "HTML_CSS",
+        "query": "Can you explain if flex-wrap: wrap permit flex items to break across multiple lines when width is constrained?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-044",
+        "module": "HTML_CSS",
+        "query": "Can you explain if grid-column: span 2 cause a grid item to stretch across two separate column tracks?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-045",
+        "module": "HTML_CSS",
+        "query": "Can you explain if semantic tags aid screen reader tools in parsing document landmarks?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-046",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain if an object declared with const have individual properties modified without reassigning the variable?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-047",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain if arrow functions inherit the this binding from their enclosing lexical context?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-048",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain if the spread operator expand elements of an array when building a fresh composite array?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-049",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain if accessing let identifiers inside the temporal dead zone throws a reference error?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    },
+    {
+        "id": "EXP28-TRAP-050",
+        "module": "JAVASCRIPT",
+        "query": "Can you explain if object destructuring extract properties into local variables while applying default values?",
+        "expected": "SUPPORTED",
+        "category": "FALSE_REFUTATION_TRAP"
+    }
+]

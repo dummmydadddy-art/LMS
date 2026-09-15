@@ -473,24 +473,100 @@ class RagPremiseVerifier {
 
     private static array $nliCache = [];
 
+    public static function clearNliCache(): void {
+        self::$nliCache = [];
+    }
+
+    public static function getNliCacheSize(): int {
+        return count(self::$nliCache);
+    }
+
     /**
      * Tier-2 Generic Evidence-Grounded Semantic NLI Model Invocation
      */
     public static function callTier2Nli(string $premise, string $hypothesis, array $options = []): array {
         $model = $options['model'] ?? 'llama3.2:latest';
-        $cacheKey = md5($premise . '||' . $hypothesis . '||' . $model);
+        $promptMode = $options['prompt_mode'] ?? 'default';
+        $cacheKey = md5($premise . '||' . $hypothesis . '||' . $model . '||' . $promptMode);
         if (isset(self::$nliCache[$cacheKey])) {
             $cached = self::$nliCache[$cacheKey];
             $cached['latency_ms'] = 0.5;
             return $cached;
         }
 
-        $prompt = <<<PROMPT
+        switch ($promptMode) {
+            case 'B1':
+                $prompt = <<<PROMPT
+Premise: "{$premise}"
+Hypothesis: "{$hypothesis}"
+Task: Determine the logical relation strictly from the Premise alone (CONTRADICTION, ENTAILMENT, or NEUTRAL).
+Definitions:
+- CONTRADICTION: The Hypothesis asserts a fact, behavior, or property that cannot be true if the Premise is true, or makes a claim incompatible with the Premise.
+- ENTAILMENT: The Hypothesis is directly supported or logically follows from the Premise.
+- NEUTRAL: The Premise neither supports nor contradicts the Hypothesis.
+JSON only: {"label":"CONTRADICTION"|"ENTAILMENT"|"NEUTRAL","confidence":0.0-1.0}
+PROMPT;
+                break;
+
+            case 'B2':
+                $prompt = <<<PROMPT
+Premise: "{$premise}"
+Hypothesis: "{$hypothesis}"
+Task: Determine whether the Hypothesis CONTRADICTS, is ENTAILED by, or is NEUTRAL to the Premise. Pay special attention to polarity and modal constraints:
+- If the Premise says X is permitted/default/true and the Hypothesis says X is forbidden/impossible/false, that is CONTRADICTION.
+- If the Premise says X does not require/do Y, and the Hypothesis says X requires/does Y, that is CONTRADICTION.
+- If the Hypothesis accurately reflects what the Premise states, that is ENTAILMENT.
+- Otherwise NEUTRAL.
+JSON only: {"label":"CONTRADICTION"|"ENTAILMENT"|"NEUTRAL","confidence":0.0-1.0}
+PROMPT;
+                break;
+
+            case 'B3':
+                $prompt = <<<PROMPT
+Curriculum Context: "{$premise}"
+Assertion: "{$hypothesis}"
+Task: Evaluate whether the Assertion is ENTAILMENT, CONTRADICTION, or NEUTRAL relative to the Curriculum Context.
+- CONTRADICTION: The Assertion conflicts with the rules, defaults, or mechanisms described in the context.
+- ENTAILMENT: The Assertion is verified and consistent with the context.
+- NEUTRAL: The context does not address the assertion.
+JSON only: {"label":"CONTRADICTION"|"ENTAILMENT"|"NEUTRAL","confidence":0.0-1.0}
+PROMPT;
+                break;
+
+            case 'B4_probe':
+                $prompt = <<<PROMPT
+Curriculum Fact: "{$premise}"
+Student Claim: "{$hypothesis}"
+Task: Does the Student Claim contradict, conflict with, or assert the opposite of the Curriculum Fact?
+- If the Student Claim asserts something that the Curriculum Fact states is false, not needed, or different: CONTRADICTION.
+- If the Curriculum Fact does not address or conflict with the Student Claim: NEUTRAL.
+JSON only: {"label":"CONTRADICTION"|"NEUTRAL","confidence":0.0-1.0}
+PROMPT;
+                break;
+
+            case 'B5':
+                $prompt = <<<PROMPT
+Curriculum Fact: "{$premise}"
+Student Claim: "{$hypothesis}"
+Task: Evaluate if the Student Claim is ENTAILMENT, CONTRADICTION, or NEUTRAL strictly against the Curriculum Fact.
+Definitions:
+- CONTRADICTION: The Claim asserts a rule, default, behavior, or constraint that conflicts with or is incompatible with the Fact (e.g. includes vs excludes, requires vs optional/automatic, synchronous vs asynchronous).
+- ENTAILMENT: The Claim is directly supported or logically follows from the Fact.
+- NEUTRAL: The Fact does not confirm or refute the Claim.
+JSON only: {"label":"CONTRADICTION"|"ENTAILMENT"|"NEUTRAL","confidence":0.0-1.0}
+PROMPT;
+                break;
+
+            case 'default':
+            default:
+                $prompt = <<<PROMPT
 Premise: "{$premise}"
 Hypothesis: "{$hypothesis}"
 Task: Determine relation strictly from Premise alone (CONTRADICTION, ENTAILMENT, or NEUTRAL). Do not assume unstated facts.
 JSON only: {"label":"CONTRADICTION"|"ENTAILMENT"|"NEUTRAL","confidence":0.0-1.0}
 PROMPT;
+                break;
+        }
 
         $payload = json_encode([
             'model' => $options['model'] ?? 'llama3.2:latest',
@@ -688,7 +764,7 @@ PROMPT;
             }
 
             // Determine if Tier-1 dictionary is active for this ablation mode
-            $enableTier1Dictionary = in_array($mode, ['A0', 'A2', 'A3', 'A5'], true);
+            $enableTier1Dictionary = in_array($mode, ['A0', 'A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5'], true);
 
             $candidateMatches = [];
             foreach ($evidenceUnits as $unit) {
@@ -834,8 +910,8 @@ PROMPT;
             }
 
             // TIER 2 ELIGIBILITY:
-            // If Tier 1 confidently refuted with known rule in A2, A3, A5 -> use Tier 1 fast path
-            if ($tier1Contradiction && in_array($mode, ['A2', 'A3', 'A5'], true)) {
+            // If Tier 1 confidently refuted with known rule in A2, A3, A5, B1-B5 -> use Tier 1 fast path
+            if ($tier1Contradiction && in_array($mode, ['A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5'], true)) {
                 if ($isNegation) {
                     $totalSupporting++;
                 } else {
@@ -855,14 +931,52 @@ PROMPT;
 
             // Fall through to Tier-2 Generic Semantic NLI Verifier
             $overallDecisionTier = self::TIER_2_NLI;
-            $nliPremise = $topMatch['unit']['evidence_text'] ?? $topMatch['unit']['line_raw'];
+
+            // Format NLI premise context: B3, B5, B5-NoDict frame with curriculum topic and focal subject
+            if (in_array($mode, ['B3', 'B5', 'B5-NoDict'], true)) {
+                $ctxTitle = $topMatch['unit']['title'] ?? '';
+                $ctxFocal = $topMatch['unit']['focal_subject'] ?? '';
+                $ctxLine = $topMatch['unit']['line_raw'] ?? '';
+                $nliPremise = "[Topic: {$ctxTitle}]" . ($ctxFocal ? " [Subject: {$ctxFocal}]" : "") . " {$ctxLine}";
+            } else {
+                $nliPremise = $topMatch['unit']['evidence_text'] ?? $topMatch['unit']['line_raw'];
+            }
             $nliHypothesis = $prop['assertion'] ?: $cTrim;
 
-            $nliRes = self::callTier2Nli($nliPremise, $nliHypothesis, $runtimeOptions);
+            $nliOptions = $runtimeOptions;
+            if (in_array($mode, ['B1', 'B2', 'B3'], true)) {
+                $nliOptions['prompt_mode'] = $mode;
+            } elseif (in_array($mode, ['B4'], true)) {
+                $nliOptions['prompt_mode'] = 'B1';
+            } elseif (in_array($mode, ['B5', 'B5-NoDict'], true)) {
+                $nliOptions['prompt_mode'] = 'B5';
+            } else {
+                $nliOptions['prompt_mode'] = 'default';
+            }
 
-            $threshold = in_array($mode, ['A3', 'A4', 'A5'], true) ? 0.70 : 0.50;
+            $nliRes = self::callTier2Nli($nliPremise, $nliHypothesis, $nliOptions);
+
+            $threshold = in_array($mode, ['A1', 'A2'], true) ? 0.50 : 0.70;
             $nliLabel = $nliRes['label'] ?? 'NEUTRAL';
             $nliConf = (float)($nliRes['confidence'] ?? 0.0);
+            $pass1Lat = (float)($nliRes['latency_ms'] ?? 0.0);
+            $totalLat = $pass1Lat;
+            $twoPassInvoked = false;
+            $pass2Res = null;
+
+            // Two-pass verification for B4, B5, B5-NoDict
+            if (in_array($mode, ['B4', 'B5', 'B5-NoDict'], true) && ($nliLabel === 'NEUTRAL' || $nliConf < $threshold)) {
+                $twoPassInvoked = true;
+                $probeOptions = $runtimeOptions;
+                $probeOptions['prompt_mode'] = 'B4_probe';
+                $pass2Res = self::callTier2Nli($nliPremise, $nliHypothesis, $probeOptions);
+                $pass2Lat = (float)($pass2Res['latency_ms'] ?? 0.0);
+                $totalLat += $pass2Lat;
+                if (($pass2Res['label'] ?? '') === 'CONTRADICTION' && (float)($pass2Res['confidence'] ?? 0.0) >= $threshold) {
+                    $nliLabel = 'CONTRADICTION';
+                    $nliConf = (float)$pass2Res['confidence'];
+                }
+            }
 
             $tier2DiagnosticsList[] = [
                 'original_query' => $qClean,
@@ -871,15 +985,25 @@ PROMPT;
                 'evidence_sentence' => $nliPremise,
                 'citation' => $topMatch['unit']['citation'],
                 'model_identifier' => 'llama3.2:latest',
+                'mode' => $mode,
                 'nli_label' => $nliLabel,
                 'entailment_score' => ($nliLabel === 'ENTAILMENT' ? $nliConf : 0.0),
                 'contradiction_score' => ($nliLabel === 'CONTRADICTION' ? $nliConf : 0.0),
                 'neutral_score' => ($nliLabel === 'NEUTRAL' ? $nliConf : 0.0),
                 'confidence' => $nliConf,
-                'threshold_version' => 'EXP-0027-V1',
+                'threshold_version' => 'EXP-0028-V1',
                 'decision_tier' => self::TIER_2_NLI,
-                'rationale' => $nliRes['rationale'] ?? '',
-                'latency_ms' => $nliRes['latency_ms'] ?? 0
+                'rationale' => $nliRes['rationale'] ?? ($pass2Res['rationale'] ?? ''),
+                'latency_ms' => round($totalLat, 1),
+                'two_pass' => [
+                    'invoked' => $twoPassInvoked,
+                    'pass1_label' => $nliRes['label'] ?? 'NEUTRAL',
+                    'pass1_confidence' => $nliRes['confidence'] ?? 0.0,
+                    'pass1_latency_ms' => $pass1Lat,
+                    'pass2_label' => $pass2Res['label'] ?? null,
+                    'pass2_confidence' => $pass2Res['confidence'] ?? null,
+                    'pass2_latency_ms' => $pass2Res['latency_ms'] ?? null,
+                ]
             ];
 
             if ($nliLabel === 'CONTRADICTION' && $nliConf >= $threshold) {
