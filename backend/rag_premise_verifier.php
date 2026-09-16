@@ -359,6 +359,28 @@ class RagPremiseVerifier {
         ['minimalist web framework', 'multi-process cluster automatically']
     ];
 
+    public static float $pass2ContradictionThreshold = 0.75;
+    public static float $pass2EntailmentThreshold = 0.70;
+    private static ?array $curriculumVocabulary = null;
+
+    public static function setPass2Thresholds(float $contradiction, float $entailment): void {
+        self::$pass2ContradictionThreshold = $contradiction;
+        self::$pass2EntailmentThreshold = $entailment;
+    }
+
+    public static function getCurriculumVocabulary(): array {
+        if (self::$curriculumVocabulary === null) {
+            $file = dirname(__DIR__) . '/EXP-0030-CURRICULUM-VOCABULARY.json';
+            if (file_exists($file)) {
+                $data = json_decode(file_get_contents($file), true);
+                self::$curriculumVocabulary = $data['terms'] ?? [];
+            } else {
+                self::$curriculumVocabulary = [];
+            }
+        }
+        return self::$curriculumVocabulary;
+    }
+
     public static function setAblationMode(string $mode): void {
         self::$ablationMode = strtoupper(trim($mode));
     }
@@ -649,66 +671,105 @@ PROMPT;
         $qNorm = strtolower($query);
 
         // Active component flags based on ablation mode:
-        $enableEntity = in_array($mode, ['C1', 'C4', 'C5', 'C7'], true);
-        $enableAmbiguity = in_array($mode, ['C2', 'C4', 'C6', 'C7'], true);
-        $enableEvidence = in_array($mode, ['C3', 'C5', 'C6', 'C7'], true);
+        $enableEntity = in_array($mode, ['C1', 'C4', 'C5', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true);
+        $useDynamicVocab = in_array($mode, ['D1', 'D3', 'D4'], true);
+        $enableAmbiguity = in_array($mode, ['C2', 'C4', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true);
+        $enableEvidence = in_array($mode, ['C3', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true);
 
         $entityStatus = 'MATCH';
         $questionType = 'CLEAR_FACTUAL';
         $evidenceStatus = 'ADEQUATE';
         $reasonCodes = [];
 
+        // Evidence text compilation for grounding verification
+        $evidenceText = '';
+        foreach ($retrievedChunks as $chunk) {
+            $evidenceText .= ' ' . ($chunk['title'] ?? '') . ' ' . ($chunk['content'] ?? '');
+        }
+        $evNorm = strtolower($evidenceText);
+
         // Component A: Entity Grounding Check
         if ($enableEntity) {
-            $externalEntities = [
-                'go' => '\bgo\b|\bgolang\b|\bgoroutines?\b',
-                'mongodb' => '\bmongodb\b|\b\$lookup\b|\bunsharded\b',
-                'cassandra' => '\bcassandra\b|\bmurmur3partitioner\b|\bpartition keys?\b',
-                'svelte' => '\bsvelte\b',
-                'solidjs' => '\bsolidjs\b|\bsignals\b',
-                'alpine' => '\balpine(?:\.js)?\b|\bx-data\b|\bx-model\b',
-                'vue' => '\bvue(?:\.js)?\b|\bcomposition api\b|\boptions api\b',
-                'angular' => '\bangular\b|\b@component\b',
-                'tailwind' => '\btailwind\b|\bpostcss\b',
-                'webpack' => '\bwebpack\b|\btree-shaking\b',
-                'rollup' => '\brollup\b|\bdead code elimination\b',
-                'vite' => '\bvite\b',
-                'babel' => '\bbabel\b|\bes5 code\b',
-                'cypress' => '\bcypress\b',
-                'rxjs' => '\brxjs\b|\bobservable\b',
-                'redux saga' => '\bredux saga\b|\bgenerator functions\b',
-                'eslint' => '\beslint\b|\bast syntax trees?\b',
-                'prettier' => '\bprettier\b|\bast tokens?\b',
-                'graphql' => '\bgraphql\b|\bschema resolvers?\b|\bdataloader\b',
-                'websockets' => '\bwebsockets?\b|\bfull-duplex\b',
-                'oauth' => '\boauth(?:\s*2\.0)?\b|\bpkce\b',
-                'soap' => '\bsoap\b|\bxml envelopes?\b',
-                'thrift' => '\bapache thrift\b|\bthrift\b|\bidl compiler\b',
-                'server-sent events' => '\bserver-sent events\b|\bsse\b',
-                'redis' => '\bredis\b',
-                'docker' => '\bdocker\b',
-                'kubernetes' => '\bkubernetes\b'
-            ];
+            if ($useDynamicVocab) {
+                // EXP-0030: Dynamic Curriculum Vocabulary Boundary Check
+                $vocab = self::getCurriculumVocabulary();
 
-            $queryExternalEntity = null;
-            foreach ($externalEntities as $name => $pattern) {
-                if (preg_match('/' . $pattern . '/i', $qNorm)) {
-                    $queryExternalEntity = $name;
-                    break;
+                // Detect candidate technical entities in query
+                $techRegex = '/\b(htmx|lit|clojure|elixir|erlang|scala|kotlin|swift|dart|flutter|deno|bun|prisma|typeorm|sequelize|mongoose|trpc|grpc|fastapi|flask|django|spring\s+boot|laravel|rails|ruby|rust|haskell|zig|solidity|go|golang|goroutines?|mongodb|cassandra|neo4j|elasticsearch|dynamodb|couchdb|svelte|solidjs|alpine(?:\.js)?|vue(?:\.js)?|angular|tailwind(?:\s+css)?|postcss|webpack|rollup|vite|babel|cypress|rxjs|redux\s+saga|eslint|prettier|graphql|websockets?|oauth(?:\s*2\.0)?|soap|apache\s+thrift|thrift|server-sent\s+events|sse|redis|docker|kubernetes|kafka|rabbitmq|memcached|mariadb|sqlite|mysql|oracle|mssql|ansible|terraform|astro|marko|qwik|remix|solidstart|turbopack|cockroachdb|faunadb|surrealdb|supabase|pocketbase|sinatra|actix|rocket|axum|nestjs|adonisjs|phoenix|hapi|koa)\b/i';
+                $foundTechs = [];
+                if (preg_match_all($techRegex, $qNorm, $matches)) {
+                    $foundTechs = array_unique(array_map('strtolower', $matches[1]));
                 }
-            }
 
-            $evidenceText = '';
-            foreach ($retrievedChunks as $chunk) {
-                $evidenceText .= ' ' . ($chunk['title'] ?? '') . ' ' . ($chunk['content'] ?? '');
-            }
-            $evNorm = strtolower($evidenceText);
+                foreach ($foundTechs as $ft) {
+                    $isCurriculum = false;
+                    // Check exact vocabulary terms and aliases
+                    if (isset($vocab[$ft])) {
+                        $isCurriculum = true;
+                    } else {
+                        foreach ($vocab as $vEntry) {
+                            if (isset($vEntry['aliases']) && in_array($ft, array_map('strtolower', $vEntry['aliases']), true)) {
+                                $isCurriculum = true;
+                                break;
+                            }
+                        }
+                    }
 
-            if ($queryExternalEntity !== null) {
-                $pattern = $externalEntities[$queryExternalEntity];
-                if (!preg_match('/' . $pattern . '/i', $evNorm)) {
-                    $entityStatus = 'MISMATCH';
-                    $reasonCodes[] = 'OOD_ENTITY';
+                    // If not in curriculum vocabulary, check if grounded in retrieved evidence
+                    if (!$isCurriculum) {
+                        if (!str_contains($evNorm, $ft)) {
+                            $entityStatus = 'MISMATCH';
+                            $reasonCodes[] = 'DYNAMIC_OOD_ENTITY';
+                            break;
+                        }
+                    }
+                }
+            } else {
+                // Legacy EXP-0029 Static 27-item External Boundary List
+                $externalEntities = [
+                    'go' => '\bgo\b|\bgolang\b|\bgoroutines?\b',
+                    'mongodb' => '\bmongodb\b|\b\$lookup\b|\bunsharded\b',
+                    'cassandra' => '\bcassandra\b|\bmurmur3partitioner\b|\bpartition keys?\b',
+                    'svelte' => '\bsvelte\b',
+                    'solidjs' => '\bsolidjs\b|\bsignals\b',
+                    'alpine' => '\balpine(?:\.js)?\b|\bx-data\b|\bx-model\b',
+                    'vue' => '\bvue(?:\.js)?\b|\bcomposition api\b|\boptions api\b',
+                    'angular' => '\bangular\b|\b@component\b',
+                    'tailwind' => '\btailwind\b|\bpostcss\b',
+                    'webpack' => '\bwebpack\b|\btree-shaking\b',
+                    'rollup' => '\brollup\b|\bdead code elimination\b',
+                    'vite' => '\bvite\b',
+                    'babel' => '\bbabel\b|\bes5 code\b',
+                    'cypress' => '\bcypress\b',
+                    'rxjs' => '\brxjs\b|\bobservable\b',
+                    'redux saga' => '\bredux saga\b|\bgenerator functions\b',
+                    'eslint' => '\beslint\b|\bast syntax trees?\b',
+                    'prettier' => '\bprettier\b|\bast tokens?\b',
+                    'graphql' => '\bgraphql\b|\bschema resolvers?\b|\bdataloader\b',
+                    'websockets' => '\bwebsockets?\b|\bfull-duplex\b',
+                    'oauth' => '\boauth(?:\s*2\.0)?\b|\bpkce\b',
+                    'soap' => '\bsoap\b|\bxml envelopes?\b',
+                    'thrift' => '\bapache thrift\b|\bthrift\b|\bidl compiler\b',
+                    'server-sent events' => '\bserver-sent events\b|\bsse\b',
+                    'redis' => '\bredis\b',
+                    'docker' => '\bdocker\b',
+                    'kubernetes' => '\bkubernetes\b'
+                ];
+
+                $queryExternalEntity = null;
+                foreach ($externalEntities as $name => $pattern) {
+                    if (preg_match('/' . $pattern . '/i', $qNorm)) {
+                        $queryExternalEntity = $name;
+                        break;
+                    }
+                }
+
+                if ($queryExternalEntity !== null) {
+                    $pattern = $externalEntities[$queryExternalEntity];
+                    if (!preg_match('/' . $pattern . '/i', $evNorm)) {
+                        $entityStatus = 'MISMATCH';
+                        $reasonCodes[] = 'OOD_ENTITY';
+                    }
                 }
             }
         }
@@ -902,7 +963,7 @@ PROMPT;
             }
 
             // Determine if Tier-1 dictionary is active for this ablation mode
-            $enableTier1Dictionary = in_array($mode, ['A0', 'A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'], true);
+            $enableTier1Dictionary = in_array($mode, ['A0', 'A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true);
 
             $candidateMatches = [];
             foreach ($evidenceUnits as $unit) {
@@ -1048,8 +1109,8 @@ PROMPT;
             }
 
             // TIER 2 ELIGIBILITY:
-            // If Tier 1 confidently refuted with known rule in A2, A3, A5, B1-B5, C0-C7 -> use Tier 1 fast path
-            if ($tier1Contradiction && in_array($mode, ['A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'], true)) {
+            // If Tier 1 confidently refuted with known rule in A2, A3, A5, B1-B5, C0-C7, D0-D4 -> use Tier 1 fast path
+            if ($tier1Contradiction && in_array($mode, ['A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true)) {
                 if ($isNegation) {
                     $totalSupporting++;
                 } else {
@@ -1070,8 +1131,8 @@ PROMPT;
             // Fall through to Tier-2 Generic Semantic NLI Verifier
             $overallDecisionTier = self::TIER_2_NLI;
 
-            // Format NLI premise context: B3, B5, B5-NoDict, C0-C7 frame with curriculum topic and focal subject
-            if (in_array($mode, ['B3', 'B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'], true)) {
+            // Format NLI premise context: B3, B5, B5-NoDict, C0-C7, D0-D4 frame with curriculum topic and focal subject
+            if (in_array($mode, ['B3', 'B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true)) {
                 $ctxTitle = $topMatch['unit']['title'] ?? '';
                 $ctxFocal = $topMatch['unit']['focal_subject'] ?? '';
                 $ctxLine = $topMatch['unit']['line_raw'] ?? '';
@@ -1086,21 +1147,39 @@ PROMPT;
                 $nliOptions['prompt_mode'] = $mode;
             } elseif (in_array($mode, ['B4'], true)) {
                 $nliOptions['prompt_mode'] = 'B1';
-            } elseif (in_array($mode, ['B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'], true)) {
+            } elseif (in_array($mode, ['B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true)) {
                 $nliOptions['prompt_mode'] = 'B5';
             } else {
                 $nliOptions['prompt_mode'] = 'default';
             }
 
-            // EXP-0029 Pre-Filter Evaluation
+            // EXP-0029/EXP-0030 Pre-Filter Evaluation
             $preFilter = null;
-            if (in_array($mode, ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'], true)) {
+            if (in_array($mode, ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true)) {
                 $preFilter = self::evaluatePreFilter($qClean, $evidenceUnits, $retrievedChunks, $mode);
             }
 
             $nliRes = self::callTier2Nli($nliPremise, $nliHypothesis, $nliOptions);
 
-            $threshold = in_array($mode, ['A1', 'A2'], true) ? 0.50 : 0.70;
+            // Pass 1 and Pass 2 Threshold resolution:
+            // D4: symmetric high (0.75 / 0.75)
+            // D2, D3: asymmetric calibrated ($pass2EntailmentThreshold / $pass2ContradictionThreshold)
+            // A1, A2: symmetric low (0.50 / 0.50)
+            // Default (A3, A5, B1-B5, C0-C7, D0, D1): symmetric calibrated (0.70 / 0.70)
+            if ($mode === 'D4') {
+                $pass1Threshold = 0.75;
+                $pass2ContraThreshold = 0.75;
+            } elseif (in_array($mode, ['D2', 'D3'], true)) {
+                $pass1Threshold = self::$pass2EntailmentThreshold;
+                $pass2ContraThreshold = self::$pass2ContradictionThreshold;
+            } elseif (in_array($mode, ['A1', 'A2'], true)) {
+                $pass1Threshold = 0.50;
+                $pass2ContraThreshold = 0.50;
+            } else {
+                $pass1Threshold = 0.70;
+                $pass2ContraThreshold = 0.70;
+            }
+
             $nliLabel = $nliRes['label'] ?? 'NEUTRAL';
             $nliConf = (float)($nliRes['confidence'] ?? 0.0);
             $pass1Lat = (float)($nliRes['latency_ms'] ?? 0.0);
@@ -1108,9 +1187,9 @@ PROMPT;
             $twoPassInvoked = false;
             $pass2Res = null;
 
-            // Two-pass verification for B4, B5, B5-NoDict, and C0-C7
+            // Two-pass verification for B4, B5, B5-NoDict, C0-C7, D0-D4
             $allowPass2 = in_array($mode, ['B4', 'B5', 'B5-NoDict', 'C0'], true);
-            if (in_array($mode, ['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'], true)) {
+            if (in_array($mode, ['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true)) {
                 $allowPass2 = ($preFilter !== null && $preFilter['pass2_gate'] === 'ALLOW');
             }
 
@@ -1121,14 +1200,14 @@ PROMPT;
                 $nliConf = 0.0;
             }
 
-            if ($allowPass2 && ($nliLabel === 'NEUTRAL' || $nliConf < $threshold)) {
+            if ($allowPass2 && ($nliLabel === 'NEUTRAL' || $nliConf < $pass1Threshold)) {
                 $twoPassInvoked = true;
                 $probeOptions = $runtimeOptions;
                 $probeOptions['prompt_mode'] = 'B4_probe';
                 $pass2Res = self::callTier2Nli($nliPremise, $nliHypothesis, $probeOptions);
                 $pass2Lat = (float)($pass2Res['latency_ms'] ?? 0.0);
                 $totalLat += $pass2Lat;
-                if (($pass2Res['label'] ?? '') === 'CONTRADICTION' && (float)($pass2Res['confidence'] ?? 0.0) >= $threshold) {
+                if (($pass2Res['label'] ?? '') === 'CONTRADICTION' && (float)($pass2Res['confidence'] ?? 0.0) >= $pass2ContraThreshold) {
                     $nliLabel = 'CONTRADICTION';
                     $nliConf = (float)$pass2Res['confidence'];
                 }
@@ -1148,7 +1227,9 @@ PROMPT;
                 'contradiction_score' => ($nliLabel === 'CONTRADICTION' ? $nliConf : 0.0),
                 'neutral_score' => ($nliLabel === 'NEUTRAL' ? $nliConf : 0.0),
                 'confidence' => $nliConf,
-                'threshold_version' => 'EXP-0028-V1',
+                'pass1_threshold' => $pass1Threshold,
+                'pass2_contra_threshold' => $pass2ContraThreshold,
+                'threshold_version' => in_array($mode, ['D0', 'D1', 'D2', 'D3', 'D4'], true) ? 'EXP-0030-V1' : 'EXP-0028-V1',
                 'decision_tier' => self::TIER_2_NLI,
                 'rationale' => $nliRes['rationale'] ?? ($pass2Res['rationale'] ?? ''),
                 'latency_ms' => round($totalLat, 1),
@@ -1163,7 +1244,10 @@ PROMPT;
                 ]
             ];
 
-            if ($nliLabel === 'CONTRADICTION' && $nliConf >= $threshold) {
+            $isContraAccepted = ($nliLabel === 'CONTRADICTION' && $nliConf >= ($twoPassInvoked ? $pass2ContraThreshold : $pass1Threshold));
+            $isEntailAccepted = ($nliLabel === 'ENTAILMENT' && $nliConf >= $pass1Threshold);
+
+            if ($isContraAccepted) {
                 if ($isNegation) {
                     // Contradiction of negative claim inquiry resolves as supported
                     $totalSupporting++;
@@ -1174,7 +1258,7 @@ PROMPT;
                         $firstCitation = $topMatch['unit']['citation'];
                     }
                 }
-            } elseif ($nliLabel === 'ENTAILMENT' && $nliConf >= $threshold) {
+            } elseif ($isEntailAccepted) {
                 $totalSupporting++;
             } else {
                 // Ambiguous / Neutral / Insufficient certainty
