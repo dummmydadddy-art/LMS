@@ -523,8 +523,13 @@ class RagPremiseVerifier {
             $cached['latency_ms'] = 0.5;
             return $cached;
         }
-
-        switch ($promptMode) {
+        if (isset($options['custom_prompt'])) {
+            $prompt = $options['custom_prompt'];
+        } elseif (in_array($promptMode, ['P1', 'P2', 'P3', 'P4'], true)) {
+            require_once __DIR__ . '/rag_structured_nli_verifier.php';
+            $prompt = RagStructuredNliVerifier::buildPrompt($premise, $hypothesis, $promptMode, $options['polarity_info'] ?? []);
+        } else {
+            switch ($promptMode) {
             case 'B1':
                 $prompt = <<<PROMPT
 Premise: "{$premise}"
@@ -595,7 +600,7 @@ Hypothesis: "{$hypothesis}"
 Task: Determine relation strictly from Premise alone (CONTRADICTION, ENTAILMENT, or NEUTRAL). Do not assume unstated facts.
 JSON only: {"label":"CONTRADICTION"|"ENTAILMENT"|"NEUTRAL","confidence":0.0-1.0}
 PROMPT;
-                break;
+        }
         }
 
         $payload = json_encode([
@@ -1486,7 +1491,9 @@ PROMPT;
             $nliHypothesis = $prop['assertion'] ?: $cTrim;
 
             $nliOptions = $runtimeOptions;
-            if (in_array($mode, ['B1', 'B2', 'B3'], true)) {
+            if (isset($runtimeOptions['prompt_mode'])) {
+                $nliOptions['prompt_mode'] = $runtimeOptions['prompt_mode'];
+            } elseif (in_array($mode, ['B1', 'B2', 'B3'], true)) {
                 $nliOptions['prompt_mode'] = $mode;
             } elseif (in_array($mode, ['B4'], true)) {
                 $nliOptions['prompt_mode'] = 'B1';
