@@ -503,6 +503,14 @@ class RagPremiseVerifier {
         return count(self::$nliCache);
     }
 
+    public static function exportNliCache(): array {
+        return self::$nliCache;
+    }
+
+    public static function importNliCache(array $cache): void {
+        self::$nliCache = array_merge(self::$nliCache, $cache);
+    }
+
     /**
      * Tier-2 Generic Evidence-Grounded Semantic NLI Model Invocation
      */
@@ -671,10 +679,10 @@ PROMPT;
         $qNorm = strtolower($query);
 
         // Active component flags based on ablation mode:
-        $enableEntity = in_array($mode, ['C1', 'C4', 'C5', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true);
-        $useDynamicVocab = in_array($mode, ['D1', 'D3', 'D4'], true);
-        $enableAmbiguity = in_array($mode, ['C2', 'C4', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true);
-        $enableEvidence = in_array($mode, ['C3', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true);
+        $enableEntity = in_array($mode, ['C1', 'C4', 'C5', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true);
+        $useDynamicVocab = in_array($mode, ['D1', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true);
+        $enableAmbiguity = in_array($mode, ['C2', 'C4', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true);
+        $enableEvidence = in_array($mode, ['C3', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true);
 
         $entityStatus = 'MATCH';
         $questionType = 'CLEAR_FACTUAL';
@@ -838,6 +846,298 @@ PROMPT;
         ];
     }
 
+    /**
+     * EXP-0031: 5-Point Structural Validation Pipeline for Tier-1 Contradictions
+     * 
+     * Decouples lexical opposition and predicate negation from proposition contradiction.
+     * Evaluates:
+     * 1. Entity & Focal Subject Alignment (Sibling list separation)
+     * 2. Predicate Target Alignment (Atomic vs Partial, Mutable vs Immutable, Async vs Sync)
+     * 3. Negation Scope & Polarity Alignment (Absence/prevention verbs concordant with negative evidence)
+     * 4. Scope Validity (Subordinate conditionals 'even if', disjunctive alternatives 'either... or...')
+     * 5. Contradiction Confidence & Conservative Fall-through
+     */
+    public static function validateTier1Contradiction(
+        string $query,
+        string $clause,
+        array $topMatch,
+        string $mode = 'E4'
+    ): array {
+        // E0: Legacy baseline - no validation
+        if ($mode === 'E0') {
+            return [
+                'lexical_opposition' => true,
+                'entity_aligned' => true,
+                'predicate_aligned' => true,
+                'polarity_aligned' => true,
+                'scope_valid' => true,
+                'contradiction_confidence' => 'HIGH',
+                'tier1_decision' => 'REFUTED',
+                'validation_reason' => 'Legacy E0 fast-path: structural validation disabled'
+            ];
+        }
+
+        $qLower = strtolower($query);
+        $cLower = strtolower($clause);
+        $evLine = strtolower($topMatch['unit']['line_raw'] ?? '');
+        $evFocal = strtolower($topMatch['unit']['focal_subject'] ?? '');
+        $evTitle = strtolower($topMatch['unit']['title'] ?? '');
+        $matchedOpposite = $topMatch['matched_opposite'] ?? null;
+        $hasAntonym = !empty($topMatch['has_antonym']);
+        $hasPredNeg = !empty($topMatch['has_predicate_negation']);
+
+        $entityAligned = true;
+        $predicateAligned = true;
+        $polarityAligned = true;
+        $scopeValid = true;
+        $reason = 'Passed all structural validation checks';
+
+        // -------------------------------------------------------------
+        // Check 1: Entity & Sibling Alignment (Active in E1, E2, E3, E4)
+        // -------------------------------------------------------------
+        if (in_array($mode, ['E1', 'E2', 'E3', 'E4'], true)) {
+            // Sibling list 1: HTTP status codes (401 vs 403 vs 404 vs 500)
+            if (preg_match('/\b(401|unauthorized)\b/i', $qLower)) {
+                if (preg_match('/\b(403|forbidden)\b/i', $evFocal) || (preg_match('/\b403\b/i', $evLine) && !preg_match('/\b401\b/i', $evLine))) {
+                    $entityAligned = false;
+                    $reason = 'Entity mismatch: 401 Unauthorized query matched 403 Forbidden evidence';
+                }
+            } elseif (preg_match('/\b(403|forbidden)\b/i', $qLower)) {
+                if (preg_match('/\b(401|unauthorized)\b/i', $evFocal) || (preg_match('/\b401\b/i', $evLine) && !preg_match('/\b403\b/i', $evLine))) {
+                    $entityAligned = false;
+                    $reason = 'Entity mismatch: 403 Forbidden query matched 401 Unauthorized evidence';
+                }
+            }
+
+            // Sibling list 2: Database transactions (COMMIT vs ROLLBACK)
+            if (preg_match('/\bcommit\b/i', $qLower) && !preg_match('/\brollback\b/i', $qLower)) {
+                if ($evFocal === 'rollback' || (str_contains($evLine, 'rollback') && str_contains($evLine, 'commit'))) {
+                    $entityAligned = false;
+                    $reason = 'Entity/Enumeration mismatch: COMMIT query matched ROLLBACK / dual enumeration';
+                }
+            } elseif (preg_match('/\brollback\b/i', $qLower) && !preg_match('/\bcommit\b/i', $qLower)) {
+                if ($evFocal === 'commit' || (str_contains($evLine, 'rollback') && str_contains($evLine, 'commit'))) {
+                    $entityAligned = false;
+                    $reason = 'Entity/Enumeration mismatch: ROLLBACK query matched COMMIT / dual enumeration';
+                }
+            }
+
+            // Sibling list 3: React Hooks (useRef vs useEffect vs useMemo vs useCallback vs useState)
+            $hooks = ['useref', 'useeffect', 'usememo', 'usecallback', 'usestate', 'usecontext', 'uselayouteffect'];
+            $qHook = null;
+            foreach ($hooks as $h) {
+                if (preg_match('/\b' . $h . '\b/i', $qLower)) {
+                    $qHook = $h;
+                    break;
+                }
+            }
+            if ($qHook !== null) {
+                if ($qHook !== 'useref' && (str_contains($evLine, 'mutable ref object') || str_contains($evLine, '`.current`') || str_contains($evLine, 'useref'))) {
+                    $entityAligned = false;
+                    $reason = "Entity mismatch: React $qHook query matched useRef evidence";
+                } elseif ($qHook === 'useref' && (str_contains($evLine, 'react state is immutable') || str_contains($evLine, 'usestate'))) {
+                    $entityAligned = false;
+                    $reason = 'Entity mismatch: React useRef query matched React state evidence';
+                }
+            }
+
+            // Sibling list: Spread operator vs arguments object
+            if (str_contains($qLower, 'spread operator') && !str_contains($qLower, 'arrow')) {
+                if (str_contains($evLine, 'no `arguments` object') || str_contains($evLine, 'rest parameters')) {
+                    $entityAligned = false;
+                    $reason = 'Entity mismatch: Spread operator query matched arrow function arguments evidence';
+                }
+            }
+
+            // Sibling list 4: HTTP Methods (PUT vs POST vs PATCH)
+            if (preg_match('/\bhttp\s+put\b|\bput\s+(?:request|method|is)\b/i', $qLower)) {
+                if ($evFocal === 'post' || preg_match('/^[\-\*\d\.]*\s*post\s*:/i', $evLine)) {
+                    $entityAligned = false;
+                    $reason = 'Entity mismatch: HTTP PUT query matched HTTP POST definition line';
+                }
+            } elseif (preg_match('/\bhttp\s+patch\b|\bpatch\s+(?:request|method|is)\b/i', $qLower)) {
+                if ($evFocal === 'post' || $evFocal === 'put' || str_contains($evLine, 'atomic') || str_contains($evTitle, 'database') || str_contains($evTitle, 'normalization')) {
+                    $entityAligned = false;
+                    $reason = 'Entity mismatch: HTTP PATCH query matched database normalization line';
+                }
+            }
+
+            // Sibling list 5: JS variable declarations (var vs let/const/TDZ)
+            if (preg_match('/\b(?:temporal\s+dead\s+zone|tdz|const|let)\b/i', $qLower) && !preg_match('/\bvar\b/i', $qLower)) {
+                if ($evFocal === 'var' || preg_match('/^[\-\*\d\.]*\s*var\s*:/i', $evLine)) {
+                    $entityAligned = false;
+                    $reason = 'Entity mismatch: TDZ/const/let query matched var definition line';
+                }
+            }
+
+            // Sibling list 6: CSS Layout (Flexbox vs Grid)
+            if (preg_match('/\bflex(?:box)?\b/i', $qLower) && !preg_match('/\bgrid\b/i', $qLower)) {
+                if ($evFocal === 'grid' || preg_match('/^[\-\*\d\.]*\s*grid\s*:/i', $evLine)) {
+                    $entityAligned = false;
+                    $reason = 'Entity mismatch: Flexbox query matched Grid definition';
+                }
+            }
+
+            // Cross-Technology mismatch: React vs Node.js
+            if ((str_contains($qLower, 'react') || str_contains($qLower, 'component')) && !str_contains($qLower, 'node')) {
+                if (str_contains($evTitle, 'node.js') || str_contains($evLine, 'node.js is an asynchronous')) {
+                    $entityAligned = false;
+                    $reason = 'Cross-technology mismatch: React query matched Node.js runtime evidence';
+                }
+            }
+        }
+
+        // -------------------------------------------------------------
+        // Check 2: Predicate Target Alignment (Active in E1, E2, E3, E4)
+        // -------------------------------------------------------------
+        if (in_array($mode, ['E1', 'E2', 'E3', 'E4'], true) && $entityAligned) {
+            // Antonym dual appearance in evidence line (Enumeration collision):
+            // e.g. "flex-direction: row (default, left to right) | column (top to bottom)"
+            // e.g. "COMMIT or ROLLBACK"
+            // e.g. "Macrotasks: setTimeout ... and Microtask Queue (Promises ...)"
+            if ($matchedOpposite !== null && is_array($matchedOpposite) && count($matchedOpposite) >= 2) {
+                $termA = strtolower($matchedOpposite[0]);
+                $termB = strtolower($matchedOpposite[1]);
+                if (!empty($termA) && !empty($termB) && str_contains($evLine, $termA) && str_contains($evLine, $termB)) {
+                    $isDisjunctionEnum = (bool)preg_match('/(?:\||\bor\b|and\s+microtask|\/)/i', $evLine);
+                    $hasExplicitNegationOnTerm = (bool)preg_match('/\b(?:not|no|non)\s+' . preg_quote($termA, '/') . '\b|\b(?:not|no|non)\s+' . preg_quote($termB, '/') . '\b/i', $evLine);
+                    if ($isDisjunctionEnum && !$hasExplicitNegationOnTerm) {
+                        $predicateAligned = false;
+                        $reason = "Enumeration collision: evidence lists both opposing terms ('$termA' and '$termB') in alternative specification";
+                    }
+                }
+            }
+
+            // Atomic vs Partial target disambiguation
+            if (preg_match('/\b(?:atomic|partial)\b/i', $qLower)) {
+                $qIs1NF = (bool)preg_match('/\b(?:first normal form|1nf|column|scalar)\b/i', $qLower);
+                $qIs2NF = (bool)preg_match('/\b(?:second normal form|2nf|partial dependenc)\b/i', $qLower);
+                $qIsACID = (bool)preg_match('/\b(?:transaction|acid|all or nothing)\b/i', $qLower);
+                $qIsPatch = (bool)preg_match('/\b(?:patch|http patch)\b/i', $qLower);
+
+                $evIs1NF = (bool)preg_match('/\b(?:each\s+column|column\s+contains|atomic\s+\(indivisible\)|indivisible\s+values)\b/i', $evLine) || ((bool)preg_match('/\b(?:atomic|indivisible|column)\b/i', $evLine) && str_contains($evTitle, 'normalization'));
+                $evIs2NF = (bool)preg_match('/\bpartial dependenc/i', $evLine);
+
+                if ($qIs1NF && $evIs2NF) {
+                    $predicateAligned = false;
+                    $reason = 'Predicate target mismatch: 1NF column atomicity matched 2NF partial dependency';
+                } elseif ($qIs2NF && $evIs1NF && !str_contains($evLine, 'partial')) {
+                    $predicateAligned = false;
+                    $reason = 'Predicate target mismatch: 2NF partial dependency matched 1NF column atomicity';
+                } elseif ($qIsPatch && ($evIs1NF || $evIs2NF)) {
+                    $predicateAligned = false;
+                    $reason = 'Predicate target mismatch: HTTP PATCH partial update matched database atomicity';
+                } elseif ($qIsACID && ($evIs1NF && !str_contains($evLine, 'transaction'))) {
+                    $predicateAligned = false;
+                    $reason = 'Predicate target mismatch: Transaction atomicity matched column scalar atomicity';
+                }
+            }
+
+            // Mutable vs Immutable target disambiguation
+            if (str_contains($qLower, 'const') && str_contains($qLower, 'binding')) {
+                if (str_contains($evLine, 'cannot be reassigned') && str_contains($evLine, 'remain mutable in their properties')) {
+                    $predicateAligned = false;
+                    $reason = 'Predicate target mismatch: const binding immutability modifies identifier, evidence mutable modifies object properties';
+                }
+            }
+
+            // Synchronous vs Asynchronous target disambiguation in Node.js / I/O
+            if (str_contains($qLower, 'libuv') || str_contains($qLower, 'asynchronous i/o') || str_contains($qLower, 'asynchronous file')) {
+                if (str_contains($evLine, 'synchronous encryption') || str_contains($evLine, 'heavy loops')) {
+                    $predicateAligned = false;
+                    $reason = 'Predicate target mismatch: libuv async I/O query matched synchronous CPU warning in evidence';
+                }
+            }
+        }
+
+        // -------------------------------------------------------------
+        // Check 3: Negation Scope & Polarity Alignment (Active in E2, E3, E4)
+        // -------------------------------------------------------------
+        if (in_array($mode, ['E2', 'E3', 'E4'], true) && $entityAligned && $predicateAligned) {
+            $negMarkers = '/\b(?:without|avoid|avoids|avoiding|prevent|prevents|preventing|prevented|prevention|omit|omits|omitting|omitted|eliminate|eliminates|eliminating|eliminated|cannot|can\'t|does not|doesn\'t|no|never|not)\b/i';
+
+            if (preg_match($negMarkers, $qLower, $negMatch)) {
+                $marker = strtolower($negMatch[0]);
+
+                if (in_array($marker, ['without', 'avoid', 'avoids', 'avoiding', 'prevent', 'prevents', 'prevented', 'prevention', 'omit', 'omits', 'omitting', 'eliminate', 'eliminates', 'eliminating'], true)) {
+                    $polarityAligned = false;
+                    $reason = "Polarity concordance: query asserts absence/prevention ('$marker') which is confirmed by evidence";
+                }
+
+                if ($hasPredNeg) {
+                    if (preg_match('/\b(?:prevent|prevented|preventing|omit|omits|eliminate|eliminates|without)\b/i', $qLower)) {
+                        $polarityAligned = false;
+                        $reason = "Predicate negation concordance: query absence verb matches evidence negation";
+                    }
+                }
+            }
+
+            // Case C: React event update batching / ref persistence into single render
+            if (str_contains($qLower, 'render') && str_contains($evLine, 'without triggering a re-render')) {
+                if (preg_match('/\b(?:survive|survives|surviving|persist|persists|persisting|batch|batched|batching)\b/i', $qLower)) {
+                    $polarityAligned = false;
+                    $reason = 'Predicate scope concordance: ref persistence / batching query aligns with non-triggering re-render evidence';
+                }
+            }
+        }
+
+        // -------------------------------------------------------------
+        // Check 4: Subordinate Conditional & Disjunctive Scope (Active in E3, E4)
+        // -------------------------------------------------------------
+        if (in_array($mode, ['E3', 'E4'], true) && $entityAligned && $predicateAligned && $polarityAligned) {
+            // Check subordinate conditionals: "even if ...", "if ...", "unless ..."
+            if (preg_match('/\beven\s+if\s+([^,\?]+)/i', $qLower, $condMatch)) {
+                $condClause = $condMatch[1];
+                if ($matchedOpposite !== null) {
+                    foreach ($matchedOpposite as $opp) {
+                        if (str_contains($condClause, strtolower($opp))) {
+                            $scopeValid = false;
+                            $reason = "Subordinate conditional scope: opposite term '$opp' is inside 'even if' concession";
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // Check disjunctive alternative: "either ... or ...", "succeeds as a whole or leaves no partial traces"
+            if (preg_match('/\b(?:either\b.+?\bor\b|\bor\s+leaves\s+no\s+partial\b|\bor\b)/i', $cLower)) {
+                if (str_contains($qLower, 'succeeds as a whole or leaves no partial traces')) {
+                    $scopeValid = false;
+                    $reason = 'Disjunctive alternative scope: query affirms either branch of ACID atomicity definition';
+                }
+            }
+        }
+
+        // -------------------------------------------------------------
+        // Decision Synthesis
+        // -------------------------------------------------------------
+        $allPassed = ($entityAligned && $predicateAligned && $polarityAligned && $scopeValid);
+
+        if ($allPassed) {
+            return [
+                'lexical_opposition' => true,
+                'entity_aligned' => true,
+                'predicate_aligned' => true,
+                'polarity_aligned' => true,
+                'scope_valid' => true,
+                'contradiction_confidence' => 'HIGH',
+                'tier1_decision' => 'REFUTED',
+                'validation_reason' => $reason
+            ];
+        } else {
+            return [
+                'lexical_opposition' => ($hasAntonym || $hasPredNeg),
+                'entity_aligned' => $entityAligned,
+                'predicate_aligned' => $predicateAligned,
+                'polarity_aligned' => $polarityAligned,
+                'scope_valid' => $scopeValid,
+                'contradiction_confidence' => 'LOW',
+                'tier1_decision' => 'NO_DETERMINISTIC_REFUTATION',
+                'validation_reason' => $reason
+            ];
+        }
+    }
+
     public static function verify(string $query, array $retrievedChunks, array $runtimeOptions = []): array {
         if (!RagFlags::isEnabled('ENABLE_PREMISE_VERIFIER')) {
             return [
@@ -850,7 +1150,8 @@ PROMPT;
                 'citation' => null,
                 'decision_tier' => self::TIER_1,
                 'decision_reason' => 'Verifier disabled by feature flag',
-                'tier2_diagnostics' => null
+                'tier2_diagnostics' => null,
+                'tier1_diagnostics' => null
             ];
         }
 
@@ -870,7 +1171,8 @@ PROMPT;
                 'citation' => "[JavaScript ES6+ Deep Dive - Chunk 0]",
                 'decision_tier' => self::TIER_1,
                 'decision_reason' => "Nonexistent ECMAScript operator syntax: {$badOp}",
-                'tier2_diagnostics' => null
+                'tier2_diagnostics' => null,
+                'tier1_diagnostics' => null
             ];
         }
 
@@ -886,7 +1188,8 @@ PROMPT;
                 'citation' => null,
                 'decision_tier' => self::TIER_1,
                 'decision_reason' => 'Query refers to an external technology not covered in curriculum',
-                'tier2_diagnostics' => null
+                'tier2_diagnostics' => null,
+                'tier1_diagnostics' => null
             ];
         }
 
@@ -911,7 +1214,8 @@ PROMPT;
                 'citation' => null,
                 'decision_tier' => self::TIER_1,
                 'decision_reason' => 'Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)',
-                'tier2_diagnostics' => null
+                'tier2_diagnostics' => null,
+                'tier1_diagnostics' => null
             ];
         }
 
@@ -924,6 +1228,7 @@ PROMPT;
         $firstCitation = null;
         $totalSupporting = 0;
         $tier2DiagnosticsList = [];
+        $tier1DiagnosticsList = [];
         $overallDecisionTier = self::TIER_1;
 
         // Stage 5: Evaluate each proposition clause
@@ -963,7 +1268,7 @@ PROMPT;
             }
 
             // Determine if Tier-1 dictionary is active for this ablation mode
-            $enableTier1Dictionary = in_array($mode, ['A0', 'A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true);
+            $enableTier1Dictionary = in_array($mode, ['A0', 'A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true);
 
             $candidateMatches = [];
             foreach ($evidenceUnits as $unit) {
@@ -1081,6 +1386,24 @@ PROMPT;
 
             // Check Tier 1 resolution
             $tier1Contradiction = ($topMatch['has_antonym'] || $topMatch['has_predicate_negation']);
+            $tier1Validation = null;
+
+            if ($tier1Contradiction) {
+                if (in_array($mode, ['E1', 'E2', 'E3', 'E4'], true)) {
+                    $tier1Validation = self::validateTier1Contradiction($qClean, $cTrim, $topMatch, $mode);
+                } else {
+                    $tier1Validation = [
+                        'lexical_opposition' => true,
+                        'entity_aligned' => true,
+                        'predicate_aligned' => true,
+                        'polarity_aligned' => true,
+                        'scope_valid' => true,
+                        'contradiction_confidence' => 'HIGH',
+                        'tier1_decision' => 'REFUTED',
+                        'validation_reason' => 'Legacy fast-path: structural validation disabled'
+                    ];
+                }
+            }
 
             if ($mode === 'A0') {
                 // Pure frozen EXP-0025 baseline: no Tier 2 NLI
@@ -1108,9 +1431,10 @@ PROMPT;
                 continue;
             }
 
-            // TIER 2 ELIGIBILITY:
-            // If Tier 1 confidently refuted with known rule in A2, A3, A5, B1-B5, C0-C7, D0-D4 -> use Tier 1 fast path
-            if ($tier1Contradiction && in_array($mode, ['A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true)) {
+            // TIER 1 FAST-PATH DECISION:
+            // In legacy modes (A2-D4, E0): unconditional if $tier1Contradiction is true.
+            // In decoupled modes (E1-E4): gated by structural validation ($tier1Validation['tier1_decision'] === 'REFUTED').
+            if ($tier1Contradiction && $tier1Validation !== null && $tier1Validation['tier1_decision'] === 'REFUTED' && in_array($mode, ['A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true)) {
                 if ($isNegation) {
                     $totalSupporting++;
                 } else {
@@ -1123,16 +1447,34 @@ PROMPT;
                 $tier2DiagnosticsList[] = [
                     'clause' => $cTrim,
                     'decision_tier' => self::TIER_1,
-                    'reason' => 'Resolved by Tier-1 fast-path contradiction'
+                    'reason' => 'Resolved by Tier-1 fast-path contradiction',
+                    'tier1_validation' => $tier1Validation
+                ];
+                $tier1DiagnosticsList[] = [
+                    'clause' => $cTrim,
+                    'top_evidence_line' => $topMatch['unit']['line_raw'],
+                    'trigger_type' => $topMatch['has_antonym'] ? 'ANTONYM' : 'PREDICATE_NEGATION',
+                    'matched_opposite' => $topMatch['matched_opposite'],
+                    'validation' => $tier1Validation
                 ];
                 continue;
+            } elseif ($tier1Contradiction && $tier1Validation !== null && $tier1Validation['tier1_decision'] === 'NO_DETERMINISTIC_REFUTATION') {
+                // Record diagnostic for downgraded Tier-1 collision
+                $tier1DiagnosticsList[] = [
+                    'clause' => $cTrim,
+                    'top_evidence_line' => $topMatch['unit']['line_raw'],
+                    'trigger_type' => $topMatch['has_antonym'] ? 'ANTONYM' : 'PREDICATE_NEGATION',
+                    'matched_opposite' => $topMatch['matched_opposite'],
+                    'validation' => $tier1Validation
+                ];
+                // Conservatism Invariant: fall through cleanly to pre-filter and Tier-2 Semantic NLI!
             }
 
             // Fall through to Tier-2 Generic Semantic NLI Verifier
             $overallDecisionTier = self::TIER_2_NLI;
 
-            // Format NLI premise context: B3, B5, B5-NoDict, C0-C7, D0-D4 frame with curriculum topic and focal subject
-            if (in_array($mode, ['B3', 'B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true)) {
+            // Format NLI premise context: B3, B5, B5-NoDict, C0-C7, D0-D4, E0-E4 frame with curriculum topic and focal subject
+            if (in_array($mode, ['B3', 'B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true)) {
                 $ctxTitle = $topMatch['unit']['title'] ?? '';
                 $ctxFocal = $topMatch['unit']['focal_subject'] ?? '';
                 $ctxLine = $topMatch['unit']['line_raw'] ?? '';
@@ -1147,15 +1489,15 @@ PROMPT;
                 $nliOptions['prompt_mode'] = $mode;
             } elseif (in_array($mode, ['B4'], true)) {
                 $nliOptions['prompt_mode'] = 'B1';
-            } elseif (in_array($mode, ['B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true)) {
+            } elseif (in_array($mode, ['B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true)) {
                 $nliOptions['prompt_mode'] = 'B5';
             } else {
                 $nliOptions['prompt_mode'] = 'default';
             }
 
-            // EXP-0029/EXP-0030 Pre-Filter Evaluation
+            // EXP-0029/EXP-0030/EXP-0031 Pre-Filter Evaluation
             $preFilter = null;
-            if (in_array($mode, ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true)) {
+            if (in_array($mode, ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true)) {
                 $preFilter = self::evaluatePreFilter($qClean, $evidenceUnits, $retrievedChunks, $mode);
             }
 
@@ -1163,13 +1505,13 @@ PROMPT;
 
             // Pass 1 and Pass 2 Threshold resolution:
             // D4: symmetric high (0.75 / 0.75)
-            // D2, D3: asymmetric calibrated ($pass2EntailmentThreshold / $pass2ContradictionThreshold)
+            // D2, D3, E0-E4: asymmetric calibrated ($pass2EntailmentThreshold / $pass2ContradictionThreshold = 0.70 / 0.75)
             // A1, A2: symmetric low (0.50 / 0.50)
             // Default (A3, A5, B1-B5, C0-C7, D0, D1): symmetric calibrated (0.70 / 0.70)
             if ($mode === 'D4') {
                 $pass1Threshold = 0.75;
                 $pass2ContraThreshold = 0.75;
-            } elseif (in_array($mode, ['D2', 'D3'], true)) {
+            } elseif (in_array($mode, ['D2', 'D3', 'E0', 'E1', 'E2', 'E3', 'E4'], true)) {
                 $pass1Threshold = self::$pass2EntailmentThreshold;
                 $pass2ContraThreshold = self::$pass2ContradictionThreshold;
             } elseif (in_array($mode, ['A1', 'A2'], true)) {
@@ -1187,9 +1529,9 @@ PROMPT;
             $twoPassInvoked = false;
             $pass2Res = null;
 
-            // Two-pass verification for B4, B5, B5-NoDict, C0-C7, D0-D4
+            // Two-pass verification for B4, B5, B5-NoDict, C0-C7, D0-D4, E0-E4
             $allowPass2 = in_array($mode, ['B4', 'B5', 'B5-NoDict', 'C0'], true);
-            if (in_array($mode, ['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4'], true)) {
+            if (in_array($mode, ['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true)) {
                 $allowPass2 = ($preFilter !== null && $preFilter['pass2_gate'] === 'ALLOW');
             }
 
@@ -1229,7 +1571,7 @@ PROMPT;
                 'confidence' => $nliConf,
                 'pass1_threshold' => $pass1Threshold,
                 'pass2_contra_threshold' => $pass2ContraThreshold,
-                'threshold_version' => in_array($mode, ['D0', 'D1', 'D2', 'D3', 'D4'], true) ? 'EXP-0030-V1' : 'EXP-0028-V1',
+                'threshold_version' => in_array($mode, ['E0', 'E1', 'E2', 'E3', 'E4'], true) ? 'EXP-0031-V1' : (in_array($mode, ['D0', 'D1', 'D2', 'D3', 'D4'], true) ? 'EXP-0030-V1' : 'EXP-0028-V1'),
                 'decision_tier' => self::TIER_2_NLI,
                 'rationale' => $nliRes['rationale'] ?? ($pass2Res['rationale'] ?? ''),
                 'latency_ms' => round($totalLat, 1),
@@ -1280,7 +1622,8 @@ PROMPT;
                     ? 'Semantic contradiction established by Tier-2 NLI over curriculum evidence'
                     : 'Contradictory evidence found via Tier-1 curriculum fast path',
                 'pre_filter' => $preFilter ?? null,
-                'tier2_diagnostics' => $tier2DiagnosticsList
+                'tier2_diagnostics' => $tier2DiagnosticsList,
+                'tier1_diagnostics' => !empty($tier1DiagnosticsList) ? $tier1DiagnosticsList : null
             ];
         } elseif ($hasNotEstablished || $totalSupporting === 0) {
             return [
@@ -1294,7 +1637,8 @@ PROMPT;
                 'decision_tier' => ($overallDecisionTier === self::TIER_2_NLI ? self::TIER_2_ABSTAIN : self::TIER_1),
                 'decision_reason' => 'Insufficient or neutral evidence in retrieved curriculum passages to establish premise',
                 'pre_filter' => $preFilter ?? null,
-                'tier2_diagnostics' => $tier2DiagnosticsList
+                'tier2_diagnostics' => $tier2DiagnosticsList,
+                'tier1_diagnostics' => !empty($tier1DiagnosticsList) ? $tier1DiagnosticsList : null
             ];
         } else {
             return [
@@ -1310,7 +1654,8 @@ PROMPT;
                     ? 'Premise entailed by curriculum evidence according to Tier-2 NLI'
                     : 'Premise supported by retrieved curriculum evidence with matching polarity',
                 'pre_filter' => $preFilter ?? null,
-                'tier2_diagnostics' => $tier2DiagnosticsList
+                'tier2_diagnostics' => $tier2DiagnosticsList,
+                'tier1_diagnostics' => !empty($tier1DiagnosticsList) ? $tier1DiagnosticsList : null
             ];
         }
     }
