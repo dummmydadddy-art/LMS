@@ -270,6 +270,7 @@ class Exp0032Retrieval {
                 'title' => (string)($item['title'] ?? ''),
                 'content' => (string)($item['content'] ?? ''),
                 'similarity' => (float)($item['similarity'] ?? 0.0),
+                'raw_logit' => (float)($item['rerank_score'] ?? 0.0),
                 'rank' => $idx + 1,
                 'retrieval_method' => 'reranked',
                 'metadata' => $item['metadata'] ?? []

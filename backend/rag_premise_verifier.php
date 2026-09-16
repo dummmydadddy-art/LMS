@@ -1203,7 +1203,8 @@ PROMPT;
             if ($sim > $maxSimilarity) $maxSimilarity = $sim;
         }
 
-        if (empty($retrievedChunks) || $maxSimilarity < 0.28) {
+        $evidenceGateThreshold = isset($runtimeOptions['evidence_gate_threshold']) ? (float)$runtimeOptions['evidence_gate_threshold'] : 0.28;
+        if (empty($retrievedChunks) || $maxSimilarity < $evidenceGateThreshold) {
             return [
                 'has_presupposition' => true,
                 'status' => self::STATUS_NOT_ESTABLISHED,
@@ -1213,7 +1214,7 @@ PROMPT;
                 'refutation' => null,
                 'citation' => null,
                 'decision_tier' => self::TIER_1,
-                'decision_reason' => 'Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)',
+                'decision_reason' => "Zero or insufficient evidence available in approved curriculum (maxSim < {$evidenceGateThreshold})",
                 'tier2_diagnostics' => null,
                 'tier1_diagnostics' => null
             ];
