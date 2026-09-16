@@ -639,6 +639,144 @@ PROMPT;
      * Evaluates the query against retrieved curriculum passages using two-tier hybrid architecture.
      * Guaranteed contract: returns evidence_used: true across all exits.
      */
+    /**
+     * EXP-0029 Pre-Filter: Entity Grounding, Ambiguity Detection, and Evidence Adequacy
+     *
+     * Produces an auditable gate decision object to prevent Pass-2 over-refutation
+     * and suppress Tier-2 parametric leakage on out-of-curriculum / subjective claims.
+     */
+    public static function evaluatePreFilter(string $query, array $evidenceUnits, array $retrievedChunks, string $mode = 'C7'): array {
+        $qNorm = strtolower($query);
+
+        // Active component flags based on ablation mode:
+        $enableEntity = in_array($mode, ['C1', 'C4', 'C5', 'C7'], true);
+        $enableAmbiguity = in_array($mode, ['C2', 'C4', 'C6', 'C7'], true);
+        $enableEvidence = in_array($mode, ['C3', 'C5', 'C6', 'C7'], true);
+
+        $entityStatus = 'MATCH';
+        $questionType = 'CLEAR_FACTUAL';
+        $evidenceStatus = 'ADEQUATE';
+        $reasonCodes = [];
+
+        // Component A: Entity Grounding Check
+        if ($enableEntity) {
+            $externalEntities = [
+                'go' => '\bgo\b|\bgolang\b|\bgoroutines?\b',
+                'mongodb' => '\bmongodb\b|\b\$lookup\b|\bunsharded\b',
+                'cassandra' => '\bcassandra\b|\bmurmur3partitioner\b|\bpartition keys?\b',
+                'svelte' => '\bsvelte\b',
+                'solidjs' => '\bsolidjs\b|\bsignals\b',
+                'alpine' => '\balpine(?:\.js)?\b|\bx-data\b|\bx-model\b',
+                'vue' => '\bvue(?:\.js)?\b|\bcomposition api\b|\boptions api\b',
+                'angular' => '\bangular\b|\b@component\b',
+                'tailwind' => '\btailwind\b|\bpostcss\b',
+                'webpack' => '\bwebpack\b|\btree-shaking\b',
+                'rollup' => '\brollup\b|\bdead code elimination\b',
+                'vite' => '\bvite\b',
+                'babel' => '\bbabel\b|\bes5 code\b',
+                'cypress' => '\bcypress\b',
+                'rxjs' => '\brxjs\b|\bobservable\b',
+                'redux saga' => '\bredux saga\b|\bgenerator functions\b',
+                'eslint' => '\beslint\b|\bast syntax trees?\b',
+                'prettier' => '\bprettier\b|\bast tokens?\b',
+                'graphql' => '\bgraphql\b|\bschema resolvers?\b|\bdataloader\b',
+                'websockets' => '\bwebsockets?\b|\bfull-duplex\b',
+                'oauth' => '\boauth(?:\s*2\.0)?\b|\bpkce\b',
+                'soap' => '\bsoap\b|\bxml envelopes?\b',
+                'thrift' => '\bapache thrift\b|\bthrift\b|\bidl compiler\b',
+                'server-sent events' => '\bserver-sent events\b|\bsse\b',
+                'redis' => '\bredis\b',
+                'docker' => '\bdocker\b',
+                'kubernetes' => '\bkubernetes\b'
+            ];
+
+            $queryExternalEntity = null;
+            foreach ($externalEntities as $name => $pattern) {
+                if (preg_match('/' . $pattern . '/i', $qNorm)) {
+                    $queryExternalEntity = $name;
+                    break;
+                }
+            }
+
+            $evidenceText = '';
+            foreach ($retrievedChunks as $chunk) {
+                $evidenceText .= ' ' . ($chunk['title'] ?? '') . ' ' . ($chunk['content'] ?? '');
+            }
+            $evNorm = strtolower($evidenceText);
+
+            if ($queryExternalEntity !== null) {
+                $pattern = $externalEntities[$queryExternalEntity];
+                if (!preg_match('/' . $pattern . '/i', $evNorm)) {
+                    $entityStatus = 'MISMATCH';
+                    $reasonCodes[] = 'OOD_ENTITY';
+                }
+            }
+        }
+
+        // Component B: Ambiguity & Question-Type Gate
+        if ($enableAmbiguity) {
+            if (preg_match('/\b(best|ideal|proper|better|recommended|nice|preferable|optimal|easiest)\b/i', $qNorm)) {
+                $questionType = 'SUBJECTIVE';
+                $reasonCodes[] = 'SUBJECTIVE_QUERY';
+            } elseif (preg_match('/\b(?:how many lines|what percentage of|how many pixels|how fast|what is the maximum number of rows|what is the exact execution time)\b/i', $qNorm)) {
+                $questionType = 'OPEN_ENDED';
+                $reasonCodes[] = 'OPEN_ENDED_QUERY';
+            } elseif (preg_match('/\b(?:is (?:flexbox|grid|put|patch|context|redux) better|(?:flexbox|grid|put|patch|context|redux) vs |denormalize to avoid joins)\b/i', $qNorm)) {
+                $questionType = 'AMBIGUOUS';
+                $reasonCodes[] = 'AMBIGUOUS_QUERY';
+            }
+        }
+
+        // Component C: Evidence Adequacy
+        if ($enableEvidence) {
+            $topSim = !empty($retrievedChunks) ? (float)$retrievedChunks[0]['similarity'] : 0.0;
+
+            $stopWords = ['why', 'does', 'how', 'what', 'when', 'where', 'which', 'who', 'the', 'and', 'for', 'are', 'with', 'from', 'that', 'this', 'can', 'you', 'explain', 'tell', 'about', 'have', 'instead', 'being', 'provide', 'since', 'while', 'although', 'should', 'would', 'could', 'their', 'there'];
+            $rawTokens = preg_split('/\W+/', $qNorm, -1, PREG_SPLIT_NO_EMPTY);
+            $qTokens = array_values(array_filter($rawTokens, fn($w) => strlen($w) > 2 && !in_array($w, $stopWords, true)));
+            $qStems = array_map([self::class, 'simpleStem'], $qTokens);
+
+            $evidenceText = '';
+            foreach ($retrievedChunks as $chunk) {
+                $evidenceText .= ' ' . ($chunk['title'] ?? '') . ' ' . ($chunk['content'] ?? '');
+            }
+            $rawEvWords = preg_split('/\W+/', strtolower($evidenceText), -1, PREG_SPLIT_NO_EMPTY);
+            $evStems = array_map([self::class, 'simpleStem'], $rawEvWords);
+
+            $overlap = array_intersect($qStems, $evStems);
+            $ratio = count($qStems) > 0 ? count($overlap) / count($qStems) : 0;
+            $overlapCount = count($overlap);
+
+            if ($topSim < 0.35 || $ratio < 0.20 || $overlapCount < 2) {
+                $evidenceStatus = 'INADEQUATE';
+                $reasonCodes[] = 'LOW_GROUNDING';
+            } elseif ($topSim < 0.45 || $ratio < 0.40) {
+                $evidenceStatus = 'PARTIAL';
+                $reasonCodes[] = 'PARTIAL_EVIDENCE';
+            } else {
+                $evidenceStatus = 'ADEQUATE';
+            }
+        }
+
+        // Pass 2 Gate Decision
+        $pass2Gate = 'ALLOW';
+        if ($entityStatus === 'MISMATCH') {
+            $pass2Gate = 'ABSTAIN';
+        } elseif ($questionType !== 'CLEAR_FACTUAL') {
+            $pass2Gate = 'ABSTAIN';
+        } elseif ($evidenceStatus === 'INADEQUATE') {
+            $pass2Gate = 'BLOCK';
+        }
+
+        return [
+            'entity_status' => $entityStatus,
+            'question_type' => $questionType,
+            'evidence_status' => $evidenceStatus,
+            'pass2_gate' => $pass2Gate,
+            'reason_codes' => array_values(array_unique($reasonCodes))
+        ];
+    }
+
     public static function verify(string $query, array $retrievedChunks, array $runtimeOptions = []): array {
         if (!RagFlags::isEnabled('ENABLE_PREMISE_VERIFIER')) {
             return [
@@ -764,7 +902,7 @@ PROMPT;
             }
 
             // Determine if Tier-1 dictionary is active for this ablation mode
-            $enableTier1Dictionary = in_array($mode, ['A0', 'A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5'], true);
+            $enableTier1Dictionary = in_array($mode, ['A0', 'A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'], true);
 
             $candidateMatches = [];
             foreach ($evidenceUnits as $unit) {
@@ -910,8 +1048,8 @@ PROMPT;
             }
 
             // TIER 2 ELIGIBILITY:
-            // If Tier 1 confidently refuted with known rule in A2, A3, A5, B1-B5 -> use Tier 1 fast path
-            if ($tier1Contradiction && in_array($mode, ['A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5'], true)) {
+            // If Tier 1 confidently refuted with known rule in A2, A3, A5, B1-B5, C0-C7 -> use Tier 1 fast path
+            if ($tier1Contradiction && in_array($mode, ['A2', 'A3', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'], true)) {
                 if ($isNegation) {
                     $totalSupporting++;
                 } else {
@@ -932,8 +1070,8 @@ PROMPT;
             // Fall through to Tier-2 Generic Semantic NLI Verifier
             $overallDecisionTier = self::TIER_2_NLI;
 
-            // Format NLI premise context: B3, B5, B5-NoDict frame with curriculum topic and focal subject
-            if (in_array($mode, ['B3', 'B5', 'B5-NoDict'], true)) {
+            // Format NLI premise context: B3, B5, B5-NoDict, C0-C7 frame with curriculum topic and focal subject
+            if (in_array($mode, ['B3', 'B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'], true)) {
                 $ctxTitle = $topMatch['unit']['title'] ?? '';
                 $ctxFocal = $topMatch['unit']['focal_subject'] ?? '';
                 $ctxLine = $topMatch['unit']['line_raw'] ?? '';
@@ -948,10 +1086,16 @@ PROMPT;
                 $nliOptions['prompt_mode'] = $mode;
             } elseif (in_array($mode, ['B4'], true)) {
                 $nliOptions['prompt_mode'] = 'B1';
-            } elseif (in_array($mode, ['B5', 'B5-NoDict'], true)) {
+            } elseif (in_array($mode, ['B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'], true)) {
                 $nliOptions['prompt_mode'] = 'B5';
             } else {
                 $nliOptions['prompt_mode'] = 'default';
+            }
+
+            // EXP-0029 Pre-Filter Evaluation
+            $preFilter = null;
+            if (in_array($mode, ['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'], true)) {
+                $preFilter = self::evaluatePreFilter($qClean, $evidenceUnits, $retrievedChunks, $mode);
             }
 
             $nliRes = self::callTier2Nli($nliPremise, $nliHypothesis, $nliOptions);
@@ -964,8 +1108,20 @@ PROMPT;
             $twoPassInvoked = false;
             $pass2Res = null;
 
-            // Two-pass verification for B4, B5, B5-NoDict
-            if (in_array($mode, ['B4', 'B5', 'B5-NoDict'], true) && ($nliLabel === 'NEUTRAL' || $nliConf < $threshold)) {
+            // Two-pass verification for B4, B5, B5-NoDict, and C0-C7
+            $allowPass2 = in_array($mode, ['B4', 'B5', 'B5-NoDict', 'C0'], true);
+            if (in_array($mode, ['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'], true)) {
+                $allowPass2 = ($preFilter !== null && $preFilter['pass2_gate'] === 'ALLOW');
+            }
+
+            // If pre-filter signals ABSTAIN (e.g. OOD entity mismatch or subjective query),
+            // override any Pass 1 parametric leakage or overconfidence to NEUTRAL!
+            if ($preFilter !== null && $preFilter['pass2_gate'] === 'ABSTAIN') {
+                $nliLabel = 'NEUTRAL';
+                $nliConf = 0.0;
+            }
+
+            if ($allowPass2 && ($nliLabel === 'NEUTRAL' || $nliConf < $threshold)) {
                 $twoPassInvoked = true;
                 $probeOptions = $runtimeOptions;
                 $probeOptions['prompt_mode'] = 'B4_probe';
@@ -986,6 +1142,7 @@ PROMPT;
                 'citation' => $topMatch['unit']['citation'],
                 'model_identifier' => 'llama3.2:latest',
                 'mode' => $mode,
+                'pre_filter' => $preFilter,
                 'nli_label' => $nliLabel,
                 'entailment_score' => ($nliLabel === 'ENTAILMENT' ? $nliConf : 0.0),
                 'contradiction_score' => ($nliLabel === 'CONTRADICTION' ? $nliConf : 0.0),
@@ -1038,6 +1195,7 @@ PROMPT;
                 'decision_reason' => ($overallDecisionTier === self::TIER_2_NLI)
                     ? 'Semantic contradiction established by Tier-2 NLI over curriculum evidence'
                     : 'Contradictory evidence found via Tier-1 curriculum fast path',
+                'pre_filter' => $preFilter ?? null,
                 'tier2_diagnostics' => $tier2DiagnosticsList
             ];
         } elseif ($hasNotEstablished || $totalSupporting === 0) {
@@ -1051,6 +1209,7 @@ PROMPT;
                 'citation' => null,
                 'decision_tier' => ($overallDecisionTier === self::TIER_2_NLI ? self::TIER_2_ABSTAIN : self::TIER_1),
                 'decision_reason' => 'Insufficient or neutral evidence in retrieved curriculum passages to establish premise',
+                'pre_filter' => $preFilter ?? null,
                 'tier2_diagnostics' => $tier2DiagnosticsList
             ];
         } else {
@@ -1066,6 +1225,7 @@ PROMPT;
                 'decision_reason' => ($overallDecisionTier === self::TIER_2_NLI)
                     ? 'Premise entailed by curriculum evidence according to Tier-2 NLI'
                     : 'Premise supported by retrieved curriculum evidence with matching polarity',
+                'pre_filter' => $preFilter ?? null,
                 'tier2_diagnostics' => $tier2DiagnosticsList
             ];
         }

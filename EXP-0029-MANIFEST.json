@@ -1,0 +1,68 @@
+{
+    "experiment_id": "EXP-0029",
+    "title": "Ambiguity + Entity-Grounding Pre-Filter for RAG Premise Verification",
+    "timestamp": "2026-09-16T07:40:53+00:00",
+    "git": {
+        "branch": "exp-0029",
+        "base_commit": "2cfc95a",
+        "repository": "EduConnect-LMS-Experimental"
+    },
+    "artifacts": {
+        "backend/rag_premise_verifier.php": {
+            "name": "Verifier Implementation",
+            "size_bytes": 65413,
+            "sha256": "c7329a0a8501dcdcc6b439c788df649a91ba9ab31d71554ff8c733036b8ee503"
+        },
+        "EXP-0029-BLIND-DATASET.json": {
+            "name": "Blind Dataset (300 cases)",
+            "size_bytes": 74268,
+            "sha256": "ee8c6dc122516a06eb7be90104ba5617e2fe788eaf66b6035aa78c205d92f120"
+        },
+        "scratch/blind_retrieval_cache_300.json": {
+            "name": "Blind Retrieval Cache",
+            "size_bytes": 82492359,
+            "sha256": "49dd9ac6c4f09a39bf41800d467514523770777ed42e0945203b9cd9a7592d98"
+        },
+        "EXP-0029-ABLATION-RESULTS.json": {
+            "name": "Ablation Results",
+            "size_bytes": 3012712,
+            "sha256": "47dbd2a370c6e020194a952723d1279f88cdf727c403eba9e53dee18621cc507"
+        },
+        "EXP-0029-RESULTS.json": {
+            "name": "Main Evaluation Results",
+            "size_bytes": 1008312,
+            "sha256": "468b3919cc2d887dfc0ca77c67e839966c45fd51bda64aa4587c173bac410dad"
+        },
+        "EXP-0029-DESIGN.md": {
+            "name": "Design Specification",
+            "size_bytes": 6731,
+            "sha256": "1d3fa267401949a4eaf31e50260f79f64525ba17ef44bf04333a00f57796508b"
+        },
+        "EXP-0029-THRESHOLD-ANALYSIS.md": {
+            "name": "Threshold Analysis",
+            "size_bytes": 3207,
+            "sha256": "65a0636784cc9576a6474faff4a8234ea5c9c9c94451ac1493ace6a71d936914"
+        },
+        "EXP-0029-BLIND-DATASET-VALIDATION.md": {
+            "name": "Blind Dataset Validation",
+            "size_bytes": 2092,
+            "sha256": "412209d1d00f194b5bf7926f87640dde88c6e3eea9b5ec8f70565bc4deca52a4"
+        }
+    },
+    "metrics_summary": {
+        "A5_accuracy": 63,
+        "B5_accuracy": 58.33,
+        "C1_accuracy": 62.67,
+        "C4_accuracy": 66.33,
+        "C7_accuracy": 66.67,
+        "A5_macro_f1": 62.86,
+        "B5_macro_f1": 57.78,
+        "C7_macro_f1": 67.1,
+        "C7_far": 30.48,
+        "C7_refutation_recall": 66.67,
+        "C7_unknown_recall": 72.22,
+        "A5_vs_B5_mcnemar_p": 0.1461,
+        "B5_vs_C7_mcnemar_p": 0,
+        "B5_vs_C7_significant": true
+    }
+}
