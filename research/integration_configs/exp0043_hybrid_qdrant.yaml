@@ -1,0 +1,32 @@
+experiment_id: EXP-0043
+base_commit: 63d961ee9a94d69c911f785a8b6a7d25cabd18f9
+description: Dense + Sparse Hybrid Retrieval with Qdrant Vector Database and RRF Fusion
+feature_flags:
+  ENABLE_BGE_M3: false
+  ENABLE_BGE_RERANKER_M3: false
+  ENABLE_QDRANT: true
+  ENABLE_PYLATE: false
+  ENABLE_LLAMAINDEX_FUSION: false
+  ENABLE_HAYSTACK_HIERARCHY: false
+  ENABLE_CRAG: false
+  ENABLE_LIGHTRAG: false
+retriever: qdrant
+storage_location: ':memory:'
+collection_name: educonnect_c2_085_hierarchical
+embedding_model: BAAI/bge-small-en-v1.5
+vector_dim: 384
+distance: Cosine
+use_hybrid: true
+rrf_k: 60
+chunker: C2_ChonkieSemantic_085
+hierarchy: adopted_exp0040_small_to_big
+verifier:
+  name: A4
+  frozen: true
+device: auto
+seed: 42
+software_versions:
+  python: '3.12'
+  qdrant_client: 1.19.1
+blind_evaluation:
+  enabled: false

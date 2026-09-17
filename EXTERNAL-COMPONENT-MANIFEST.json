@@ -1,0 +1,95 @@
+{
+  "components": [
+    {
+      "component": "FlagEmbedding",
+      "repository": "FlagOpen/FlagEmbedding",
+      "commit_or_version": "v1.4.2",
+      "license": "MIT",
+      "package_version": "1.4.2",
+      "model": "BAAI/bge-m3 / BAAI/bge-reranker-v2-m3",
+      "model_revision": "main",
+      "model_license": "MIT",
+      "integration_purpose": "Dense embedding, sparse lexical weights, ColBERT multi-vector, and cross-encoder reranking",
+      "enabled_experiment": "EXP-0041 (Reranker) / EXP-0042 (Dense) / EXP-0043 (Hybrid)",
+      "hardware_profile": "Sequential GPU residency, 4 GB VRAM protection, CPU fallback"
+    },
+    {
+      "component": "Qdrant",
+      "repository": "qdrant/qdrant",
+      "commit_or_version": "v1.19.1",
+      "license": "Apache-2.0",
+      "package_version": "1.19.1",
+      "model": "N/A (Vector DB Engine)",
+      "model_revision": "N/A",
+      "model_license": "Apache-2.0",
+      "integration_purpose": "Local research vector database with dense, sparse, payload filtering, and RRF hybrid search",
+      "enabled_experiment": "EXP-0043 (Dense+Sparse Hybrid)",
+      "hardware_profile": "Local in-memory (:memory:) or local disk path, zero hosted dependency"
+    },
+    {
+      "component": "PyLate",
+      "repository": "lightonai/pylate",
+      "commit_or_version": "v1.6.0",
+      "license": "Apache-2.0",
+      "package_version": "1.6.0",
+      "model": "lightonai/GTE-ModernColBERT-v1",
+      "model_revision": "main",
+      "model_license": "Apache-2.0",
+      "integration_purpose": "Isolated late-interaction retrieval via MaxSim scoring",
+      "enabled_experiment": "EXP-0044 (Late Interaction)",
+      "hardware_profile": "CPU-compatible fallback, batch size <= 8, sequential residency"
+    },
+    {
+      "component": "LlamaIndex",
+      "repository": "run-llama/llama_index",
+      "commit_or_version": "v0.14.24",
+      "license": "MIT",
+      "package_version": "0.14.24",
+      "model": "N/A (Retrieval & Fusion Engine)",
+      "model_revision": "N/A",
+      "model_license": "MIT",
+      "integration_purpose": "Isolated multi-query expansion and Reciprocal Rank Fusion over frozen baseline",
+      "enabled_experiment": "EXP-0045 (Query Fusion)",
+      "hardware_profile": "Lightweight CPU compute, deterministic expansion rules"
+    },
+    {
+      "component": "Haystack",
+      "repository": "deepset-ai/haystack",
+      "commit_or_version": "v3.1.1",
+      "license": "Apache-2.0",
+      "package_version": "3.1.1",
+      "model": "N/A (Document Hierarchy Splitter)",
+      "model_revision": "N/A",
+      "model_license": "Apache-2.0",
+      "integration_purpose": "Root-parent-child hierarchy construction comparator for EXP-0040-H validation",
+      "enabled_experiment": "EXP-0040-H (Comparator)",
+      "hardware_profile": "Document abstraction, zero model weight residency"
+    },
+    {
+      "component": "CRAG",
+      "repository": "HuskyInSalt/CRAG",
+      "commit_or_version": "main",
+      "license": "MIT",
+      "package_version": "research-adapter",
+      "model": "Closed-corpus rule & retrieval quality evaluator",
+      "model_revision": "N/A",
+      "model_license": "MIT",
+      "integration_purpose": "Retrieval quality evaluation (CORRECT/AMBIGUOUS/INCORRECT) and corrective context actions without web search",
+      "enabled_experiment": "EXP-0046 (Corrective Retrieval)",
+      "hardware_profile": "Zero GPU memory, strictly local closed educational corpus"
+    },
+    {
+      "component": "LightRAG",
+      "repository": "HKUDS/LightRAG",
+      "commit_or_version": "v1.5.7",
+      "license": "MIT",
+      "package_version": "1.5.7",
+      "model": "llama3.2:latest (Local Ollama) / BAAI/bge-small-en-v1.5",
+      "model_revision": "v1.5.7",
+      "model_license": "MIT",
+      "integration_purpose": "Educational knowledge graph sidecar (naive, local, global, hybrid, mix modes)",
+      "enabled_experiment": "EXP-0047 (Graph Retrieval)",
+      "hardware_profile": "Local storage in research/data/lightrag_storage, isolated from vector index"
+    }
+  ]
+}

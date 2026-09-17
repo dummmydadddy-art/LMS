@@ -29,5 +29,10 @@ backend/security_events.log
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
 *.log
+
+# Python cache & research ephemeral storage
+__pycache__/
+*.py[cod]
+*$py.class
+research/data/
