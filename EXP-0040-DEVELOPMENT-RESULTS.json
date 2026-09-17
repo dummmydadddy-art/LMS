@@ -1,0 +1,165 @@
+{
+  "experiment": "EXP-0040",
+  "dataset": "EXP-0025-DEVELOPMENT-DATASET.json",
+  "dataset_sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+  "sample_size": 400,
+  "verifier_sha256": "31c7c31ef6301156bb0318cb35ba5879e5ca3c25acdd6f705cd2f6c0e3b0fc2e",
+  "conditions": {
+    "P0": {
+      "condition": "P0",
+      "name": "Control P0 (C2_085 Child-Only Retrieval)",
+      "accuracy": 93.75,
+      "correct_count": 375,
+      "total_count": 400,
+      "macro_f1": 94.33,
+      "standard_far": 2.8,
+      "frr": 11.33,
+      "supported_recall": 88.67,
+      "refutation_recall": 95.33,
+      "not_established_recall": 99,
+      "ood_recall": 0,
+      "novel_ood_recall": "N/A \u2014 separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json",
+      "false_acceptances": 7,
+      "false_refutations": 17,
+      "false_abstentions_supported": 0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 133,
+          "REFUTED": 17,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 6,
+          "REFUTED": 143,
+          "NOT_ESTABLISHED": 1
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 0,
+          "NOT_ESTABLISHED": 99
+        }
+      },
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": {
+          "total": 100,
+          "correct": 86
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "total": 100,
+          "correct": 96
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "total": 100,
+          "correct": 99
+        },
+        "LEGITIMATE_NEGATION": {
+          "total": 50,
+          "correct": 47
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "total": 50,
+          "correct": 47
+        }
+      },
+      "latency_p50_ms": 7.3,
+      "latency_p95_ms": 17.6,
+      "latency_mean_ms": 7.3,
+      "wallclock_time_s": 3
+    },
+    "P1": {
+      "condition": "P1",
+      "name": "Candidate P1 (Hierarchical Parent-Child Retrieval)",
+      "accuracy": 92.75,
+      "correct_count": 371,
+      "total_count": 400,
+      "macro_f1": 93.39,
+      "standard_far": 3.2,
+      "frr": 12.67,
+      "supported_recall": 87.33,
+      "refutation_recall": 94.67,
+      "not_established_recall": 98,
+      "ood_recall": 0,
+      "novel_ood_recall": "N/A \u2014 separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json",
+      "false_acceptances": 8,
+      "false_refutations": 19,
+      "false_abstentions_supported": 0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 131,
+          "REFUTED": 19,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 7,
+          "REFUTED": 142,
+          "NOT_ESTABLISHED": 1
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": {
+          "total": 100,
+          "correct": 85
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "total": 100,
+          "correct": 95
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "total": 100,
+          "correct": 98
+        },
+        "LEGITIMATE_NEGATION": {
+          "total": 50,
+          "correct": 46
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "total": 50,
+          "correct": 47
+        }
+      },
+      "latency_p50_ms": 14.3,
+      "latency_p95_ms": 41.4,
+      "latency_mean_ms": 32.7,
+      "wallclock_time_s": 13.1
+    }
+  },
+  "retrieval_comparison": {
+    "experiment": "EXP-0040",
+    "dataset": "EXP-0025-DEVELOPMENT-DATASET.json",
+    "eval_queries_with_gold": 256,
+    "total_queries": 400,
+    "p0_child_metrics": {
+      "recall_at_1": 92.97,
+      "recall_at_3": 99.61,
+      "recall_at_5": 100.0,
+      "recall_at_10": 100.0,
+      "ndcg_at_5": 86.12,
+      "ndcg_at_10": 85.77
+    },
+    "p1_parent_metrics": {
+      "recall_at_1": 97.66,
+      "recall_at_3": 100.0,
+      "recall_at_5": 100.0,
+      "recall_at_10": 100.0,
+      "ndcg_at_5": 87.55,
+      "ndcg_at_10": 90.99
+    },
+    "structural_metrics": {
+      "child_chunks_count": 76,
+      "parent_groups_count": 36,
+      "mean_parent_tokens": 106.86,
+      "p50_parent_tokens": 117,
+      "p95_parent_tokens": 180,
+      "max_parent_tokens": 210,
+      "min_parent_tokens": 18,
+      "expansion_query_percentage": 100.0,
+      "mean_children_per_retrieved_parent": 2.007,
+      "duplicate_parent_rate": 38.31
+    }
+  }
+}
