@@ -525,7 +525,7 @@ class RagPremiseVerifier {
         }
         if (isset($options['custom_prompt'])) {
             $prompt = $options['custom_prompt'];
-        } elseif (in_array($promptMode, ['P1', 'P2', 'P3', 'P4'], true)) {
+        } elseif (in_array($promptMode, ['P1', 'P2', 'P3', 'P4', 'P4_neutral'], true)) {
             require_once __DIR__ . '/rag_structured_nli_verifier.php';
             $prompt = RagStructuredNliVerifier::buildPrompt($premise, $hypothesis, $promptMode, $options['polarity_info'] ?? []);
         } else {
@@ -1528,6 +1528,13 @@ PROMPT;
             } else {
                 $pass1Threshold = 0.70;
                 $pass2ContraThreshold = 0.70;
+            }
+
+            if (isset($runtimeOptions['pass1_threshold'])) {
+                $pass1Threshold = (float)$runtimeOptions['pass1_threshold'];
+            }
+            if (isset($runtimeOptions['pass2_contra_threshold'])) {
+                $pass2ContraThreshold = (float)$runtimeOptions['pass2_contra_threshold'];
             }
 
             $nliLabel = $nliRes['label'] ?? 'NEUTRAL';

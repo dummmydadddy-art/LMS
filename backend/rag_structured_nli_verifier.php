@@ -277,6 +277,38 @@ Following the demonstrations and polarity analysis, determine whether the STUDEN
 JSON ONLY: {"label":"ENTAILMENT"|"CONTRADICTION"|"NEUTRAL","confidence":0.0-1.0,"rationale":"concise reasoning"}
 PROMPT;
 
+            case 'P4_neutral':
+                $demos = self::FEW_SHOT_DEMONSTRATIONS;
+                $negList = !empty($polarityInfo['claim_negations']) ? implode(', ', $polarityInfo['claim_negations']) : 'none';
+                $compList = !empty($polarityInfo['comparatives']) ? implode(', ', $polarityInfo['comparatives']) : 'none';
+                $antList = !empty($polarityInfo['antonyms']) ? implode(', ', $polarityInfo['antonyms']) : 'none';
+                $mismatchStr = ($polarityInfo['polarity_mismatch_detected'] ?? false) ? 'YES (Potential polarity inversion)' : 'NO';
+
+                return <<<PROMPT
+You are a strict technical verification judge for a web development curriculum.
+
+REFERENCE DEMONSTRATIONS:
+{$demos}
+
+POLARITY ANALYSIS:
+- Negation cues: {$negList}
+- Comparative cues: {$compList}
+- Antonym cues: {$antList}
+- Polarity inversion risk: {$mismatchStr}
+
+NEW CASE TO EVALUATE:
+EVIDENCE CONTEXT:
+"{$premise}"
+
+STUDENT CLAIM:
+"{$hypothesis}"
+
+TASK:
+Following the demonstrations and polarity analysis, determine whether the STUDENT CLAIM is ENTAILMENT, CONTRADICTION, or NEUTRAL relative to the EVIDENCE CONTEXT.
+EPISTEMIC DIRECTIVE: If the claim asserts a subjective preference, normative recommendation, or superiority claim that is not explicitly established as an absolute rule or standard convention in the evidence context, classify as NEUTRAL.
+JSON ONLY: {"label":"ENTAILMENT"|"CONTRADICTION"|"NEUTRAL","confidence":0.0-1.0,"rationale":"concise reasoning"}
+PROMPT;
+
             case 'P0':
             default:
                 return <<<PROMPT
