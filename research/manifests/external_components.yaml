@@ -126,14 +126,14 @@ external_components:
   package_version: 0.2.18
   model: N/A (Structural Tree Index)
   model_revision: N/A
-  runtime: Local structural document tree (asyncio md_to_tree)
+  runtime: Local structural document tree (upstream pageindex.page_index_flash PDF-native engine)
   purpose: Structural document navigation (root -> chapter -> section -> page window)
   hardware_profile: Zero GPU memory, strictly local execution (no cloud, no web search)
   enabled_experiment: EXP-0056
   integration_status: REAL_RUNTIME
   runtime_status: INSTALLED_EXECUTABLE
   actual_execution_verified: true
-  notes: Verified execution path is PageIndex md_to_tree() operating on structure/text prepared from PDF, not end-to-end native PDF ingestion.
+  notes: Verified execution path is upstream pageindex.page_index_flash operating directly on authentic multi-page PDFs with character span clustering and embedded bookmarks, without markdown surrogates.
 - component: llama.cpp
   repository: ggml-org/llama.cpp
   revision_status: UNPINNED

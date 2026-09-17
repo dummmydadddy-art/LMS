@@ -18,7 +18,7 @@ In this Wave 2 Runtime Enablement pass, external adapters were transitioned from
 |---|---|---|---|---|---|
 | **Python Docling** | `DS4SD/docling` | `2.128.0` | `INSTALLED_EXECUTABLE` | **YES** | `NativePdfPipeline` (426.13 MB RSS peak, bounded window, 2 pages extracted in 0.69s) |
 | **Docling.rs** | `docling-project/docling.rs` | Uncompiled source | `NOT_READY` (`COMPILE_REQUIRED`) | **NO** | Native Rust CLI requires `cargo`/MSVC compilation from source. Not present on host. |
-| **PageIndex** | `VectifyAI/PageIndex` | `0.2.18` | `INSTALLED_EXECUTABLE` | **YES** | Real `asyncio` `md_to_tree` hierarchy extraction (6 structural nodes derived from PDF in 234ms, 0 cloud calls) |
+| **PageIndex** | `VectifyAI/PageIndex` | `0.2.18` | `INSTALLED_EXECUTABLE` | **YES** | Real PDF-native `page_index_flash` hierarchy extraction (100% page coverage, 0 missing pages across 5p, 20p, 50p, 23p PDFs, 0 cloud calls, 0 VRAM) |
 | **llama.cpp** | `ggml-org/llama.cpp` | `b11026` (`llama-cli.exe`) | `INSTALLED_EXECUTABLE` | **YES** | `Llama 3.2 3B Instruct Q4_K_M` (50.6 prompt t/s, 10.3 gen t/s, 4.9s latency, bounded context 512) |
 | **LLMLingua** | `microsoft/LLMLingua` | `0.2.2` | `PACKAGE_INSTALLED_WEIGHTS_UNAVAILABLE` | **NO** | Package installed; Hugging Face model weights (`meetingbank` 709MB) throttled on unauthenticated connection. |
 | **Surya** | `VikParuchuri/surya` | `0.22.1` | `PACKAGE_INSTALLED_WEIGHTS_UNAVAILABLE` | **NO** | Package installed; recognition/detection checkpoint weights require Hugging Face download. |
@@ -36,10 +36,10 @@ In this Wave 2 Runtime Enablement pass, external adapters were transitioned from
 - **Python Docling Status:** `PythonDoclingAdapter` is verified `REAL_RUNTIME`. It executes on `tests/research/data/multipage_curriculum.pdf`, extracts target window pages 2–3 without touching unrequested pages 1, 4, or 5, and operates within bounded memory (<500 MB peak RSS).
 
 ### 2.2 PageIndex (VectifyAI/PageIndex)
-- **Installation:** Package `pageindex` version 0.2.18 installed along with `litellm` and `aiohttp`.
-- **Execution Mechanism:** Integrated via `asyncio.run(pageindex.md_to_tree(tmp_path))` over document structure derived from PyMuPDF. Zero reliance on external cloud APIs or stochastic LLM formatting failures.
-- **Verification:** Ran real structural extraction on `multipage_curriculum.pdf`. Produced 6 structural nodes (`Curriculum Overview`, `CSS Flexbox Layout`, `JavaScript Scope and TDZ`, `React Reconciliation`, `Relational Database Models`) with SHA-256 tree hash `dcadcd7e158f...` in 234ms.
-- **Fidelity Scope Note:** The verified execution path is PageIndex `md_to_tree()` operating on structure/text prepared from the PDF, not end-to-end native PDF ingestion. This distinction is strictly preserved across all experiments.
+- **Installation:** Package `pageindex` version 0.2.18 installed along with `litellm`, `aiohttp`, and `pypdfium2`.
+- **Execution Mechanism:** Upgraded to native PDF outline flash indexing via `pageindex.page_index_flash(document_path, summary=False, optimize=False, use_embedded_toc=True)`. Operates directly on authentic multi-page PDFs using character span clustering and embedded bookmarks. Zero reliance on external cloud APIs or markdown surrogates (`md_to_tree()`).
+- **Verification:** Ran real structural extraction on `multipage_curriculum.pdf` (5 pages), `curriculum_20p.pdf` (20 pages), `curriculum_50p.pdf` (50 pages), and `curriculum_full.pdf` (23 pages). Achieved exactly 100.0% page coverage and 0 missing pages across all documents with 0.0 MB GPU VRAM. Evaluated in EXP-0056 with 58.13% search space reduction and +0.80 pp downstream blind accuracy improvement.
+- **Fidelity Scope Note:** The verified execution path is genuine upstream PageIndex `page_index_flash` PDF-native indexing. All markdown surrogates have been eliminated.
 
 ### 2.3 llama.cpp (ggml-org/llama.cpp)
 - **Installation:** Official Windows binary release `b11026` (`llama-cli.exe` and `llama-server.exe`, version `0.4.1-dev`, Clang 20.1.8) installed to `C:\Users\Mukul\AppData\Local\Programs\llama.cpp\` and verified on system PATH.

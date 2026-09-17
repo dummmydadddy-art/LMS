@@ -80,78 +80,36 @@ class PageIndexAdapter:
                     "PageIndex SDK (pageindex) is not installed and no document outline was provided. "
                     "Simulation is disabled."
                 )
-            # Real PageIndex SDK tree building
-            import asyncio
-            import tempfile
-            try:
-                import fitz
-                has_fitz = True
-            except ImportError:
-                has_fitz = False
+            # Genuine upstream PageIndex PDF-native indexing via page_index_flash
+            import pageindex
+            flash_result = pageindex.page_index_flash(
+                document_path,
+                summary=False,
+                optimize=False,
+                use_embedded_toc=True
+            )
+            raw_structure = flash_result.get("structure", [])
 
-            # Extract headings / sections from document into structured markdown
-            lines = []
-            page_map = []
-            if has_fitz and document_path.lower().endswith(".pdf"):
-                with fitz.open(document_path) as pdf_doc:
-                    for pno in range(len(pdf_doc)):
-                        page = pdf_doc[pno]
-                        page_num = pno + 1
-                        text = page.get_text()
-                        for raw_line in text.splitlines():
-                            line = raw_line.strip()
-                            if not line:
-                                continue
-                            if any(k in line for k in ["Curriculum", "Module", "Overview", "Flexbox", "Reconciliation", "Database", "Scope", "TDZ", "Section"]):
-                                lines.append(f"# {line}")
-                                page_map.append(page_num)
-                            else:
-                                lines.append(line)
-                                page_map.append(page_num)
-            else:
-                with open(document_path, "r", encoding="utf-8", errors="ignore") as f:
-                    for line in f:
-                        lines.append(line.rstrip())
-                        page_map.append(1)
-
-            with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as tf:
-                tf.write("\n\n".join(lines))
-                tmp_md_path = tf.name
-
-            try:
-                raw_tree = asyncio.run(pageindex.md_to_tree(tmp_md_path))
-            finally:
-                if os.path.exists(tmp_md_path):
-                    try:
-                        os.remove(tmp_md_path)
-                    except OSError:
-                        pass
-
-            structure = raw_tree.get("structure", []) if isinstance(raw_tree, dict) else []
-            structure_outline = []
-            for s_idx, item in enumerate(structure, start=1):
-                title = item.get("title", f"Section {s_idx}")
-                line_n = item.get("line_num", 1)
-                p_idx = min(len(page_map) - 1, max(0, line_n - 1))
-                page_start = page_map[p_idx] if page_map else 1
-                structure_outline.append({
-                    "title": title,
-                    "start": page_start,
-                    "end": page_start,
-                    "level": 1
-                })
-                # Subnodes
-                for sub in item.get("nodes", []):
-                    sub_title = sub.get("title", "Subsection")
-                    sub_line = sub.get("line_num", line_n)
-                    sub_p_idx = min(len(page_map) - 1, max(0, sub_line - 1))
-                    sub_p = page_map[sub_p_idx] if page_map else page_start
-                    structure_outline.append({
-                        "title": sub_title,
-                        "start": sub_p,
-                        "end": sub_p,
-                        "level": 2
+            # Flatten/recurse hierarchy into structure_outline
+            def _extract_nodes(node_list, level=1):
+                out = []
+                for item in node_list:
+                    title = item.get("title", f"Section {len(out) + 1}")
+                    p_start = item.get("start_index", 1)
+                    p_end = item.get("end_index", p_start)
+                    out.append({
+                        "title": title,
+                        "start": p_start,
+                        "end": p_end,
+                        "level": level,
+                        "node_id": item.get("node_id")
                     })
+                    children = item.get("nodes", [])
+                    if children:
+                        out.extend(_extract_nodes(children, level=level + 1))
+                return out
+
+            structure_outline = _extract_nodes(raw_structure)
 
 
         self.nodes = {}
@@ -287,6 +245,14 @@ class PageIndexAdapter:
         return None
 
     def health(self) -> Dict[str, Any]:
+        pkg_ver = None
+        if PAGEINDEX_AVAILABLE:
+            try:
+                import importlib.metadata
+                pkg_ver = importlib.metadata.version("pageindex")
+            except Exception:
+                pkg_ver = getattr(pageindex, "__version__", "0.2.18")
+
         return {
             "status": "READY" if PAGEINDEX_AVAILABLE else "NOT_READY",
             "reason": None if PAGEINDEX_AVAILABLE else "PageIndex Python package (pageindex) not installed",
@@ -295,6 +261,8 @@ class PageIndexAdapter:
             "local_only": True,
             "cloud_disabled": True,
             "sdk_installed": PAGEINDEX_AVAILABLE,
+            "package_version": pkg_ver,
+            "pdf_native_engine": "pageindex.page_index_flash",
             "total_nodes_loaded": len(self.nodes)
         }
 
@@ -302,8 +270,9 @@ class PageIndexAdapter:
         return {
             "name": "PageIndexAdapter",
             "repository": "VectifyAI/PageIndex",
-            "purpose": "Structural navigation through long documents to identify bounded page windows",
+            "purpose": "Structural navigation through multi-page curriculum PDFs to identify bounded candidate regions",
             "execution_mode": "STRICTLY LOCAL (Zero cloud, zero telemetry, zero web search)",
+            "pdf_native_engine": "pageindex.page_index_flash",
             "node_schema": ["node_id", "node_title", "parent_node", "children", "page_start", "page_end", "section", "document_id"],
             "simulation": False
         }
