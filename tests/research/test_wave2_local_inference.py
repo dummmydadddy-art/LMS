@@ -25,34 +25,39 @@ class TestWave2LocalInference(unittest.TestCase):
     def test_llama_cpp_adapter(self):
         backend = LlamaCppAdapter({"n_gpu_layers": 16, "quantization": "Q4_K_M"})
         h = backend.health()
-        self.assertEqual(h["status"], "ok")
+        self.assertEqual(h["status"], "NOT_READY")
+        self.assertFalse(h["simulation"])
         self.assertEqual(h["n_gpu_layers"], 16)
         
-        # Generation test
-        res = backend.generate("Hello local curriculum inference", max_tokens=10)
-        self.assertIn("text", res)
-        self.assertEqual(res["backend"], "llama.cpp")
+        # Generation test must fail cleanly when runtime is not installed
+        with self.assertRaises(RuntimeError) as ctx:
+            backend.generate("Hello local curriculum inference", max_tokens=10)
+        self.assertIn("not loaded", str(ctx.exception).lower())
         backend.unload()
 
     def test_gemma3n_adapter(self):
         backend = Gemma3nAdapter({"model_available": False, "role": "retrieval_router"})
         h = backend.health()
-        self.assertEqual(h["status"], "NOT_READY")  # Graceful degradation
+        self.assertEqual(h["status"], "NOT_READY")
+        self.assertFalse(h["simulation"])
         
-        # Routing test
+        # Routing test uses explicit heuristic fallback
         route = backend.route_query("Explain the difference between flexbox and grid")
         self.assertEqual(route["complexity"], "COMPLEX_VERIFICATION")
         self.assertEqual(route["recommended_route"], "wave1_hierarchical_rag")
+        self.assertEqual(route["method"], "heuristic_fallback")
 
     def test_bitnet_adapter(self):
         backend = BitNetAdapter()
         h = backend.health()
-        self.assertEqual(h["status"], "ok")
+        self.assertEqual(h["status"], "NOT_READY")
+        self.assertFalse(h["simulation"])
         self.assertEqual(h["bit_width"], 1.58)
 
-        res = backend.generate("BitNet ultra-efficient prompt", max_tokens=10)
-        self.assertIn("text", res)
-        self.assertEqual(res["backend"], "bitnet")
+        # Generation test must fail cleanly when runtime/weights are not installed
+        with self.assertRaises(RuntimeError) as ctx:
+            backend.generate("BitNet ultra-efficient prompt", max_tokens=10)
+        self.assertIn("not loaded", str(ctx.exception).lower())
         backend.unload()
 
 

@@ -1,0 +1,139 @@
+{
+  "generated_at": "2026-09-17T19:30:00Z",
+  "hardware_target": "RTX 3050 Laptop GPU (4 GB VRAM) + 16 GB System RAM",
+  "report_version": "1.0.0",
+  "models": [
+    {
+      "component": "BGE-FlagEmbedding",
+      "model": "BAAI/bge-small-en-v1.5",
+      "model_available": true,
+      "runtime_available": true,
+      "loadable": true,
+      "device": "cpu",
+      "quantization": null,
+      "estimated_memory": null,
+      "measured_memory": 133.4,
+      "status": "READY"
+    },
+    {
+      "component": "MiniLM-Reranker",
+      "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+      "model_available": true,
+      "runtime_available": true,
+      "loadable": true,
+      "device": "cpu",
+      "quantization": null,
+      "estimated_memory": null,
+      "measured_memory": 90.5,
+      "status": "READY"
+    },
+    {
+      "component": "Ollama-Baseline",
+      "model": "llama3.2:latest",
+      "model_available": true,
+      "runtime_available": true,
+      "loadable": true,
+      "device": "ollama_service",
+      "quantization": "Q4_0",
+      "estimated_memory": null,
+      "measured_memory": 2048.0,
+      "status": "READY"
+    },
+    {
+      "component": "Docling.rs",
+      "model": "NativePdfPipeline",
+      "model_available": true,
+      "runtime_available": true,
+      "loadable": true,
+      "device": "cpu",
+      "quantization": null,
+      "estimated_memory": null,
+      "measured_memory": 426.13,
+      "status": "READY"
+    },
+    {
+      "component": "PageIndex",
+      "model": "PageIndex-Tree",
+      "model_available": false,
+      "runtime_available": false,
+      "loadable": false,
+      "device": null,
+      "quantization": null,
+      "estimated_memory": null,
+      "measured_memory": null,
+      "status": "NOT_READY"
+    },
+    {
+      "component": "llama.cpp",
+      "model": "llama3.2_q4.gguf",
+      "model_available": false,
+      "runtime_available": false,
+      "loadable": false,
+      "device": "cpu+gpu",
+      "quantization": "Q4_K_M",
+      "estimated_memory": null,
+      "measured_memory": null,
+      "status": "NOT_READY"
+    },
+    {
+      "component": "LLMLingua",
+      "model": "microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank",
+      "model_available": false,
+      "runtime_available": false,
+      "loadable": false,
+      "device": "cpu",
+      "quantization": null,
+      "estimated_memory": null,
+      "measured_memory": null,
+      "status": "NOT_READY"
+    },
+    {
+      "component": "Surya",
+      "model": "surya-ocr-layout",
+      "model_available": false,
+      "runtime_available": false,
+      "loadable": false,
+      "device": "cpu",
+      "quantization": null,
+      "estimated_memory": null,
+      "measured_memory": null,
+      "status": "NOT_READY"
+    },
+    {
+      "component": "Gemma-3n",
+      "model": "google/gemma-3n-E2B-it",
+      "model_available": false,
+      "runtime_available": true,
+      "loadable": false,
+      "device": "cpu",
+      "quantization": null,
+      "estimated_memory": null,
+      "measured_memory": null,
+      "status": "NOT_READY"
+    },
+    {
+      "component": "BitNet",
+      "model": "BitNet-b1.58-2B-4T",
+      "model_available": false,
+      "runtime_available": false,
+      "loadable": false,
+      "device": "cpu",
+      "quantization": "1.58-bit",
+      "estimated_memory": null,
+      "measured_memory": null,
+      "status": "NOT_READY"
+    },
+    {
+      "component": "Marker",
+      "model": "marker-pdf",
+      "model_available": false,
+      "runtime_available": false,
+      "loadable": false,
+      "device": "cpu",
+      "quantization": null,
+      "estimated_memory": null,
+      "measured_memory": null,
+      "status": "NOT_READY"
+    }
+  ]
+}

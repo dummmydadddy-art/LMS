@@ -17,47 +17,43 @@ from research.document_adapters import (
 class TestWave2DocumentAdapters(unittest.TestCase):
 
     def setUp(self):
-        self.synth_doc = "scratch/test_doc.txt"
-        with open(self.synth_doc, "w", encoding="utf-8") as f:
-            f.write("Test curriculum document text for streaming document ingestion.")
-
-    def tearDown(self):
-        if os.path.exists(self.synth_doc):
-            os.remove(self.synth_doc)
+        self.real_pdf = os.path.abspath(os.path.join(os.path.dirname(__file__), "data", "multipage_curriculum.pdf"))
 
     def test_docling_rs_adapter(self):
         adapter = DoclingRsAdapter()
         h = adapter.health()
-        self.assertEqual(h["status"], "ok")
+        self.assertEqual(h["status"], "READY")
+        self.assertFalse(h["simulation"])
         self.assertTrue(h["streaming_enabled"])
 
-        # Windowed page processing
-        pages = adapter.convert_page_range(self.synth_doc, 1, 3)
-        self.assertEqual(len(pages), 3)
+        # Real windowed page processing
+        pages = adapter.convert_page_range(self.real_pdf, 1, 2)
+        self.assertEqual(len(pages), 2)
         self.assertEqual(pages[0]["page_number"], 1)
         self.assertEqual(pages[0]["parser"], "docling.rs")
+        self.assertFalse(pages[0]["metadata"]["simulation"])
         self.assertIn("reading_order", pages[0]["metadata"])
+        self.assertGreater(adapter.metrics["peak_process_memory_mb"], 0)
 
     def test_marker_adapter(self):
         adapter = MarkerAdapter({"mode": "fast", "disable_ocr": True})
         h = adapter.health()
-        self.assertEqual(h["status"], "ok")
-        self.assertEqual(h["mode"], "fast")
+        self.assertEqual(h["status"], "NOT_READY")
+        self.assertFalse(h["simulation"])
 
-        pages = adapter.process_pages(self.synth_doc, [1, 2])
-        self.assertEqual(len(pages), 2)
-        self.assertEqual(pages[0]["parser"], "marker")
+        with self.assertRaises(RuntimeError) as ctx:
+            adapter.process_pages(self.real_pdf, [1, 2])
+        self.assertIn("not installed", str(ctx.exception).lower())
 
     def test_surya_adapter(self):
         adapter = SuryaAdapter({"ocr_batch_size": 2, "device": "cpu"})
         h = adapter.health()
-        self.assertEqual(h["status"], "ok")
-        self.assertEqual(h["ocr_batch_size"], 2)
+        self.assertEqual(h["status"], "NOT_READY")
+        self.assertFalse(h["simulation"])
 
-        ocr_out = adapter.ocr_pages(self.synth_doc, [5])
-        self.assertEqual(len(ocr_out), 1)
-        self.assertEqual(ocr_out[0]["page_number"], 5)
-        self.assertGreater(ocr_out[0]["confidence"], 0.8)
+        with self.assertRaises(RuntimeError) as ctx:
+            adapter.ocr_pages(self.real_pdf, [1])
+        self.assertIn("not installed", str(ctx.exception).lower())
 
     def test_selective_vision_policy(self):
         policy = SelectiveVisionPolicy(min_char_count=50)

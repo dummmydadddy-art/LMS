@@ -11,7 +11,10 @@
       "model_license": "MIT",
       "integration_purpose": "Dense embedding, sparse lexical weights, ColBERT multi-vector, and cross-encoder reranking",
       "enabled_experiment": "EXP-0041 (Reranker) / EXP-0042 (Dense) / EXP-0043 (Hybrid)",
-      "hardware_profile": "Sequential GPU residency, 4 GB VRAM protection, CPU fallback"
+      "hardware_profile": "Sequential GPU residency, 4 GB VRAM protection, CPU fallback",
+      "integration_status": "REAL_RUNTIME",
+      "runtime_status": "INSTALLED_EXECUTABLE",
+      "actual_execution_verified": true
     },
     {
       "component": "Qdrant",
@@ -24,7 +27,10 @@
       "model_license": "Apache-2.0",
       "integration_purpose": "Local research vector database with dense, sparse, payload filtering, and RRF hybrid search",
       "enabled_experiment": "EXP-0043 (Dense+Sparse Hybrid)",
-      "hardware_profile": "Local in-memory (:memory:) or local disk path, zero hosted dependency"
+      "hardware_profile": "Local in-memory (:memory:) or local disk path, zero hosted dependency",
+      "integration_status": "REAL_RUNTIME",
+      "runtime_status": "INSTALLED_EXECUTABLE",
+      "actual_execution_verified": true
     },
     {
       "component": "PyLate",
@@ -37,7 +43,10 @@
       "model_license": "Apache-2.0",
       "integration_purpose": "Isolated late-interaction retrieval via MaxSim scoring",
       "enabled_experiment": "EXP-0044 (Late Interaction)",
-      "hardware_profile": "CPU-compatible fallback, batch size <= 8, sequential residency"
+      "hardware_profile": "CPU-compatible fallback, batch size <= 8, sequential residency",
+      "integration_status": "REAL_RUNTIME",
+      "runtime_status": "INSTALLED_EXECUTABLE",
+      "actual_execution_verified": true
     },
     {
       "component": "LlamaIndex",
@@ -50,7 +59,10 @@
       "model_license": "MIT",
       "integration_purpose": "Isolated multi-query expansion and Reciprocal Rank Fusion over frozen baseline",
       "enabled_experiment": "EXP-0045 (Query Fusion)",
-      "hardware_profile": "Lightweight CPU compute, deterministic expansion rules"
+      "hardware_profile": "Lightweight CPU compute, deterministic expansion rules",
+      "integration_status": "REAL_RUNTIME",
+      "runtime_status": "INSTALLED_EXECUTABLE",
+      "actual_execution_verified": true
     },
     {
       "component": "Haystack",
@@ -63,7 +75,10 @@
       "model_license": "Apache-2.0",
       "integration_purpose": "Root-parent-child hierarchy construction comparator for EXP-0040-H validation",
       "enabled_experiment": "EXP-0040-H (Comparator)",
-      "hardware_profile": "Document abstraction, zero model weight residency"
+      "hardware_profile": "Document abstraction, zero model weight residency",
+      "integration_status": "REAL_RUNTIME",
+      "runtime_status": "INSTALLED_EXECUTABLE",
+      "actual_execution_verified": true
     },
     {
       "component": "CRAG",
@@ -76,7 +91,10 @@
       "model_license": "MIT",
       "integration_purpose": "Retrieval quality evaluation (CORRECT/AMBIGUOUS/INCORRECT) and corrective context actions without web search",
       "enabled_experiment": "EXP-0046 (Corrective Retrieval)",
-      "hardware_profile": "Zero GPU memory, strictly local closed educational corpus"
+      "hardware_profile": "Zero GPU memory, strictly local closed educational corpus",
+      "integration_status": "REAL_RUNTIME",
+      "runtime_status": "INSTALLED_EXECUTABLE",
+      "actual_execution_verified": true
     },
     {
       "component": "LightRAG",
@@ -89,7 +107,10 @@
       "model_license": "MIT",
       "integration_purpose": "Educational knowledge graph sidecar (naive, local, global, hybrid, mix modes)",
       "enabled_experiment": "EXP-0047 (Graph Retrieval)",
-      "hardware_profile": "Local storage in research/data/lightrag_storage, isolated from vector index"
+      "hardware_profile": "Local storage in research/data/lightrag_storage, isolated from vector index",
+      "integration_status": "REAL_RUNTIME",
+      "runtime_status": "INSTALLED_EXECUTABLE",
+      "actual_execution_verified": true
     },
     {
       "component": "Docling.rs",
@@ -102,7 +123,10 @@
       "runtime": "Native / Python streaming",
       "purpose": "Low-memory, streaming document ingestion and selective page windows",
       "hardware_profile": "Bounded RAM, streaming iterators, no full-book memory accumulation",
-      "enabled_experiment": "EXP-0055"
+      "enabled_experiment": "EXP-0055",
+      "integration_status": "REAL_RUNTIME",
+      "runtime_status": "INSTALLED_EXECUTABLE",
+      "actual_execution_verified": true
     },
     {
       "component": "PageIndex",
@@ -115,7 +139,10 @@
       "runtime": "Local structural document tree",
       "purpose": "Structural document navigation (root -> chapter -> section -> page window)",
       "hardware_profile": "Zero GPU memory, strictly local execution (no cloud, no web search)",
-      "enabled_experiment": "EXP-0056"
+      "enabled_experiment": "EXP-0056",
+      "integration_status": "FRAMEWORK_READY",
+      "runtime_status": "NOT_INSTALLED",
+      "actual_execution_verified": false
     },
     {
       "component": "llama.cpp",
@@ -128,7 +155,10 @@
       "runtime": "GGUF CUDA / CPU hybrid offloading",
       "purpose": "High-efficiency local LLM inference, KV-cache management, bounded VRAM",
       "hardware_profile": "Hybrid CPU + GPU layers <= 16 on 4 GB VRAM RTX 3050, CPU fallback",
-      "enabled_experiment": "EXP-0057"
+      "enabled_experiment": "EXP-0057",
+      "integration_status": "FRAMEWORK_READY",
+      "runtime_status": "NOT_INSTALLED",
+      "actual_execution_verified": false
     },
     {
       "component": "LLMLingua",
@@ -141,7 +171,10 @@
       "runtime": "PyTorch / Transformers CPU/GPU",
       "purpose": "Context token compression preserving evidence provenance and source IDs",
       "hardware_profile": "Lightweight compressor, temporary context memory only",
-      "enabled_experiment": "EXP-0058"
+      "enabled_experiment": "EXP-0058",
+      "integration_status": "FRAMEWORK_READY",
+      "runtime_status": "NOT_INSTALLED",
+      "actual_execution_verified": false
     },
     {
       "component": "Surya",
@@ -154,7 +187,10 @@
       "runtime": "PyTorch selective OCR pipeline",
       "purpose": "Selective OCR, layout, table, and equation processing for difficult pages",
       "hardware_profile": "Conservative batch size <= 2, CPU fallback for 4 GB VRAM safety",
-      "enabled_experiment": "EXP-0059"
+      "enabled_experiment": "EXP-0059",
+      "integration_status": "FRAMEWORK_READY",
+      "runtime_status": "NOT_INSTALLED",
+      "actual_execution_verified": false
     },
     {
       "component": "Gemma 3n E2B",
@@ -167,7 +203,10 @@
       "runtime": "Transformers / GGUF llama.cpp compatible",
       "purpose": "Lightweight local routing, query classification, and preliminary helper reasoning",
       "hardware_profile": "Optional helper backend, graceful degradation if model unavailable",
-      "enabled_experiment": "EXP-0060"
+      "enabled_experiment": "EXP-0060",
+      "integration_status": "FRAMEWORK_READY",
+      "runtime_status": "MODEL_UNAVAILABLE",
+      "actual_execution_verified": false
     },
     {
       "component": "BitNet",
@@ -180,7 +219,10 @@
       "runtime": "Official BitNet low-bit C++ runtime / CPU kernels",
       "purpose": "Ultra-efficient 1-bit / 1.58-bit low-bit local inference research",
       "hardware_profile": "CPU-optimized low-power execution, zero GPU VRAM requirement",
-      "enabled_experiment": "EXP-0061"
+      "enabled_experiment": "EXP-0061",
+      "integration_status": "FRAMEWORK_READY",
+      "runtime_status": "NOT_INSTALLED",
+      "actual_execution_verified": false
     },
     {
       "component": "Marker",
@@ -193,7 +235,10 @@
       "runtime": "PyTorch / OCR / VLM",
       "purpose": "Alternative document processing pipeline and EXP-0062 parser comparator",
       "hardware_profile": "Selective OCR mode, bounded memory, CPU mode supported",
-      "enabled_experiment": "EXP-0062"
+      "enabled_experiment": "EXP-0062",
+      "integration_status": "FRAMEWORK_READY",
+      "runtime_status": "NOT_INSTALLED",
+      "actual_execution_verified": false
     }
   ]
 }

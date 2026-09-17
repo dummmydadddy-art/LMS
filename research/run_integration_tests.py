@@ -29,6 +29,7 @@ from tests.research.test_wave2_resource_stress import TestWave2ResourceStress
 from tests.research.test_wave2_large_context import TestWave2LargeContext
 from tests.research.test_wave2_windows_compatibility import TestWave2WindowsCompatibility
 from tests.research.test_wave2_baseline_reproduction import TestWave2BaselineReproduction
+import tests.research.test_real_execution as test_real_execution
 
 
 def run_all_tests():
@@ -55,13 +56,16 @@ def run_all_tests():
         ("Wave 2 LLMLingua Compression", TestWave2LLMLingua),
         ("Wave 2 Resource Manager & Residency", TestWave2ResourceManager),
         ("Wave 2 Page Window Budget", TestWave2PageBudget),
-        ("Wave 2 Resource Stress (500p)", TestWave2ResourceStress),
+        ("Wave 2 Resource Stress (100p)", TestWave2ResourceStress),
         ("Wave 2 Large-Context Compression (8000t)", TestWave2LargeContext),
         ("Wave 2 Windows 11 Compatibility", TestWave2WindowsCompatibility),
     ]
 
     for name, cls in test_classes:
         suite.addTests(loader.loadTestsFromTestCase(cls))
+
+    # Add real external runtime execution test module
+    suite.addTests(loader.loadTestsFromModule(test_real_execution))
 
     runner = unittest.TextTestRunner(verbosity=2)
     start_time = time.time()

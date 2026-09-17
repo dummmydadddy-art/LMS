@@ -23,22 +23,29 @@ class TestWave2LLMLingua(unittest.TestCase):
             }
         ]
 
-    def test_compression_and_provenance(self):
-        res = self.adapter.compress(self.contexts, query="justify-content flexbox")
+    def test_neural_compression_error_enforcement(self):
+        h = self.adapter.health()
+        self.assertEqual(h["status"], "NOT_READY")
+        self.assertFalse(h["simulation"])
 
-        self.assertIn("compressed_context", res)
-        self.assertLess(res["compressed_token_count"], res["original_token_count"])
-        self.assertLess(res["compression_ratio"], 1.0)
-        self.assertEqual(len(res["preserved_context_ids"]), 2)
-        self.assertIn("PARENT_ea1f3b17_24_00", res["preserved_context_ids"])
-        self.assertIn("PARENT_ea1f3b17_24_01", res["preserved_context_ids"])
-        self.assertIn("Source: PARENT_ea1f3b17_24_00", res["compressed_context"])
+        with self.assertRaises(RuntimeError) as ctx:
+            self.adapter.compress(self.contexts, query="justify-content flexbox")
+        self.assertIn("not installed", str(ctx.exception).lower())
 
-    def test_disabled_mode(self):
+    def test_disabled_mode_preserves_provenance(self):
         disabled_adapter = LLMLinguaAdapter({"mode": "disabled"})
+        h = disabled_adapter.health()
+        self.assertEqual(h["status"], "READY")
+        self.assertFalse(h["simulation"])
+
         res = disabled_adapter.compress(self.contexts, query="test")
         self.assertEqual(res["compression_ratio"], 1.0)
         self.assertEqual(res["original_token_count"], res["compressed_token_count"])
+        self.assertFalse(res["simulation"])
+        self.assertEqual(len(res["preserved_context_ids"]), 2)
+        self.assertIn("PARENT_ea1f3b17_24_00", res["preserved_context_ids"])
+        self.assertIn("PARENT_ea1f3b17_24_01", res["preserved_context_ids"])
+        self.assertIn("display: flex", res["compressed_context"])
 
 
 if __name__ == "__main__":
