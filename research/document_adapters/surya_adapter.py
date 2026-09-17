@@ -30,6 +30,7 @@ class SuryaAdapter(DocumentProcessor):
         self.device = self.config.get("device", "cpu")
         self._binary_path = shutil.which("surya_ocr")
         self.runtime_available = SURYA_AVAILABLE or (self._binary_path is not None)
+        self.weights_available = self.config.get("weights_available", False)
 
     def inspect(self, document_path: str) -> Dict[str, Any]:
         if not os.path.exists(document_path):
@@ -38,7 +39,7 @@ class SuryaAdapter(DocumentProcessor):
             "document_path": document_path,
             "adapter": "SuryaAdapter",
             "device": self.device,
-            "status": "READY" if self.runtime_available else "NOT_READY",
+            "status": "READY" if (self.runtime_available and self.weights_available) else "NOT_READY",
             "simulation": False
         }
 
@@ -46,6 +47,8 @@ class SuryaAdapter(DocumentProcessor):
         """OCR specific difficult pages with conservative batch size."""
         if not self.runtime_available:
             raise RuntimeError("Surya runtime is not installed. Simulation is disabled.")
+        if not self.weights_available:
+            raise RuntimeError("Surya model weights are not installed in local cache. Simulation is disabled.")
 
         # Real Surya invocation
         from surya.ocr import run_ocr
@@ -58,21 +61,29 @@ class SuryaAdapter(DocumentProcessor):
     def detect_layout(self, document_path: str, pages: List[int]) -> List[Dict[str, Any]]:
         if not self.runtime_available:
             raise RuntimeError("Surya runtime is not installed. Simulation is disabled.")
+        if not self.weights_available:
+            raise RuntimeError("Surya model weights are not installed in local cache. Simulation is disabled.")
         raise NotImplementedError("Real Surya execution requires configured weights.")
 
     def detect_tables(self, document_path: str, pages: List[int]) -> List[Dict[str, Any]]:
         if not self.runtime_available:
             raise RuntimeError("Surya runtime is not installed. Simulation is disabled.")
+        if not self.weights_available:
+            raise RuntimeError("Surya model weights are not installed in local cache. Simulation is disabled.")
         raise NotImplementedError("Real Surya execution requires configured weights.")
 
     def extract_equations(self, document_path: str, pages: List[int]) -> List[Dict[str, Any]]:
         if not self.runtime_available:
             raise RuntimeError("Surya runtime is not installed. Simulation is disabled.")
+        if not self.weights_available:
+            raise RuntimeError("Surya model weights are not installed in local cache. Simulation is disabled.")
         raise NotImplementedError("Real Surya execution requires configured weights.")
 
     def process_pages(self, document_path: str, pages: List[int], **kwargs) -> List[Dict[str, Any]]:
         if not self.runtime_available:
             raise RuntimeError("Surya runtime is not installed. Simulation is disabled.")
+        if not self.weights_available:
+            raise RuntimeError("Surya model weights are not installed in local cache. Simulation is disabled.")
         return self.ocr_pages(document_path, pages)
 
     def process(self, document_path: str, **kwargs) -> List[Dict[str, Any]]:
@@ -84,14 +95,22 @@ class SuryaAdapter(DocumentProcessor):
             yield p
 
     def health(self) -> Dict[str, Any]:
+        is_ready = self.runtime_available and self.weights_available
+        reason = None
+        if not self.runtime_available:
+            reason = "surya package not installed"
+        elif not self.weights_available:
+            reason = "Surya model weights are not installed in local cache"
+
         return {
-            "status": "READY" if self.runtime_available else "NOT_READY",
-            "reason": None if self.runtime_available else "surya package not installed",
+            "status": "READY" if is_ready else "NOT_READY",
+            "reason": reason,
             "simulation": False,
             "adapter": "SuryaAdapter",
             "ocr_batch_size": self.ocr_batch_size,
             "device": self.device,
             "runtime_available": self.runtime_available,
+            "weights_available": self.weights_available,
             "vram_safe": True
         }
 

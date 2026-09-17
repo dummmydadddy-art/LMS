@@ -3,6 +3,7 @@
 
 from research.document_adapters.base import DocumentProcessor, PageArtifact
 from research.document_adapters.docling_rs_adapter import DoclingRsAdapter
+from research.document_adapters.python_docling_adapter import PythonDoclingAdapter
 from research.document_adapters.marker_adapter import MarkerAdapter
 from research.document_adapters.surya_adapter import SuryaAdapter
 from research.document_adapters.selective_vision import SelectiveVisionPolicy
@@ -10,6 +11,7 @@ from research.document_adapters.selective_vision import SelectiveVisionPolicy
 DOCUMENT_PROCESSORS = {
     "docling_rs": DoclingRsAdapter,
     "docling": DoclingRsAdapter,
+    "python_docling": PythonDoclingAdapter,
     "marker": MarkerAdapter,
     "surya": SuryaAdapter
 }
@@ -29,6 +31,7 @@ __all__ = [
     "DocumentProcessor",
     "PageArtifact",
     "DoclingRsAdapter",
+    "PythonDoclingAdapter",
     "MarkerAdapter",
     "SuryaAdapter",
     "SelectiveVisionPolicy",

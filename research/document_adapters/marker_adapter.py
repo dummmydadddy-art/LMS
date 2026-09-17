@@ -34,6 +34,7 @@ class MarkerAdapter(DocumentProcessor):
         self.disable_ocr = self.config.get("disable_ocr", True)
         self._binary_path = shutil.which("marker_single")
         self.runtime_available = MARKER_AVAILABLE or (self._binary_path is not None)
+        self.models_available = self.config.get("models_available", False)
 
     def inspect(self, document_path: str) -> Dict[str, Any]:
         if not os.path.exists(document_path):
@@ -43,7 +44,7 @@ class MarkerAdapter(DocumentProcessor):
             "file_path": document_path,
             "mode": self.mode,
             "parser": "marker",
-            "status": "READY" if self.runtime_available else "NOT_READY",
+            "status": "READY" if (self.runtime_available and self.models_available) else "NOT_READY",
             "simulation": False
         }
 
@@ -55,6 +56,8 @@ class MarkerAdapter(DocumentProcessor):
     ) -> List[Dict[str, Any]]:
         if not self.runtime_available:
             raise RuntimeError("Marker package is not installed. Simulation is disabled.")
+        if not self.models_available:
+            raise RuntimeError("Marker models are not installed in local cache. Simulation is disabled.")
 
         if not os.path.exists(document_path):
             raise FileNotFoundError(f"Document not found: {document_path}")
@@ -76,15 +79,23 @@ class MarkerAdapter(DocumentProcessor):
             yield p
 
     def health(self) -> Dict[str, Any]:
+        is_ready = self.runtime_available and self.models_available
+        reason = None
+        if not self.runtime_available:
+            reason = "marker package not installed"
+        elif not self.models_available:
+            reason = "Marker models are not installed in local cache"
+
         return {
-            "status": "READY" if self.runtime_available else "NOT_READY",
-            "reason": None if self.runtime_available else "marker package not installed",
+            "status": "READY" if is_ready else "NOT_READY",
+            "reason": reason,
             "simulation": False,
             "adapter": "MarkerAdapter",
             "mode": self.mode,
             "disable_ocr": self.disable_ocr,
             "device": self.device,
-            "runtime_available": self.runtime_available
+            "runtime_available": self.runtime_available,
+            "models_available": self.models_available
         }
 
     def describe(self) -> Dict[str, Any]:

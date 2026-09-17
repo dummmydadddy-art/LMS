@@ -232,11 +232,26 @@ class DoclingRsAdapter(DocumentProcessor):
         }
 
     def health(self) -> Dict[str, Any]:
+        import shutil
+        candidate = shutil.which("docling")
+        # Native Rust docling-project/docling.rs binary is distinct from Python Scripts/docling.exe
+        rust_available = candidate is not None and "Python" not in candidate and "site-packages" not in candidate
+        is_ready = rust_available or DOCLING_AVAILABLE
+        reason = None
+        if not is_ready:
+            reason = "Neither docling.rs native binary nor Python docling library installed"
+        elif not rust_available:
+            reason = "docling.rs native Rust binary not compiled/installed (cargo/MSVC build required). Active execution via Python docling (NativePdfPipeline)."
+
         return {
-            "status": "READY" if DOCLING_AVAILABLE else "NOT_READY",
-            "reason": None if DOCLING_AVAILABLE else "docling library not installed",
+            "status": "READY" if is_ready else "NOT_READY",
+            "reason": reason,
             "simulation": False,
             "adapter": "DoclingRsAdapter",
+            "native_rust_binary_found": rust_available,
+            "native_rust_status": "READY" if rust_available else "NOT_READY",
+            "python_docling_status": "READY" if DOCLING_AVAILABLE else "NOT_READY",
+            "active_engine": "docling.rs (rust)" if rust_available else "python-docling (fallback)",
             "runtime_version": DOCLING_VERSION,
             "streaming_enabled": True,
             "windowed_processing": True,
@@ -251,5 +266,6 @@ class DoclingRsAdapter(DocumentProcessor):
             "purpose": "Low-memory, streaming document ingestion and selective page windows",
             "supported_operations": ["convert_document", "convert_page_range", "stream_pages", "get_page_metadata"],
             "hardware_safety": "NativePdfPipeline streaming, bounded RAM, no whole-book memory accumulation",
+            "identity_note": "Docling.rs is the native Rust CLI/library (docling-project/docling.rs, requires cargo/MSVC compilation from source). Python Docling (NativePdfPipeline) is verified executable as REAL_RUNTIME.",
             "simulation": False
         }

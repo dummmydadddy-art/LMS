@@ -39,11 +39,10 @@ class TestWave2PageIndex(unittest.TestCase):
         child_node = self.adapter.get_node(flex_root.children[0])
         self.assertEqual(child_node["node_title"], "Flexbox Axes and Alignment")
 
-    def test_missing_sdk_unprovided_outline_fails(self):
-        # Without explicit outline and without pageindex installed, must fail cleanly
-        with self.assertRaises(RuntimeError) as ctx:
+    def test_missing_sdk_or_document_fails(self):
+        # Without explicit outline and with nonexistent document, must fail cleanly
+        with self.assertRaises((RuntimeError, FileNotFoundError)):
             self.adapter.build_tree("curriculum_core.pdf")
-        self.assertIn("not installed", str(ctx.exception).lower())
 
     def test_deterministic_navigation_search(self):
         self.adapter.build_tree("curriculum_core.pdf", structure_outline=self.sample_outline)
@@ -57,7 +56,7 @@ class TestWave2PageIndex(unittest.TestCase):
 
     def test_local_only_invariant(self):
         h = self.adapter.health()
-        self.assertEqual(h["status"], "NOT_READY")
+        self.assertEqual(h["status"], "READY" if h.get("sdk_installed") else "NOT_READY")
         self.assertFalse(h["simulation"])
         self.assertTrue(h["local_only"])
         self.assertTrue(h["cloud_disabled"])

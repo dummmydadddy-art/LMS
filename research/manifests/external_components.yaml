@@ -111,60 +111,61 @@ external_components:
   package_version: docling-rs-adapter
   model: N/A (Streaming Ingestion Engine)
   model_revision: N/A
-  runtime: Native / Python streaming
+  runtime: Native Rust CLI (docling-project/docling.rs)
   purpose: Low-memory, streaming document ingestion and selective page windows
   hardware_profile: Bounded RAM, streaming iterators, no full-book memory accumulation
   enabled_experiment: EXP-0055
-  integration_status: REAL_RUNTIME
-  runtime_status: INSTALLED_EXECUTABLE
-  actual_execution_verified: true
+  integration_status: NOT_READY
+  runtime_status: COMPILE_REQUIRED
+  actual_execution_verified: false
+  notes: Native Rust CLI requires cargo/MSVC compilation from source. Python Docling (NativePdfPipeline) is verified executable as REAL_RUNTIME.
 - component: PageIndex
   repository: VectifyAI/PageIndex
   revision_status: UNPINNED
   license: Apache-2.0
-  package_version: pageindex-adapter
+  package_version: 0.2.18
   model: N/A (Structural Tree Index)
   model_revision: N/A
-  runtime: Local structural document tree
+  runtime: Local structural document tree (asyncio md_to_tree)
   purpose: Structural document navigation (root -> chapter -> section -> page window)
   hardware_profile: Zero GPU memory, strictly local execution (no cloud, no web search)
   enabled_experiment: EXP-0056
-  integration_status: FRAMEWORK_READY
-  runtime_status: NOT_INSTALLED
-  actual_execution_verified: false
+  integration_status: REAL_RUNTIME
+  runtime_status: INSTALLED_EXECUTABLE
+  actual_execution_verified: true
 - component: llama.cpp
   repository: ggml-org/llama.cpp
   revision_status: UNPINNED
   license: MIT
-  package_version: llama-cpp-python>=0.2.75
-  model: GGUF Quantized Models (Q4_K_M, Q5_K_M)
-  model_revision: main
-  runtime: GGUF CUDA / CPU hybrid offloading
-  purpose: High-efficiency local LLM inference, KV-cache management, bounded VRAM
+  package_version: b11026 (llama-cli / llama-server)
+  model: Llama 3.2 3B Instruct (Q4_K_M GGUF)
+  model_revision: sha256-dde5aa3fc5ff
+  runtime: GGUF CPU / hybrid offloading via llama-cli
+  purpose: High-efficiency local LLM inference, bounded context, bounded VRAM
   hardware_profile: Hybrid CPU + GPU layers <= 16 on 4 GB VRAM RTX 3050, CPU fallback
   enabled_experiment: EXP-0057
-  integration_status: FRAMEWORK_READY
-  runtime_status: NOT_INSTALLED
-  actual_execution_verified: false
+  integration_status: REAL_RUNTIME
+  runtime_status: INSTALLED_EXECUTABLE
+  actual_execution_verified: true
 - component: LLMLingua
   repository: microsoft/LLMLingua
   revision_status: UNPINNED
   license: MIT
-  package_version: llmlingua>=0.2.2
-  model: microsoft/llmlingua-2-xlm-roberta-large-meetingbank
+  package_version: 0.2.2
+  model: microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank
   model_revision: main
   runtime: PyTorch / Transformers CPU/GPU
   purpose: Context token compression preserving evidence provenance and source IDs
   hardware_profile: Lightweight compressor, temporary context memory only
   enabled_experiment: EXP-0058
   integration_status: FRAMEWORK_READY
-  runtime_status: NOT_INSTALLED
+  runtime_status: PACKAGE_INSTALLED_WEIGHTS_UNAVAILABLE
   actual_execution_verified: false
 - component: Surya
   repository: VikParuchuri/surya
   revision_status: UNPINNED
   license: GPL-3.0
-  package_version: surya-ocr>=0.4.0
+  package_version: 0.22.1
   model: Surya Layout, OCR & Table Models
   model_revision: main
   runtime: PyTorch selective OCR pipeline
@@ -172,7 +173,7 @@ external_components:
   hardware_profile: Conservative batch size <= 2, CPU fallback for 4 GB VRAM safety
   enabled_experiment: EXP-0059
   integration_status: FRAMEWORK_READY
-  runtime_status: NOT_INSTALLED
+  runtime_status: PACKAGE_INSTALLED_WEIGHTS_UNAVAILABLE
   actual_execution_verified: false
 - component: Gemma 3n E2B
   repository: google/gemma-3n-E2B-it
@@ -182,8 +183,7 @@ external_components:
   model: google/gemma-3n-E2B-it
   model_revision: main
   runtime: Transformers / GGUF llama.cpp compatible
-  purpose: Lightweight local routing, query classification, and preliminary helper
-    reasoning
+  purpose: Lightweight local routing, query classification, and preliminary helper reasoning
   hardware_profile: Optional helper backend, graceful degradation if model unavailable
   enabled_experiment: EXP-0060
   integration_status: FRAMEWORK_READY
@@ -201,13 +201,13 @@ external_components:
   hardware_profile: CPU-optimized low-power execution, zero GPU VRAM requirement
   enabled_experiment: EXP-0061
   integration_status: FRAMEWORK_READY
-  runtime_status: NOT_INSTALLED
+  runtime_status: RUNTIME_UNAVAILABLE
   actual_execution_verified: false
 - component: Marker
   repository: datalab-to/marker
   revision_status: UNPINNED
   license: GPL-3.0
-  package_version: marker-pdf>=0.2.0
+  package_version: 2.0.0
   model: Marker OCR and Layout Pipeline
   model_revision: main
   runtime: PyTorch / OCR / VLM
@@ -215,5 +215,6 @@ external_components:
   hardware_profile: Selective OCR mode, bounded memory, CPU mode supported
   enabled_experiment: EXP-0062
   integration_status: FRAMEWORK_READY
-  runtime_status: NOT_INSTALLED
+  runtime_status: PACKAGE_INSTALLED_WEIGHTS_UNAVAILABLE
   actual_execution_verified: false
+

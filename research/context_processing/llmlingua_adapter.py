@@ -27,9 +27,26 @@ class LLMLinguaAdapter:
         self.device = self.config.get("device", "cpu")
         self._compressor = None
 
+    def _is_model_available(self) -> bool:
+        if os.path.exists(self.model_name):
+            return True
+        hf_home = os.environ.get("HF_HOME", os.path.expanduser("~/.cache/huggingface/hub"))
+        repo_folder = "models--" + self.model_name.replace("/", "--")
+        model_dir = os.path.join(hf_home, repo_folder, "snapshots")
+        if os.path.exists(model_dir):
+            for root, _, files in os.walk(model_dir):
+                for f in files:
+                    if f.endswith(".safetensors") or f.endswith(".bin"):
+                        return True
+        return False
+
     def _get_compressor(self) -> Any:
         if not LLMLINGUA_AVAILABLE:
             raise RuntimeError("llmlingua package is not installed. Handcrafted token pruning simulation has been removed.")
+        if not self._is_model_available():
+            raise RuntimeError(
+                f"LLMLingua model '{self.model_name}' is not installed in local cache. Simulation is disabled."
+            )
         if self._compressor is None:
             self._compressor = PromptCompressor(
                 model_name=self.model_name,
@@ -107,18 +124,29 @@ class LLMLinguaAdapter:
                 "mode": "disabled",
                 "simulation": False,
                 "adapter": "LLMLinguaAdapter",
-                "llmlingua_installed": LLMLINGUA_AVAILABLE
+                "llmlingua_installed": LLMLINGUA_AVAILABLE,
+                "model_available": True
             }
 
+        is_model_cached = self._is_model_available()
+        is_ready = LLMLINGUA_AVAILABLE and is_model_cached
+
+        reason = None
+        if not LLMLINGUA_AVAILABLE:
+            reason = "llmlingua package not installed"
+        elif not is_model_cached:
+            reason = f"LLMLingua model '{self.model_name}' is not installed in local cache"
+
         return {
-            "status": "READY" if LLMLINGUA_AVAILABLE else "NOT_READY",
-            "reason": None if LLMLINGUA_AVAILABLE else "llmlingua package not installed",
+            "status": "READY" if is_ready else "NOT_READY",
+            "reason": reason,
             "simulation": False,
             "adapter": "LLMLinguaAdapter",
             "mode": self.mode,
             "target_rate": self.target_rate,
             "model_name": self.model_name,
-            "llmlingua_installed": LLMLINGUA_AVAILABLE
+            "llmlingua_installed": LLMLINGUA_AVAILABLE,
+            "model_available": is_model_cached
         }
 
     def describe(self) -> Dict[str, Any]:

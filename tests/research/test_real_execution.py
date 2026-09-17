@@ -16,6 +16,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../.
 
 from research.document_adapters import (
     DoclingRsAdapter,
+    PythonDoclingAdapter,
     MarkerAdapter,
     SuryaAdapter,
     SelectiveVisionPolicy
@@ -30,15 +31,15 @@ from research.local_inference import (
 from research.runtime import PageBudgetManager, ResourceManager
 
 
-class TestRealDoclingInvocation(unittest.TestCase):
-    """Verifies real Docling execution on actual multi-page curriculum PDF."""
+class TestRealPythonDoclingInvocation(unittest.TestCase):
+    """Verifies real Python Docling execution on actual multi-page curriculum PDF."""
 
     def setUp(self):
         self.pdf_path = os.path.abspath("tests/research/data/multipage_curriculum.pdf")
         self.assertTrue(os.path.exists(self.pdf_path), "Test PDF must exist")
-        self.adapter = DoclingRsAdapter()
+        self.adapter = PythonDoclingAdapter()
 
-    def test_real_docling_inspect_and_convert(self):
+    def test_real_python_docling_inspect_and_convert(self):
         health = self.adapter.health()
         if health["status"] != "READY":
             self.skipTest(f"SKIPPED_NOT_INSTALLED: {health.get('reason')}")
@@ -46,7 +47,7 @@ class TestRealDoclingInvocation(unittest.TestCase):
         # Real inspect
         info = self.adapter.inspect(self.pdf_path)
         self.assertEqual(info["estimated_pages"], 5)
-        self.assertEqual(info["parser"], "docling.rs")
+        self.assertEqual(info["parser"], "python-docling")
         self.assertFalse(info["simulation"])
 
         # Real page window conversion: pages 2 to 3
@@ -67,8 +68,19 @@ class TestRealDoclingInvocation(unittest.TestCase):
         self.assertEqual(self.adapter.metrics["pages_skipped"], 3)
 
 
+class TestRealDoclingRsInvocation(unittest.TestCase):
+    """Verifies Docling.rs native Rust binary status (distinct from Python docling)."""
+
+    def test_real_docling_rs(self):
+        adapter = DoclingRsAdapter()
+        health = adapter.health()
+        self.assertFalse(health["simulation"])
+        if not health.get("native_rust_binary_found", False):
+            self.skipTest(f"SKIPPED_NOT_INSTALLED: {health.get('reason')}")
+
+
 class TestRealPageIndexInvocation(unittest.TestCase):
-    """Verifies PageIndex real SDK or explicit clean skip."""
+    """Verifies PageIndex real SDK execution."""
 
     def test_real_pageindex(self):
         adapter = PageIndexAdapter()
@@ -77,10 +89,11 @@ class TestRealPageIndexInvocation(unittest.TestCase):
         if not h.get("sdk_installed", False):
             self.skipTest(f"SKIPPED_NOT_INSTALLED: {h.get('reason')}")
 
-        # If installed, execute real tree derivation from document
+        # Execute real tree derivation from actual curriculum PDF
         pdf_path = os.path.abspath("tests/research/data/multipage_curriculum.pdf")
         res = adapter.build_tree(pdf_path)
         self.assertGreater(res["node_count"], 0)
+        self.assertIn("tree_hash", res)
 
 
 class TestRealLLMLinguaInvocation(unittest.TestCase):
@@ -90,7 +103,7 @@ class TestRealLLMLinguaInvocation(unittest.TestCase):
         adapter = LLMLinguaAdapter({"mode": "LLMLingua-2"})
         h = adapter.health()
         self.assertFalse(h["simulation"])
-        if not h.get("llmlingua_installed", False):
+        if not h.get("model_available", False):
             self.skipTest(f"SKIPPED_NOT_INSTALLED: {h.get('reason')}")
 
         # Real compressor execution
@@ -107,7 +120,7 @@ class TestRealMarkerInvocation(unittest.TestCase):
         adapter = MarkerAdapter()
         h = adapter.health()
         self.assertFalse(h["simulation"])
-        if not h.get("runtime_available", False):
+        if not h.get("models_available", False):
             self.skipTest(f"SKIPPED_NOT_INSTALLED: {h.get('reason')}")
 
         pdf_path = os.path.abspath("tests/research/data/multipage_curriculum.pdf")
@@ -122,7 +135,7 @@ class TestRealSuryaInvocation(unittest.TestCase):
         adapter = SuryaAdapter()
         h = adapter.health()
         self.assertFalse(h["simulation"])
-        if not h.get("runtime_available", False):
+        if not h.get("weights_available", False):
             self.skipTest(f"SKIPPED_NOT_INSTALLED: {h.get('reason')}")
 
         pdf_path = os.path.abspath("tests/research/data/multipage_curriculum.pdf")
@@ -131,19 +144,22 @@ class TestRealSuryaInvocation(unittest.TestCase):
 
 
 class TestRealLlamaCppInvocation(unittest.TestCase):
-    """Verifies llama.cpp real execution or clean skip."""
+    """Verifies llama.cpp real execution with verified local GGUF model."""
 
     def test_real_llamacpp(self):
-        adapter = LlamaCppAdapter()
+        ollama_blob = os.path.expanduser("~/.ollama/models/blobs/sha256-dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff")
+        adapter = LlamaCppAdapter({"model_path": ollama_blob})
         h = adapter.health()
         self.assertFalse(h["simulation"])
         if not h.get("runtime_found", False) or not h.get("model_exists", False):
             self.skipTest(f"SKIPPED_NOT_INSTALLED: {h.get('reason')}")
 
-        adapter.load()
+        loaded = adapter.load()
+        self.assertTrue(loaded)
         res = adapter.generate("Test prompt")
         self.assertIn("text", res)
         self.assertFalse(res["simulation"])
+        self.assertGreater(res["tokens_per_sec"], 0.0)
 
 
 class TestRealGemmaInvocation(unittest.TestCase):
