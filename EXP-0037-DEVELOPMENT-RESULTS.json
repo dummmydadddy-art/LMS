@@ -1,0 +1,310 @@
+{
+    "experiment_id": "EXP-0037",
+    "dataset": "EXP-0025-DEVELOPMENT-DATASET.json",
+    "sample_size": 400,
+    "dataset_sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+    "timestamp": "2026-09-17T07:50:31+00:00",
+    "baseline_mode": "A0",
+    "modes": {
+        "A0": {
+            "mode": "A0",
+            "name": "Frozen EXP-0036 N7 Baseline",
+            "accuracy": 90.5,
+            "macro_f1": 91.44,
+            "far": 4.4,
+            "frr": 10.4,
+            "supported_recall": 83.33,
+            "refutation_recall": 92,
+            "ne_recall": 99,
+            "ood_recall": 99,
+            "novel_ood_recall": 99,
+            "false_abstentions": 0,
+            "false_acceptances": 11,
+            "false_refutations": 26,
+            "ambiguous_accuracy": 100,
+            "ambiguous_count": 0,
+            "false_premise_accuracy": 92,
+            "category_accuracies": {
+                "SUPPORTED_CURRICULUM": 81,
+                "NOVEL_FALSE_PREMISE": 92,
+                "OUT_OF_CURRICULUM_UNKNOWN": 99,
+                "LEGITIMATE_NEGATION": 88,
+                "MIXED_COMPOUND_PREMISE": 92
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 125,
+                    "REFUTED": 25,
+                    "NOT_ESTABLISHED": 0
+                },
+                "REFUTED": {
+                    "SUPPORTED": 11,
+                    "REFUTED": 138,
+                    "NOT_ESTABLISHED": 1
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 1,
+                    "NOT_ESTABLISHED": 99
+                }
+            },
+            "class_metrics": {
+                "SUPPORTED": {
+                    "precision": 91.91,
+                    "recall": 83.33,
+                    "f1": 87.41
+                },
+                "REFUTED": {
+                    "precision": 84.15,
+                    "recall": 92,
+                    "f1": 87.9
+                },
+                "NOT_ESTABLISHED": {
+                    "precision": 99,
+                    "recall": 99,
+                    "f1": 99
+                }
+            }
+        },
+        "A1": {
+            "mode": "A1",
+            "name": "N7 + Ambiguity Routing Guard",
+            "accuracy": 92,
+            "macro_f1": 92.77,
+            "far": 2.4,
+            "frr": 10,
+            "supported_recall": 84,
+            "refutation_recall": 95.33,
+            "ne_recall": 99,
+            "ood_recall": 99,
+            "novel_ood_recall": 99,
+            "false_abstentions": 0,
+            "false_acceptances": 6,
+            "false_refutations": 25,
+            "ambiguous_accuracy": 100,
+            "ambiguous_count": 3,
+            "false_premise_accuracy": 96,
+            "category_accuracies": {
+                "SUPPORTED_CURRICULUM": 82,
+                "NOVEL_FALSE_PREMISE": 96,
+                "OUT_OF_CURRICULUM_UNKNOWN": 99,
+                "LEGITIMATE_NEGATION": 88,
+                "MIXED_COMPOUND_PREMISE": 94
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 126,
+                    "REFUTED": 24,
+                    "NOT_ESTABLISHED": 0
+                },
+                "REFUTED": {
+                    "SUPPORTED": 6,
+                    "REFUTED": 143,
+                    "NOT_ESTABLISHED": 1
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 1,
+                    "NOT_ESTABLISHED": 99
+                }
+            },
+            "class_metrics": {
+                "SUPPORTED": {
+                    "precision": 95.45,
+                    "recall": 84,
+                    "f1": 89.36
+                },
+                "REFUTED": {
+                    "precision": 85.12,
+                    "recall": 95.33,
+                    "f1": 89.94
+                },
+                "NOT_ESTABLISHED": {
+                    "precision": 99,
+                    "recall": 99,
+                    "f1": 99
+                }
+            }
+        },
+        "A2": {
+            "mode": "A2",
+            "name": "A1 + Stricter Neutrality Prior (P4_neutral)",
+            "accuracy": 92,
+            "macro_f1": 92.77,
+            "far": 2.4,
+            "frr": 10,
+            "supported_recall": 84,
+            "refutation_recall": 95.33,
+            "ne_recall": 99,
+            "ood_recall": 99,
+            "novel_ood_recall": 99,
+            "false_abstentions": 0,
+            "false_acceptances": 6,
+            "false_refutations": 25,
+            "ambiguous_accuracy": 100,
+            "ambiguous_count": 3,
+            "false_premise_accuracy": 96,
+            "category_accuracies": {
+                "SUPPORTED_CURRICULUM": 82,
+                "NOVEL_FALSE_PREMISE": 96,
+                "OUT_OF_CURRICULUM_UNKNOWN": 99,
+                "LEGITIMATE_NEGATION": 88,
+                "MIXED_COMPOUND_PREMISE": 94
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 126,
+                    "REFUTED": 24,
+                    "NOT_ESTABLISHED": 0
+                },
+                "REFUTED": {
+                    "SUPPORTED": 6,
+                    "REFUTED": 143,
+                    "NOT_ESTABLISHED": 1
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 1,
+                    "NOT_ESTABLISHED": 99
+                }
+            },
+            "class_metrics": {
+                "SUPPORTED": {
+                    "precision": 95.45,
+                    "recall": 84,
+                    "f1": 89.36
+                },
+                "REFUTED": {
+                    "precision": 85.12,
+                    "recall": 95.33,
+                    "f1": 89.94
+                },
+                "NOT_ESTABLISHED": {
+                    "precision": 99,
+                    "recall": 99,
+                    "f1": 99
+                }
+            }
+        },
+        "A3": {
+            "mode": "A3",
+            "name": "A1 + Dynamic Confidence Threshold (0.85\/0.80)",
+            "accuracy": 92,
+            "macro_f1": 92.77,
+            "far": 2.4,
+            "frr": 10,
+            "supported_recall": 84,
+            "refutation_recall": 95.33,
+            "ne_recall": 99,
+            "ood_recall": 99,
+            "novel_ood_recall": 99,
+            "false_abstentions": 0,
+            "false_acceptances": 6,
+            "false_refutations": 25,
+            "ambiguous_accuracy": 100,
+            "ambiguous_count": 3,
+            "false_premise_accuracy": 96,
+            "category_accuracies": {
+                "SUPPORTED_CURRICULUM": 82,
+                "NOVEL_FALSE_PREMISE": 96,
+                "OUT_OF_CURRICULUM_UNKNOWN": 99,
+                "LEGITIMATE_NEGATION": 88,
+                "MIXED_COMPOUND_PREMISE": 94
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 126,
+                    "REFUTED": 24,
+                    "NOT_ESTABLISHED": 0
+                },
+                "REFUTED": {
+                    "SUPPORTED": 6,
+                    "REFUTED": 143,
+                    "NOT_ESTABLISHED": 1
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 1,
+                    "NOT_ESTABLISHED": 99
+                }
+            },
+            "class_metrics": {
+                "SUPPORTED": {
+                    "precision": 95.45,
+                    "recall": 84,
+                    "f1": 89.36
+                },
+                "REFUTED": {
+                    "precision": 85.12,
+                    "recall": 95.33,
+                    "f1": 89.94
+                },
+                "NOT_ESTABLISHED": {
+                    "precision": 99,
+                    "recall": 99,
+                    "f1": 99
+                }
+            }
+        },
+        "A4": {
+            "mode": "A4",
+            "name": "A1 + Neutrality Prior + Dynamic Threshold (Combined)",
+            "accuracy": 92,
+            "macro_f1": 92.77,
+            "far": 2.4,
+            "frr": 10,
+            "supported_recall": 84,
+            "refutation_recall": 95.33,
+            "ne_recall": 99,
+            "ood_recall": 99,
+            "novel_ood_recall": 99,
+            "false_abstentions": 0,
+            "false_acceptances": 6,
+            "false_refutations": 25,
+            "ambiguous_accuracy": 100,
+            "ambiguous_count": 3,
+            "false_premise_accuracy": 96,
+            "category_accuracies": {
+                "SUPPORTED_CURRICULUM": 82,
+                "NOVEL_FALSE_PREMISE": 96,
+                "OUT_OF_CURRICULUM_UNKNOWN": 99,
+                "LEGITIMATE_NEGATION": 88,
+                "MIXED_COMPOUND_PREMISE": 94
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 126,
+                    "REFUTED": 24,
+                    "NOT_ESTABLISHED": 0
+                },
+                "REFUTED": {
+                    "SUPPORTED": 6,
+                    "REFUTED": 143,
+                    "NOT_ESTABLISHED": 1
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 1,
+                    "NOT_ESTABLISHED": 99
+                }
+            },
+            "class_metrics": {
+                "SUPPORTED": {
+                    "precision": 95.45,
+                    "recall": 84,
+                    "f1": 89.36
+                },
+                "REFUTED": {
+                    "precision": 85.12,
+                    "recall": 95.33,
+                    "f1": 89.94
+                },
+                "NOT_ESTABLISHED": {
+                    "precision": 99,
+                    "recall": 99,
+                    "f1": 99
+                }
+            }
+        }
+    }
+}
