@@ -1,4 +1,4 @@
-﻿# EXP-0039: Development Metric Reconciliation & Independent Re-Audit Report
+# EXP-0039: Development Metric Reconciliation & Independent Re-Audit Report
 
 **Experiment:** EXP-0039: Conservative RAG Chunking with Chonkie  
 **Branch:** `exp-0039`  
@@ -73,8 +73,8 @@ It is scientifically invalid to compare development performance on $N = 400$ dir
 | **Supported Recall** | **69.01%** (147 / 213) | **84.00%** (126 / 150) |
 | **Refutation Recall** | **70.37%** (114 / 162) | **95.33%** (143 / 150) |
 | **NOT_ESTABLISHED Recall** | **77.60%** (97 / 125) | **99.00%** (99 / 100) |
-| **OOD Recall** | **94.00%** | **99.00%** |
-| **Novel-OOD Recall** | **92.00%** | **99.00%** |
+| **OOD Recall** | **94.00%** | **99.00%** (99/100) |
+| **Novel-OOD Recall** | **92.00%** | **N/A** — separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json |
 | **False Acceptances** | 44 | 6 |
 | **False Abstentions** | 19 (Supported $\to$ NE) | 0 (Supported $\to$ NE) |
 
@@ -254,6 +254,7 @@ Total                         140            160                    100    400
 ### 8.3 Reconciliation of Minor Reporting Metrics:
 1. **OOD Recall for C2_085:** Recomputed as **99.00%** (99/100 correct in `OUT_OF_CURRICULUM_UNKNOWN`). The narrative claim of "100.00%" was a typographical error; the confusion matrix and category breakdown in the original JSON always recorded 99.
 2. **FRR for C1:** Recomputed as **18.00%** ($27/150 = (25 + 2)/150$). The originally reported 16.67% omitted the 2 false abstentions from the rejection count.
+3. **Novel-OOD Recall on Development Dataset:** Reconciled interpretation: `Novel-OOD Recall: N/A — separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json.` The ordinary development OOD metric remains `OOD Recall = 99.00% (99/100)`. In the blind dataset (`EXP-0033-BLIND-DATASET.json`), a dedicated 50-case Novel-OOD subset exists, but no separate Novel-OOD subset was constructed in the development set.
 
 ---
 
@@ -352,6 +353,7 @@ Audited directly against authentic source documents in `backend/seed_rag_knowled
 | **DISC-3** | Paired contingency table subscript inversion | `EXP-0039-DEVELOPMENT-RESULTS.json`<br>`EXP-0039-DEVELOPMENT-ANALYSIS.md` | $n_{01}$ (C0 only): 2<br>$n_{10}$ (Cand only): 9<br>*(C2_085 vs C0)* | **$n_{01}$ (Cand wins): 9**<br>**$n_{10}$ (Cand losses): 2**<br>$\Delta = \mathbf{+1.75\text{ pp}}$ | **NO** | Resolves contradiction between table counts, narrative, and accuracy delta ($\Delta = 100 \times (9 - 2) / 400$). |
 | **DISC-4** | C2_085 OOD Recall text claim | `EXP-0039-DEVELOPMENT-ANALYSIS.md` | OOD Recall: 100.00% | **OOD Recall: 99.00%** (99 / 100) | **NO** | Rectifies narrative typographical error to align with confusion matrix. |
 | **DISC-5** | C1 FRR arithmetic omission | `EXP-0039-DEVELOPMENT-RESULTS.json` | FRR: 16.67% ($25/150$) | **FRR: 18.00%** ($27/150$) | **NO** | Incorporates false abstentions on supported claims into FRR ($100\% - 82.00\% = 18.00\%$). |
+| **DISC-6** | Novel-OOD development subset clarification | `EXP-0039-RECONCILED-DEVELOPMENT-RESULTS.json`<br>`EXP-0039-RECONCILIATION-REPORT.md` | Novel-OOD Recall: 99.00% | **Novel-OOD Recall: N/A** — separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json | **NO** | Replaces conflation of development OOD (99/100, 99.00%) with phantom Novel-OOD subset. Development OOD remains 99.00%. |
 
 ---
 

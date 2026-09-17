@@ -1,4 +1,4 @@
-﻿# EXP-0039: Reconciled Independent Audit Checkpoint & Scientific Integrity Report
+# EXP-0039: Reconciled Independent Audit Checkpoint & Scientific Integrity Report
 
 **Experiment:** EXP-0039: Conservative RAG Chunking with Chonkie  
 **Branch:** `exp-0039`  
@@ -86,6 +86,11 @@
   - One-sided 95% LCB: $\Delta - 1.6448536 \times \text{SE} = +1.75 - 1.3562 = \mathbf{+0.3938\text{ pp}}$.
   - Criterion $\text{LCB} > \Delta_{\text{NI}}$ is strictly satisfied ($\mathbf{+0.39\text{ pp}} > \mathbf{-3.00\text{ pp}}$).
 - **Status:** **VERIFIED (NON-INFERIORITY RIGOROUSLY ESTABLISHED)**.
+
+### 3.5 Novel-OOD Development Subset Reporting Clarification
+- **Audit Verification:** `EXP-0025-DEVELOPMENT-DATASET.json` ($N=400$) contains an overall `OUT_OF_CURRICULUM_UNKNOWN` category (100 cases, 99.00% recall), but lacks a separate isolated Novel-OOD subset. Conflating OOD with Novel-OOD in the development report was a reporting imprecision.
+- **Resolution:** Formally recorded as `Novel-OOD Recall: N/A — separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json.` Ordinary development OOD recall remains `99.00% (99/100)`.
+- **Status:** **RECONCILED & PRECISELY DOCUMENTED**.
 
 ---
 

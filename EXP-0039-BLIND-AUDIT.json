@@ -1,0 +1,20 @@
+{
+  "experiment": "EXP-0039",
+  "audit_type": "FROZEN_BLIND_EVALUATION_INDEPENDENT_AUDIT",
+  "audit_timestamp": "2026-09-17T11:00:00+00:00",
+  "audited_branch": "exp-0039",
+  "candidate": "C2_085 (Chonkie SemanticChunker 0.85, 76 chunks)",
+  "checkpoints": {
+    "dataset_integrity": "PASS (SHA-256: 3b4fd6c7a70a8d672808c1b3f94ee9baefbe6a09074b1bda1b4b1a8f6be4e3f3)",
+    "prediction_completion": "PASS (500/500 predictions generated, 0 missing, 0 duplicates, 0 failures)",
+    "prediction_artifact_lock": "PASS (SHA-256: e3522d62f948d977b40aa5aba3bb90d438d453a161117825e94bb77668db49e5, locked before unblinding)",
+    "blind_protocol_compliance": "PASS (Strict two-phase execution: inference completed prior to label loading)",
+    "production_repository_isolation": "PASS (EduConnect-LMS-Production untouched at commit 1768832)",
+    "verifier_code_freeze": "PASS (Candidate A4 code, thresholds 0.85/0.80, and P4_neutral prompt frozen)",
+    "safety_constraint": "PASS (Standard FAR 18.47% <= 18.50% ceiling)",
+    "non_inferiority_verification": "PASS (95% LCB = -2.4553 pp > -3.0 pp margin vs EXP-0037 A4)",
+    "no_post_hoc_tuning": "PASS (Zero tuning, zero prompt alterations, zero threshold adjustments after seeing blind labels)"
+  },
+  "decision": "ADOPT",
+  "verdict": "PASS \u2014 C2_085 ADOPTED RESEARCH CONFIGURATION"
+}

@@ -53,7 +53,8 @@
         "ne_recall": 99.0,
         "ood_recall": 99.0,
         "false_acceptances": 6,
-        "false_abstentions": 0
+        "false_abstentions": 0,
+        "novel_ood_recall": "N/A \u2014 separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json"
       },
       "root_cause": "The previous EXP-0039 report mistakenly copied 90.75% from EXP-0038 development results on EXP-0025 (Docling HybridChunker C1 development accuracy) and combined it with the 18.50% FAR safety ceiling from EXP-0036. This conflated the development population (N=400) with the blind population (N=500).",
       "recomputation_method": "Extracted authentic metrics directly from committed lineage artifact EXP-0037-BLIND-RESULTS.json.",
@@ -176,6 +177,20 @@
       "root_cause": "Original script computed C1 FRR as 25/150 (only counting Supported->Refuted), omitting 2 Supported->Not_Established false abstentions. Total rejected supported claims = 27 / 150 = 18.00%, which aligns with FRR = 100% - Supported Recall (82.00%).",
       "recomputation_method": "(150 - 123) / 150 = 27 / 150 = 18.00%.",
       "scientific_impact": "Restores arithmetic consistency across all confusion matrix derivations."
+    },
+    {
+      "id": "DISCREPANCY-6",
+      "title": "Novel-OOD Development Metric Clarification",
+      "source_artifacts": [
+        "EXP-0039-RECONCILED-DEVELOPMENT-RESULTS.json",
+        "EXP-0039-RECONCILIATION-REPORT.md"
+      ],
+      "original_reported_value": "Novel-OOD Recall = 99.00%",
+      "corrected_recomputed_value": "Novel-OOD Recall: N/A \u2014 separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json",
+      "root_cause": "EXP-0025-DEVELOPMENT-DATASET.json contains an overall OUT_OF_CURRICULUM_UNKNOWN category (100 cases, 99.00% recall), but does not contain a dedicated isolated Novel-OOD subset. Conflating OOD with Novel-OOD was a reporting imprecision.",
+      "recomputation_method": "Formal distinction between development OOD (99.00%) and blind benchmark Novel-OOD (50 cases in EXP-0033).",
+      "predictions_changed": false,
+      "scientific_impact": "Ensures metric definitions strictly reflect dataset category composition without reporting phantom subsets."
     }
   ],
   "candidate_selection_audit": {
