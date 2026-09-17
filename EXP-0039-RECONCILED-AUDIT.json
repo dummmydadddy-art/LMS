@@ -1,0 +1,21 @@
+{
+  "experiment": "EXP-0039",
+  "audit_type": "RECONCILED_INDEPENDENT_AUDIT",
+  "audit_timestamp": "2026-09-17T10:45:00+00:00",
+  "audited_commit": "3376305",
+  "parent_commit": "e1cf1503851a5ff2fc1b3a86897556943878cf13",
+  "checkpoints": {
+    "git_lineage": "COMPLIANT (branched from exact completed EXP-0038 commit e1cf150)",
+    "production_repo": "COMPLIANT (EduConnect-LMS-Production untouched at commit 1768832)",
+    "blind_dataset_integrity": "COMPLIANT (EXP-0033-BLIND-DATASET.json untouched, SHA-256 verified, unread)",
+    "verifier_code_freeze": "COMPLIANT (Candidate A4 verifier untouched, thresholds and prompts frozen)",
+    "historical_tables_preservation": "COMPLIANT (material_chunks_exp0032, material_chunks_exp0038_c1 preserved)",
+    "content_preservation": "COMPLIANT (100.0% unique word coverage across all 5 docs, 0 missing words)",
+    "retrieval_ndcg_reconciliation": "COMPLIANT (diagnosed, bounded in [0, 100%], C2_085 = 86.02%)",
+    "paired_statistics_reconciliation": "COMPLIANT (standard n01/n10 convention verified: n01=9, n10=2, Delta=+1.75 pp)",
+    "non_inferiority_verification": "COMPLIANT (95% LCB = +0.39 pp > -3.00 pp margin)",
+    "exp0037_comparator_correction": "COMPLIANT (authoritative EXP-0037 blind 71.60% restored, contamination documented)",
+    "candidate_selection_verification": "COMPLIANT (C2_085 satisfies 7-level hierarchy, selection retained)"
+  },
+  "verdict": "CONDITIONAL PASS \u2014 C2_085 BLIND READY AFTER DOCUMENTED REPORT CORRECTIONS"
+}
