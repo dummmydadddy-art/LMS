@@ -3,21 +3,34 @@
 **Experiment:** EXP-0056: PageIndex Structural Navigation for Retrieval-Efficient RAG  
 **Branch:** `research-integration`  
 **Base Commit:** `3af3418d029cc7ab3820cc95b7931ecd7e277bfa`  
+**EXP-0056 Commit:** `627f404e94fc35f0d9e9596712dcf50d75dd1011`  
 **Production Repository:** `D:\Collage project\EduConnect-LMS-Production` (FROZEN HEAD: `176883227602671b545e061dacf228aedc3271a5`)  
 **Date:** September 17, 2026  
+**Operational Decision:** **ADOPT**  
+**Scientific Claim:** **CONDITIONAL**  
 **Status:** CLOSED & RECONCILED  
 
 ---
 
-## 1. Pre-Registered Hypotheses vs. Empirical Outcomes
+## 1. Construct Identity Statement
 
-### Hypothesis $H_1$ (Search Space & Context Reduction): CONFIRMED
+This experiment evaluated two distinct architectural stages:
+1. **Document Indexing:** Genuine upstream **PageIndex PDF-native indexing** via `pageindex.page_index_flash` (version `0.2.18`). Operates directly on authentic PDF documents using character-level span clustering and embedded document bookmarks, producing a 3-level hierarchical outline (5 modules, 23 sections, 50 nodes covering all 23 pages).
+2. **Query Routing:** **PageIndex-derived deterministic structural routing** implemented via deterministic regular expression and keyword matching logic (`route_query()` in `scratch/exp0056_retrieval_builder.py` and `search_tree()` in `research/document_navigation/pageindex_adapter.py`). It does **not** evaluate native PageIndex agentic reasoning retrieval (`agent_tools` / LLM-based tree traversal).
+
+**Scientific Conclusion:** PageIndex indexing was genuine PDF-native execution. Query routing was PageIndex-derived deterministic structural routing. Therefore this experiment should be interpreted as evaluating PageIndex-derived structural routing rather than native PageIndex agentic retrieval.
+
+---
+
+## 2. Pre-Registered Hypotheses vs. Empirical Outcomes
+
+### Hypothesis $H_1$ (Search Space & Context Reduction): CONFIRMED (Empirical)
 - **Pre-registered Target:** Candidate page reduction $\ge 50\%$ across routed queries without eliminating gold evidence.
 - **Observed Result:** 
-  - Routed queries achieved **79.85% page reduction** (and **79.98% on development set**).
-  - Across all blind queries (including fallbacks), page reduction was **58.13%**.
+  - Routed queries achieved **79.85% candidate page reduction** (from 23 baseline pages to 4.63 pages).
+  - Across all blind queries (including fallbacks), candidate page reduction was **58.13%**.
   - Candidate context token reduction was **58.36%**.
-  - Gold evidence retrieval was fully preserved, resulting in a net $+0.80$ pp increase in downstream accuracy.
+  - *Definition:* "Candidate pages" refers to pages belonging to the candidate module/section structurally routed prior to dense retrieval (the search space presented to the dense retriever), compared against the 23-page total curriculum baseline.
 
 ### Hypothesis $H_2$ (PageIndex PDF-Native Fidelity Gate): CONFIRMED
 - **Pre-registered Target:** Genuine upstream `pageindex.page_index_flash` generates a deterministic hierarchical document tree with 100% page coverage, 0 missing pages, 0 cross-document contamination, operating strictly locally without cloud dependencies.
@@ -25,74 +38,81 @@
   - Evaluated on 4 authentic PDF corpora (5p, 20p, 50p, 23p full curriculum).
   - Page coverage: exactly **100.0%** across all files.
   - Missing pages: **0** across all files.
-  - Zero cloud API calls, zero telemetry, zero mock simulations.
   - Memory consumption: $<15$ MB delta RSS for 50 pages; **0.0 MB GPU VRAM**.
+  - *Distinction:* Page-coverage fidelity is distinct from retrieval correctness.
 
-### Hypothesis $H_3$ (Downstream Quality & Safety Non-Inferiority): CONFIRMED
+### Hypothesis $H_3$ (Downstream Quality & Safety): CONDITIONAL
 - **Pre-registered Target:** Candidate C1 accuracy $\ge 71.40\%$ (baseline 72.00%) and safety ceiling $	ext{FAR} \le 17.50\%$ on the locked blind holdout benchmark ($N = 500$).
 - **Observed Result:** 
-  - Blind accuracy: **72.80% [95% CI: 68.74% - 76.52%]** ($+0.80$ pp improvement).
-  - False Acceptance Rate: **16.03% [95% CI: 9.32% - 15.97%]** ($-1.04$ pp reduction, well below 17.50% ceiling).
-  - Macro F1: **73.04%** ($+0.80$ pp improvement).
-  - McNemar's paired test: 8 discordant pairs (2 regressions vs. 6 improvements, $p = 0.2891$), demonstrating statistical non-inferiority and superior distractor suppression.
+  - Blind accuracy: **72.80% [95% Wilson CI: 68.74%, 76.52%]** (B0: 72.00% [67.91%, 75.76%], $+0.80$ pp).
+  - False Acceptance Rate: **16.03% (46/287) [95% Wilson CI: 12.24%, 20.72%]** (B0: 17.07% (49/287) [13.16%, 21.85%], $-1.04$ pp).
+  - Paired comparison: $n_{11} = 358, n_{00} = 134, n_{10} = 2, n_{01} = 6$.
+  - McNemar's Edwards-corrected $\chi^2 = 1.1250$, exact two-sided binomial $p = 0.2891$.
+  - **Statistical Finding:** Observed paired accuracy difference was $+0.80$ percentage points, with 6 improvements and 2 regressions; the paired difference was not statistically significant by McNemar's test ($p = 0.2891$). Formal non-inferiority was not established by McNemar alone.
 
 ---
 
-## 2. Quantitative Summary of Primary Artifacts
+## 3. Corrected Blind Metrics Scorecard
 
 ```
-========================================================================================
-EXP-0056 SUMMARY SCORECARD
-========================================================================================
+====================================================================================================
+EXP-0056 RECONCILED BLIND SCORECARD (N=500)
+====================================================================================================
 Dataset                       : EXP-0033-BLIND-DATASET.json (N=500, SHA-256: 3b4fd6c7...)
 Control Retriever (B0)        : EXP-0040 Bounded Parents (Global Unconstrained Search)
-Candidate Retriever (C1)      : PageIndex Structural Navigation Guided Search + Bounded Fallback
+Candidate Retriever (C1)      : PageIndex-Derived Structural Routing + Bounded Fallback
 Frozen Verifier               : Candidate A4 (rag_ambiguity_guard_verifier.php, SHA-256: 31c7c31e...)
-----------------------------------------------------------------------------------------
-Metric                        | Control B0 | Candidate C1 | Delta     | Verdict
-------------------------------+------------+--------------+-----------+-----------------
-Accuracy                      | 72.00%     | 72.80%       | +0.80 pp  | PASS (Non-inferior)
-Macro F1                      | 72.24%     | 73.04%       | +0.80 pp  | PASS
-False Acceptance Rate (FAR)   | 17.07%     | 16.03%       | -1.04 pp  | PASS (FAR <= 17.5%)
-False Rejection Rate (FRR)    | 27.70%     | 27.23%       | -0.47 pp  | PASS
-Supported Recall              | 72.30%     | 72.77%       | +0.47 pp  | PASS
-Refutation Recall             | 67.90%     | 68.52%       | +0.62 pp  | PASS
-NOT_ESTABLISHED Recall        | 76.80%     | 78.40%       | +1.60 pp  | PASS
-Search Space Page Reduction   | 0.00%      | 58.13%       | +58.13 pp | PASS (>= 50%)
-Routed Page Reduction         | 0.00%      | 79.85%       | +79.85 pp | PASS
-Context Token Reduction       | 0.00%      | 58.36%       | +58.36 pp | PASS (>= 50%)
-Fallback Frequency            | 0.00%      | 27.20%       | +27.20 pp | PASS (<= 35%)
-----------------------------------------------------------------------------------------
-Paired McNemar Test           : n11=358, n00=134, n10=2, n01=6 | chi2=1.1250, p=0.2891
-Fidelity Benchmark            : 100.0% page coverage, 0 missing pages, 0 MB VRAM
-Production Isolation          : HEAD 176883227602671b545e061dacf228aedc3271a5 (CLEAN)
-========================================================================================
+----------------------------------------------------------------------------------------------------
+Metric                        | Control B0        | Candidate C1      | Delta     | Status
+------------------------------+-------------------+-------------------+-----------+-----------------
+Accuracy                      | 72.00% [67.91, 75.76]| 72.80% [68.74, 76.52]| +0.80 pp  | Observed Gain
+Macro F1                      | 72.24%            | 73.04%            | +0.80 pp  | Non-inferior
+False Acceptance Rate (FAR)   | 17.07% [13.16, 21.85]| 16.03% [12.24, 20.72]| -1.04 pp  | Safe (<=17.50%)
+False Rejection Rate (FRR)    | 27.70% [22.10, 34.09]| 27.23% [21.68, 33.60]| -0.47 pp  | Non-inferior
+Supported Recall              | 72.30% (154/213)  | 72.77% (155/213)  | +0.47 pp  | Stable
+Refutation Recall             | 67.90% (110/162)  | 68.52% (111/162)  | +0.62 pp  | Stable
+NOT_ESTABLISHED Recall        | 76.80% (96/125)   | 78.40% (98/125)   | +1.60 pp  | Stable
+Candidate Page Reduction (All)| 0.00%             | 58.13%            | +58.13 pp | Observed Reduction
+Routed Page Reduction         | 0.00%             | 79.85%            | +79.85 pp | Observed Reduction
+Context Token Reduction       | 0.00%             | 58.36%            | +58.36 pp | Observed Reduction
+Fallback Frequency            | 0.00%             | 27.20% (136/500)  | +27.20 pp | Safe Escalation
+----------------------------------------------------------------------------------------------------
+Paired McNemar Test           : n11=358, n00=134, n10=2, n01=6 | chi2=1.1250, p=0.2891 (Not Sig)
+Fidelity Benchmark            : 100.0% page coverage, 0 missing pages, 0 duplicates, 0.0 MB VRAM
+Production Isolation          : HEAD 176883227602671b545e061dacf228aedc3271a5 (CLEAN & UNTOUCHED)
+====================================================================================================
 ```
 
 ---
 
-## 3. Cryptographic Manifest of Generated Artifacts
+## 4. Operational Decision vs. Scientific Claim
 
-| Artifact | Purpose | File SHA-256 |
-|---|---|---|
-| `EXP-0056-PAGEINDEX-FIDELITY.json` | 4-PDF PageIndex native benchmark | `cfb2c3954ceb846e499d63068e4a77d1303fa994cfb154817a58882a8398453a` |
-| `EXP-0056-DEVELOPMENT-RESULTS.json` | Per-case dev predictions ($N=400$) | `47c61582236a28d54d24177dca718b525d81b89fa5e8a7eaeb94f4a3c3c7a23c` |
-| `EXP-0056-DEVELOPMENT-METRICS.json` | Dev metrics & McNemar statistics | `0e32d67ef51dbf807ea3bc9cbf4cae3381be68a8dc4e5ce6c986926f07e59b20` |
-| `EXP-0056-BLIND-PREDICTIONS.json` | Phase 1 blind predictions ($N=500$) | `175595afa9c71b75bec96b52de9c591190d4d7a751e290190f41d549e1f803a9` |
-| `EXP-0056-BLIND-RESULTS.json` | Per-case blind results ($N=500$) | `ce7747ee4587db240b9db8d7d8e87498c5eeeb41ea9b9ba4bfb9f1d2417ec64b` |
-| `EXP-0056-BLIND-METRICS.json` | Unblinded headline metrics & CIs | `fa9c18d3d9241d7d54b679468093d562dc69b76c8cb8bf6067b4dc6f8f533e4f` |
-| `EXP-0056-BLIND-FORENSICS.json` | Register of discordant cases ($N=8$) | `4fbe29fca6aa407519ea81896798e4f4da605f6ebaa6a55ec1f3583526c8e310` |
-| `EXP-0056-REPRODUCIBILITY-MANIFEST.json` | Master cryptographic manifest | *Recorded in manifest file* |
-| `EXP-0056-INDEPENDENT-AUDIT.md` | Independent verification report | *Committed to repository* |
-| `EXP-0056-FINAL-RECONCILIATION.md` | Final reconciliation synthesis | *Committed to repository* |
+```
+======================================================================
+DUAL DECISION SUMMARY
+======================================================================
+OPERATIONAL DECISION: ADOPT
+Rationale: Prunes 58.13% of candidate pages and 58.36% of context
+tokens while maintaining downstream verification behavior and
+reducing False Acceptances by 3 cases (FAR 16.03% vs 17.07%).
+
+SCIENTIFIC CLAIM: CONDITIONAL
+Rationale:
+1. Document indexing was genuine PageIndex PDF-native execution.
+2. Query routing was PageIndex-derived deterministic structural routing.
+3. The paired accuracy difference (+0.80 pp) was not statistically
+   significant by McNemar's test (p = 0.2891).
+4. Formal non-inferiority was not established by McNemar alone.
+======================================================================
+```
 
 ---
 
-## 4. Final Experiment Closure
+## 5. Experiment Closure
 
-EXP-0056 is officially **CLOSED** with all hypotheses confirmed and all hard gates passed.
+EXP-0056 is officially **CLOSED & RECONCILED**.
 
-In accordance with strict operational protocol:
+Protocol constraints:
 - Do NOT start EXP-0057.
 - Do NOT modify the production repository.
-- Stop immediately after staging and committing EXP-0056.
+- Halt execution.

@@ -7,7 +7,7 @@
       "path": "D:\\Collage project\\EduConnect-LMS-Experimental",
       "branch": "research-integration",
       "base_commit": "3af3418d029cc7ab3820cc95b7931ecd7e277bfa",
-      "current_head": "3af3418d029cc7ab3820cc95b7931ecd7e277bfa"
+      "current_head": "627f404e94fc35f0d9e9596712dcf50d75dd1011"
     },
     "production": {
       "path": "D:\\Collage project\\EduConnect-LMS-Production",
@@ -32,15 +32,30 @@
     "simulations": false,
     "gpu_vram_mb": 0.0
   },
+  "construct_audit": {
+    "classification": "Category B: PageIndex-derived deterministic structural routing",
+    "document_indexing_engine": "Genuine upstream pageindex.page_index_flash (PDF-native, 100% page coverage, 0 missing pages, 0 VRAM)",
+    "query_routing_engine": "Deterministic regular expression and keyword matching logic mapping queries to structural outline nodes extracted by PageIndex Flash",
+    "native_pageindex_agentic_retrieval_evaluated": false,
+    "construct_statement": "PageIndex indexing was genuine PDF-native execution. Query routing was PageIndex-derived deterministic structural routing. Therefore this experiment should be interpreted as evaluating PageIndex-derived structural routing rather than native PageIndex agentic retrieval."
+  },
+  "decisions": {
+    "operational_decision": "ADOPT",
+    "scientific_claim": "CONDITIONAL",
+    "operational_rationale": "Prunes 58.13% of candidate pages and 58.36% of context tokens while preserving verification quality and reducing False Acceptances by 3 cases (FAR 16.03% vs 17.07%).",
+    "scientific_rationale": "Evaluates PageIndex-derived structural routing rather than native agentic retrieval; observed accuracy difference (+0.80 pp) was not statistically significant by McNemar (p=0.2891); formal non-inferiority was not established by McNemar alone."
+  },
   "gates_verdict": {
     "fidelity_gate": "PASS (100% page coverage, 0 missing pages, 0 VRAM)",
     "search_space_reduction_gate": "PASS (58.13% pages overall, 79.85% routed, >=50% criterion satisfied)",
     "context_token_reduction_gate": "PASS (58.36% tokens overall, >=50% criterion satisfied)",
     "fallback_frequency_gate": "PASS (27.20% blind fallback, <=35% criterion satisfied)",
-    "downstream_accuracy_non_inferiority": "PASS (72.80% vs 72.00% baseline, +0.80 pp)",
+    "downstream_accuracy_observation": "OBSERVED_GAIN (72.80% vs 72.00% baseline, +0.80 pp)",
+    "paired_mcnemar_significance": "NOT_SIGNIFICANT (chi2=1.1250, p=0.2891, 6 improvements, 2 regressions)",
+    "formal_non_inferiority_established": false,
     "downstream_safety_ceiling": "PASS (FAR 16.03% vs ceiling 17.50%, -1.04 pp vs baseline)",
     "production_isolation_gate": "PASS (Production HEAD untouched, 0 modifications)",
-    "overall_verdict": "PASS - FULL ADOPTION RECOMMENDED"
+    "overall_verdict": "OPERATIONAL: ADOPT / SCIENTIFIC: CONDITIONAL"
   },
   "artifacts_sha256": {
     "research/document_navigation/pageindex_adapter.py": "be039d4aef057a29abf3547f771ba8757c284d9938106524940936756399d5bb",
@@ -55,10 +70,10 @@
     "EXP-0056-DEVELOPMENT-METRICS.json": "df1c2a0353427c987937e79debbe8ffcb6fc7d5ec6d5734f3b7fc138174ac3a9",
     "EXP-0056-BLIND-PREDICTIONS.json": "175595afa9c71b75bec96b52de9c591190d4d7a751e290190f41d549e1f803a9",
     "EXP-0056-BLIND-RESULTS.json": "3bee6683cd327850d7eb8c2755f1fd9bdfd33d5546b2b946c6dd19a2b8ba5366",
-    "EXP-0056-BLIND-METRICS.json": "ffac8d237089841fbdceb6b7dbb2832d3bac420df8ae3a337e581d1f06bbb9fc",
+    "EXP-0056-BLIND-METRICS.json": "b3c804371489bedd6a485b96ab3b2edd786925b3aaaaa9f1d48ee8be3a385f83",
     "EXP-0056-BLIND-FORENSICS.json": "ea4acbbc23c9ea2d3aedf79290586107a8fe28e544d3a2d03ea15a0268c2fa6d",
-    "EXP-0056-INDEPENDENT-AUDIT.md": "7876c200d1114066169e3d18e76f53f167de6a8163bccdda9c702ffebc5c4714",
-    "EXP-0056-FINAL-RECONCILIATION.md": "a17005df60a00111e1d7134724bcd0e196b65d7f6ed5d960d54a43385aa415ea",
+    "EXP-0056-INDEPENDENT-AUDIT.md": "2aead6290878c763fbf74ddc719b7ebe9bc05484c7456e4b18eea9970d8c3328",
+    "EXP-0056-FINAL-RECONCILIATION.md": "05914b922da8ec471110b3b4ac64a335a350004beeec80b7746d755b25b1648f",
     "scratch/data_benchmarks/curriculum_full.pdf": "4c0e8608518e24469c63dcd6eaf054807494631d36156965816ec000400eeb0f",
     "scratch/exp0056_retrieval_metrics.json": "db5a0271f255b7644c13b0c1c9961b88553e63d23fa8ca666e8ca68c23b40b35",
     "scratch/exp0056_dev_c1_cache.json": "e4955c0513a96e18b889d3992d8433da78b977c0b3b981b3c3e8a216569e9e0a",

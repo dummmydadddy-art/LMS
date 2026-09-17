@@ -1,7 +1,7 @@
 {
   "experiment": "EXP-0056",
   "phase": "BLIND_EVALUATION",
-  "candidate": "C1_PageIndex_Structural_Navigation",
+  "candidate": "C1_PageIndex_Derived_Structural_Routing",
   "control": "B0_EXP0040_Global_Hierarchy",
   "dataset": {
     "name": "EXP-0033-BLIND-DATASET.json",
@@ -30,13 +30,13 @@
     "macro_f1_delta_pp": 0.8,
     "b0_far": 17.07,
     "b0_far_wilson_ci95": [
-      10.03,
-      16.86
+      13.16,
+      21.85
     ],
     "c1_far": 16.03,
     "c1_far_wilson_ci95": [
-      9.32,
-      15.97
+      12.24,
+      20.72
     ],
     "far_delta_pp": -1.04,
     "far_safety_ceiling": 17.5,
@@ -62,7 +62,9 @@
       "mean_ms": 23.25,
       "p50_ms": 14.7,
       "p95_ms": 27.92
-    }
+    },
+    "candidate_pages_definition": "Pages belonging to the candidate module/section structurally routed prior to dense retrieval (search space presented to dense retriever), compared against total 23-page curriculum baseline.",
+    "token_reduction_definition": "Context tokens of candidate parent groups in routed module compared against total 14,800 tokens across all 36 parents in curriculum baseline."
   },
   "paired_test": {
     "n11_both_correct": 358,
@@ -72,7 +74,10 @@
     "discordant_pairs": 8,
     "mcnemar_chi2": 1.125,
     "mcnemar_p_value": 0.28906249999999967,
-    "statistically_significant": false
+    "statistically_significant": false,
+    "mcnemar_interpretation": "Observed paired accuracy difference was +0.80 percentage points, with 6 improvements and 2 regressions; the paired difference was not statistically significant by McNemar's test.",
+    "formal_non_inferiority_established": false,
+    "formal_non_inferiority_note": "Formal non-inferiority was not established by McNemar alone; a one-sided paired risk-difference confidence bound is required."
   },
   "confusion_matrices": {
     "b0_control": {
@@ -141,5 +146,12 @@
       "b0_correct": 50,
       "c1_correct": 50
     }
+  },
+  "construct_audit": {
+    "classification": "Category B: PageIndex-derived deterministic structural routing",
+    "document_indexing_engine": "Genuine upstream pageindex.page_index_flash (PDF-native, 100% page coverage, 0 missing pages, 0 VRAM)",
+    "query_routing_engine": "Deterministic regular expression and keyword matching logic mapping queries to structural outline nodes extracted by PageIndex Flash",
+    "native_pageindex_agentic_retrieval_evaluated": false,
+    "scientific_interpretation": "Experiment evaluates PageIndex-derived deterministic structural routing rather than native PageIndex agentic retrieval."
   }
 }
