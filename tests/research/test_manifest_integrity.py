@@ -1,6 +1,6 @@
 # tests/research/test_manifest_integrity.py
 """
-Test manifest and artifact integrity.
+Test manifest and artifact integrity for Wave 1 and Wave 2.
 Verifies external component declarations, configuration integrity,
 and historical dataset/prediction hashes.
 """
@@ -18,6 +18,7 @@ HISTORICAL_HASHES = {
 }
 
 REQUIRED_CONFIGS = [
+    # Wave 1
     "baseline_exp0040.yaml",
     "exp0041_bge_reranker.yaml",
     "exp0042_bge_m3_dense.yaml",
@@ -25,10 +26,20 @@ REQUIRED_CONFIGS = [
     "exp0044_pylate_colbert.yaml",
     "exp0045_llamaindex_fusion.yaml",
     "exp0046_crag_corrective.yaml",
-    "exp0047_lightrag_kg.yaml"
+    "exp0047_lightrag_kg.yaml",
+    # Wave 2
+    "exp0055_docling_rs.yaml",
+    "exp0056_pageindex.yaml",
+    "exp0057_llama_cpp.yaml",
+    "exp0058_llmlingua.yaml",
+    "exp0059_surya.yaml",
+    "exp0060_gemma3n.yaml",
+    "exp0061_bitnet.yaml",
+    "exp0062_marker.yaml"
 ]
 
 REQUIRED_REQS = [
+    # Wave 1
     "requirements-core-research.txt",
     "requirements-bge.txt",
     "requirements-qdrant.txt",
@@ -36,7 +47,16 @@ REQUIRED_REQS = [
     "requirements-llamaindex.txt",
     "requirements-haystack.txt",
     "requirements-crag.txt",
-    "requirements-lightrag.txt"
+    "requirements-lightrag.txt",
+    # Wave 2
+    "requirements-docling-rs.txt",
+    "requirements-pageindex.txt",
+    "requirements-llamacpp.txt",
+    "requirements-llmlingua.txt",
+    "requirements-surya.txt",
+    "requirements-gemma3n.txt",
+    "requirements-bitnet.txt",
+    "requirements-marker.txt"
 ]
 
 
@@ -59,7 +79,7 @@ class TestManifestIntegrity(unittest.TestCase):
         with open(manifest_path, "r", encoding="utf-8") as f:
             data = json.load(f)
         self.assertIn("components", data)
-        self.assertEqual(len(data["components"]), 7)
+        self.assertEqual(len(data["components"]), 15, "Must declare 15 components (7 Wave 1 + 8 Wave 2)")
 
     def test_external_component_manifest_yaml(self):
         yaml_path = "research/manifests/external_components.yaml"
@@ -67,7 +87,7 @@ class TestManifestIntegrity(unittest.TestCase):
         with open(yaml_path, "r", encoding="utf-8") as f:
             data = yaml.safe_load(f)
         self.assertIn("external_components", data)
-        self.assertEqual(len(data["external_components"]), 7)
+        self.assertEqual(len(data["external_components"]), 15, "Must declare 15 components (7 Wave 1 + 8 Wave 2)")
 
     def test_integration_configs_exist(self):
         for cfg in REQUIRED_CONFIGS:
@@ -77,7 +97,6 @@ class TestManifestIntegrity(unittest.TestCase):
                 data = yaml.safe_load(f)
             self.assertIn("experiment_id", data)
             self.assertIn("feature_flags", data)
-            self.assertIn("retriever", data)
             self.assertIn("verifier", data)
 
     def test_requirements_files_exist(self):

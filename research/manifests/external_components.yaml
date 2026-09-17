@@ -83,3 +83,92 @@ external_components:
   enabled_experiment: EXP-0047 (Graph Retrieval)
   hardware_profile: Local storage in research/data/lightrag_storage, isolated from
     vector index
+- component: Docling.rs
+  repository: docling-project/docling.rs
+  revision_status: UNPINNED
+  license: MIT
+  package_version: docling-rs-adapter
+  model: N/A (Streaming Ingestion Engine)
+  model_revision: N/A
+  runtime: Native / Python streaming
+  purpose: Low-memory, streaming document ingestion and selective page windows
+  hardware_profile: Bounded RAM, streaming iterators, no full-book memory accumulation
+  enabled_experiment: EXP-0055
+- component: PageIndex
+  repository: VectifyAI/PageIndex
+  revision_status: UNPINNED
+  license: Apache-2.0
+  package_version: pageindex-adapter
+  model: N/A (Structural Tree Index)
+  model_revision: N/A
+  runtime: Local structural document tree
+  purpose: Structural document navigation (root -> chapter -> section -> page window)
+  hardware_profile: Zero GPU memory, strictly local execution (no cloud, no web search)
+  enabled_experiment: EXP-0056
+- component: llama.cpp
+  repository: ggml-org/llama.cpp
+  revision_status: UNPINNED
+  license: MIT
+  package_version: llama-cpp-python>=0.2.75
+  model: GGUF Quantized Models (Q4_K_M, Q5_K_M)
+  model_revision: main
+  runtime: GGUF CUDA / CPU hybrid offloading
+  purpose: High-efficiency local LLM inference, KV-cache management, bounded VRAM
+  hardware_profile: Hybrid CPU + GPU layers <= 16 on 4 GB VRAM RTX 3050, CPU fallback
+  enabled_experiment: EXP-0057
+- component: LLMLingua
+  repository: microsoft/LLMLingua
+  revision_status: UNPINNED
+  license: MIT
+  package_version: llmlingua>=0.2.2
+  model: microsoft/llmlingua-2-xlm-roberta-large-meetingbank
+  model_revision: main
+  runtime: PyTorch / Transformers CPU/GPU
+  purpose: Context token compression preserving evidence provenance and source IDs
+  hardware_profile: Lightweight compressor, temporary context memory only
+  enabled_experiment: EXP-0058
+- component: Surya
+  repository: VikParuchuri/surya
+  revision_status: UNPINNED
+  license: GPL-3.0
+  package_version: surya-ocr>=0.4.0
+  model: Surya Layout, OCR & Table Models
+  model_revision: main
+  runtime: PyTorch selective OCR pipeline
+  purpose: Selective OCR, layout, table, and equation processing for difficult pages
+  hardware_profile: Conservative batch size <= 2, CPU fallback for 4 GB VRAM safety
+  enabled_experiment: EXP-0059
+- component: Gemma 3n E2B
+  repository: google/gemma-3n-E2B-it
+  revision_status: UNPINNED
+  license: Gemma Terms of Use
+  package_version: gemma-3n-adapter
+  model: google/gemma-3n-E2B-it
+  model_revision: main
+  runtime: Transformers / GGUF llama.cpp compatible
+  purpose: Lightweight local routing, query classification, and preliminary helper
+    reasoning
+  hardware_profile: Optional helper backend, graceful degradation if model unavailable
+  enabled_experiment: EXP-0060
+- component: BitNet
+  repository: microsoft/BitNet
+  revision_status: UNPINNED
+  license: MIT
+  package_version: bitnet-adapter
+  model: microsoft/BitNet-b1.58-large
+  model_revision: main
+  runtime: Official BitNet low-bit C++ runtime / CPU kernels
+  purpose: Ultra-efficient 1-bit / 1.58-bit low-bit local inference research
+  hardware_profile: CPU-optimized low-power execution, zero GPU VRAM requirement
+  enabled_experiment: EXP-0061
+- component: Marker
+  repository: datalab-to/marker
+  revision_status: UNPINNED
+  license: GPL-3.0
+  package_version: marker-pdf>=0.2.0
+  model: Marker OCR and Layout Pipeline
+  model_revision: main
+  runtime: PyTorch / OCR / VLM
+  purpose: Alternative document processing pipeline and EXP-0062 parser comparator
+  hardware_profile: Selective OCR mode, bounded memory, CPU mode supported
+  enabled_experiment: EXP-0062
