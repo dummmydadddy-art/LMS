@@ -1,0 +1,120 @@
+{
+  "experiment_id": "EXP-0037",
+  "frozen_date": "2026-09-17T13:30:00+05:30",
+  "status": "FROZEN_FOR_BLIND_EVALUATION",
+  "lineage": {
+    "parent_commit": "d8c1ed31d42cd7e8472b04a0853541631c32030a",
+    "verifier_ancestor_commit": "01d6220",
+    "retrieval_champion_commit": "b2fb2f2",
+    "dynamic_gating_commit": "f392b13",
+    "structured_nli_commit": "d8c1ed3"
+  },
+  "champion_architecture": {
+    "model_id": "A4",
+    "name": "Full Integrated Ambiguity Mitigation Framework (Deterministic Stage-2 Routing Guard + Epistemic Neutrality Prior + Dynamic Confidence Thresholding)",
+    "module_path": "backend/rag_ambiguity_guard_verifier.php"
+  },
+  "ambiguity_routing_guard": {
+    "status": "ENABLED",
+    "stage": "STAGE_2_PRE_NLI",
+    "detection_signals": {
+      "normative": [
+        "should",
+        "ought to",
+        "recommended",
+        "advisable"
+      ],
+      "subjective": [
+        "best",
+        "better",
+        "superior",
+        "ideal",
+        "preferable",
+        "optimal",
+        "easiest",
+        "cleanest",
+        "worth",
+        "appropriate",
+        "suitable",
+        "effective",
+        "perfect",
+        "flawless",
+        "nicer"
+      ],
+      "comparative": [
+        "strictly better",
+        "more suitable",
+        "preferable to",
+        "superior to",
+        "better than",
+        "vs",
+        "versus"
+      ],
+      "universal": [
+        "always",
+        "never",
+        "universally",
+        "generally"
+      ]
+    },
+    "grounding_cases": {
+      "case_a": "Explicit rule/mandate in evidence -> SUPPORTED permitted if NLI confirms",
+      "case_b": "Evidence discusses trade-offs/alternatives or lacks universal mandate -> override to NOT_ESTABLISHED",
+      "case_c": "Evidence explicitly contradicts claim -> REFUTED preserved"
+    }
+  },
+  "prompt_configuration": {
+    "standard_prompt_id": "P4",
+    "standard_prompt_hash_sha256": "facefba375725268cee977771e86da4712e276202e73a105a7545ae698156c48",
+    "guarded_prompt_id": "P4_neutral",
+    "guarded_prompt_hash_sha256": "86955e5e3d6744a096fd160335ac18ea3c46a835005851ed9838e36179641b1c",
+    "epistemic_directive": "If the claim asserts a subjective preference, normative recommendation, or superiority claim that is not explicitly established as an absolute rule or standard convention in the evidence context, classify as NEUTRAL."
+  },
+  "threshold_configuration": {
+    "standard_entailment_threshold": 0.7,
+    "standard_contradiction_threshold": 0.7,
+    "guarded_entailment_threshold": 0.85,
+    "guarded_contradiction_threshold": 0.8
+  },
+  "retrieval": {
+    "dense_model": "BAAI/bge-small-en-v1.5",
+    "cross_encoder_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "normalization": {
+      "method": "min_max",
+      "min_bound": 0.4,
+      "max_bound": 0.85
+    },
+    "score_fusion": {
+      "formula": "alpha * norm(dense) + (1 - alpha) * platt(cross)",
+      "alpha": 0.5
+    },
+    "candidate_pool_size": 15,
+    "retrieved_chunks_k": 5
+  },
+  "intent_threshold_mapping": {
+    "CONCEPTUAL": 0.24,
+    "PROCEDURAL": 0.24,
+    "DIRECT_FACT": 0.26,
+    "COMPARISON": 0.26,
+    "MULTI_CLAUSE": 0.27,
+    "AMBIGUOUS": 0.3,
+    "UNKNOWN_OOD": 0.32,
+    "default_fallback": 0.28
+  },
+  "verifier_runtime": {
+    "verifier_model": "llama3.2:latest",
+    "temperature": 0.0,
+    "max_tokens": 25,
+    "num_threads": 8,
+    "timeout_seconds": 45,
+    "format": "json"
+  },
+  "file_hashes": {
+    "development_dataset_sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+    "blind_dataset_sha256": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+    "curriculum_corpus_sqlite_sha256": "7dd32951cd70cea34d4d69484a3f594757702d1373377aee2bb91d57c6d866e1",
+    "rag_ambiguity_guard_verifier_php_sha256": "31c7c31ef6301156bb0318cb35ba5879e5ca3c25acdd6f705cd2f6c0e3b0fc2e",
+    "rag_structured_nli_verifier_php_sha256": "f631319f68f1914687fc678389f41cd7ae30d3a1a8399628e9194922e5041444",
+    "rag_premise_verifier_php_sha256": "cd1a610918ed3daf5aa418ab306894fd39653d9d000d4c729ea2f9e5fa5dd179"
+  }
+}
