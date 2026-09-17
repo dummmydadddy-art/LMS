@@ -67,6 +67,27 @@ class TestRealPythonDoclingInvocation(unittest.TestCase):
         self.assertEqual(self.adapter.metrics["pages_processed"], 2)
         self.assertEqual(self.adapter.metrics["pages_skipped"], 3)
 
+    def test_real_python_docling_streaming(self):
+        """Verifies genuine incremental page-by-page streaming."""
+        health = self.adapter.health()
+        if health["status"] != "READY":
+            self.skipTest(f"SKIPPED_NOT_INSTALLED: {health.get('reason')}")
+
+        stream = self.adapter.stream_pages(self.pdf_path, page_range=(1, 3), chunk_window=1)
+        yielded_pages = []
+        for page in stream:
+            self.assertIsInstance(page, dict)
+            self.assertIn("page_number", page)
+            self.assertIn("text", page)
+            yielded_pages.append(page)
+
+        self.assertEqual(len(yielded_pages), 3)
+        self.assertEqual([p["page_number"] for p in yielded_pages], [1, 2, 3])
+        self.assertIn("Curriculum Overview", yielded_pages[0]["text"])
+        self.assertIn("CSS Flexbox", yielded_pages[1]["text"])
+        self.assertIn("JavaScript Scope", yielded_pages[2]["text"])
+
+
 
 class TestRealDoclingRsInvocation(unittest.TestCase):
     """Verifies Docling.rs native Rust binary status (distinct from Python docling)."""

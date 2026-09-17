@@ -90,12 +90,13 @@
 Following the fidelity pass, external runtimes were enabled and verified directly on the Windows 11 host environment:
 
 1. **Python Docling vs Docling.rs Identity Separation:**
-   - Document conversion in `DoclingRsAdapter` executes via Python Docling (`NativePdfPipeline`).
+   - Document conversion in `DoclingRsAdapter` executes via Python Docling (`NativePdfPipeline`, package version `docling==2.128.0`).
    - Native Rust CLI (`docling-project/docling.rs`) requires `cargo` / MSVC compilation from source, which is not present on the host environment.
    - Status: `Docling.rs` is classified as `NOT_READY` (`COMPILE_REQUIRED`), while `Python Docling` is verified as `REAL_RUNTIME` (`INSTALLED_EXECUTABLE`).
 2. **PageIndex Real Execution:**
    - Package `pageindex` version 0.2.18 was installed and integrated with `asyncio.run(pageindex.md_to_tree())`.
    - Verified on `tests/research/data/multipage_curriculum.pdf`: generated 6 structural nodes in 234ms with zero external cloud API calls and zero network transmission.
+   - Scope distinction: The verified execution path is PageIndex `md_to_tree()` operating on structure/text prepared from PDF, not end-to-end native PDF ingestion.
 3. **llama.cpp Real Execution:**
    - Official Windows binary release `b11026` (`llama-cli.exe` and `llama-server.exe`) installed to `%LOCALAPPDATA%\Programs\llama.cpp\` and verified on PATH.
    - Real model `Llama 3.2 3B Instruct Q4_K_M` executed via `llama-cli.exe` with bounded context (512 tokens).

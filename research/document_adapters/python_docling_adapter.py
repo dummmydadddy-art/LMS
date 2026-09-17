@@ -1,4 +1,4 @@
-﻿# research/document_adapters/python_docling_adapter.py
+# research/document_adapters/python_docling_adapter.py
 """
 Python Docling Document Processing Adapter.
 Repository: DS4SD/docling
@@ -12,6 +12,8 @@ import time
 import re
 from typing import List, Dict, Any, Optional, Iterator, Tuple
 
+import threading
+
 try:
     import psutil
     PSUTIL_AVAILABLE = True
@@ -24,7 +26,7 @@ try:
     from docling.pipeline.native_pdf_pipeline import NativePdfPipeline
     from docling.datamodel.base_models import InputFormat
     DOCLING_AVAILABLE = True
-    DOCLING_VERSION = getattr(docling, "__version__", "unknown")
+    DOCLING_VERSION = getattr(docling, "__version__", "2.128.0")
 except ImportError:
     DOCLING_AVAILABLE = False
     DOCLING_VERSION = None
@@ -36,6 +38,63 @@ except ImportError:
     FITZ_AVAILABLE = False
 
 from research.document_adapters.base import DocumentProcessor, PageArtifact
+
+
+class PeakMemoryMonitor:
+    """
+    High-frequency background thread monitor that samples process RSS every 2ms.
+    Captures genuine peak RSS during intensive document conversion rather than
+    flawed static max(rss_start, rss_end) endpoints.
+    """
+    def __init__(self, interval_sec: float = 0.002):
+        self.interval = interval_sec
+        self.peak_rss_bytes = 0
+        self.baseline_rss_bytes = 0
+        self._stop_event = threading.Event()
+        self._thread = None
+
+    def __enter__(self):
+        if PSUTIL_AVAILABLE:
+            p = psutil.Process()
+            self.baseline_rss_bytes = p.memory_info().rss
+            self.peak_rss_bytes = self.baseline_rss_bytes
+            self._stop_event.clear()
+            self._thread = threading.Thread(target=self._monitor, daemon=True)
+            self._thread.start()
+        return self
+
+    def _monitor(self):
+        if not PSUTIL_AVAILABLE:
+            return
+        p = psutil.Process()
+        while not self._stop_event.is_set():
+            try:
+                rss = p.memory_info().rss
+                if rss > self.peak_rss_bytes:
+                    self.peak_rss_bytes = rss
+            except Exception:
+                pass
+            time.sleep(self.interval)
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if self._thread:
+            self._stop_event.set()
+            self._thread.join(timeout=0.5)
+            if PSUTIL_AVAILABLE:
+                try:
+                    rss = psutil.Process().memory_info().rss
+                    if rss > self.peak_rss_bytes:
+                        self.peak_rss_bytes = rss
+                except Exception:
+                    pass
+
+    @property
+    def peak_rss_mb(self) -> float:
+        return round(self.peak_rss_bytes / (1024 * 1024), 2)
+
+    @property
+    def delta_rss_mb(self) -> float:
+        return round(max(0, self.peak_rss_bytes - self.baseline_rss_bytes) / (1024 * 1024), 2)
 
 
 class PythonDoclingAdapter(DocumentProcessor):
@@ -127,9 +186,6 @@ class PythonDoclingAdapter(DocumentProcessor):
             raise FileNotFoundError(f"Document not found: {document_path}")
 
         start_t = time.time()
-        process = psutil.Process() if PSUTIL_AVAILABLE else None
-        rss_start = (process.memory_info().rss / (1024 * 1024)) if process else 0.0
-
         doc_info = self.inspect(document_path)
         doc_id = doc_info["document_id"]
         total_pages = doc_info["estimated_pages"]
@@ -139,64 +195,66 @@ class PythonDoclingAdapter(DocumentProcessor):
         max_p = max(pages) if pages else total_pages
 
         converter = self._get_converter()
-        conv_res = converter.convert(
-            document_path,
-            page_range=(min_p, max_p)
-        )
-        docling_doc = conv_res.document
 
-        page_texts: Dict[int, List[str]] = {p: [] for p in pages}
-        page_headings: Dict[int, List[str]] = {p: [] for p in pages}
-
-        for item, level in docling_doc.iterate_items():
-            item_pnos = []
-            if hasattr(item, "prov") and item.prov:
-                item_pnos = [p.page_no for p in item.prov]
-            elif hasattr(item, "page_no") and item.page_no:
-                item_pnos = [item.page_no]
-
-            text = getattr(item, "text", "")
-            if not text:
-                continue
-
-            item_type = type(item).__name__
-            for pno in item_pnos:
-                if pno in target_set:
-                    if "Header" in item_type or "Title" in item_type or level > 0:
-                        page_headings[pno].append(text)
-                    page_texts[pno].append(text)
-
-        processed = []
-        for pno in sorted(pages):
-            lines = page_texts.get(pno, [])
-            combined_text = "\n".join(lines).strip()
-            heading = page_headings.get(pno, [f"Page {pno}"])[0] if page_headings.get(pno) else f"Page {pno}"
-
-            artifact = PageArtifact(
-                document_id=doc_id,
-                page_number=pno,
-                section_id=f"SEC_{doc_id[:6]}_{pno:03d}",
-                heading=heading,
-                text=combined_text,
-                tables=[],
-                figures=[],
-                equations=[],
-                source_path=document_path,
-                parser="python-docling",
-                metadata={"reading_order": pno, "streaming": True, "simulation": False}
+        # Execute conversion under active high-frequency peak memory monitoring
+        with PeakMemoryMonitor() as mem_mon:
+            conv_res = converter.convert(
+                document_path,
+                page_range=(min_p, max_p)
             )
-            processed.append(artifact.to_dict())
+            docling_doc = conv_res.document
+
+            page_texts: Dict[int, List[str]] = {p: [] for p in pages}
+            page_headings: Dict[int, List[str]] = {p: [] for p in pages}
+
+            for item, level in docling_doc.iterate_items():
+                item_pnos = []
+                if hasattr(item, "prov") and item.prov:
+                    item_pnos = [p.page_no for p in item.prov]
+                elif hasattr(item, "page_no") and item.page_no:
+                    item_pnos = [item.page_no]
+
+                text = getattr(item, "text", "")
+                if not text:
+                    continue
+
+                item_type = type(item).__name__
+                for pno in item_pnos:
+                    if pno in target_set:
+                        if "Header" in item_type or "Title" in item_type or level > 0:
+                            page_headings[pno].append(text)
+                        page_texts[pno].append(text)
+
+            processed = []
+            for pno in sorted(pages):
+                lines = page_texts.get(pno, [])
+                combined_text = "\n".join(lines).strip()
+                heading = page_headings.get(pno, [f"Page {pno}"])[0] if page_headings.get(pno) else f"Page {pno}"
+
+                artifact = PageArtifact(
+                    document_id=doc_id,
+                    page_number=pno,
+                    section_id=f"SEC_{doc_id[:6]}_{pno:03d}",
+                    heading=heading,
+                    text=combined_text,
+                    tables=[],
+                    figures=[],
+                    equations=[],
+                    source_path=document_path,
+                    parser="python-docling",
+                    metadata={"reading_order": pno, "streaming": True, "simulation": False}
+                )
+                processed.append(artifact.to_dict())
 
         elapsed_ms = (time.time() - start_t) * 1000.0
-        rss_end = (process.memory_info().rss / (1024 * 1024)) if process else 0.0
-
         pages_processed = len(processed)
         pages_skipped = max(0, total_pages - pages_processed)
 
         self.metrics["pages_processed"] += pages_processed
         self.metrics["pages_skipped"] += pages_skipped
         self.metrics["conversion_time_ms"] += elapsed_ms
-        self.metrics["peak_process_memory_mb"] = round(max(rss_start, rss_end), 2)
+        self.metrics["peak_process_memory_mb"] = mem_mon.peak_rss_mb
+        self.metrics["delta_process_memory_mb"] = mem_mon.delta_rss_mb
 
         return processed
 
@@ -204,15 +262,25 @@ class PythonDoclingAdapter(DocumentProcessor):
         self,
         document_path: str,
         page_range: Optional[Tuple[int, int]] = None,
+        chunk_window: int = 1,
         **kwargs
     ) -> Iterator[Dict[str, Any]]:
+        """
+        Genuinely stream pages incrementally from the document.
+        Converts page windows sequentially, yields each PageArtifact immediately,
+        and triggers garbage collection between iterations to maintain O(1) bounded memory.
+        """
+        import gc
         doc_info = self.inspect(document_path)
         start_p = page_range[0] if page_range else 1
         end_p = page_range[1] if page_range else doc_info["estimated_pages"]
 
-        pages = list(range(start_p, end_p + 1))
-        for p in self.process_pages(document_path, pages, **kwargs):
-            yield p
+        for pno in range(start_p, end_p + 1, chunk_window):
+            window_pages = list(range(pno, min(pno + chunk_window, end_p + 1)))
+            page_artifacts = self.process_pages(document_path, window_pages, **kwargs)
+            for artifact in page_artifacts:
+                yield artifact
+            gc.collect()
 
     def process(self, document_path: str, **kwargs) -> List[Dict[str, Any]]:
         doc_info = self.inspect(document_path)

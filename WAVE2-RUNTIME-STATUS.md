@@ -1,4 +1,4 @@
-﻿# WAVE 2 RUNTIME STATUS AND VERIFICATION REPORT
+# WAVE 2 RUNTIME STATUS AND VERIFICATION REPORT
 
 **Repository:** `EduConnect-LMS-Experimental`  
 **Research Branch:** `research-integration`  
@@ -39,6 +39,7 @@ In this Wave 2 Runtime Enablement pass, external adapters were transitioned from
 - **Installation:** Package `pageindex` version 0.2.18 installed along with `litellm` and `aiohttp`.
 - **Execution Mechanism:** Integrated via `asyncio.run(pageindex.md_to_tree(tmp_path))` over document structure derived from PyMuPDF. Zero reliance on external cloud APIs or stochastic LLM formatting failures.
 - **Verification:** Ran real structural extraction on `multipage_curriculum.pdf`. Produced 6 structural nodes (`Curriculum Overview`, `CSS Flexbox Layout`, `JavaScript Scope and TDZ`, `React Reconciliation`, `Relational Database Models`) with SHA-256 tree hash `dcadcd7e158f...` in 234ms.
+- **Fidelity Scope Note:** The verified execution path is PageIndex `md_to_tree()` operating on structure/text prepared from the PDF, not end-to-end native PDF ingestion. This distinction is strictly preserved across all experiments.
 
 ### 2.3 llama.cpp (ggml-org/llama.cpp)
 - **Installation:** Official Windows binary release `b11026` (`llama-cli.exe` and `llama-server.exe`, version `0.4.1-dev`, Clang 20.1.8) installed to `C:\Users\Mukul\AppData\Local\Programs\llama.cpp\` and verified on system PATH.

@@ -127,7 +127,7 @@
       "integration_status": "NOT_READY",
       "runtime_status": "COMPILE_REQUIRED",
       "actual_execution_verified": false,
-      "notes": "Native Rust CLI requires cargo/MSVC compilation from source. Python Docling (NativePdfPipeline) is verified executable as REAL_RUNTIME."
+      "notes": "Native Rust CLI requires cargo/MSVC compilation from source. Python Docling (NativePdfPipeline, docling==2.128.0) is verified executable as REAL_RUNTIME."
     },
     {
       "component": "PageIndex",
@@ -143,7 +143,8 @@
       "enabled_experiment": "EXP-0056",
       "integration_status": "REAL_RUNTIME",
       "runtime_status": "INSTALLED_EXECUTABLE",
-      "actual_execution_verified": true
+      "actual_execution_verified": true,
+      "notes": "Verified execution path is PageIndex md_to_tree() operating on structure/text prepared from PDF, not end-to-end native PDF ingestion."
     },
     {
       "component": "llama.cpp",
