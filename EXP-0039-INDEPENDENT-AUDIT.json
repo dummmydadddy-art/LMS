@@ -1,0 +1,152 @@
+{
+  "experiment": "EXP-0039",
+  "audit_type": "INDEPENDENT_DEVELOPMENT_CHECKPOINT",
+  "timestamp": "2026-09-17T15:55:00+05:30",
+  "repository": "d:\\Collage project\\EduConnect-LMS-Experimental",
+  "branch": "exp-0039",
+  "parent_commit": "e1cf1503851a5ff2fc1b3a86897556943878cf13",
+  "audited_commit": "4ba49f5",
+  "production_repo": {
+    "path": "d:\\Collage project\\EduConnect-LMS-Production",
+    "status": "UNTOUCHED",
+    "verified_head": "1768832",
+    "modified_files_count": 0
+  },
+  "champion_comparator": {
+    "experiment": "EXP-0037",
+    "accuracy": 90.75,
+    "macro_f1": 90.70,
+    "far": 18.50,
+    "frr": 0.00,
+    "recall_at_5": 100.00
+  },
+  "verifier_integrity": {
+    "verifier_class": "RagAmbiguityGuardVerifier",
+    "verifier_file": "backend/rag_ambiguity_guard_verifier.php",
+    "premise_verifier_file": "backend/rag_premise_verifier.php",
+    "mode": "A4",
+    "prompt": "P4_neutral",
+    "thresholds": [0.85, 0.80],
+    "code_frozen": true,
+    "modifications_detected": false
+  },
+  "blind_dataset_protection": {
+    "file": "EXP-0033-BLIND-DATASET.json",
+    "sha256": "3b4fd6c7a70a8d672808c1b3f94ee9baefbe6a09074b1bda1b4b1a8f6be4e3f3",
+    "sample_size": 500,
+    "accessed_or_executed": false,
+    "status": "SEALED_AND_PROTECTED"
+  },
+  "development_dataset": {
+    "file": "EXP-0025-DEVELOPMENT-DATASET.json",
+    "sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+    "sample_size": 400,
+    "integrity_verified": true
+  },
+  "gating_checks": {
+    "token_safety_gate": {
+      "requirement": "Pre-verify sentence token lengths with BGE-small tokenizer <= 512",
+      "observed_max_tokens": 196,
+      "overflow_count": 0,
+      "tokenizer_warnings": 0,
+      "status": "PASS"
+    },
+    "content_preservation_gate": {
+      "requirement": "100.0% word, character, code, list, heading coverage across all 5 documents",
+      "source_words": 1320,
+      "reconstructed_words": 1320,
+      "coverage_pct": 100.0,
+      "missing_words_count": 0,
+      "status": "PASS"
+    },
+    "hierarchical_context_gate": {
+      "requirement": "Document title and section heading context preserved in chunks",
+      "status": "PASS"
+    },
+    "database_persistence_gate": {
+      "requirement": "SQLite tables populated with valid 384-dim embeddings without touching C0 or EXP-0038 tables",
+      "c0_table": "material_chunks_exp0032 (preserved)",
+      "exp0038_table": "material_chunks_exp0038_c1 (preserved)",
+      "created_tables": [
+        "C1_ChonkieRecursive",
+        "C2_ChonkieSemantic_075",
+        "C2_ChonkieSemantic_080",
+        "C2_ChonkieSemantic_085"
+      ],
+      "status": "PASS"
+    }
+  },
+  "methodological_reporting_correction": {
+    "issue": "EXP-0038 reported p = 0.0912 > 0.05 implies formal non-inferiority",
+    "correction": "p > 0.05 only denotes failure to reject equality. Non-inferiority requires testing one-sided 95% LCB against pre-registered margin Delta_NI = -3.00 pp",
+    "implemented_in_exp0039": true,
+    "historical_artifacts_altered": false
+  },
+  "candidate_results_summary": {
+    "C0": {
+      "name": "Control C0 (Legacy Regex)",
+      "chunks": 23,
+      "accuracy": 92.00,
+      "macro_f1": 92.77,
+      "far": 2.40,
+      "frr": 16.00,
+      "recall_at_5": 100.0
+    },
+    "C1": {
+      "name": "Intervention C1 (Recursive 512)",
+      "chunks": 10,
+      "accuracy": 91.00,
+      "macro_f1": 91.67,
+      "far": 2.40,
+      "frr": 16.67,
+      "recall_at_5": 100.0,
+      "one_sided_95_lcb_pp": -2.16,
+      "non_inferior": true
+    },
+    "C2_075": {
+      "name": "Intervention C2 (Semantic 0.75)",
+      "chunks": 69,
+      "accuracy": 93.75,
+      "macro_f1": 94.27,
+      "far": 2.80,
+      "frr": 10.67,
+      "recall_at_5": 100.0,
+      "one_sided_95_lcb_pp": 0.27,
+      "non_inferior": true
+    },
+    "C2_080": {
+      "name": "Intervention C2 (Semantic 0.80)",
+      "chunks": 71,
+      "accuracy": 93.50,
+      "macro_f1": 94.05,
+      "far": 2.80,
+      "frr": 11.33,
+      "recall_at_5": 100.0,
+      "one_sided_95_lcb_pp": 0.08,
+      "non_inferior": true
+    },
+    "C2_085": {
+      "name": "Intervention C2 (Semantic 0.85)",
+      "chunks": 76,
+      "accuracy": 93.75,
+      "macro_f1": 94.33,
+      "far": 2.80,
+      "frr": 11.33,
+      "recall_at_5": 100.0,
+      "one_sided_95_lcb_pp": 0.39,
+      "non_inferior": true
+    }
+  },
+  "candidate_selection": {
+    "recommended_candidate": "C2_085",
+    "technology": "Chonkie SemanticChunker (threshold=0.85, chunk_size=384, similarity_window=1, min_sentences=1)",
+    "accuracy": 93.75,
+    "macro_f1": 94.33,
+    "far": 2.80,
+    "frr": 11.33,
+    "one_sided_95_lcb_pp": 0.39,
+    "recall_at_5": 100.0,
+    "justification_hierarchy_followed": true
+  },
+  "audit_verdict": "PASS — SCIENTIFICALLY SOUND & BLIND READY"
+}
