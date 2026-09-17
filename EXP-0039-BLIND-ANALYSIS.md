@@ -1,9 +1,9 @@
-﻿# EXP-0039: Frozen Blind Evaluation Analysis & Statistical Audit Report
+# EXP-0039: Frozen Blind Evaluation Analysis & Statistical Audit Report
 
 **Experiment:** EXP-0039: Conservative RAG Chunking with Chonkie  
 **Branch:** `exp-0039`  
 **Candidate:** `C2_085` — Chonkie `SemanticChunker` (threshold = 0.85, chunk_size = 384, window = 1, 76 corpus chunks)  
-**Evaluation Dataset:** `EXP-0033-BLIND-DATASET.json` ($N = 500$, SHA-256: `3b4fd6c7a70a8d672808c1b3f94ee9baefbe6a09074b1bda1b4b1a8f6be4e3f3`)  
+**Evaluation Dataset:** `EXP-0033-BLIND-DATASET.json` ($N = 500$, SHA-256: `3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08`)  
 **Prediction Artifact:** `EXP-0039-BLIND-PREDICTIONS.json` (SHA-256: `e3522d62f948d977b40aa5aba3bb90d438d453a161117825e94bb77668db49e5`, LOCKED READ-ONLY PRIOR TO UNBLINDING)  
 **Frozen Research Champion Comparator:** EXP-0037 A4 (Accuracy 71.60%, Macro F1 71.81%, FAR 15.33%, FRR 30.99%, Recall@5 100.0%)  
 **Production Repository:** `d:\Collage project\EduConnect-LMS-Production` (Audited HEAD: `1768832`, UNTOUCHED)  
@@ -33,9 +33,10 @@ The primary research question of EXP-0039 was whether **conservative proposition
    - False Abstentions on supported claims dropped from 19 cases in EXP-0037 to **15 cases** in C2_085.
 4. **Out-of-Distribution Precision Enhanced:**
    - OOD Recall reached **96.00%** (48 / 50 correct), improving over EXP-0037's 94.00%.
-   - Novel-OOD Recall reached **96.00%** (48 / 50 correct), improving over EXP-0037's 92.00%.
-5. **Architectural Transition Complete:**
-   - Candidate C2_085 successfully replaces the legacy, ad-hoc regex chunker (which had 23 arbitrary section chunks) with a modern, reproducible, open-source proposition-preserving chunker (`chonkie==1.7.0`), while maintaining full downstream accuracy and superior evidence granularity.
+   - Novel-OOD Recall: **N/A** — a separate Novel-OOD subset is not present in `EXP-0033-BLIND-DATASET.json`; the overall OOD category achieved 96.00% recall (48 / 50 correct), improving over EXP-0037's 94.00%.
+5. **Architectural Transition & Performance Trade-Off:**
+   - C2_085 was statistically non-inferior to EXP-0037 A4 under the pre-registered -3.00 pp margin, while exhibiting a trade-off between improved supported-claim recall / FRR and reduced refutation recall, and successfully replacing the legacy ad-hoc regex chunker with a modern, reproducible proposition-preserving chunker (`chonkie==1.7.0`).
+   - Refutation Recall decreased by 5.56 percentage points relative to EXP-0037 A4 (70.37% to 64.81%).
 
 ---
 
@@ -63,7 +64,7 @@ The blind evaluation was executed under strict multi-layered protocol controls:
 | **Refutation Recall** | 68.52% | 67.90% | 70.37% | **70.37%** | **64.81%** | -5.56 pp |
 | **NOT_ESTABLISHED Recall** | 76.80% | 76.80% | 76.80% | 77.60% | **78.40%** | **+0.80 pp** |
 | **OOD Recall** | 94.00% | 94.00% | 94.00% | 94.00% | **96.00%** | **+2.00 pp** |
-| **Novel-OOD Recall** | 92.00% | 92.00% | 92.00% | 92.00% | **96.00%** | **+4.00 pp** |
+| **Novel-OOD Recall** | N/A | N/A | N/A | N/A | **N/A** | N/A (separate subset absent; OOD Recall is 96.00%) |
 | **False Acceptances** | 52 | 59 | 57 | **44** | 53 | +9 |
 | **False Refutations** | 16 | 17 | 17 | 15 | **15** | 0 |
 | **False Abstentions (Sup $\to$ NE)** | 27 | 24 | 22 | 19 | **15** | **-4** |

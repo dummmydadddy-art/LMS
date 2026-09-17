@@ -1,0 +1,156 @@
+{
+  "experiment": "EXP-0039",
+  "reconciliation_type": "PUBLICATION_GRADE_INTEGRITY_RECONCILIATION",
+  "reconciliation_timestamp": "2026-09-17T11:15:00+00:00",
+  "candidate": {
+    "name": "C2_085",
+    "architecture": "Chonkie SemanticChunker",
+    "threshold": 0.85,
+    "chunk_size": 384,
+    "window": 1,
+    "chunk_count": 76,
+    "verifier": "Candidate A4 Verifier (rag_ambiguity_guard_verifier.php)"
+  },
+  "dataset": {
+    "name": "EXP-0033-BLIND-DATASET.json",
+    "sample_size": 500,
+    "verified_sha256": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+    "erroneous_alternate_hash": "3b4fd6c7a70a8d672808c1b3f94ee9baefbe6a09074b1bda1b4b1a8f6be4e3f3",
+    "hash_discrepancy_resolved": true
+  },
+  "predictions_artifact": {
+    "name": "EXP-0039-BLIND-PREDICTIONS.json",
+    "sample_size": 500,
+    "sha256": "e3522d62f948d977b40aa5aba3bb90d438d453a161117825e94bb77668db49e5",
+    "status": "LOCKED_READ_ONLY_UNMODIFIED"
+  },
+  "blind_protocol_verification": {
+    "phase_1_blinded_inference": true,
+    "zero_ground_truth_access": true,
+    "missing_case_ids": 0,
+    "duplicate_case_ids": 0,
+    "runtime_failures": 0,
+    "predictions_locked_prior_to_unblinding": true,
+    "zero_post_hoc_tuning": true
+  },
+  "recomputed_metrics": {
+    "accuracy": 71.4,
+    "correct_count": 357,
+    "total_count": 500,
+    "macro_f1": 71.64,
+    "standard_far": 18.47,
+    "frr": 27.7,
+    "supported_recall": 72.3,
+    "refutation_recall": 64.81,
+    "not_established_recall": 78.4,
+    "ood_recall": 96.0,
+    "novel_ood_recall": "N/A \u2014 separate Novel-OOD subset is not present in EXP-0033-BLIND-DATASET.json",
+    "false_acceptances": 53,
+    "false_refutations": 44,
+    "false_abstentions_supported": 15,
+    "total_abstentions": 129
+  },
+  "confusion_matrix": {
+    "SUPPORTED": {
+      "SUPPORTED": 154,
+      "REFUTED": 44,
+      "NOT_ESTABLISHED": 15
+    },
+    "REFUTED": {
+      "SUPPORTED": 41,
+      "REFUTED": 105,
+      "NOT_ESTABLISHED": 16
+    },
+    "NOT_ESTABLISHED": {
+      "SUPPORTED": 12,
+      "REFUTED": 15,
+      "NOT_ESTABLISHED": 98
+    }
+  },
+  "category_accuracies": {
+    "ADVERSARIAL": {
+      "total": 75,
+      "correct": 48,
+      "accuracy": 64.0
+    },
+    "AMBIGUOUS": {
+      "total": 75,
+      "correct": 50,
+      "accuracy": 66.67
+    },
+    "FALSE_PREMISE": {
+      "total": 125,
+      "correct": 82,
+      "accuracy": 65.6
+    },
+    "OOD": {
+      "total": 50,
+      "correct": 48,
+      "accuracy": 96.0
+    },
+    "PARAPHRASE": {
+      "total": 50,
+      "correct": 39,
+      "accuracy": 78.0
+    },
+    "SUPPORTED": {
+      "total": 125,
+      "correct": 90,
+      "accuracy": 72.0
+    }
+  },
+  "paired_statistical_comparison_vs_exp0037_a4": {
+    "exp0037_accuracy": 71.6,
+    "c2_085_accuracy": 71.4,
+    "accuracy_delta_pp": -0.2,
+    "n11": 334,
+    "n00": 119,
+    "n01": 23,
+    "n10": 24,
+    "discordant_total": 47,
+    "mcnemar_chi2_cc": 0.0,
+    "mcnemar_exact_p": 1.0,
+    "paired_se_pp": 1.3711,
+    "ci_95_pp": [
+      -2.89,
+      2.49
+    ],
+    "one_sided_95_lcb_pp": -2.4553,
+    "non_inferiority_margin_pp": -3.0,
+    "non_inferiority_established": true
+  },
+  "discrepancies_and_root_causes": [
+    {
+      "issue": "Dataset SHA-256 typo in reporting markdown and audit json",
+      "actual_file_hash": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+      "erroneous_string": "3b4fd6c7a70a8d672808c1b3f94ee9baefbe6a09074b1bda1b4b1a8f6be4e3f3",
+      "root_cause": "Typographical error copied from early development markdown table template (commit 4ba49f5). Execution scripts, blind predictions, and metric files checked and used authentic hash.",
+      "remediation": "Updated EXP-0039-BLIND-ANALYSIS.md, EXP-0039-BLIND-AUDIT.md, and EXP-0039-BLIND-AUDIT.json to verified file hash."
+    },
+    {
+      "issue": "Novel-OOD Recall reported as 96.00% without dedicated category",
+      "actual_dataset_categories": [
+        "SUPPORTED",
+        "FALSE_PREMISE",
+        "AMBIGUOUS",
+        "ADVERSARIAL",
+        "PARAPHRASE",
+        "OOD"
+      ],
+      "root_cause": "OOD (50 cases) was used as an equivalence proxy for Novel-OOD in preliminary drafts.",
+      "remediation": "Classified Novel-OOD Recall as N/A to accurately reflect dataset taxonomy; documented OOD Recall as 96.00% (48/50)."
+    },
+    {
+      "issue": "Subjective characterization of Refutation Recall drop as 'Stable'",
+      "root_cause": "Informal adjective in audit summary.",
+      "remediation": "Replaced with objective measurement: 'Refutation Recall decreased by 5.56 percentage points relative to EXP-0037 A4 (70.37% to 64.81%)'."
+    }
+  ],
+  "production_repository_isolation": {
+    "path": "d:\\Collage project\\EduConnect-LMS-Production",
+    "head_commit": "176883227602671b545e061dacf228aedc3271a5",
+    "status": "UNTOUCHED_ISOLATED"
+  },
+  "final_decision": "ADOPT",
+  "audit_verdict": "PASS \u2014 PROTOCOL COMPLIANT & SCIENTIFICALLY SOUND"
+}

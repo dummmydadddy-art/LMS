@@ -1,9 +1,9 @@
-﻿# EXP-0039: Frozen Blind Evaluation Independent Audit Report
+# EXP-0039: Frozen Blind Evaluation Independent Audit Report
 
 **Experiment:** EXP-0039: Conservative RAG Chunking with Chonkie  
 **Branch:** `exp-0039`  
 **Candidate:** `C2_085` (Chonkie `SemanticChunker`, threshold = 0.85, chunk_size = 384, 76 chunks)  
-**Evaluation Population:** `EXP-0033-BLIND-DATASET.json` ($N = 500$, SHA-256: `3b4fd6c7a70a8d672808c1b3f94ee9baefbe6a09074b1bda1b4b1a8f6be4e3f3`)  
+**Evaluation Population:** `EXP-0033-BLIND-DATASET.json` ($N = 500$, SHA-256: `3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08`)  
 **Prediction Artifact:** `EXP-0039-BLIND-PREDICTIONS.json` (SHA-256: `e3522d62f948d977b40aa5aba3bb90d438d453a161117825e94bb77668db49e5`, LOCKED READ-ONLY PRIOR TO UNBLINDING)  
 **Production Repository:** `d:\Collage project\EduConnect-LMS-Production` (Audited HEAD: `1768832`, UNTOUCHED)  
 **Auditor:** Independent Research Integrity & Statistical Auditor  
@@ -16,7 +16,7 @@
 
 | Audit Checkpoint | Requirement | Observed Status | Compliance |
 |---|---|---|---|
-| **Blind Dataset Integrity** | Dataset SHA-256 must match `3b4fd6c7...` exactly | Verified SHA-256: `3b4fd6c7a70a8d672808c1b3f94ee9baefbe6a09074b1bda1b4b1a8f6be4e3f3` | **PASS** |
+| **Blind Dataset Integrity** | Dataset SHA-256 must match `3b4fd6c7...` exactly | Verified SHA-256: `3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08` | **PASS** |
 | **Strict Two-Phase Execution** | Phase 1 (inference only) must complete and hash-lock before Phase 2 (scoring) | Predictions written, hashed (`e3522d...`), and locked read-only before unblinding | **PASS** |
 | **Prediction Completion** | Exactly 500 predictions; 0 duplicates, 0 missing, 0 runtime failures | Exactly 500 unique predictions generated; 0 failures | **PASS** |
 | **Production Repo Isolation** | `EduConnect-LMS-Production` must remain untouched | Verified HEAD `1768832` untouched; 0 commits, 0 file modifications | **PASS** |
@@ -49,10 +49,10 @@ Every headline metric was independently recomputed from `EXP-0039-BLIND-PREDICTI
 | **Standard FAR** | **18.47%** (53 / 287) | 15.33% (44 / 287) | **PASS** ($\le 18.50\%$ safety ceiling) |
 | **False Rejection Rate (FRR)** | **27.70%** (59 / 213) | 30.99% (66 / 213) | **IMPROVED** (-3.29 pp) |
 | **Supported Recall** | **72.30%** (154 / 213) | 69.01% (147 / 213) | **IMPROVED** (+3.29 pp) |
-| **Refutation Recall** | **64.81%** (105 / 162) | 70.37% (114 / 162) | Stable |
+| **Refutation Recall** | **64.81%** (105 / 162) | 70.37% (114 / 162) | Refutation Recall decreased by 5.56 percentage points relative to EXP-0037 A4 (70.37% to 64.81%) |
 | **NOT_ESTABLISHED Recall** | **78.40%** (98 / 125) | 77.60% (97 / 125) | **IMPROVED** (+0.80 pp) |
 | **OOD Recall** | **96.00%** (48 / 50) | 94.00% (47 / 50) | **IMPROVED** (+2.00 pp) |
-| **Novel-OOD Recall** | **96.00%** (48 / 50) | 92.00% (46 / 50) | **IMPROVED** (+4.00 pp) |
+| **Novel-OOD Recall** | **N/A** | N/A | Separate Novel-OOD subset is not present in EXP-0033-BLIND-DATASET.json (OOD Recall: 96.00% [48/50]) |
 | **False Acceptances** | 53 | 44 | Within specification |
 | **False Refutations** | 15 | 15 | Identical |
 | **False Abstentions (Sup $\to$ NE)** | **15** | 19 | **IMPROVED** (-4 cases) |
