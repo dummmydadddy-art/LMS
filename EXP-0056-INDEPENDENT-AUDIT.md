@@ -31,7 +31,7 @@ EXP-0056 evaluated **PageIndex PDF-native indexing** and **PageIndex-derived str
    - On the locked, pre-registered blind benchmark ($N = 500$, `EXP-0033-BLIND-DATASET.json`):
      - **Accuracy:** Control B0 = **72.00%** [95% Wilson CI: 67.91%, 75.76%]; Candidate C1 = **72.80%** [95% Wilson CI: 68.74%, 76.52%].
      - **Observed Difference:** $+0.80$ percentage points.
-     - **False Acceptance Rate (FAR):** Control B0 = **17.07%** (49/287) [95% Wilson CI: 13.16%, 21.85%]; Candidate C1 = **16.03%** (46/287) [95% Wilson CI: 12.24%, 20.72%]. The observed FAR is below the $17.50\%$ safety ceiling.
+     - **False Acceptance Rate (FAR):** Control B0 = **17.07%** (49/287) [95% Wilson CI: 13.16%, 21.85%]; Candidate C1 = **16.03%** (46/287) [95% Wilson CI: 12.24%, 20.72%]. The observed candidate FAR is below the $17.50\%$ operational ceiling (though the 95% Wilson upper bound does not establish that the population parameter is strictly below the ceiling).
 5. **Statistical Significance & Inferential Scope:**
    - McNemar's paired test on the blind holdout: 358 both correct, 134 both incorrect, 2 regressions, 6 improvements ($n_{10} = 2, n_{01} = 6$).
    - Edwards-corrected $\chi^2 = 1.1250$, exact two-sided binomial $p = 0.2891$.
@@ -82,7 +82,7 @@ Verifier: Candidate A4 (`rag_ambiguity_guard_verifier.php`, frozen mode A4).
 |---|---|---|---|---|
 | **Accuracy** | 92.75% | 92.00% | $-0.75$ pp | 368 both correct, 29 both incorrect |
 | **Macro F1** | 93.39% | 92.67% | $-0.72$ pp | Balanced across classes |
-| **False Acceptance Rate (FAR)** | 3.20% | 3.60% | $+0.40$ pp | Safe ($\le 17.50\%$) |
+| **False Acceptance Rate (FAR)** | 3.20% | 3.60% | $+0.40$ pp | Observed FAR below operational ceiling |
 | **False Rejection Rate (FRR)** | 12.67% | 13.33% | $+0.66$ pp | Stable |
 | **Supported Recall** | 87.33% | 86.67% | $-0.66$ pp | Stable |
 | **Refutation Recall** | 98.00% | 97.00% | $-1.00$ pp | Stable |
@@ -108,8 +108,8 @@ Predictions: `EXP-0056-BLIND-PREDICTIONS.json` (SHA-256: `175595afa9c71b75bec96b
 |---|---|---|---|---|---|
 | **Overall Accuracy** | 72.00% (360/500) [67.91%, 75.76%] | **72.80% (364/500) [68.74%, 76.52%]** | **+0.80 pp** | $\ge 71.40\%$ | **PASS** |
 | **Macro F1** | 72.24% | **73.04%** | **+0.80 pp** | Non-inferior | **PASS** |
-| **False Acceptance Rate (FAR)** | 17.07% (49/287) [13.16%, 21.85%] | **16.03% (46/287) [12.24%, 20.72%]** | **-1.04 pp** | $\le 17.50\%$ ceiling | **PASS** |
-| **False Rejection Rate (FRR)** | 27.70% (59/213) [22.10%, 34.09%] | **27.23% (58/213) [21.68%, 33.60%]** | **-0.47 pp** | Non-inferior | **PASS** |
+| **False Acceptance Rate (FAR)** | 17.07% (49/287) [13.16%, 21.85%] | **16.03% (46/287) [12.24%, 20.72%]** | **-1.04 pp** | $\le 17.50\%$ ceiling | Observed below ceiling |
+| **False Rejection Rate (FRR)** | 27.70% (59/213) [22.13%, 34.06%] | **27.23% (58/213) [21.69%, 33.57%]** | **-0.47 pp** | Non-inferior | Stable |
 | **Supported Recall** | 72.30% (154/213) | **72.77% (155/213)** | **+0.47 pp** | Non-inferior | **PASS** |
 | **Refutation Recall** | 67.90% (110/162) | **68.52% (111/162)** | **+0.62 pp** | Non-inferior | **PASS** |
 | **NOT_ESTABLISHED Recall** | 76.80% (96/125) | **78.40% (98/125)** | **+1.60 pp** | Non-inferior | **PASS** |
@@ -138,19 +138,19 @@ $$egin{array}{c|cc|c}
 
 ## 6. Forensics of Discordant Cases ($N = 8$)
 
-### A. Improvements ($n_{01} = 6$, B0 Incorrect $	o$ C1 Correct):
-In the six improvement cases, the recorded routing and retrieval traces indicate that structural restriction removed distractor passages that were present under global retrieval:
-1. `EXP33-SUP-0071` (Node.js fs.promises query): Global search in B0 retrieved a JavaScript promise-chaining chunk from ES6 deep dive, causing false abstention. C1 routed directly to `Node.js & Express REST API Notes` $	o$ Correctly supported.
-2. `EXP33-SUP-0116` (SQL LEFT JOIN query): B0 retrieved an HTML table formatting chunk, leading to false refutation. C1 routed to `PostgreSQL Database Design` $	o$ Correctly supported.
-3. `EXP33-FLS-0027` (JavaScript closure false claim): B0 was confused by a database transaction scope distractor and falsely accepted the claim (`SUPPORTED`). C1 routed to `JavaScript ES6+ Deep Dive` $	o$ Correctly refuted.
-4. `EXP33-AMB-0075` (React prop drilling ambiguous query): B0 pulled in an Express routing hierarchy chunk, triggering false acceptance. C1 routed to `React Hooks Tutorial` $	o$ Correctly abstained (`NOT_ESTABLISHED`).
+### A. Improvements ($n_{01} = 6$, B0 Incorrect $\to$ C1 Correct):
+Trace inspection indicates that structural restriction removed distractor passages in these cases; three of the six improvements corresponded to reductions in false-acceptance errors:
+1. `EXP33-SUP-0071` (Node.js fs.promises query): Global search in B0 retrieved a JavaScript promise-chaining chunk from ES6 deep dive, causing false abstention. C1 routed directly to `Node.js & Express REST API Notes` $\to$ Correctly supported.
+2. `EXP33-SUP-0116` (SQL LEFT JOIN query): B0 retrieved an HTML table formatting chunk, leading to false refutation. C1 routed to `PostgreSQL Database Design` $\to$ Correctly supported.
+3. `EXP33-FLS-0027` (JavaScript closure false claim): B0 was confused by a database transaction scope distractor and falsely accepted the claim (`SUPPORTED`). C1 routed to `JavaScript ES6+ Deep Dive` $\to$ Correctly refuted.
+4. `EXP33-AMB-0075` (React prop drilling ambiguous query): B0 pulled in an Express routing hierarchy chunk, triggering false acceptance. C1 routed to `React Hooks Tutorial` $\to$ Correctly abstained (`NOT_ESTABLISHED`).
 5. `EXP33-OOD-0043` (React Native OOD query): B0 falsely refuted via React web chunks. C1 detected out-of-curriculum boundary and abstained (`NOT_ESTABLISHED`).
-6. `EXP33-ADV-0043` (HTTP POST idempotency false claim): B0 suffered cross-module confusion and falsely accepted. C1 routed to `Node.js & Express REST API Notes` $	o$ Correctly refuted.
+6. `EXP33-ADV-0043` (HTTP POST idempotency false claim): B0 suffered cross-module confusion and falsely accepted. C1 routed to `Node.js & Express REST API Notes` $\to$ Correctly refuted.
 
-### B. Regressions ($n_{10} = 2$, B0 Correct $	o$ C1 Incorrect):
+### B. Regressions ($n_{10} = 2$, B0 Correct $\to$ C1 Incorrect):
 1. `EXP33-FLS-0101` (HTTP 301 temporary redirect claim): Expected `REFUTED`. B0 predicted `REFUTED`; C1 predicted `NOT_ESTABLISHED`.
 2. `EXP33-ADV-0005` (HTTP DELETE idempotency query): Expected `SUPPORTED`. B0 predicted `SUPPORTED`; C1 predicted `REFUTED`.  
-*Assessment:* Both regressions produced `NOT_ESTABLISHED` or `REFUTED` rather than a false acceptance; no increase in FAR was observed in these two cases.
+*Assessment:* Neither regression was a false acceptance; one changed from REFUTED to NOT_ESTABLISHED and the other from SUPPORTED to REFUTED.
 
 ---
 

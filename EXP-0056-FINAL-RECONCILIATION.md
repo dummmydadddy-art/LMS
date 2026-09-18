@@ -45,7 +45,7 @@ This experiment evaluated two distinct architectural stages:
 - **Pre-registered Target:** Candidate C1 accuracy $\ge 71.40\%$ (baseline 72.00%) and safety ceiling $	ext{FAR} \le 17.50\%$ on the locked blind holdout benchmark ($N = 500$).
 - **Observed Result:** 
   - Blind accuracy: **72.80% [95% Wilson CI: 68.74%, 76.52%]** (B0: 72.00% [67.91%, 75.76%], $+0.80$ pp).
-  - False Acceptance Rate: **16.03% (46/287) [95% Wilson CI: 12.24%, 20.72%]** (B0: 17.07% (49/287) [13.16%, 21.85%], $-1.04$ pp).
+  - False Acceptance Rate: **16.03% (46/287) [95% Wilson CI: 12.24%, 20.72%]** (B0: 17.07% (49/287) [13.16%, 21.85%], $-1.04$ pp). Observed candidate FAR is below the operational ceiling of $17.50\%$, though the 95% Wilson upper bound (20.72%) does not establish that the population parameter is strictly below the ceiling.
   - Paired comparison: $n_{11} = 358, n_{00} = 134, n_{10} = 2, n_{01} = 6$.
   - McNemar's Edwards-corrected $\chi^2 = 1.1250$, exact two-sided binomial $p = 0.2891$.
   - **Statistical Finding:** Observed paired accuracy difference was $+0.80$ percentage points, with 6 improvements and 2 regressions; the paired difference was not statistically significant by McNemar's test ($p = 0.2891$). Formal non-inferiority was not established by McNemar alone.
@@ -64,11 +64,11 @@ Candidate Retriever (C1)      : PageIndex-Derived Structural Routing + Bounded F
 Frozen Verifier               : Candidate A4 (rag_ambiguity_guard_verifier.php, SHA-256: 31c7c31e...)
 ----------------------------------------------------------------------------------------------------
 Metric                        | Control B0        | Candidate C1      | Delta     | Status
-------------------------------+-------------------+-------------------+-----------+-----------------
+------------------------------+-------------------+-------------------+-----------+-------------------------------------
 Accuracy                      | 72.00% [67.91, 75.76]| 72.80% [68.74, 76.52]| +0.80 pp  | Observed Gain
 Macro F1                      | 72.24%            | 73.04%            | +0.80 pp  | Non-inferior
-False Acceptance Rate (FAR)   | 17.07% [13.16, 21.85]| 16.03% [12.24, 20.72]| -1.04 pp  | Safe (<=17.50%)
-False Rejection Rate (FRR)    | 27.70% [22.10, 34.09]| 27.23% [21.68, 33.60]| -0.47 pp  | Non-inferior
+False Acceptance Rate (FAR)   | 17.07% [13.16, 21.85]| 16.03% [12.24, 20.72]| -1.04 pp  | Observed FAR below ceiling (<=17.50%)
+False Rejection Rate (FRR)    | 27.70% [22.13, 34.06]| 27.23% [21.69, 33.57]| -0.47 pp  | Non-inferior
 Supported Recall              | 72.30% (154/213)  | 72.77% (155/213)  | +0.47 pp  | Stable
 Refutation Recall             | 67.90% (110/162)  | 68.52% (111/162)  | +0.62 pp  | Stable
 NOT_ESTABLISHED Recall        | 76.80% (96/125)   | 78.40% (98/125)   | +1.60 pp  | Stable

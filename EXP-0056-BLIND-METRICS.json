@@ -41,8 +41,17 @@
     "far_delta_pp": -1.04,
     "far_safety_ceiling": 17.5,
     "far_ceiling_satisfied": true,
+    "far_ceiling_interpretation": "Observed candidate FAR (16.03%) is below the operational ceiling of 17.50%; the Wilson 95% upper bound (20.72%) does not establish that the population parameter is strictly below the ceiling.",
     "b0_frr": 27.7,
+    "b0_frr_wilson_ci95": [
+      22.13,
+      34.06
+    ],
     "c1_frr": 27.23,
+    "c1_frr_wilson_ci95": [
+      21.69,
+      33.57
+    ],
     "b0_supported_recall": 72.3,
     "c1_supported_recall": 72.77,
     "b0_refutation_recall": 67.9,
