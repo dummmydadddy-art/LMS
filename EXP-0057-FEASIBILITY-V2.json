@@ -1,0 +1,612 @@
+{
+  "experiment_id": "EXP-0057",
+  "gate": "FEASIBILITY_V2",
+  "date_iso": "2026-09-19T14:48:00+05:30",
+  "construct_terminology": "Native PageIndex tool-mediated agentic retrieval using custom local orchestration.",
+  "official_chat_runtime_note": "The experiment does not evaluate PageIndex's official client.chat() runtime because that local path was not operational with the selected Ollama integration.",
+  "candidate_name": "NPI-1_Native_PageIndex_Tool_Mediated_Agentic_Retrieval",
+  "summary": {
+    "total_queries": 20,
+    "total_tool_calls_executed": 60,
+    "valid_structured_tool_calls": 60,
+    "valid_tool_call_rate_pct": 100.0,
+    "malformed_calls": 0,
+    "malformed_call_rate_pct": 0.0,
+    "parallel_calls_detected": 0,
+    "retries_triggered": 0,
+    "page_retrieval_success_rate_all_pct": 100.0,
+    "page_retrieval_success_rate_non_ood_pct": 100.0,
+    "pages_read": {
+      "mean": 3.3,
+      "median": 4.0,
+      "p95": 5.1,
+      "min": 1,
+      "max": 6,
+      "metric_description": "Mean pages read: 3.30/query, corresponding to an observed 85.65% reduction in pages read relative to the 23-page full-document baseline."
+    },
+    "retrieval_latency_ms": {
+      "mean": 10967.5,
+      "median": 10920.6,
+      "p95": 12221.2,
+      "min": 9686.2,
+      "max": 12243.9
+    },
+    "downstream_verification_a4": {
+      "total": 20,
+      "correct": 12,
+      "accuracy_pct": 60,
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 0,
+          "total": 4
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 2,
+          "total": 4
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 4,
+          "total": 4
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 4,
+          "total": 4
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 2,
+          "total": 4
+        }
+      }
+    }
+  },
+  "pass_criteria_audit": {
+    "criterion_1_non_ood_page_retrieval_ge_90pct": {
+      "target": ">= 90.0%",
+      "observed": "100.0%",
+      "passed": true
+    },
+    "criterion_2_malformed_rate_le_10pct": {
+      "target": "<= 10.0%",
+      "observed": "0.00%",
+      "passed": true
+    },
+    "criterion_3_no_synthetic_regex_calls": {
+      "target": "0 synthetic regex calls",
+      "observed": "0",
+      "passed": true
+    },
+    "criterion_4_no_parallel_tool_execution": {
+      "target": "0 parallel calls executed",
+      "observed": "0",
+      "passed": true
+    },
+    "criterion_5_no_cloud_inference": {
+      "target": "100% local Ollama (0 cloud calls)",
+      "observed": "100% local Ollama",
+      "passed": true
+    },
+    "criterion_6_llm_directed_pages": {
+      "target": "All pages originate from model tool arguments",
+      "observed": "Verified",
+      "passed": true
+    },
+    "criterion_7_complete_chain_demonstrated": {
+      "target": ">= 3 representative complete chains",
+      "observed": "4 complete chains (DEV-FLS-002, DEV-FLS-003, DEV-NEG-001, DEV-MIX-003)",
+      "passed": true
+    },
+    "criterion_8_production_and_locked_isolation": {
+      "target": "Production untouched, locked hashes unchanged",
+      "observed": "Verified",
+      "passed": true
+    }
+  },
+  "cases": [
+    {
+      "query_id": "DEV-SUP-001",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does display: flex initiate flex formatting context?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "confidence": 0.96,
+      "decision_tier": "TIER_2_SEMANTIC_NLI",
+      "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+      "pages_read": 2,
+      "selected_pages": [
+        5,
+        6
+      ],
+      "retrieval_latency_ms": 12220,
+      "verification_latency_ms": 39238.6,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-SUP-002",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does justify-content align items along the main axis in Flexbox?",
+      "expected": "SUPPORTED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": false,
+      "confidence": 0.35,
+      "decision_tier": "TIER_2_ABSTENTION",
+      "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+      "pages_read": 2,
+      "selected_pages": [
+        13,
+        14
+      ],
+      "retrieval_latency_ms": 10521.6,
+      "verification_latency_ms": 1944.7,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-SUP-003",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does align-items control cross-axis alignment in Flexbox?",
+      "expected": "SUPPORTED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": false,
+      "confidence": 0.35,
+      "decision_tier": "TIER_2_ABSTENTION",
+      "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+      "pages_read": 4,
+      "selected_pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "retrieval_latency_ms": 11208.7,
+      "verification_latency_ms": 1807.1,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-SUP-004",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What is the function of the gap property in CSS Flexbox?",
+      "expected": "SUPPORTED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": false,
+      "confidence": 0.35,
+      "decision_tier": "TIER_2_ABSTENTION",
+      "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+      "pages_read": 1,
+      "selected_pages": [
+        8
+      ],
+      "retrieval_latency_ms": 9686.2,
+      "verification_latency_ms": 1808.5,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-FLS-001",
+      "category": "NOVEL_FALSE_PREMISE",
+      "query": "Why does box-sizing: content-box include padding and border inside the declared width?",
+      "expected": "REFUTED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": false,
+      "confidence": 0.35,
+      "decision_tier": "TIER_2_ABSTENTION",
+      "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+      "pages_read": 4,
+      "selected_pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "retrieval_latency_ms": 11015.9,
+      "verification_latency_ms": 1831.6,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-FLS-002",
+      "category": "NOVEL_FALSE_PREMISE",
+      "query": "Why does Flexbox provide 2-dimensional layout across rows and columns simultaneously?",
+      "expected": "REFUTED",
+      "predicted": "REFUTED",
+      "correct": true,
+      "confidence": 0.96,
+      "decision_tier": "TIER_1_DETERMINISTIC",
+      "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+      "pages_read": 4,
+      "selected_pages": [
+        2,
+        3,
+        10,
+        11
+      ],
+      "retrieval_latency_ms": 9940.8,
+      "verification_latency_ms": 27.3,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-FLS-003",
+      "category": "NOVEL_FALSE_PREMISE",
+      "query": "Why does display: flex initiate a 2-dimensional grid formatting context?",
+      "expected": "REFUTED",
+      "predicted": "REFUTED",
+      "correct": true,
+      "confidence": 0.95,
+      "decision_tier": "TIER_1_DETERMINISTIC",
+      "decision_reason": "Polarity inversion established: 1-dimensional vs 2-dimensional",
+      "pages_read": 2,
+      "selected_pages": [
+        3,
+        4
+      ],
+      "retrieval_latency_ms": 10677.1,
+      "verification_latency_ms": 0.3,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-FLS-004",
+      "category": "NOVEL_FALSE_PREMISE",
+      "query": "Why does align-items control item distribution along the main axis in Flexbox?",
+      "expected": "REFUTED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": false,
+      "confidence": 0.35,
+      "decision_tier": "TIER_1_DETERMINISTIC",
+      "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+      "pages_read": 2,
+      "selected_pages": [
+        5,
+        6
+      ],
+      "retrieval_latency_ms": 10825.4,
+      "verification_latency_ms": 11,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-UNK-001",
+      "category": "OUT_OF_CURRICULUM_UNKNOWN",
+      "query": "How does Django ORM handle migrations across PostgreSQL schemas?",
+      "expected": "NOT_ESTABLISHED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": true,
+      "confidence": 0,
+      "decision_tier": "TIER_1_DETERMINISTIC",
+      "decision_reason": "Query refers to an external technology not covered in curriculum",
+      "pages_read": 4,
+      "selected_pages": [
+        10,
+        11,
+        15,
+        16
+      ],
+      "retrieval_latency_ms": 11738.6,
+      "verification_latency_ms": 0.2,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-UNK-002",
+      "category": "OUT_OF_CURRICULUM_UNKNOWN",
+      "query": "Why does Django manage user sessions using signed cookies in Python?",
+      "expected": "NOT_ESTABLISHED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": true,
+      "confidence": 0,
+      "decision_tier": "TIER_1_DETERMINISTIC",
+      "decision_reason": "Query refers to an external technology not covered in curriculum",
+      "pages_read": 5,
+      "selected_pages": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "retrieval_latency_ms": 10670.4,
+      "verification_latency_ms": 0.1,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-UNK-003",
+      "category": "OUT_OF_CURRICULUM_UNKNOWN",
+      "query": "How does Django REST Framework implement ModelSerializer validation?",
+      "expected": "NOT_ESTABLISHED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": true,
+      "confidence": 0,
+      "decision_tier": "TIER_1_DETERMINISTIC",
+      "decision_reason": "Query refers to an external technology not covered in curriculum",
+      "pages_read": 4,
+      "selected_pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "retrieval_latency_ms": 11442.2,
+      "verification_latency_ms": 0.1,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-UNK-004",
+      "category": "OUT_OF_CURRICULUM_UNKNOWN",
+      "query": "How does Celery execute background task queues with Redis broker in Python?",
+      "expected": "NOT_ESTABLISHED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": true,
+      "confidence": 0,
+      "decision_tier": "TIER_1_DETERMINISTIC",
+      "decision_reason": "Query refers to an external technology not covered in curriculum",
+      "pages_read": 3,
+      "selected_pages": [
+        17,
+        18,
+        19
+      ],
+      "retrieval_latency_ms": 10120.3,
+      "verification_latency_ms": 0.1,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-NEG-001",
+      "category": "LEGITIMATE_NEGATION",
+      "query": "Why can't const variables be reassigned in JavaScript?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "confidence": 0.95,
+      "decision_tier": "TIER_2_SEMANTIC_NLI",
+      "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "pages_read": 4,
+      "selected_pages": [
+        8,
+        11,
+        13,
+        17
+      ],
+      "retrieval_latency_ms": 12243.9,
+      "verification_latency_ms": 1742.8,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-NEG-002",
+      "category": "LEGITIMATE_NEGATION",
+      "query": "Why doesn't var have block scope in JavaScript?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "confidence": 0.95,
+      "decision_tier": "TIER_2_SEMANTIC_NLI",
+      "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "pages_read": 6,
+      "selected_pages": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "retrieval_latency_ms": 11709.4,
+      "verification_latency_ms": 1814.7,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-NEG-003",
+      "category": "LEGITIMATE_NEGATION",
+      "query": "Why doesn't useRef cause component re-renders when updated?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "confidence": 0.95,
+      "decision_tier": "TIER_2_SEMANTIC_NLI",
+      "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "pages_read": 4,
+      "selected_pages": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "retrieval_latency_ms": 11592.8,
+      "verification_latency_ms": 1928,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-NEG-004",
+      "category": "LEGITIMATE_NEGATION",
+      "query": "Why can't arrow functions be used as constructors with new?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "confidence": 0.95,
+      "decision_tier": "TIER_2_SEMANTIC_NLI",
+      "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "pages_read": 2,
+      "selected_pages": [
+        11,
+        12
+      ],
+      "retrieval_latency_ms": 12138.7,
+      "verification_latency_ms": 1851.1,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-MIX-001",
+      "category": "MIXED_COMPOUND_PREMISE",
+      "query": "Since let has block scope, why does var also have block scope in JavaScript?",
+      "expected": "REFUTED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": false,
+      "confidence": 0,
+      "decision_tier": "TIER_2_SEMANTIC_NLI",
+      "decision_reason": "Compound premise contains unverified or insufficiently established sub-propositions",
+      "pages_read": 2,
+      "selected_pages": [
+        3,
+        14
+      ],
+      "retrieval_latency_ms": 11281.2,
+      "verification_latency_ms": 25,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-MIX-002",
+      "category": "MIXED_COMPOUND_PREMISE",
+      "query": "Since const prevents variable reassignment, why does it make nested object properties completely immutable?",
+      "expected": "REFUTED",
+      "predicted": "SUPPORTED",
+      "correct": false,
+      "confidence": 0.85,
+      "decision_tier": "TIER_2_SEMANTIC_NLI",
+      "decision_reason": "All constituent propositions in compound premise were verified and supported by curriculum evidence",
+      "pages_read": 3,
+      "selected_pages": [
+        4,
+        5,
+        6
+      ],
+      "retrieval_latency_ms": 10187.5,
+      "verification_latency_ms": 3714.4,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-MIX-003",
+      "category": "MIXED_COMPOUND_PREMISE",
+      "query": "Since useEffect executes after render, why does it run synchronously before browser paint?",
+      "expected": "REFUTED",
+      "predicted": "REFUTED",
+      "correct": true,
+      "confidence": 0.95,
+      "decision_tier": "TIER_2_SEMANTIC_NLI",
+      "decision_reason": "At least one constituent proposition in compound premise was refuted: The premise is contradicted by curriculum evidence: [Topic: React Hooks Tutorial \u00b7 Page 11] - No dependency array `useEffect(() => {})`: Runs after EVERY render.",
+      "pages_read": 4,
+      "selected_pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "retrieval_latency_ms": 10366.4,
+      "verification_latency_ms": 3701.1,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    },
+    {
+      "query_id": "DEV-MIX-004",
+      "category": "MIXED_COMPOUND_PREMISE",
+      "query": "Since useRef persists values across renders, why does it trigger a component re-render on change?",
+      "expected": "REFUTED",
+      "predicted": "REFUTED",
+      "correct": true,
+      "confidence": 0.95,
+      "decision_tier": "TIER_2_SEMANTIC_NLI",
+      "decision_reason": "At least one constituent proposition in compound premise was refuted: The premise is contradicted by curriculum evidence: [Topic: React Hooks Tutorial \u00b7 Page 10] - State updates in React 18 are batched automatically across event handlers, promises, and timeouts.",
+      "pages_read": 4,
+      "selected_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "retrieval_latency_ms": 9763.3,
+      "verification_latency_ms": 3643.1,
+      "tool_calls_count": 3,
+      "malformed_calls": 0,
+      "parallel_calls_detected": 0,
+      "retry_count": 0,
+      "termination_state": "STATE_D_TERMINATE",
+      "termination_reason": "terminal_state_reached"
+    }
+  ]
+}
