@@ -241,7 +241,7 @@ class DoclingRsAdapter(DocumentProcessor):
         if not is_ready:
             reason = "Neither docling.rs native binary nor Python docling library installed"
         elif not rust_available:
-            reason = "docling.rs native Rust binary not compiled/installed (cargo/MSVC build required). Active execution via Python docling (NativePdfPipeline)."
+            reason = "docling.rs native Rust binary not compiled/installed (cargo/MSVC build required from docling-project/docling.rs). Active execution via Python docling (NativePdfPipeline)."
 
         return {
             "status": "READY" if is_ready else "NOT_READY",
@@ -251,7 +251,7 @@ class DoclingRsAdapter(DocumentProcessor):
             "native_rust_binary_found": rust_available,
             "native_rust_status": "READY" if rust_available else "NOT_READY",
             "python_docling_status": "READY" if DOCLING_AVAILABLE else "NOT_READY",
-            "active_engine": "docling.rs (rust)" if rust_available else "python-docling (fallback)",
+            "active_engine": "docling.rs (rust)" if rust_available else "python-docling (NativePdfPipeline)",
             "runtime_version": DOCLING_VERSION,
             "streaming_enabled": True,
             "windowed_processing": True,

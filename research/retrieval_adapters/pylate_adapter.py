@@ -65,16 +65,12 @@ class PyLateAdapter(ResearchRetriever):
                 target_device = "cpu"
 
         print(f"[PyLateAdapter] Loading {self.model_name} on {target_device}...", flush=True)
-        if PYLATE_AVAILABLE:
-            self._colbert_model = models.ColBERT(
-                model_name_or_path=self.model_name,
-                device=target_device
-            )
-        else:
-            # Fallback wrapper
-            from sentence_transformers import SentenceTransformer
-            self._colbert_model = SentenceTransformer("BAAI/bge-small-en-v1.5", device=target_device)
-
+        if not PYLATE_AVAILABLE:
+            raise RuntimeError("pylate library is not installed. Simulation is disabled.")
+        self._colbert_model = models.ColBERT(
+            model_name_or_path=self.model_name,
+            device=target_device
+        )
         return self._colbert_model
 
     def index(self, documents: Optional[List[Dict[str, Any]]] = None, **kwargs) -> Any:
@@ -85,15 +81,14 @@ class PyLateAdapter(ResearchRetriever):
         texts = [c["content"] for c in chunks]
         print(f"[PyLateAdapter] Encoding {len(texts)} chunks for late interaction...", flush=True)
         
-        if PYLATE_AVAILABLE and hasattr(model, "encode"):
-            self._doc_embeddings = model.encode(
-                texts,
-                is_query=False,
-                batch_size=8
-            )
-        else:
-            self._doc_embeddings = model.encode(texts)
+        if not PYLATE_AVAILABLE:
+            raise RuntimeError("pylate library is not installed. Simulation is disabled.")
 
+        self._doc_embeddings = model.encode(
+            texts,
+            is_query=False,
+            batch_size=8
+        )
         return len(texts)
 
     def retrieve(self, query: str, top_k: int = 5, **kwargs) -> List[Dict[str, Any]]:
@@ -107,30 +102,26 @@ class PyLateAdapter(ResearchRetriever):
         if self._doc_embeddings is None:
             self.index()
 
+        if not PYLATE_AVAILABLE:
+            raise RuntimeError("pylate library is not installed. Simulation is disabled.")
+
         model = self._load_model()
         chunks = self._baseline_adapter.raw_chunks
         children_dict = self._baseline_adapter.children_dict
         parents_dict = self._baseline_adapter.parents_dict
 
         # Encode query
-        if PYLATE_AVAILABLE and hasattr(model, "encode"):
-            q_emb = model.encode([query], is_query=True)
-            # MaxSim ranking via PyLate
-            scores = rank.rerank(
-                documents_ids=[[i for i in range(len(chunks))]],
-                queries_embeddings=q_emb,
-                documents_embeddings=[self._doc_embeddings]
-            )
-            # scores is list of ranked candidates
-            raw_scores = {}
-            for item in scores[0]:
-                raw_scores[item["id"]] = float(item["score"])
-        else:
-            q_vec = model.encode([query])[0]
-            raw_scores = {}
-            for idx, d_vec in enumerate(self._doc_embeddings):
-                sim = float(np.dot(q_vec, d_vec) / (np.linalg.norm(q_vec) * np.linalg.norm(d_vec) + 1e-9))
-                raw_scores[idx] = sim
+        q_emb = model.encode([query], is_query=True)
+        # MaxSim ranking via PyLate
+        scores = rank.rerank(
+            documents_ids=[[i for i in range(len(chunks))]],
+            queries_embeddings=q_emb,
+            documents_embeddings=[self._doc_embeddings]
+        )
+        # scores is list of ranked candidates
+        raw_scores = {}
+        for item in scores[0]:
+            raw_scores[item["id"]] = float(item["score"])
 
         # Group scored chunks into parent groups
         parent_groups_map = {}
@@ -207,6 +198,8 @@ class PyLateAdapter(ResearchRetriever):
     def health(self) -> Dict[str, Any]:
         return {
             "status": "ok",
+            "ready_status": "READY" if PYLATE_AVAILABLE else "NOT_READY",
+            "reason": None if PYLATE_AVAILABLE else "pylate library is not installed",
             "adapter": "PyLateAdapter",
             "pylate_available": PYLATE_AVAILABLE,
             "model_name": self.model_name,

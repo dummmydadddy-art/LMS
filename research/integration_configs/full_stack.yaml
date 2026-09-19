@@ -1,0 +1,41 @@
+experiment_id: EXP-0099-FULL-STACK-INTEGRATION
+description: 'Full-Stack Integration Profile (Verification only: non-default, not
+  claimed superior)'
+feature_flags:
+  ENABLE_BGE_M3: false
+  ENABLE_QDRANT: false
+  ENABLE_PYLATE: false
+  ENABLE_RAGLITE: false
+  ENABLE_PAGEINDEX_STRUCTURAL: true
+  ENABLE_PAGEINDEX_AGENTIC: false
+  ENABLE_COLSMOL: false
+  ENABLE_NEO4J: false
+  ENABLE_CRAG: true
+  ENABLE_LLMLINGUA: false
+  ENABLE_DOCLING: true
+  ENABLE_MARKER: false
+  ENABLE_SURYA: false
+  ENABLE_LLAMA_CPP: false
+  ENABLE_OLLAMA: true
+  ENABLE_GEMMA3N: false
+  ENABLE_BITNET: false
+pipeline:
+  parser: python-docling
+  structural_navigator: pageindex_structural
+  retriever: exp0040
+  corrective: crag
+  fusion: reciprocal_rank_fusion
+  inference: ollama
+verifier:
+  name: A4
+  file: backend/rag_ambiguity_guard_verifier.php
+  frozen: true
+  prompt: P4_neutral
+  thresholds:
+    entailment: 0.85
+    contradiction: 0.8
+dataset:
+  dev: EXP-0025-DEVELOPMENT-DATASET.json
+  blind: EXP-0033-BLIND-DATASET.json
+blind_evaluation:
+  enabled: false

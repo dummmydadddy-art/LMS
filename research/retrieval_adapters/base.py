@@ -22,41 +22,117 @@ except ImportError:
 
 @dataclass
 class RetrievalResult:
-    id: str
-    title: str
-    heading: str
-    content: str
-    similarity: float
-    rank: int
-    chunk_id: Optional[str] = None
+    doc_id: str = ""
+    chunk_id: str = ""
+    page_start: int = 1
+    page_end: int = 1
+    section_id: str = ""
+    score: float = 0.0
+    rank: int = 1
+    retrieval_method: str = "dense"
+    evidence_type: str = "TEXT"  # TEXT | VISUAL | GRAPH | STRUCTURAL
+    metadata: Dict[str, Any] = field(default_factory=dict)
+
+    # Compatibility fields for legacy verifiers and test harnesses
+    id: Optional[str] = None
+    title: Optional[str] = None
+    heading: Optional[str] = None
+    content: Optional[str] = None
+    similarity: Optional[float] = None
     parent_id: Optional[str] = None
     fused_score: Optional[float] = None
     contributing_children: Optional[List[Dict[str, Any]]] = None
-    metadata: Dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self):
-        if self.chunk_id is None:
+        # Support legacy positional / keyword arguments
+        if self.id is not None and not self.chunk_id:
             self.chunk_id = self.id
+        elif self.chunk_id and self.id is None:
+            self.id = self.chunk_id
+
+        if not self.doc_id:
+            self.doc_id = self.metadata.get("source_id", self.chunk_id)
+
+        if self.similarity is not None and self.score == 0.0:
+            self.score = float(self.similarity)
+        elif self.similarity is None:
+            self.similarity = float(self.score)
+
         if self.fused_score is None:
-            self.fused_score = self.similarity
+            self.fused_score = self.score
+
+        if self.parent_id is None:
+            self.parent_id = self.chunk_id
+
+        if self.title is not None and "title" not in self.metadata:
+            self.metadata["title"] = self.title
+        elif self.title is None:
+            self.title = self.metadata.get("title", "")
+
+        if self.heading is not None and "heading" not in self.metadata:
+            self.metadata["heading"] = self.heading
+        elif self.heading is None:
+            self.heading = self.metadata.get("heading", "")
+
+        if self.content is not None and "content" not in self.metadata:
+            self.metadata["content"] = self.content
+        elif self.content is None:
+            self.content = self.metadata.get("content", "")
+
+        if self.contributing_children is not None and "contributing_children" not in self.metadata:
+            self.metadata["contributing_children"] = self.contributing_children
+        elif self.contributing_children is None:
+            self.contributing_children = self.metadata.get("contributing_children")
+
+    @classmethod
+    def from_dict(cls, d: Dict[str, Any]) -> "RetrievalResult":
+        """Construct a RetrievalResult from any result dict."""
+        return cls(
+            doc_id=d.get("doc_id", d.get("source_id", d.get("document_id", ""))),
+            chunk_id=d.get("chunk_id", d.get("id", "")),
+            page_start=int(d.get("page_start", 1)),
+            page_end=int(d.get("page_end", d.get("page_start", 1))),
+            section_id=d.get("section_id", d.get("heading", "")),
+            score=float(d.get("score", d.get("similarity", d.get("fused_score", 0.0)))),
+            rank=int(d.get("rank", 1)),
+            retrieval_method=d.get("retrieval_method", "dense"),
+            evidence_type=d.get("evidence_type", "TEXT"),
+            metadata=d.get("metadata", {}),
+            id=d.get("id", d.get("chunk_id")),
+            title=d.get("title", ""),
+            heading=d.get("heading", ""),
+            content=d.get("content", ""),
+            similarity=float(d.get("similarity", d.get("score", 0.0))),
+            parent_id=d.get("parent_id", d.get("id")),
+            fused_score=float(d.get("fused_score", d.get("score", 0.0))) if "fused_score" in d or "score" in d else None,
+            contributing_children=d.get("contributing_children")
+        )
 
     def to_dict(self) -> Dict[str, Any]:
         d = {
-            "id": self.id,
+            "doc_id": self.doc_id,
             "chunk_id": self.chunk_id,
-            "parent_id": self.parent_id if self.parent_id else self.id,
-            "title": self.title,
-            "heading": self.heading,
-            "content": self.content,
-            "similarity": round(float(self.similarity), 4),
+            "page_start": self.page_start,
+            "page_end": self.page_end,
+            "section_id": self.section_id,
+            "score": round(float(self.score), 4),
             "rank": self.rank,
-            "fused_score": round(float(self.fused_score), 4) if self.fused_score is not None else None,
+            "retrieval_method": self.retrieval_method,
+            "evidence_type": self.evidence_type,
+            "metadata": self.metadata,
+            # Backward compatibility aliases
+            "id": self.id or self.chunk_id,
+            "title": self.title or self.metadata.get("title", ""),
+            "heading": self.heading or self.metadata.get("heading", ""),
+            "content": self.content or self.metadata.get("content", ""),
+            "similarity": round(float(self.similarity if self.similarity is not None else self.score), 4),
+            "parent_id": self.parent_id or self.chunk_id,
+            "fused_score": round(float(self.fused_score if self.fused_score is not None else self.score), 4),
         }
         if self.contributing_children is not None:
             d["contributing_children"] = self.contributing_children
-        if self.metadata:
-            d["metadata"] = self.metadata
         return d
+
 
 
 class ResearchRetriever(ABC):

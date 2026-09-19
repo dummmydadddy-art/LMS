@@ -1,0 +1,37 @@
+experiment_id: EXP-0062-MARKER
+description: Marker Alternative Document Parser and Efficiency Comparator
+feature_flags:
+  ENABLE_BGE_M3: false
+  ENABLE_BGE_M3_SPARSE: false
+  ENABLE_QDRANT: false
+  ENABLE_PYLATE: false
+  ENABLE_RAGLITE: false
+  ENABLE_PAGEINDEX_STRUCTURAL: false
+  ENABLE_PAGEINDEX_AGENTIC: false
+  ENABLE_COLSMOL: false
+  ENABLE_NEO4J: false
+  ENABLE_CRAG: false
+  ENABLE_LLMLINGUA: false
+  ENABLE_DOCLING: false
+  ENABLE_MARKER: true
+  ENABLE_SURYA: false
+  ENABLE_LLAMA_CPP: false
+  ENABLE_OLLAMA: false
+  ENABLE_GEMMA3N: false
+  ENABLE_BITNET: false
+parser: marker
+mode: fast
+disable_ocr: true
+verifier:
+  name: A4
+  file: backend/rag_ambiguity_guard_verifier.php
+  frozen: true
+  prompt: P4_neutral
+  thresholds:
+    entailment: 0.85
+    contradiction: 0.8
+dataset:
+  dev: EXP-0025-DEVELOPMENT-DATASET.json
+  blind: EXP-0033-BLIND-DATASET.json
+blind_evaluation:
+  enabled: false
