@@ -1,0 +1,1082 @@
+{
+  "experiment_id": "EXP-0061",
+  "benchmark": "DEVELOPMENT",
+  "dataset": {
+    "name": "EXP-0025-DEVELOPMENT-DATASET.json",
+    "sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+    "N": 400
+  },
+  "conditions": {
+    "c0_control": {
+      "total": 400,
+      "correct": 368,
+      "accuracy": 92.0,
+      "accuracy_ci_95": [
+        88.92,
+        94.28
+      ],
+      "macro_f1": 92.67,
+      "far": 3.6,
+      "far_ci_95": [
+        1.91,
+        6.7
+      ],
+      "frr": 13.33,
+      "frr_ci_95": [
+        8.8,
+        19.7
+      ],
+      "supported_recall": 86.67,
+      "refutation_recall": 93.33,
+      "not_established_recall": 98.0,
+      "ood_recall": 98.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 130,
+          "REFUTED": 20,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 8,
+          "REFUTED": 140,
+          "NOT_ESTABLISHED": 2
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 84,
+          "total": 100,
+          "accuracy": 84.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 94,
+          "total": 100,
+          "accuracy": 94.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 98,
+          "total": 100,
+          "accuracy": 98.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 46,
+          "total": 50,
+          "accuracy": 92.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 46,
+          "total": 50,
+          "accuracy": 92.0
+        }
+      }
+    },
+    "c4_5_minimal": {
+      "total": 400,
+      "correct": 350,
+      "accuracy": 87.5,
+      "accuracy_ci_95": [
+        83.9,
+        90.39
+      ],
+      "macro_f1": 87.48,
+      "far": 3.6,
+      "far_ci_95": [
+        1.91,
+        6.7
+      ],
+      "frr": 12.0,
+      "frr_ci_95": [
+        7.73,
+        18.17
+      ],
+      "supported_recall": 88.0,
+      "refutation_recall": 94.0,
+      "not_established_recall": 77.0,
+      "ood_recall": 77.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 132,
+          "REFUTED": 18,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 8,
+          "REFUTED": 141,
+          "NOT_ESTABLISHED": 1
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 22,
+          "NOT_ESTABLISHED": 77
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 85,
+          "total": 100,
+          "accuracy": 85.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 96,
+          "total": 100,
+          "accuracy": 96.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 77,
+          "total": 100,
+          "accuracy": 77.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 47,
+          "total": 50,
+          "accuracy": 94.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 45,
+          "total": 50,
+          "accuracy": 90.0
+        }
+      }
+    },
+    "c4_5_sg_structural": {
+      "total": 400,
+      "correct": 369,
+      "accuracy": 92.25,
+      "accuracy_ci_95": [
+        89.21,
+        94.49
+      ],
+      "macro_f1": 92.83,
+      "far": 4.0,
+      "far_ci_95": [
+        2.19,
+        7.21
+      ],
+      "frr": 11.33,
+      "frr_ci_95": [
+        7.2,
+        17.4
+      ],
+      "supported_recall": 88.67,
+      "refutation_recall": 92.0,
+      "not_established_recall": 98.0,
+      "ood_recall": 98.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 133,
+          "REFUTED": 17,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 9,
+          "REFUTED": 138,
+          "NOT_ESTABLISHED": 3
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 86,
+          "total": 100,
+          "accuracy": 86.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 94,
+          "total": 100,
+          "accuracy": 94.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 98,
+          "total": 100,
+          "accuracy": 98.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 47,
+          "total": 50,
+          "accuracy": 94.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 44,
+          "total": 50,
+          "accuracy": 88.0
+        }
+      }
+    }
+  },
+  "gate_statistics": {
+    "total_queries": 400,
+    "gated_queries_count": 360,
+    "gated_queries_pct": 90.0,
+    "total_chunks_removed": 885,
+    "chunks_removed_mean": 2.21,
+    "chunks_removed_median": 2.0,
+    "chunks_removed_max": 4,
+    "zero_chunk_queries_count": 0,
+    "gated_by_category": {
+      "SUPPORTED_CURRICULUM": {
+        "gated_count": 88,
+        "total_in_category": 100,
+        "pct_gated": 88.0
+      },
+      "NOVEL_FALSE_PREMISE": {
+        "gated_count": 86,
+        "total_in_category": 100,
+        "pct_gated": 86.0
+      },
+      "OUT_OF_CURRICULUM_UNKNOWN": {
+        "gated_count": 100,
+        "total_in_category": 100,
+        "pct_gated": 100.0
+      },
+      "LEGITIMATE_NEGATION": {
+        "gated_count": 43,
+        "total_in_category": 50,
+        "pct_gated": 86.0
+      },
+      "MIXED_COMPOUND_PREMISE": {
+        "gated_count": 43,
+        "total_in_category": 50,
+        "pct_gated": 86.0
+      }
+    },
+    "top_removed_sections": [
+      {
+        "section": "Node.js & Express REST API Notes | - 200 OK",
+        "count": 77
+      },
+      {
+        "section": "JavaScript ES6+ Deep Dive | DESTRUCTURING, SPREAD & REST OPERATORS",
+        "count": 64
+      },
+      {
+        "section": "React Hooks Tutorial | USEEFFECT HOOK",
+        "count": 60
+      },
+      {
+        "section": "PostgreSQL Database Design | RELATIONAL DATABASE MODELING",
+        "count": 60
+      },
+      {
+        "section": "PostgreSQL Database Design | ACID TRANSACTIONS",
+        "count": 52
+      },
+      {
+        "section": "React Hooks Tutorial | USESTATE HOOK",
+        "count": 48
+      },
+      {
+        "section": "Node.js & Express REST API Notes | EXPRESS.JS CORE CONCEPTS",
+        "count": 45
+      },
+      {
+        "section": "JavaScript ES6+ Deep Dive | VARIABLE DECLARATIONS & SCOPING",
+        "count": 43
+      },
+      {
+        "section": "Node.js & Express REST API Notes | - POST",
+        "count": 39
+      },
+      {
+        "section": "Node.js & Express REST API Notes | MIDDLEWARE IN EXPRESS",
+        "count": 37
+      }
+    ]
+  },
+  "efficiency": {
+    "c4_5": {
+      "context_tokens": {
+        "mean": 301.0,
+        "median": 304.5,
+        "p95": 450.0
+      },
+      "a4_latency_ms": {
+        "mean": 1335.5,
+        "median": 1761.1,
+        "p95": 3499.6
+      },
+      "total_latency_ms": {
+        "mean": 3577.4,
+        "median": 3946.2,
+        "p95": 5753.2
+      }
+    },
+    "c4_5_sg": {
+      "context_tokens": {
+        "mean": 157.2,
+        "median": 149.0,
+        "p95": 280.6
+      },
+      "a4_latency_ms": {
+        "mean": 141.9,
+        "median": 7.0,
+        "p95": 1763.9
+      },
+      "total_latency_ms": {
+        "mean": 2383.8,
+        "median": 2287.9,
+        "p95": 3978.1
+      }
+    }
+  },
+  "paired_comparisons": {
+    "c4_5_sg_vs_c4_5": {
+      "comparator": "C4-5-SG vs C4-5",
+      "n11": 346,
+      "n00": 27,
+      "n10": 23,
+      "n01": 4,
+      "discordant_pairs": 27,
+      "mcnemar_exact_p": 0.000311,
+      "accuracy_delta_pp": 4.75,
+      "accuracy_delta_ci_95": [
+        2.25,
+        7.25
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-026",
+          "query": "How do rest parameters (...args) condense arguments into a true Array?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-055",
+          "query": "What is the significance of HTTP 403 Forbidden status code?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4-5-SG_WRONG_C4-5_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-095",
+          "query": "How does useRef persist mutable values across renders without causing re-renders?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-086",
+          "query": "Why does useEffect with an empty dependency array run after every component render?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_WRONG_C4-5_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-098",
+          "query": "Why does shallow comparison (Object.is) detect mutations made directly to array contents?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_WRONG_C4-5_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-051",
+          "query": "How does external technology framework 51 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-052",
+          "query": "How does external technology framework 52 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-060",
+          "query": "How does external technology framework 60 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-065",
+          "query": "How does external technology framework 65 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-066",
+          "query": "How does external technology framework 66 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-070",
+          "query": "How does external technology framework 70 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-078",
+          "query": "How does external technology framework 78 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-080",
+          "query": "How does external technology framework 80 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-082",
+          "query": "How does external technology framework 82 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-083",
+          "query": "How does external technology framework 83 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-084",
+          "query": "How does external technology framework 84 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-085",
+          "query": "How does external technology framework 85 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-086",
+          "query": "How does external technology framework 86 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-088",
+          "query": "How does external technology framework 88 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-090",
+          "query": "How does external technology framework 90 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-093",
+          "query": "How does external technology framework 93 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-094",
+          "query": "How does external technology framework 94 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-095",
+          "query": "How does external technology framework 95 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-097",
+          "query": "How does external technology framework 97 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-098",
+          "query": "How does external technology framework 98 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-100",
+          "query": "How does external technology framework 100 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C4-5_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-045",
+          "query": "Since CSS Grid defines columns with grid-template-columns, why does Flexbox define columns with grid-template-columns?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_WRONG_C4-5_CORRECT"
+        }
+      ]
+    },
+    "c4_5_sg_vs_c0": {
+      "comparator": "C4-5-SG vs C0",
+      "n11": 361,
+      "n00": 24,
+      "n10": 8,
+      "n01": 7,
+      "discordant_pairs": 15,
+      "mcnemar_exact_p": 1.0,
+      "accuracy_delta_pp": 0.25,
+      "accuracy_delta_ci_95": [
+        -1.65,
+        2.15
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-041",
+          "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-055",
+          "query": "What is the significance of HTTP 403 Forbidden status code?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4-5-SG_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-077",
+          "query": "What index type is used for full-text search and JSONB containment in PostgreSQL?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-095",
+          "query": "How does useRef persist mutable values across renders without causing re-renders?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-038",
+          "query": "Why does rest parameter syntax require parameters to be placed at the start of the list?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4-5-SG_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-046",
+          "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4-5-SG_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-077",
+          "query": "Why does COMMIT roll back changes made by preceding SQL statements in a transaction?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-086",
+          "query": "Why does useEffect with an empty dependency array run after every component render?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-014",
+          "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-029",
+          "query": "How does Android handle lifecycle events in ViewModel during configuration changes?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5-SG_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-010",
+          "query": "Why doesn't Flexbox provide 2-dimensional grid layouts?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-NEG-026",
+          "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4-5-SG_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-050",
+          "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-027",
+          "query": "Since var is hoisted with undefined, why does let also hoist with initial value of undefined?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-045",
+          "query": "Since CSS Grid defines columns with grid-template-columns, why does Flexbox define columns with grid-template-columns?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5-SG_WRONG_C0_CORRECT"
+        }
+      ]
+    }
+  },
+  "ood_analysis": {
+    "c0": {
+      "total_ood": 100,
+      "correct": 98,
+      "accuracy": 98.0,
+      "false_acceptances": 1,
+      "false_refutations": 1,
+      "other_errors": 0
+    },
+    "c4_5": {
+      "total_ood": 100,
+      "correct": 77,
+      "accuracy": 77.0,
+      "false_acceptances": 1,
+      "false_refutations": 22,
+      "other_errors": 0
+    },
+    "c4_5_sg": {
+      "total_ood": 100,
+      "correct": 98,
+      "accuracy": 98.0,
+      "false_acceptances": 1,
+      "false_refutations": 1,
+      "other_errors": 0
+    }
+  },
+  "forensics": {
+    "transition_causes": {
+      "ood_keyword_collision": 21,
+      "irrelevant_high_rank_evidence": 1,
+      "relevant_evidence_retained": 2,
+      "relevant_evidence_removed": 0,
+      "compound_premise": 1,
+      "legitimate_negation": 0,
+      "novel_false_premise": 2,
+      "section_contamination": 0,
+      "verifier_ambiguity": 0,
+      "other": 0
+    },
+    "transitions": [
+      {
+        "query_id": "DEV-SUP-026",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "irrelevant_high_rank_evidence",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 4
+      },
+      {
+        "query_id": "DEV-SUP-055",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "type": "C4-5-SG_WRONG_C4-5_CORRECT",
+        "cause": "relevant_evidence_retained",
+        "gold_in_top5": true,
+        "gold_in_sg": true,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 4
+      },
+      {
+        "query_id": "DEV-SUP-095",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "relevant_evidence_retained",
+        "gold_in_top5": true,
+        "gold_in_sg": true,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 2
+      },
+      {
+        "query_id": "DEV-FLS-086",
+        "category": "NOVEL_FALSE_PREMISE",
+        "expected": "REFUTED",
+        "type": "C4-5-SG_WRONG_C4-5_CORRECT",
+        "cause": "novel_false_premise",
+        "gold_in_top5": true,
+        "gold_in_sg": true,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 4
+      },
+      {
+        "query_id": "DEV-FLS-098",
+        "category": "NOVEL_FALSE_PREMISE",
+        "expected": "REFUTED",
+        "type": "C4-5-SG_WRONG_C4-5_CORRECT",
+        "cause": "novel_false_premise",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-051",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-052",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-060",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-065",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 2
+      },
+      {
+        "query_id": "DEV-UNK-066",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-070",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 2
+      },
+      {
+        "query_id": "DEV-UNK-078",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-080",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-082",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-083",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-084",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-085",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-086",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-088",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 2
+      },
+      {
+        "query_id": "DEV-UNK-090",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-093",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-094",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-095",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-097",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-098",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-UNK-100",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5-SG_CORRECT_C4-5_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_sg": false,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      },
+      {
+        "query_id": "DEV-MIX-045",
+        "category": "MIXED_COMPOUND_PREMISE",
+        "expected": "REFUTED",
+        "type": "C4-5-SG_WRONG_C4-5_CORRECT",
+        "cause": "compound_premise",
+        "gold_in_top5": true,
+        "gold_in_sg": true,
+        "chunks_pre_gate": 5,
+        "chunks_post_gate": 1
+      }
+    ]
+  },
+  "primary_finding": "Structural coherence gating improves downstream decisions (+4.75 pp) by filtering unrelated cross-module/cross-topic evidence from the top-5 candidate pool."
+}
