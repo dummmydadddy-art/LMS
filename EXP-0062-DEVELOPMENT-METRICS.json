@@ -1,0 +1,659 @@
+{
+  "experiment_id": "EXP-0062",
+  "evaluation_type": "development_n400",
+  "total_queries": 400,
+  "development_outcome": "SIMILAR",
+  "conditions": {
+    "c0": {
+      "total": 400,
+      "correct": 368,
+      "accuracy": 92.0,
+      "accuracy_ci_95": [
+        88.92,
+        94.28
+      ],
+      "macro_f1": 92.67,
+      "far": 3.6,
+      "far_ci_95": [
+        1.91,
+        6.7
+      ],
+      "frr": 13.33,
+      "frr_ci_95": [
+        8.8,
+        19.7
+      ],
+      "supported_recall": 86.67,
+      "refutation_recall": 93.33,
+      "not_established_recall": 98.0,
+      "ood_recall": 98.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 130,
+          "REFUTED": 20,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 8,
+          "REFUTED": 140,
+          "NOT_ESTABLISHED": 2
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 84,
+          "total": 100,
+          "accuracy": 84.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 94,
+          "total": 100,
+          "accuracy": 94.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 98,
+          "total": 100,
+          "accuracy": 98.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 46,
+          "total": 50,
+          "accuracy": 92.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 46,
+          "total": 50,
+          "accuracy": 92.0
+        }
+      }
+    },
+    "c1": {
+      "total": 400,
+      "correct": 369,
+      "accuracy": 92.25,
+      "accuracy_ci_95": [
+        89.21,
+        94.49
+      ],
+      "macro_f1": 92.83,
+      "far": 4.0,
+      "far_ci_95": [
+        2.19,
+        7.21
+      ],
+      "frr": 11.33,
+      "frr_ci_95": [
+        7.2,
+        17.4
+      ],
+      "supported_recall": 88.67,
+      "refutation_recall": 92.0,
+      "not_established_recall": 98.0,
+      "ood_recall": 98.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 133,
+          "REFUTED": 17,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 9,
+          "REFUTED": 138,
+          "NOT_ESTABLISHED": 3
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 86,
+          "total": 100,
+          "accuracy": 86.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 94,
+          "total": 100,
+          "accuracy": 94.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 98,
+          "total": 100,
+          "accuracy": 98.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 47,
+          "total": 50,
+          "accuracy": 94.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 44,
+          "total": 50,
+          "accuracy": 88.0
+        }
+      }
+    },
+    "c2": {
+      "total": 400,
+      "correct": 369,
+      "accuracy": 92.25,
+      "accuracy_ci_95": [
+        89.21,
+        94.49
+      ],
+      "macro_f1": 92.83,
+      "far": 4.0,
+      "far_ci_95": [
+        2.19,
+        7.21
+      ],
+      "frr": 11.33,
+      "frr_ci_95": [
+        7.2,
+        17.4
+      ],
+      "supported_recall": 88.67,
+      "refutation_recall": 92.0,
+      "not_established_recall": 98.0,
+      "ood_recall": 98.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 133,
+          "REFUTED": 17,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 9,
+          "REFUTED": 138,
+          "NOT_ESTABLISHED": 3
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 86,
+          "total": 100,
+          "accuracy": 86.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 94,
+          "total": 100,
+          "accuracy": 94.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 98,
+          "total": 100,
+          "accuracy": 98.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 47,
+          "total": 50,
+          "accuracy": 94.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 44,
+          "total": 50,
+          "accuracy": 88.0
+        }
+      }
+    }
+  },
+  "crag_metrics": {
+    "total_queries": 400,
+    "correction_trigger_count": 0,
+    "correction_trigger_rate_pct": 0.0,
+    "mean_corrections_per_query": 0.0,
+    "queries_corrected": 0,
+    "queries_not_corrected": 400,
+    "corrective_query_generation_count": 0,
+    "corrective_query_generation_rate_pct": 0.0,
+    "action_distribution": {
+      "KEEP": {
+        "count": 400,
+        "percentage": 100.0
+      },
+      "DECOMPOSE_RECOMPOSE": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "CLOSED_CORPUS_REWRITE_RETRIEVE": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "OTHER": {
+        "count": 0,
+        "percentage": 0.0
+      }
+    },
+    "decision_distribution": {
+      "CORRECT": {
+        "count": 400,
+        "percentage": 100.0
+      },
+      "AMBIGUOUS": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "INCORRECT": {
+        "count": 0,
+        "percentage": 0.0
+      }
+    },
+    "mean_crag_confidence": 16.6757,
+    "mean_context_tokens_before_correction": 157.2,
+    "mean_context_tokens_after_correction": 157.2
+  },
+  "paired_comparisons": {
+    "c2_vs_c1": {
+      "comparator": "C2 vs C1",
+      "n11": 369,
+      "n00": 31,
+      "n10": 0,
+      "n01": 0,
+      "discordant_pairs": 0,
+      "mcnemar_exact_p": 1.0,
+      "accuracy_delta_pp": 0.0,
+      "accuracy_delta_ci_95": [
+        0.0,
+        0.0
+      ],
+      "discordant_cases": []
+    },
+    "c2_vs_c0": {
+      "comparator": "C2 vs C0",
+      "n11": 361,
+      "n00": 24,
+      "n10": 8,
+      "n01": 7,
+      "discordant_pairs": 15,
+      "mcnemar_exact_p": 1.0,
+      "accuracy_delta_pp": 0.25,
+      "accuracy_delta_ci_95": [
+        -1.65,
+        2.15
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-041",
+          "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-055",
+          "query": "What is the significance of HTTP 403 Forbidden status code?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-077",
+          "query": "What index type is used for full-text search and JSONB containment in PostgreSQL?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-095",
+          "query": "How does useRef persist mutable values across renders without causing re-renders?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-038",
+          "query": "Why does rest parameter syntax require parameters to be placed at the start of the list?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-046",
+          "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-077",
+          "query": "Why does COMMIT roll back changes made by preceding SQL statements in a transaction?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-086",
+          "query": "Why does useEffect with an empty dependency array run after every component render?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-014",
+          "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-029",
+          "query": "How does Android handle lifecycle events in ViewModel during configuration changes?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-010",
+          "query": "Why doesn't Flexbox provide 2-dimensional grid layouts?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-NEG-026",
+          "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-050",
+          "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-027",
+          "query": "Since var is hoisted with undefined, why does let also hoist with initial value of undefined?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-045",
+          "query": "Since CSS Grid defines columns with grid-template-columns, why does Flexbox define columns with grid-template-columns?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        }
+      ]
+    },
+    "c1_vs_c0": {
+      "comparator": "C1 vs C0",
+      "n11": 361,
+      "n00": 24,
+      "n10": 8,
+      "n01": 7,
+      "discordant_pairs": 15,
+      "mcnemar_exact_p": 1.0,
+      "accuracy_delta_pp": 0.25,
+      "accuracy_delta_ci_95": [
+        -1.65,
+        2.15
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-041",
+          "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-055",
+          "query": "What is the significance of HTTP 403 Forbidden status code?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-077",
+          "query": "What index type is used for full-text search and JSONB containment in PostgreSQL?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-095",
+          "query": "How does useRef persist mutable values across renders without causing re-renders?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-038",
+          "query": "Why does rest parameter syntax require parameters to be placed at the start of the list?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-046",
+          "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-077",
+          "query": "Why does COMMIT roll back changes made by preceding SQL statements in a transaction?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-086",
+          "query": "Why does useEffect with an empty dependency array run after every component render?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-014",
+          "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-029",
+          "query": "How does Android handle lifecycle events in ViewModel during configuration changes?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-010",
+          "query": "Why doesn't Flexbox provide 2-dimensional grid layouts?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-NEG-026",
+          "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-050",
+          "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-027",
+          "query": "Since var is hoisted with undefined, why does let also hoist with initial value of undefined?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-045",
+          "query": "Since CSS Grid defines columns with grid-template-columns, why does Flexbox define columns with grid-template-columns?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C1_WRONG_C0_CORRECT"
+        }
+      ]
+    }
+  },
+  "correction_effectiveness": {
+    "UNCHANGED_CORRECT": 369,
+    "CORRECTED_WRONG_TO_RIGHT": 0,
+    "CORRECTED_RIGHT_TO_WRONG": 0,
+    "UNCHANGED_WRONG": 31,
+    "NEW_EVIDENCE_BUT_NO_PREDICTION_CHANGE": 0
+  },
+  "failure_families_for_c2_errors": {
+    "wrong_section_selection": 2,
+    "cross_topic_retrieval": 0,
+    "adjacent_broad_section": 0,
+    "compound_premise": 6,
+    "missing_clause": 0,
+    "legitimate_negation": 3,
+    "novel_false_premise": 6,
+    "ood_keyword_collision": 2,
+    "relevant_evidence_removed": 0,
+    "insufficient_evidence": 12,
+    "other": 0
+  },
+  "efficiency": {
+    "c0": {
+      "context_tokens": {
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0
+      },
+      "a4_latency_ms": {
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0
+      },
+      "total_latency_ms": {
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0
+      }
+    },
+    "c1": {
+      "context_tokens": {
+        "mean": 157.2,
+        "median": 149.0,
+        "p95": 280.6
+      },
+      "a4_latency_ms": {
+        "mean": 1132.1,
+        "median": 1707.7,
+        "p95": 3504.8
+      },
+      "total_latency_ms": {
+        "mean": 3374.0,
+        "median": 3761.4,
+        "p95": 5760.6
+      }
+    },
+    "c2": {
+      "context_tokens": {
+        "mean": 157.2,
+        "median": 149.0,
+        "p95": 280.6
+      },
+      "a4_latency_ms": {
+        "mean": 7.0,
+        "median": 6.3,
+        "p95": 15.9
+      },
+      "total_latency_ms": {
+        "mean": 2248.9,
+        "median": 2276.3,
+        "p95": 2455.1
+      },
+      "crag_evaluator_latency_ms": {
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0
+      },
+      "correction_latency_ms": {
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0
+      }
+    }
+  }
+}
