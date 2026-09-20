@@ -1,0 +1,662 @@
+{
+  "experiment_id": "EXP-0061",
+  "benchmark": "BLIND_VALIDATION",
+  "dataset": {
+    "name": "EXP-0033-BLIND-DATASET.json",
+    "sha256": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+    "N": 500
+  },
+  "endpoints": {
+    "b0_control": {
+      "total": 500,
+      "correct": 364,
+      "accuracy": 72.8,
+      "accuracy_ci_95": [
+        68.74,
+        76.52
+      ],
+      "macro_f1": 73.04,
+      "far": 16.03,
+      "far_ci_95": [
+        12.24,
+        20.72
+      ],
+      "frr": 21.13,
+      "frr_ci_95": [
+        16.18,
+        27.1
+      ],
+      "supported_recall": 72.77,
+      "refutation_recall": 68.52,
+      "not_established_recall": 78.4,
+      "ood_recall": 96.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 155,
+          "REFUTED": 45,
+          "NOT_ESTABLISHED": 13
+        },
+        "REFUTED": {
+          "SUPPORTED": 35,
+          "REFUTED": 111,
+          "NOT_ESTABLISHED": 16
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 11,
+          "REFUTED": 16,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED": {
+          "correct": 91,
+          "total": 125,
+          "accuracy": 72.8
+        },
+        "FALSE_PREMISE": {
+          "correct": 87,
+          "total": 125,
+          "accuracy": 69.6
+        },
+        "AMBIGUOUS": {
+          "correct": 50,
+          "total": 75,
+          "accuracy": 66.67
+        },
+        "OOD": {
+          "correct": 48,
+          "total": 50,
+          "accuracy": 96.0
+        },
+        "PARAPHRASE": {
+          "correct": 38,
+          "total": 50,
+          "accuracy": 76.0
+        },
+        "ADVERSARIAL": {
+          "correct": 50,
+          "total": 75,
+          "accuracy": 66.67
+        }
+      }
+    },
+    "b1_candidate": {
+      "total": 500,
+      "correct": 364,
+      "accuracy": 72.8,
+      "accuracy_ci_95": [
+        68.74,
+        76.52
+      ],
+      "macro_f1": 73.0,
+      "far": 17.07,
+      "far_ci_95": [
+        13.16,
+        21.85
+      ],
+      "frr": 19.72,
+      "frr_ci_95": [
+        14.93,
+        25.58
+      ],
+      "supported_recall": 72.77,
+      "refutation_recall": 70.99,
+      "not_established_recall": 75.2,
+      "ood_recall": 92.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 155,
+          "REFUTED": 42,
+          "NOT_ESTABLISHED": 16
+        },
+        "REFUTED": {
+          "SUPPORTED": 36,
+          "REFUTED": 115,
+          "NOT_ESTABLISHED": 11
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 13,
+          "REFUTED": 18,
+          "NOT_ESTABLISHED": 94
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED": {
+          "correct": 92,
+          "total": 125,
+          "accuracy": 73.6
+        },
+        "FALSE_PREMISE": {
+          "correct": 90,
+          "total": 125,
+          "accuracy": 72.0
+        },
+        "AMBIGUOUS": {
+          "correct": 48,
+          "total": 75,
+          "accuracy": 64.0
+        },
+        "OOD": {
+          "correct": 46,
+          "total": 50,
+          "accuracy": 92.0
+        },
+        "PARAPHRASE": {
+          "correct": 38,
+          "total": 50,
+          "accuracy": 76.0
+        },
+        "ADVERSARIAL": {
+          "correct": 50,
+          "total": 75,
+          "accuracy": 66.67
+        }
+      }
+    }
+  },
+  "paired_comparison": {
+    "comparator": "B1 (Candidate) vs B0 (Control)",
+    "n11": 337,
+    "n00": 109,
+    "n10": 27,
+    "n01": 27,
+    "discordant_pairs": 54,
+    "mcnemar_exact_p": 1.0,
+    "accuracy_delta_pp": 0.0,
+    "accuracy_delta_ci_95": [
+      -2.88,
+      2.88
+    ],
+    "discordant_cases": [
+      {
+        "case_id": "EXP33-SUP-0009",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-SUP-0011",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "NOT_ESTABLISHED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-SUP-0018",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-SUP-0019",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-SUP-0030",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-SUP-0032",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-SUP-0034",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-SUP-0038",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-SUP-0040",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "NOT_ESTABLISHED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-SUP-0056",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-SUP-0064",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-SUP-0068",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-SUP-0095",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-SUP-0098",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-SUP-0115",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-FLS-0012",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-FLS-0014",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-FLS-0015",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-FLS-0034",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-FLS-0035",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-FLS-0036",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-FLS-0038",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "NOT_ESTABLISHED",
+        "pred_b0": "REFUTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-FLS-0045",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-FLS-0055",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-FLS-0056",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-FLS-0073",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-FLS-0081",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-FLS-0083",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-FLS-0086",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-FLS-0100",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-AMB-0011",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-AMB-0014",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "NOT_ESTABLISHED",
+        "pred_b0": "REFUTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-AMB-0024",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "NOT_ESTABLISHED",
+        "pred_b0": "REFUTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-AMB-0031",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "NOT_ESTABLISHED",
+        "pred_b0": "REFUTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-AMB-0044",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-AMB-0049",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "NOT_ESTABLISHED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-AMB-0057",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "NOT_ESTABLISHED",
+        "pred_b0": "REFUTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-AMB-0066",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-AMB-0067",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-AMB-0070",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-AMB-0071",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-AMB-0075",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-OOD-0035",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-OOD-0043",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "NOT_ESTABLISHED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-PAR-0002",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-PAR-0006",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-PAR-0027",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-PAR-0047",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "pred_b1": "NOT_ESTABLISHED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-ADV-0015",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-ADV-0046",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "pred_b1": "SUPPORTED",
+        "pred_b0": "REFUTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-ADV-0050",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-ADV-0068",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      },
+      {
+        "case_id": "EXP33-ADV-0071",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "pred_b1": "NOT_ESTABLISHED",
+        "pred_b0": "REFUTED",
+        "type": "B1_WRONG_B0_CORRECT"
+      },
+      {
+        "case_id": "EXP33-ADV-0075",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "pred_b1": "REFUTED",
+        "pred_b0": "SUPPORTED",
+        "type": "B1_CORRECT_B0_WRONG"
+      }
+    ]
+  },
+  "blind_ood_analysis": {
+    "b0": {
+      "total_ood": 50,
+      "correct": 48,
+      "accuracy": 96.0,
+      "false_acceptances": 0,
+      "false_refutations": 2,
+      "false_abstentions": 0
+    },
+    "b1": {
+      "total_ood": 50,
+      "correct": 46,
+      "accuracy": 92.0,
+      "false_acceptances": 0,
+      "false_refutations": 4,
+      "false_abstentions": 0
+    }
+  },
+  "efficiency": {
+    "chunks_retrieved_pre_gate": 5,
+    "gated_queries_count": 458,
+    "gated_queries_pct": 91.6,
+    "total_chunks_removed": 1209,
+    "chunks_removed_mean": 2.42,
+    "b1_context_tokens": {
+      "mean": 149.6,
+      "median": 132.0,
+      "p95": 292.0
+    },
+    "b1_a4_latency_ms": {
+      "mean": 1634.8,
+      "median": 1785.2,
+      "p95": 3441.2
+    },
+    "b1_total_latency_ms": {
+      "mean": 3850.4,
+      "median": 3989.8,
+      "p95": 5599.6
+    },
+    "b0_latency_ms": {
+      "mean": 23.2,
+      "median": 14.7,
+      "p95": 27.9
+    }
+  },
+  "scientific_outcome": {
+    "category": "B",
+    "description": "Candidate is statistically indistinguishable from control on blind validation.",
+    "b0_accuracy": 72.8,
+    "b1_accuracy": 72.8,
+    "delta_pp": 0.0,
+    "delta_ci_95": [
+      -2.88,
+      2.88
+    ],
+    "mcnemar_exact_p": 1.0
+  }
+}
