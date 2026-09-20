@@ -385,8 +385,12 @@ class BGEQdrantPipeline(ResearchRetriever):
                     "retrieval_method": "bge_m3_hybrid_rrf"
                 })
 
+            hybrid_latency_ms = (time.time() - start_time) * 1000.0
+            pylate_latency_ms = 0.0
+
             # 4. Optional PyLate Late-Interaction Reranking
             if mode == MODE_HYBRID_THEN_LATE_INTERACTION and candidates:
+                pylate_start = time.time()
                 pylate_model = self._load_pylate_model()
                 cand_texts = [c["hit"].payload["content"] for c in candidates]
                 
@@ -412,6 +416,10 @@ class BGEQdrantPipeline(ResearchRetriever):
                     ranked_colbert.append(cand)
 
                 candidates = ranked_colbert[:late_interaction_limit]
+                pylate_latency_ms = (time.time() - pylate_start) * 1000.0
+        else:
+            hybrid_latency_ms = (time.time() - start_time) * 1000.0
+            pylate_latency_ms = 0.0
 
         # Format output as canonical RetrievalResult
         final_k = top_k if top_k is not None else len(candidates)
@@ -462,6 +470,8 @@ class BGEQdrantPipeline(ResearchRetriever):
                 "storage_location": self.storage_location,
                 "embedding_model": self.embedding_model_name,
                 "colbert_model": self.colbert_model_name if mode == MODE_HYBRID_THEN_LATE_INTERACTION else None,
+                "hybrid_latency_ms": round(hybrid_latency_ms, 2) if mode in (MODE_HYBRID_RRF, MODE_HYBRID_THEN_LATE_INTERACTION) else None,
+                "pylate_latency_ms": round(pylate_latency_ms, 2) if mode == MODE_HYBRID_THEN_LATE_INTERACTION else None,
                 "candidate_pool_contract": {
                     "dense_k": dense_limit,
                     "sparse_k": sparse_limit,
