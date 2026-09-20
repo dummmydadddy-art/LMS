@@ -26,6 +26,22 @@ try:
 except ImportError:
     TORCH_AVAILABLE = False
 
+# Safe Windows runtime DLL initialization
+try:
+    import transformers
+except ImportError:
+    pass
+
+try:
+    import qdrant_client
+except ImportError:
+    pass
+
+try:
+    import pylate
+except ImportError:
+    pass
+
 
 class BGEFlagAdapter(ResearchRetriever):
     """

@@ -27,7 +27,7 @@ class TestWave2LargeContext(unittest.TestCase):
             synthetic_contexts.append({"id": pid, "content": content})
 
         # 1. Neural mode without installation: must fail cleanly without simulation
-        neural_adapter = LLMLinguaAdapter({"mode": "LLMLingua-2", "target_rate": 0.50})
+        neural_adapter = LLMLinguaAdapter({"mode": "LLMLingua-2", "target_rate": 0.50, "model_name": "microsoft/llmlingua-2-uninstalled"})
         self.assertEqual(neural_adapter.health()["status"], "NOT_READY")
         self.assertFalse(neural_adapter.health()["simulation"])
         with self.assertRaises(RuntimeError) as ctx:

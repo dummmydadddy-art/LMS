@@ -11,7 +11,7 @@ from research.context_processing import LLMLinguaAdapter
 class TestWave2LLMLingua(unittest.TestCase):
 
     def setUp(self):
-        self.adapter = LLMLinguaAdapter({"mode": "LLMLingua-2", "target_rate": 0.50})
+        self.adapter = LLMLinguaAdapter({"mode": "LLMLingua-2", "target_rate": 0.50, "model_name": "microsoft/llmlingua-2-uninstalled"})
         self.contexts = [
             {
                 "id": "PARENT_ea1f3b17_24_00",

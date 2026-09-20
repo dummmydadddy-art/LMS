@@ -16,6 +16,13 @@ from research.retrieval_adapters.llamaindex_adapter import LlamaIndexAdapter
 from research.retrieval_adapters.haystack_hierarchy_adapter import HaystackHierarchyAdapter
 from research.retrieval_adapters.crag_adapter import CRAGAdapter
 from research.retrieval_adapters.lightrag_adapter import LightRAGAdapter
+from research.retrieval_adapters.bge_qdrant_pipeline import (
+    BGEQdrantPipeline,
+    MODE_DENSE,
+    MODE_SPARSE,
+    MODE_HYBRID_RRF,
+    MODE_HYBRID_THEN_LATE_INTERACTION
+)
 
 ADAPTER_REGISTRY = {
     "exp0040": EXP0040BaselineAdapter,
@@ -23,6 +30,7 @@ ADAPTER_REGISTRY = {
     "bge_flag": BGEFlagAdapter,
     "flagembedding": BGEFlagAdapter,
     "qdrant": QdrantAdapter,
+    "bge_qdrant": BGEQdrantPipeline,
     "pylate": PyLateAdapter,
     "llamaindex": LlamaIndexAdapter,
     "haystack": HaystackHierarchyAdapter,
@@ -90,6 +98,11 @@ __all__ = [
     "EXP0040BaselineAdapter",
     "BGEFlagAdapter",
     "QdrantAdapter",
+    "BGEQdrantPipeline",
+    "MODE_DENSE",
+    "MODE_SPARSE",
+    "MODE_HYBRID_RRF",
+    "MODE_HYBRID_THEN_LATE_INTERACTION",
     "PyLateAdapter",
     "LlamaIndexAdapter",
     "HaystackHierarchyAdapter",

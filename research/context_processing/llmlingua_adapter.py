@@ -48,9 +48,11 @@ class LLMLinguaAdapter:
                 f"LLMLingua model '{self.model_name}' is not installed in local cache. Simulation is disabled."
             )
         if self._compressor is None:
+            is_llmlingua2 = "llmlingua-2" in self.model_name.lower() or self.mode == "LLMLingua-2"
             self._compressor = PromptCompressor(
                 model_name=self.model_name,
-                device_map=self.device
+                device_map=self.device,
+                use_llmlingua2=is_llmlingua2
             )
         return self._compressor
 
@@ -106,11 +108,20 @@ class LLMLinguaAdapter:
         )
 
         latency = (time.time() - start_t) * 1000.0
+        raw_ratio = comp_res.get("ratio", 1.0)
+        if isinstance(raw_ratio, str):
+            try:
+                ratio_float = float(raw_ratio.replace("x", "").strip())
+            except ValueError:
+                ratio_float = 1.0
+        else:
+            ratio_float = float(raw_ratio)
+
         return {
             "compressed_context": comp_res.get("compressed_prompt", ""),
             "original_token_count": comp_res.get("origin_tokens", 0),
             "compressed_token_count": comp_res.get("compressed_tokens", 0),
-            "compression_ratio": round(comp_res.get("ratio", 1.0), 4),
+            "compression_ratio": round(ratio_float, 4),
             "preserved_context_ids": preserved_ids,
             "latency_ms": round(latency, 2),
             "mode": self.mode,

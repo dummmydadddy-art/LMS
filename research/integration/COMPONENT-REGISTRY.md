@@ -77,6 +77,17 @@
 * **Interface:** `ResearchRetriever`
 * **Status:** `READY`
 
+### 1.9 BGE-M3 + Qdrant Pipeline
+* **Component ID:** `bge_qdrant_pipeline`
+* **Upstream Repositories:** `FlagOpen/FlagEmbedding` & `qdrant/qdrant` & `lightonai/pylate`
+* **Adapter File:** `research/retrieval_adapters/bge_qdrant_pipeline.py`
+* **Role:** End-to-end dual-vector indexing and retrieval supporting dense, sparse lexical weights, RRF hybrid, and PyLate ColBERT late-interaction cascade.
+* **Modes:** `MODE_DENSE`, `MODE_SPARSE`, `MODE_HYBRID_RRF`, `MODE_HYBRID_THEN_LATE_INTERACTION`
+* **Candidate Pool Contract:** Configurable `dense_k`, `sparse_k`, `hybrid_k`, `late_interaction_k`
+* **Storage Isolation:** `research/data/qdrant/`, `research/data/bge_m3_dense/`, `research/data/bge_m3_sparse/`, `research/data/bge_m3_hybrid/`, `research/data/pylate/`
+* **Interface:** `ResearchRetriever`
+* **Status:** `READY`
+
 ---
 
 ## 2. Document Navigation & Ingestion Components
@@ -142,7 +153,7 @@
 * **Upstream Repository:** `ggml-org/llama.cpp`
 * **Adapter File:** `research/local_inference/llama_cpp_adapter.py`
 * **Role:** GGUF quantized model execution with GPU layer offloading bounded to 4 GB VRAM.
-* **Status:** `NOT_READY` (llama-cpp-python / llama-cli binary not in PATH)
+* **Status:** `NOT_READY` (`llama-cli.exe` installed, but local GGUF model `qwen2.5-0.5b-instruct-q4_k_m.gguf` is corrupted/incomplete with out-of-bounds tensor data)
 
 ### 3.3 Gemma 3n Adapter
 * **Component ID:** `gemma3n_backend`
@@ -167,7 +178,7 @@
 * **Upstream Repository:** `microsoft/LLMLingua`
 * **Adapter File:** `research/context_processing/llmlingua_adapter.py`
 * **Role:** Prompt and context token pruning prior to verifier evaluation.
-* **Status:** `READY_WITH_LIMITATIONS` (package installed; model weights require download/caching)
+* **Status:** `READY` (verified real prompt compression with cached `microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank`)
 
 ### 4.2 Fusion Layer
 * **Component ID:** `fusion_layer`

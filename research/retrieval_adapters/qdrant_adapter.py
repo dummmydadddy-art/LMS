@@ -33,6 +33,7 @@ except ImportError:
 class QdrantAdapter(ResearchRetriever):
     """
     Research adapter providing Qdrant vector database capabilities.
+    Supports baseline MiniLM dense search as well as BGE-M3 dual-vector and PyLate cascade.
     """
 
     def __init__(self, config: Optional[Dict[str, Any]] = None):
@@ -43,11 +44,25 @@ class QdrantAdapter(ResearchRetriever):
         self.distance = self.config.get("distance", "Cosine")
         self.use_hybrid = self.config.get("use_hybrid", True)
         self.rrf_k = self.config.get("rrf_k", 60)
+        self.mode = self.config.get("mode", "dense")
+
+        # Candidate pool contract
+        self.dense_k = int(self.config.get("dense_k", 20))
+        self.sparse_k = int(self.config.get("sparse_k", 20))
+        self.hybrid_k = int(self.config.get("hybrid_k", 10))
+        self.late_interaction_k = int(self.config.get("late_interaction_k", 5))
 
         self._client: Optional[QdrantClient] = None
         self._baseline_adapter = EXP0040BaselineAdapter(config)
         self._index_manifest: Optional[Dict[str, Any]] = None
         self._initialized = False
+
+        # If configured for BGE-M3 or dual-vector modes, delegate to BGEQdrantPipeline
+        self._bge_pipeline = None
+        bge_modes = ("MODE_DENSE", "MODE_SPARSE", "MODE_HYBRID_RRF", "MODE_HYBRID_THEN_LATE_INTERACTION")
+        if self.mode in bge_modes or self.config.get("embedding_model") == "BAAI/bge-m3":
+            from research.retrieval_adapters.bge_qdrant_pipeline import BGEQdrantPipeline
+            self._bge_pipeline = BGEQdrantPipeline(self.config)
 
     def initialize(self):
         if self._initialized:
@@ -180,6 +195,9 @@ class QdrantAdapter(ResearchRetriever):
         return meta["results"]
 
     def retrieve_with_metadata(self, query: str, top_k: int = 5, **kwargs) -> Dict[str, Any]:
+        if self._bge_pipeline is not None:
+            return self._bge_pipeline.retrieve_with_metadata(query, top_k, **kwargs)
+
         self.initialize()
         start_time = time.time()
 
@@ -283,6 +301,7 @@ class QdrantAdapter(ResearchRetriever):
         info = self._client.get_collection(self.collection_name)
         return {
             "status": "ok",
+            "ready_status": "READY" if QDRANT_AVAILABLE else "NOT_READY",
             "adapter": "QdrantAdapter",
             "qdrant_available": QDRANT_AVAILABLE,
             "collection_name": self.collection_name,

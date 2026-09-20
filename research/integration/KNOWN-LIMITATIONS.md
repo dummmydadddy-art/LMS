@@ -27,14 +27,14 @@
 
 ### 2.1 Native Rust / C++ Compilation
 * **Docling Rust (`docling.rs`):** The native Rust binary `docling.rs` requires a complete Rust toolchain (`cargo`, `rustc`) with Microsoft Visual C++ (MSVC) build tools. In the current Windows environment, the binary is not compiled. The adapter strictly reports `NOT_READY` and does not invent fake outputs.
-* **llama.cpp Binary (`llama-cli`):** Neither `llama-cpp-python` nor prebuilt `llama-cli.exe` is currently on the system `PATH`. The adapter reports `NOT_READY`.
+* **llama.cpp Binary (`llama-cli`):** `llama-cli.exe` 0.4.1-dev is installed on the system `PATH`. However, the local GGUF model file in `research/model_cache/qwen2.5-0.5b-instruct-q4_k_m.gguf` is incomplete/corrupted (17 MB; tensor 'output.weight' out-of-bounds error on load). The adapter reports `NOT_READY` with this exact failure reason.
 * **BitNet Engine (`bitnet.cpp`):** The C++ runtime for 1-bit / 1.58-bit ternary quantization is not compiled on this machine. The adapter reports `NOT_READY`.
 
 ---
 
-## 3. Missing Python Packages & Models
+## 3. Package & Model Statuses
 
-Per the strict **No Simulations Policy**, missing packages are reported as `NOT_READY` rather than simulated:
+Per the strict **No Simulations Policy**, missing packages and models are reported honestly:
 
 1. **RAGLite (`raglite`):**
    * Package not installed in `py -3.12`.
@@ -48,10 +48,15 @@ Per the strict **No Simulations Policy**, missing packages are reported as `NOT_
    * Python client not installed; local Neo4j database service offline.
    * Status: `NOT_READY`.
    * Reversible by installing `neo4j` and running a local Neo4j Docker container or service.
-4. **Gemma 3n (`google/gemma-3n-E2B-it`):**
+4. **LLMLingua (`microsoft/LLMLingua`):**
+   * `llmlingua` 0.2.2 installed. Model `microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank` is cached locally.
+   * Status: `READY`. Real prompt compression verified (29 tokens -> 15 tokens, 1.9x ratio).
+5. **Marker (`marker-pdf`) & Surya (`surya-ocr`):**
+   * Packages installed (`marker-pdf` 2.0.0, `surya-ocr` 0.22.1).
+   * Status: `READY_WITH_LIMITATIONS` (model weights require download on first invocation).
+6. **Gemma 3n (`google/gemma-3n-E2B-it`):**
    * Model is gated on Hugging Face. Requires Hugging Face user authentication and license acceptance.
    * Status: `NOT_READY`.
-   * Heuristic keyword routing fallback is available in `Gemma3nAdapter` and explicitly labeled `heuristic_fallback`.
 
 ---
 
