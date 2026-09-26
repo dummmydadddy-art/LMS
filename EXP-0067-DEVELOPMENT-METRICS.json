@@ -1,0 +1,422 @@
+{
+  "conditions": {
+    "C0": {
+      "total_cases": 400,
+      "correct": 368,
+      "accuracy_pct": 92.0,
+      "macro_f1": 0.9267,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 131,
+          "REFUTED": 19,
+          "NOT_ESTABLISHED": 0,
+          "PARSE_FAILURE": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 9,
+          "REFUTED": 139,
+          "NOT_ESTABLISHED": 2,
+          "PARSE_FAILURE": 0
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98,
+          "PARSE_FAILURE": 0
+        }
+      },
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": 85.0,
+        "NOVEL_FALSE_PREMISE": 94.0,
+        "OUT_OF_CURRICULUM_UNKNOWN": 98.0,
+        "LEGITIMATE_NEGATION": 92.0,
+        "MIXED_COMPOUND_PREMISE": 90.0
+      },
+      "false_acceptance_count": 9,
+      "false_rejection_count": 19,
+      "refuted_abstention_count": 2,
+      "supported_abstention_count": 0,
+      "ood_false_acceptances": 1,
+      "ood_false_refutations": 1,
+      "supported_recall_pct": 87.33,
+      "refutation_recall_pct": 92.67,
+      "ood_recall_pct": 98.0,
+      "far_pct": 6.0,
+      "frr_pct": 12.67,
+      "mean_latency_ms": 1196.4
+    },
+    "C1": {
+      "total_cases": 400,
+      "correct": 274,
+      "accuracy_pct": 68.5,
+      "macro_f1": 0.676,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 59,
+          "REFUTED": 15,
+          "NOT_ESTABLISHED": 76,
+          "PARSE_FAILURE": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 0,
+          "REFUTED": 116,
+          "NOT_ESTABLISHED": 34,
+          "PARSE_FAILURE": 0
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 0,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 99,
+          "PARSE_FAILURE": 0
+        }
+      },
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": 34.0,
+        "NOVEL_FALSE_PREMISE": 79.0,
+        "OUT_OF_CURRICULUM_UNKNOWN": 99.0,
+        "LEGITIMATE_NEGATION": 50.0,
+        "MIXED_COMPOUND_PREMISE": 74.0
+      },
+      "false_acceptance_count": 0,
+      "false_rejection_count": 15,
+      "refuted_abstention_count": 34,
+      "supported_abstention_count": 76,
+      "ood_false_acceptances": 0,
+      "ood_false_refutations": 1,
+      "supported_recall_pct": 39.33,
+      "refutation_recall_pct": 77.33,
+      "ood_recall_pct": 99.0,
+      "far_pct": 0.0,
+      "frr_pct": 10.0,
+      "mean_latency_ms": 1913.6
+    },
+    "C2": {
+      "total_cases": 400,
+      "correct": 312,
+      "accuracy_pct": 78.0,
+      "macro_f1": 0.7742,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 78,
+          "REFUTED": 46,
+          "NOT_ESTABLISHED": 26,
+          "PARSE_FAILURE": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 0,
+          "REFUTED": 135,
+          "NOT_ESTABLISHED": 15,
+          "PARSE_FAILURE": 0
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 0,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 99,
+          "PARSE_FAILURE": 0
+        }
+      },
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": 35.0,
+        "NOVEL_FALSE_PREMISE": 90.0,
+        "OUT_OF_CURRICULUM_UNKNOWN": 99.0,
+        "LEGITIMATE_NEGATION": 86.0,
+        "MIXED_COMPOUND_PREMISE": 90.0
+      },
+      "false_acceptance_count": 0,
+      "false_rejection_count": 46,
+      "refuted_abstention_count": 15,
+      "supported_abstention_count": 26,
+      "ood_false_acceptances": 0,
+      "ood_false_refutations": 1,
+      "supported_recall_pct": 52.0,
+      "refutation_recall_pct": 90.0,
+      "ood_recall_pct": 99.0,
+      "far_pct": 0.0,
+      "frr_pct": 30.67,
+      "mean_latency_ms": 1597.5
+    },
+    "C3": {
+      "total_cases": 400,
+      "correct": 300,
+      "accuracy_pct": 75.0,
+      "macro_f1": 0.7463,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 81,
+          "REFUTED": 17,
+          "NOT_ESTABLISHED": 52,
+          "PARSE_FAILURE": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 1,
+          "REFUTED": 120,
+          "NOT_ESTABLISHED": 29,
+          "PARSE_FAILURE": 0
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 0,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 99,
+          "PARSE_FAILURE": 0
+        }
+      },
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": 54.0,
+        "NOVEL_FALSE_PREMISE": 83.0,
+        "OUT_OF_CURRICULUM_UNKNOWN": 99.0,
+        "LEGITIMATE_NEGATION": 54.0,
+        "MIXED_COMPOUND_PREMISE": 74.0
+      },
+      "false_acceptance_count": 1,
+      "false_rejection_count": 17,
+      "refuted_abstention_count": 29,
+      "supported_abstention_count": 52,
+      "ood_false_acceptances": 0,
+      "ood_false_refutations": 1,
+      "supported_recall_pct": 54.0,
+      "refutation_recall_pct": 80.0,
+      "ood_recall_pct": 99.0,
+      "far_pct": 0.67,
+      "frr_pct": 11.33,
+      "mean_latency_ms": 1775.9
+    },
+    "C4": {
+      "total_cases": 400,
+      "correct": 323,
+      "accuracy_pct": 80.75,
+      "macro_f1": 0.8132,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 82,
+          "REFUTED": 61,
+          "NOT_ESTABLISHED": 7,
+          "PARSE_FAILURE": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 3,
+          "REFUTED": 144,
+          "NOT_ESTABLISHED": 3,
+          "PARSE_FAILURE": 0
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 0,
+          "REFUTED": 3,
+          "NOT_ESTABLISHED": 97,
+          "PARSE_FAILURE": 0
+        }
+      },
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": 38.0,
+        "NOVEL_FALSE_PREMISE": 96.0,
+        "OUT_OF_CURRICULUM_UNKNOWN": 97.0,
+        "LEGITIMATE_NEGATION": 88.0,
+        "MIXED_COMPOUND_PREMISE": 96.0
+      },
+      "false_acceptance_count": 3,
+      "false_rejection_count": 61,
+      "refuted_abstention_count": 3,
+      "supported_abstention_count": 7,
+      "ood_false_acceptances": 0,
+      "ood_false_refutations": 3,
+      "supported_recall_pct": 54.67,
+      "refutation_recall_pct": 96.0,
+      "ood_recall_pct": 97.0,
+      "far_pct": 2.0,
+      "frr_pct": 40.67,
+      "mean_latency_ms": 1152.2
+    }
+  },
+  "transitions_vs_c0": {
+    "C1": {
+      "b_fixed": 2,
+      "c_broken": 96,
+      "net_gain": -94,
+      "mcnemar_p_value": 0.0,
+      "statistically_significant": true,
+      "accuracy_delta_pp": -23.5,
+      "transitions_sample": {
+        "SUPPORTED: C0(SUPPORTED) -> C1(NOT_ESTABLISHED)": 69,
+        "REFUTED: C0(REFUTED) -> C1(NOT_ESTABLISHED)": 24,
+        "REFUTED: C0(SUPPORTED) -> C1(NOT_ESTABLISHED)": 8,
+        "SUPPORTED: C0(REFUTED) -> C1(NOT_ESTABLISHED)": 7,
+        "SUPPORTED: C0(SUPPORTED) -> C1(REFUTED)": 3,
+        "NOT_ESTABLISHED: C0(SUPPORTED) -> C1(NOT_ESTABLISHED)": 1,
+        "REFUTED: C0(SUPPORTED) -> C1(REFUTED)": 1
+      }
+    },
+    "C2": {
+      "b_fixed": 10,
+      "c_broken": 66,
+      "net_gain": -56,
+      "mcnemar_p_value": 0.0,
+      "statistically_significant": true,
+      "accuracy_delta_pp": -14.0,
+      "transitions_sample": {
+        "SUPPORTED: C0(SUPPORTED) -> C2(REFUTED)": 29,
+        "SUPPORTED: C0(SUPPORTED) -> C2(NOT_ESTABLISHED)": 26,
+        "REFUTED: C0(REFUTED) -> C2(NOT_ESTABLISHED)": 11,
+        "REFUTED: C0(SUPPORTED) -> C2(REFUTED)": 6,
+        "REFUTED: C0(SUPPORTED) -> C2(NOT_ESTABLISHED)": 3,
+        "SUPPORTED: C0(REFUTED) -> C2(SUPPORTED)": 2,
+        "NOT_ESTABLISHED: C0(SUPPORTED) -> C2(NOT_ESTABLISHED)": 1,
+        "REFUTED: C0(NOT_ESTABLISHED) -> C2(REFUTED)": 1
+      }
+    },
+    "C3": {
+      "b_fixed": 2,
+      "c_broken": 70,
+      "net_gain": -68,
+      "mcnemar_p_value": 0.0,
+      "statistically_significant": true,
+      "accuracy_delta_pp": -17.0,
+      "transitions_sample": {
+        "SUPPORTED: C0(SUPPORTED) -> C3(NOT_ESTABLISHED)": 45,
+        "REFUTED: C0(REFUTED) -> C3(NOT_ESTABLISHED)": 20,
+        "SUPPORTED: C0(REFUTED) -> C3(NOT_ESTABLISHED)": 7,
+        "REFUTED: C0(SUPPORTED) -> C3(NOT_ESTABLISHED)": 7,
+        "SUPPORTED: C0(SUPPORTED) -> C3(REFUTED)": 5,
+        "NOT_ESTABLISHED: C0(SUPPORTED) -> C3(NOT_ESTABLISHED)": 1,
+        "REFUTED: C0(SUPPORTED) -> C3(REFUTED)": 1
+      }
+    },
+    "C4": {
+      "b_fixed": 9,
+      "c_broken": 54,
+      "net_gain": -45,
+      "mcnemar_p_value": 0.0,
+      "statistically_significant": true,
+      "accuracy_delta_pp": -11.25,
+      "transitions_sample": {
+        "SUPPORTED: C0(SUPPORTED) -> C4(REFUTED)": 44,
+        "SUPPORTED: C0(SUPPORTED) -> C4(NOT_ESTABLISHED)": 6,
+        "REFUTED: C0(SUPPORTED) -> C4(REFUTED)": 6,
+        "REFUTED: C0(REFUTED) -> C4(NOT_ESTABLISHED)": 2,
+        "REFUTED: C0(NOT_ESTABLISHED) -> C4(REFUTED)": 2,
+        "SUPPORTED: C0(REFUTED) -> C4(SUPPORTED)": 1,
+        "SUPPORTED: C0(REFUTED) -> C4(NOT_ESTABLISHED)": 1,
+        "REFUTED: C0(REFUTED) -> C4(SUPPORTED)": 1,
+        "NOT_ESTABLISHED: C0(SUPPORTED) -> C4(REFUTED)": 1,
+        "NOT_ESTABLISHED: C0(NOT_ESTABLISHED) -> C4(REFUTED)": 1,
+        "REFUTED: C0(SUPPORTED) -> C4(NOT_ESTABLISHED)": 1
+      }
+    }
+  },
+  "gates_evaluation": {
+    "C1": {
+      "Gate_A_False_Acceptance_Reduction": {
+        "passed": true,
+        "c0_fa": 9,
+        "cand_fa": 0,
+        "reduction": 9
+      },
+      "Gate_B_Supported_Recall_Preservation": {
+        "passed": false,
+        "c0_sup_rec": 87.33,
+        "cand_sup_rec": 39.33,
+        "drop_pp": 48.0
+      },
+      "Gate_C_OOD_Safety_Preservation": {
+        "passed": true,
+        "cand_ood_rec": 99.0
+      },
+      "Gate_D_Overall_Non_Inferiority": {
+        "passed": false,
+        "accuracy_delta_pp": -23.5,
+        "mcnemar_p": 0.0
+      },
+      "Gate_E_Non_Shortcut_Generalization": {
+        "passed": false,
+        "s2_gain_pp": -22.84,
+        "s6_gain_pp": -16.0
+      },
+      "CLEARED_ALL_GATES": false
+    },
+    "C2": {
+      "Gate_A_False_Acceptance_Reduction": {
+        "passed": true,
+        "c0_fa": 9,
+        "cand_fa": 0,
+        "reduction": 9
+      },
+      "Gate_B_Supported_Recall_Preservation": {
+        "passed": false,
+        "c0_sup_rec": 87.33,
+        "cand_sup_rec": 52.0,
+        "drop_pp": 35.33
+      },
+      "Gate_C_OOD_Safety_Preservation": {
+        "passed": true,
+        "cand_ood_rec": 99.0
+      },
+      "Gate_D_Overall_Non_Inferiority": {
+        "passed": false,
+        "accuracy_delta_pp": -14.0,
+        "mcnemar_p": 0.0
+      },
+      "Gate_E_Non_Shortcut_Generalization": {
+        "passed": true,
+        "s2_gain_pp": -14.88,
+        "s6_gain_pp": 0.0
+      },
+      "CLEARED_ALL_GATES": false
+    },
+    "C3": {
+      "Gate_A_False_Acceptance_Reduction": {
+        "passed": true,
+        "c0_fa": 9,
+        "cand_fa": 1,
+        "reduction": 8
+      },
+      "Gate_B_Supported_Recall_Preservation": {
+        "passed": false,
+        "c0_sup_rec": 87.33,
+        "cand_sup_rec": 54.0,
+        "drop_pp": 33.33
+      },
+      "Gate_C_OOD_Safety_Preservation": {
+        "passed": true,
+        "cand_ood_rec": 99.0
+      },
+      "Gate_D_Overall_Non_Inferiority": {
+        "passed": false,
+        "accuracy_delta_pp": -17.0,
+        "mcnemar_p": 0.0
+      },
+      "Gate_E_Non_Shortcut_Generalization": {
+        "passed": false,
+        "s2_gain_pp": -16.27,
+        "s6_gain_pp": -16.0
+      },
+      "CLEARED_ALL_GATES": false
+    },
+    "C4": {
+      "Gate_A_False_Acceptance_Reduction": {
+        "passed": true,
+        "c0_fa": 9,
+        "cand_fa": 3,
+        "reduction": 6
+      },
+      "Gate_B_Supported_Recall_Preservation": {
+        "passed": false,
+        "c0_sup_rec": 87.33,
+        "cand_sup_rec": 54.67,
+        "drop_pp": 32.66
+      },
+      "Gate_C_OOD_Safety_Preservation": {
+        "passed": true,
+        "cand_ood_rec": 97.0
+      },
+      "Gate_D_Overall_Non_Inferiority": {
+        "passed": false,
+        "accuracy_delta_pp": -11.25,
+        "mcnemar_p": 0.0
+      },
+      "Gate_E_Non_Shortcut_Generalization": {
+        "passed": true,
+        "s2_gain_pp": -13.84,
+        "s6_gain_pp": 6.0
+      },
+      "CLEARED_ALL_GATES": false
+    }
+  }
+}
