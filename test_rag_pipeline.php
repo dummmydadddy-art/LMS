@@ -579,6 +579,38 @@ try {
     recordTest("Test 21: Dynamic In-Quiz Remedial Explanations & Post-Submission Breakdown", false, $e->getMessage());
 }
 
+// --- TEST 22: Self-Healing Knowledge Gap Curricula & AI Resource Recommendations ---
+try {
+    // 1. Fetch recommendations for a specific knowledge gap topic
+    $topic = 'React Hooks & useEffect Memory Leaks';
+    $recsResult = RagService::getRemedialResourceRecommendations($topic);
+
+    $isSuccess = ($recsResult['success'] === true);
+    $hasTopic = ($recsResult['topic'] === $topic);
+    $recs = $recsResult['recommendations'] ?? [];
+    $hasRecs = (count($recs) >= 1);
+
+    $firstRec = $recs[0] ?? [];
+    $hasTitle = !empty($firstRec['title']);
+    $hasSection = !empty($firstRec['section']);
+    $hasTakeaway = !empty($firstRec['key_takeaway']);
+    $hasMinutes = ($firstRec['estimated_minutes'] > 0);
+    $hasSimilarity = ($firstRec['similarity'] > 0.0);
+
+    // 2. Also test another topic to verify topic routing
+    $cssRecs = RagService::getRemedialResourceRecommendations('CSS Flexbox alignment and one-dimensional axes');
+    $hasCssRecs = !empty($cssRecs['recommendations']) && (stripos($cssRecs['recommendations'][0]['title'] ?? '', 'css') !== false || stripos($cssRecs['recommendations'][0]['title'] ?? '', 'layout') !== false || stripos($cssRecs['recommendations'][0]['key_takeaway'] ?? '', 'flex') !== false);
+
+    $test22Passed = $isSuccess && $hasTopic && $hasRecs && $hasTitle && $hasSection && $hasTakeaway && $hasMinutes && $hasSimilarity && $hasCssRecs;
+    recordTest(
+        "Test 22: Self-Healing Knowledge Gap Curricula & AI Resource Recommendations",
+        $test22Passed,
+        "Retrieved " . count($recs) . " targeted resources for '{$topic}' (Top: '{$firstRec['title']}', {$firstRec['section']}, ~{$firstRec['estimated_minutes']}m read)."
+    );
+} catch (Exception $e) {
+    recordTest("Test 22: Self-Healing Knowledge Gap Curricula & AI Resource Recommendations", false, $e->getMessage());
+}
+
 echo "\n========================================================\n";
 $total = count($results);
 $passedCount = count(array_filter($results, fn($r) => $r['status'] === 'PASS'));

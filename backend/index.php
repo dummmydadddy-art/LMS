@@ -1415,6 +1415,11 @@ try {
                     );
                 }
 
+                // Fetch remedial recommendations for reinforcement
+                $topicForRecs = $exam['title'] ?? 'Full Stack Development';
+                $recResult = RagService::getRemedialResourceRecommendations($topicForRecs, $exam['course_id'] ?? null, $exam['batch_id'] ?? null);
+                $recommendations = $recResult['recommendations'] ?? [];
+
                 echo json_encode([
                     'success' => $res['success'],
                     'score' => $totalScore,
@@ -1422,6 +1427,7 @@ try {
                     'percentage' => $pct,
                     'breakdown' => $breakdown,
                     'guidance' => $guidance,
+                    'recommendations' => $recommendations,
                     'error' => $res['error']
                 ]);
             } else {
@@ -2680,6 +2686,22 @@ try {
 
             $masteryData = RagService::getStudentMasteryJourney($studentId, $courseId, $batchId);
             echo json_encode($masteryData);
+            break;
+
+        // Remedial Resource Recommendations for Knowledge Gaps
+        case ($route === '/api/rag/remedial/resources' && in_array($method, ['GET', 'POST'])):
+            $user = verifyTokenOrApiKey();
+            $topic = trim($input['topic'] ?? $_GET['topic'] ?? '');
+            if (empty($topic)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'topic parameter is required']);
+                break;
+            }
+            $courseId = $input['course_id'] ?? $_GET['course_id'] ?? null;
+            $batchId = $input['batch_id'] ?? $_GET['batch_id'] ?? null;
+
+            $recs = RagService::getRemedialResourceRecommendations($topic, $courseId, $batchId);
+            echo json_encode($recs);
             break;
 
         // RAG-Grounded Quiz Generator

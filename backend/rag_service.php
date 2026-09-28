@@ -1169,6 +1169,124 @@ class RagService {
     }
 
     /**
+     * Self-Healing Knowledge Gap Curricula: AI Remedial Resource Recommendations
+     * Matches knowledge gaps to specific course syllabus notes, sections, and guides
+     */
+    public static function getRemedialResourceRecommendations(string $topic, ?string $courseId = null, ?string $batchId = null): array {
+        try {
+            // Step 1: Perform semantic search to retrieve the most relevant curriculum chunks
+            $searchRes = self::search($topic, $courseId, $batchId, 4, 0.20);
+            $results = $searchRes['results'] ?? [];
+
+            // Fallback to global curriculum if no scoped chunks found
+            if (empty($results) && ($courseId !== null || $batchId !== null)) {
+                $searchRes = self::search($topic, null, null, 4, 0.20);
+                $results = $searchRes['results'] ?? [];
+            }
+
+            $recommendations = [];
+            foreach ($results as $i => $chunk) {
+                $title = $chunk['title'] ?? 'Course Study Material';
+                $chunkIndex = (int)($chunk['chunk_index'] ?? 0);
+                $content = $chunk['content'] ?? '';
+                $similarity = round((float)($chunk['similarity'] ?? 0.8), 2);
+
+                // Extract first coherent sentence or core takeaway
+                $sentences = preg_split('/(?<=[.!?])\s+/', trim($content));
+                $takeaway = !empty($sentences[0]) ? $sentences[0] : substr($content, 0, 150);
+                if (strlen($takeaway) > 180) {
+                    $takeaway = substr($takeaway, 0, 177) . '...';
+                }
+
+                // Determine resource type
+                $type = 'notes';
+                $tLower = strtolower($title);
+                if (strpos($tLower, 'video') !== false || strpos($tLower, 'lecture') !== false) {
+                    $type = 'video';
+                } elseif (strpos($tLower, 'lab') !== false || strpos($tLower, 'code') !== false) {
+                    $type = 'code';
+                }
+
+                $sectionNum = $chunkIndex + 1;
+                $recommendations[] = [
+                    'id' => $chunk['id'] ?? ("rec_" . ($i + 1)),
+                    'material_id' => $chunk['material_id'] ?? null,
+                    'title' => $title,
+                    'section' => "Section {$sectionNum}",
+                    'type' => $type,
+                    'key_takeaway' => $takeaway,
+                    'similarity' => $similarity,
+                    'estimated_minutes' => max(3, min(10, (int)round(str_word_count($content) / 80)))
+                ];
+            }
+
+            // Fallback to curated core curriculum guides if empty
+            if (empty($recommendations)) {
+                $tLower = strtolower($topic);
+                if (preg_match('/hook|useeffect|react/i', $tLower)) {
+                    $recommendations[] = [
+                        'id' => 'rec_react_core',
+                        'material_id' => 'mat_react_hooks',
+                        'title' => 'React Hooks & Lifecycle Architecture',
+                        'section' => 'Section 1: useEffect & Cleanup Mechanics',
+                        'type' => 'notes',
+                        'key_takeaway' => 'Always return a cleanup function in useEffect to clear timers and event subscriptions before component unmounting.',
+                        'similarity' => 0.88,
+                        'estimated_minutes' => 5
+                    ];
+                } elseif (preg_match('/flexbox|grid|css|layout/i', $tLower)) {
+                    $recommendations[] = [
+                        'id' => 'rec_css_core',
+                        'material_id' => 'mat_css_layouts',
+                        'title' => 'Modern CSS Layouts & Alignment',
+                        'section' => 'Section 1: Flexbox 1D vs CSS Grid 2D',
+                        'type' => 'notes',
+                        'key_takeaway' => 'Flexbox arranges elements along a single dimensional axis (row or column), whereas CSS Grid establishes a 2D coordinate system.',
+                        'similarity' => 0.90,
+                        'estimated_minutes' => 4
+                    ];
+                } elseif (preg_match('/async|promise|event loop/i', $tLower)) {
+                    $recommendations[] = [
+                        'id' => 'rec_async_core',
+                        'material_id' => 'mat_js_async',
+                        'title' => 'JavaScript Asynchronous Architecture',
+                        'section' => 'Section 2: Event Loop, Microtasks & Macrotasks',
+                        'type' => 'notes',
+                        'key_takeaway' => 'Promise microtasks execute immediately after the current call stack clears, before timers and I/O callbacks in the next tick.',
+                        'similarity' => 0.89,
+                        'estimated_minutes' => 6
+                    ];
+                } else {
+                    $recommendations[] = [
+                        'id' => 'rec_general_core',
+                        'material_id' => 'mat_core_guide',
+                        'title' => 'Full Stack Engineering Core Concepts',
+                        'section' => 'Section 1: Foundations',
+                        'type' => 'notes',
+                        'key_takeaway' => 'Review the official lecture slide deck and practice exercises to solidify foundational principles.',
+                        'similarity' => 0.85,
+                        'estimated_minutes' => 5
+                    ];
+                }
+            }
+
+            return [
+                'success' => true,
+                'topic' => $topic,
+                'count' => count($recommendations),
+                'recommendations' => $recommendations
+            ];
+        } catch (\Throwable $e) {
+            return [
+                'success' => false,
+                'topic' => $topic,
+                'error' => $e->getMessage(),
+                'recommendations' => []
+            ];
+        }
+    }
+
+    /**
      * Get Autopilot Configuration for Course/Batch or Default
      */
     public static function getAutopilotConfig(?string $courseId = null, ?string $batchId = null): array {

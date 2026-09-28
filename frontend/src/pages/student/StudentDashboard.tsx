@@ -27,7 +27,8 @@ import {
   Brain,
   CheckCircle2,
   XCircle,
-  X
+  X,
+  ChevronRight
 } from 'lucide-react';
 import StudentMasteryJourney from '../../components/StudentMasteryJourney';
 
@@ -846,6 +847,55 @@ const StudentDashboard: React.FC = () => {
                 </div>
               ))}
             </div>
+
+            {/* Recommended Study Resources */}
+            {examReviewData.recommendations?.length > 0 && (
+              <div className="space-y-3 pt-3 border-t border-slate-800">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                    <BookOpen className="h-3.5 w-3.5 text-primary-400" /> Recommended Syllabus Resources
+                  </h4>
+                  <span className="text-[11px] text-slate-400">Targeted reinforcement</span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {examReviewData.recommendations.map((rec: any, rIdx: number) => (
+                    <div
+                      key={rIdx}
+                      className="p-3 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between text-xs space-y-1.5"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-primary-500/15 text-primary-300 border border-primary-500/30">
+                            {rec.section}
+                          </span>
+                          <span className="text-[10px] text-slate-400 flex items-center gap-1">
+                            <Clock className="h-3 w-3" /> {rec.estimated_minutes}m read
+                          </span>
+                        </div>
+                        <h5 className="font-bold text-slate-200 text-xs mt-1.5 line-clamp-1">{rec.title}</h5>
+                        <p className="text-[11px] text-slate-400 leading-snug line-clamp-2 mt-1">
+                          {rec.key_takeaway}
+                        </p>
+                      </div>
+
+                      <div className="pt-2 border-t border-slate-850 flex items-center justify-between text-[11px] text-primary-400 font-semibold">
+                        <span>Relevance: {Math.round(rec.similarity * 100)}%</span>
+                        <span 
+                          onClick={() => {
+                            setExamReviewData(null);
+                            navigate('/student/courses');
+                          }}
+                          className="flex items-center gap-0.5 hover:underline cursor-pointer"
+                        >
+                          Study Material <ChevronRight className="h-3 w-3" />
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Footer */}
             <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-800">
