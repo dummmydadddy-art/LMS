@@ -6,6 +6,7 @@ require_once __DIR__ . '/backend/db.php';
 require_once __DIR__ . '/backend/rag_service.php';
 require_once __DIR__ . '/backend/rag_safety_boundary.php';
 require_once __DIR__ . '/backend/rag_query_condenser.php';
+require_once __DIR__ . '/backend/rag_premise_verifier.php';
 require_once __DIR__ . '/backend/auth_middleware.php';
 
 $results = [];
@@ -176,7 +177,7 @@ try {
 
 // --- TEST 10: Socratic Tutoring Pedagogical Mode ---
 try {
-    $socRes = RagService::ask("Why does useEffect need a dependency array in React?", null, null, 'Student', 3, 'socratic');
+    $socRes = RagService::ask("How does the useEffect cleanup function prevent memory leaks in React?", null, null, 'Student', 3, 'socratic');
     $isSocratic = !empty($socRes['grounded']) && !empty($socRes['answer']) && ($socRes['mode'] === 'socratic');
     $hasGuidingQuestion = (strpos($socRes['answer'], '?') !== false);
     recordTest("Test 10: Socratic Tutoring Mode (Guided Pedagogy)", ($isSocratic && $hasGuidingQuestion), "Socratic mode active. Model provided grounded hint and ended with guiding question: '{$socRes['answer']}'");
@@ -196,6 +197,64 @@ try {
     recordTest("Test 11: Real-Time SSE Token Streaming", $streamPassed, "SSE events verified (metadata: " . ($hasMetadata ? 'YES' : 'NO') . ", tokens: " . ($hasTokens ? 'YES' : 'NO') . ", done: " . ($hasDone ? 'YES' : 'NO') . ").");
 } catch (Exception $e) {
     recordTest("Test 11: Real-Time SSE Token Streaming", false, $e->getMessage());
+}
+
+// --- TEST 12: Cross-Encoder Precision Candidate Reranker ---
+try {
+    $testCandidates = [
+        [
+            'id' => 'cand_general',
+            'title' => 'Web Development General Overview',
+            'content' => 'JavaScript is a programming language used for web apps.',
+            'similarity' => 0.70
+        ],
+        [
+            'id' => 'cand_exact',
+            'title' => 'React Hooks Tutorial',
+            'content' => 'The useEffect cleanup function cancels subscriptions and prevents memory leaks: return () => { clearInterval(timer); };',
+            'similarity' => 0.72
+        ]
+    ];
+    $reranked = RagService::crossScoreCandidates('useEffect cleanup function memory leaks', $testCandidates);
+    $topCand = $reranked[0] ?? null;
+    $isExactTop = ($topCand && $topCand['id'] === 'cand_exact' && ($topCand['cross_score'] > $testCandidates[1]['similarity']));
+    recordTest("Test 12: Cross-Encoder Precision Candidate Reranking", $isExactTop, "Reranked top passage '{$topCand['title']}' with boosted cross_score {$topCand['cross_score']} (phrase & proximity boost).");
+} catch (Exception $e) {
+    recordTest("Test 12: Cross-Encoder Precision Candidate Reranking", false, $e->getMessage());
+}
+
+// --- TEST 13: False Premise Verification (Antonym & Polarity Guard) ---
+try {
+    $chunks = [
+        [
+            'id' => 'chunk_flex',
+            'title' => 'CSS Flexbox Layout Guide',
+            'chunk_index' => 0,
+            'content' => 'display: flex defines a one-dimensional layout model along either the row or column axis, whereas CSS Grid is two-dimensional.',
+            'similarity' => 0.85
+        ]
+    ];
+    $ver = RagPremiseVerifier::verify("Why is display flex a two-dimensional layout model?", $chunks);
+    $isRefuted = ($ver['status'] === 'REFUTED' && !empty($ver['refutation']));
+    recordTest("Test 13: False Premise Verification (Antonym & Polarity Guard)", $isRefuted, "Refuted false assumption: '{$ver['refutation']}'");
+} catch (Exception $e) {
+    recordTest("Test 13: False Premise Verification (Antonym & Polarity Guard)", false, $e->getMessage());
+}
+
+// --- TEST 14: NLI Claim Fact-Checking & Grounding Verification ---
+try {
+    $sources = [
+        [
+            'title' => 'React Hooks Tutorial',
+            'content' => 'A custom hook is a JavaScript function whose name starts with use and that may call other hooks.'
+        ]
+    ];
+    $goodClaim = "Custom hooks in React are JavaScript functions that start with use.";
+    $checkRes = RagService::verifyAnswerClaims($goodClaim, $sources);
+    $isVerified = !empty($checkRes['verified']) && ($checkRes['grounding_ratio'] >= 0.5);
+    recordTest("Test 14: NLI Claim Fact-Checking & Grounding Verification", $isVerified, "Evaluated answer claims (verified: " . ($isVerified ? 'YES' : 'NO') . ", grounding ratio: {$checkRes['grounding_ratio']}).");
+} catch (Exception $e) {
+    recordTest("Test 14: NLI Claim Fact-Checking & Grounding Verification", false, $e->getMessage());
 }
 
 echo "\n========================================================\n";

@@ -97,6 +97,9 @@ Student Question
 ### Key Features
 * **Real-Time Server-Sent Events (SSE) Streaming** — Token-by-token generation with Time-to-First-Token (TTFT) ~230ms directly from local Ollama.
 * **Dual Pedagogical Modes** — Toggle between **Direct Answer** (factual explanations under 250 words) and **Socratic Guide** (hint-based guidance ending in conceptual questions).
+* **Cross-Encoder Precision Candidate Reranking** — Deep token-level cross-interaction scoring (phrase n-grams, term proximity, domain alignment, and syntax boosting) applied to Stage-1 hybrid candidates.
+* **Two-Tier Premise Verification & Polarity Guard** — Fast Tier-1 deterministic rules and Tier-2 NLI model check leading questions for false technical assumptions (e.g., refuting *"Why is flexbox 2D?"*) and preventing hallucinated answers.
+* **NLI Claim Fact-Checking** — Automated post-generation sentence-level verification against cited sources to ensure zero ungrounded assertions.
 * **In-Browser Voice Query Support** — Hands-free audio questions via native Web Speech API without external cloud dependencies.
 * **Hybrid BM25 + Dense Search with RRF** — Combines lexical keyword matching with semantic vector similarity for robust retrieval.
 * **Calibrated Confidence Gate** — Multi-factor scoring (similarity × margin × keyword coverage) prevents hallucination by abstaining on low-confidence queries.
@@ -112,20 +115,21 @@ Student Question
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
 | `GET` | `/api/rag/stats` | JWT / Service Key | Chunk count, indexed documents, model info |
-| `POST` | `/api/rag/search` | JWT / Service Key | Hybrid BM25+Dense+RRF search with course scoping |
-| `POST` | `/api/rag/ask` | JWT / Service Key | Grounded Q&A (`mode`: `direct` \| `socratic`) with confidence gate |
+| `POST` | `/api/rag/search` | JWT / Service Key | Hybrid BM25+Dense+RRF search with cross-encoder reranking |
+| `POST` | `/api/rag/ask` | JWT / Service Key | Grounded Q&A (`mode`: `direct` \| `socratic`) with premise verifier |
 | `POST` | `/api/rag/stream` | JWT / Service Key | Real-time SSE token stream with metadata & Socratic guidance |
+| `POST` | `/api/rag/verify-claims` | JWT / Service Key | NLI claim fact-checking against cited sources |
 | `POST` | `/api/rag/quiz` | JWT / Service Key | Generate curriculum-grounded MCQ quizzes with verified keys |
 | `POST` | `/api/rag/ingest` | Service Key / Teacher | Ingest document content into vector store |
 | `POST` | `/api/rag/embed` | JWT / Service Key | Generate 768-dim embeddings for text |
 | `GET/POST` | `/api/rag/conversation` | JWT / Service Key | Read/write student conversation history |
 
 ### Verification & Test Suite
-The production RAG pipeline includes a 12-point automated verification suite:
+The production RAG pipeline includes a 15-point automated verification suite:
 ```bash
 php test_rag_pipeline.php
 ```
-* Coverage: DB schema, embeddings, code-aware chunking, PDF ingestion, hybrid retrieval, grounded generation, access control scoping, anaphora resolution, safety boundary & abstention, chunk lifecycle, Socratic guided pedagogy, and real-time SSE token streaming.
+* Coverage: DB schema, embeddings, code-aware chunking, PDF ingestion, hybrid retrieval, grounded generation, access control scoping, anaphora resolution, safety boundary & abstention, chunk lifecycle, Socratic guided pedagogy, real-time SSE token streaming, Cross-Encoder precision candidate reranking, False Premise verification, and NLI claim fact-checking.
 
 ### Hardware Requirements
 * **GPU**: NVIDIA RTX 3050 Laptop (4 GB VRAM) or equivalent

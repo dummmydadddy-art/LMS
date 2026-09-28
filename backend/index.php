@@ -2523,6 +2523,20 @@ try {
             echo json_encode($askRes);
             break;
 
+        // RAG NLI Claim Fact-Checking & Grounding Verification
+        case ($route === '/api/rag/verify-claims' && $method === 'POST'):
+            $user = verifyTokenOrApiKey();
+            $answer = trim($input['answer'] ?? '');
+            $sources = $input['sources'] ?? [];
+            if (empty($answer)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'answer parameter is required']);
+                break;
+            }
+            $verificationRes = RagService::verifyAnswerClaims($answer, $sources);
+            echo json_encode(array_merge(['success' => true], $verificationRes));
+            break;
+
         // RAG-Grounded Quiz Generator
         case ($route === '/api/rag/quiz' && $method === 'POST'):
             $user = verifyTokenOrApiKey();

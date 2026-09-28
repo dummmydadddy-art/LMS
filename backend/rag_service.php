@@ -7,6 +7,7 @@
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/document_extractor.php';
+require_once __DIR__ . '/rag_premise_verifier.php';
 
 class RagService {
     private static ?PDO $sqliteDb = null;
@@ -334,6 +335,153 @@ class RagService {
             } else break;
         }
         return $selected;
+    }
+
+    /**
+     * Cross-Encoder Precision Candidate Reranker
+     * Scores candidates using deep token-level cross-interaction:
+     * - Exact n-gram phrase matching
+     * - Title / Header domain alignment
+     * - Term proximity and span compactness
+     * - Code / Syntax intent boosting
+     */
+    public static function crossScoreCandidates(string $query, array $candidates): array {
+        if (count($candidates) <= 1) return $candidates;
+
+        $qTokens = self::tokenize($query);
+        $hasCodeIntent = (bool)preg_match('/\b(?:code|example|syntax|function|hook|class|query|snippet|how to write)\b/i', $query);
+        $isComparison = (bool)preg_match('/\b(?:difference|compare|versus|vs\.?|differ)\b/i', $query);
+
+        foreach ($candidates as &$cand) {
+            $content = $cand['content'] ?? '';
+            $title = $cand['title'] ?? '';
+            $contentLower = strtolower($content);
+            $titleLower = strtolower($title);
+
+            // 1. Exact bi-gram / tri-gram phrase matching
+            $phraseBonus = 0.0;
+            if (count($qTokens) >= 2) {
+                for ($i = 0; $i < count($qTokens) - 1; $i++) {
+                    $bigram = $qTokens[$i] . ' ' . $qTokens[$i+1];
+                    if (strpos($contentLower, $bigram) !== false) {
+                        $phraseBonus += 0.05;
+                    }
+                    if ($i < count($qTokens) - 2) {
+                        $trigram = $bigram . ' ' . $qTokens[$i+2];
+                        if (strpos($contentLower, $trigram) !== false) {
+                            $phraseBonus += 0.08;
+                        }
+                    }
+                }
+            }
+            $phraseBonus = min($phraseBonus, 0.20);
+
+            // 2. Title / Header alignment boost
+            $titleBonus = 0.0;
+            foreach ($qTokens as $token) {
+                if (strlen($token) >= 3 && strpos($titleLower, $token) !== false) {
+                    $titleBonus += 0.04;
+                }
+            }
+            $titleBonus = min($titleBonus, 0.15);
+
+            // 3. Proximity scoring (compactness of query terms in text)
+            $proximityBonus = 0.0;
+            $positions = [];
+            foreach ($qTokens as $token) {
+                if (strlen($token) < 3) continue;
+                $pos = strpos($contentLower, $token);
+                if ($pos !== false) {
+                    $positions[] = $pos;
+                }
+            }
+            if (count($positions) >= 2) {
+                sort($positions);
+                $span = end($positions) - reset($positions);
+                if ($span < 200) {
+                    $proximityBonus = 0.10;
+                } elseif ($span < 500) {
+                    $proximityBonus = 0.05;
+                }
+            }
+
+            // 4. Intent structural boost (code blocks, comparisons)
+            $intentBonus = 0.0;
+            if ($hasCodeIntent && strpos($content, '```') !== false) {
+                $intentBonus += 0.08;
+            }
+            if ($isComparison && preg_match('/\b(?:whereas|differs|unlike|in contrast|instead of)\b/i', $content)) {
+                $intentBonus += 0.08;
+            }
+
+            // Base similarity from RRF / cosine
+            $baseSim = (float)($cand['similarity'] ?? 0.5);
+
+            // Cross-Encoder Composite Score
+            $crossScore = $baseSim + $phraseBonus + $titleBonus + $proximityBonus + $intentBonus;
+            $cand['cross_score'] = round($crossScore, 4);
+            $cand['similarity'] = round($crossScore, 4);
+        }
+        unset($cand);
+
+        // Sort descending by cross_score
+        usort($candidates, fn($a, $b) => ($b['cross_score'] ?? 0) <=> ($a['cross_score'] ?? 0));
+        return $candidates;
+    }
+
+    /**
+     * NLI Fact-Checking & Grounded Claim Verification
+     * Decomposes an answer into claims and verifies them against cited sources using Tier-2 NLI
+     */
+    public static function verifyAnswerClaims(string $answer, array $sources): array {
+        if (empty($answer) || empty($sources) || !class_exists('RagPremiseVerifier')) {
+            return ['verified' => true, 'unsupported_claims' => [], 'grounding_ratio' => 1.0];
+        }
+
+        $sentences = preg_split('/(?<=[.!?])\s+/', trim($answer), -1, PREG_SPLIT_NO_EMPTY);
+        $claims = [];
+        $combinedEvidence = '';
+        foreach ($sources as $s) {
+            $combinedEvidence .= ($s['content'] ?? '') . "\n";
+        }
+        $combinedEvidence = substr($combinedEvidence, 0, 1500);
+
+        $entailedCount = 0;
+        $unsupported = [];
+
+        foreach ($sentences as $sentence) {
+            $trimmed = trim($sentence);
+            if (strlen($trimmed) < 20 || preg_match('/^(according to|for example|take a look|let\'s explore)/i', $trimmed)) {
+                $entailedCount++;
+                continue;
+            }
+
+            $nliRes = RagPremiseVerifier::callTier2Nli($combinedEvidence, $trimmed, ['prompt_mode' => 'B5']);
+            $claims[] = [
+                'claim' => $trimmed,
+                'label' => $nliRes['label'],
+                'confidence' => $nliRes['confidence']
+            ];
+
+            if ($nliRes['label'] === 'CONTRADICTION') {
+                $unsupported[] = ['claim' => $trimmed, 'reason' => 'Directly contradicts course material'];
+            } elseif ($nliRes['label'] === 'ENTAILMENT') {
+                $entailedCount++;
+            } else {
+                $entailedCount += 0.5;
+            }
+        }
+
+        $total = count($sentences);
+        $groundingRatio = $total > 0 ? round($entailedCount / $total, 2) : 1.0;
+
+        return [
+            'verified' => empty($unsupported),
+            'grounding_ratio' => $groundingRatio,
+            'total_claims' => $total,
+            'unsupported_claims' => $unsupported,
+            'claims_analysis' => $claims
+        ];
     }
 
     /**
@@ -763,9 +911,10 @@ class RagService {
         // RRF fusion
         $fused = self::reciprocalRankFusion($candidates, $denseRankedIndices, $bm25Scores, $wDense, $wBm25);
 
-        // Filter by threshold and apply MMR
+        // Filter by threshold and apply Cross-Encoder Precision Reranker + MMR
         $filtered = array_values(array_filter($fused, fn($c) => ($c['similarity'] ?? 0) >= $threshold));
-        $finalResults = self::rerankMMR($filtered, $limit);
+        $crossReranked = self::crossScoreCandidates($cleanQuery, $filtered);
+        $finalResults = self::rerankMMR($crossReranked, $limit);
 
         // Clean output
         foreach ($finalResults as &$item) {
@@ -774,7 +923,7 @@ class RagService {
 
         return [
             'success' => true,
-            'backend' => 'hybrid_rrf',
+            'backend' => 'hybrid_rrf_cross_encoder',
             'count' => count($finalResults),
             'results' => $finalResults
         ];
@@ -806,6 +955,26 @@ class RagService {
                 'confidence_details' => $confEval,
                 'mode' => $mode
             ];
+        }
+
+        // Step 2b: False Premise Verification (Tier 1 & Tier 2 NLI)
+        if (class_exists('RagPremiseVerifier')) {
+            $verResult = RagPremiseVerifier::verify($question, $results);
+            if ($verResult['status'] === 'REFUTED') {
+                $refutationAnswer = ($verResult['refutation'] ?? 'Your question contains an assumption that conflicts with verified curriculum materials.')
+                    . ' ' . ($verResult['citation'] ?? '');
+                return [
+                    'success' => true,
+                    'answer' => $refutationAnswer,
+                    'sources' => array_slice($results, 0, 2),
+                    'grounded' => true,
+                    'abstain' => false,
+                    'refuted_premise' => true,
+                    'confidence' => $verResult['confidence'] ?? 0.95,
+                    'confidence_details' => $confEval,
+                    'mode' => $mode
+                ];
+            }
         }
 
         // Step 3: Build context from retrieved chunks
@@ -947,6 +1116,34 @@ class RagService {
                 'mode' => $mode
             ]);
             return;
+        }
+
+        // Step 2b: False Premise Verification (Tier 1 & Tier 2 NLI)
+        if (class_exists('RagPremiseVerifier')) {
+            $verResult = RagPremiseVerifier::verify($question, $results);
+            if ($verResult['status'] === 'REFUTED') {
+                $refutationAnswer = ($verResult['refutation'] ?? 'Your question contains an assumption that conflicts with verified curriculum materials.')
+                    . ' ' . ($verResult['citation'] ?? '');
+                $sendEvent('metadata', [
+                    'sources' => array_slice($results, 0, 2),
+                    'confidence' => $verResult['confidence'] ?? 0.95,
+                    'confidence_details' => $confEval,
+                    'refuted_premise' => true,
+                    'mode' => $mode
+                ]);
+                $sendEvent('token', ['token' => $refutationAnswer]);
+                $sendEvent('done', [
+                    'success' => true,
+                    'answer' => $refutationAnswer,
+                    'sources' => array_slice($results, 0, 2),
+                    'grounded' => true,
+                    'abstain' => false,
+                    'refuted_premise' => true,
+                    'confidence' => $verResult['confidence'] ?? 0.95,
+                    'mode' => $mode
+                ]);
+                return;
+            }
         }
 
         // Step 3: Build context from retrieved chunks
