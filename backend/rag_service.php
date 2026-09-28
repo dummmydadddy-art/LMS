@@ -1034,5 +1034,184 @@ class RagService {
         }
         return $questions;
     }
+
+    /**
+     * Deterministic Quiz Evaluator
+     * Grades student quiz submissions against the verified answer key with exact arithmetic.
+     */
+    public static function evaluateQuiz(array $questions, $studentAnswers): array {
+        if (empty($questions)) {
+            return [
+                'success' => false,
+                'error' => 'No questions provided for evaluation',
+                'score' => 0,
+                'total' => 0,
+                'percentage' => 0
+            ];
+        }
+
+        $parsedAnswers = [];
+        if (is_array($studentAnswers)) {
+            $parsedAnswers = $studentAnswers;
+        } else {
+            $raw = trim((string)$studentAnswers);
+            $cleanRaw = preg_replace('/[*_`#]/', '', $raw);
+            $cleanRaw = str_replace(["\r\n", "\r"], "\n", $cleanRaw);
+
+            // First attempt: Line-by-line or delimiter-separated extraction
+            $chunks = preg_split('/\n+/', $cleanRaw);
+            if (count($chunks) <= 1) {
+                $splitByQ = preg_split('/(?=(?:^|[,\s;]+|\s+and\s+)(?:for\s+)?(?:question|q)?\s*[1-9]\d?\s*(?:is|=|:|\.|\)|->|-|\s))/i', $cleanRaw);
+                if (count($splitByQ) > 1) {
+                    $chunks = array_filter(array_map('trim', $splitByQ));
+                }
+            }
+
+            foreach ($chunks as $chunk) {
+                $chunk = preg_replace('/^(?:and|then|also)\s+/i', '', trim($chunk));
+                if (empty($chunk)) continue;
+
+                // Pattern 1: Numbered format like "1. A", "1) (A)", "Q1: display: flex", "2 is B", "1 -> A"
+                if (preg_match('/^(?:for\s+)?(?:question|q)?\s*([1-9]\d?)\s*(?:is|=|:|\.|\)|->|-|\s)+\s*(?:for\s+)?(?:option|choice)?\s*[\(\[]?\s*([a-dA-D]\b|[\w\s\-:().<>*,+]+?)\s*[\)\]]?(?:[,\.;]|$)/i', $chunk, $m)) {
+                    $qNum = (int)$m[1];
+                    $ansVal = trim($m[2]);
+                    $ansVal = preg_replace('/^(?:it\s+)?(?:is\s+)?(?:option\s+|choice\s+)?/i', '', $ansVal);
+                    $ansVal = preg_replace('/\s+(?:and|then|also)\s*$/i', '', $ansVal);
+                    $parsedAnswers[$qNum] = trim($ansVal);
+                }
+            }
+
+            // Pattern 2: Compact tokens like "1A 2A 3B 4B 5A"
+            if (empty($parsedAnswers) && preg_match_all('/([1-9]\d?)\s*[:.\-]?\s*([a-dA-D])\b/i', $cleanRaw, $compactMatches, PREG_SET_ORDER)) {
+                foreach ($compactMatches as $cm) {
+                    $parsedAnswers[(int)$cm[1]] = strtoupper($cm[2]);
+                }
+            }
+
+            // Pattern 3: Sequential standalone letters like "A, A, B, B, A" or "(A) (B) (C)"
+            if (empty($parsedAnswers)) {
+                if (preg_match_all('/(?:\b|[\(\[])([a-dA-D])(?:\b|[\)\]])/i', $cleanRaw, $letterMatches)) {
+                    $i = 1;
+                    foreach ($letterMatches[1] as $letter) {
+                        $parsedAnswers[$i++] = strtoupper($letter);
+                    }
+                }
+            }
+        }
+
+        $breakdown = [];
+        $correctCount = 0;
+        $total = count($questions);
+
+        foreach ($questions as $index => $q) {
+            $qNum = $index + 1;
+            $correctLetter = strtoupper(trim($q['correct_answer'] ?? ''));
+            $options = $q['options'] ?? [];
+            $studentRaw = $parsedAnswers[$qNum] ?? null;
+            $studentLetter = null;
+            $studentText = '';
+
+            if ($studentRaw !== null) {
+                $cleanAns = trim((string)$studentRaw);
+                $cleanAns = trim($cleanAns, " \t\n\r\0\x0B\"'()[]");
+                $cleanAns = preg_replace('/^(?:option|choice)\s+/i', '', $cleanAns);
+                $cleanAns = preg_replace('/\s+(?:and|then|also)\s*$/i', '', $cleanAns);
+
+                // Single letter check
+                if (preg_match('/^[a-dA-D]$/i', $cleanAns)) {
+                    $studentLetter = strtoupper($cleanAns);
+                    $studentText = $options[$studentLetter] ?? '';
+                } elseif (preg_match('/^([a-dA-D])\s*[\)\.\:\-]\s*(.*)$/i', $cleanAns, $letterMatch)) {
+                    $studentLetter = strtoupper($letterMatch[1]);
+                    $studentText = !empty($letterMatch[2]) ? trim($letterMatch[2]) : ($options[$studentLetter] ?? '');
+                } else {
+                    // Match text against options: Pass 1 (Exact match)
+                    $cleanAnsLower = strtolower($cleanAns);
+                    foreach ($options as $optKey => $optVal) {
+                        if (strtolower(trim($optVal)) === $cleanAnsLower) {
+                            $studentLetter = strtoupper($optKey);
+                            $studentText = $optVal;
+                            break;
+                        }
+                    }
+
+                    // Match text against options: Pass 2 (Fuzzy / Substring match)
+                    if (!$studentLetter) {
+                        foreach ($options as $optKey => $optVal) {
+                            $optValLower = strtolower(trim($optVal));
+                            if (stripos($optValLower, $cleanAnsLower) !== false ||
+                                stripos($cleanAnsLower, $optValLower) !== false) {
+                                $studentLetter = strtoupper($optKey);
+                                $studentText = $optVal;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (!$studentLetter) {
+                        $studentText = $cleanAns;
+                    }
+                }
+            }
+
+            $isCorrect = ($studentLetter !== null && $studentLetter === $correctLetter);
+            if ($isCorrect) {
+                $correctCount++;
+            }
+
+            $correctText = $options[$correctLetter] ?? '';
+            $citation = $q['source_citation'] ?? '';
+
+            $breakdown[] = [
+                'question_number' => $qNum,
+                'question' => $q['question'] ?? "Question {$qNum}",
+                'student_answer' => $studentLetter ? "{$studentLetter}) {$studentText}" : ($studentText ?: 'No answer detected'),
+                'student_letter' => $studentLetter,
+                'correct_answer' => "{$correctLetter}) {$correctText}",
+                'correct_letter' => $correctLetter,
+                'is_correct' => $isCorrect,
+                'source_citation' => $citation
+            ];
+        }
+
+        $percentage = (int)round(($correctCount / max(1, $total)) * 100);
+
+        // Build clean, human-friendly formatted report
+        $reportLines = [];
+        $reportLines[] = "📊 **Quiz Evaluation Results:**";
+        $reportLines[] = "";
+
+        foreach ($breakdown as $b) {
+            $statusEmoji = $b['is_correct'] ? "✅ **Correct**" : "❌ **Incorrect**";
+            $reportLines[] = "**Question {$b['question_number']}:** {$statusEmoji}";
+            $reportLines[] = "• **Your Answer:** " . ($b['student_answer'] ?: 'None');
+            if (!$b['is_correct']) {
+                $reportLines[] = "• **Correct Answer:** " . $b['correct_answer'];
+            }
+            if (!empty($b['source_citation'])) {
+                $reportLines[] = "• **Source:** [" . $b['source_citation'] . "]";
+            }
+            $reportLines[] = "";
+        }
+
+        $reportLines[] = "---";
+        $reportLines[] = "🎯 **Final Score: {$correctCount} / {$total} ({$percentage}%)**";
+        if ($percentage >= 80) {
+            $reportLines[] = "🌟 Excellent grasp of this curriculum topic!";
+        } elseif ($percentage >= 50) {
+            $reportLines[] = "👍 Good effort! Review the cited sections above to strengthen your concepts.";
+        } else {
+            $reportLines[] = "📚 Recommend reviewing the study material notes before trying again.";
+        }
+
+        return [
+            'success' => true,
+            'score' => $correctCount,
+            'total' => $total,
+            'percentage' => $percentage,
+            'breakdown' => $breakdown,
+            'formatted_report' => implode("\n", $reportLines)
+        ];
+    }
 }
 

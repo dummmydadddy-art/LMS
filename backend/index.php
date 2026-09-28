@@ -2524,6 +2524,22 @@ try {
             echo json_encode($quizRes);
             break;
 
+        // RAG Deterministic Quiz Evaluator
+        case ($route === '/api/rag/quiz/evaluate' && $method === 'POST'):
+            $user = verifyTokenOrApiKey();
+            $questions = $input['questions'] ?? [];
+            $answers = $input['answers'] ?? $input['student_answers'] ?? $input['response'] ?? '';
+
+            if (empty($questions) || empty($answers)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'questions and answers are required']);
+                break;
+            }
+
+            $evalRes = RagService::evaluateQuiz($questions, $answers);
+            echo json_encode($evalRes);
+            break;
+
         
         // Ingest document or document chunks
         case ($route === '/api/rag/ingest' && $method === 'POST'):
