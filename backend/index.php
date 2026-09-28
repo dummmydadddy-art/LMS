@@ -1231,7 +1231,7 @@ try {
             break;
 
         case ($route === '/api/exams' && $method === 'POST'):
-            $user = requireRole(['TEACHER']);
+            $user = requireRole(['TEACHER', 'SUPER_ADMIN']);
             if (empty($input['title']) || empty($input['exam_type']) || empty($input['batch_id']) || empty($input['course_id'])) {
                 http_response_code(400);
                 echo json_encode(['success' => false, 'error' => 'Missing exam parameters']);
@@ -2571,6 +2571,27 @@ try {
             $count = isset($input['count']) ? max(1, min(10, (int)$input['count'])) : 3;
 
             $practiceRes = RagService::generateQuiz($topic, $courseId, $batchId, $count);
+            if (!empty($practiceRes['questions']) && is_array($practiceRes['questions'])) {
+                $formattedQuiz = [];
+                foreach ($practiceRes['questions'] as $q) {
+                    $opts = [];
+                    $correct = $q['correct_answer'] ?? 'A';
+                    foreach (($q['options'] ?? []) as $key => $val) {
+                        $opts[] = [
+                            'id' => $key,
+                            'text' => $val,
+                            'is_correct' => ($key === $correct)
+                        ];
+                    }
+                    $formattedQuiz[] = [
+                        'question' => $q['question'],
+                        'options' => $opts,
+                        'explanation' => "Grounded directly in indexed course curriculum.",
+                        'citation' => $q['source_citation'] ?? ''
+                    ];
+                }
+                $practiceRes['quiz'] = $formattedQuiz;
+            }
             echo json_encode($practiceRes);
             break;
 

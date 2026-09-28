@@ -282,6 +282,81 @@ try {
     recordTest("Test 15: Teacher Knowledge-Gap Telemetry & Analytics", false, $e->getMessage());
 }
 
+// --- TEST 16: 1-Click Remedial Pop-Quiz Generation & Exam Schema Mapping ---
+try {
+    $sampleMarkdown = "### Question 1: What is the main layout dimension of CSS Flexbox?\n"
+        . "A) Two-dimensional grid layout\n"
+        . "B) One-dimensional layout along either row or column\n"
+        . "C) Multi-dimensional canvas layout\n"
+        . "D) Static table cell layout\n\n"
+        . "**Correct Option:** B) One-dimensional layout along either row or column [Source 1: CSS Layouts, Section 2]\n\n"
+        . "### Question 2: Which CSS property aligns flex items along the cross axis?\n"
+        . "A) justify-content\n"
+        . "B) flex-direction\n"
+        . "C) align-items\n"
+        . "D) grid-template-columns\n\n"
+        . "**Correct Option:** C) align-items [Source 1: CSS Layouts, Section 3]\n";
+
+    $parsedQuestions = RagService::parseQuizQuestions($sampleMarkdown);
+    $hasParsedQuestions = !empty($parsedQuestions) && count($parsedQuestions) === 2;
+
+    // Build the exact payload dispatched by the 1-Click Pop-Quiz publish modal to POST /api/exams
+    $examPayload = [
+        'title' => 'Pop Quiz: CSS Flexbox Architecture',
+        'exam_type' => 'MCQ',
+        'course_id' => 'course-cs101',
+        'batch_id' => 'batch-2026-a',
+        'time_limit_minutes' => 15,
+        'due_date' => date('Y-m-d H:i:s', strtotime('+1 day')),
+        'questions' => []
+    ];
+
+    $allQuestionsValid = true;
+    foreach ($parsedQuestions as $q) {
+        $optionsPayload = [];
+        $correct = $q['correct_answer'] ?? 'A';
+        foreach ($q['options'] as $key => $optText) {
+            $optionsPayload[] = [
+                'option_text' => $optText,
+                'is_correct' => ($key === $correct)
+            ];
+        }
+        $examPayload['questions'][] = [
+            'question_text' => $q['question'],
+            'marks' => 5,
+            'options' => $optionsPayload
+        ];
+    }
+
+    // Validate exam schema contract
+    $hasExamBasics = ($examPayload['exam_type'] === 'MCQ') 
+        && !empty($examPayload['title']) 
+        && !empty($examPayload['course_id']) 
+        && !empty($examPayload['batch_id'])
+        && ($examPayload['time_limit_minutes'] > 0);
+
+    $hasValidQuestions = count($examPayload['questions']) === 2;
+    foreach ($examPayload['questions'] as $q) {
+        if (empty($q['question_text']) || $q['marks'] <= 0 || count($q['options']) < 2) {
+            $allQuestionsValid = false;
+        }
+        // Verify exactly one option is marked correct
+        $correctCount = count(array_filter($q['options'], fn($opt) => $opt['is_correct'] === true));
+        if ($correctCount !== 1) {
+            $allQuestionsValid = false;
+        }
+    }
+
+    $popQuizPassed = $hasParsedQuestions && $hasExamBasics && $hasValidQuestions && $allQuestionsValid;
+    recordTest(
+        "Test 16: 1-Click Remedial Pop-Quiz Generation & Exam Schema Mapping",
+        $popQuizPassed,
+        "Generated " . count($examPayload['questions']) . " MCQ questions mapped to POST /api/exams payload with 1-correct-option guarantee."
+    );
+} catch (Exception $e) {
+    recordTest("Test 16: 1-Click Remedial Pop-Quiz Generation & Exam Schema Mapping", false, $e->getMessage());
+}
+
 echo "\n========================================================\n";
 $total = count($results);
 $passedCount = count(array_filter($results, fn($r) => $r['status'] === 'PASS'));

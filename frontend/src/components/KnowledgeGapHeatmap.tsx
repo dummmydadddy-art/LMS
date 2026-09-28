@@ -15,7 +15,9 @@ import {
   Compass, 
   ShieldCheck, 
   Layers,
-  ArrowRight
+  ArrowRight,
+  Send,
+  Zap
 } from 'lucide-react';
 import api from '../services/api';
 
@@ -89,6 +91,19 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
   const [generatedQuestions, setGeneratedQuestions] = useState<GeneratedQuizQuestion[]>([]);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
+  // 1-Click Pop Quiz Publishing states
+  const [publishStep, setPublishStep] = useState<boolean>(false);
+  const [publishing, setPublishing] = useState<boolean>(false);
+  const [publishSuccess, setPublishSuccess] = useState<boolean>(false);
+  const [publishError, setPublishError] = useState<string>('');
+  const [publishForm, setPublishForm] = useState({
+    title: '',
+    course_id: '',
+    batch_id: '',
+    time_limit_minutes: 15,
+    due_date: ''
+  });
+
   const fetchAnalytics = async () => {
     setLoading(true);
     setErrorMsg('');
@@ -120,6 +135,20 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
     setPracticeModalOpen(true);
     setGeneratingQuiz(true);
     setGeneratedQuestions([]);
+    setPublishStep(false);
+    setPublishSuccess(false);
+    setPublishError('');
+
+    const defaultDueDate = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString().slice(0, 16);
+    const targetCourse = selectedCourse || (courses[0]?.id ?? '');
+    const matchingBatch = batches.find(b => !targetCourse || b.course_id === targetCourse);
+    setPublishForm({
+      title: `Pop Quiz: ${topicOrQuestion.slice(0, 45)}`,
+      course_id: targetCourse,
+      batch_id: selectedBatch || (matchingBatch ? matchingBatch.id : (batches[0]?.id ?? '')),
+      time_limit_minutes: 15,
+      due_date: defaultDueDate
+    });
     try {
       const res = await api.post('/api/rag/teacher/generate-practice', {
         topic: topicOrQuestion,
@@ -128,8 +157,34 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
         count: 4
       });
 
-      if (res.data?.success && Array.isArray(res.data?.quiz)) {
-        setGeneratedQuestions(res.data.quiz);
+      const rawQuestions = Array.isArray(res.data?.quiz) && res.data.quiz.length > 0
+        ? res.data.quiz
+        : (Array.isArray(res.data?.questions) && res.data.questions.length > 0 ? res.data.questions : null);
+
+      if (rawQuestions && rawQuestions.length > 0) {
+        const mapped: GeneratedQuizQuestion[] = rawQuestions.map((q: any) => {
+          let opts: QuizOption[] = [];
+          if (Array.isArray(q.options)) {
+            opts = q.options.map((opt: any, i: number) => ({
+              id: opt.id || String.fromCharCode(65 + i),
+              text: opt.text || opt.option_text || String(opt),
+              is_correct: !!opt.is_correct
+            }));
+          } else if (q.options && typeof q.options === 'object') {
+            opts = Object.entries(q.options).map(([key, val]) => ({
+              id: key,
+              text: String(val),
+              is_correct: key === q.correct_answer
+            }));
+          }
+          return {
+            question: q.question || q.question_text || '',
+            options: opts,
+            explanation: q.explanation || 'Grounded in core curriculum materials to eliminate misconceptions.',
+            citation: q.citation || q.source_citation || ''
+          };
+        });
+        setGeneratedQuestions(mapped);
       } else {
         // Fallback demo questions if specific material not indexed for that topic
         setGeneratedQuestions([
@@ -163,6 +218,63 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
     navigator.clipboard.writeText(formatted);
     setCopiedIndex(index);
     setTimeout(() => setCopiedIndex(null), 2000);
+  };
+
+  const handlePublishExam = async () => {
+    if (!publishForm.course_id) {
+      setPublishError('Please select a target course for the pop quiz.');
+      return;
+    }
+    if (!publishForm.batch_id) {
+      setPublishError('Please select a target batch for the pop quiz.');
+      return;
+    }
+    if (!publishForm.title.trim()) {
+      setPublishError('Please enter a quiz title.');
+      return;
+    }
+    if (!publishForm.due_date) {
+      setPublishError('Please choose a submission deadline (due date).');
+      return;
+    }
+    if (generatedQuestions.length === 0) {
+      setPublishError('No generated questions found to publish.');
+      return;
+    }
+
+    setPublishing(true);
+    setPublishError('');
+    try {
+      const questionsPayload = generatedQuestions.map((q) => ({
+        question_text: q.question,
+        marks: 5,
+        options: q.options.map((opt) => ({
+          option_text: opt.text,
+          is_correct: !!opt.is_correct
+        }))
+      }));
+
+      const res = await api.post('/api/exams', {
+        title: publishForm.title,
+        exam_type: 'MCQ',
+        course_id: publishForm.course_id,
+        batch_id: publishForm.batch_id,
+        time_limit_minutes: publishForm.time_limit_minutes,
+        due_date: publishForm.due_date,
+        questions: questionsPayload
+      });
+
+      if (res.data?.success) {
+        setPublishSuccess(true);
+      } else {
+        setPublishError(res.data?.error || 'Failed to publish pop quiz to batch.');
+      }
+    } catch (err: any) {
+      console.error('Error publishing pop quiz:', err);
+      setPublishError(err.response?.data?.error || 'Server error while publishing pop quiz.');
+    } finally {
+      setPublishing(false);
+    }
   };
 
   const maxQueryCount = analytics?.topic_hotspots?.reduce((max, h) => Math.max(max, h.query_count), 1) || 1;
@@ -513,15 +625,29 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
             {/* Modal Header */}
             <div className="p-5 border-b border-slate-800 flex justify-between items-center bg-slate-950/50">
               <div className="flex items-center gap-2.5">
-                <span className="p-2 rounded-xl bg-primary-500/10 text-primary-400 border border-primary-500/20">
-                  <Sparkles className="h-5 w-5" />
+                <span className={`p-2 rounded-xl border ${
+                  publishSuccess
+                    ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                    : publishStep
+                    ? 'bg-sky-500/10 text-sky-400 border-sky-500/20'
+                    : 'bg-primary-500/10 text-primary-400 border-primary-500/20'
+                }`}>
+                  {publishSuccess ? <CheckCircle2 className="h-5 w-5" /> : publishStep ? <Zap className="h-5 w-5" /> : <Sparkles className="h-5 w-5" />}
                 </span>
                 <div>
                   <h3 className="text-sm font-bold text-slate-100">
-                    Targeted Practice Questions for Knowledge Gap
+                    {publishSuccess 
+                      ? 'Remedial Pop Quiz Dispatched!' 
+                      : publishStep 
+                      ? 'Publish Pop Quiz to Batch' 
+                      : 'Targeted Practice Questions for Knowledge Gap'}
                   </h3>
                   <p className="text-xs text-slate-400 truncate max-w-md">
-                    Focus: <span className="text-primary-300 font-semibold">{activeTopic}</span>
+                    {publishSuccess
+                      ? 'Exam is now active in Student Test Center'
+                      : publishStep
+                      ? 'Configure batch exam parameters and dispatch in 1 click'
+                      : <>Focus: <span className="text-primary-300 font-semibold">{activeTopic}</span></>}
                   </p>
                 </div>
               </div>
@@ -535,7 +661,143 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
 
             {/* Modal Body */}
             <div className="p-6 overflow-y-auto space-y-5 flex-1">
-              {generatingQuiz ? (
+              {publishSuccess ? (
+                <div className="py-10 px-4 text-center space-y-4">
+                  <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-400 shadow-xl shadow-emerald-500/10">
+                    <CheckCircle2 className="h-8 w-8 animate-pulse" />
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="text-base font-bold text-slate-100">Pop Quiz Published Successfully!</h4>
+                    <p className="text-xs text-slate-400 max-w-lg mx-auto leading-relaxed">
+                      All students in <span className="text-primary-400 font-semibold">{batches.find(b => b.id === publishForm.batch_id)?.batch_name || 'the selected batch'}</span> have been assigned this remedial quiz. It is now live in their Online Test Center.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-slate-950/60 rounded-xl border border-slate-800 max-w-md mx-auto text-left text-xs space-y-2">
+                    <div className="flex justify-between text-slate-300">
+                      <span className="text-slate-500">Quiz Title:</span>
+                      <span className="font-semibold text-slate-200">{publishForm.title}</span>
+                    </div>
+                    <div className="flex justify-between text-slate-300">
+                      <span className="text-slate-500">Target Batch:</span>
+                      <span className="font-semibold text-slate-200">{batches.find(b => b.id === publishForm.batch_id)?.batch_name || 'Selected Batch'}</span>
+                    </div>
+                    <div className="flex justify-between text-slate-300">
+                      <span className="text-slate-500">Time Limit:</span>
+                      <span className="font-semibold text-slate-200">{publishForm.time_limit_minutes} Minutes</span>
+                    </div>
+                    <div className="flex justify-between text-slate-300">
+                      <span className="text-slate-500">Questions:</span>
+                      <span className="font-semibold text-emerald-400">{generatedQuestions.length} Questions (20 Marks)</span>
+                    </div>
+                  </div>
+                </div>
+              ) : publishStep ? (
+                <div className="space-y-5">
+                  <div className="bg-primary-950/20 border border-primary-500/20 p-4 rounded-xl flex items-center gap-3 text-xs text-primary-300">
+                    <Zap className="h-5 w-5 text-primary-400 shrink-0" />
+                    <div>
+                      <p className="font-semibold text-slate-200">1-Click Knowledge-Gap Remediation</p>
+                      <p className="text-slate-400">
+                        Convert these {generatedQuestions.length} AI-verified practice questions directly into a real, auto-evaluated MCQ exam for your students.
+                      </p>
+                    </div>
+                  </div>
+
+                  {publishError && (
+                    <div className="p-3 bg-rose-500/10 border border-rose-500/30 text-rose-400 rounded-xl text-xs flex items-center gap-2">
+                      <AlertTriangle className="h-4 w-4 shrink-0" />
+                      <span>{publishError}</span>
+                    </div>
+                  )}
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-1 col-span-1 md:col-span-2">
+                      <label className="text-xs font-semibold text-slate-400 uppercase">Exam / Pop Quiz Title</label>
+                      <input
+                        type="text"
+                        value={publishForm.title}
+                        onChange={(e) => setPublishForm({ ...publishForm, title: e.target.value })}
+                        className="w-full glass-input text-xs"
+                        placeholder="e.g. Pop Quiz: React Hooks Dependency Array"
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-xs font-semibold text-slate-400 uppercase">Target Course</label>
+                      <select
+                        value={publishForm.course_id}
+                        onChange={(e) => {
+                          const newCourseId = e.target.value;
+                          const matchingBatch = batches.find(b => b.course_id === newCourseId);
+                          setPublishForm({
+                            ...publishForm,
+                            course_id: newCourseId,
+                            batch_id: matchingBatch ? matchingBatch.id : ''
+                          });
+                        }}
+                        className="w-full glass-input text-xs bg-dark-900 border-slate-700"
+                        required
+                      >
+                        <option value="">Select Course</option>
+                        {courses.map((c) => (
+                          <option key={c.id} value={c.id}>{c.course_name}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-xs font-semibold text-slate-400 uppercase">Target Batch</label>
+                      <select
+                        value={publishForm.batch_id}
+                        onChange={(e) => setPublishForm({ ...publishForm, batch_id: e.target.value })}
+                        className="w-full glass-input text-xs bg-dark-900 border-slate-700"
+                        required
+                        disabled={!publishForm.course_id}
+                      >
+                        <option value="">Select Batch</option>
+                        {batches
+                          .filter((b) => !publishForm.course_id || b.course_id === publishForm.course_id)
+                          .map((b) => (
+                            <option key={b.id} value={b.id}>{b.batch_name}</option>
+                          ))}
+                      </select>
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-xs font-semibold text-slate-400 uppercase">Time Limit (Minutes)</label>
+                      <input
+                        type="number"
+                        min="5"
+                        max="180"
+                        value={publishForm.time_limit_minutes}
+                        onChange={(e) => setPublishForm({ ...publishForm, time_limit_minutes: parseInt(e.target.value) || 15 })}
+                        className="w-full glass-input text-xs"
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-xs font-semibold text-slate-400 uppercase">Submission Deadline (Due Date)</label>
+                      <input
+                        type="datetime-local"
+                        value={publishForm.due_date}
+                        onChange={(e) => setPublishForm({ ...publishForm, due_date: e.target.value })}
+                        className="w-full glass-input text-xs"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 bg-slate-950/60 rounded-xl border border-slate-800 flex items-center justify-between text-xs">
+                    <span className="text-slate-400">Questions Attached:</span>
+                    <span className="font-bold text-slate-200">
+                      {generatedQuestions.length} Questions · 5 Marks each (20 Marks Total) · Auto-Evaluated
+                    </span>
+                  </div>
+                </div>
+              ) : generatingQuiz ? (
                 <div className="py-16 text-center space-y-3">
                   <RefreshCw className="h-8 w-8 animate-spin text-primary-400 mx-auto" />
                   <p className="text-xs font-bold text-slate-300">
@@ -625,16 +887,76 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
             </div>
 
             {/* Modal Footer */}
-            <div className="p-4 border-t border-slate-800 bg-slate-950/40 flex justify-between items-center">
+            <div className="p-4 border-t border-slate-800 bg-slate-950/40 flex flex-col sm:flex-row justify-between items-center gap-3">
               <span className="text-[11px] text-slate-500">
                 Grounding Engine: Ollama nomic-embed-text & llama3.2
               </span>
-              <button
-                onClick={() => setPracticeModalOpen(false)}
-                className="btn-secondary py-1.5 px-4 text-xs"
-              >
-                Close
-              </button>
+
+              <div className="flex items-center gap-2.5 w-full sm:w-auto justify-end">
+                {publishSuccess ? (
+                  <button
+                    onClick={() => {
+                      setPracticeModalOpen(false);
+                      setPublishSuccess(false);
+                      setPublishStep(false);
+                    }}
+                    className="btn-primary py-1.5 px-5 text-xs"
+                  >
+                    Done
+                  </button>
+                ) : publishStep ? (
+                  <>
+                    <button
+                      onClick={() => {
+                        setPublishStep(false);
+                        setPublishError('');
+                      }}
+                      disabled={publishing}
+                      className="btn-secondary py-1.5 px-4 text-xs"
+                    >
+                      Back to Questions
+                    </button>
+                    <button
+                      onClick={handlePublishExam}
+                      disabled={publishing || !publishForm.batch_id || !publishForm.course_id}
+                      className="btn-primary py-1.5 px-5 text-xs flex items-center gap-1.5 shadow-lg shadow-primary-500/20 font-semibold"
+                    >
+                      {publishing ? (
+                        <>
+                          <RefreshCw className="h-3.5 w-3.5 animate-spin" />
+                          Publishing to Batch...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="h-3.5 w-3.5" />
+                          Confirm & Dispatch Quiz
+                        </>
+                      )}
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button
+                      onClick={() => setPracticeModalOpen(false)}
+                      className="btn-secondary py-1.5 px-4 text-xs"
+                    >
+                      Close
+                    </button>
+                    {generatedQuestions.length > 0 && !generatingQuiz && (
+                      <button
+                        onClick={() => {
+                          setPublishStep(true);
+                          setPublishError('');
+                        }}
+                        className="btn-primary py-1.5 px-4 text-xs flex items-center gap-1.5 shadow-lg shadow-primary-500/20 font-semibold"
+                      >
+                        <Zap className="h-3.5 w-3.5 text-amber-300" />
+                        Publish to Batch as Pop Quiz
+                      </button>
+                    )}
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>

@@ -1637,7 +1637,12 @@ class RagService {
             $qLines = [];
             foreach ($lines as $line) {
                 $trimmed = trim($line);
-                if (preg_match('/^(?:####?\s*Question|\bQuestion\s+\d+:?)/i', $trimmed)) continue;
+                if (preg_match('/^(?:####?\s*Question(?:\s*\d+)?:?\s*|\bQuestion\s+\d+:?\s*)(.*)/i', $trimmed, $qMatch)) {
+                    if (!empty($qMatch[1])) {
+                        $qLines[] = trim($qMatch[1]);
+                    }
+                    continue;
+                }
                 if (preg_match('/^[A-D]\)/i', $trimmed)) break;
                 if (preg_match('/^\*\*Correct/i', $trimmed)) break;
                 if (!empty($trimmed)) $qLines[] = $trimmed;
