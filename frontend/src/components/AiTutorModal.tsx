@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Bot, Send, Sparkles, X, BookOpen, AlertCircle, RefreshCw } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import api from '../services/api';
 
 interface SourceCitation {
@@ -160,7 +162,18 @@ export const AiTutorModal: React.FC<AiTutorModalProps> = ({
                     : 'bg-white text-slate-800 border border-slate-200/80 rounded-tl-none'
                 }`}
               >
-                <div className="whitespace-pre-wrap leading-relaxed">{m.text}</div>
+                {m.sender === 'user' ? (
+                  <div className="whitespace-pre-wrap leading-relaxed">{m.text}</div>
+                ) : (
+                  <div className="prose prose-sm prose-slate max-w-none leading-relaxed
+                    prose-p:my-1.5 prose-li:my-0.5 prose-ul:my-1 prose-ol:my-1
+                    prose-headings:text-slate-800 prose-headings:font-semibold prose-headings:mt-3 prose-headings:mb-1
+                    prose-code:text-indigo-700 prose-code:bg-indigo-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:font-mono prose-code:before:content-none prose-code:after:content-none
+                    prose-pre:bg-slate-800 prose-pre:text-slate-100 prose-pre:rounded-lg prose-pre:p-3 prose-pre:text-xs prose-pre:overflow-x-auto prose-pre:my-2
+                    prose-a:text-blue-600 prose-strong:text-slate-900">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.text}</ReactMarkdown>
+                  </div>
+                )}
 
                 {/* Sources Section */}
                 {m.sources && m.sources.length > 0 && (
