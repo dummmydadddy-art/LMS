@@ -22,7 +22,8 @@ import {
   Hand,
   Mic,
   Square,
-  Sparkles
+  Sparkles,
+  Zap
 } from 'lucide-react';
 
 const StudentDashboard: React.FC = () => {
@@ -50,6 +51,8 @@ const StudentDashboard: React.FC = () => {
   const [chatInputText, setChatInputText] = useState('');
   const [hasRaisedHand, setHasRaisedHand] = useState(false);
   const [studentId, setStudentId] = useState<string>('');
+  const [pendingPopQuiz, setPendingPopQuiz] = useState<any | null>(null);
+  const [dismissedQuizId, setDismissedQuizId] = useState<string>('');
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -57,6 +60,27 @@ const StudentDashboard: React.FC = () => {
         setStudentId(user.id);
       }
     });
+
+    const checkPendingPopQuiz = async () => {
+      try {
+        const res = await api.get('/api/exams');
+        if (res.data?.success && Array.isArray(res.data?.exams)) {
+          const list = res.data.exams;
+          setExams(list);
+          const found = list.find((e: any) => 
+            !e.attempted && 
+            e.exam_type === 'MCQ' &&
+            (e.title?.toLowerCase().includes('pop quiz') || e.title?.toLowerCase().includes('remedial'))
+          );
+          if (found) {
+            setPendingPopQuiz(found);
+          }
+        }
+      } catch (err) {
+        console.error('Failed to load pending pop quizzes:', err);
+      }
+    };
+    checkPendingPopQuiz();
   }, []);
 
   const getGoogleDriveEmbedUrl = (url: string) => {
@@ -699,6 +723,55 @@ const StudentDashboard: React.FC = () => {
       {msg && (
         <div className="bg-primary-950/40 border border-primary-500/20 text-primary-400 px-4 py-3 rounded-xl text-sm max-w-lg text-center mx-auto">
           {msg}
+        </div>
+      )}
+
+      {/* --- LIVE REMEDIAL POP-QUIZ BANNER --- */}
+      {pendingPopQuiz && !activeExam && pendingPopQuiz.id !== dismissedQuizId && (
+        <div className="relative overflow-hidden rounded-2xl p-4 bg-gradient-to-r from-amber-500/15 via-primary-500/15 to-purple-500/15 border border-amber-500/30 shadow-lg shadow-amber-500/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-in fade-in duration-300">
+          <div className="flex items-start sm:items-center gap-3.5">
+            <div className="p-2.5 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex-shrink-0 animate-pulse">
+              <Zap className="h-5 w-5" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                  Targeted Remedial Pop-Quiz
+                </span>
+                <span className="text-xs text-slate-400 flex items-center gap-1">
+                  <Clock className="h-3 w-3" /> {pendingPopQuiz.time_limit_minutes} Mins
+                </span>
+                {pendingPopQuiz.due_date && (
+                  <span className="text-[11px] text-slate-400 hidden md:inline">
+                    • Due: {new Date(pendingPopQuiz.due_date).toLocaleDateString()} {new Date(pendingPopQuiz.due_date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                  </span>
+                )}
+              </div>
+              <h4 className="font-bold text-slate-100 text-sm mt-1">{pendingPopQuiz.title}</h4>
+              <p className="text-xs text-slate-400 mt-0.5">
+                Your instructor dispatched this quiz to reinforce recent curriculum topics and eliminate misconceptions. Test your understanding!
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 self-end sm:self-center flex-shrink-0">
+            <button
+              onClick={() => {
+                navigate('/student/exams');
+                startExamAttempt(pendingPopQuiz);
+              }}
+              className="btn-primary text-xs py-2 px-4 whitespace-nowrap shadow-md shadow-primary-500/20 flex items-center gap-1.5"
+            >
+              <Play className="h-3.5 w-3.5 fill-current" />
+              Take Pop Quiz Now
+            </button>
+            <button
+              onClick={() => setDismissedQuizId(pendingPopQuiz.id)}
+              className="text-slate-400 hover:text-slate-200 text-xs px-2.5 py-2 rounded-lg hover:bg-slate-800/40 transition-colors"
+              title="Dismiss banner"
+            >
+              Dismiss
+            </button>
+          </div>
         </div>
       )}
 

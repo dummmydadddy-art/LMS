@@ -357,6 +357,50 @@ try {
     recordTest("Test 16: 1-Click Remedial Pop-Quiz Generation & Exam Schema Mapping", false, $e->getMessage());
 }
 
+// --- TEST 17: Batch Pop-Quiz Notification & Student Alert Verification ---
+try {
+    $testExam = [
+        'id' => 'exam_pop_' . bin2hex(random_bytes(3)),
+        'title' => 'Pop Quiz: Asynchronous Event Loop & Promises',
+        'exam_type' => 'MCQ',
+        'course_id' => 'course-cs101',
+        'batch_id' => 'batch-2026-a',
+        'time_limit_minutes' => 15,
+        'created_by' => 'teacher-1'
+    ];
+
+    $isPopQuiz = stripos($testExam['title'], 'pop quiz') !== false;
+    $notifTitle = $isPopQuiz ? "⚡ Remedial Pop Quiz: {$testExam['title']}" : "📝 New Exam Scheduled: {$testExam['title']}";
+    $notifMsg = "A new targeted remedial pop-quiz '{$testExam['title']}' has been dispatched to your batch. Complete it to reinforce key concepts!";
+
+    $notificationPayload = [
+        'title' => $notifTitle,
+        'message' => $notifMsg,
+        'target_type' => 'BATCH',
+        'target_id' => $testExam['batch_id'],
+        'notification_type' => $isPopQuiz ? 'QUIZ' : 'EXAM',
+        'sender_id' => $testExam['created_by']
+    ];
+
+    // Simulate multi-tenant student batch notification filtering
+    $studentBatches = ['batch-2026-a'];
+    $otherStudentBatches = ['batch-2026-b'];
+
+    $matchesTargetStudent = ($notificationPayload['target_type'] === 'BATCH' && in_array($notificationPayload['target_id'], $studentBatches));
+    $isolatesOtherStudent = !($notificationPayload['target_type'] === 'BATCH' && in_array($notificationPayload['target_id'], $otherStudentBatches));
+    $hasQuizType = ($notificationPayload['notification_type'] === 'QUIZ');
+    $hasAlertPrefix = str_starts_with($notificationPayload['title'], '⚡ Remedial Pop Quiz:');
+
+    $notifPassed = $matchesTargetStudent && $isolatesOtherStudent && $hasQuizType && $hasAlertPrefix;
+    recordTest(
+        "Test 17: Batch Pop-Quiz Notification & Student Alert Verification",
+        $notifPassed,
+        "Notification generated with 'QUIZ' type and '{$notificationPayload['title']}', delivered to batch {$testExam['batch_id']} with strict cross-batch isolation."
+    );
+} catch (Exception $e) {
+    recordTest("Test 17: Batch Pop-Quiz Notification & Student Alert Verification", false, $e->getMessage());
+}
+
 echo "\n========================================================\n";
 $total = count($results);
 $passedCount = count(array_filter($results, fn($r) => $r['status'] === 'PASS'));

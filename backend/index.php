@@ -1283,9 +1283,24 @@ try {
                         'description' => $q['description'] ?? '',
                         'max_marks' => (float)$q['max_marks']
                     ]);
-                }
             }
-            
+
+            // Auto-notify batch students of new pop-quiz or exam
+            $isPopQuiz = stripos($exam['title'] ?? '', 'pop quiz') !== false;
+            $notifTitle = $isPopQuiz ? "⚡ Remedial Pop Quiz: {$exam['title']}" : "📝 New Exam Scheduled: {$exam['title']}";
+            $notifMsg = $isPopQuiz
+                ? "A new targeted remedial pop-quiz '{$exam['title']}' has been dispatched to your batch. Complete it to reinforce key concepts!"
+                : "A new {$exam['exam_type']} exam '{$exam['title']}' has been scheduled for your batch. Time limit: {$exam['time_limit_minutes']} mins.";
+
+            supabaseInsert('notifications', [
+                'title' => $notifTitle,
+                'message' => $notifMsg,
+                'target_type' => 'BATCH',
+                'target_id' => $input['batch_id'],
+                'notification_type' => $isPopQuiz ? 'QUIZ' : 'EXAM',
+                'sender_id' => $user['id']
+            ]);
+
             echo json_encode(['success' => true, 'exam' => $exam]);
             break;
 

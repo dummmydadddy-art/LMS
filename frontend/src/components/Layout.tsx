@@ -23,7 +23,8 @@ import {
   HelpCircle,
   AlertCircle,
   Video,
-  Sparkles
+  Sparkles,
+  Zap
 } from 'lucide-react';
 import AiTutorModal from './AiTutorModal';
 
@@ -253,6 +254,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
 
   const getNotifIcon = (type: string) => {
     switch (type) {
+      case 'QUIZ': return <Zap className="h-5 w-5 text-amber-400" />;
       case 'ANNOUNCEMENT': return <Megaphone className="h-5 w-5 text-amber-400" />;
       case 'EXAM': return <GraduationCap className="h-5 w-5 text-red-400" />;
       case 'LECTURE': return <BookOpen className="h-5 w-5 text-primary-400" />;
@@ -444,7 +446,13 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
                         return (
                           <div
                             key={n.id}
-                            onClick={() => handleMarkAsRead(n.id)}
+                            onClick={() => {
+                              handleMarkAsRead(n.id);
+                              if (user?.role === 'STUDENT' && (n.notification_type === 'QUIZ' || n.notification_type === 'EXAM')) {
+                                setNotificationsOpen(false);
+                                navigate('/student/exams');
+                              }
+                            }}
                             className={`flex gap-3 p-2.5 rounded-xl cursor-pointer transition-all duration-200 ${
                               isUnread 
                                 ? 'bg-primary-950/10 border border-primary-500/10 hover:bg-primary-950/20' 
