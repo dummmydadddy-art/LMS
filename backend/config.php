@@ -19,6 +19,15 @@ $SUPABASE_SERVICE_ROLE_KEY = getenv("SUPABASE_SERVICE_ROLE_KEY") ?: "eyJhbGciOiJ
 $PAYMENT_GATEWAY_KEY = getenv("PAYMENT_GATEWAY_KEY") ?: "";
 $PAYMENT_GATEWAY_SECRET = getenv("PAYMENT_GATEWAY_SECRET") ?: "";
 
+// Service-to-service API key (for n8n chatbot, external integrations)
+// n8n sends this in X-Service-Key header to bypass JWT auth
+$SERVICE_API_KEY = getenv("LMS_SERVICE_API_KEY") ?: "lms-n8n-service-key-2026";
+
+// Ollama AI Configuration
+$OLLAMA_BASE_URL = getenv("OLLAMA_BASE_URL") ?: "http://localhost:11434";
+$OLLAMA_EMBED_MODEL = getenv("OLLAMA_EMBED_MODEL") ?: "nomic-embed-text";
+$OLLAMA_CHAT_MODEL = getenv("OLLAMA_CHAT_MODEL") ?: "llama3.2:latest";
+
 // Helper headers
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
@@ -26,7 +35,7 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 header("Content-Type: application/json; charset=UTF-8");
 
 // Handle CORS preflight request
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }

@@ -9,4 +9,4 @@ if (-not (Test-Path $phpPath)) {
     throw 'PHP was not found. Install PHP 8.3 or add php.exe to PATH.'
 }
 
-& $phpPath -S "localhost:$Port"
+& $phpPath -S "0.0.0.0:$Port"

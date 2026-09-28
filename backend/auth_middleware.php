@@ -149,3 +149,53 @@ function requireRole($allowedRoles) {
     }
     return $user;
 }
+
+/**
+ * Verify a service-to-service API key (for n8n, chatbot, external integrations).
+ * The caller must send header: X-Service-Key: <key>
+ * Returns a synthetic "service" user if valid, or null if no key / invalid key.
+ */
+function verifyServiceApiKey() {
+    global $SERVICE_API_KEY;
+
+    if (empty($SERVICE_API_KEY)) {
+        return null; // Feature not configured
+    }
+
+    $headers = function_exists('getallheaders') ? getallheaders() : [];
+    $serviceKey = null;
+    foreach ($headers as $key => $value) {
+        if (strtolower($key) === 'x-service-key') {
+            $serviceKey = $value;
+            break;
+        }
+    }
+    if (!$serviceKey) {
+        $serviceKey = $_SERVER['HTTP_X_SERVICE_KEY'] ?? $_SERVER['X_SERVICE_KEY'] ?? null;
+    }
+
+    if (!$serviceKey || $serviceKey !== $SERVICE_API_KEY) {
+        return null;
+    }
+
+    // Return a synthetic admin-level user for service calls
+    return [
+        'id' => '4f8d3aaa-afba-499d-ab3a-19b3c9428f93',
+        'email' => 'service@lms.internal',
+        'role_id' => 1,
+        'role' => 'SERVICE',
+        'full_name' => 'n8n Service Account'
+    ];
+}
+
+/**
+ * Try service API key first, then fall back to JWT token verification.
+ * Use this for routes that need to be accessible by both users and n8n.
+ */
+function verifyTokenOrApiKey() {
+    $serviceUser = verifyServiceApiKey();
+    if ($serviceUser !== null) {
+        return $serviceUser;
+    }
+    return verifyToken();
+}

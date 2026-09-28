@@ -121,3 +121,11 @@ function supabaseDelete($table, $params = []) {
     }
     return supabaseRequest('DELETE', $path);
 }
+
+function supabaseRPC($functionName, $params = []) {
+    $path = 'rpc/' . $functionName;
+    $headers = [
+        "Prefer: return=representation"
+    ];
+    return supabaseRequest('POST', $path, $params, $headers);
+}
