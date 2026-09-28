@@ -1092,6 +1092,83 @@ class RagService {
     }
 
     /**
+     * Evaluate MCQ Question Submissions with Pedagogical Breakdown & Rationale
+     */
+    public static function evaluateMcqBreakdown(array $questions, array $answers): array {
+        $totalScore = 0.0;
+        $maxScore = 0.0;
+        $breakdown = [];
+
+        foreach ($questions as $q) {
+            $marks = (float)($q['marks'] ?? 1);
+            $maxScore += $marks;
+            $submittedOptId = $answers[$q['id']] ?? '';
+
+            $optionsList = $q['options'] ?? [];
+            $correctOpt = null;
+            $submittedOpt = null;
+            foreach ($optionsList as $opt) {
+                if (!empty($opt['is_correct'])) {
+                    $correctOpt = $opt;
+                }
+                if ($opt['id'] === $submittedOptId) {
+                    $submittedOpt = $opt;
+                }
+            }
+
+            $isCorrect = ($correctOpt && $submittedOptId === $correctOpt['id']);
+            $scoreAwarded = $isCorrect ? $marks : 0.0;
+            $totalScore += $scoreAwarded;
+
+            // Generate pedagogical explanation
+            $explanation = '';
+            if (!empty($correctOpt['explanation'])) {
+                $explanation = $correctOpt['explanation'];
+            } elseif (!empty($q['explanation'])) {
+                $explanation = $q['explanation'];
+            } else {
+                $correctText = $correctOpt['option_text'] ?? 'the designated correct choice';
+                if ($isCorrect) {
+                    $explanation = "Correct! \"{$correctText}\" aligns directly with curriculum definitions.";
+                } else {
+                    $explanation = "The correct answer is: \"{$correctText}\". Review the core concepts for this module.";
+                }
+            }
+
+            $breakdown[] = [
+                'question_id' => $q['id'],
+                'question_text' => $q['question_text'] ?? '',
+                'submitted_option_id' => $submittedOptId,
+                'submitted_option_text' => $submittedOpt['option_text'] ?? 'No answer selected',
+                'correct_option_id' => $correctOpt['id'] ?? '',
+                'correct_option_text' => $correctOpt['option_text'] ?? '',
+                'is_correct' => $isCorrect,
+                'explanation' => $explanation,
+                'marks' => $marks,
+                'score_awarded' => $scoreAwarded
+            ];
+        }
+
+        $pct = $maxScore > 0 ? round(($totalScore / $maxScore) * 100, 1) : 0.0;
+        $guidance = '';
+        if ($pct >= 80) {
+            $guidance = "🌟 Outstanding performance ({$pct}%)! You have demonstrated strong mastery of this curriculum material.";
+        } elseif ($pct >= 50) {
+            $guidance = "👍 Good progress ({$pct}%)! Review the explanations for incorrect questions to cement your understanding.";
+        } else {
+            $guidance = "📚 Concept reinforcement recommended ({$pct}%). Study the cited topics and query the AI Tutor for guided hints.";
+        }
+
+        return [
+            'score' => $totalScore,
+            'max_score' => $maxScore,
+            'percentage' => $pct,
+            'breakdown' => $breakdown,
+            'guidance' => $guidance
+        ];
+    }
+
+    /**
      * Get Autopilot Configuration for Course/Batch or Default
      */
     public static function getAutopilotConfig(?string $courseId = null, ?string $batchId = null): array {

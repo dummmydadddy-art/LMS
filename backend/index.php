@@ -1377,34 +1377,27 @@ try {
                 $qRes = supabaseSelect('mcq_questions', '*', ['exam_id' => $examId]);
                 $questions = $qRes['data'] ?: [];
                 
-                $totalScore = 0;
-                $maxScore = 0;
-                
+                $questionsWithOpts = [];
                 foreach ($questions as $q) {
-                    $maxScore += (float)$q['marks'];
-                    $submittedOptId = $answers[$q['id']] ?? '';
-                    
-                    if (!empty($submittedOptId)) {
-                        $correctOptRes = supabaseSelect('mcq_options', 'id', [
-                            'question_id' => $q['id'],
-                            'is_correct' => true
-                        ], true);
-                        
-                        if ($correctOptRes['success'] && !empty($correctOptRes['data'])) {
-                            if ($correctOptRes['data']['id'] === $submittedOptId) {
-                                $totalScore += (float)$q['marks'];
-                            }
-                        }
-                    }
+                    $optRes = supabaseSelect('mcq_options', '*', ['question_id' => $q['id']]);
+                    $q['options'] = $optRes['data'] ?: [];
+                    $questionsWithOpts[] = $q;
                 }
-                
+
+                $evalResult = RagService::evaluateMcqBreakdown($questionsWithOpts, $answers);
+                $totalScore = $evalResult['score'];
+                $maxScore = $evalResult['max_score'];
+                $pct = $evalResult['percentage'];
+                $breakdown = $evalResult['breakdown'];
+                $guidance = $evalResult['guidance'];
+
                 // Record MCQ Results (First Attempt is Final)
                 $resData = [
                     'exam_id' => $examId,
                     'student_id' => $user['id'],
                     'score' => $totalScore,
                     'max_score' => $maxScore,
-                    'feedback' => 'Auto-evaluated MCQ Exam'
+                    'feedback' => "Auto-evaluated MCQ Exam ({$totalScore}/{$maxScore}, {$pct}%)"
                 ];
                 
                 $res = supabaseInsert('exam_results', $resData);
@@ -1422,7 +1415,15 @@ try {
                     );
                 }
 
-                echo json_encode(['success' => $res['success'], 'score' => $totalScore, 'max_score' => $maxScore, 'error' => $res['error']]);
+                echo json_encode([
+                    'success' => $res['success'],
+                    'score' => $totalScore,
+                    'max_score' => $maxScore,
+                    'percentage' => $pct,
+                    'breakdown' => $breakdown,
+                    'guidance' => $guidance,
+                    'error' => $res['error']
+                ]);
             } else {
                 // Coding exam submission
                 // Check if this is a finalize request

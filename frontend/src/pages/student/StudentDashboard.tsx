@@ -24,7 +24,10 @@ import {
   Square,
   Sparkles,
   Zap,
-  Brain
+  Brain,
+  CheckCircle2,
+  XCircle,
+  X
 } from 'lucide-react';
 import StudentMasteryJourney from '../../components/StudentMasteryJourney';
 
@@ -55,6 +58,7 @@ const StudentDashboard: React.FC = () => {
   const [studentId, setStudentId] = useState<string>('');
   const [pendingPopQuiz, setPendingPopQuiz] = useState<any | null>(null);
   const [dismissedQuizId, setDismissedQuizId] = useState<string>('');
+  const [examReviewData, setExamReviewData] = useState<any | null>(null);
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -479,7 +483,16 @@ const StudentDashboard: React.FC = () => {
         answers: mcqAnswers
       });
       if (res.data?.success) {
-        setMsg(`MCQ Exam submitted! Your Score: ${res.data.score}/${res.data.max_score}`);
+        const pct = res.data.percentage ?? (res.data.max_score > 0 ? Math.round((res.data.score / res.data.max_score) * 100) : 0);
+        setMsg(`MCQ Exam submitted! Your Score: ${res.data.score}/${res.data.max_score} (${pct}%)`);
+        setExamReviewData({
+          exam: activeExam,
+          score: res.data.score,
+          max_score: res.data.max_score,
+          percentage: pct,
+          breakdown: res.data.breakdown || [],
+          guidance: res.data.guidance || ''
+        });
         setActiveExam(null);
         fetchStudentProfileData();
       } else {
@@ -725,6 +738,125 @@ const StudentDashboard: React.FC = () => {
       {msg && (
         <div className="bg-primary-950/40 border border-primary-500/20 text-primary-400 px-4 py-3 rounded-xl text-sm max-w-lg text-center mx-auto">
           {msg}
+        </div>
+      )}
+
+      {/* --- EXAM REVIEW & PEDAGOGICAL BREAKDOWN MODAL --- */}
+      {examReviewData && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200">
+          <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl p-6 space-y-6 max-h-[90vh] overflow-y-auto">
+            {/* Header */}
+            <div className="flex items-start justify-between border-b border-slate-800 pb-4">
+              <div className="flex items-center gap-3">
+                <div className={`p-2.5 rounded-xl ${examReviewData.percentage >= 70 ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'}`}>
+                  {examReviewData.percentage >= 70 ? <CheckCircle2 className="h-6 w-6" /> : <Sparkles className="h-6 w-6" />}
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
+                      examReviewData.percentage >= 70 ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                    }`}>
+                      {examReviewData.percentage >= 70 ? 'Concept Mastered' : 'Remedial Review'}
+                    </span>
+                    <span className="text-xs text-slate-400 font-mono">
+                      Score: {examReviewData.score} / {examReviewData.max_score} ({examReviewData.percentage}%)
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-100 mt-1">{examReviewData.exam?.title || 'Exam Completed'}</h3>
+                </div>
+              </div>
+              <button
+                onClick={() => setExamReviewData(null)}
+                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Pedagogical Guidance Alert */}
+            {examReviewData.guidance && (
+              <div className="p-4 rounded-xl bg-primary-950/40 border border-primary-500/30 text-xs text-primary-200 leading-relaxed flex items-start gap-3">
+                <Sparkles className="h-4 w-4 text-primary-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-bold block text-primary-300 mb-0.5">AI Pedagogical Guidance:</span>
+                  {examReviewData.guidance}
+                </div>
+              </div>
+            )}
+
+            {/* Question by Question Breakdown */}
+            <div className="space-y-4">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                Detailed Question Review ({examReviewData.breakdown?.length || 0} Questions)
+              </h4>
+
+              {examReviewData.breakdown?.map((item: any, qIdx: number) => (
+                <div
+                  key={qIdx}
+                  className={`p-4 rounded-xl border text-xs space-y-2.5 transition ${
+                    item.is_correct
+                      ? 'bg-emerald-950/15 border-emerald-500/30'
+                      : 'bg-rose-950/15 border-rose-500/30'
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <p className="font-bold text-slate-200 text-xs leading-relaxed">
+                      Q{qIdx + 1}: {item.question_text}
+                    </p>
+                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase flex-shrink-0 ${
+                      item.is_correct
+                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
+                        : 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
+                    }`}>
+                      {item.is_correct ? `+${item.score_awarded} pts (Correct)` : `0 pts (Incorrect)`}
+                    </span>
+                  </div>
+
+                  {/* Answers */}
+                  <div className="space-y-1 pt-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-slate-400 w-24 flex-shrink-0">Your Answer:</span>
+                      <span className={`font-semibold flex items-center gap-1.5 ${item.is_correct ? 'text-emerald-400' : 'text-rose-400'}`}>
+                        {item.is_correct ? <CheckCircle2 className="h-3.5 w-3.5" /> : <XCircle className="h-3.5 w-3.5" />}
+                        {item.submitted_option_text}
+                      </span>
+                    </div>
+
+                    {!item.is_correct && (
+                      <div className="flex items-center gap-2">
+                        <span className="text-slate-400 w-24 flex-shrink-0">Correct Answer:</span>
+                        <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
+                          <CheckCircle2 className="h-3.5 w-3.5" />
+                          {item.correct_option_text}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Pedagogical Explanation */}
+                  {item.explanation && (
+                    <div className="mt-2.5 p-3 rounded-lg bg-slate-950/60 border border-slate-800 text-[11px] text-slate-300 leading-relaxed flex items-start gap-2">
+                      <Sparkles className="h-3.5 w-3.5 text-primary-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-bold text-primary-300 block mb-0.5">Syllabus Rationale:</span>
+                        {item.explanation}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Footer */}
+            <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-800">
+              <button
+                onClick={() => setExamReviewData(null)}
+                className="btn-primary px-5 py-2 text-xs font-semibold"
+              >
+                Close & Return to Dashboard
+              </button>
+            </div>
+          </div>
         </div>
       )}
 

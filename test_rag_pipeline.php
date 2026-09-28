@@ -528,6 +528,57 @@ try {
     recordTest("Test 20: Student Personal Remedial Mastery & Learning Journey", false, $e->getMessage());
 }
 
+// --- TEST 21: Dynamic In-Quiz Remedial Explanations & Post-Submission Breakdown ---
+try {
+    $sampleQuestions = [
+        [
+            'id' => 'q_test_1',
+            'question_text' => 'What layout dimension model does CSS Flexbox establish?',
+            'marks' => 5,
+            'options' => [
+                ['id' => 'opt_1a', 'option_text' => 'Two-dimensional grid model', 'is_correct' => false],
+                ['id' => 'opt_1b', 'option_text' => 'One-dimensional layout along row or column axis', 'is_correct' => true, 'explanation' => 'CSS Flexbox is inherently one-dimensional, handling either rows or columns at a time.']
+            ]
+        ],
+        [
+            'id' => 'q_test_2',
+            'question_text' => 'Why does useEffect return a cleanup function?',
+            'marks' => 5,
+            'options' => [
+                ['id' => 'opt_2a', 'option_text' => 'To clean up subscriptions and prevent memory leaks before unmounting', 'is_correct' => true, 'explanation' => 'The cleanup function prevents memory leaks by closing active listeners or timers.'],
+                ['id' => 'opt_2b', 'option_text' => 'To force immediate DOM re-rendering', 'is_correct' => false]
+            ]
+        ]
+    ];
+
+    // Student submits: Q1 correct (opt_1b), Q2 incorrect (opt_2b)
+    $submittedAnswers = [
+        'q_test_1' => 'opt_1b',
+        'q_test_2' => 'opt_2b'
+    ];
+
+    $eval = RagService::evaluateMcqBreakdown($sampleQuestions, $submittedAnswers);
+
+    $hasScore = ($eval['score'] === 5.0) && ($eval['max_score'] === 10.0);
+    $hasPct = ($eval['percentage'] === 50.0);
+    $hasBreakdown = (count($eval['breakdown']) === 2);
+    $q1 = $eval['breakdown'][0];
+    $q2 = $eval['breakdown'][1];
+
+    $q1Valid = ($q1['is_correct'] === true) && ($q1['score_awarded'] === 5.0) && (!empty($q1['explanation']));
+    $q2Valid = ($q2['is_correct'] === false) && ($q2['score_awarded'] === 0.0) && ($q2['correct_option_text'] === 'To clean up subscriptions and prevent memory leaks before unmounting');
+    $hasGuidance = !empty($eval['guidance']);
+
+    $test21Passed = $hasScore && $hasPct && $hasBreakdown && $q1Valid && $q2Valid && $hasGuidance;
+    recordTest(
+        "Test 21: Dynamic In-Quiz Remedial Explanations & Post-Submission Breakdown",
+        $test21Passed,
+        "Evaluated 2 questions: score {$eval['score']}/{$eval['max_score']} ({$eval['percentage']}%), per-question syllabus explanations verified."
+    );
+} catch (Exception $e) {
+    recordTest("Test 21: Dynamic In-Quiz Remedial Explanations & Post-Submission Breakdown", false, $e->getMessage());
+}
+
 echo "\n========================================================\n";
 $total = count($results);
 $passedCount = count(array_filter($results, fn($r) => $r['status'] === 'PASS'));
