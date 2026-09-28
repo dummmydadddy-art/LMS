@@ -443,6 +443,44 @@ try {
     recordTest("Test 18: Automated Remedial Dispatch Trigger (Autopilot Mode)", false, $e->getMessage());
 }
 
+// --- TEST 19: Teacher Remedial Quiz Results & Concept Resolution Analytics ---
+try {
+    $testCourseId = 'course-remedial-test';
+    $testBatchId = 'batch-remedial-test';
+    $examId = 'pop_quiz_flex_test';
+    $examTitle = 'Pop Quiz: CSS Flexbox Architecture';
+
+    // 1. Record 3 student attempts on a remedial pop-quiz
+    RagService::recordRemedialResult($examId, $examTitle, $testCourseId, $testBatchId, 'std_alpha', 15.0, 15.0); // 100%
+    RagService::recordRemedialResult($examId, $examTitle, $testCourseId, $testBatchId, 'std_beta', 12.0, 15.0);  // 80%
+    RagService::recordRemedialResult($examId, $examTitle, $testCourseId, $testBatchId, 'std_gamma', 6.0, 15.0);  // 40%
+
+    // 2. Fetch Remedial Analytics
+    $analytics = RagService::getRemedialAnalytics($testCourseId, $testBatchId);
+    $metrics = $analytics['metrics'] ?? [];
+    $quizzes = $analytics['quizzes'] ?? [];
+
+    $hasAttempts = ($metrics['total_attempts'] === 3);
+    $hasMastery = ($metrics['mastery_count'] === 2); // 2 out of 3 >= 70%
+    $expectedAvg = round((100.0 + 80.0 + 40.0) / 3, 1);
+    $avgMatches = abs($metrics['avg_score_pct'] - $expectedAvg) < 0.2;
+    $hasResolutionRate = ($metrics['resolution_rate_pct'] === 66.7);
+
+    // 3. Verify quiz breakdown and status badge
+    $firstQuiz = $quizzes[0] ?? null;
+    $hasQuizInfo = $firstQuiz && ($firstQuiz['exam_id'] === $examId) && ($firstQuiz['topic'] === 'HTML & CSS Layouts');
+    $hasStatus = $firstQuiz && in_array($firstQuiz['status'], ['CONCEPT_RESOLVED', 'PARTIAL_MASTERY', 'NEEDS_REINFORCEMENT']);
+
+    $remedialPassed = $hasAttempts && $hasMastery && $avgMatches && $hasResolutionRate && $hasQuizInfo && $hasStatus;
+    recordTest(
+        "Test 19: Teacher Remedial Quiz Results & Concept Resolution Analytics",
+        $remedialPassed,
+        "Evaluated 3 student attempts: avg {$metrics['avg_score_pct']}%, resolution rate {$metrics['resolution_rate_pct']}%, status '{$firstQuiz['badge_label']}'."
+    );
+} catch (Exception $e) {
+    recordTest("Test 19: Teacher Remedial Quiz Results & Concept Resolution Analytics", false, $e->getMessage());
+}
+
 echo "\n========================================================\n";
 $total = count($results);
 $passedCount = count(array_filter($results, fn($r) => $r['status'] === 'PASS'));

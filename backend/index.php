@@ -1408,6 +1408,20 @@ try {
                 ];
                 
                 $res = supabaseInsert('exam_results', $resData);
+
+                // If this is a remedial pop-quiz, record evaluation analytics for knowledge gap resolution tracking
+                if (stripos($exam['title'] ?? '', 'pop quiz') !== false || stripos($exam['title'] ?? '', 'remedial') !== false) {
+                    RagService::recordRemedialResult(
+                        $examId,
+                        $exam['title'] ?? 'Pop Quiz',
+                        $exam['course_id'] ?? null,
+                        $exam['batch_id'] ?? null,
+                        $user['id'],
+                        (float)$totalScore,
+                        (float)$maxScore
+                    );
+                }
+
                 echo json_encode(['success' => $res['success'], 'score' => $totalScore, 'max_score' => $maxScore, 'error' => $res['error']]);
             } else {
                 // Coding exam submission

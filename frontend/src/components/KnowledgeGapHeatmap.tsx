@@ -85,6 +85,28 @@ interface PendingTrigger {
   status: string;
 }
 
+interface RemedialQuizItem {
+  exam_id: string;
+  exam_title: string;
+  topic: string;
+  attempt_count: number;
+  avg_score: number;
+  mastery_rate: number;
+  status: 'CONCEPT_RESOLVED' | 'PARTIAL_MASTERY' | 'NEEDS_REINFORCEMENT';
+  badge_label: string;
+  last_attempt_at: string;
+}
+
+interface RemedialImpactData {
+  metrics: {
+    total_attempts: number;
+    avg_score_pct: number;
+    mastery_count: number;
+    resolution_rate_pct: number;
+  };
+  quizzes: RemedialQuizItem[];
+}
+
 interface AnalyticsData {
   metrics: TelemetryMetrics;
   topic_hotspots: TopicHotspot[];
@@ -95,6 +117,7 @@ interface AnalyticsData {
     recent_events: AutopilotEvent[];
     pending_triggers: PendingTrigger[];
   };
+  remedial_impact?: RemedialImpactData;
 }
 
 interface QuizOption {
@@ -870,6 +893,120 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
           </div>
         </div>
       </div>
+
+      {/* --- REMEDIAL QUIZ IMPACT & CONCEPT RESOLUTION DASHBOARD --- */}
+      {analytics?.remedial_impact && (
+        <div className="glass-card p-6 border-slate-800 space-y-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pb-4 border-b border-slate-800">
+            <div>
+              <h3 className="text-base font-bold text-slate-100 flex items-center gap-2">
+                <ShieldCheck className="h-5 w-5 text-emerald-400" />
+                Remedial Exam Performance & Concept Resolution
+              </h3>
+              <p className="text-xs text-slate-400 mt-0.5">
+                Measures how effectively dispatched pop-quizzes have eliminated student confusion and restored curriculum mastery.
+              </p>
+            </div>
+
+            {/* Quick KPI stats pill */}
+            <div className="flex items-center gap-3">
+              <div className="px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-right">
+                <span className="text-[10px] text-slate-400 uppercase font-bold block">Resolution Rate</span>
+                <span className="text-sm font-extrabold text-emerald-400">
+                  {analytics.remedial_impact.metrics.resolution_rate_pct}%
+                </span>
+              </div>
+              <div className="px-3 py-1.5 rounded-xl bg-primary-500/10 border border-primary-500/20 text-right">
+                <span className="text-[10px] text-slate-400 uppercase font-bold block">Avg Score</span>
+                <span className="text-sm font-extrabold text-primary-400">
+                  {analytics.remedial_impact.metrics.avg_score_pct}%
+                </span>
+              </div>
+              <div className="px-3 py-1.5 rounded-xl bg-slate-800 border border-slate-700 text-right">
+                <span className="text-[10px] text-slate-400 uppercase font-bold block">Total Attempts</span>
+                <span className="text-sm font-extrabold text-slate-200">
+                  {analytics.remedial_impact.metrics.total_attempts}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Remedial Quiz Table */}
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-xs text-slate-300">
+              <thead className="bg-slate-900/60 text-slate-400 uppercase tracking-wider text-[10px] border-b border-slate-800">
+                <tr>
+                  <th className="py-3 px-4">Remedial Pop Quiz</th>
+                  <th className="py-3 px-4">Target Topic</th>
+                  <th className="py-3 px-4 text-center">Student Attempts</th>
+                  <th className="py-3 px-4 text-center">Average Score</th>
+                  <th className="py-3 px-4 text-center">Mastery Rate (≥70%)</th>
+                  <th className="py-3 px-4 text-right">Resolution Status</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800/60">
+                {analytics.remedial_impact.quizzes.length > 0 ? (
+                  analytics.remedial_impact.quizzes.map((quiz, i) => (
+                    <tr key={i} className="hover:bg-slate-800/30 transition-colors">
+                      <td className="py-3 px-4 font-semibold text-slate-200">
+                        <div className="flex items-center gap-2">
+                          <Zap className="h-3.5 w-3.5 text-amber-400 flex-shrink-0" />
+                          <span>{quiz.exam_title}</span>
+                        </div>
+                      </td>
+                      <td className="py-3 px-4 text-slate-400">
+                        <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 text-[11px]">
+                          {quiz.topic}
+                        </span>
+                      </td>
+                      <td className="py-3 px-4 text-center font-bold text-slate-300">
+                        {quiz.attempt_count}
+                      </td>
+                      <td className="py-3 px-4 text-center">
+                        <span className={`font-bold ${
+                          quiz.avg_score >= 75 ? 'text-emerald-400' : quiz.avg_score >= 55 ? 'text-amber-400' : 'text-rose-400'
+                        }`}>
+                          {quiz.avg_score}%
+                        </span>
+                      </td>
+                      <td className="py-3 px-4 text-center">
+                        <div className="flex items-center justify-center gap-2">
+                          <div className="w-16 bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                            <div
+                              className={`h-full rounded-full ${
+                                quiz.mastery_rate >= 75 ? 'bg-emerald-500' : quiz.mastery_rate >= 50 ? 'bg-amber-500' : 'bg-rose-500'
+                              }`}
+                              style={{ width: `${Math.min(100, quiz.mastery_rate)}%` }}
+                            />
+                          </div>
+                          <span className="text-[11px] font-semibold text-slate-300">{quiz.mastery_rate}%</span>
+                        </div>
+                      </td>
+                      <td className="py-3 px-4 text-right">
+                        <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold border ${
+                          quiz.status === 'CONCEPT_RESOLVED'
+                            ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                            : quiz.status === 'PARTIAL_MASTERY'
+                            ? 'bg-amber-500/15 text-amber-300 border-amber-500/30'
+                            : 'bg-rose-500/15 text-rose-300 border-rose-500/30'
+                        }`}>
+                          {quiz.badge_label}
+                        </span>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan={6} className="py-8 text-center text-slate-500">
+                      No remedial pop quiz submissions recorded yet for this batch.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
 
       {/* Targeted Practice Quiz Generation Modal */}
       {practiceModalOpen && (
