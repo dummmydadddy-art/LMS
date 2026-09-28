@@ -131,6 +131,7 @@ interface GeneratedQuizQuestion {
   options: QuizOption[];
   explanation: string;
   citation?: string;
+  difficulty_tier?: string;
 }
 
 interface KnowledgeGapHeatmapProps {
@@ -151,6 +152,8 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
   const [activeTopic, setActiveTopic] = useState<string>('');
   const [generatedQuestions, setGeneratedQuestions] = useState<GeneratedQuizQuestion[]>([]);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const [selectedDifficulty, setSelectedDifficulty] = useState<'AUTO' | 'FOUNDATION' | 'APPLICATION' | 'ARCHITECTURAL'>('AUTO');
+  const [resolvedTierInfo, setResolvedTierInfo] = useState<{ tier: string; label: string; reason?: string } | null>(null);
 
   // 1-Click Pop Quiz Publishing states
   const [publishStep, setPublishStep] = useState<boolean>(false);
@@ -264,7 +267,7 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
     fetchAnalytics();
   }, [selectedCourse, selectedBatch]);
 
-  const handleGeneratePractice = async (topicOrQuestion: string) => {
+  const handleGeneratePractice = async (topicOrQuestion: string, explicitDiff?: 'AUTO' | 'FOUNDATION' | 'APPLICATION' | 'ARCHITECTURAL') => {
     setActiveTopic(topicOrQuestion);
     setPracticeModalOpen(true);
     setGeneratingQuiz(true);
@@ -272,6 +275,11 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
     setPublishStep(false);
     setPublishSuccess(false);
     setPublishError('');
+
+    const targetDiff = explicitDiff || selectedDifficulty;
+    if (explicitDiff) {
+      setSelectedDifficulty(explicitDiff);
+    }
 
     const defaultDueDate = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString().slice(0, 16);
     const targetCourse = selectedCourse || (courses[0]?.id ?? '');
@@ -288,8 +296,19 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
         topic: topicOrQuestion,
         course_id: selectedCourse || null,
         batch_id: selectedBatch || null,
-        count: 4
+        count: 4,
+        difficulty: targetDiff
       });
+
+      if (res.data?.adaptive_info) {
+        setResolvedTierInfo(res.data.adaptive_info);
+      } else if (res.data?.difficulty_tier) {
+        setResolvedTierInfo({
+          tier: res.data.difficulty_tier,
+          label: `${res.data.difficulty_tier} Tier`,
+          reason: `Configured at ${res.data.difficulty_tier} difficulty.`
+        });
+      }
 
       const rawQuestions = Array.isArray(res.data?.quiz) && res.data.quiz.length > 0
         ? res.data.quiz
@@ -315,7 +334,8 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
             question: q.question || q.question_text || '',
             options: opts,
             explanation: q.explanation || 'Grounded in core curriculum materials to eliminate misconceptions.',
-            citation: q.citation || q.source_citation || ''
+            citation: q.citation || q.source_citation || '',
+            difficulty_tier: q.difficulty_tier || res.data?.difficulty_tier || 'APPLICATION'
           };
         });
         setGeneratedQuestions(mapped);
@@ -331,7 +351,8 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
               { id: 'D', text: 'Bypassing dependency tracking arrays during component updates', is_correct: false }
             ],
             explanation: 'Grounded in core curriculum best practices to reinforce conceptual clarity and eliminate misconceptions.',
-            citation: 'Course Syllabus Core Principles'
+            citation: 'Course Syllabus Core Principles',
+            difficulty_tier: targetDiff === 'AUTO' ? 'FOUNDATION' : targetDiff
           }
         ]);
       }
@@ -1203,6 +1224,49 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
                 </div>
               ) : (
                 <div className="space-y-4">
+                  {/* Adaptive Difficulty Ladder Selector */}
+                  <div className="bg-slate-950/70 border border-slate-800 rounded-xl p-3 flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+                        <Sliders className="h-3.5 w-3.5 text-primary-400" /> Difficulty Ladder:
+                      </span>
+                      <div className="inline-flex rounded-lg bg-slate-900 border border-slate-800 p-0.5">
+                        {(['AUTO', 'FOUNDATION', 'APPLICATION', 'ARCHITECTURAL'] as const).map((tier) => (
+                          <button
+                            key={tier}
+                            onClick={() => {
+                              setSelectedDifficulty(tier);
+                              handleGeneratePractice(activeTopic, tier);
+                            }}
+                            disabled={generatingQuiz}
+                            className={`px-2.5 py-1 text-[11px] font-semibold rounded-md transition ${
+                              selectedDifficulty === tier
+                                ? 'bg-primary-500 text-white shadow-sm'
+                                : 'text-slate-400 hover:text-slate-200'
+                            }`}
+                          >
+                            {tier === 'AUTO' ? '⚡ Adaptive (Auto)' : tier === 'FOUNDATION' ? '📘 Foundation' : tier === 'APPLICATION' ? '⚙️ Application' : '🏛️ Architectural'}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {resolvedTierInfo && (
+                      <div className="text-[11px] flex items-center gap-1.5">
+                        <span className="text-slate-400">Current Tier:</span>
+                        <span className={`px-2 py-0.5 rounded font-bold uppercase tracking-wider text-[10px] border ${
+                          resolvedTierInfo.tier === 'FOUNDATION'
+                            ? 'bg-sky-500/10 text-sky-400 border-sky-500/30'
+                            : resolvedTierInfo.tier === 'ARCHITECTURAL'
+                            ? 'bg-purple-500/10 text-purple-400 border-purple-500/30'
+                            : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
+                        }`}>
+                          {resolvedTierInfo.label || resolvedTierInfo.tier}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
                   {generatedQuestions.map((q, idx) => (
                     <div
                       key={idx}
@@ -1213,23 +1277,36 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
                           <span className="text-primary-400 mr-1.5">Q{idx + 1}.</span>
                           {q.question}
                         </p>
-                        <button
-                          onClick={() => copyQuestionToClipboard(q, idx)}
-                          className="text-[11px] text-slate-400 hover:text-slate-200 px-2 py-1 rounded bg-slate-900 border border-slate-800 flex items-center gap-1 shrink-0"
-                          title="Copy Question"
-                        >
-                          {copiedIndex === idx ? (
-                            <>
-                              <Check className="h-3 w-3 text-emerald-400" />
-                              <span className="text-emerald-400">Copied</span>
-                            </>
-                          ) : (
-                            <>
-                              <Copy className="h-3 w-3" />
-                              <span>Copy</span>
-                            </>
+                        <div className="flex items-center gap-2 shrink-0">
+                          {q.difficulty_tier && (
+                            <span className={`text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full border ${
+                              q.difficulty_tier === 'FOUNDATION'
+                                ? 'bg-sky-500/10 text-sky-400 border-sky-500/30'
+                                : q.difficulty_tier === 'ARCHITECTURAL'
+                                ? 'bg-purple-500/10 text-purple-400 border-purple-500/30'
+                                : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
+                            }`}>
+                              {q.difficulty_tier}
+                            </span>
                           )}
-                        </button>
+                          <button
+                            onClick={() => copyQuestionToClipboard(q, idx)}
+                            className="text-[11px] text-slate-400 hover:text-slate-200 px-2 py-1 rounded bg-slate-900 border border-slate-800 flex items-center gap-1 shrink-0"
+                            title="Copy Question"
+                          >
+                            {copiedIndex === idx ? (
+                              <>
+                                <Check className="h-3 w-3 text-emerald-400" />
+                                <span className="text-emerald-400">Copied</span>
+                              </>
+                            ) : (
+                              <>
+                                <Copy className="h-3 w-3" />
+                                <span>Copy</span>
+                              </>
+                            )}
+                          </button>
+                        </div>
                       </div>
 
                       {/* Options */}

@@ -611,8 +611,49 @@ try {
     recordTest("Test 22: Self-Healing Knowledge Gap Curricula & AI Resource Recommendations", false, $e->getMessage());
 }
 
+// --- TEST 23: Adaptive Remedial Difficulty Ladder & Tier Scaling ---
+try {
+    $db = RagService::getLocalDb();
+    $testSid = 'std_ladder_test_042';
+    $ladderTopic = 'State Reconciliation and Fiber Tree';
+
+    // Clean any residual test fixtures
+    $db->exec("DELETE FROM rag_remedial_results WHERE student_id = '{$testSid}'");
+
+    // 1. Initial State: No prior attempts -> Must resolve to FOUNDATION tier
+    $tier0 = RagService::resolveAdaptiveDifficulty($testSid, $ladderTopic);
+    $isFoundation = ($tier0['tier'] === 'FOUNDATION') && ($tier0['attempts_count'] === 0);
+
+    // 2. Intermediate State: Insert score of 60% -> Must resolve to APPLICATION tier
+    RagService::recordRemedialResult('exam_ladder_01', 'Mid Exam 1', null, null, $testSid, 6.0, 10.0, $ladderTopic);
+    $tier1 = RagService::resolveAdaptiveDifficulty($testSid, $ladderTopic);
+    $isApplication = ($tier1['tier'] === 'APPLICATION') && ($tier1['attempts_count'] === 1) && ($tier1['past_avg_pct'] === 60.0);
+
+    // 3. Advanced State: Insert score of 100% -> (60 + 100) / 2 = 80% -> Must resolve to ARCHITECTURAL tier
+    RagService::recordRemedialResult('exam_ladder_02', 'Adv Exam 2', null, null, $testSid, 10.0, 10.0, $ladderTopic);
+    $tier2 = RagService::resolveAdaptiveDifficulty($testSid, $ladderTopic);
+    $isArchitectural = ($tier2['tier'] === 'ARCHITECTURAL') && ($tier2['attempts_count'] === 2) && ($tier2['past_avg_pct'] === 80.0);
+
+    // 4. Test explicit override without studentId
+    $defaultTier = RagService::resolveAdaptiveDifficulty(null, $ladderTopic);
+    $isDefaultApp = ($defaultTier['tier'] === 'APPLICATION');
+
+    // Clean up test fixture
+    $db->exec("DELETE FROM rag_remedial_results WHERE student_id = '{$testSid}'");
+
+    $test23Passed = $isFoundation && $isApplication && $isArchitectural && $isDefaultApp;
+    recordTest(
+        "Test 23: Adaptive Remedial Difficulty Ladder & Dynamic Tier Scaling",
+        $test23Passed,
+        "Dynamic ladder verified: 0 attempts -> {$tier0['tier']}, 60% avg -> {$tier1['tier']}, 80% avg -> {$tier2['tier']}, null student -> {$defaultTier['tier']}."
+    );
+} catch (Exception $e) {
+    recordTest("Test 23: Adaptive Remedial Difficulty Ladder & Dynamic Tier Scaling", false, $e->getMessage());
+}
+
 echo "\n========================================================\n";
 $total = count($results);
 $passedCount = count(array_filter($results, fn($r) => $r['status'] === 'PASS'));
 echo "RESULTS: $passedCount / $total TESTS PASSED (" . round(($passedCount / $total) * 100) . "%)\n";
 echo "========================================================\n";
+

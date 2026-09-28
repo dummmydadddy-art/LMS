@@ -130,6 +130,28 @@ export const StudentMasteryJourney: React.FC<StudentMasteryJourneyProps> = ({
     }
   };
 
+  const getDifficultyTierBadge = (avgScore: number, attempts: number) => {
+    if (attempts === 0 || avgScore < 50) {
+      return (
+        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">
+          <Layers className="h-3 w-3" /> Foundation Tier
+        </span>
+      );
+    }
+    if (avgScore < 75) {
+      return (
+        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+          <Zap className="h-3 w-3" /> Application Tier
+        </span>
+      );
+    }
+    return (
+      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20">
+        <Sparkles className="h-3 w-3" /> Architectural Tier
+      </span>
+    );
+  };
+
   return (
     <div className="rounded-2xl border border-slate-800 bg-slate-900/60 backdrop-blur-xl p-5 md:p-6 shadow-xl relative overflow-hidden">
       {/* Decorative ambient glow */}
@@ -271,9 +293,12 @@ export const StudentMasteryJourney: React.FC<StudentMasteryJourneyProps> = ({
             className="p-4 rounded-xl bg-slate-950/40 border border-slate-800/80 hover:border-slate-700/80 transition flex flex-col justify-between"
           >
             <div>
-              <div className="flex items-start justify-between gap-2 mb-2">
+              <div className="flex items-start justify-between gap-2 mb-1.5">
                 <h4 className="font-bold text-sm text-slate-200 leading-snug">{topic.topic}</h4>
                 {getStatusBadge(topic.status)}
+              </div>
+              <div className="mb-2">
+                {getDifficultyTierBadge(topic.avg_score_pct, topic.attempts_count)}
               </div>
 
               {/* Progress bar */}

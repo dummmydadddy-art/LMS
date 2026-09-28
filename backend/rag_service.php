@@ -771,24 +771,27 @@ class RagService {
         ?string $batchId,
         string $studentId,
         float $score,
-        float $maxScore
+        float $maxScore,
+        ?string $explicitTopic = null
     ): void {
         try {
             $db = self::getLocalDb();
             $percentage = $maxScore > 0 ? round(($score / $maxScore) * 100, 1) : 0.0;
 
-            $topic = 'General Full Stack Development';
-            $tLower = strtolower($examTitle);
-            if (preg_match('/hook|useeffect|usestate|react/i', $tLower)) {
-                $topic = 'React & Hooks';
-            } elseif (preg_match('/promise|async|await|event loop|javascript|es6/i', $tLower)) {
-                $topic = 'JavaScript ES6+ & Async';
-            } elseif (preg_match('/flexbox|grid|css|layout/i', $tLower)) {
-                $topic = 'HTML & CSS Layouts';
-            } elseif (preg_match('/express|node|rest|api|middleware/i', $tLower)) {
-                $topic = 'Node.js & Express REST APIs';
-            } elseif (preg_match('/sql|database|postgres/i', $tLower)) {
-                $topic = 'PostgreSQL & Database Systems';
+            $topic = $explicitTopic ?: 'General Full Stack Development';
+            if (empty($explicitTopic)) {
+                $tLower = strtolower($examTitle);
+                if (preg_match('/hook|useeffect|usestate|react/i', $tLower)) {
+                    $topic = 'React & Hooks';
+                } elseif (preg_match('/promise|async|await|event loop|javascript|es6/i', $tLower)) {
+                    $topic = 'JavaScript ES6+ & Async';
+                } elseif (preg_match('/flexbox|grid|css|layout/i', $tLower)) {
+                    $topic = 'HTML & CSS Layouts';
+                } elseif (preg_match('/express|node|rest|api|middleware/i', $tLower)) {
+                    $topic = 'Node.js & Express REST APIs';
+                } elseif (preg_match('/sql|database|postgres/i', $tLower)) {
+                    $topic = 'PostgreSQL & Database Systems';
+                }
             }
 
             $stmt = $db->prepare("
@@ -2384,16 +2387,116 @@ class RagService {
     }
 
     /**
-     * RAG-Grounded Quiz Generator
+     * Resolve Adaptive Difficulty Tier for Student / Topic
+     * Returns: FOUNDATION (past avg < 50% or 0 attempts),
+     *          APPLICATION (past avg 50% - 74%),
+     *          ARCHITECTURAL (past avg >= 75%)
+     */
+    public static function resolveAdaptiveDifficulty(
+        ?string $studentId,
+        string $topic,
+        ?string $courseId = null,
+        ?string $batchId = null
+    ): array {
+        if (empty($studentId)) {
+            return [
+                'tier' => 'APPLICATION',
+                'label' => 'Application Tier',
+                'reason' => 'Default curriculum standard difficulty applied.',
+                'past_avg_pct' => 0.0,
+                'attempts_count' => 0
+            ];
+        }
+
+        try {
+            $db = self::getLocalDb();
+            $where = "WHERE student_id = :sid";
+            $params = [':sid' => $studentId];
+
+            $tNorm = trim($topic);
+            $where .= " AND topic LIKE :t";
+            $params[':t'] = '%' . $tNorm . '%';
+
+            $stmt = $db->prepare("
+                SELECT COUNT(*) as attempts_count,
+                       ROUND(AVG(percentage), 1) as avg_score_pct,
+                       MAX(percentage) as best_score_pct
+                FROM rag_remedial_results
+                {$where}
+            ");
+            $stmt->execute($params);
+            $row = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
+
+            $attempts = (int)($row['attempts_count'] ?? 0);
+            $avgScore = (float)($row['avg_score_pct'] ?? 0.0);
+
+            if ($attempts === 0 || $avgScore < 50.0) {
+                return [
+                    'tier' => 'FOUNDATION',
+                    'label' => 'Foundation Tier',
+                    'reason' => $attempts === 0 
+                        ? 'No prior attempts detected on this topic; initiating at Foundation recall level.' 
+                        : "Prior mastery ({$avgScore}%) indicates foundational concept reinforcement needed.",
+                    'past_avg_pct' => $avgScore,
+                    'attempts_count' => $attempts
+                ];
+            } elseif ($avgScore < 75.0) {
+                return [
+                    'tier' => 'APPLICATION',
+                    'label' => 'Application Tier',
+                    'reason' => "Prior mastery ({$avgScore}%) indicates solid grasp; testing practical implementation and debugging.",
+                    'past_avg_pct' => $avgScore,
+                    'attempts_count' => $attempts
+                ];
+            } else {
+                return [
+                    'tier' => 'ARCHITECTURAL',
+                    'label' => 'Architectural Tier',
+                    'reason' => "High prior mastery ({$avgScore}%); challenging with advanced systems edge cases and trade-offs.",
+                    'past_avg_pct' => $avgScore,
+                    'attempts_count' => $attempts
+                ];
+            }
+        } catch (\Throwable $e) {
+            return [
+                'tier' => 'APPLICATION',
+                'label' => 'Application Tier',
+                'reason' => 'Standard application difficulty applied.',
+                'past_avg_pct' => 0.0,
+                'attempts_count' => 0
+            ];
+        }
+    }
+
+    /**
+     * RAG-Grounded Quiz Generator with Adaptive Difficulty Scaling
      * Generates multiple-choice questions grounded in curriculum excerpts
      */
     public static function generateQuiz(
         string $topic,
         ?string $courseId = null,
         ?string $batchId = null,
-        int $count = 5
+        int $count = 5,
+        string $difficulty = 'AUTO',
+        ?string $studentId = null
     ): array {
         @set_time_limit(180);
+
+        // Resolve difficulty tier
+        $diffUpper = strtoupper(trim($difficulty));
+        if ($diffUpper === 'AUTO' || $diffUpper === 'ADAPTIVE' || empty($diffUpper)) {
+            $adaptiveInfo = self::resolveAdaptiveDifficulty($studentId, $topic, $courseId, $batchId);
+            $resolvedTier = $adaptiveInfo['tier'];
+        } else {
+            $resolvedTier = in_array($diffUpper, ['FOUNDATION', 'APPLICATION', 'ARCHITECTURAL']) ? $diffUpper : 'APPLICATION';
+            $adaptiveInfo = [
+                'tier' => $resolvedTier,
+                'label' => ucfirst(strtolower($resolvedTier)) . ' Tier',
+                'reason' => 'Explicit difficulty tier specified.',
+                'past_avg_pct' => 0.0,
+                'attempts_count' => 0
+            ];
+        }
 
         // Step 1: Hybrid Search for relevant curriculum chunks
         $searchRes = self::search($topic, $courseId, $batchId, 4, 0.20);
@@ -2421,15 +2524,31 @@ class RagService {
         }
         $contextBlock = implode("\n\n---\n\n", $contextParts);
 
-        // Step 3: Prompt Ollama for grounded quiz generation
+        // Step 3: Build difficulty-tailored system prompt
+        $tierGuidance = "";
+        if ($resolvedTier === 'FOUNDATION') {
+            $tierGuidance = "DIFFICULTY TIER: FOUNDATION (Recall & Core Rules)\n"
+                . "- Focus on core definitions, fundamental syntax rules, and distinguishing basic concepts.\n"
+                . "- Questions should test direct factual recall and conceptual recognition.\n";
+        } elseif ($resolvedTier === 'ARCHITECTURAL') {
+            $tierGuidance = "DIFFICULTY TIER: ARCHITECTURAL (Advanced Edge Cases & Systems Design)\n"
+                . "- Focus on complex systems edge cases, concurrency/lifecycle race conditions, and performance optimization.\n"
+                . "- Questions should require deep technical differentiation between subtle nuances.\n";
+        } else {
+            $tierGuidance = "DIFFICULTY TIER: APPLICATION (Implementation & Debugging)\n"
+                . "- Focus on realistic code scenarios, predicting execution outputs, and common runtime pitfalls.\n"
+                . "- Questions should test practical application.\n";
+        }
+
         $systemPrompt = "You are the EduConnect LMS Quiz Specialist. Generate exactly {$count} multiple-choice questions (MCQs) grounded exclusively on the provided course material excerpts.\n"
+            . $tierGuidance
             . "CRITICAL RULES:\n"
             . "1. Base every question strictly on the provided evidence excerpts.\n"
             . "2. For each question, provide 4 options labeled A, B, C, D.\n"
             . "3. Provide the correct option and a concise 1-sentence explanation citing [Document Title, Section X].\n"
             . "4. Format questions clearly with markdown.";
 
-        $userPrompt = "Please generate {$count} MCQs on topic: {$topic}\n\nCurriculum Evidence:\n{$contextBlock}";
+        $userPrompt = "Please generate {$count} MCQs on topic: {$topic} at {$resolvedTier} difficulty.\n\nCurriculum Evidence:\n{$contextBlock}";
 
         $chatUrl = self::$ollamaBaseUrl . '/api/chat';
         $ch = curl_init($chatUrl);
@@ -2464,10 +2583,15 @@ class RagService {
         }
 
         $parsedQuestions = !empty($quiz) ? self::parseQuizQuestions($quiz) : [];
+        foreach ($parsedQuestions as &$pq) {
+            $pq['difficulty_tier'] = $resolvedTier;
+        }
 
         return [
             'success' => !empty($quiz),
             'topic' => $topic,
+            'difficulty_tier' => $resolvedTier,
+            'adaptive_info' => $adaptiveInfo,
             'quiz' => $quiz,
             'quiz_text' => $quiz,
             'questions' => $parsedQuestions,

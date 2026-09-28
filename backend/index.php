@@ -2605,8 +2605,10 @@ try {
             $courseId = $input['course_id'] ?? null;
             $batchId = $input['batch_id'] ?? null;
             $count = isset($input['count']) ? max(1, min(10, (int)$input['count'])) : 3;
+            $difficulty = $input['difficulty'] ?? 'AUTO';
+            $studentId = $input['student_id'] ?? null;
 
-            $practiceRes = RagService::generateQuiz($topic, $courseId, $batchId, $count);
+            $practiceRes = RagService::generateQuiz($topic, $courseId, $batchId, $count, $difficulty, $studentId);
             if (!empty($practiceRes['questions']) && is_array($practiceRes['questions'])) {
                 $formattedQuiz = [];
                 foreach ($practiceRes['questions'] as $q) {
@@ -2622,6 +2624,7 @@ try {
                     $formattedQuiz[] = [
                         'question' => $q['question'],
                         'options' => $opts,
+                        'difficulty_tier' => $q['difficulty_tier'] ?? $practiceRes['difficulty_tier'] ?? 'APPLICATION',
                         'explanation' => "Grounded directly in indexed course curriculum.",
                         'citation' => $q['source_citation'] ?? ''
                     ];
@@ -2704,6 +2707,23 @@ try {
             echo json_encode($recs);
             break;
 
+        // Resolve Adaptive Difficulty Tier for Student / Topic
+        case ($route === '/api/rag/adaptive/difficulty' && in_array($method, ['GET', 'POST'])):
+            $user = verifyTokenOrApiKey();
+            $topic = trim($input['topic'] ?? $_GET['topic'] ?? '');
+            if (empty($topic)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'topic parameter is required']);
+                break;
+            }
+            $studentId = $input['student_id'] ?? $_GET['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
+            $courseId = $input['course_id'] ?? $_GET['course_id'] ?? null;
+            $batchId = $input['batch_id'] ?? $_GET['batch_id'] ?? null;
+
+            $diffData = RagService::resolveAdaptiveDifficulty($studentId, $topic, $courseId, $batchId);
+            echo json_encode(array_merge(['success' => true, 'topic' => $topic, 'student_id' => $studentId], $diffData));
+            break;
+
         // RAG-Grounded Quiz Generator
         case ($route === '/api/rag/quiz' && $method === 'POST'):
             $user = verifyTokenOrApiKey();
@@ -2746,7 +2766,8 @@ try {
             }
 
             $count = isset($input['count']) ? max(1, min(10, (int)$input['count'])) : 5;
-            $quizRes = RagService::generateQuiz($topic, $courseId, $batchId, $count);
+            $difficulty = $input['difficulty'] ?? 'AUTO';
+            $quizRes = RagService::generateQuiz($topic, $courseId, $batchId, $count, $difficulty, $studentId);
             echo json_encode($quizRes);
             break;
 
