@@ -2524,19 +2524,57 @@ try {
             echo json_encode($quizRes);
             break;
 
+        // RAG Active Quiz Session Sync (save/retrieve)
+        case ($route === '/api/rag/quiz/active' && $method === 'POST'):
+            $user = verifyTokenOrApiKey();
+            $chatId = trim((string)($input['chat_id'] ?? $input['session_id'] ?? ''));
+            $questions = $input['questions'] ?? [];
+            if (empty($chatId) || empty($questions)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'chat_id and questions are required']);
+                break;
+            }
+            RagService::saveActiveQuiz($chatId, $questions);
+            echo json_encode(['success' => true, 'chat_id' => $chatId, 'questions_count' => count($questions)]);
+            break;
+
+        case ($route === '/api/rag/quiz/active' && $method === 'GET'):
+            $user = verifyTokenOrApiKey();
+            $chatId = trim((string)($_GET['chat_id'] ?? $_GET['session_id'] ?? ''));
+            if (empty($chatId)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'chat_id is required']);
+                break;
+            }
+            $activeQuiz = RagService::getActiveQuiz($chatId);
+            echo json_encode(['success' => !empty($activeQuiz), 'questions' => $activeQuiz ?: []]);
+            break;
+
         // RAG Deterministic Quiz Evaluator
         case ($route === '/api/rag/quiz/evaluate' && $method === 'POST'):
             $user = verifyTokenOrApiKey();
+            $chatId = trim((string)($input['chat_id'] ?? $input['session_id'] ?? ''));
             $questions = $input['questions'] ?? [];
             $answers = $input['answers'] ?? $input['student_answers'] ?? $input['response'] ?? '';
 
+            // If questions array is not provided, look up from persistent session store
+            if (empty($questions) && !empty($chatId)) {
+                $questions = RagService::getActiveQuiz($chatId) ?: [];
+            }
+
             if (empty($questions) || empty($answers)) {
                 http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'questions and answers are required']);
+                echo json_encode([
+                    'success' => false,
+                    'error' => empty($answers) ? 'answers are required' : 'No active quiz found for this chat session'
+                ]);
                 break;
             }
 
             $evalRes = RagService::evaluateQuiz($questions, $answers);
+            if (!empty($chatId)) {
+                RagService::clearActiveQuiz($chatId);
+            }
             echo json_encode($evalRes);
             break;
 

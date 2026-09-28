@@ -1019,8 +1019,11 @@ class RagService {
             $correct = '';
             $citation = '';
             if (preg_match('/\*\*Correct\s*Option:\*\*\s*([A-D])(?:\)\s*([^\[\n]+))?(?:\[(.*?)\])?/i', $block, $corMatch)) {
-                $correct = $corMatch[1];
+                $correct = strtoupper(trim($corMatch[1]));
                 $citation = trim($corMatch[3] ?? '');
+            }
+            if (empty($citation) && preg_match('/\[(?:Source\s*\d*:\s*)?([^\]]+)\]/i', $block, $citMatch)) {
+                $citation = trim($citMatch[1]);
             }
 
             if (!empty($questionText) && count($options) >= 2) {
@@ -1033,6 +1036,34 @@ class RagService {
             }
         }
         return $questions;
+    }
+
+    /**
+     * Active Quiz Session Storage (file-backed across processes & restarts)
+     */
+    public static function saveActiveQuiz(string $chatId, array $questions): void {
+        $storageDir = __DIR__ . '/storage';
+        if (!is_dir($storageDir)) {
+            @mkdir($storageDir, 0777, true);
+        }
+        $file = $storageDir . '/quiz_' . preg_replace('/[^a-zA-Z0-9_-]/', '', $chatId) . '.json';
+        file_put_contents($file, json_encode($questions, JSON_PRETTY_PRINT));
+    }
+
+    public static function getActiveQuiz(string $chatId): ?array {
+        $file = __DIR__ . '/storage/quiz_' . preg_replace('/[^a-zA-Z0-9_-]/', '', $chatId) . '.json';
+        if (file_exists($file)) {
+            $data = json_decode(file_get_contents($file), true);
+            return is_array($data) ? $data : null;
+        }
+        return null;
+    }
+
+    public static function clearActiveQuiz(string $chatId): void {
+        $file = __DIR__ . '/storage/quiz_' . preg_replace('/[^a-zA-Z0-9_-]/', '', $chatId) . '.json';
+        if (file_exists($file)) {
+            @unlink($file);
+        }
     }
 
     /**
