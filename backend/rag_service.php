@@ -1092,7 +1092,7 @@ class RagService {
             // First attempt: Line-by-line or delimiter-separated extraction
             $chunks = preg_split('/\n+/', $cleanRaw);
             if (count($chunks) <= 1) {
-                $splitByQ = preg_split('/(?=(?:^|[,\s;]+|\s+and\s+)(?:for\s+)?(?:question|q)?\s*[1-9]\d?\s*(?:is|=|:|\.|\)|->|-|\s))/i', $cleanRaw);
+                $splitByQ = preg_split('/(?=(?:^|[,\s;]+|\s+and\s+)(?:for\s+)?(?:question|q|ans)?\s*[1-9]\d?(?:st|nd|rd|th)?\s*(?:is|=|:|\.|\)|->|-|ka|\s))/i', $cleanRaw);
                 if (count($splitByQ) > 1) {
                     $chunks = array_filter(array_map('trim', $splitByQ));
                 }
@@ -1102,8 +1102,8 @@ class RagService {
                 $chunk = preg_replace('/^(?:and|then|also)\s+/i', '', trim($chunk));
                 if (empty($chunk)) continue;
 
-                // Pattern 1: Numbered format like "1. A", "1) (A)", "Q1: display: flex", "2 is B", "1 -> A"
-                if (preg_match('/^(?:for\s+)?(?:question|q)?\s*([1-9]\d?)\s*(?:is|=|:|\.|\)|->|-|\s)+\s*(?:for\s+)?(?:option|choice)?\s*[\(\[]?\s*([a-dA-D]\b|[\w\s\-:().<>*,+]+?)\s*[\)\]]?(?:[,\.;]|$)/i', $chunk, $m)) {
+                // Pattern 1: Numbered format like "1. A", "1) (A)", "Q1: display: flex", "2 is B", "1 -> A", "1 ka A"
+                if (preg_match('/^(?:for\s+)?(?:question|q|ans)?\s*([1-9]\d?)(?:st|nd|rd|th)?\s*(?:is|=|:|\.|\)|->|-|ka|\s)+\s*(?:for\s+)?(?:option|choice)?\s*[\(\[]?\s*([a-dA-D]\b|[\w\s\-:().<>*,+]+?)\s*[\)\]]?(?:[,\.;]|$)/i', $chunk, $m)) {
                     $qNum = (int)$m[1];
                     $ansVal = trim($m[2]);
                     $ansVal = preg_replace('/^(?:it\s+)?(?:is\s+)?(?:option\s+|choice\s+)?/i', '', $ansVal);
@@ -1112,8 +1112,8 @@ class RagService {
                 }
             }
 
-            // Pattern 2: Compact tokens like "1A 2A 3B 4B 5A"
-            if (empty($parsedAnswers) && preg_match_all('/([1-9]\d?)\s*[:.\-]?\s*([a-dA-D])\b/i', $cleanRaw, $compactMatches, PREG_SET_ORDER)) {
+            // Pattern 2: Compact tokens like "1A 2A 3B 4B 5A", "1stA 2ndB"
+            if (empty($parsedAnswers) && preg_match_all('/([1-9]\d?)(?:st|nd|rd|th)?\s*[:.\-]?\s*([a-dA-D])\b/i', $cleanRaw, $compactMatches, PREG_SET_ORDER)) {
                 foreach ($compactMatches as $cm) {
                     $parsedAnswers[(int)$cm[1]] = strtoupper($cm[2]);
                 }
