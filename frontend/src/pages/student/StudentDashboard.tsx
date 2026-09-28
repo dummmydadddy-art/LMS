@@ -21,7 +21,8 @@ import {
   MessageSquare,
   Hand,
   Mic,
-  Square
+  Square,
+  Sparkles
 } from 'lucide-react';
 
 const StudentDashboard: React.FC = () => {
@@ -730,7 +731,9 @@ const StudentDashboard: React.FC = () => {
 
           <div className="lg:col-span-2 space-y-4">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/60 pb-3">
-              <h3 className="text-sm font-bold text-slate-300">Materials Vault - {activeCourse?.course_name}</h3>
+              <div className="flex items-center gap-3">
+                <h3 className="text-sm font-bold text-slate-300">Materials Vault - {activeCourse?.course_name}</h3>
+              </div>
               <div className="flex flex-wrap gap-1.5">
                 {[
                   { id: 'all', label: 'All Resources' },
@@ -767,7 +770,22 @@ const StudentDashboard: React.FC = () => {
                       <span className="text-[9px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-bold uppercase">{mat.file_type}</span>
                       <h4 className="font-bold text-slate-200 text-xs truncate mt-1">{mat.title}</h4>
                       <p className="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">{mat.description}</p>
-                      <div className="border-t border-slate-800/80 pt-2 flex justify-end">
+                      <div className="border-t border-slate-800/80 pt-2 flex items-center justify-between">
+                        <button
+                          onClick={() => {
+                            window.dispatchEvent(new CustomEvent('open-ai-tutor', {
+                              detail: {
+                                initialPrompt: `Can you explain the key concepts from "${mat.title}"?`,
+                                courseId: activeCourse?.id,
+                                courseName: activeCourse?.course_name
+                              }
+                            }));
+                          }}
+                          className="text-[11px] text-indigo-400 hover:text-indigo-300 font-bold flex items-center gap-1 cursor-pointer transition-colors"
+                          title="Ask AI Tutor about this document"
+                        >
+                          <Sparkles className="h-3 w-3 text-yellow-400" /> Ask Tutor
+                        </button>
                         {mat.file_type === 'video' ? (
                           <button
                             onClick={() => setActiveVideo(mat)}

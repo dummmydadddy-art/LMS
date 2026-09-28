@@ -22,8 +22,10 @@ import {
   CheckCircle,
   HelpCircle,
   AlertCircle,
-  Video
+  Video,
+  Sparkles
 } from 'lucide-react';
+import AiTutorModal from './AiTutorModal';
 
 interface LayoutProps {
   user: {
@@ -60,6 +62,25 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
   const [profileLoading, setProfileLoading] = useState(false);
   const [profileMsg, setProfileMsg] = useState('');
   const [profileError, setProfileError] = useState('');
+
+  // AI Course Tutor modal state
+  const [showAiTutor, setShowAiTutor] = useState(false);
+  const [aiTutorPrompt, setAiTutorPrompt] = useState<string | undefined>(undefined);
+  const [aiTutorCourseId, setAiTutorCourseId] = useState<string | undefined>(undefined);
+  const [aiTutorCourseName, setAiTutorCourseName] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    const handleOpenTutor = (e: any) => {
+      const detail = e.detail || {};
+      if (detail.initialPrompt) setAiTutorPrompt(detail.initialPrompt);
+      if (detail.courseId) setAiTutorCourseId(detail.courseId);
+      if (detail.courseName) setAiTutorCourseName(detail.courseName);
+      setShowAiTutor(true);
+    };
+
+    window.addEventListener('open-ai-tutor', handleOpenTutor);
+    return () => window.removeEventListener('open-ai-tutor', handleOpenTutor);
+  }, []);
 
   useEffect(() => {
     if (user) {
@@ -245,9 +266,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
       {/* Sidebar - Desktop */}
       <aside className="hidden lg:flex flex-col w-64 glass-card border-y-0 border-l-0 rounded-none h-screen sticky top-0 bg-dark-900/40 backdrop-blur-xl">
         <div className="h-16 flex items-center gap-3 px-6 border-b border-slate-800/80">
-          <div className="h-8 w-8 rounded-lg overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10">
-            <img src="/logo.png" alt="LMS" className="h-6 w-6 object-contain" />
-          </div>
+          <div className="h-8 w-8 rounded-lg overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10"></div>
           <span className="font-bold text-lg text-slate-100">LMS</span>
         </div>
 
@@ -301,9 +320,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
           <aside className="w-64 glass-card border-y-0 border-l-0 rounded-none h-full relative flex flex-col bg-dark-900">
             <div className="h-16 flex items-center justify-between px-6 border-b border-slate-800/80">
               <div className="flex items-center gap-3">
-                <div className="h-8 w-8 rounded-lg overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10">
-                  <img src="/logo.png" alt="LMS" className="h-6 w-6 object-contain" />
-                </div>
+                <div className="h-8 w-8 rounded-lg overflow-hidden flex items-center justify-center bg-slate-900 border border-slate-800 shadow-lg shadow-primary-500/10"></div>
                 <span className="font-bold text-lg text-slate-100">LMS</span>
               </div>
               <button onClick={() => setSidebarOpen(false)} className="text-slate-400 hover:text-slate-900">
@@ -603,6 +620,29 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
           </div>
         </div>
       )}
+
+      {/* Floating AI Course Tutor Button */}
+      <button
+        onClick={() => setShowAiTutor(true)}
+        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-xs shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all border border-indigo-400/30 group"
+        title="Ask AI Course Tutor (RAG)"
+      >
+        <Sparkles className="w-4 h-4 text-yellow-300 animate-pulse" />
+        <span className="font-bold">Ask AI Tutor</span>
+        <span className="text-[9px] bg-white/20 px-1.5 py-0.5 rounded-full font-mono font-bold">RAG</span>
+      </button>
+
+      {/* Global AI Course Tutor Modal */}
+      <AiTutorModal
+        isOpen={showAiTutor}
+        onClose={() => {
+          setShowAiTutor(false);
+          setAiTutorPrompt(undefined);
+        }}
+        courseId={aiTutorCourseId}
+        courseName={aiTutorCourseName}
+        initialPrompt={aiTutorPrompt}
+      />
     </div>
   );
 };
