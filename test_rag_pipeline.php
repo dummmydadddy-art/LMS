@@ -450,6 +450,9 @@ try {
     $examId = 'pop_quiz_flex_test';
     $examTitle = 'Pop Quiz: CSS Flexbox Architecture';
 
+    // 0. Clean up any previous test runs for test isolation & idempotency
+    RagService::getLocalDb()->exec("DELETE FROM rag_remedial_results WHERE course_id = '{$testCourseId}'");
+
     // 1. Record 3 student attempts on a remedial pop-quiz
     RagService::recordRemedialResult($examId, $examTitle, $testCourseId, $testBatchId, 'std_alpha', 15.0, 15.0); // 100%
     RagService::recordRemedialResult($examId, $examTitle, $testCourseId, $testBatchId, 'std_beta', 12.0, 15.0);  // 80%
