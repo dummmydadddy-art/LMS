@@ -23,8 +23,10 @@ import {
   Mic,
   Square,
   Sparkles,
-  Zap
+  Zap,
+  Brain
 } from 'lucide-react';
+import StudentMasteryJourney from '../../components/StudentMasteryJourney';
 
 const StudentDashboard: React.FC = () => {
   const { tab } = useParams();
@@ -696,7 +698,7 @@ const StudentDashboard: React.FC = () => {
     <div className="space-y-6">
       {/* Navigation tabs */}
       <div className="flex border-b border-slate-800 overflow-x-auto pb-1 gap-1">
-        {['courses', 'timetable', 'exams', 'results', 'fees', 'certificates', 'live-sessions'].map((tabName) => (
+        {['courses', 'timetable', 'exams', 'results', 'mastery', 'fees', 'certificates', 'live-sessions'].map((tabName) => (
           <button
             key={tabName}
             onClick={() => {
@@ -715,7 +717,7 @@ const StudentDashboard: React.FC = () => {
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            {tabName === 'live-sessions' ? 'Live Sessions' : tabName}
+            {tabName === 'live-sessions' ? 'Live Sessions' : tabName === 'mastery' ? '🎯 AI Concept Mastery' : tabName}
           </button>
         ))}
       </div>
@@ -1027,46 +1029,62 @@ const StudentDashboard: React.FC = () => {
         </div>
       )}
 
-      {/* --- 5. RESULTS TAB --- */}
-      {activeTab === 'results' && (
-        <div className="glass-card p-6 space-y-4">
-          <h3 className="text-base font-bold text-slate-200">Grades & Results Card</h3>
-          <div className="space-y-4 pt-2">
-            <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider">Exam Results</h4>
-            {grades.exams?.length === 0 ? (
-              <p className="text-slate-500 text-xs">No exam grades recorded yet.</p>
-            ) : (
-              grades.exams?.map((e: any) => (
-                <div key={e.id} className="flex justify-between items-center bg-slate-800/20 border border-slate-800/40 p-4 rounded-xl">
-                  <div>
-                    <h5 className="font-bold text-slate-200 text-xs">{e.exams?.title}</h5>
-                    <p className="text-[10px] text-slate-400 mt-1">Feedback: {e.feedback || 'None provided.'}</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-sm font-bold text-primary-400">{e.score} / {e.max_score}</span>
-                    <p className="text-[9px] text-slate-500 mt-0.5">Scored On: {new Date(e.evaluated_at).toLocaleDateString()}</p>
-                  </div>
-                </div>
-              ))
-            )}
+      {/* --- 5. RESULTS & MASTERY TABS --- */}
+      {(activeTab === 'results' || activeTab === 'mastery') && (
+        <div className="space-y-6">
+          <StudentMasteryJourney
+            studentId={studentId}
+            onLaunchQuiz={(examId) => {
+              const ex = exams.find((e: any) => e.id === examId);
+              if (ex) {
+                startExamAttempt(ex);
+              } else {
+                navigate('/student/exams');
+              }
+            }}
+          />
 
-            <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider pt-4">Assignment Scores</h4>
-            {grades.assignments?.length === 0 ? (
-              <p className="text-slate-500 text-xs">No assignment grades evaluated yet.</p>
-            ) : (
-              grades.assignments?.map((a: any) => (
-                <div key={a.id} className="flex justify-between items-center bg-slate-800/20 border border-slate-800/40 p-4 rounded-xl">
-                  <div>
-                    <h5 className="font-bold text-slate-200 text-xs">{a.assignments?.title}</h5>
-                    <p className="text-[10px] text-slate-400 mt-1">Feedback: {a.feedback || 'Good attempt.'}</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-sm font-bold text-green-400">{a.score} / 100</span>
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
+          {activeTab === 'results' && (
+            <div className="glass-card p-6 space-y-4">
+              <h3 className="text-base font-bold text-slate-200">Grades & Results Card</h3>
+              <div className="space-y-4 pt-2">
+                <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider">Exam Results</h4>
+                {grades.exams?.length === 0 ? (
+                  <p className="text-slate-500 text-xs">No exam grades recorded yet.</p>
+                ) : (
+                  grades.exams?.map((e: any) => (
+                    <div key={e.id} className="flex justify-between items-center bg-slate-800/20 border border-slate-800/40 p-4 rounded-xl">
+                      <div>
+                        <h5 className="font-bold text-slate-200 text-xs">{e.exams?.title}</h5>
+                        <p className="text-[10px] text-slate-400 mt-1">Feedback: {e.feedback || 'None provided.'}</p>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-sm font-bold text-primary-400">{e.score} / {e.max_score}</span>
+                        <p className="text-[9px] text-slate-500 mt-0.5">Scored On: {new Date(e.evaluated_at).toLocaleDateString()}</p>
+                      </div>
+                    </div>
+                  ))
+                )}
+
+                <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider pt-4">Assignment Scores</h4>
+                {grades.assignments?.length === 0 ? (
+                  <p className="text-slate-500 text-xs">No assignment grades evaluated yet.</p>
+                ) : (
+                  grades.assignments?.map((a: any) => (
+                    <div key={a.id} className="flex justify-between items-center bg-slate-800/20 border border-slate-800/40 p-4 rounded-xl">
+                      <div>
+                        <h5 className="font-bold text-slate-200 text-xs">{a.assignments?.title}</h5>
+                        <p className="text-[10px] text-slate-400 mt-1">Feedback: {a.feedback || 'Good attempt.'}</p>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-sm font-bold text-green-400">{a.score} / 100</span>
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+            </div>
+          )}
         </div>
       )}
 

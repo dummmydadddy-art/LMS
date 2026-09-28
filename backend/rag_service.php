@@ -139,6 +139,7 @@ class RagService {
                 );
                 CREATE INDEX IF NOT EXISTS idx_remedial_topic ON rag_remedial_results(topic);
                 CREATE INDEX IF NOT EXISTS idx_remedial_course ON rag_remedial_results(course_id);
+                CREATE INDEX IF NOT EXISTS idx_remedial_student ON rag_remedial_results(student_id);
             ");
         }
         return self::$sqliteDb;
@@ -923,6 +924,169 @@ class RagService {
                 'success' => false,
                 'metrics' => ['total_attempts' => 0, 'avg_score_pct' => 0, 'mastery_count' => 0, 'resolution_rate_pct' => 0],
                 'quizzes' => []
+            ];
+        }
+    }
+
+    /**
+     * Get Student Personal Remedial Mastery & Learning Journey
+     */
+    public static function getStudentMasteryJourney(string $studentId, ?string $courseId = null, ?string $batchId = null): array {
+        try {
+            $db = self::getLocalDb();
+
+            // 1. Fetch all remedial attempts by this student
+            $where = "WHERE student_id = :sid";
+            $params = [':sid' => $studentId];
+            if (!empty($courseId)) {
+                $where .= " AND (course_id = :cid OR course_id IS NULL)";
+                $params[':cid'] = $courseId;
+            }
+            if (!empty($batchId)) {
+                $where .= " AND (batch_id = :bid OR batch_id IS NULL)";
+                $params[':bid'] = $batchId;
+            }
+
+            // Summary metrics
+            $summaryStmt = $db->prepare("
+                SELECT COUNT(*) as total_quizzes,
+                       ROUND(AVG(percentage), 1) as avg_score_pct,
+                       SUM(CASE WHEN percentage >= 70 THEN 1 ELSE 0 END) as mastered_quizzes
+                FROM rag_remedial_results
+                {$where}
+            ");
+            $summaryStmt->execute($params);
+            $sumRow = $summaryStmt->fetch(PDO::FETCH_ASSOC) ?: [];
+
+            $totalQuizzes = (int)($sumRow['total_quizzes'] ?? 0);
+            $overallMasteryPct = (float)($sumRow['avg_score_pct'] ?? 0.0);
+            $masteredQuizzes = (int)($sumRow['mastered_quizzes'] ?? 0);
+
+            // Topic Breakdown
+            $topicStmt = $db->prepare("
+                SELECT topic,
+                       COUNT(*) as attempts_count,
+                       ROUND(AVG(percentage), 1) as avg_score_pct,
+                       MAX(percentage) as best_score_pct,
+                       MAX(evaluated_at) as last_tested_at
+                FROM rag_remedial_results
+                {$where}
+                GROUP BY topic
+                ORDER BY avg_score_pct DESC, attempts_count DESC
+            ");
+            $topicStmt->execute($params);
+            $topics = $topicStmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
+
+            $masteredCount = 0;
+            $inProgressCount = 0;
+            $needsPracticeCount = 0;
+
+            foreach ($topics as &$t) {
+                $avg = (float)($t['avg_score_pct'] ?? 0);
+                if ($avg >= 75) {
+                    $t['status'] = 'CONCEPT_MASTERED';
+                    $t['badge_label'] = 'Concept Mastered';
+                    $masteredCount++;
+                } elseif ($avg >= 55) {
+                    $t['status'] = 'IN_PROGRESS';
+                    $t['badge_label'] = 'In Progress';
+                    $inProgressCount++;
+                } else {
+                    $t['status'] = 'NEEDS_PRACTICE';
+                    $t['badge_label'] = 'Needs Practice';
+                    $needsPracticeCount++;
+                }
+            }
+
+            // Fallback introductory topics if student has 0 attempts yet
+            if ($totalQuizzes === 0 && empty($topics)) {
+                $defaultTopics = [
+                    'React & Hooks',
+                    'JavaScript ES6+ & Async',
+                    'HTML & CSS Layouts',
+                    'Node.js & Express REST APIs',
+                    'PostgreSQL & Database Systems'
+                ];
+                foreach ($defaultTopics as $dt) {
+                    $topics[] = [
+                        'topic' => $dt,
+                        'attempts_count' => 0,
+                        'avg_score_pct' => 0.0,
+                        'best_score_pct' => 0.0,
+                        'last_tested_at' => null,
+                        'status' => 'NOT_STARTED',
+                        'badge_label' => 'Not Started'
+                    ];
+                }
+            }
+
+            // 2. Fetch Refuted Misconceptions & Gaps from Telemetry for this student
+            $telemetryWhere = "WHERE student_id = :sid";
+            $telParams = [':sid' => $studentId];
+            if (!empty($courseId)) {
+                $telemetryWhere .= " AND (course_id = :cid OR course_id IS NULL)";
+                $telParams[':cid'] = $courseId;
+            }
+            if (!empty($batchId)) {
+                $telemetryWhere .= " AND (batch_id = :bid OR batch_id IS NULL)";
+                $telParams[':bid'] = $batchId;
+            }
+
+            $telStmt = $db->prepare("
+                SELECT COUNT(*) as total_inquiries,
+                       SUM(refuted) as refuted_count,
+                       SUM(abstain) as abstain_count
+                FROM rag_telemetry
+                {$telemetryWhere}
+            ");
+            $telStmt->execute($telParams);
+            $telRow = $telStmt->fetch(PDO::FETCH_ASSOC) ?: [];
+            $refutedMisconceptions = (int)($telRow['refuted_count'] ?? 0);
+
+            // 3. Recent Quiz Activity (last 10 attempts)
+            $recentStmt = $db->prepare("
+                SELECT id, exam_id, exam_title, topic, score, max_score, percentage, evaluated_at
+                FROM rag_remedial_results
+                {$where}
+                ORDER BY evaluated_at DESC, id DESC
+                LIMIT 10
+            ");
+            $recentStmt->execute($params);
+            $recentAttempts = $recentStmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
+
+            foreach ($recentAttempts as &$a) {
+                $a['passed'] = ((float)$a['percentage'] >= 70.0);
+            }
+
+            return [
+                'success' => true,
+                'summary' => [
+                    'total_quizzes_taken' => $totalQuizzes,
+                    'overall_mastery_pct' => $overallMasteryPct,
+                    'mastered_quizzes' => $masteredQuizzes,
+                    'mastered_topics_count' => $masteredCount,
+                    'in_progress_topics_count' => $inProgressCount,
+                    'needs_practice_topics_count' => $needsPracticeCount,
+                    'refuted_misconceptions_count' => $refutedMisconceptions
+                ],
+                'topic_mastery' => $topics,
+                'recent_activities' => $recentAttempts
+            ];
+        } catch (\Throwable $e) {
+            return [
+                'success' => false,
+                'error' => $e->getMessage(),
+                'summary' => [
+                    'total_quizzes_taken' => 0,
+                    'overall_mastery_pct' => 0.0,
+                    'mastered_quizzes' => 0,
+                    'mastered_topics_count' => 0,
+                    'in_progress_topics_count' => 0,
+                    'needs_practice_topics_count' => 0,
+                    'refuted_misconceptions_count' => 0
+                ],
+                'topic_mastery' => [],
+                'recent_activities' => []
             ];
         }
     }

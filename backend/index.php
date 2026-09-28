@@ -2665,6 +2665,22 @@ try {
             }
             break;
 
+        // Student Personal Mastery & Remedial Learning Journey
+        case ($route === '/api/rag/student/mastery' && in_array($method, ['GET', 'POST'])):
+            $user = verifyTokenOrApiKey();
+            $studentId = $input['student_id'] ?? $_GET['student_id'] ?? $user['id'] ?? null;
+            if (empty($studentId)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'Student ID is required']);
+                break;
+            }
+            $courseId = $input['course_id'] ?? $_GET['course_id'] ?? null;
+            $batchId = $input['batch_id'] ?? $_GET['batch_id'] ?? null;
+
+            $masteryData = RagService::getStudentMasteryJourney($studentId, $courseId, $batchId);
+            echo json_encode($masteryData);
+            break;
+
         // RAG-Grounded Quiz Generator
         case ($route === '/api/rag/quiz' && $method === 'POST'):
             $user = verifyTokenOrApiKey();

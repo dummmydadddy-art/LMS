@@ -484,6 +484,50 @@ try {
     recordTest("Test 19: Teacher Remedial Quiz Results & Concept Resolution Analytics", false, $e->getMessage());
 }
 
+// --- TEST 20: Student Personal Remedial Mastery & Learning Journey ---
+try {
+    $journeyCourseId = 'course-journey-test';
+    $journeyBatchId = 'batch-journey-test';
+    $journeyStudentId = 'std_journey_007';
+
+    // 0. Clean up previous test runs for isolation
+    RagService::getLocalDb()->exec("DELETE FROM rag_remedial_results WHERE student_id = '{$journeyStudentId}'");
+    RagService::getLocalDb()->exec("DELETE FROM rag_telemetry WHERE student_id = '{$journeyStudentId}'");
+
+    // 1. Record 2 pop-quiz attempts on different topics
+    RagService::recordRemedialResult('pop_react_j1', 'Pop Quiz: React Hooks & State', $journeyCourseId, $journeyBatchId, $journeyStudentId, 15.0, 15.0); // 100% (React & Hooks)
+    RagService::recordRemedialResult('pop_async_j1', 'Pop Quiz: Asynchronous Event Loop', $journeyCourseId, $journeyBatchId, $journeyStudentId, 10.0, 15.0); // 66.7% (JavaScript ES6+ & Async)
+
+    // 2. Log a telemetry query with refuted misconception
+    RagService::logTelemetry($journeyStudentId, $journeyCourseId, $journeyBatchId, 'Why is setState in React always synchronous?', 0.92, false, true, 'direct');
+
+    // 3. Fetch Student Mastery Journey
+    $journey = RagService::getStudentMasteryJourney($journeyStudentId, $journeyCourseId, $journeyBatchId);
+    $jSum = $journey['summary'] ?? [];
+    $jTopics = $journey['topic_mastery'] ?? [];
+    $jActs = $journey['recent_activities'] ?? [];
+
+    $hasTwoQuizzes = ($jSum['total_quizzes_taken'] === 2);
+    $hasMasteredTopic = ($jSum['mastered_topics_count'] === 1);
+    $hasInProgressTopic = ($jSum['in_progress_topics_count'] === 1);
+    $hasRefutedCount = ($jSum['refuted_misconceptions_count'] === 1);
+    $hasTopMastered = !empty($jTopics) && ($jTopics[0]['status'] === 'CONCEPT_MASTERED') && ($jTopics[0]['topic'] === 'React & Hooks');
+    $hasActivities = (count($jActs) === 2) && ($jActs[0]['passed'] !== $jActs[1]['passed']); // 1 passed (100%), 1 review (66.7%)
+
+    // 4. Verify cross-student isolation
+    $isolatedJourney = RagService::getStudentMasteryJourney('std_other_unrelated', $journeyCourseId, $journeyBatchId);
+    $isolationPreserved = ($isolatedJourney['summary']['total_quizzes_taken'] === 0);
+
+    $journeyPassed = $hasTwoQuizzes && $hasMasteredTopic && $hasInProgressTopic && $hasRefutedCount && $hasTopMastered && $hasActivities && $isolationPreserved;
+    recordTest(
+        "Test 20: Student Personal Remedial Mastery & Learning Journey",
+        $journeyPassed,
+        "Student {$journeyStudentId}: {$jSum['total_quizzes_taken']} quizzes, {$jSum['mastered_topics_count']} mastered topics, {$jSum['refuted_misconceptions_count']} resolved gaps. Strict student isolation verified."
+    );
+} catch (Exception $e) {
+    recordTest("Test 20: Student Personal Remedial Mastery & Learning Journey", false, $e->getMessage());
+}
+
 echo "\n========================================================\n";
 $total = count($results);
 $passedCount = count(array_filter($results, fn($r) => $r['status'] === 'PASS'));
