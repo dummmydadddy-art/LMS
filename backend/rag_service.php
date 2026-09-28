@@ -572,7 +572,7 @@ class RagService {
                 'material_id' => $materialId,
                 'chunk_index' => $index,
                 'content' => $chunkText,
-                'metadata' => json_encode($chunkMeta),
+                'metadata' => $chunkMeta,
                 'embedding' => '[' . implode(',', $embedding) . ']'
             ];
         }

@@ -303,3 +303,13 @@ echo "Modules indexed: {$totalIngested}\n";
 echo "Total chunks created: {$totalChunks}\n";
 $stats = RagService::getStats();
 echo "Active stats: " . json_encode($stats, JSON_PRETTY_PRINT) . "\n";
+
+$sbCheck = supabaseSelect('document_chunks', 'id');
+if ($sbCheck['success']) {
+    $sbCount = count($sbCheck['data'] ?? []);
+    echo "Supabase Cloud: {$sbCount} chunks verified in document_chunks table.\n";
+} else {
+    echo "Supabase Cloud Notice: " . ($sbCheck['error'] ?? 'Table not found') . "\n";
+    echo "-> Remember to run database/rag_migration.sql in the Supabase SQL editor if not done yet.\n";
+}
+echo "============================================\n";
