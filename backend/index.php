@@ -2389,8 +2389,8 @@ try {
             echo json_encode(RagService::getStats());
             break;
 
-        // RAG Ask - Grounded Q&A with confidence gate
-        case ($route === '/api/rag/ask' && $method === 'POST'):
+        // RAG Ask & Stream - Grounded Q&A with confidence gate & Socratic mode
+        case (($route === '/api/rag/ask' || $route === '/api/rag/stream') && $method === 'POST'):
             $user = verifyTokenOrApiKey();
             $question = trim($input['question'] ?? $input['query'] ?? '');
             if (empty($question)) {
@@ -2398,18 +2398,38 @@ try {
                 echo json_encode(['success' => false, 'error' => 'question is required']);
                 break;
             }
+
+            $isStream = ($route === '/api/rag/stream') || !empty($input['stream']);
+            $mode = in_array(strtolower($input['mode'] ?? ''), ['socratic', 'direct']) ? strtolower($input['mode']) : 'direct';
             
             // Safety boundary check
             $boundary = RagSafetyBoundary::evaluate($question);
             if ($boundary['action'] === 'ABSTAIN') {
-                echo json_encode([
-                    'success' => true,
-                    'answer' => 'I apologize, but that question is outside the scope of the EduConnect LMS curriculum.',
-                    'sources' => [],
-                    'grounded' => false,
-                    'abstain' => true,
-                    'reason' => $boundary['reason']
-                ]);
+                $abstainText = 'I apologize, but that question is outside the scope of the EduConnect LMS curriculum.';
+                if ($isStream) {
+                    if (!headers_sent()) {
+                        header('Content-Type: text/event-stream; charset=UTF-8');
+                        header('Cache-Control: no-cache, no-transform');
+                        header('Connection: keep-alive');
+                        header('X-Accel-Buffering: no');
+                    }
+                    while (ob_get_level() > 0) @ob_end_flush();
+                    flush();
+                    echo "event: metadata\ndata: " . json_encode(['sources' => [], 'confidence' => 0.0, 'abstain' => true, 'reason' => $boundary['reason'], 'mode' => $mode]) . "\n\n";
+                    echo "event: token\ndata: " . json_encode(['token' => $abstainText]) . "\n\n";
+                    echo "event: done\ndata: " . json_encode(['success' => true, 'answer' => $abstainText, 'sources' => [], 'abstain' => true, 'mode' => $mode]) . "\n\n";
+                    flush();
+                } else {
+                    echo json_encode([
+                        'success' => true,
+                        'answer' => $abstainText,
+                        'sources' => [],
+                        'grounded' => false,
+                        'abstain' => true,
+                        'reason' => $boundary['reason'],
+                        'mode' => $mode
+                    ]);
+                }
                 break;
             }
             
@@ -2425,14 +2445,31 @@ try {
                     $authBatchId = $sb['data']['batch_id'] ?? null;
                     $authCourseId = $sb['data']['batches']['course_id'] ?? null;
                     if (!empty($courseId) && $courseId !== $authCourseId) {
-                        echo json_encode([
-                            'success' => true,
-                            'answer' => 'You do not have permission to access curriculum materials for this course.',
-                            'sources' => [],
-                            'grounded' => false,
-                            'abstain' => true,
-                            'reason' => 'Unauthorized course access attempt'
-                        ]);
+                        $authFailMsg = 'You do not have permission to access curriculum materials for this course.';
+                        if ($isStream) {
+                            if (!headers_sent()) {
+                                header('Content-Type: text/event-stream; charset=UTF-8');
+                                header('Cache-Control: no-cache, no-transform');
+                                header('Connection: keep-alive');
+                                header('X-Accel-Buffering: no');
+                            }
+                            while (ob_get_level() > 0) @ob_end_flush();
+                            flush();
+                            echo "event: metadata\ndata: " . json_encode(['sources' => [], 'confidence' => 0.0, 'abstain' => true, 'reason' => 'Unauthorized course access attempt', 'mode' => $mode]) . "\n\n";
+                            echo "event: token\ndata: " . json_encode(['token' => $authFailMsg]) . "\n\n";
+                            echo "event: done\ndata: " . json_encode(['success' => true, 'answer' => $authFailMsg, 'sources' => [], 'abstain' => true, 'mode' => $mode]) . "\n\n";
+                            flush();
+                        } else {
+                            echo json_encode([
+                                'success' => true,
+                                'answer' => $authFailMsg,
+                                'sources' => [],
+                                'grounded' => false,
+                                'abstain' => true,
+                                'reason' => 'Unauthorized course access attempt',
+                                'mode' => $mode
+                            ]);
+                        }
                         break;
                     }
                     $courseId = $authCourseId;
@@ -2455,7 +2492,15 @@ try {
             }
             
             $studentName = $user['full_name'] ?? 'Student';
-            $askRes = RagService::ask($activeQuestion, $courseId, $batchId, $studentName, 4);
+
+            // Real-Time SSE Stream Mode
+            if ($isStream) {
+                RagService::askStream($activeQuestion, $courseId, $batchId, $studentName, 4, $mode, $history, $studentId);
+                break;
+            }
+
+            // Synchronous Mode
+            $askRes = RagService::ask($activeQuestion, $courseId, $batchId, $studentName, 4, $mode);
 
             // Auto-persist conversation history if student context is present
             if (!empty($studentId) && !empty($askRes['answer'])) {

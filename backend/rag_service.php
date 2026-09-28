@@ -785,7 +785,7 @@ class RagService {
      */
     public static function ask(
         string $question, ?string $courseId = null, ?string $batchId = null,
-        ?string $studentName = null, int $limit = 4
+        ?string $studentName = null, int $limit = 4, string $mode = 'direct'
     ): array {
         @set_time_limit(180);
 
@@ -803,7 +803,8 @@ class RagService {
                 'grounded' => false,
                 'abstain' => true,
                 'confidence' => $confEval['confidence'],
-                'confidence_details' => $confEval
+                'confidence_details' => $confEval,
+                'mode' => $mode
             ];
         }
 
@@ -821,10 +822,22 @@ class RagService {
         }
         $contextBlock = implode("\n\n---\n\n", $contextParts);
 
-        // Step 4: LLM Generation
-        $systemPrompt = "You are the EduConnect LMS AI Tutor. Answer using ONLY the provided curriculum excerpts.\n1. Direct concise answer under 250 words.\n2. Cite sources: [Document Title, Section X].\n3. Ground exclusively on provided excerpts; no outside knowledge.\n4. Include relevant code snippets from the excerpts when applicable.\n5. If the excerpts don't fully cover the question, say so.";
-
-        $userPrompt = "Student Question: {$question}\n\nCurriculum Evidence:\n{$contextBlock}\n\nPlease provide a clear, accurate explanation citing [Document Title, Section X].";
+        // Step 4: LLM Generation configured by mode
+        if ($mode === 'socratic') {
+            $systemPrompt = "You are the EduConnect LMS Socratic AI Tutor. Your mission is NOT to simply provide the final answer, solution, or complete code, but to guide the student to discover the answer themselves.\n"
+                . "1. Tone: Warm, encouraging, and academically rigorous.\n"
+                . "2. Brevity: Keep guidance concise (under 200 words).\n"
+                . "3. Hinting: Provide a targeted conceptual hint or analogy grounded in the provided curriculum excerpts.\n"
+                . "4. Error Analysis: If the student asks about an error or shared buggy code, identify the conceptual misconception without writing the completed solution.\n"
+                . "5. Socratic Question: Always end with ONE focused, thought-provoking question that prompts the student to think through the next step.\n"
+                . "6. Citations: Cite the course source [Document Title, Section X] so the student knows where to review.";
+            $userPrompt = "STUDENT QUESTION: {$question}\n\nCURRICULUM MATERIAL EXCERPTS:\n{$contextBlock}\n\nPlease guide the student Socratically based strictly on these excerpts. Provide a hint and ask a guiding question.";
+            $temperature = 0.25;
+        } else {
+            $systemPrompt = "You are the EduConnect LMS AI Tutor. Answer using ONLY the provided curriculum excerpts.\n1. Direct concise answer under 250 words.\n2. Cite sources: [Document Title, Section X].\n3. Ground exclusively on provided excerpts; no outside knowledge.\n4. Include relevant code snippets from the excerpts when applicable.\n5. If the excerpts don't fully cover the question, say so.";
+            $userPrompt = "Student Question: {$question}\n\nCurriculum Evidence:\n{$contextBlock}\n\nPlease provide a clear, accurate explanation citing [Document Title, Section X].";
+            $temperature = 0.1;
+        }
 
         $chatUrl = self::$ollamaBaseUrl . '/api/chat';
         $ch = curl_init($chatUrl);
@@ -841,7 +854,7 @@ class RagService {
                 'options' => [
                     'num_predict' => 512,
                     'num_ctx' => 2048,
-                    'temperature' => 0.1,
+                    'temperature' => $temperature,
                     'top_p' => 0.9
                 ]
             ]),
@@ -865,8 +878,207 @@ class RagService {
             'grounded' => true,
             'abstain' => false,
             'confidence' => $confEval['confidence'],
-            'confidence_details' => $confEval
+            'confidence_details' => $confEval,
+            'mode' => $mode
         ];
+    }
+
+    /**
+     * Real-Time Streaming Grounded RAG with Server-Sent Events (SSE)
+     * Supports both 'direct' (factual explanation) and 'socratic' (pedagogical guidance) modes
+     */
+    public static function askStream(
+        string $question,
+        ?string $courseId = null,
+        ?string $batchId = null,
+        ?string $studentName = null,
+        int $limit = 4,
+        string $mode = 'direct',
+        array $history = [],
+        ?string $studentId = null
+    ): void {
+        @set_time_limit(180);
+
+        if (php_sapi_name() !== 'cli') {
+            if (!headers_sent()) {
+                header('Content-Type: text/event-stream; charset=UTF-8');
+                header('Cache-Control: no-cache, no-transform');
+                header('Connection: keep-alive');
+                header('X-Accel-Buffering: no');
+            }
+            while (ob_get_level() > 0) {
+                @ob_end_flush();
+            }
+            flush();
+        }
+
+        $sendEvent = function(string $event, array $data) {
+            echo "event: {$event}\n";
+            echo "data: " . json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "\n\n";
+            if (php_sapi_name() !== 'cli') {
+                @ob_flush();
+                flush();
+            }
+        };
+
+        // Step 1: Hybrid Search
+        $searchRes = self::search($question, $courseId, $batchId, $limit, 0.20);
+        $results = $searchRes['results'] ?? [];
+
+        // Step 2: Calibrated Confidence Gate
+        $confEval = self::calculateCalibratedConfidence($question, $results);
+        if ($confEval['abstain']) {
+            $abstainMsg = "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. Please try rephrasing with specific curriculum topics.";
+            $sendEvent('metadata', [
+                'sources' => [],
+                'confidence' => $confEval['confidence'],
+                'confidence_details' => $confEval,
+                'abstain' => true,
+                'mode' => $mode
+            ]);
+            $sendEvent('token', ['token' => $abstainMsg]);
+            $sendEvent('done', [
+                'success' => true,
+                'answer' => $abstainMsg,
+                'sources' => [],
+                'grounded' => false,
+                'abstain' => true,
+                'confidence' => $confEval['confidence'],
+                'mode' => $mode
+            ]);
+            return;
+        }
+
+        // Step 3: Build context from retrieved chunks
+        $contextParts = [];
+        $sources = [];
+        foreach ($results as $i => $chunk) {
+            $contextParts[] = "[Source " . ($i+1) . ": " . ($chunk['title'] ?? 'Unknown') . ", Section " . (($chunk['chunk_index'] ?? 0) + 1) . "]\n" . ($chunk['content'] ?? '');
+            $sources[] = [
+                'title' => $chunk['title'],
+                'chunk_index' => $chunk['chunk_index'],
+                'similarity' => $chunk['similarity'],
+                'content' => $chunk['content']
+            ];
+        }
+        $contextBlock = implode("\n\n---\n\n", $contextParts);
+
+        // Send initial metadata event immediately so frontend gets sources and confidence in ~10-20ms!
+        $sendEvent('metadata', [
+            'sources' => $sources,
+            'confidence' => $confEval['confidence'],
+            'confidence_details' => $confEval,
+            'abstain' => false,
+            'mode' => $mode
+        ]);
+
+        // Step 4: Configure Prompt based on mode
+        if ($mode === 'socratic') {
+            $systemPrompt = "You are the EduConnect LMS Socratic AI Tutor. Your mission is NOT to simply provide the final answer, solution, or complete code, but to guide the student to discover the answer themselves.\n"
+                . "1. Tone: Warm, encouraging, and academically rigorous.\n"
+                . "2. Brevity: Keep guidance concise (under 200 words).\n"
+                . "3. Hinting: Provide a targeted conceptual hint or analogy grounded in the provided curriculum excerpts.\n"
+                . "4. Error Analysis: If the student asks about an error or shared buggy code, identify the conceptual misconception without writing the completed solution.\n"
+                . "5. Socratic Question: Always end with ONE focused, thought-provoking question that prompts the student to think through the next step.\n"
+                . "6. Citations: Cite the course source [Document Title, Section X] so the student knows where to review.";
+            $userPrompt = "STUDENT QUESTION: {$question}\n\nCURRICULUM MATERIAL EXCERPTS:\n{$contextBlock}\n\nPlease guide the student Socratically based strictly on these excerpts. Provide a hint and ask a guiding question.";
+            $temperature = 0.25;
+        } else {
+            $systemPrompt = "You are the EduConnect LMS AI Tutor. Answer using ONLY the provided curriculum excerpts.\n"
+                . "1. Direct concise answer under 250 words.\n"
+                . "2. Cite sources: [Document Title, Section X].\n"
+                . "3. Ground exclusively on provided excerpts; no outside knowledge.\n"
+                . "4. Include relevant code snippets from the excerpts when applicable.\n"
+                . "5. If the excerpts don't fully cover the question, say so.";
+            $userPrompt = "Student Question: {$question}\n\nCurriculum Evidence:\n{$contextBlock}\n\nPlease provide a clear, accurate explanation citing [Document Title, Section X].";
+            $temperature = 0.1;
+        }
+
+        // Step 5: Stream from Ollama with real-time token delivery
+        $chatUrl = self::$ollamaBaseUrl . '/api/chat';
+        $fullAnswer = '';
+        $streamBuffer = '';
+
+        $ch = curl_init($chatUrl);
+        curl_setopt_array($ch, [
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => json_encode([
+                'model' => self::$chatModel,
+                'stream' => true,
+                'messages' => [
+                    ['role' => 'system', 'content' => $systemPrompt],
+                    ['role' => 'user', 'content' => $userPrompt]
+                ],
+                'options' => [
+                    'num_predict' => 512,
+                    'num_ctx' => 2048,
+                    'temperature' => $temperature,
+                    'top_p' => 0.9
+                ]
+            ]),
+            CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+            CURLOPT_WRITEFUNCTION => function($ch, $chunk) use (&$streamBuffer, &$fullAnswer, $sendEvent) {
+                $streamBuffer .= $chunk;
+                $lines = explode("\n", $streamBuffer);
+                $streamBuffer = array_pop($lines); // incomplete portion remains in buffer
+                foreach ($lines as $line) {
+                    $trimmed = trim($line);
+                    if (empty($trimmed)) continue;
+                    $json = json_decode($trimmed, true);
+                    if ($json && isset($json['message']['content'])) {
+                        $token = $json['message']['content'];
+                        $fullAnswer .= $token;
+                        $sendEvent('token', ['token' => $token]);
+                    }
+                }
+                return strlen($chunk);
+            },
+            CURLOPT_TIMEOUT => 120
+        ]);
+
+        curl_exec($ch);
+        curl_close($ch);
+
+        // Process any leftover content in buffer
+        if (!empty(trim($streamBuffer))) {
+            $json = json_decode(trim($streamBuffer), true);
+            if ($json && isset($json['message']['content'])) {
+                $token = $json['message']['content'];
+                $fullAnswer .= $token;
+                $sendEvent('token', ['token' => $token]);
+            }
+        }
+
+        // Send completion event
+        $sendEvent('done', [
+            'success' => true,
+            'answer' => $fullAnswer,
+            'sources' => $sources,
+            'grounded' => true,
+            'abstain' => false,
+            'confidence' => $confEval['confidence'],
+            'mode' => $mode
+        ]);
+
+        // Auto-persist conversation history if studentId is present
+        if (!empty($studentId) && !empty($fullAnswer)) {
+            try {
+                if (function_exists('supabaseInsert')) {
+                    supabaseInsert('conversation_history', [
+                        'student_id' => $studentId,
+                        'role' => 'user',
+                        'content' => $question
+                    ]);
+                    supabaseInsert('conversation_history', [
+                        'student_id' => $studentId,
+                        'role' => 'assistant',
+                        'content' => $fullAnswer
+                    ]);
+                }
+            } catch (\Throwable $t) {
+                // Non-fatal
+            }
+        }
     }
 
     /**

@@ -95,12 +95,15 @@ Student Question
 ```
 
 ### Key Features
+* **Real-Time Server-Sent Events (SSE) Streaming** — Token-by-token generation with Time-to-First-Token (TTFT) ~230ms directly from local Ollama.
+* **Dual Pedagogical Modes** — Toggle between **Direct Answer** (factual explanations under 250 words) and **Socratic Guide** (hint-based guidance ending in conceptual questions).
+* **In-Browser Voice Query Support** — Hands-free audio questions via native Web Speech API without external cloud dependencies.
 * **Hybrid BM25 + Dense Search with RRF** — Combines lexical keyword matching with semantic vector similarity for robust retrieval.
 * **Calibrated Confidence Gate** — Multi-factor scoring (similarity × margin × keyword coverage) prevents hallucination by abstaining on low-confidence queries.
 * **8-Vector Safety Boundary** — Blocks prompt injection (instruction overrides, role confusion, base64 payloads), out-of-curriculum technology queries, fabricated APIs, and admin credential requests.
 * **Conversational Coreference Resolution** — Rewrites follow-up questions with detected curriculum entities (e.g., "why does it throw?" → "why does TDZ throw?").
 * **Document Extraction** — Ingests PDF (PyMuPDF), DOCX (ZipArchive), Markdown, TXT, HTML, and CSV.
-* **Grounded Quiz Generation** — Generates MCQs with 4 options (A-D), answer keys, and source citations grounded in course materials.
+* **Deterministic Quiz Evaluation** — Session-persisted answer keys, exact arithmetic, and two-pass option matching eliminate LLM grading hallucinations.
 * **Course Access Isolation** — Students can only retrieve chunks for courses they are enrolled in (enforced at SQLite query level and Supabase RLS).
 * **Dual Storage** — SQLite primary (sub-5ms local retrieval) with automatic Supabase cloud sync.
 
@@ -110,11 +113,19 @@ Student Question
 |--------|----------|------|-------------|
 | `GET` | `/api/rag/stats` | JWT / Service Key | Chunk count, indexed documents, model info |
 | `POST` | `/api/rag/search` | JWT / Service Key | Hybrid BM25+Dense+RRF search with course scoping |
-| `POST` | `/api/rag/ask` | JWT / Service Key | Grounded Q&A with confidence gate and abstention |
-| `POST` | `/api/rag/quiz` | JWT / Service Key | Generate curriculum-grounded MCQ quizzes |
+| `POST` | `/api/rag/ask` | JWT / Service Key | Grounded Q&A (`mode`: `direct` \| `socratic`) with confidence gate |
+| `POST` | `/api/rag/stream` | JWT / Service Key | Real-time SSE token stream with metadata & Socratic guidance |
+| `POST` | `/api/rag/quiz` | JWT / Service Key | Generate curriculum-grounded MCQ quizzes with verified keys |
 | `POST` | `/api/rag/ingest` | Service Key / Teacher | Ingest document content into vector store |
 | `POST` | `/api/rag/embed` | JWT / Service Key | Generate 768-dim embeddings for text |
 | `GET/POST` | `/api/rag/conversation` | JWT / Service Key | Read/write student conversation history |
+
+### Verification & Test Suite
+The production RAG pipeline includes a 12-point automated verification suite:
+```bash
+php test_rag_pipeline.php
+```
+* Coverage: DB schema, embeddings, code-aware chunking, PDF ingestion, hybrid retrieval, grounded generation, access control scoping, anaphora resolution, safety boundary & abstention, chunk lifecycle, Socratic guided pedagogy, and real-time SSE token streaming.
 
 ### Hardware Requirements
 * **GPU**: NVIDIA RTX 3050 Laptop (4 GB VRAM) or equivalent

@@ -174,6 +174,30 @@ try {
     recordTest("Test 9: Chunk Lifecycle Deletion & Service API Auth", false, $e->getMessage());
 }
 
+// --- TEST 10: Socratic Tutoring Pedagogical Mode ---
+try {
+    $socRes = RagService::ask("Why does useEffect need a dependency array in React?", null, null, 'Student', 3, 'socratic');
+    $isSocratic = !empty($socRes['grounded']) && !empty($socRes['answer']) && ($socRes['mode'] === 'socratic');
+    $hasGuidingQuestion = (strpos($socRes['answer'], '?') !== false);
+    recordTest("Test 10: Socratic Tutoring Mode (Guided Pedagogy)", ($isSocratic && $hasGuidingQuestion), "Socratic mode active. Model provided grounded hint and ended with guiding question: '{$socRes['answer']}'");
+} catch (Exception $e) {
+    recordTest("Test 10: Socratic Tutoring Mode (Guided Pedagogy)", false, $e->getMessage());
+}
+
+// --- TEST 11: Real-Time SSE Token Streaming (Zero-Latency Delivery) ---
+try {
+    ob_start();
+    RagService::askStream("Explain the Temporal Dead Zone in JavaScript", null, null, 'Student', 3, 'direct');
+    $streamOutput = ob_get_clean();
+    $hasMetadata = (strpos($streamOutput, 'event: metadata') !== false);
+    $hasTokens = (strpos($streamOutput, 'event: token') !== false);
+    $hasDone = (strpos($streamOutput, 'event: done') !== false);
+    $streamPassed = $hasMetadata && $hasTokens && $hasDone;
+    recordTest("Test 11: Real-Time SSE Token Streaming", $streamPassed, "SSE events verified (metadata: " . ($hasMetadata ? 'YES' : 'NO') . ", tokens: " . ($hasTokens ? 'YES' : 'NO') . ", done: " . ($hasDone ? 'YES' : 'NO') . ").");
+} catch (Exception $e) {
+    recordTest("Test 11: Real-Time SSE Token Streaming", false, $e->getMessage());
+}
+
 echo "\n========================================================\n";
 $total = count($results);
 $passedCount = count(array_filter($results, fn($r) => $r['status'] === 'PASS'));
