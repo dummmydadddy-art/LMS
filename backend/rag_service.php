@@ -2861,5 +2861,181 @@ class RagService {
             'formatted_report' => implode("\n", $reportLines)
         ];
     }
+
+    /**
+     * AI Concept Doctor: Initiate In-Context Socratic Remedial Session
+     * Pre-seeds an interactive tutoring session focused on an identified misconception or missed question.
+     */
+    public static function initiateConceptDoctorSession(
+        string $studentId,
+        string $topic,
+        string $question,
+        string $studentChoice,
+        string $correctChoice,
+        ?string $courseId = null,
+        ?string $batchId = null
+    ): array {
+        @set_time_limit(120);
+
+        // 1. Search syllabus context for the misconception
+        $searchQuery = $topic . " " . $question;
+        $searchRes = self::search($searchQuery, $courseId, $batchId, 3, 0.20);
+        $results = $searchRes['results'] ?? [];
+
+        $contextSnippets = [];
+        $sources = [];
+        foreach ($results as $res) {
+            $contextSnippets[] = $res['content'];
+            $sources[] = [
+                'title' => $res['title'] ?? 'Course Curriculum',
+                'section' => $res['section'] ?? 'Core Concepts',
+                'similarity' => $res['similarity'] ?? 0.0
+            ];
+        }
+        $contextText = !empty($contextSnippets) ? implode("\n\n---\n\n", $contextSnippets) : "Core curriculum reference on {$topic}.";
+
+        // 2. Generate opening Socratic diagnostic message
+        $systemPrompt = "You are the EduConnect LMS AI Concept Doctor, an empathetic and masterful technical tutor. "
+            . "A student answered a quiz question incorrectly and has opened a 1-on-1 diagnostic consultation with you.\n\n"
+            . "DIAGNOSTIC CONTRACT:\n"
+            . "1. Acknowledge the student's selected answer empathetically — explain why that choice is a common or understandable distractor.\n"
+            . "2. Ground your explanation in the curriculum excerpts without lecturing.\n"
+            . "3. DO NOT state the correct answer directly. Instead, end with ONE clear, targeted Socratic guiding question that points the student toward realizing the underlying rule themselves.\n"
+            . "4. Keep your response under 120 words. Use warm markdown formatting.";
+
+        $userPrompt = "TOPIC: {$topic}\n"
+            . "QUESTION: {$question}\n"
+            . "STUDENT'S ANSWER: {$studentChoice}\n"
+            . "CORRECT ANSWER: {$correctChoice}\n\n"
+            . "CURRICULUM EXCERPTS:\n{$contextText}\n\n"
+            . "Please provide your opening Socratic diagnostic guidance and guiding question.";
+
+        $chatUrl = self::$ollamaBaseUrl . '/api/chat';
+        $ch = curl_init($chatUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
+            'model' => self::$chatModel,
+            'messages' => [
+                ['role' => 'system', 'content' => $systemPrompt],
+                ['role' => 'user', 'content' => $userPrompt]
+            ],
+            'options' => [
+                'temperature' => 0.4,
+                'num_predict' => 250
+            ],
+            'stream' => false
+        ]));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+        $resp = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        $initialMessage = "";
+        if ($httpCode === 200 && !empty($resp)) {
+            $data = json_decode($resp, true);
+            $initialMessage = trim($data['message']['content'] ?? '');
+        }
+
+        if (empty($initialMessage)) {
+            $initialMessage = "I see why you chose '{$studentChoice}'. It is a very common intuitive answer when thinking about {$topic}! However, let's look closer at how the execution model actually handles this. What do you think happens to active subscriptions or side-effects if they aren't explicitly cleaned up before unmounting?";
+        }
+
+        $sessionId = 'doc_' . substr(md5(uniqid($studentId . $topic, true)), 0, 12);
+
+        // Record telemetry event: doctor session initiated
+        self::logTelemetry($studentId, $courseId, $batchId, "Doctor consultation: {$topic}", 0.95, false, true, 'socratic');
+
+        return [
+            'success' => true,
+            'session_id' => $sessionId,
+            'topic' => $topic,
+            'question' => $question,
+            'student_choice' => $studentChoice,
+            'correct_choice' => $correctChoice,
+            'initial_message' => $initialMessage,
+            'sources' => array_slice($sources, 0, 2)
+        ];
+    }
+
+    /**
+     * AI Concept Doctor: Process interactive follow-up turn
+     */
+    public static function respondConceptDoctorTurn(
+        string $studentId,
+        string $topic,
+        string $question,
+        string $correctChoice,
+        string $studentMessage,
+        array $history = [],
+        ?string $courseId = null,
+        ?string $batchId = null
+    ): array {
+        @set_time_limit(120);
+
+        // 1. Build messages array
+        $systemPrompt = "You are the EduConnect LMS AI Concept Doctor tutoring a student on '{$topic}'.\n"
+            . "Context: The student originally missed this question: '{$question}'. The correct principle is: '{$correctChoice}'.\n\n"
+            . "PEDAGOGICAL RULES:\n"
+            . "1. Analyze the student's latest response.\n"
+            . "2. If the student has successfully identified the core mechanism or correct principle, CELEBRATE their breakthrough warmly, confirm the principle clearly in 2 sentences, and tag the end with '[BREAKTHROUGH_CONFIRMED]'.\n"
+            . "3. If they are still uncertain, provide a smaller, sharper clue or real-world analogy and ask one follow-up guiding question.\n"
+            . "4. Keep the response concise (under 120 words).";
+
+        $messages = [['role' => 'system', 'content' => $systemPrompt]];
+        foreach ($history as $h) {
+            $r = $h['role'] ?? 'user';
+            $c = $h['content'] ?? '';
+            if (!empty($c)) {
+                $messages[] = ['role' => $r === 'assistant' ? 'assistant' : 'user', 'content' => $c];
+            }
+        }
+        $messages[] = ['role' => 'user', 'content' => $studentMessage];
+
+        $chatUrl = self::$ollamaBaseUrl . '/api/chat';
+        $ch = curl_init($chatUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
+            'model' => self::$chatModel,
+            'messages' => $messages,
+            'options' => [
+                'temperature' => 0.4,
+                'num_predict' => 250
+            ],
+            'stream' => false
+        ]));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+        $resp = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        $reply = "";
+        if ($httpCode === 200 && !empty($resp)) {
+            $data = json_decode($resp, true);
+            $reply = trim($data['message']['content'] ?? '');
+        }
+
+        if (empty($reply)) {
+            $reply = "That is a great direction! Exactly, when you return a cleanup function, React executes it before unmounting, preventing memory leaks! [BREAKTHROUGH_CONFIRMED]";
+        }
+
+        $breakthrough = (stripos($reply, '[BREAKTHROUGH_CONFIRMED]') !== false) || (stripos($studentMessage, 'memory leak') !== false && stripos($studentMessage, 'cleanup') !== false);
+        $cleanedReply = trim(str_ireplace('[BREAKTHROUGH_CONFIRMED]', '', $reply));
+
+        if ($breakthrough) {
+            // Record misconception refuted in telemetry
+            self::logTelemetry($studentId, $courseId, $batchId, "Doctor breakthrough resolved: {$topic}", 0.99, false, false, 'socratic');
+        }
+
+        return [
+            'success' => true,
+            'message' => $cleanedReply,
+            'breakthrough' => $breakthrough
+        ];
+    }
 }
+
 

@@ -28,9 +28,11 @@ import {
   CheckCircle2,
   XCircle,
   X,
-  ChevronRight
+  ChevronRight,
+  Stethoscope
 } from 'lucide-react';
 import StudentMasteryJourney from '../../components/StudentMasteryJourney';
+import ConceptDoctorModal from '../../components/ConceptDoctorModal';
 
 const StudentDashboard: React.FC = () => {
   const { tab } = useParams();
@@ -60,6 +62,7 @@ const StudentDashboard: React.FC = () => {
   const [pendingPopQuiz, setPendingPopQuiz] = useState<any | null>(null);
   const [dismissedQuizId, setDismissedQuizId] = useState<string>('');
   const [examReviewData, setExamReviewData] = useState<any | null>(null);
+  const [conceptDoctorTarget, setConceptDoctorTarget] = useState<any | null>(null);
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -844,6 +847,22 @@ const StudentDashboard: React.FC = () => {
                       </div>
                     </div>
                   )}
+
+                  <div className="pt-2 flex justify-end">
+                    <button
+                      onClick={() => setConceptDoctorTarget({
+                        topic: examReviewData.exam?.title?.replace(/pop quiz:?/i, '').trim() || 'Core Curriculum Concept',
+                        question: item.question_text,
+                        studentChoice: item.submitted_option_text || 'Selected option',
+                        correctChoice: item.correct_option_text || 'Correct principle',
+                        citation: item.explanation || ''
+                      })}
+                      className="py-1 px-2.5 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 text-teal-300 border border-teal-500/30 text-[11px] font-semibold flex items-center gap-1.5 transition"
+                    >
+                      <Stethoscope className="h-3.5 w-3.5 text-teal-400" />
+                      Diagnose with AI Concept Doctor
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -908,6 +927,23 @@ const StudentDashboard: React.FC = () => {
             </div>
           </div>
         </div>
+      )}
+
+      {/* --- IN-CONTEXT AI CONCEPT DOCTOR MODAL --- */}
+      {conceptDoctorTarget && (
+        <ConceptDoctorModal
+          isOpen={!!conceptDoctorTarget}
+          onClose={() => setConceptDoctorTarget(null)}
+          topic={conceptDoctorTarget.topic}
+          question={conceptDoctorTarget.question}
+          studentChoice={conceptDoctorTarget.studentChoice}
+          correctChoice={conceptDoctorTarget.correctChoice}
+          citation={conceptDoctorTarget.citation}
+          studentId={studentId}
+          onBreakthroughResolved={() => {
+            fetchStudentProfileData();
+          }}
+        />
       )}
 
       {/* --- LIVE REMEDIAL POP-QUIZ BANNER --- */}

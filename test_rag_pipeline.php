@@ -651,6 +651,63 @@ try {
     recordTest("Test 23: Adaptive Remedial Difficulty Ladder & Dynamic Tier Scaling", false, $e->getMessage());
 }
 
+// --- TEST 24: In-Context Socratic AI Concept Doctor Drilldown & Breakthrough Resolution ---
+try {
+    $doctorSid = 'std_doctor_test_099';
+    $docTopic = 'React Hooks & useEffect Memory Leaks';
+    $docQuestion = 'Why does an uncleaned subscription inside useEffect cause memory leaks?';
+    $studentDistractor = 'Because React deletes the component closure immediately upon re-render';
+    $correctPrinciple = 'The subscription callback retains references in memory unless explicitly cancelled by the returned cleanup function before unmounting';
+
+    // Clean previous test telemetry
+    RagService::getLocalDb()->exec("DELETE FROM rag_telemetry WHERE student_id = '{$doctorSid}'");
+
+    // 1. Initiate Doctor session
+    $initRes = RagService::initiateConceptDoctorSession(
+        $doctorSid,
+        $docTopic,
+        $docQuestion,
+        $studentDistractor,
+        $correctPrinciple
+    );
+
+    $hasSession = !empty($initRes['session_id']);
+    $hasIntro = !empty($initRes['initial_message']);
+    $hasSources = !empty($initRes['sources']);
+
+    // 2. Student responds with accurate conceptual understanding
+    $turnRes = RagService::respondConceptDoctorTurn(
+        $doctorSid,
+        $docTopic,
+        $docQuestion,
+        $correctPrinciple,
+        "I understand now! The cleanup function in useEffect runs before the component is unmounted, so returning a function to cancel subscriptions cleans up references and prevents memory leaks.",
+        [['role' => 'assistant', 'content' => $initRes['initial_message']]]
+    );
+
+    $turnSuccess = ($turnRes['success'] === true);
+    $hasReply = !empty($turnRes['message']);
+    $breakthrough = ($turnRes['breakthrough'] === true);
+
+    // 3. Verify telemetry logged the resolved breakthrough
+    $stmt = RagService::getLocalDb()->prepare("SELECT COUNT(*) FROM rag_telemetry WHERE student_id = :sid AND mode = 'socratic'");
+    $stmt->execute([':sid' => $doctorSid]);
+    $telemetryCount = (int)$stmt->fetchColumn();
+    $telemetryRecorded = ($telemetryCount >= 2); // 1 initiate + 1 breakthrough
+
+    // Clean test fixture
+    RagService::getLocalDb()->exec("DELETE FROM rag_telemetry WHERE student_id = '{$doctorSid}'");
+
+    $test24Passed = $hasSession && $hasIntro && $hasSources && $turnSuccess && $hasReply && $breakthrough && $telemetryRecorded;
+    recordTest(
+        "Test 24: In-Context Socratic AI Concept Doctor Drilldown & Breakthrough Resolution",
+        $test24Passed,
+        "Initiated session '{$initRes['session_id']}', delivered grounded Socratic clue, confirmed breakthrough: " . ($breakthrough ? 'YES' : 'NO') . " ({$telemetryCount} telemetry events recorded)."
+    );
+} catch (Exception $e) {
+    recordTest("Test 24: In-Context Socratic AI Concept Doctor Drilldown & Breakthrough Resolution", false, $e->getMessage());
+}
+
 echo "\n========================================================\n";
 $total = count($results);
 $passedCount = count(array_filter($results, fn($r) => $r['status'] === 'PASS'));

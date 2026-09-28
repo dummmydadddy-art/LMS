@@ -15,9 +15,11 @@ import {
   Check,
   Brain,
   Layers,
-  ArrowUpRight
+  ArrowUpRight,
+  Stethoscope
 } from 'lucide-react';
 import api from '../services/api';
+import ConceptDoctorModal from './ConceptDoctorModal';
 
 interface MasterySummary {
   total_quizzes_taken: number;
@@ -69,6 +71,7 @@ export const StudentMasteryJourney: React.FC<StudentMasteryJourneyProps> = ({
   const [topics, setTopics] = useState<TopicMasteryItem[]>([]);
   const [recentActivities, setRecentActivities] = useState<RemedialActivity[]>([]);
   const [activeFilter, setActiveFilter] = useState<'all' | 'mastered' | 'practice'>('all');
+  const [doctorModalTarget, setDoctorModalTarget] = useState<any | null>(null);
 
   const fetchMasteryData = async () => {
     if (!studentId) return;
@@ -324,22 +327,30 @@ export const StudentMasteryJourney: React.FC<StudentMasteryJourneyProps> = ({
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-2 border-t border-slate-800/60 text-xs text-slate-400">
+            <div className="flex items-center justify-between pt-2 border-t border-slate-800/60 text-xs text-slate-400 gap-2">
               <span>
                 {topic.attempts_count > 0 ? (
                   <>
-                    <span className="text-slate-300 font-medium">{topic.attempts_count}</span> {topic.attempts_count === 1 ? 'quiz taken' : 'quizzes taken'} (Best: {topic.best_score_pct}%)
+                    <span className="text-slate-300 font-medium">{topic.attempts_count}</span> {topic.attempts_count === 1 ? 'quiz' : 'quizzes'} (Best: {topic.best_score_pct}%)
                   </>
                 ) : (
-                  'No quizzes attempted yet'
+                  'No quizzes attempted'
                 )}
               </span>
 
-              {topic.last_tested_at && (
-                <span className="text-[11px] text-slate-400">
-                  Last: {new Date(topic.last_tested_at).toLocaleDateString()}
-                </span>
-              )}
+              <button
+                onClick={() => setDoctorModalTarget({
+                  topic: topic.topic,
+                  question: `Key conceptual mechanisms, common runtime bugs, and best practices in ${topic.topic}`,
+                  studentChoice: 'Common conceptual confusion or anti-pattern',
+                  correctChoice: 'Curriculum-grounded technical rule'
+                })}
+                className="py-1 px-2.5 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 text-teal-300 border border-teal-500/30 text-[11px] font-semibold flex items-center gap-1 transition shrink-0"
+                title="Consult AI Concept Doctor on this topic"
+              >
+                <Stethoscope className="h-3 w-3 text-teal-400" />
+                Concept Doctor
+              </button>
             </div>
           </div>
         ))}
@@ -402,6 +413,24 @@ export const StudentMasteryJourney: React.FC<StudentMasteryJourneyProps> = ({
             ))}
           </div>
         </div>
+      )}
+
+      {/* Concept Doctor Diagnostic Modal */}
+      {doctorModalTarget && (
+        <ConceptDoctorModal
+          isOpen={!!doctorModalTarget}
+          onClose={() => setDoctorModalTarget(null)}
+          topic={doctorModalTarget.topic}
+          question={doctorModalTarget.question}
+          studentChoice={doctorModalTarget.studentChoice}
+          correctChoice={doctorModalTarget.correctChoice}
+          courseId={courseId}
+          batchId={batchId}
+          studentId={studentId}
+          onBreakthroughResolved={() => {
+            fetchMasteryData();
+          }}
+        />
       )}
     </div>
   );

@@ -2724,6 +2724,66 @@ try {
             echo json_encode(array_merge(['success' => true, 'topic' => $topic, 'student_id' => $studentId], $diffData));
             break;
 
+        // AI Concept Doctor: Initiate In-Context Socratic Consultation
+        case ($route === '/api/rag/concept-doctor/initiate' && $method === 'POST'):
+            $user = verifyTokenOrApiKey();
+            $studentId = $input['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
+            $topic = trim($input['topic'] ?? '');
+            $question = trim($input['question'] ?? '');
+            $studentChoice = trim($input['student_choice'] ?? '');
+            $correctChoice = trim($input['correct_choice'] ?? '');
+            $courseId = $input['course_id'] ?? null;
+            $batchId = $input['batch_id'] ?? null;
+
+            if (empty($topic) || empty($question)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'topic and question are required']);
+                break;
+            }
+
+            $docRes = RagService::initiateConceptDoctorSession(
+                $studentId ?: 'std_anon',
+                $topic,
+                $question,
+                $studentChoice,
+                $correctChoice,
+                $courseId,
+                $batchId
+            );
+            echo json_encode($docRes);
+            break;
+
+        // AI Concept Doctor: Interactive Turn & Breakthrough Evaluation
+        case ($route === '/api/rag/concept-doctor/message' && $method === 'POST'):
+            $user = verifyTokenOrApiKey();
+            $studentId = $input['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
+            $topic = trim($input['topic'] ?? '');
+            $question = trim($input['question'] ?? '');
+            $correctChoice = trim($input['correct_choice'] ?? '');
+            $studentMessage = trim($input['message'] ?? '');
+            $history = $input['history'] ?? [];
+            $courseId = $input['course_id'] ?? null;
+            $batchId = $input['batch_id'] ?? null;
+
+            if (empty($studentMessage)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'message is required']);
+                break;
+            }
+
+            $turnRes = RagService::respondConceptDoctorTurn(
+                $studentId ?: 'std_anon',
+                $topic,
+                $question,
+                $correctChoice,
+                $studentMessage,
+                $history,
+                $courseId,
+                $batchId
+            );
+            echo json_encode($turnRes);
+            break;
+
         // RAG-Grounded Quiz Generator
         case ($route === '/api/rag/quiz' && $method === 'POST'):
             $user = verifyTokenOrApiKey();
