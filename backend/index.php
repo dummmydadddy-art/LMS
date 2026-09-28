@@ -2610,6 +2610,47 @@ try {
             echo json_encode($practiceRes);
             break;
 
+        // Teacher Autopilot Settings & Trigger Management
+        case ($route === '/api/rag/teacher/autopilot' && in_array($method, ['GET', 'POST'])):
+            $user = verifyTokenOrApiKey();
+            if ($user['role'] !== 'SERVICE' && !in_array($user['role'], ['SUPER_ADMIN', 'ADMIN', 'TEACHER'])) {
+                http_response_code(403);
+                echo json_encode(['success' => false, 'error' => 'Forbidden: Teacher or Admin access required']);
+                break;
+            }
+            $courseId = $input['course_id'] ?? $_GET['course_id'] ?? null;
+            $batchId = $input['batch_id'] ?? $_GET['batch_id'] ?? null;
+
+            if ($method === 'GET') {
+                $config = RagService::getAutopilotConfig($courseId, $batchId);
+                $events = RagService::getAutopilotEvents($courseId, $batchId, 10);
+                echo json_encode([
+                    'success' => true,
+                    'config' => $config,
+                    'events' => $events
+                ]);
+            } else {
+                $action = $input['action'] ?? 'save_config';
+                if ($action === 'evaluate' || $action === 'check_triggers') {
+                    $force = !empty($input['force']);
+                    $evalRes = RagService::evaluateAutopilotTriggers($courseId, $batchId, $user['id'], $force);
+                    echo json_encode($evalRes);
+                } else {
+                    // save config
+                    $savedConfig = RagService::saveAutopilotConfig([
+                        'course_id' => $courseId,
+                        'batch_id' => $batchId,
+                        'enabled' => !empty($input['enabled']),
+                        'threshold' => $input['threshold'] ?? 3,
+                        'auto_publish' => !empty($input['auto_publish']),
+                        'question_count' => $input['question_count'] ?? 3,
+                        'time_limit_minutes' => $input['time_limit_minutes'] ?? 15
+                    ]);
+                    echo json_encode(['success' => true, 'config' => $savedConfig]);
+                }
+            }
+            break;
+
         // RAG-Grounded Quiz Generator
         case ($route === '/api/rag/quiz' && $method === 'POST'):
             $user = verifyTokenOrApiKey();

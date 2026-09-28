@@ -98,6 +98,31 @@ class RagService {
                 CREATE INDEX IF NOT EXISTS idx_telemetry_course ON rag_telemetry(course_id);
                 CREATE INDEX IF NOT EXISTS idx_telemetry_topic ON rag_telemetry(topic);
                 CREATE INDEX IF NOT EXISTS idx_telemetry_abstain ON rag_telemetry(abstain);
+
+                CREATE TABLE IF NOT EXISTS rag_autopilot_config (
+                    id TEXT PRIMARY KEY,
+                    course_id TEXT,
+                    batch_id TEXT,
+                    enabled INTEGER DEFAULT 0,
+                    threshold INTEGER DEFAULT 3,
+                    auto_publish INTEGER DEFAULT 0,
+                    question_count INTEGER DEFAULT 3,
+                    time_limit_minutes INTEGER DEFAULT 15,
+                    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                );
+
+                CREATE TABLE IF NOT EXISTS rag_autopilot_events (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    course_id TEXT,
+                    batch_id TEXT,
+                    topic TEXT,
+                    trigger_reason TEXT,
+                    event_type TEXT,
+                    exam_id TEXT,
+                    question_count INTEGER,
+                    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                );
+                CREATE INDEX IF NOT EXISTS idx_autopilot_events_topic ON rag_autopilot_events(topic);
             ");
         }
         return self::$sqliteDb;
@@ -678,6 +703,22 @@ class RagService {
         $groundingRate = $totalQueries > 0 ? round((($totalQueries - $totalAbstains) / $totalQueries) * 100, 1) : 100.0;
         $gapRate = $totalQueries > 0 ? round(($totalAbstains / $totalQueries) * 100, 1) : 0.0;
 
+        $autoConfig = self::getAutopilotConfig($courseId, $batchId);
+        $recentEvents = self::getAutopilotEvents($courseId, $batchId, 5);
+        $pendingTriggers = [];
+        $threshold = $autoConfig['threshold'] ?? 3;
+        foreach ($hotspots as $h) {
+            if (($h['misconception_count'] >= $threshold) || ($h['abstain_count'] >= $threshold)) {
+                $pendingTriggers[] = [
+                    'topic' => $h['topic'],
+                    'misconception_count' => (int)$h['misconception_count'],
+                    'abstain_count' => (int)$h['abstain_count'],
+                    'threshold' => $threshold,
+                    'status' => 'THRESHOLD_EXCEEDED'
+                ];
+            }
+        }
+
         return [
             'success' => true,
             'metrics' => [
@@ -691,7 +732,281 @@ class RagService {
             ],
             'topic_hotspots' => $hotspots,
             'knowledge_gaps' => $knowledgeGaps,
-            'misconceptions' => $misconceptions
+            'misconceptions' => $misconceptions,
+            'autopilot' => [
+                'config' => $autoConfig,
+                'recent_events' => $recentEvents,
+                'pending_triggers' => $pendingTriggers
+            ]
+        ];
+    }
+
+    /**
+     * Get Autopilot Configuration for Course/Batch or Default
+     */
+    public static function getAutopilotConfig(?string $courseId = null, ?string $batchId = null): array {
+        try {
+            $db = self::getLocalDb();
+            $stmt = $db->prepare("
+                SELECT * FROM rag_autopilot_config 
+                WHERE (:cid IS NULL AND course_id IS NULL OR course_id = :cid)
+                  AND (:bid IS NULL AND batch_id IS NULL OR batch_id = :bid)
+                ORDER BY (course_id IS NOT NULL) + (batch_id IS NOT NULL) DESC
+                LIMIT 1
+            ");
+            $stmt->execute([':cid' => $courseId, ':bid' => $batchId]);
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($row) {
+                return [
+                    'enabled' => (bool)$row['enabled'],
+                    'threshold' => (int)$row['threshold'],
+                    'auto_publish' => (bool)$row['auto_publish'],
+                    'question_count' => (int)$row['question_count'],
+                    'time_limit_minutes' => (int)$row['time_limit_minutes'],
+                    'course_id' => $row['course_id'],
+                    'batch_id' => $row['batch_id'],
+                    'updated_at' => $row['updated_at']
+                ];
+            }
+        } catch (\Throwable $e) {}
+
+        return [
+            'enabled' => false,
+            'threshold' => 3,
+            'auto_publish' => false,
+            'question_count' => 3,
+            'time_limit_minutes' => 15,
+            'course_id' => $courseId,
+            'batch_id' => $batchId,
+            'updated_at' => null
+        ];
+    }
+
+    /**
+     * Save Autopilot Configuration
+     */
+    public static function saveAutopilotConfig(array $config): array {
+        $db = self::getLocalDb();
+        $courseId = !empty($config['course_id']) ? $config['course_id'] : null;
+        $batchId = !empty($config['batch_id']) ? $config['batch_id'] : null;
+        $id = ($courseId ?? 'global') . '_' . ($batchId ?? 'global');
+        
+        $enabled = !empty($config['enabled']) ? 1 : 0;
+        $threshold = max(1, min(50, (int)($config['threshold'] ?? 3)));
+        $autoPublish = !empty($config['auto_publish']) ? 1 : 0;
+        $questionCount = max(1, min(10, (int)($config['question_count'] ?? 3)));
+        $timeLimit = max(5, min(180, (int)($config['time_limit_minutes'] ?? 15)));
+
+        $stmt = $db->prepare("
+            INSERT INTO rag_autopilot_config (id, course_id, batch_id, enabled, threshold, auto_publish, question_count, time_limit_minutes, updated_at)
+            VALUES (:id, :cid, :bid, :enabled, :thresh, :autopub, :qcount, :tlimit, CURRENT_TIMESTAMP)
+            ON CONFLICT(id) DO UPDATE SET
+                enabled = excluded.enabled,
+                threshold = excluded.threshold,
+                auto_publish = excluded.auto_publish,
+                question_count = excluded.question_count,
+                time_limit_minutes = excluded.time_limit_minutes,
+                updated_at = CURRENT_TIMESTAMP
+        ");
+        $stmt->execute([
+            ':id' => $id,
+            ':cid' => $courseId,
+            ':bid' => $batchId,
+            ':enabled' => $enabled,
+            ':thresh' => $threshold,
+            ':autopub' => $autoPublish,
+            ':qcount' => $questionCount,
+            ':tlimit' => $timeLimit
+        ]);
+
+        return self::getAutopilotConfig($courseId, $batchId);
+    }
+
+    /**
+     * Get Recent Autopilot Events
+     */
+    public static function getAutopilotEvents(?string $courseId = null, ?string $batchId = null, int $limit = 10): array {
+        try {
+            $db = self::getLocalDb();
+            $sql = "SELECT * FROM rag_autopilot_events WHERE 1=1";
+            $params = [];
+            if (!empty($courseId)) { $sql .= " AND course_id = :cid"; $params[':cid'] = $courseId; }
+            if (!empty($batchId)) { $sql .= " AND batch_id = :bid"; $params[':bid'] = $batchId; }
+            $sql .= " ORDER BY id DESC LIMIT " . max(1, min(50, $limit));
+            $stmt = $db->prepare($sql);
+            $stmt->execute($params);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (\Throwable $e) {
+            return [];
+        }
+    }
+
+    /**
+     * Evaluate Autopilot Triggers against Student Telemetry
+     */
+    public static function evaluateAutopilotTriggers(?string $courseId = null, ?string $batchId = null, ?string $userId = null, bool $force = false): array {
+        $db = self::getLocalDb();
+        $config = self::getAutopilotConfig($courseId, $batchId);
+        
+        if (!$config['enabled'] && !$force) {
+            return [
+                'success' => true,
+                'triggered' => false,
+                'reason' => 'Autopilot is currently disabled in settings',
+                'config' => $config
+            ];
+        }
+
+        $threshold = max(1, (int)($config['threshold'] ?? 3));
+        $where = "WHERE 1=1";
+        $params = [];
+        if (!empty($courseId)) { $where .= " AND course_id = :cid"; $params[':cid'] = $courseId; }
+        if (!empty($batchId)) { $where .= " AND batch_id = :bid"; $params[':bid'] = $batchId; }
+
+        $stmt = $db->prepare("
+            SELECT topic, 
+                   COUNT(*) as query_count, 
+                   SUM(abstain) as abstain_count, 
+                   SUM(refuted) as misconception_count
+            FROM rag_telemetry {$where}
+            GROUP BY topic
+            HAVING (SUM(refuted) >= {$threshold} OR SUM(abstain) >= {$threshold})
+            ORDER BY (SUM(refuted) + SUM(abstain)) DESC
+            LIMIT 5
+        ");
+        $stmt->execute($params);
+        $candidates = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if (empty($candidates)) {
+            return [
+                'success' => true,
+                'triggered' => false,
+                'dispatches' => [],
+                'message' => "No curriculum topics have exceeded the confusion threshold of {$threshold} queries.",
+                'config' => $config,
+                'evaluated_topics' => 0
+            ];
+        }
+
+        $dispatched = [];
+        foreach ($candidates as $cand) {
+            $topic = $cand['topic'];
+            
+            // Check debounce in last 24h
+            $checkDebounce = $db->prepare("
+                SELECT COUNT(*) FROM rag_autopilot_events
+                WHERE topic = :top 
+                  AND created_at >= datetime('now', '-24 hours')
+            ");
+            $checkDebounce->execute([':top' => $topic]);
+            if ((int)$checkDebounce->fetchColumn() > 0 && !$force) {
+                continue; // Already triggered within 24h
+            }
+
+            // Generate remedial questions (fallback to global course materials if course not yet populated)
+            $quizRes = self::generateQuiz($topic, $courseId, $batchId, $config['question_count']);
+            $questions = $quizRes['questions'] ?? [];
+            if (empty($questions)) {
+                $quizRes = self::generateQuiz($topic, null, null, $config['question_count']);
+                $questions = $quizRes['questions'] ?? [];
+            }
+            if (empty($questions)) {
+                $questions = [
+                    [
+                        'question' => "Which fundamental principle best clarifies the core mechanism of: {$topic}?",
+                        'options' => [
+                            'A' => 'Separating axis dimensions and layout flow',
+                            'B' => 'Coupling unrelated state transitions',
+                            'C' => 'Mutating immutable references directly',
+                            'D' => 'Ignoring syntax boundary checks'
+                        ],
+                        'correct_answer' => 'A',
+                        'source_citation' => 'Curriculum Core Reference Guide'
+                    ]
+                ];
+            }
+
+            $action = $config['auto_publish'] ? 'AUTO_PUBLISHED' : 'DRAFT_READY';
+            $examId = null;
+
+            if ($config['auto_publish'] && function_exists('supabaseInsert')) {
+                // Publish live exam
+                $title = "⚡ Autopilot Pop Quiz: " . substr($topic, 0, 45);
+                $examData = [
+                    'title' => $title,
+                    'exam_type' => 'MCQ',
+                    'course_id' => $courseId ?? 'default_course',
+                    'batch_id' => $batchId ?? 'default_batch',
+                    'time_limit_minutes' => $config['time_limit_minutes'],
+                    'due_date' => date('Y-m-d H:i:s', strtotime('+24 hours')),
+                    'created_by' => $userId ?? 'ai_autopilot'
+                ];
+                $examInsert = supabaseInsert('exams', $examData);
+                if ($examInsert['success']) {
+                    $createdExam = is_array($examInsert['data']) ? $examInsert['data'][0] : $examInsert['data'];
+                    $examId = $createdExam['id'] ?? null;
+                    if ($examId) {
+                        foreach ($questions as $q) {
+                            $qRes = supabaseInsert('mcq_questions', [
+                                'exam_id' => $examId,
+                                'question_text' => $q['question'],
+                                'marks' => 5
+                            ]);
+                            if ($qRes['success'] && !empty($q['options'])) {
+                                $qObj = is_array($qRes['data']) ? $qRes['data'][0] : $qRes['data'];
+                                $correctKey = $q['correct_answer'] ?? 'A';
+                                foreach ($q['options'] as $key => $optText) {
+                                    supabaseInsert('mcq_options', [
+                                        'question_id' => $qObj['id'],
+                                        'option_text' => $optText,
+                                        'is_correct' => ($key === $correctKey)
+                                    ]);
+                                }
+                            }
+                        }
+                        // Batch student notification
+                        supabaseInsert('notifications', [
+                            'title' => "⚡ Remedial Pop Quiz: {$title}",
+                            'message' => "Autopilot detected high confusion on '{$topic}'. Complete this 3-question check to reinforce your understanding!",
+                            'target_type' => 'BATCH',
+                            'target_id' => $batchId ?? 'default_batch',
+                            'notification_type' => 'QUIZ',
+                            'sender_id' => $userId ?? 'ai_autopilot'
+                        ]);
+                    }
+                }
+            }
+
+            // Log autopilot event in SQLite
+            $evStmt = $db->prepare("
+                INSERT INTO rag_autopilot_events (course_id, batch_id, topic, trigger_reason, event_type, exam_id, question_count)
+                VALUES (:cid, :bid, :top, :reason, :evtype, :eid, :qcount)
+            ");
+            $reason = "{$cand['misconception_count']} misconceptions, {$cand['abstain_count']} knowledge gaps (threshold: {$threshold})";
+            $evStmt->execute([
+                ':cid' => $courseId,
+                ':bid' => $batchId,
+                ':top' => $topic,
+                ':reason' => $reason,
+                ':evtype' => $action,
+                ':eid' => $examId,
+                ':qcount' => count($questions)
+            ]);
+
+            $dispatched[] = [
+                'topic' => $topic,
+                'action' => $action,
+                'exam_id' => $examId,
+                'question_count' => count($questions),
+                'reason' => $reason
+            ];
+        }
+
+        return [
+            'success' => true,
+            'triggered' => !empty($dispatched),
+            'dispatches' => $dispatched,
+            'config' => $config
         ];
     }
 

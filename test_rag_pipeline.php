@@ -401,6 +401,48 @@ try {
     recordTest("Test 17: Batch Pop-Quiz Notification & Student Alert Verification", false, $e->getMessage());
 }
 
+// --- TEST 18: Automated Remedial Dispatch Trigger (Autopilot Mode) ---
+try {
+    $testCourseId = 'course-autopilot-test';
+    $testBatchId = 'batch-autopilot-test';
+
+    // 1. Configure Autopilot for this course & batch with threshold = 2
+    $savedCfg = RagService::saveAutopilotConfig([
+        'course_id' => $testCourseId,
+        'batch_id' => $testBatchId,
+        'enabled' => true,
+        'threshold' => 2,
+        'auto_publish' => false,
+        'question_count' => 3,
+        'time_limit_minutes' => 15
+    ]);
+    $cfgMatches = ($savedCfg['enabled'] === true) && ($savedCfg['threshold'] === 2);
+
+    // 2. Log 2 telemetry misconception events on 'HTML & CSS Layouts'
+    RagService::logTelemetry('student_auto_1', $testCourseId, $testBatchId, 'Why does flexbox align grid cells in 2D?', 0.90, false, true, 'direct');
+    RagService::logTelemetry('student_auto_2', $testCourseId, $testBatchId, 'How does flexbox handle 2D row and column spanning?', 0.88, false, true, 'direct');
+
+    // 3. Evaluate Autopilot Triggers
+    $evalRes = RagService::evaluateAutopilotTriggers($testCourseId, $testBatchId, 'teacher-test-1', true);
+    $isTriggered = !empty($evalRes['triggered']);
+    $hasDispatches = !empty($evalRes['dispatches']) && is_array($evalRes['dispatches']);
+    $dispatchedTopic = $hasDispatches ? $evalRes['dispatches'][0]['topic'] : '';
+    $action = $hasDispatches ? $evalRes['dispatches'][0]['action'] : '';
+
+    // 4. Verify recorded events in SQLite
+    $events = RagService::getAutopilotEvents($testCourseId, $testBatchId, 5);
+    $hasLoggedEvent = !empty($events) && ($events[0]['topic'] === $dispatchedTopic);
+
+    $autopilotPassed = $cfgMatches && $isTriggered && $hasDispatches && $hasLoggedEvent && ($action === 'DRAFT_READY');
+    recordTest(
+        "Test 18: Automated Remedial Dispatch Trigger (Autopilot Mode)",
+        $autopilotPassed,
+        "Autopilot evaluated threshold (2): triggered {$action} for '{$dispatchedTopic}' with {$evalRes['dispatches'][0]['question_count']} questions."
+    );
+} catch (Exception $e) {
+    recordTest("Test 18: Automated Remedial Dispatch Trigger (Autopilot Mode)", false, $e->getMessage());
+}
+
 echo "\n========================================================\n";
 $total = count($results);
 $passedCount = count(array_filter($results, fn($r) => $r['status'] === 'PASS'));

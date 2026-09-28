@@ -17,7 +17,11 @@ import {
   Layers,
   ArrowRight,
   Send,
-  Zap
+  Zap,
+  Bot,
+  Sliders,
+  Play,
+  Settings
 } from 'lucide-react';
 import api from '../services/api';
 
@@ -52,11 +56,45 @@ interface MisconceptionItem {
   created_at: string;
 }
 
+interface AutopilotConfig {
+  enabled: boolean;
+  threshold: number;
+  auto_publish: boolean;
+  question_count: number;
+  time_limit_minutes: number;
+  course_id?: string | null;
+  batch_id?: string | null;
+  updated_at?: string | null;
+}
+
+interface AutopilotEvent {
+  id: number;
+  topic: string;
+  trigger_reason: string;
+  event_type: 'AUTO_PUBLISHED' | 'DRAFT_READY';
+  exam_id?: string;
+  question_count: number;
+  created_at: string;
+}
+
+interface PendingTrigger {
+  topic: string;
+  misconception_count: number;
+  abstain_count: number;
+  threshold: number;
+  status: string;
+}
+
 interface AnalyticsData {
   metrics: TelemetryMetrics;
   topic_hotspots: TopicHotspot[];
   knowledge_gaps: KnowledgeGapItem[];
   misconceptions: MisconceptionItem[];
+  autopilot?: {
+    config: AutopilotConfig;
+    recent_events: AutopilotEvent[];
+    pending_triggers: PendingTrigger[];
+  };
 }
 
 interface QuizOption {
@@ -103,6 +141,79 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
     time_limit_minutes: 15,
     due_date: ''
   });
+
+  // Autopilot states
+  const [autopilotConfig, setAutopilotConfig] = useState<AutopilotConfig>({
+    enabled: false,
+    threshold: 3,
+    auto_publish: false,
+    question_count: 3,
+    time_limit_minutes: 15
+  });
+  const [savingAutopilot, setSavingAutopilot] = useState<boolean>(false);
+  const [checkingAutopilot, setCheckingAutopilot] = useState<boolean>(false);
+  const [autopilotFeedback, setAutopilotFeedback] = useState<string>('');
+  const [showAutopilotSettings, setShowAutopilotSettings] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (analytics?.autopilot?.config) {
+      setAutopilotConfig(analytics.autopilot.config);
+    }
+  }, [analytics]);
+
+  const handleSaveAutopilot = async (newConfig: Partial<AutopilotConfig>) => {
+    const updated = {
+      ...autopilotConfig,
+      ...newConfig,
+      course_id: selectedCourse || null,
+      batch_id: selectedBatch || null
+    };
+    setAutopilotConfig(updated);
+    setSavingAutopilot(true);
+    setAutopilotFeedback('');
+    try {
+      const res = await api.post('/api/rag/teacher/autopilot', {
+        action: 'save_config',
+        ...updated
+      });
+      if (res.data?.success) {
+        setAutopilotFeedback('Autopilot settings saved.');
+        setTimeout(() => setAutopilotFeedback(''), 3000);
+      }
+    } catch (err: any) {
+      console.error('Failed to save autopilot config:', err);
+    } finally {
+      setSavingAutopilot(false);
+    }
+  };
+
+  const handleRunAutopilotCheck = async () => {
+    setCheckingAutopilot(true);
+    setAutopilotFeedback('');
+    try {
+      const res = await api.post('/api/rag/teacher/autopilot', {
+        action: 'evaluate',
+        course_id: selectedCourse || null,
+        batch_id: selectedBatch || null,
+        force: true
+      });
+      if (res.data?.success) {
+        if (res.data.triggered && res.data.dispatches?.length > 0) {
+          const d = res.data.dispatches[0];
+          setAutopilotFeedback(`Triggered ${d.action === 'AUTO_PUBLISHED' ? 'Live Pop-Quiz' : 'Draft'} on "${d.topic}"!`);
+        } else {
+          setAutopilotFeedback(res.data.message || 'No topics exceeded confusion threshold.');
+        }
+        fetchAnalytics();
+      }
+    } catch (err: any) {
+      console.error('Failed to run autopilot check:', err);
+      setAutopilotFeedback('Autopilot check failed.');
+    } finally {
+      setCheckingAutopilot(false);
+      setTimeout(() => setAutopilotFeedback(''), 4000);
+    }
+  };
 
   const fetchAnalytics = async () => {
     setLoading(true);
@@ -432,6 +543,148 @@ export const KnowledgeGapHeatmap: React.FC<KnowledgeGapHeatmapProps> = ({ course
               Dense + BM25 RRF score
             </div>
           </div>
+        </div>
+      )}
+
+      {/* --- AI REMEDIAL AUTOPILOT CONTROL CARD --- */}
+      {analytics && (
+        <div className="glass-card p-5 border-slate-800 bg-gradient-to-r from-slate-900/90 via-dark-900/90 to-primary-950/20 shadow-xl space-y-4">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div className="flex items-center gap-3">
+              <div className={`p-2.5 rounded-xl border flex-shrink-0 transition-colors ${
+                autopilotConfig.enabled 
+                  ? 'bg-primary-500/15 text-primary-400 border-primary-500/30' 
+                  : 'bg-slate-800 text-slate-400 border-slate-700'
+              }`}>
+                <Bot className="h-5 w-5" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="font-bold text-sm text-slate-100 flex items-center gap-2">
+                    AI Remedial Autopilot Engine
+                  </h3>
+                  <span className={`text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full border ${
+                    autopilotConfig.enabled
+                      ? (autopilotConfig.auto_publish 
+                          ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30' 
+                          : 'bg-primary-500/15 text-primary-400 border-primary-500/30')
+                      : 'bg-slate-800 text-slate-400 border-slate-700'
+                  }`}>
+                    {autopilotConfig.enabled 
+                      ? (autopilotConfig.auto_publish ? '⚡ Active (Auto-Publish)' : '📝 Active (Draft Review)') 
+                      : 'Paused'}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-400 mt-0.5">
+                  Automatically triggers grounded pop-quizzes when student confusion on a topic crosses your threshold.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
+              <button
+                onClick={handleRunAutopilotCheck}
+                disabled={checkingAutopilot}
+                className="btn-secondary text-xs py-2 px-3 flex items-center gap-1.5"
+                title="Evaluate telemetry for pending confusion thresholds right now"
+              >
+                <RefreshCw className={`h-3.5 w-3.5 ${checkingAutopilot ? 'animate-spin' : ''}`} />
+                {checkingAutopilot ? 'Evaluating...' : 'Check Triggers'}
+              </button>
+              <button
+                onClick={() => setShowAutopilotSettings(!showAutopilotSettings)}
+                className="glass-button text-xs py-2 px-3 flex items-center gap-1.5 bg-slate-800/80 hover:bg-slate-800 text-slate-200"
+              >
+                <Sliders className="h-3.5 w-3.5 text-primary-400" />
+                Configure Autopilot
+              </button>
+            </div>
+          </div>
+
+          {autopilotFeedback && (
+            <div className="text-xs px-3.5 py-2 rounded-xl bg-primary-950/60 border border-primary-500/30 text-primary-300 flex items-center gap-2">
+              <Sparkles className="h-3.5 w-3.5 flex-shrink-0 text-primary-400" />
+              <span>{autopilotFeedback}</span>
+            </div>
+          )}
+
+          {/* Pending Threshold Triggers Alert */}
+          {analytics.autopilot?.pending_triggers && analytics.autopilot.pending_triggers.length > 0 && (
+            <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+              <div className="flex items-center gap-2.5">
+                <AlertTriangle className="h-4 w-4 text-amber-400 flex-shrink-0" />
+                <span className="text-xs">
+                  <strong className="text-amber-300">{analytics.autopilot.pending_triggers[0].topic}</strong> has exceeded the confusion threshold ({analytics.autopilot.pending_triggers[0].misconception_count} misconceptions / {analytics.autopilot.pending_triggers[0].abstain_count} gaps).
+                </span>
+              </div>
+              <button
+                onClick={() => handleGeneratePractice(analytics.autopilot!.pending_triggers[0].topic)}
+                className="btn-primary text-xs py-1 px-3 whitespace-nowrap bg-amber-500 hover:bg-amber-600 text-dark-950 font-bold border-amber-400 flex items-center gap-1"
+              >
+                <Zap className="h-3 w-3 fill-current" />
+                Review & Dispatch Pop Quiz
+              </button>
+            </div>
+          )}
+
+          {/* Collapsible Autopilot Settings Drawer */}
+          {showAutopilotSettings && (
+            <div className="pt-4 border-t border-slate-800 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 animate-in fade-in duration-200">
+              <div className="space-y-1.5">
+                <label className="text-[11px] font-semibold text-slate-400">Autopilot Status</label>
+                <button
+                  type="button"
+                  onClick={() => handleSaveAutopilot({ enabled: !autopilotConfig.enabled })}
+                  disabled={savingAutopilot}
+                  className={`w-full py-2 px-3 rounded-xl text-xs font-semibold border flex items-center justify-between transition-colors ${
+                    autopilotConfig.enabled
+                      ? 'bg-primary-500/20 text-primary-300 border-primary-500/40'
+                      : 'bg-slate-800/80 text-slate-400 border-slate-700'
+                  }`}
+                >
+                  <span>{autopilotConfig.enabled ? 'Autopilot ENABLED' : 'Autopilot PAUSED'}</span>
+                  <div className={`h-2.5 w-2.5 rounded-full ${autopilotConfig.enabled ? 'bg-primary-400' : 'bg-slate-500'}`} />
+                </button>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-[11px] font-semibold text-slate-400">Trigger Threshold (Inquiries)</label>
+                <select
+                  value={autopilotConfig.threshold}
+                  onChange={(e) => handleSaveAutopilot({ threshold: Number(e.target.value) })}
+                  disabled={savingAutopilot}
+                  className="glass-input text-xs py-2 w-full bg-dark-900 border-slate-700"
+                >
+                  <option value={2}>2 confused inquiries (Aggressive)</option>
+                  <option value={3}>3 confused inquiries (Recommended)</option>
+                  <option value={5}>5 confused inquiries (Moderate)</option>
+                  <option value={10}>10 confused inquiries (Conservative)</option>
+                </select>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-[11px] font-semibold text-slate-400">Dispatch Behavior</label>
+                <select
+                  value={autopilotConfig.auto_publish ? 'live' : 'draft'}
+                  onChange={(e) => handleSaveAutopilot({ auto_publish: e.target.value === 'live' })}
+                  disabled={savingAutopilot}
+                  className="glass-input text-xs py-2 w-full bg-dark-900 border-slate-700"
+                >
+                  <option value="draft">Draft for Teacher Review</option>
+                  <option value="live">⚡ Instant Live Batch Publish</option>
+                </select>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-[11px] font-semibold text-slate-400">Quiz Format</label>
+                <div className="text-xs py-2 px-3 rounded-xl bg-slate-800/50 border border-slate-700/60 text-slate-300 flex items-center justify-between">
+                  <span>{autopilotConfig.question_count} MCQs</span>
+                  <span>•</span>
+                  <span>{autopilotConfig.time_limit_minutes} Mins Limit</span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       )}
 
