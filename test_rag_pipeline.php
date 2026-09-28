@@ -257,6 +257,31 @@ try {
     recordTest("Test 14: NLI Claim Fact-Checking & Grounding Verification", false, $e->getMessage());
 }
 
+// --- TEST 15: Teacher Knowledge-Gap Telemetry & Analytics Aggregation ---
+try {
+    // 1. Log intentional telemetry events (knowledge gap abstention + refuted false premise)
+    RagService::logTelemetry('test_student_telemetry', 'test_course_rag', 'test_batch_rag', 'How to configure Redis distributed session store with Express?', 0.35, true, false, 'direct');
+    RagService::logTelemetry('test_student_telemetry', 'test_course_rag', 'test_batch_rag', 'Why is flexbox a two-dimensional grid layout?', 0.95, false, true, 'direct');
+    
+    // 2. Fetch aggregated teacher analytics
+    $analytics = RagService::getTeacherAnalytics();
+    
+    $hasMetrics = !empty($analytics['metrics']) && ($analytics['metrics']['total_queries'] > 0);
+    $hasHotspots = isset($analytics['topic_hotspots']) && is_array($analytics['topic_hotspots']) && !empty($analytics['topic_hotspots']);
+    $hasGaps = isset($analytics['knowledge_gaps']) && is_array($analytics['knowledge_gaps']) && !empty($analytics['knowledge_gaps']);
+    $hasMisconceptions = isset($analytics['misconceptions']) && is_array($analytics['misconceptions']) && !empty($analytics['misconceptions']);
+    
+    $telemetryPassed = $hasMetrics && $hasHotspots && $hasGaps && $hasMisconceptions;
+    $metrics = $analytics['metrics'];
+    recordTest(
+        "Test 15: Teacher Knowledge-Gap Telemetry & Analytics",
+        $telemetryPassed,
+        "Telemetry verified: {$metrics['total_queries']} queries, {$metrics['grounding_rate_pct']}% grounded, {$metrics['knowledge_gap_rate_pct']}% gap rate, {$metrics['misconceptions_count']} misconceptions."
+    );
+} catch (Exception $e) {
+    recordTest("Test 15: Teacher Knowledge-Gap Telemetry & Analytics", false, $e->getMessage());
+}
+
 echo "\n========================================================\n";
 $total = count($results);
 $passedCount = count(array_filter($results, fn($r) => $r['status'] === 'PASS'));

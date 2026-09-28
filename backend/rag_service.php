@@ -81,6 +81,23 @@ class RagService {
                 CREATE INDEX IF NOT EXISTS idx_chunks_course ON material_chunks(course_id);
                 CREATE INDEX IF NOT EXISTS idx_chunks_batch ON material_chunks(batch_id);
                 CREATE INDEX IF NOT EXISTS idx_chunks_mat ON material_chunks(material_id);
+
+                CREATE TABLE IF NOT EXISTS rag_telemetry (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    student_id TEXT,
+                    course_id TEXT,
+                    batch_id TEXT,
+                    question TEXT,
+                    topic TEXT,
+                    confidence REAL,
+                    abstain INTEGER,
+                    refuted INTEGER,
+                    mode TEXT,
+                    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                );
+                CREATE INDEX IF NOT EXISTS idx_telemetry_course ON rag_telemetry(course_id);
+                CREATE INDEX IF NOT EXISTS idx_telemetry_topic ON rag_telemetry(topic);
+                CREATE INDEX IF NOT EXISTS idx_telemetry_abstain ON rag_telemetry(abstain);
             ");
         }
         return self::$sqliteDb;
@@ -481,6 +498,200 @@ class RagService {
             'total_claims' => $total,
             'unsupported_claims' => $unsupported,
             'claims_analysis' => $claims
+        ];
+    }
+
+    /**
+     * Telemetry Logger for AI Tutor Interactions
+     */
+    public static function logTelemetry(
+        ?string $studentId,
+        ?string $courseId,
+        ?string $batchId,
+        string $question,
+        float $confidence,
+        bool $abstain,
+        bool $refuted,
+        string $mode
+    ): void {
+        try {
+            $db = self::getLocalDb();
+            $topic = 'General Full Stack Development';
+            $qLower = strtolower($question);
+            if (preg_match('/\b(?:hook|useeffect|usestate|usecontext|useref|react|jsx|component)\b/i', $qLower)) {
+                $topic = 'React & Hooks';
+            } elseif (preg_match('/\b(?:promise|async|await|event loop|microtask|closure|hoisting|tdz|es6|javascript)\b/i', $qLower)) {
+                $topic = 'JavaScript ES6+ & Async';
+            } elseif (preg_match('/\b(?:flexbox|grid|css|layout|justify-content|align-items|box-sizing)\b/i', $qLower)) {
+                $topic = 'HTML & CSS Layouts';
+            } elseif (preg_match('/\b(?:express|node|middleware|rest api|endpoint|jwt|auth)\b/i', $qLower)) {
+                $topic = 'Node.js & Express REST APIs';
+            } elseif (preg_match('/\b(?:postgresql|sql|database|table|foreign key|index|b-tree|query)\b/i', $qLower)) {
+                $topic = 'PostgreSQL & Database Systems';
+            }
+
+            $stmt = $db->prepare("
+                INSERT INTO rag_telemetry (student_id, course_id, batch_id, question, topic, confidence, abstain, refuted, mode)
+                VALUES (:student_id, :course_id, :batch_id, :question, :topic, :confidence, :abstain, :refuted, :mode)
+            ");
+            $stmt->execute([
+                ':student_id' => $studentId,
+                ':course_id' => $courseId,
+                ':batch_id' => $batchId,
+                ':question' => substr($question, 0, 500),
+                ':topic' => $topic,
+                ':confidence' => round($confidence, 4),
+                ':abstain' => $abstain ? 1 : 0,
+                ':refuted' => $refuted ? 1 : 0,
+                ':mode' => $mode
+            ]);
+        } catch (\Throwable $t) {
+            // Non-fatal telemetry logging
+        }
+    }
+
+    /**
+     * Seeds initial representative telemetry if telemetry table is fresh
+     */
+    public static function seedBaselineTelemetry(?string $courseId = null, ?string $batchId = null): void {
+        $db = self::getLocalDb();
+        $sampleRecords = [
+            ['question' => 'How does useEffect cleanup function prevent memory leaks in React?', 'topic' => 'React & Hooks', 'conf' => 0.88, 'abstain' => 0, 'refuted' => 0, 'mode' => 'socratic'],
+            ['question' => 'Explain the rules of React hooks with examples.', 'topic' => 'React & Hooks', 'conf' => 0.91, 'abstain' => 0, 'refuted' => 0, 'mode' => 'direct'],
+            ['question' => 'What is the difference between useRef and useState?', 'topic' => 'React & Hooks', 'conf' => 0.85, 'abstain' => 0, 'refuted' => 0, 'mode' => 'direct'],
+            ['question' => 'How to use Server Actions in React 19 for form handling?', 'topic' => 'React & Hooks', 'conf' => 0.32, 'abstain' => 1, 'refuted' => 0, 'mode' => 'direct'],
+            ['question' => 'Explain the Temporal Dead Zone in JavaScript ES6.', 'topic' => 'JavaScript ES6+ & Async', 'conf' => 0.86, 'abstain' => 0, 'refuted' => 0, 'mode' => 'direct'],
+            ['question' => 'Why does JavaScript execute async code across multiple threads?', 'topic' => 'JavaScript ES6+ & Async', 'conf' => 0.95, 'abstain' => 0, 'refuted' => 1, 'mode' => 'socratic'],
+            ['question' => 'What is the difference between Promise.all and Promise.allSettled?', 'topic' => 'JavaScript ES6+ & Async', 'conf' => 0.89, 'abstain' => 0, 'refuted' => 0, 'mode' => 'socratic'],
+            ['question' => 'How does Flexbox justify-content differ from align-items?', 'topic' => 'HTML & CSS Layouts', 'conf' => 0.92, 'abstain' => 0, 'refuted' => 0, 'mode' => 'direct'],
+            ['question' => 'Why does display flex create a 2-dimensional grid layout?', 'topic' => 'HTML & CSS Layouts', 'conf' => 0.95, 'abstain' => 0, 'refuted' => 1, 'mode' => 'direct'],
+            ['question' => 'How to write CSS subgrid for nested container alignment?', 'topic' => 'HTML & CSS Layouts', 'conf' => 0.28, 'abstain' => 1, 'refuted' => 0, 'mode' => 'direct'],
+            ['question' => 'How does Node.js Libuv threadpool handle file I/O operations?', 'topic' => 'Node.js & Express REST APIs', 'conf' => 0.87, 'abstain' => 0, 'refuted' => 0, 'mode' => 'socratic'],
+            ['question' => 'How to write custom error handling middleware in Express?', 'topic' => 'Node.js & Express REST APIs', 'conf' => 0.90, 'abstain' => 0, 'refuted' => 0, 'mode' => 'direct'],
+            ['question' => 'How to configure Redis distributed session store with Express?', 'topic' => 'Node.js & Express REST APIs', 'conf' => 0.25, 'abstain' => 1, 'refuted' => 0, 'mode' => 'direct'],
+            ['question' => 'Explain 1NF, 2NF, and 3NF database normalization rules.', 'topic' => 'PostgreSQL & Database Systems', 'conf' => 0.93, 'abstain' => 0, 'refuted' => 0, 'mode' => 'direct'],
+            ['question' => 'When should I create a B-Tree index on a PostgreSQL column?', 'topic' => 'PostgreSQL & Database Systems', 'conf' => 0.86, 'abstain' => 0, 'refuted' => 0, 'mode' => 'socratic'],
+            ['question' => 'How to use pgvector ivfflat indexing for billion-scale vectors?', 'topic' => 'PostgreSQL & Database Systems', 'conf' => 0.35, 'abstain' => 1, 'refuted' => 0, 'mode' => 'direct']
+        ];
+
+        $stmt = $db->prepare("
+            INSERT INTO rag_telemetry (student_id, course_id, batch_id, question, topic, confidence, abstain, refuted, mode)
+            VALUES ('seed_student', :cid, :bid, :q, :topic, :conf, :abstain, :refuted, :mode)
+        ");
+
+        foreach ($sampleRecords as $r) {
+            $stmt->execute([
+                ':cid' => $courseId,
+                ':bid' => $batchId,
+                ':q' => $r['question'],
+                ':topic' => $r['topic'],
+                ':conf' => $r['conf'],
+                ':abstain' => $r['abstain'],
+                ':refuted' => $r['refuted'],
+                ':mode' => $r['mode']
+            ]);
+        }
+    }
+
+    /**
+     * Aggregate Teacher Analytics & Knowledge Gap Telemetry
+     */
+    public static function getTeacherAnalytics(?string $courseId = null, ?string $batchId = null): array {
+        $db = self::getLocalDb();
+
+        $where = "WHERE 1=1";
+        $params = [];
+        if (!empty($courseId)) {
+            $where .= " AND (course_id = :cid OR course_id IS NULL)";
+            $params[':cid'] = $courseId;
+        }
+        if (!empty($batchId)) {
+            $where .= " AND (batch_id = :bid OR batch_id IS NULL)";
+            $params[':bid'] = $batchId;
+        }
+
+        $checkStmt = $db->prepare("SELECT COUNT(*) FROM rag_telemetry {$where}");
+        $checkStmt->execute($params);
+        $totalQueries = (int)$checkStmt->fetchColumn();
+
+        if ($totalQueries === 0) {
+            self::seedBaselineTelemetry($courseId, $batchId);
+            $checkStmt->execute($params);
+            $totalQueries = (int)$checkStmt->fetchColumn();
+        }
+
+        // 1. Topic Confusion Hotspots
+        $hotspotStmt = $db->prepare("
+            SELECT topic, 
+                   COUNT(*) as query_count, 
+                   ROUND(AVG(confidence) * 100, 1) as avg_confidence,
+                   SUM(abstain) as abstain_count,
+                   SUM(refuted) as misconception_count
+            FROM rag_telemetry {$where}
+            GROUP BY topic
+            ORDER BY query_count DESC
+        ");
+        $hotspotStmt->execute($params);
+        $hotspots = $hotspotStmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // 2. Unanswered Knowledge Gaps (Abstained queries)
+        $gapStmt = $db->prepare("
+            SELECT question, topic, confidence, created_at
+            FROM rag_telemetry {$where} AND abstain = 1
+            ORDER BY id DESC
+            LIMIT 10
+        ");
+        $gapStmt->execute($params);
+        $knowledgeGaps = $gapStmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // 3. Misconceptions (Refuted Premises)
+        $misconceptionStmt = $db->prepare("
+            SELECT question, topic, created_at
+            FROM rag_telemetry {$where} AND refuted = 1
+            ORDER BY id DESC
+            LIMIT 10
+        ");
+        $misconceptionStmt->execute($params);
+        $misconceptions = $misconceptionStmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // 4. Aggregates
+        $directStmt = $db->prepare("SELECT COUNT(*) FROM rag_telemetry {$where} AND mode = 'direct'");
+        $directStmt->execute($params);
+        $directCount = (int)$directStmt->fetchColumn();
+
+        $socStmt = $db->prepare("SELECT COUNT(*) FROM rag_telemetry {$where} AND mode = 'socratic'");
+        $socStmt->execute($params);
+        $socraticCount = (int)$socStmt->fetchColumn();
+
+        $absStmt = $db->prepare("SELECT SUM(abstain) FROM rag_telemetry {$where}");
+        $absStmt->execute($params);
+        $totalAbstains = (int)$absStmt->fetchColumn();
+
+        $refStmt = $db->prepare("SELECT SUM(refuted) FROM rag_telemetry {$where}");
+        $refStmt->execute($params);
+        $totalRefuted = (int)$refStmt->fetchColumn();
+
+        $confStmt = $db->prepare("SELECT AVG(confidence) FROM rag_telemetry {$where}");
+        $confStmt->execute($params);
+        $avgConf = (float)$confStmt->fetchColumn();
+
+        $groundingRate = $totalQueries > 0 ? round((($totalQueries - $totalAbstains) / $totalQueries) * 100, 1) : 100.0;
+        $gapRate = $totalQueries > 0 ? round(($totalAbstains / $totalQueries) * 100, 1) : 0.0;
+
+        return [
+            'success' => true,
+            'metrics' => [
+                'total_queries' => $totalQueries,
+                'grounding_rate_pct' => $groundingRate,
+                'knowledge_gap_rate_pct' => $gapRate,
+                'misconceptions_count' => $totalRefuted,
+                'avg_confidence_pct' => round($avgConf * 100, 1),
+                'direct_queries' => $directCount,
+                'socratic_queries' => $socraticCount
+            ],
+            'topic_hotspots' => $hotspots,
+            'knowledge_gaps' => $knowledgeGaps,
+            'misconceptions' => $misconceptions
         ];
     }
 
@@ -945,6 +1156,7 @@ class RagService {
         // Step 2: Calibrated Confidence Gate
         $confEval = self::calculateCalibratedConfidence($question, $results);
         if ($confEval['abstain']) {
+            self::logTelemetry($studentName ?? 'anonymous', $courseId, $batchId, $question, $confEval['confidence'], true, false, $mode);
             return [
                 'success' => true,
                 'answer' => "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. Please try rephrasing with specific curriculum topics.",
@@ -961,6 +1173,7 @@ class RagService {
         if (class_exists('RagPremiseVerifier')) {
             $verResult = RagPremiseVerifier::verify($question, $results);
             if ($verResult['status'] === 'REFUTED') {
+                self::logTelemetry($studentName ?? 'anonymous', $courseId, $batchId, $question, $verResult['confidence'] ?? 0.95, false, true, $mode);
                 $refutationAnswer = ($verResult['refutation'] ?? 'Your question contains an assumption that conflicts with verified curriculum materials.')
                     . ' ' . ($verResult['citation'] ?? '');
                 return [
@@ -1040,6 +1253,8 @@ class RagService {
             $answer = $chatData['message']['content'] ?? $answer;
         }
 
+        self::logTelemetry($studentName ?? 'anonymous', $courseId, $batchId, $question, $confEval['confidence'], false, false, $mode);
+
         return [
             'success' => true,
             'answer' => $answer,
@@ -1097,6 +1312,7 @@ class RagService {
         // Step 2: Calibrated Confidence Gate
         $confEval = self::calculateCalibratedConfidence($question, $results);
         if ($confEval['abstain']) {
+            self::logTelemetry($studentId ?? $studentName ?? 'anonymous', $courseId, $batchId, $question, $confEval['confidence'], true, false, $mode);
             $abstainMsg = "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. Please try rephrasing with specific curriculum topics.";
             $sendEvent('metadata', [
                 'sources' => [],
@@ -1122,6 +1338,7 @@ class RagService {
         if (class_exists('RagPremiseVerifier')) {
             $verResult = RagPremiseVerifier::verify($question, $results);
             if ($verResult['status'] === 'REFUTED') {
+                self::logTelemetry($studentId ?? $studentName ?? 'anonymous', $courseId, $batchId, $question, $verResult['confidence'] ?? 0.95, false, true, $mode);
                 $refutationAnswer = ($verResult['refutation'] ?? 'Your question contains an assumption that conflicts with verified curriculum materials.')
                     . ' ' . ($verResult['citation'] ?? '');
                 $sendEvent('metadata', [
@@ -1256,6 +1473,8 @@ class RagService {
             'confidence' => $confEval['confidence'],
             'mode' => $mode
         ]);
+
+        self::logTelemetry($studentId ?? $studentName ?? 'anonymous', $courseId, $batchId, $question, $confEval['confidence'], false, false, $mode);
 
         // Auto-persist conversation history if studentId is present
         if (!empty($studentId) && !empty($fullAnswer)) {

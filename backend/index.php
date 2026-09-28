@@ -2537,6 +2537,43 @@ try {
             echo json_encode(array_merge(['success' => true], $verificationRes));
             break;
 
+        // Teacher Knowledge-Gap Heatmap & Curriculum Telemetry
+        case (($route === '/api/rag/teacher/analytics' || $route === '/api/rag/analytics') && in_array($method, ['GET', 'POST'])):
+            $user = verifyTokenOrApiKey();
+            if ($user['role'] !== 'SERVICE' && !in_array($user['role'], ['SUPER_ADMIN', 'ADMIN', 'TEACHER'])) {
+                http_response_code(403);
+                echo json_encode(['success' => false, 'error' => 'Forbidden: Teacher or Admin access required']);
+                break;
+            }
+            $courseId = $input['course_id'] ?? $_GET['course_id'] ?? null;
+            $batchId = $input['batch_id'] ?? $_GET['batch_id'] ?? null;
+            
+            $analytics = RagService::getTeacherAnalytics($courseId, $batchId);
+            echo json_encode($analytics);
+            break;
+
+        // Generate practice questions targeting specific knowledge gap or topic
+        case ($route === '/api/rag/teacher/generate-practice' && $method === 'POST'):
+            $user = verifyTokenOrApiKey();
+            if ($user['role'] !== 'SERVICE' && !in_array($user['role'], ['SUPER_ADMIN', 'ADMIN', 'TEACHER'])) {
+                http_response_code(403);
+                echo json_encode(['success' => false, 'error' => 'Forbidden: Teacher or Admin access required']);
+                break;
+            }
+            $topic = trim($input['topic'] ?? $input['question'] ?? '');
+            if (empty($topic)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'topic or question parameter is required']);
+                break;
+            }
+            $courseId = $input['course_id'] ?? null;
+            $batchId = $input['batch_id'] ?? null;
+            $count = isset($input['count']) ? max(1, min(10, (int)$input['count'])) : 3;
+
+            $practiceRes = RagService::generateQuiz($topic, $courseId, $batchId, $count);
+            echo json_encode($practiceRes);
+            break;
+
         // RAG-Grounded Quiz Generator
         case ($route === '/api/rag/quiz' && $method === 'POST'):
             $user = verifyTokenOrApiKey();

@@ -95,6 +95,7 @@ Student Question
 ```
 
 ### Key Features
+* **Teacher Knowledge-Gap Heatmap & Curriculum Telemetry** — Aggregates real-time student inquiries, grounding rates, abstention gaps, and common misconceptions into actionable visual hotspots with one-click targeted practice generation.
 * **Real-Time Server-Sent Events (SSE) Streaming** — Token-by-token generation with Time-to-First-Token (TTFT) ~230ms directly from local Ollama.
 * **Dual Pedagogical Modes** — Toggle between **Direct Answer** (factual explanations under 250 words) and **Socratic Guide** (hint-based guidance ending in conceptual questions).
 * **Cross-Encoder Precision Candidate Reranking** — Deep token-level cross-interaction scoring (phrase n-grams, term proximity, domain alignment, and syntax boosting) applied to Stage-1 hybrid candidates.
@@ -119,13 +120,15 @@ Student Question
 | `POST` | `/api/rag/ask` | JWT / Service Key | Grounded Q&A (`mode`: `direct` \| `socratic`) with premise verifier |
 | `POST` | `/api/rag/stream` | JWT / Service Key | Real-time SSE token stream with metadata & Socratic guidance |
 | `POST` | `/api/rag/verify-claims` | JWT / Service Key | NLI claim fact-checking against cited sources |
+| `GET/POST` | `/api/rag/teacher/analytics` | Teacher / Admin | Knowledge gap heatmap, topic confusion hotspots, abstentions & misconceptions |
+| `POST` | `/api/rag/teacher/generate-practice` | Teacher / Admin | Generate targeted practice quiz questions for specific knowledge gaps |
 | `POST` | `/api/rag/quiz` | JWT / Service Key | Generate curriculum-grounded MCQ quizzes with verified keys |
 | `POST` | `/api/rag/ingest` | Service Key / Teacher | Ingest document content into vector store |
 | `POST` | `/api/rag/embed` | JWT / Service Key | Generate 768-dim embeddings for text |
 | `GET/POST` | `/api/rag/conversation` | JWT / Service Key | Read/write student conversation history |
 
 ### Verification & Test Suite
-The production RAG pipeline includes a 15-point automated verification suite:
+The production RAG pipeline includes a 16-point automated verification suite:
 ```bash
 php test_rag_pipeline.php
 ```
