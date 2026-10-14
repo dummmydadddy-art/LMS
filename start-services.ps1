@@ -24,5 +24,5 @@ Write-Host "============================================================" -Foreg
 Write-Host "   All EduConnect LMS services are online!                  " -ForegroundColor Green
 Write-Host "   Web UI:    http://localhost:5173                         " -ForegroundColor Green
 Write-Host "   API:       http://127.0.0.1:8000                         " -ForegroundColor Green
-Write-Host "   n8n:       https://single-evaluated-taxi-tool.trycloudflare.com " -ForegroundColor Green
+Write-Host "   n8n:       https://result-mechanism-agriculture-correspondence.trycloudflare.com " -ForegroundColor Green
 Write-Host "============================================================" -ForegroundColor Green
