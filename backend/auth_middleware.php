@@ -5,13 +5,26 @@ require_once 'config.php';
 require_once 'db.php';
 
 function getBearerToken() {
-    $headers = getallheaders();
-    // Case-insensitive check for Authorization header
     $authHeader = null;
-    foreach ($headers as $key => $value) {
-        if (strtolower($key) === 'authorization') {
-            $authHeader = $value;
-            break;
+    if (!empty($_SERVER['HTTP_AUTHORIZATION'])) {
+        $authHeader = $_SERVER['HTTP_AUTHORIZATION'];
+    } elseif (!empty($_SERVER['REDIRECT_HTTP_AUTHORIZATION'])) {
+        $authHeader = $_SERVER['REDIRECT_HTTP_AUTHORIZATION'];
+    } elseif (function_exists('getallheaders')) {
+        $headers = getallheaders();
+        foreach ($headers as $key => $value) {
+            if (strtolower($key) === 'authorization') {
+                $authHeader = $value;
+                break;
+            }
+        }
+    } elseif (function_exists('apache_request_headers')) {
+        $headers = apache_request_headers();
+        foreach ($headers as $key => $value) {
+            if (strtolower($key) === 'authorization') {
+                $authHeader = $value;
+                break;
+            }
         }
     }
 

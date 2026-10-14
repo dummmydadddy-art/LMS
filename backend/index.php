@@ -1283,6 +1283,7 @@ try {
                         'description' => $q['description'] ?? '',
                         'max_marks' => (float)$q['max_marks']
                     ]);
+                }
             }
 
             // Auto-notify batch students of new pop-quiz or exam
