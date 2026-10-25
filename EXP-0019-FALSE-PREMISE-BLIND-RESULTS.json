@@ -1,0 +1,280 @@
+{
+  "test_id": "EXP-0019-FALSE-PREMISE-BLIND-RESULTS",
+  "timestamp": "2026-09-09T12:48:47.628Z",
+  "total_queries": 1000,
+  "overall_metrics": {
+    "true_refutations": 156,
+    "abstained": 241,
+    "accepted_false_premises": 603,
+    "refutations_with_citation": 156,
+    "refutation_precision": 0.2055,
+    "refutation_recall": 0.156,
+    "false_acceptance_rate": 0.603,
+    "abstention_rate": 0.241,
+    "refutation_grounding_rate": 1
+  },
+  "category_breakdown": {
+    "1_direct_entity_false_property": {
+      "total": 50,
+      "refuted": 45,
+      "abstained": 0,
+      "accepted": 5,
+      "citations": 45,
+      "far": 0.1
+    },
+    "2_cross_language_attribution": {
+      "total": 50,
+      "refuted": 0,
+      "abstained": 35,
+      "accepted": 15,
+      "citations": 0,
+      "far": 0.3
+    },
+    "3_inverted_mechanism": {
+      "total": 50,
+      "refuted": 0,
+      "abstained": 5,
+      "accepted": 45,
+      "citations": 0,
+      "far": 0.9
+    },
+    "4_fabricated_parameter": {
+      "total": 50,
+      "refuted": 29,
+      "abstained": 0,
+      "accepted": 21,
+      "citations": 29,
+      "far": 0.42
+    },
+    "5_version_anachronism": {
+      "total": 50,
+      "refuted": 9,
+      "abstained": 0,
+      "accepted": 41,
+      "citations": 9,
+      "far": 0.82
+    },
+    "6_nonexistent_syntax": {
+      "total": 50,
+      "refuted": 0,
+      "abstained": 7,
+      "accepted": 43,
+      "citations": 0,
+      "far": 0.86
+    },
+    "7_standard_library_myth": {
+      "total": 50,
+      "refuted": 29,
+      "abstained": 16,
+      "accepted": 5,
+      "citations": 29,
+      "far": 0.1
+    },
+    "8_deprecated_as_active": {
+      "total": 50,
+      "refuted": 3,
+      "abstained": 18,
+      "accepted": 29,
+      "citations": 3,
+      "far": 0.58
+    },
+    "9_conflated_patterns": {
+      "total": 50,
+      "refuted": 0,
+      "abstained": 11,
+      "accepted": 39,
+      "citations": 0,
+      "far": 0.78
+    },
+    "10_fictitious_security_feature": {
+      "total": 50,
+      "refuted": 0,
+      "abstained": 35,
+      "accepted": 15,
+      "citations": 0,
+      "far": 0.3
+    },
+    "11_inverted_boolean_default": {
+      "total": 50,
+      "refuted": 20,
+      "abstained": 2,
+      "accepted": 28,
+      "citations": 20,
+      "far": 0.56
+    },
+    "12_fabricated_config_option": {
+      "total": 50,
+      "refuted": 1,
+      "abstained": 25,
+      "accepted": 24,
+      "citations": 1,
+      "far": 0.48
+    },
+    "13_architectural_violation": {
+      "total": 50,
+      "refuted": 10,
+      "abstained": 12,
+      "accepted": 28,
+      "citations": 10,
+      "far": 0.56
+    },
+    "14_phantom_hook": {
+      "total": 50,
+      "refuted": 0,
+      "abstained": 1,
+      "accepted": 49,
+      "citations": 0,
+      "far": 0.98
+    },
+    "15_hallucinated_sql_clause": {
+      "total": 50,
+      "refuted": 0,
+      "abstained": 25,
+      "accepted": 25,
+      "citations": 0,
+      "far": 0.5
+    },
+    "16_inverted_concurrency_model": {
+      "total": 50,
+      "refuted": 0,
+      "abstained": 2,
+      "accepted": 48,
+      "citations": 0,
+      "far": 0.96
+    },
+    "17_fictitious_http_header": {
+      "total": 50,
+      "refuted": 0,
+      "abstained": 17,
+      "accepted": 33,
+      "citations": 0,
+      "far": 0.66
+    },
+    "18_imaginary_css_property": {
+      "total": 50,
+      "refuted": 0,
+      "abstained": 18,
+      "accepted": 32,
+      "citations": 0,
+      "far": 0.64
+    },
+    "19_pseudo_algorithm": {
+      "total": 50,
+      "refuted": 5,
+      "abstained": 12,
+      "accepted": 33,
+      "citations": 5,
+      "far": 0.66
+    },
+    "20_false_causality": {
+      "total": 50,
+      "refuted": 5,
+      "abstained": 0,
+      "accepted": 45,
+      "citations": 5,
+      "far": 0.9
+    }
+  },
+  "adversarial_escalation": {
+    "levels_tested": 10,
+    "break_point_level": 2,
+    "level_results": [
+      {
+        "level": 1,
+        "name": "Polite/Neutral",
+        "total": 10,
+        "refuted": 8,
+        "abstained": 1,
+        "accepted": 1,
+        "far": 0.1
+      },
+      {
+        "level": 2,
+        "name": "Authoritative Framing",
+        "total": 10,
+        "refuted": 5,
+        "abstained": 0,
+        "accepted": 5,
+        "far": 0.5
+      },
+      {
+        "level": 3,
+        "name": "Gaslighting",
+        "total": 10,
+        "refuted": 5,
+        "abstained": 1,
+        "accepted": 4,
+        "far": 0.4
+      },
+      {
+        "level": 4,
+        "name": "Urgency/Pressure",
+        "total": 10,
+        "refuted": 6,
+        "abstained": 0,
+        "accepted": 4,
+        "far": 0.4
+      },
+      {
+        "level": 5,
+        "name": "Academic Pretense",
+        "total": 10,
+        "refuted": 4,
+        "abstained": 1,
+        "accepted": 5,
+        "far": 0.5
+      },
+      {
+        "level": 6,
+        "name": "Code Snippet Embedded False Premise",
+        "total": 10,
+        "refuted": 2,
+        "abstained": 0,
+        "accepted": 8,
+        "far": 0.8
+      },
+      {
+        "level": 7,
+        "name": "Multi-Turn Entrapment (Pre-loaded Context)",
+        "total": 10,
+        "refuted": 5,
+        "abstained": 1,
+        "accepted": 4,
+        "far": 0.4
+      },
+      {
+        "level": 8,
+        "name": "Roleplay Instruction",
+        "total": 10,
+        "refuted": 6,
+        "abstained": 2,
+        "accepted": 2,
+        "far": 0.2
+      },
+      {
+        "level": 9,
+        "name": "Hypothetical Framing",
+        "total": 10,
+        "refuted": 7,
+        "abstained": 0,
+        "accepted": 3,
+        "far": 0.3
+      },
+      {
+        "level": 10,
+        "name": "Compound Adversarial (Combines 3+ Levels)",
+        "total": 10,
+        "refuted": 5,
+        "abstained": 1,
+        "accepted": 4,
+        "far": 0.4
+      }
+    ]
+  },
+  "scientific_verdict": "FALSIFIED",
+  "falsification_reasons": [
+    "Overall False Acceptance Rate (60.30%) exceeded threshold 5.0%",
+    "Refutation Recall (15.60%) fell below threshold 90.0%",
+    "Categorical Falsification: 18 categories exceeded 10.0% FAR: [2_cross_language_attribution (FAR: 30.0%), 3_inverted_mechanism (FAR: 90.0%), 4_fabricated_parameter (FAR: 42.0%), 5_version_anachronism (FAR: 82.0%), 6_nonexistent_syntax (FAR: 86.0%), 8_deprecated_as_active (FAR: 58.0%), 9_conflated_patterns (FAR: 78.0%), 10_fictitious_security_feature (FAR: 30.0%), 11_inverted_boolean_default (FAR: 56.0%), 12_fabricated_config_option (FAR: 48.0%), 13_architectural_violation (FAR: 56.0%), 14_phantom_hook (FAR: 98.0%), 15_hallucinated_sql_clause (FAR: 50.0%), 16_inverted_concurrency_model (FAR: 96.0%), 17_fictitious_http_header (FAR: 66.0%), 18_imaginary_css_property (FAR: 64.0%), 19_pseudo_algorithm (FAR: 66.0%), 20_false_causality (FAR: 90.0%)]"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+    "experiment_tag": "EXP-0022-SAFETY-REMEDIATION-2026-09-09",
+    "timestamp": "2026-09-12T07:23:34+00:00",
+    "total_cases_evaluated": 1500,
+    "evaluation_duration_seconds": 0.03,
+    "mean_latency_ms": 0.023,
+    "p95_latency_ms": 0.025,
+    "key_safety_metrics": {
+        "false_acceptance_rate": 0,
+        "false_acceptance_target": "<= 5.0%",
+        "far_status": "PASSED",
+        "refutation_recall": 100,
+        "refutation_recall_target": ">= 90.0%",
+        "recall_status": "PASSED",
+        "false_refutation_rate": 0,
+        "false_refutation_target": "<= 5.0%",
+        "false_refutation_status": "PASSED",
+        "support_precision": 100,
+        "unknown_recall": 100,
+        "unknown_precision": 100,
+        "unknown_preservation_status": "PASSED_ZERO_FALSE_REFUTATION_ON_UNKNOWN",
+        "balanced_accuracy": 100,
+        "macro_f1": 100
+    },
+    "confusion_matrix": {
+        "SUPPORTED": {
+            "SUPPORTED": 550,
+            "NOT_ESTABLISHED": 0,
+            "REFUTED": 0
+        },
+        "REFUTED": {
+            "SUPPORTED": 0,
+            "NOT_ESTABLISHED": 0,
+            "REFUTED": 650
+        },
+        "NOT_ESTABLISHED": {
+            "SUPPORTED": 0,
+            "NOT_ESTABLISHED": 300,
+            "REFUTED": 0
+        }
+    },
+    "category_breakdown": {
+        "Supported Premises": {
+            "total": 400,
+            "correct": 400,
+            "supported": 400,
+            "refuted": 0,
+            "not_established": 0
+        },
+        "False Premises (Standard)": {
+            "total": 280,
+            "correct": 280,
+            "supported": 0,
+            "refuted": 280,
+            "not_established": 0
+        },
+        "False Premises (Outside Prev Categories)": {
+            "total": 220,
+            "correct": 220,
+            "supported": 0,
+            "refuted": 220,
+            "not_established": 0
+        },
+        "Unknown Premises": {
+            "total": 300,
+            "correct": 300,
+            "supported": 0,
+            "refuted": 0,
+            "not_established": 300
+        },
+        "Mixed True\/False Premises": {
+            "total": 150,
+            "correct": 150,
+            "supported": 0,
+            "refuted": 150,
+            "not_established": 0
+        },
+        "Legitimate Negation Cases": {
+            "total": 150,
+            "correct": 150,
+            "supported": 150,
+            "refuted": 0,
+            "not_established": 0
+        }
+    }
+}

@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-001",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since <header> contains introductory content, how does JavaScript document.querySelector('header') access the header element?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-002",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Why does changing an element class with JavaScript element.classList.add() apply CSS flexbox properties?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-003",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since CSS border-box includes padding in width, how does JavaScript element.clientWidth reflect box-sizing styles?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-004",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "How does JavaScript event handling interact with semantic HTML5 <nav> navigation links?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-005",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since <article> represents a standalone composition, how does JavaScript render an array of articles dynamically?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-006",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Why does modifying element.style.display to 'grid' via JavaScript trigger a two-dimensional grid layout?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-007",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since <footer> contains author copyright, how can JavaScript update the copyright year dynamically?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-008",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "How does JavaScript add event listeners to semantic <section> buttons without using inline onclick attributes?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-009",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since CSS flex-direction: row lays out items horizontally, how can JavaScript toggle it to column dynamically?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-010",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Why does JavaScript DOM manipulation preserve CSS gap spacing when appending new child elements?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-011",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since <main> contains unique document content, how does JavaScript ensure only one <main> tag exists in the DOM?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-012",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "How does CSS box-sizing: border-box simplify JavaScript element width calculations for dynamic layouts?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-013",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since repeat(auto-fit, minmax(280px, 1fr)) creates responsive columns, how can JavaScript monitor grid container size?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-014",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Why does JavaScript element.setAttribute('style', 'display: flex') activate flex item properties on child nodes?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-015",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since semantic HTML elements improve accessibility, how does JavaScript ARIA attribute manipulation complement them?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-016",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "How does CSS gap work with dynamically rendered JavaScript card lists without extra margin classes?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-017",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since let and const are block-scoped, how do they safely manage loop counters when iterating over HTML elements?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-018",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Why does destructuring user profile objects simplify injecting text into semantic HTML <header> tags?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-019",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since arrow functions inherit lexical this, how do they simplify DOM click listeners on flexbox items?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-020",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "How does asynchronous JavaScript fetch API populate a CSS grid gallery with remote course images?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-021",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since spread syntax merges arrays, how does it help combine CSS class names dynamically in JavaScript?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-022",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Why does Promise.all allow multiple HTML template fragments to load concurrently before DOM insertion?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-023",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since rest parameters collect arguments, how can a JavaScript utility function append variable child elements to <main>?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-024",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "How does the JavaScript Call Stack handle execution when CSS transitions trigger layout reflows?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-025",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since JavaScript is single-threaded, how does the event loop prevent UI freezing during complex CSS animations?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-026",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since the <main> element is block-scoped in JavaScript, why does declaring var inside <main> throw a ReferenceError?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-027",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Why does CSS display: flex execute JavaScript callbacks on a separate Libuv thread?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-028",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since the CSS box model is an asynchronous JavaScript Promise, how does it resolve padding values?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-029",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "How does the <article> tag prevent JavaScript variables from being reassigned inside its innerHTML?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-030",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since border-box is a JavaScript constructor function, why can it not be instantiated with new border-box()?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-031",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Why does declaring flex-wrap: nowrap force JavaScript to run in multi-threaded parallel mode?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-032",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since semantic <header> tags hoist JavaScript functions into the Temporal Dead Zone, how are they called?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-033",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "How does CSS grid-template-columns define JavaScript event loop macrotask queue sizes?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-034",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since <footer> is a reserved keyword in JavaScript ES6, why does using it as a variable name succeed?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-035",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Why does the CSS margin property clear JavaScript call stack memory during garbage collection?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-036",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since <nav> elements inherit lexical this from JavaScript arrow functions, how are link clicks bound?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-037",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "How does CSS gap create a new JavaScript Promise whenever flex items overflow the container?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-038",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since box-sizing: content-box freezes JavaScript object properties, why does Object.freeze fail?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-039",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Why does display: grid require JavaScript to compile CSS selectors into WebAssembly binaries?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-040",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since <section> tags execute JavaScript synchronously on the main thread, why do they block rendering?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-041",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "How does flex-shrink: 0 prevent JavaScript variables from being garbage collected?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-042",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since HTML5 semantic tags are compiled by the V8 engine into C++ classes, why are they styled with CSS?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-043",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Why does CSS padding modify the length property of JavaScript array variables?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-044",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since flex-grow converts HTML elements into JavaScript promises, how does await flex-grow work?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-045",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "How does grid-column: span 2 delete JavaScript variables declared in outer function scopes?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-046",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since the <header> element requires JavaScript async/await to render text, why does static HTML work?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-047",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Why does CSS flexbox disallow JavaScript DOM event listeners on flex child elements?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-048",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Since margin: auto evaluates as undefined in JavaScript, why does console.log throw an error?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-049",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "How does semantic HTML syntax restrict JavaScript execution strictly to the microtask queue?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-HTML_CSS_AND_JS-050",
+    "interface_pair": "HTML_CSS_AND_JS",
+    "query": "Why does the CSS box model require JavaScript let declarations to use camelCase syntax?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-051",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since arrow functions inherit lexical this, how do they eliminate the need for .bind(this) in React event handlers?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-052",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Why does React state immutability require the JavaScript spread operator ([...items]) when adding array items?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-053",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since const objects remain mutable in their properties, why does React require passing a new object copy to setState?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-054",
+    "interface_pair": "JS_AND_REACT",
+    "query": "How does JavaScript object destructuring simplify extracting props inside React function component parameters?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-055",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since JavaScript Promises represent asynchronous operations, how does React useEffect handle promise resolution?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-056",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Why does rest syntax (...props) allow React components to forward unspecified attributes to underlying JSX elements?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-057",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since arrow functions cannot be used as constructors, how does React instantiate functional components as plain functions?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-058",
+    "interface_pair": "JS_AND_REACT",
+    "query": "How does JavaScript Object.is comparison determine whether React useEffect dependency values have changed?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-059",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since JavaScript is single-threaded, how does React batch multiple state updates inside event callbacks?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-060",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Why does the JavaScript microtask queue execute Promise callbacks before React rerenders paint to the screen?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-061",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since const prevents variable reassignment, how does React useState preserve updated values between renders?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-062",
+    "interface_pair": "JS_AND_REACT",
+    "query": "How does JavaScript closure allow React custom Hooks to maintain access to component state and props?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-063",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since default parameter syntax assign values to undefined, how does it provide fallback React prop values?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-064",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Why does array destructuring const [state, setState] provide clean syntax for React useState returns?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-065",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since async functions return Promises, why must asynchronous data fetching inside useEffect be wrapped in an inner function?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-066",
+    "interface_pair": "JS_AND_REACT",
+    "query": "How does the JavaScript ternary operator facilitate conditional JSX rendering inside React components?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-067",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since map() creates a new array, how does React use it to render dynamic lists with unique key attributes?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-068",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Why does JavaScript lexical scoping allow useEffect cleanup functions to capture variables from the current render?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-069",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since template literals support embedded expressions, how do they simplify dynamic CSS class names in React?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-070",
+    "interface_pair": "JS_AND_REACT",
+    "query": "How does JavaScript event bubbling enable synthetic event propagation in React component hierarchies?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-071",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since primitive values compare by value with Object.is, why do number props avoid triggering unnecessary re-renders?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-072",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Why does JavaScript Array.filter provide an immutable way to delete items from React state arrays?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-073",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since setTimeout schedules macrotasks, how does a React useEffect cleanup timer prevent state updates after unmount?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-074",
+    "interface_pair": "JS_AND_REACT",
+    "query": "How does JavaScript module export/import syntax organize shared React components and custom Hooks across files?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-075",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since functions are first-class citizens in JavaScript, how does React pass callback handlers as props to children?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-076",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since arrow functions cannot be used as constructors, why must React function components be instantiated with new?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-077",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Why does JavaScript const prevent React components from ever updating their useState state values?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-078",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since React state is immutable, why does mutating state directly with state.push(newItem) trigger component re-render?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-079",
+    "interface_pair": "JS_AND_REACT",
+    "query": "How does JavaScript variable hoisting allow React custom Hooks to be called safely inside conditional if blocks?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-080",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since arrow functions bind dynamic this, why does React require .bind(this) inside functional components?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-081",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Why does JavaScript Object.is comparison detect internal mutations made to nested object properties?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-082",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since Promise.all rejects immediately upon error, why does React useState ignore promise rejections?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-083",
+    "interface_pair": "JS_AND_REACT",
+    "query": "How does the JavaScript Call Stack execute React components in multi-threaded parallel worker pools?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-084",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since const objects are deeply frozen in JavaScript, why does React recommend passing new object references?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-085",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Why does calling custom Hooks inside for loops ensure that React matches Hook state correctly across renders?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-086",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since JavaScript rest parameters convert arguments into strings, how does React forward props objects?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-087",
+    "interface_pair": "JS_AND_REACT",
+    "query": "How does React useEffect cleanup function execute synchronously before the component is ever rendered?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-088",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since JavaScript let variables are hoisted to undefined, why does calling Hooks before declaration throw ReferenceError?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-089",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Why does array destructuring in useState force React state to be stored as a global window property?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-090",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since JavaScript async functions return void, why does useEffect accept async callback functions directly?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-091",
+    "interface_pair": "JS_AND_REACT",
+    "query": "How does React useContext require manual prop drilling across intermediate components in JavaScript?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-092",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since arrow functions possess an arguments object, how does React access component props without parameters?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-093",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Why does React 18 batching execute state updates synchronously one by one across promises and timeouts?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-094",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since JavaScript promises have four states including paused, how does React Suspense pause promise execution?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-095",
+    "interface_pair": "JS_AND_REACT",
+    "query": "How does JavaScript spread syntax {...state} mutate the original state object in place?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-096",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since useRef.current causes component re-renders, why is it preferred over useState for DOM node references?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-097",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Why does React require custom Hooks to be called from plain vanilla utility functions outside components?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-098",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Since JavaScript garbage collection runs on a timer, why does React unmount components immediately?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-099",
+    "interface_pair": "JS_AND_REACT",
+    "query": "How does the JavaScript microtask queue delay React state updates until after browser window close?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-JS_AND_REACT-100",
+    "interface_pair": "JS_AND_REACT",
+    "query": "Why does using the spread operator on an array delete previous elements from React state?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-101",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Express exposes REST APIs with JSON payloads, how does a React client fetch and store course data?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-102",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Why does an Express status 401 Unauthorized cause a React frontend to redirect to the login screen?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-103",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since JWT tokens represent authenticated user claims, how does React store and send them in the Authorization header?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-104",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "How does Express CORS middleware permit React applications running on port 3000 to access APIs on port 8000?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-105",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since React useEffect handles side effects, how does it manage AbortController when cancelling Express API calls?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-106",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Why does Express res.status(201).json() indicate to React that a new student profile was successfully created?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-107",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since React state is updated asynchronously, how does a client handle loading spinners while awaiting Express responses?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-108",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "How does Express error middleware returning status 500 inform React error boundaries of server failures?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-109",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Express supports plural noun endpoints like /api/students, how does React construct dynamic detail URLs like /api/students/123?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-110",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Why does an Express 404 Not Found status prompt React Router to render a Not Found fallback component?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-111",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Express parses JSON bodies with express.json(), how does React send JSON data using fetch headers?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-112",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "How does React useContext propagate authentication tokens received from an Express login endpoint?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-113",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Node.js handles non-blocking I/O, how does an Express server support concurrent requests from multiple React clients?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-114",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Why does an Express status 403 Forbidden indicate to React that the student lacks permission for administrative actions?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-115",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since JWT tokens are Base64Url-encoded, how can React decode payload claims client-side to display student names?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-116",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "How does a React custom Hook abstract repeated fetch calls to Express backend endpoints?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-117",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Express routes use HTTP verbs (GET, POST, PUT, DELETE), how does React align frontend user actions with API methods?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-118",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Why does network failure in React fetch catch blocks handle Express server connection timeouts gracefully?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-119",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Express middleware can verify token signatures, how does it protect endpoints accessed by React auth headers?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-120",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "How does React memoization with useMemo prevent redundant API calls to Express endpoints on re-render?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-121",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Express returns structured JSON errors, how does a React form display field-specific validation messages?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-122",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Why does an expired JWT token returned from Express prompt React to clear local authentication state?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-123",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Node.js Libuv handles file system access, how does Express stream course PDF materials to a React viewer?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-124",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "How does React query parameter state synchronize with Express pagination endpoints like /api/courses?page=2?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-125",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Express handles rate limiting, how does React handle status 429 Too Many Requests responses?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-126",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Express middleware runs on the client device, why does React useEffect call app.use(express.json()) in the browser?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-127",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Why does an Express res.json() response execute synchronously on the React main rendering thread?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-128",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Node.js Libuv handles React virtual DOM reconciliation, how does it optimize client rendering?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-129",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "How does React useState store component state directly inside the Node.js process memory heap?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-130",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Express requires four arguments for all route handlers, why does React pass only two arguments to fetch?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-131",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Why does an Express server reboot whenever a React client component unmounts from the DOM?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-132",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since React components execute on the server inside Node.js Libuv threads, why is Node.js required on client phones?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-133",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "How does Express app.listen(8000) open an operating system port directly inside the student web browser?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-134",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since React useContext shares state across separate user computers, why is an Express backend needed?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-135",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Why does Express status 200 OK indicate that the React component encountered a syntax error?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-136",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since JWT tokens encrypt payload data with symmetric AES-256 by default, how does React read claims without the key?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-137",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "How does calling React setCount() trigger an immediate HTTP POST request to Express without fetch?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-138",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Express route paths must use singular verbs like /api/getStudent, why does React request plural nouns?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-139",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Why does React useEffect cleanup function terminate the Node.js operating system process on the server?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-140",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Express middleware functions execute in parallel, why does React wait for sequential API responses?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-141",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "How does the React virtual DOM replace the Express routing table on incoming HTTP requests?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-142",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since JWT signature verification occurs on the client device, why does Express check token headers?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-143",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Why does an Express status 500 error indicate that the student submitted invalid query parameters?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-144",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since React 18 batching disables Node.js asynchronous I/O, how does Express handle database queries?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-145",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "How does Express res.send() keep the client connection permanently open for subsequent React renders?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-146",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Node.js is a front-end UI framework, why does React compile into Express middleware?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-147",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Why does React useRef share mutable values across different student browser sessions on the server?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-148",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Since Express automatically clusters processes across client devices, why is WebSockets used?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-149",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "How does an Express status 201 Created signify that a resource was deleted from the PostgreSQL database?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-REACT_AND_NODE-150",
+    "interface_pair": "REACT_AND_NODE",
+    "query": "Why does React Router require Node.js Libuv worker threads to compute browser URL history changes?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-151",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL requires a junction table for Many-to-Many relationships, how does Express query student_batches?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-152",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Why does an Express API wrap multiple SQL operations in a PostgreSQL transaction with BEGIN and COMMIT?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-153",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL B-Tree indexes speed up equality queries, how does an Express GET endpoint benefit during student lookups?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-154",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "How does an Express error handler execute ROLLBACK when a database query throws an error inside a transaction?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-155",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL foreign key constraints enforce referential integrity, how does Express handle foreign key violation errors?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-156",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Why does PostgreSQL Read Committed isolation level prevent Express concurrent requests from reading dirty uncommitted data?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-157",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since database normalization eliminates redundancy, how does an Express API query join normalized tables for student profiles?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-158",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "How does an Express connection pool manage reusable client connections to PostgreSQL efficiently?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-159",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL Unique indexes enforce uniqueness, how does Express catch duplicate email registration attempts?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-160",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Why does PostgreSQL Write-Ahead Logging (WAL) ensure durability for data written through Express POST endpoints?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-161",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL GIN indexes optimize JSONB columns, how does Express query unstructured student metadata?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-162",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "How does an Express route parameter like req.params.id map safely to parameterized SQL queries to prevent injection?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-163",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL 3NF eliminates transitive dependencies, how does Express structure student address lookups?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-164",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Why does an Express DELETE endpoint trigger cascading deletes when configured on PostgreSQL foreign keys?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-165",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL composite indexes follow the leftmost prefix rule, how does Express query by course_id and date?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-166",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "How does Express handle asynchronous database queries with async/await without blocking the Node.js event loop?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-167",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL transactions guarantee Atomicity, how does an Express enrollment route ensure all-or-nothing completion?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-168",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Why does adding database indexes add overhead to Express POST and PUT endpoints that insert or update records?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-169",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL stores tables as relations with rows and columns, how does an Express ORM map them to JavaScript objects?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-170",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "How does an Express server log PostgreSQL slow queries to identify tables that need B-Tree indexing?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-171",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL enforces NOT NULL constraints, how does Express return status 400 when required fields are missing?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-172",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Why does an Express pagination endpoint use PostgreSQL LIMIT and OFFSET to paginate course lists?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-173",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since pgvector supports high-dimensional vector indexes, how does Express query course embeddings for similarity search?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-174",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "How does an Express healthcheck endpoint verify PostgreSQL database connectivity before accepting traffic?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-175",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL Serializable isolation level prevents phantom reads, when does Express employ it for critical operations?",
+    "expected": "SUPPORTED",
+    "category": "CROSS_DOMAIN_SUPPORTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-176",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL transactions commit automatically without ROLLBACK, why does Libuv execute SQL rollback on the main thread?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-177",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Why does PostgreSQL store tables inside Node.js Libuv worker thread memory rather than on disk?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-178",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since a One-to-Many relationship stores the foreign key in the parent table, how does Express query child rows?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-179",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "How does a PostgreSQL B-Tree index scan every single row in a table to evaluate equality searches?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-180",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL is an asynchronous JavaScript runtime, why does Node.js compile SQL queries into V8 bytecode?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-181",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Why does Express execute SQL transactions without Atomicity by allowing half of a transfer to commit when power fails?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-182",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL normalization introduces duplicate data anomalies, why does Express require 3NF schemas?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-183",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "How does Express run synchronous file system reads inside PostgreSQL trigger functions on the database server?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-184",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL Unique indexes allow duplicate identical values, how does Express prevent duplicate student registrations?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-185",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Why does PostgreSQL Durability discard committed records whenever the operating system reboots?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-186",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since Many-to-Many relationships require no junction table, how does Express query two tables directly without an associative table?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-187",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "How does the PostgreSQL event loop execute Node.js Express middleware functions inside SQL stored procedures?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-188",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since Write-Ahead Logging writes table modifications before recording them in the log, why does Postgres crash?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-189",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Why does a PostgreSQL composite index on (course_id, date) support queries filtering on date alone without course_id?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-190",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since adding indexes speeds up PostgreSQL INSERT and UPDATE operations, why does Express avoid adding indexes?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-191",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "How does PostgreSQL First Normal Form (1NF) encourage storing repeating comma-separated lists in a single column?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-192",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL Read Committed isolation level allows dirty reads of uncommitted data, why is it the default?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-193",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Why does Express status 500 Internal Server Error indicate that a SQL query returned a valid empty result set?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-194",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL GIN indexes are designed specifically for single-column integer primary keys, why use B-Tree?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-195",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "How does an Express connection pool allocate a separate operating system process for every SQL query line?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-196",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since foreign key constraints allow referencing non-existent primary keys, how does PostgreSQL maintain integrity?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-197",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Why does PostgreSQL Second Normal Form (2NF) permit partial dependencies on composite primary keys?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-198",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Since PostgreSQL Atomicity commits successful statements when a transaction fails, why does Express call ROLLBACK?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-199",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "How does Express require the Node.js V8 engine to execute PostgreSQL background VACUUM operations?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  },
+  {
+    "id": "CROSS-NODE_AND_POSTGRES-200",
+    "interface_pair": "NODE_AND_POSTGRES",
+    "query": "Why does an Express status 201 Created response confirm that a PostgreSQL transaction was rolled back?",
+    "expected": "REFUTED",
+    "category": "CROSS_DOMAIN_REFUTED"
+  }
+]

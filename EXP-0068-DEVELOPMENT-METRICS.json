@@ -1,0 +1,426 @@
+{
+  "metrics": {
+    "C0": {
+      "total": 400,
+      "correct": 368,
+      "accuracy": 92.0,
+      "macro_f1": 92.67,
+      "far": 6.0,
+      "frr": 12.67,
+      "supported_recall": 87.33,
+      "refutation_recall": 92.67,
+      "ood_recall": 98.0,
+      "fp_counts": {
+        "total_fp_claims": 150,
+        "accepted_as_supported": 9,
+        "correctly_refuted": 139,
+        "abstained_as_neutral": 2
+      },
+      "sup_counts": {
+        "total_sup_claims": 150,
+        "correctly_supported": 131,
+        "rejected_as_refuted": 19,
+        "abstained_as_neutral": 0
+      },
+      "ood_counts": {
+        "total_ood_claims": 100,
+        "correctly_abstained": 98,
+        "accepted_as_supported": 1,
+        "rejected_as_refuted": 1
+      },
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 131,
+          "REFUTED": 19,
+          "NOT_ESTABLISHED": 0,
+          "PARSE_FAILURE": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 9,
+          "REFUTED": 139,
+          "NOT_ESTABLISHED": 2,
+          "PARSE_FAILURE": 0
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98,
+          "PARSE_FAILURE": 0
+        }
+      },
+      "class_metrics": {
+        "SUPPORTED": {
+          "precision": 92.91,
+          "recall": 87.33,
+          "f1": 90.03,
+          "tp": 131,
+          "fn": 19,
+          "fp": 10
+        },
+        "REFUTED": {
+          "precision": 87.42,
+          "recall": 92.67,
+          "f1": 89.97,
+          "tp": 139,
+          "fn": 11,
+          "fp": 20
+        },
+        "NOT_ESTABLISHED": {
+          "precision": 98.0,
+          "recall": 98.0,
+          "f1": 98.0,
+          "tp": 98,
+          "fn": 2,
+          "fp": 2
+        }
+      },
+      "strata_metrics": {
+        "S1_antonym_assisted": {
+          "n": 81,
+          "correct": 63,
+          "accuracy": 77.78
+        },
+        "S2_non_antonym": {
+          "n": 319,
+          "correct": 305,
+          "accuracy": 95.61
+        },
+        "S3_high_overlap_support": {
+          "n": 100,
+          "correct": 85,
+          "accuracy": 85.0
+        },
+        "S4_low_overlap_paraphrase": {
+          "n": 50,
+          "correct": 46,
+          "accuracy": 92.0
+        },
+        "S5_normative_universal": {
+          "n": 81,
+          "correct": 74,
+          "accuracy": 91.36
+        },
+        "S6_compound_multi_clause": {
+          "n": 75,
+          "correct": 68,
+          "accuracy": 90.67
+        },
+        "S7_ood": {
+          "n": 100,
+          "correct": 98,
+          "accuracy": 98.0
+        }
+      }
+    },
+    "C1": {
+      "total": 400,
+      "correct": 280,
+      "accuracy": 70.0,
+      "macro_f1": 68.6,
+      "far": 0.67,
+      "frr": 11.33,
+      "supported_recall": 38.67,
+      "refutation_recall": 83.33,
+      "ood_recall": 97.0,
+      "fp_counts": {
+        "total_fp_claims": 150,
+        "accepted_as_supported": 1,
+        "correctly_refuted": 125,
+        "abstained_as_neutral": 24
+      },
+      "sup_counts": {
+        "total_sup_claims": 150,
+        "correctly_supported": 58,
+        "rejected_as_refuted": 17,
+        "abstained_as_neutral": 75
+      },
+      "ood_counts": {
+        "total_ood_claims": 100,
+        "correctly_abstained": 97,
+        "accepted_as_supported": 0,
+        "rejected_as_refuted": 3
+      },
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 58,
+          "REFUTED": 17,
+          "NOT_ESTABLISHED": 75,
+          "PARSE_FAILURE": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 1,
+          "REFUTED": 125,
+          "NOT_ESTABLISHED": 24,
+          "PARSE_FAILURE": 0
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 0,
+          "REFUTED": 3,
+          "NOT_ESTABLISHED": 97,
+          "PARSE_FAILURE": 0
+        }
+      },
+      "class_metrics": {
+        "SUPPORTED": {
+          "precision": 98.31,
+          "recall": 38.67,
+          "f1": 55.5,
+          "tp": 58,
+          "fn": 92,
+          "fp": 1
+        },
+        "REFUTED": {
+          "precision": 86.21,
+          "recall": 83.33,
+          "f1": 84.75,
+          "tp": 125,
+          "fn": 25,
+          "fp": 20
+        },
+        "NOT_ESTABLISHED": {
+          "precision": 49.49,
+          "recall": 97.0,
+          "f1": 65.54,
+          "tp": 97,
+          "fn": 3,
+          "fp": 99
+        }
+      },
+      "strata_metrics": {
+        "S1_antonym_assisted": {
+          "n": 81,
+          "correct": 52,
+          "accuracy": 64.2
+        },
+        "S2_non_antonym": {
+          "n": 319,
+          "correct": 228,
+          "accuracy": 71.47
+        },
+        "S3_high_overlap_support": {
+          "n": 100,
+          "correct": 30,
+          "accuracy": 30.0
+        },
+        "S4_low_overlap_paraphrase": {
+          "n": 50,
+          "correct": 28,
+          "accuracy": 56.0
+        },
+        "S5_normative_universal": {
+          "n": 81,
+          "correct": 48,
+          "accuracy": 59.26
+        },
+        "S6_compound_multi_clause": {
+          "n": 75,
+          "correct": 57,
+          "accuracy": 76.0
+        },
+        "S7_ood": {
+          "n": 100,
+          "correct": 97,
+          "accuracy": 97.0
+        }
+      }
+    },
+    "C2": {
+      "total": 400,
+      "correct": 272,
+      "accuracy": 68.0,
+      "macro_f1": 66.18,
+      "far": 1.33,
+      "frr": 11.33,
+      "supported_recall": 33.33,
+      "refutation_recall": 82.0,
+      "ood_recall": 99.0,
+      "fp_counts": {
+        "total_fp_claims": 150,
+        "accepted_as_supported": 2,
+        "correctly_refuted": 123,
+        "abstained_as_neutral": 25
+      },
+      "sup_counts": {
+        "total_sup_claims": 150,
+        "correctly_supported": 50,
+        "rejected_as_refuted": 17,
+        "abstained_as_neutral": 83
+      },
+      "ood_counts": {
+        "total_ood_claims": 100,
+        "correctly_abstained": 99,
+        "accepted_as_supported": 0,
+        "rejected_as_refuted": 1
+      },
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 50,
+          "REFUTED": 17,
+          "NOT_ESTABLISHED": 83,
+          "PARSE_FAILURE": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 2,
+          "REFUTED": 123,
+          "NOT_ESTABLISHED": 25,
+          "PARSE_FAILURE": 0
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 0,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 99,
+          "PARSE_FAILURE": 0
+        }
+      },
+      "class_metrics": {
+        "SUPPORTED": {
+          "precision": 96.15,
+          "recall": 33.33,
+          "f1": 49.5,
+          "tp": 50,
+          "fn": 100,
+          "fp": 2
+        },
+        "REFUTED": {
+          "precision": 87.23,
+          "recall": 82.0,
+          "f1": 84.54,
+          "tp": 123,
+          "fn": 27,
+          "fp": 18
+        },
+        "NOT_ESTABLISHED": {
+          "precision": 47.83,
+          "recall": 99.0,
+          "f1": 64.5,
+          "tp": 99,
+          "fn": 1,
+          "fp": 108
+        }
+      },
+      "strata_metrics": {
+        "S1_antonym_assisted": {
+          "n": 81,
+          "correct": 50,
+          "accuracy": 61.73
+        },
+        "S2_non_antonym": {
+          "n": 319,
+          "correct": 222,
+          "accuracy": 69.59
+        },
+        "S3_high_overlap_support": {
+          "n": 100,
+          "correct": 29,
+          "accuracy": 29.0
+        },
+        "S4_low_overlap_paraphrase": {
+          "n": 50,
+          "correct": 21,
+          "accuracy": 42.0
+        },
+        "S5_normative_universal": {
+          "n": 81,
+          "correct": 50,
+          "accuracy": 61.73
+        },
+        "S6_compound_multi_clause": {
+          "n": 75,
+          "correct": 57,
+          "accuracy": 76.0
+        },
+        "S7_ood": {
+          "n": 100,
+          "correct": 99,
+          "accuracy": 99.0
+        }
+      }
+    }
+  },
+  "mcnemar": {
+    "C1": {
+      "n00_both_correct": 278,
+      "n11_both_wrong": 30,
+      "n01_c0_corr_cand_wrong": 90,
+      "n10_c0_wrong_cand_corr": 2,
+      "delta_accuracy_pp": -22.0,
+      "mcnemar_p_value": 1.7282743364816433e-24,
+      "significant_at_005": true
+    },
+    "C2": {
+      "n00_both_correct": 270,
+      "n11_both_wrong": 30,
+      "n01_c0_corr_cand_wrong": 98,
+      "n10_c0_wrong_cand_corr": 2,
+      "delta_accuracy_pp": -24.0,
+      "mcnemar_p_value": 7.969072864542661e-27,
+      "significant_at_005": true
+    }
+  },
+  "gates": {
+    "C1": {
+      "Gate_A_False_Acceptance_Reduction": {
+        "passed": true,
+        "cand_far": 0.67,
+        "c0_far": 6.0
+      },
+      "Gate_B_Supported_Recall_Preserved": {
+        "passed": false,
+        "cand_sup_rec": 38.67,
+        "c0_sup_rec": 87.33,
+        "drop_pp": 48.66
+      },
+      "Gate_C_OOD_Safety_Preserved": {
+        "passed": true,
+        "cand_ood_rec": 97.0,
+        "c0_ood_rec": 98.0
+      },
+      "Gate_D_Overall_Dev_Non_Inferior": {
+        "passed": false,
+        "delta_pp": -22.0,
+        "p_value": 1.7282743364816433e-24
+      },
+      "Gate_E_Hard_Stratum_Survivability": {
+        "passed": false,
+        "s2_acc": 71.47,
+        "s4_acc": 56.0
+      },
+      "Gate_F_Computational_Viability": {
+        "passed": true
+      },
+      "ALL_GATES_PASSED": false
+    },
+    "C2": {
+      "Gate_A_False_Acceptance_Reduction": {
+        "passed": true,
+        "cand_far": 1.33,
+        "c0_far": 6.0
+      },
+      "Gate_B_Supported_Recall_Preserved": {
+        "passed": false,
+        "cand_sup_rec": 33.33,
+        "c0_sup_rec": 87.33,
+        "drop_pp": 54.0
+      },
+      "Gate_C_OOD_Safety_Preserved": {
+        "passed": true,
+        "cand_ood_rec": 99.0,
+        "c0_ood_rec": 98.0
+      },
+      "Gate_D_Overall_Dev_Non_Inferior": {
+        "passed": false,
+        "delta_pp": -24.0,
+        "p_value": 7.969072864542661e-27
+      },
+      "Gate_E_Hard_Stratum_Survivability": {
+        "passed": false,
+        "s2_acc": 69.59,
+        "s4_acc": 42.0
+      },
+      "Gate_F_Computational_Viability": {
+        "passed": true
+      },
+      "ALL_GATES_PASSED": false
+    }
+  }
+}

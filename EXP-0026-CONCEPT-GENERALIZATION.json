@@ -1,0 +1,29 @@
+{
+    "experiment_tag": "EXP-0026-CONCEPT-GENERALIZATION",
+    "timestamp": "2026-09-13T07:32:09+00:00",
+    "covered_concepts": {
+        "label": "COVERED_BY_SEMANTIC_OPPOSITES",
+        "total_concepts": 50,
+        "total_queries": 100,
+        "overall_accuracy": "67%",
+        "false_acceptance_rate_far": "12%",
+        "refutation_recall": "78%",
+        "false_refutation_rate_frr": "26%",
+        "supported_recall": "56%"
+    },
+    "uncovered_concepts": {
+        "label": "UNCOVERED_NOT_IN_DICTIONARY",
+        "total_concepts": 50,
+        "total_queries": 100,
+        "overall_accuracy": "15%",
+        "false_acceptance_rate_far": "8%",
+        "refutation_recall": "10%",
+        "false_refutation_rate_frr": "6%",
+        "supported_recall": "20%"
+    },
+    "generalization_gap": {
+        "accuracy_drop": "52%",
+        "far_increase": "-4%",
+        "refutation_recall_collapse": "68%"
+    }
+}

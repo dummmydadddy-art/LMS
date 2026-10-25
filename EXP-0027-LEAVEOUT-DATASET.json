@@ -1,0 +1,2102 @@
+[
+  {
+    "id": "LEAVEOUT-HTML_CSS-001",
+    "module": "HTML_CSS",
+    "query": "Why does HTML5 require three <main> elements in a single document to separate functional sections?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-002",
+    "module": "HTML_CSS",
+    "query": "Since the <article> tag is designed only for generic inline icons, why is it invalid for standalone blog posts?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-003",
+    "module": "HTML_CSS",
+    "query": "How does the <nav> element specify author copyright information at the bottom of the page?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-004",
+    "module": "HTML_CSS",
+    "query": "Why must a <footer> element be placed exclusively inside the document <header> tag?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-005",
+    "module": "HTML_CSS",
+    "query": "Since <header> elements are prohibited from containing navigational links, how should site menus be structured?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-006",
+    "module": "HTML_CSS",
+    "query": "Why does the browser screen-reader ignore <section> elements unless wrapped inside generic <div> containers?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-007",
+    "module": "HTML_CSS",
+    "query": "How does using generic <div> tags improve screen-reader accessibility compared to semantic HTML5 tags?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-008",
+    "module": "HTML_CSS",
+    "query": "Since HTML5 documents permit multiple distinct <main> elements per page, how does the browser resolve them?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-009",
+    "module": "HTML_CSS",
+    "query": "Why does the <main> tag represent navigational breadcrumbs rather than the unique central content?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-010",
+    "module": "HTML_CSS",
+    "query": "How does the <footer> tag represent introductory header content and page titles?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-011",
+    "module": "HTML_CSS",
+    "query": "Since padding clears transparent space outside the element border, how does it separate adjacent elements?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-012",
+    "module": "HTML_CSS",
+    "query": "Why is margin positioned inside the border layer directly touching the inner content?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-013",
+    "module": "HTML_CSS",
+    "query": "How does the border layer sit inside the padding area in the standard CSS box model?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-014",
+    "module": "HTML_CSS",
+    "query": "Since margin is controlled via the width property, why does increasing margin expand the element content box?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-015",
+    "module": "HTML_CSS",
+    "query": "Why does the default content-box model include borders within the declared width value?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-016",
+    "module": "HTML_CSS",
+    "query": "How does declaring box-sizing: content-box automatically include padding inside the specified width?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-017",
+    "module": "HTML_CSS",
+    "query": "Since the CSS box model consists of five nested layers including outline, why are margins rendered innermost?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-018",
+    "module": "HTML_CSS",
+    "query": "Why does padding clear space between neighboring external elements rather than around inner content?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-019",
+    "module": "HTML_CSS",
+    "query": "How does margin define the border thickness around an HTML element?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-020",
+    "module": "HTML_CSS",
+    "query": "Why does flex-wrap: nowrap allow flex items to wrap across multiple lines when overflowing?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-021",
+    "module": "HTML_CSS",
+    "query": "How does flex-shrink: 0 force a flex item to shrink when container space becomes constrained?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-022",
+    "module": "HTML_CSS",
+    "query": "Since flex-grow: 1 prevents flex items from expanding into available space, how is growth enabled?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-023",
+    "module": "HTML_CSS",
+    "query": "How does flex-basis: 250px set the maximum border thickness of a container?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-024",
+    "module": "HTML_CSS",
+    "query": "Since gap requires child items to define explicit margin properties, why does flexbox omit margin?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-025",
+    "module": "HTML_CSS",
+    "query": "Why does display: flex initiate a 3-dimensional spatial layout context?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-026",
+    "module": "HTML_CSS",
+    "query": "Why does flex-wrap: wrap force all items to remain strictly on a single continuous line?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-027",
+    "module": "HTML_CSS",
+    "query": "How does flex: 1 1 auto prevent elements from both growing and shrinking?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-028",
+    "module": "HTML_CSS",
+    "query": "Since flex-shrink: 1 prevents child elements from reducing in dimension, why do flex items compress?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-029",
+    "module": "HTML_CSS",
+    "query": "Why does display: grid activate a single-axis linear flexbox context?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-030",
+    "module": "HTML_CSS",
+    "query": "How does grid-template-columns define row heights rather than column track widths?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-031",
+    "module": "HTML_CSS",
+    "query": "Since repeat(auto-fit, minmax(280px, 1fr)) requires hardcoded media queries to achieve responsiveness, how does grid adapt?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-032",
+    "module": "HTML_CSS",
+    "query": "Why does the gap property in CSS grid apply exclusively to external margins outside the container?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-033",
+    "module": "HTML_CSS",
+    "query": "How does grid-column: span 2 delete neighboring track items from the grid layout?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-034",
+    "module": "HTML_CSS",
+    "query": "Why does display: grid require all child elements to have identical pixel dimensions?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-035",
+    "module": "HTML_CSS",
+    "query": "How does grid-template-rows specify horizontal column track boundaries in CSS grid?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-036",
+    "module": "HTML_CSS",
+    "query": "Since semantic HTML reduces SEO visibility and screen-reader parsing, why do developers avoid semantic tags?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-037",
+    "module": "HTML_CSS",
+    "query": "Why does the browser require <section> tags to contain exactly five nested <article> tags?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-038",
+    "module": "HTML_CSS",
+    "query": "How does the <nav> element represent video playback controls inside a media player?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-039",
+    "module": "HTML_CSS",
+    "query": "Since <header> contains solely author legal information, why is copyright omitted from <footer>?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-040",
+    "module": "HTML_CSS",
+    "query": "Why does padding in the CSS box model render behind the background image while margin renders in front?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-041",
+    "module": "HTML_CSS",
+    "query": "How does declaring width on an element override and erase all padding definitions in CSS?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-042",
+    "module": "HTML_CSS",
+    "query": "Why does the CSS box model calculate total height without considering top and bottom borders?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-043",
+    "module": "HTML_CSS",
+    "query": "Why does the <header> element require an explicit rel='author' attribute to be valid?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-044",
+    "module": "HTML_CSS",
+    "query": "How does setting border: 1px solid red remove all padding from the box model?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-045",
+    "module": "HTML_CSS",
+    "query": "Since CSS Grid forbids the use of fraction units (1fr), how are responsive columns declared?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-046",
+    "module": "HTML_CSS",
+    "query": "Why does flex-wrap: nowrap divide child elements across three automatic columns?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-047",
+    "module": "HTML_CSS",
+    "query": "How does declaring width: 100% on a flex container turn off the flex formatting context?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-048",
+    "module": "HTML_CSS",
+    "query": "Why does flex-wrap: wrap-reverse prohibit items from breaking onto subsequent layout rows?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-049",
+    "module": "HTML_CSS",
+    "query": "How does flex-grow: 0 cause an element to expand aggressively to fill remaining space?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-050",
+    "module": "HTML_CSS",
+    "query": "Since flex-shrink specifies child margin spacing, why does flex-basis define font sizes?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-051",
+    "module": "HTML_CSS",
+    "query": "Why does the gap property require vendor prefixes to space flexbox items without margins?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-052",
+    "module": "HTML_CSS",
+    "query": "How does grid-column specify row positions while grid-row specifies vertical column tracks?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-053",
+    "module": "HTML_CSS",
+    "query": "Since repeat(3, 1fr) produces rows of variable uneven fractional widths, how are equal columns created?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-054",
+    "module": "HTML_CSS",
+    "query": "Why does CSS grid disallow gap spacing between adjacent cell tracks?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-055",
+    "module": "HTML_CSS",
+    "query": "How does grid-template-columns: repeat(3, 1fr) create three columns of unequal random widths?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-056",
+    "module": "HTML_CSS",
+    "query": "Since semantic HTML elements are unsupported in modern browsers, why are generic <div> elements preferred?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-057",
+    "module": "HTML_CSS",
+    "query": "Why does the CSS box model treat padding and margin as identical interchangeable properties?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-058",
+    "module": "HTML_CSS",
+    "query": "How does adding an outline to an HTML element change its content-box width calculation?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-059",
+    "module": "HTML_CSS",
+    "query": "Why does the <aside> tag replace the <body> tag in HTML5 semantic document layouts?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-HTML_CSS-060",
+    "module": "HTML_CSS",
+    "query": "How does declaring display: inline on a grid container preserve its two-dimensional track behavior?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-061",
+    "module": "JAVASCRIPT",
+    "query": "Why does declaring a variable with const prevent modifying the properties of an object?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-062",
+    "module": "JAVASCRIPT",
+    "query": "Since let allows re-declaration within the same block scope, how does the engine handle duplicate names?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-063",
+    "module": "JAVASCRIPT",
+    "query": "How does accessing a let variable inside the Temporal Dead Zone return undefined instead of an error?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-064",
+    "module": "JAVASCRIPT",
+    "query": "Why does var declare block-scoped variables confined strictly within curly braces { }?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-065",
+    "module": "JAVASCRIPT",
+    "query": "Since const variables are uninitialized in the TDZ, why does accessing them before declaration succeed silently?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-066",
+    "module": "JAVASCRIPT",
+    "query": "How does let hoist variables to the global window object with an initial value of null?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-067",
+    "module": "JAVASCRIPT",
+    "query": "Why does an arrow function create and bind its own dynamic this execution context?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-068",
+    "module": "JAVASCRIPT",
+    "query": "Since arrow functions possess an internal arguments object, how are rest parameters accessed?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-069",
+    "module": "JAVASCRIPT",
+    "query": "How does invoking an arrow function with the new operator construct a new instance object?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-070",
+    "module": "JAVASCRIPT",
+    "query": "Why do arrow functions require .bind(this) to preserve the lexical context in event callbacks?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-071",
+    "module": "JAVASCRIPT",
+    "query": "Since arrow functions cannot inherit this from their enclosing lexical context, how do they locate this?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-072",
+    "module": "JAVASCRIPT",
+    "query": "How does invoking an arrow function with new avoid throwing a TypeError in modern JavaScript?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-073",
+    "module": "JAVASCRIPT",
+    "query": "Why does object destructuring with default values throw a ReferenceError when a property is undefined?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-074",
+    "module": "JAVASCRIPT",
+    "query": "Since the spread operator (...) creates a deep recursive clone of nested objects, why do nested mutations persist?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-075",
+    "module": "JAVASCRIPT",
+    "query": "How do rest parameters (...args) convert function arguments into an arguments-like pseudo-array?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-076",
+    "module": "JAVASCRIPT",
+    "query": "Why does array destructuring const [a, b] require items to be an plain non-iterable object?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-077",
+    "module": "JAVASCRIPT",
+    "query": "Since the spread operator performs deep cloning, how does modifying copy.nested affect original.nested?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-078",
+    "module": "JAVASCRIPT",
+    "query": "How do rest parameters condense arguments into a comma-separated string rather than an Array instance?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-079",
+    "module": "JAVASCRIPT",
+    "query": "Why does Promise.all([p1, p2]) continue executing successfully when one of the promises rejects?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-080",
+    "module": "JAVASCRIPT",
+    "query": "How does a Promise transition between four distinct execution states including cancelled and paused?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-081",
+    "module": "JAVASCRIPT",
+    "query": "Why does Promise.race wait for every promise in the iterable array to settle before resolving?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-082",
+    "module": "JAVASCRIPT",
+    "query": "Since Promise.allSettled fails fast upon the first rejection, how does Promise.all collect all results?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-083",
+    "module": "JAVASCRIPT",
+    "query": "How does async/await run multi-threaded background worker processes without using the event loop?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-084",
+    "module": "JAVASCRIPT",
+    "query": "Why does queueMicrotask schedule tasks into the macrotask queue behind setTimeout callbacks?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-085",
+    "module": "JAVASCRIPT",
+    "query": "Since JavaScript is a multi-threaded execution runtime, how does the Call Stack execute parallel functions?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-086",
+    "module": "JAVASCRIPT",
+    "query": "Why does accessing a const object property throw a TypeError when mutating an internal field?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-087",
+    "module": "JAVASCRIPT",
+    "query": "How does declaring an array with const freeze its elements against push and pop operations?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-088",
+    "module": "JAVASCRIPT",
+    "query": "Since var variables are block-scoped within if statements, why are they invisible outside the block?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-089",
+    "module": "JAVASCRIPT",
+    "query": "Why does let permit multiple declarations of the same identifier in the identical scope block?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-090",
+    "module": "JAVASCRIPT",
+    "query": "How does the Temporal Dead Zone initialize let variables to undefined before execution starts?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-091",
+    "module": "JAVASCRIPT",
+    "query": "Since arrow functions have prototype properties, why can they be instantiated with the new keyword?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-092",
+    "module": "JAVASCRIPT",
+    "query": "Why do regular function declarations inherit this lexically while arrow functions bind dynamic this?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-093",
+    "module": "JAVASCRIPT",
+    "query": "How does the arguments object inside an arrow function capture all passed parameters automatically?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-094",
+    "module": "JAVASCRIPT",
+    "query": "Since arrow functions cannot be called without the new keyword, how are they invoked as plain functions?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-095",
+    "module": "JAVASCRIPT",
+    "query": "Why does array destructuring require the target array to contain exactly two elements?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-096",
+    "module": "JAVASCRIPT",
+    "query": "How does object destructuring assign properties to global variables instead of local scope variables?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-097",
+    "module": "JAVASCRIPT",
+    "query": "Since the spread operator performs shallow copying, why does it clone deep nested child objects?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-098",
+    "module": "JAVASCRIPT",
+    "query": "Why do rest parameters appear at the beginning of a function parameter list rather than the end?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-099",
+    "module": "JAVASCRIPT",
+    "query": "How does merging two arrays with spread syntax mutate both source arrays in place?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-100",
+    "module": "JAVASCRIPT",
+    "query": "Since Promises have four lifecycle states including suspended, how does a pending promise pause?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-101",
+    "module": "JAVASCRIPT",
+    "query": "Why does Promise.all resolve with null when all supplied promises fulfill successfully?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-102",
+    "module": "JAVASCRIPT",
+    "query": "How does Promise.allSettled reject immediately when a single promise encounters an error?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-103",
+    "module": "JAVASCRIPT",
+    "query": "Why does setTimeout(fn, 0) execute synchronously before the current Call Stack empties?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-104",
+    "module": "JAVASCRIPT",
+    "query": "How does the V8 engine execute JavaScript functions across multiple concurrent OS threads?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-105",
+    "module": "JAVASCRIPT",
+    "query": "Since Promise.race waits for all promises to resolve, why does it return an array of all outcomes?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-106",
+    "module": "JAVASCRIPT",
+    "query": "Why does async/await require generator syntax and yield statements to pause function execution?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-107",
+    "module": "JAVASCRIPT",
+    "query": "How does a rejected promise in Promise.all allow remaining promises to fulfill without failing fast?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-108",
+    "module": "JAVASCRIPT",
+    "query": "Since const prevents variable re-assignment, why does it also freeze all nested object properties?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-109",
+    "module": "JAVASCRIPT",
+    "query": "Why does let throw a SyntaxError when re-assigned to a new primitive value inside its declared block?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-110",
+    "module": "JAVASCRIPT",
+    "query": "How does var prevent variable hoisting by throwing a ReferenceError prior to declaration?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-111",
+    "module": "JAVASCRIPT",
+    "query": "Since arrow functions require const self = this to access parent scope, why is lexical this avoided?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-112",
+    "module": "JAVASCRIPT",
+    "query": "Why does object destructuring fail when renaming extracted properties with colon syntax?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-113",
+    "module": "JAVASCRIPT",
+    "query": "How does spread syntax on an object mutate the original source object by adding new keys?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-114",
+    "module": "JAVASCRIPT",
+    "query": "Since rest parameters collect arguments into a linked list, why does Array.isArray return true?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-115",
+    "module": "JAVASCRIPT",
+    "query": "Why does Promise.resolve() place callbacks into the macrotask queue alongside setInterval?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-116",
+    "module": "JAVASCRIPT",
+    "query": "How does queueMicrotask delay execution until after all pending setTimeout timers finish?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-117",
+    "module": "JAVASCRIPT",
+    "query": "Since Promise.allSettled returns only fulfilled promises, how are rejected errors inspected?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-118",
+    "module": "JAVASCRIPT",
+    "query": "Why does the JavaScript event loop pause Call Stack execution while waiting for network I/O?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-119",
+    "module": "JAVASCRIPT",
+    "query": "Why does accessing an uninitialized let variable produce an empty string rather than an error?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-JAVASCRIPT-120",
+    "module": "JAVASCRIPT",
+    "query": "How does Promise.allSettled throw an uncaught exception when all promises succeed?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-121",
+    "module": "REACT",
+    "query": "Why do the Rules of Hooks encourage calling useState inside conditional if statements?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-122",
+    "module": "REACT",
+    "query": "Since Hooks can be invoked from plain vanilla utility functions, why are function components required?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-123",
+    "module": "REACT",
+    "query": "How does calling custom Hooks inside for loops ensure predictable Hook call order across renders?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-124",
+    "module": "REACT",
+    "query": "Why does React permit calling useEffect inside nested helper functions within a component?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-125",
+    "module": "REACT",
+    "query": "Since Hooks may be called conditionally based on props, how does React track Hook state arrays?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-126",
+    "module": "REACT",
+    "query": "Why does React require custom Hooks to be executed outside of React function components?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-127",
+    "module": "REACT",
+    "query": "How does updating state via setCount(count + 1) guarantee correct values during batched updates?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-128",
+    "module": "REACT",
+    "query": "Since React state updates in React 18 are never batched, why do handlers re-render on every call?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-129",
+    "module": "REACT",
+    "query": "Why does React recommend mutating state arrays directly with push() instead of passing copies?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-130",
+    "module": "REACT",
+    "query": "How does React 18 execute state updates synchronously one by one across promises and timeouts?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-131",
+    "module": "REACT",
+    "query": "Since React state is mutable, why does mutating an existing object reference trigger a re-render?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-132",
+    "module": "REACT",
+    "query": "Why does useState require an initial value of undefined for all primitive state types?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-133",
+    "module": "REACT",
+    "query": "How does an empty dependency array [] in useEffect cause the effect to re-run after every render?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-134",
+    "module": "REACT",
+    "query": "Since useEffect without dependencies runs only once upon mount, how are updates handled?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-135",
+    "module": "REACT",
+    "query": "Why does the useEffect cleanup function execute exclusively before the component initially mounts?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-136",
+    "module": "REACT",
+    "query": "How does shallow comparison (Object.is) in useEffect detect internal mutations within nested objects?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-137",
+    "module": "REACT",
+    "query": "Since the effect cleanup function runs after component unmounting is complete, how are aborts handled?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-138",
+    "module": "REACT",
+    "query": "Why does useEffect with dependencies [userId] execute only when the component unmounts?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-139",
+    "module": "REACT",
+    "query": "How does useContext require manual prop passing through every intermediate component level?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-140",
+    "module": "REACT",
+    "query": "Since createContext requires class inheritance from React.Component, why are functions used?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-141",
+    "module": "REACT",
+    "query": "Why does useContext consume state from sibling components without requiring a parent Provider?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-142",
+    "module": "REACT",
+    "query": "How does <AuthContext.Provider> store state values inside localStorage automatically?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-143",
+    "module": "REACT",
+    "query": "Since useContext requires manual prop drilling, why was the Context API introduced into React?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-144",
+    "module": "REACT",
+    "query": "Why does updating context value cause child components outside the Provider tree to update?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-145",
+    "module": "REACT",
+    "query": "How does useMemo memoize callback functions instead of calculated return values?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-146",
+    "module": "REACT",
+    "query": "Since useCallback caches expensive computation results, why does useMemo memoize functions?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-147",
+    "module": "REACT",
+    "query": "Why does useCallback store its memoized function in localStorage across browser tabs?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-148",
+    "module": "REACT",
+    "query": "How does useMemo execute its calculation function asynchronously in a background Web Worker?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-149",
+    "module": "REACT",
+    "query": "Since useMemo recalculates on every render regardless of dependencies, how does it optimize speed?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-150",
+    "module": "REACT",
+    "query": "Why does useCallback trigger a re-render of child components when dependencies remain unchanged?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-151",
+    "module": "REACT",
+    "query": "How does changing useRef.current trigger an immediate component re-render in React?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-152",
+    "module": "REACT",
+    "query": "Since useRef resets its .current property to initial value on every render, how does it persist?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-153",
+    "module": "REACT",
+    "query": "Why does useRef require a DOM element reference and disallow storing timer IDs or numbers?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-154",
+    "module": "REACT",
+    "query": "How does updating a ref object invalidate the React virtual DOM tree and force reconciliation?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-155",
+    "module": "REACT",
+    "query": "Since useRef.current cannot persist across component renders, why is it used for render counts?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-156",
+    "module": "REACT",
+    "query": "Why does useRef trigger the useEffect hook whenever its .current property is mutated?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-157",
+    "module": "REACT",
+    "query": "How does calling Hooks inside conditional blocks preserve the internal index order of Hooks?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-158",
+    "module": "REACT",
+    "query": "Since custom Hooks must be called from regular JavaScript classes, why are functions used?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-159",
+    "module": "REACT",
+    "query": "Why does React state immutability permit direct modifications to array indices in state?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-160",
+    "module": "REACT",
+    "query": "How does passing count + 1 to setState prevent race conditions in sequential state updates?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-161",
+    "module": "REACT",
+    "query": "Since React 18 batches updates only within native DOM events, why do async handlers re-render?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-162",
+    "module": "REACT",
+    "query": "Why does useEffect with empty dependencies [] run twice on every subsequent state change?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-163",
+    "module": "REACT",
+    "query": "How does useEffect without a dependency array avoid running when state changes occur?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-164",
+    "module": "REACT",
+    "query": "Since useEffect cleanup runs after component unmount, why does it abort active fetch requests?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-165",
+    "module": "REACT",
+    "query": "Why does Object.is shallow comparison detect property modifications made inside existing objects?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-166",
+    "module": "REACT",
+    "query": "How does createContext share state without requiring components to be wrapped in a Provider?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-167",
+    "module": "REACT",
+    "query": "Since useContext causes prop drilling through parent components, why is Redux avoided?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-168",
+    "module": "REACT",
+    "query": "Why does <Context.Provider> require a render prop function rather than a standard value prop?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-169",
+    "module": "REACT",
+    "query": "How does useMemo store calculation outputs across browser sessions in indexedDB?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-170",
+    "module": "REACT",
+    "query": "Since useCallback prevents child components from ever re-rendering, how do props update?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-171",
+    "module": "REACT",
+    "query": "Why does useMemo execute on every component unmount rather than during the render phase?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-172",
+    "module": "REACT",
+    "query": "How does useCallback memoize the return value of an expensive mathematical equation?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-173",
+    "module": "REACT",
+    "query": "Since useRef.current causes component re-renders, why is useState preferred for DOM nodes?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-174",
+    "module": "REACT",
+    "query": "Why does useRef discard its stored value whenever a parent component re-renders?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-175",
+    "module": "REACT",
+    "query": "How does ref.current focus a DOM element by mutating React component props directly?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-176",
+    "module": "REACT",
+    "query": "Since React Hooks can be placed inside switch cases, why does React track call sequences?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-177",
+    "module": "REACT",
+    "query": "Why does setCount(prev => prev + 1) discard previous state in favor of global scope values?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-178",
+    "module": "REACT",
+    "query": "How does React 18 batching prevent promises from updating state inside functional components?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-179",
+    "module": "REACT",
+    "query": "Since useEffect cleanup executes before initial render, why does it clear timer intervals?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-REACT-180",
+    "module": "REACT",
+    "query": "Why does useContext require intermediate components to declare explicit forwardRef bindings?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-181",
+    "module": "NODE_EXPRESS",
+    "query": "Why does the Libuv thread pool execute JavaScript code sequentially on the main thread?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-182",
+    "module": "NODE_EXPRESS",
+    "query": "Since Node.js allocates a separate OS thread for each incoming HTTP connection, how does it scale?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-183",
+    "module": "NODE_EXPRESS",
+    "query": "How does running CPU-intensive synchronous encryption loops on the main thread improve I/O speed?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-184",
+    "module": "NODE_EXPRESS",
+    "query": "Why does the Node.js event loop execute the Check phase (setImmediate) before the Timers phase?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-185",
+    "module": "NODE_EXPRESS",
+    "query": "Since Libuv defaults to 16 worker threads, why do file system reads block the event loop?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-186",
+    "module": "NODE_EXPRESS",
+    "query": "How does the Close Callbacks phase execute setTimeout timers before pending I/O callbacks?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-187",
+    "module": "NODE_EXPRESS",
+    "query": "Why does Express require app.use(express.urlencoded()) to parse incoming application/json bodies?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-188",
+    "module": "NODE_EXPRESS",
+    "query": "Since Express is an opinionated full-stack MVC framework with built-in ORM, how does it configure models?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-189",
+    "module": "NODE_EXPRESS",
+    "query": "How does express.json() terminate incoming requests without passing control to subsequent handlers?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-190",
+    "module": "NODE_EXPRESS",
+    "query": "Why does Express require manual process clustering to handle asynchronous non-blocking I/O?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-191",
+    "module": "NODE_EXPRESS",
+    "query": "Since express() initializes a multi-process cluster automatically, why is cluster module used?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-192",
+    "module": "NODE_EXPRESS",
+    "query": "How does Express disallow mounting third-party middleware functions using the app.use() method?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-193",
+    "module": "NODE_EXPRESS",
+    "query": "Why do Express middleware functions lack access to the response object res?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-194",
+    "module": "NODE_EXPRESS",
+    "query": "Since error-handling middleware in Express declares only two arguments (err, res), how is req accessed?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-195",
+    "module": "NODE_EXPRESS",
+    "query": "How does calling next() in middleware terminate the request-response cycle immediately?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-196",
+    "module": "NODE_EXPRESS",
+    "query": "Why does res.status(401).json() allow downstream middleware functions to continue executing?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-197",
+    "module": "NODE_EXPRESS",
+    "query": "Since middleware cannot modify the req object, how are authenticated user tokens passed along?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-198",
+    "module": "NODE_EXPRESS",
+    "query": "How does omitting next() in an Express middleware function automatically forward the request?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-199",
+    "module": "NODE_EXPRESS",
+    "query": "How does HTTP PUT perform partial updates to specific individual resource fields?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-200",
+    "module": "NODE_EXPRESS",
+    "query": "Why does HTTP status 201 Created indicate that a requested resource was not found?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-201",
+    "module": "NODE_EXPRESS",
+    "query": "Since HTTP status 403 Forbidden means credentials were completely missing, how does 401 differ?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-202",
+    "module": "NODE_EXPRESS",
+    "query": "How does HTTP status 500 indicate that the client sent invalid query input parameters?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-203",
+    "module": "NODE_EXPRESS",
+    "query": "Why does RESTful URL design recommend using singular verbs like /api/getStudent instead of nouns?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-204",
+    "module": "NODE_EXPRESS",
+    "query": "How does HTTP status 400 Bad Request represent an unhandled internal database crash?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-205",
+    "module": "NODE_EXPRESS",
+    "query": "Why does HTTP status 401 Unauthorized indicate that an authenticated user lacks permissions?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-206",
+    "module": "NODE_EXPRESS",
+    "query": "Since JWT tokens consist of two parts (Header and Payload), where is the signature stored?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-207",
+    "module": "NODE_EXPRESS",
+    "query": "How does the JWT payload encrypt all stored claims by default using symmetric AES-256?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-208",
+    "module": "NODE_EXPRESS",
+    "query": "Why can client applications edit payload claims without invalidating the token signature?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-209",
+    "module": "NODE_EXPRESS",
+    "query": "How does the Authorization header format use the prefix Token: instead of Bearer?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-210",
+    "module": "NODE_EXPRESS",
+    "query": "Why does jwt.sign require the client private key rather than a server secret to sign tokens?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-211",
+    "module": "NODE_EXPRESS",
+    "query": "Since JWT signature verification occurs on the client device, why does the server check tokens?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-212",
+    "module": "NODE_EXPRESS",
+    "query": "How does Base64Url encoding securely encrypt sensitive student passwords in the JWT payload?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-213",
+    "module": "NODE_EXPRESS",
+    "query": "Why does the Libuv thread pool handle V8 JavaScript execution while the main thread handles I/O?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-214",
+    "module": "NODE_EXPRESS",
+    "query": "Since Node.js is multi-threaded for user code, how does the single thread execute Libuv tasks?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-215",
+    "module": "NODE_EXPRESS",
+    "query": "How does synchronous file reading with fs.readFileSync prevent blocking the event loop?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-216",
+    "module": "NODE_EXPRESS",
+    "query": "Why does the Poll phase of the event loop skip I/O callbacks to run close events first?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-217",
+    "module": "NODE_EXPRESS",
+    "query": "Since Express middleware functions execute in parallel, why does next() determine execution order?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-218",
+    "module": "NODE_EXPRESS",
+    "query": "How does error middleware with four arguments (err, req, res, next) run on every normal request?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-219",
+    "module": "NODE_EXPRESS",
+    "query": "Why does res.send() keep the request-response cycle open for subsequent middleware?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-220",
+    "module": "NODE_EXPRESS",
+    "query": "How does HTTP PATCH replace an entire database record entity from scratch?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-221",
+    "module": "NODE_EXPRESS",
+    "query": "Why does status 404 Not Found indicate that user authentication credentials were valid?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-222",
+    "module": "NODE_EXPRESS",
+    "query": "Since status 200 OK signifies that a new resource was created, why is 201 Created obsolete?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-223",
+    "module": "NODE_EXPRESS",
+    "query": "How does status 401 Unauthorized confirm that the user has valid administrative privileges?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-224",
+    "module": "NODE_EXPRESS",
+    "query": "Why does RESTful API convention encourage action verbs in paths such as /api/deleteCourse?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-225",
+    "module": "NODE_EXPRESS",
+    "query": "Since JWT tokens are signed with asymmetric cookies, how does Base64Url decode headers?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-226",
+    "module": "NODE_EXPRESS",
+    "query": "How does modifying the JWT payload retain a valid cryptographic signature without the secret?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-227",
+    "module": "NODE_EXPRESS",
+    "query": "Why does jwt.sign store the secret key plaintext inside the JWT header segment?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-228",
+    "module": "NODE_EXPRESS",
+    "query": "Since Authorization: Bearer <token> is forbidden in REST APIs, how are tokens transmitted?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-229",
+    "module": "NODE_EXPRESS",
+    "query": "How does the V8 engine allocate separate memory heaps for each Libuv worker thread?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-230",
+    "module": "NODE_EXPRESS",
+    "query": "Why does setImmediate schedule callbacks into the Timers phase ahead of setTimeout?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-231",
+    "module": "NODE_EXPRESS",
+    "query": "Since Express middleware cannot read request headers, how does auth middleware extract tokens?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-232",
+    "module": "NODE_EXPRESS",
+    "query": "How does res.json() throw an unhandled error when passed a JavaScript object literal?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-233",
+    "module": "NODE_EXPRESS",
+    "query": "Why does HTTP POST return 404 Not Found whenever a resource is created successfully?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-234",
+    "module": "NODE_EXPRESS",
+    "query": "Since HTTP status 500 represents invalid client syntax, how does status 400 indicate server bugs?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-235",
+    "module": "NODE_EXPRESS",
+    "query": "How does JWT Base64Url encoding prevent clients from reading the unencrypted payload claims?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-236",
+    "module": "NODE_EXPRESS",
+    "query": "Why does the Libuv thread pool handle synchronous JSON.parse operations by default?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-237",
+    "module": "NODE_EXPRESS",
+    "query": "How does res.status(200).send() trigger an immediate server restart in Express?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-238",
+    "module": "NODE_EXPRESS",
+    "query": "Since JWT signature validation occurs exclusively on the client machine, why does the server store tokens?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-239",
+    "module": "NODE_EXPRESS",
+    "query": "Why does Express router reject parameter definitions with :id in route paths?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-NODE_EXPRESS-240",
+    "module": "NODE_EXPRESS",
+    "query": "How does app.listen() execute synchronously on worker threads without opening an OS port?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-241",
+    "module": "POSTGRESQL",
+    "query": "Since Many-to-Many relationships require no junction table, how do two tables link directly?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-242",
+    "module": "POSTGRESQL",
+    "query": "How does a One-to-One relationship require a composite primary key spanning three tables?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-243",
+    "module": "POSTGRESQL",
+    "query": "Why must a junction table omit foreign keys to maintain referential integrity in PostgreSQL?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-244",
+    "module": "POSTGRESQL",
+    "query": "How does a Many-to-Many relationship store foreign keys directly without an associative table?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-245",
+    "module": "POSTGRESQL",
+    "query": "Why does First Normal Form (1NF) encourage storing repeating comma-separated lists in a single column?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-246",
+    "module": "POSTGRESQL",
+    "query": "Since Second Normal Form (2NF) permits partial dependencies on composite keys, how does 1NF differ?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-247",
+    "module": "POSTGRESQL",
+    "query": "How does Third Normal Form (3NF) encourage transitive dependencies between non-key attributes?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-248",
+    "module": "POSTGRESQL",
+    "query": "Why does database normalization introduce data redundancy and increase duplicate update anomalies?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-249",
+    "module": "POSTGRESQL",
+    "query": "Since 1NF allows multiple values in a single column, how does 2NF eliminate primary keys?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-250",
+    "module": "POSTGRESQL",
+    "query": "How does 3NF allow non-key attributes to depend on other non-key attributes instead of the primary key?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-251",
+    "module": "POSTGRESQL",
+    "query": "Why does a B-Tree index scan every single row in a PostgreSQL table to evaluate equality queries?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-252",
+    "module": "POSTGRESQL",
+    "query": "Since adding indexes speeds up INSERT and UPDATE operations, how do indexes affect disk write speed?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-253",
+    "module": "POSTGRESQL",
+    "query": "How does an inverted GIN index optimize single-column integer equality searches over B-Tree?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-254",
+    "module": "POSTGRESQL",
+    "query": "Why does a composite index on (course_id, date) support querying date alone without course_id?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-255",
+    "module": "POSTGRESQL",
+    "query": "Since Unique indexes allow duplicate values in indexed columns, how is uniqueness enforced?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-256",
+    "module": "POSTGRESQL",
+    "query": "How does a Vector index (IVFFlat/HNSW) serve as the default index type for integer primary keys?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-257",
+    "module": "POSTGRESQL",
+    "query": "Why do PostgreSQL indexes consume zero disk space and add zero overhead to database writes?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-258",
+    "module": "POSTGRESQL",
+    "query": "Since indexes slow down SELECT queries, why are B-tree indexes recommended for large tables?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-259",
+    "module": "POSTGRESQL",
+    "query": "How does Atomicity in ACID allow partial transaction changes to persist when a statement fails?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-260",
+    "module": "POSTGRESQL",
+    "query": "Why does Consistency permit transactions to violate foreign key constraints and table triggers?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-261",
+    "module": "POSTGRESQL",
+    "query": "Since Durability persists changes only after a database reboot, how does WAL handle immediate crashes?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-262",
+    "module": "POSTGRESQL",
+    "query": "How does Isolation Level Read Committed permit concurrent transactions to overwrite uncommitted data?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-263",
+    "module": "POSTGRESQL",
+    "query": "Why does Write-Ahead Logging (WAL) write changes to disk only when memory becomes 100% exhausted?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-264",
+    "module": "POSTGRESQL",
+    "query": "Since Atomicity commits successful statements when a subsequent query in the transaction aborts, how is it safe?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-265",
+    "module": "POSTGRESQL",
+    "query": "How does PostgreSQL default to Serializable isolation level for all standard client connections?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-266",
+    "module": "POSTGRESQL",
+    "query": "Why does a foreign key constraint allow child table rows to reference non-existent primary keys?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-267",
+    "module": "POSTGRESQL",
+    "query": "Since One-to-One relationships require two separate junction tables, how are keys configured?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-268",
+    "module": "POSTGRESQL",
+    "query": "How does 2NF permit non-key columns to depend on half of a composite primary key?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-269",
+    "module": "POSTGRESQL",
+    "query": "Why does 1NF allow tables to omit a primary key and contain duplicate identical rows?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-270",
+    "module": "POSTGRESQL",
+    "query": "Since normalization increases data duplication across tables, why is denormalization preferred?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-271",
+    "module": "POSTGRESQL",
+    "query": "How does 3NF mandate that primary keys depend directly on non-key descriptive columns?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-272",
+    "module": "POSTGRESQL",
+    "query": "Why does PostgreSQL B-Tree indexing degrade performance on range queries (< and >)?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-273",
+    "module": "POSTGRESQL",
+    "query": "Since composite indexes ignore the leftmost prefix rule, why does column order matter?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-274",
+    "module": "POSTGRESQL",
+    "query": "How does an IVFFlat vector index perform exact exhaustive row scans on high-dimensional data?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-275",
+    "module": "POSTGRESQL",
+    "query": "Why does a GIN index fail to index JSONB documents and array containment operations?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-276",
+    "module": "POSTGRESQL",
+    "query": "Since creating an index improves INSERT speed by pre-allocating table storage, why index tables?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-277",
+    "module": "POSTGRESQL",
+    "query": "How does a Unique index allow multiple identical email addresses in a student table?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-278",
+    "module": "POSTGRESQL",
+    "query": "Why does Durability guarantee that committed transaction data is discarded upon power failure?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-279",
+    "module": "POSTGRESQL",
+    "query": "Since Atomicity applies partial updates during unexpected server power outages, how does WAL recover?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-280",
+    "module": "POSTGRESQL",
+    "query": "How does COMMIT undo all modifications executed within the current SQL transaction block?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-281",
+    "module": "POSTGRESQL",
+    "query": "Why does Consistency allow transactions to transition the database into an invalid state?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-282",
+    "module": "POSTGRESQL",
+    "query": "How does Write-Ahead Logging write modifications to tables before recording them in the log?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-283",
+    "module": "POSTGRESQL",
+    "query": "Why does the leftmost prefix rule allow an index on (a, b) to index queries filtering only on b?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-284",
+    "module": "POSTGRESQL",
+    "query": "Since relational tables store records in fixed alphabetical order, why is ORDER BY needed?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-285",
+    "module": "POSTGRESQL",
+    "query": "How does a One-to-Many relationship store child IDs inside an array column in the parent row?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-286",
+    "module": "POSTGRESQL",
+    "query": "Why does Many-to-Many modeling prohibit primary keys within junction associative tables?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-287",
+    "module": "POSTGRESQL",
+    "query": "Since 2NF applies only to single-column primary keys, how does 3NF handle composite keys?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-288",
+    "module": "POSTGRESQL",
+    "query": "Why does 1NF require non-atomic nested object hierarchies inside individual table cells?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-289",
+    "module": "POSTGRESQL",
+    "query": "How does 3NF eliminate primary keys in favor of transitive non-key relationships?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-290",
+    "module": "POSTGRESQL",
+    "query": "Since B-Tree indexes sort rows in random hash order, how do they accelerate sorting?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-291",
+    "module": "POSTGRESQL",
+    "query": "Why does an index on (course_id, date) fail to accelerate queries filtering on course_id?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-292",
+    "module": "POSTGRESQL",
+    "query": "How does vector similarity search in pgvector utilize standard B-Tree indexes for L2 distance?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-293",
+    "module": "POSTGRESQL",
+    "query": "Why does Durability lose committed records whenever the operating system reboots?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-294",
+    "module": "POSTGRESQL",
+    "query": "How does Atomicity ensure that half of a bank transfer succeeds while the other half aborts?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-295",
+    "module": "POSTGRESQL",
+    "query": "Since Write-Ahead Logging is an optional feature disabled by default, how does Postgres survive crashes?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-296",
+    "module": "POSTGRESQL",
+    "query": "Why does an index on (course_id, date) fail completely when filtering on course_id alone?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-297",
+    "module": "POSTGRESQL",
+    "query": "How does Atomicity in ACID allow committed rows to disappear when the database client disconnects?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-298",
+    "module": "POSTGRESQL",
+    "query": "Since 1NF requires every table to omit primary keys, how are rows uniquely distinguished?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-299",
+    "module": "POSTGRESQL",
+    "query": "Why does a Unique index allow duplicate student registration emails in the same table?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  },
+  {
+    "id": "LEAVEOUT-POSTGRESQL-300",
+    "module": "POSTGRESQL",
+    "query": "How does foreign key validation skip checking the parent table during bulk INSERT operations?",
+    "expected": "REFUTED",
+    "category": "LEAVEOUT_DICTIONARY_FALSE_PREMISE"
+  }
+]

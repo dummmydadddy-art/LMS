@@ -1,0 +1,97 @@
+[
+  {
+    "label": "1 KB",
+    "target_bytes": 1024,
+    "actual_payload_bytes": 1014,
+    "statusCode": 200,
+    "latency": 444,
+    "error": null,
+    "body_snippet": "{\"success\":true,\"backend\":\"hybrid_rrf_coverage_aware\",\"query_intent\":{\"type\":\"EXACT_TERM\",\"isCompara"
+  },
+  {
+    "label": "16 KB",
+    "target_bytes": 16384,
+    "actual_payload_bytes": 16374,
+    "statusCode": 200,
+    "latency": 321,
+    "error": null,
+    "body_snippet": "{\"success\":true,\"backend\":\"hybrid_rrf_coverage_aware\",\"query_intent\":{\"type\":\"EXACT_TERM\",\"isCompara"
+  },
+  {
+    "label": "64 KB",
+    "target_bytes": 65536,
+    "actual_payload_bytes": 65526,
+    "statusCode": 200,
+    "latency": 432,
+    "error": null,
+    "body_snippet": "{\"success\":true,\"backend\":\"hybrid_rrf_coverage_aware\",\"query_intent\":{\"type\":\"EXACT_TERM\",\"isCompara"
+  },
+  {
+    "label": "256 KB",
+    "target_bytes": 262144,
+    "actual_payload_bytes": 262134,
+    "statusCode": 200,
+    "latency": 755,
+    "error": null,
+    "body_snippet": "{\"success\":true,\"backend\":\"hybrid_rrf_coverage_aware\",\"query_intent\":{\"type\":\"EXACT_TERM\",\"isCompara"
+  },
+  {
+    "label": "512 KB",
+    "target_bytes": 524288,
+    "actual_payload_bytes": 524278,
+    "statusCode": 200,
+    "latency": 1186,
+    "error": null,
+    "body_snippet": "{\"success\":true,\"backend\":\"hybrid_rrf_coverage_aware\",\"query_intent\":{\"type\":\"EXACT_TERM\",\"isCompara"
+  },
+  {
+    "label": "1000 KB (near limit)",
+    "target_bytes": 1024000,
+    "actual_payload_bytes": 1023990,
+    "statusCode": 200,
+    "latency": 1906,
+    "error": null,
+    "body_snippet": "{\"success\":true,\"backend\":\"hybrid_rrf_coverage_aware\",\"query_intent\":{\"type\":\"EXACT_TERM\",\"isCompara"
+  },
+  {
+    "label": "1048576 B (exact 1MB limit)",
+    "target_bytes": 1048526,
+    "actual_payload_bytes": 1048516,
+    "statusCode": 200,
+    "latency": 1915,
+    "error": null,
+    "body_snippet": "{\"success\":true,\"backend\":\"hybrid_rrf_coverage_aware\",\"query_intent\":{\"type\":\"EXACT_TERM\",\"isCompara"
+  },
+  {
+    "label": "1048600 B (just over 1MB)",
+    "target_bytes": 1048600,
+    "actual_payload_bytes": 1048590,
+    "statusCode": 413,
+    "latency": 75,
+    "error": "Payload Too Large: Maximum allowed request size is 1MB.",
+    "body_snippet": "{\"success\":false,\"error\":\"Payload Too Large: Maximum allowed request size is 1MB.\"}"
+  },
+  {
+    "label": "2 MB",
+    "actual_payload_bytes": 2097142,
+    "statusCode": 500,
+    "error": "read ECONNRESET",
+    "latency": 4
+  },
+  {
+    "label": "4 MB",
+    "actual_payload_bytes": 4194294,
+    "statusCode": 500,
+    "error": "read ECONNRESET",
+    "latency": 76
+  },
+  {
+    "label": "8 MB",
+    "target_bytes": 8388608,
+    "actual_payload_bytes": 8388598,
+    "statusCode": 413,
+    "latency": 41,
+    "error": "Payload Too Large: Maximum allowed request size is 1MB.",
+    "body_snippet": "{\"success\":false,\"error\":\"Payload Too Large: Maximum allowed request size is 1MB.\"}"
+  }
+]

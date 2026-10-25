@@ -1,0 +1,1611 @@
+[
+  {
+    "id": "mh_2m_01",
+    "query": "How should a React component using useEffect send an HTTP Authorization header to an Express server with Bearer JWT middleware?",
+    "modules": [
+      "react",
+      "node"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React useEffect triggers fetch -> Express JWT middleware validates Authorization header"
+  },
+  {
+    "id": "mh_2m_02",
+    "query": "When handling cross-origin requests from a React frontend at localhost:3000 to an Express API at localhost:5000, what CORS middleware configuration is required?",
+    "modules": [
+      "react",
+      "node"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React frontend origin -> Express cors middleware headers"
+  },
+  {
+    "id": "mh_2m_03",
+    "query": "How can React form submission state in useState be aligned with Express body-parser json middleware error responses?",
+    "modules": [
+      "react",
+      "node"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React useState captures form -> Express json body parser parses payload"
+  },
+  {
+    "id": "mh_2m_04",
+    "query": "How should an abort controller signal in React useEffect cleanup be handled by an Express route handler when the client disconnects?",
+    "modules": [
+      "react",
+      "node"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React useEffect cleanup aborts request -> Express route detects aborted connection"
+  },
+  {
+    "id": "mh_2m_05",
+    "query": "What is the recommended approach for syncing an authentication status between a React AuthContext provider and Express cookie-session middleware?",
+    "modules": [
+      "react",
+      "node"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React useContext manages auth state -> Express validates session cookie"
+  },
+  {
+    "id": "mh_2m_06",
+    "query": "How does React custom hook data fetching interact with an Express error-handling middleware that returns 500 status codes?",
+    "modules": [
+      "react",
+      "node"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Custom hook catches error -> Express 4-argument error middleware formats payload"
+  },
+  {
+    "id": "mh_2m_07",
+    "query": "Why does React useContext trigger direct HTTP network requests on its own without any fetch or Axios call to the Express backend?",
+    "modules": [
+      "react",
+      "node"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: useContext is strictly an in-memory client state mechanism; it does not issue HTTP requests"
+  },
+  {
+    "id": "mh_2m_08",
+    "query": "Can an Express route handler directly mutate the component state of a React user interface running in the user's browser?",
+    "modules": [
+      "react",
+      "node"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: Express runs server-side and communicates via HTTP responses; it cannot directly mutate browser client state"
+  },
+  {
+    "id": "mh_2m_09",
+    "query": "How does an Express route handler use parameterized queries with node-postgres to prevent SQL injection during user signup?",
+    "modules": [
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Express req.body -> Parameterized query ($1, $2) executed in PostgreSQL"
+  },
+  {
+    "id": "mh_2m_10",
+    "query": "How should an Express error handling middleware interpret PostgreSQL foreign key violation error code 23503?",
+    "modules": [
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "PostgreSQL FK violation 23503 -> Express error middleware maps to 400 Bad Request"
+  },
+  {
+    "id": "mh_2m_11",
+    "query": "What is the proper way to manage a PostgreSQL connection pool inside an Express application lifecycle across multiple route requests?",
+    "modules": [
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Express app startup -> pg.Pool shared instance -> client release in route finally block"
+  },
+  {
+    "id": "mh_2m_12",
+    "query": "How should an Express transaction route wrap multiple SQL statements using BEGIN, COMMIT, and ROLLBACK in PostgreSQL?",
+    "modules": [
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Express endpoint starts transaction -> PostgreSQL executes statements -> ROLLBACK on error"
+  },
+  {
+    "id": "mh_2m_13",
+    "query": "How does pagination query parameters (limit and offset) in an Express GET endpoint translate to PostgreSQL SQL LIMIT and OFFSET queries?",
+    "modules": [
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Express req.query.limit/offset -> PostgreSQL SELECT with LIMIT $1 OFFSET $2"
+  },
+  {
+    "id": "mh_2m_14",
+    "query": "Why does PostgreSQL automatically validate Express router middleware functions before saving database table records?",
+    "modules": [
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: PostgreSQL has no knowledge of Express middleware; it validates database schema constraints"
+  },
+  {
+    "id": "mh_2m_15",
+    "query": "How does an Express route handler handle a PostgreSQL unique constraint violation error 23505 when creating a user account?",
+    "modules": [
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "PostgreSQL 23505 unique constraint -> Express returns 409 Conflict status"
+  },
+  {
+    "id": "mh_2m_16",
+    "query": "Can an Express backend establish a direct peer-to-peer connection without using TCP/IP to query PostgreSQL database tables?",
+    "modules": [
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: PostgreSQL connections require standard TCP/IP networking or Unix domain sockets"
+  },
+  {
+    "id": "mh_2m_17",
+    "query": "How does the JavaScript lexical closure mechanism cause stale state values inside a React useEffect or setInterval callback?",
+    "modules": [
+      "js",
+      "react"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "React Hooks Tutorial"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "JS lexical closure captures state variable at render time -> React re-render creates new state"
+  },
+  {
+    "id": "mh_2m_18",
+    "query": "How does object destructuring and rest syntax in JavaScript ES6+ optimize props passing and state immutability in React useState?",
+    "modules": [
+      "js",
+      "react"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "React Hooks Tutorial"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "JS spread/rest syntax -> React immutable state updates (...prev, newProp)"
+  },
+  {
+    "id": "mh_2m_19",
+    "query": "Why does passing an inline JavaScript arrow function to a React child component break React.memo reference equality unless useCallback is used?",
+    "modules": [
+      "js",
+      "react"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "React Hooks Tutorial"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "JS instantiates new function reference on every render -> React.memo shallow comparison detects change"
+  },
+  {
+    "id": "mh_2m_20",
+    "query": "How do JavaScript Promises and async/await handle unhandled rejections inside a React useEffect hook?",
+    "modules": [
+      "js",
+      "react"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "React Hooks Tutorial"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "JS Promise rejection -> React useEffect cannot be an async function directly -> requires inner async function with try/catch"
+  },
+  {
+    "id": "mh_2m_21",
+    "query": "Why does JavaScript prototypal inheritance automatically trigger React component re-renders when a prototype property changes?",
+    "modules": [
+      "js",
+      "react"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "React Hooks Tutorial"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: React state updates require setState/useState setter, prototype changes do not trigger re-renders"
+  },
+  {
+    "id": "mh_2m_22",
+    "query": "How does the JavaScript Array.prototype.map function require a unique key prop when rendering lists in React components?",
+    "modules": [
+      "js",
+      "react"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "React Hooks Tutorial"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "JS Array.map transforms data -> React reconciliation algorithm requires unique key prop"
+  },
+  {
+    "id": "mh_2m_23",
+    "query": "How does JavaScript strict equality (===) determine whether React useMemo recomputes its cached value?",
+    "modules": [
+      "js",
+      "react"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "React Hooks Tutorial"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React useMemo dependency array comparison uses Object.is / strict equality to detect dependency changes"
+  },
+  {
+    "id": "mh_2m_24",
+    "query": "How does the JavaScript V8 event loop microtask queue differ from Node.js process.nextTick and setImmediate in an Express server?",
+    "modules": [
+      "js",
+      "node"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "V8 Promise microtasks -> Node.js event loop phases and process.nextTick priority"
+  },
+  {
+    "id": "mh_2m_25",
+    "query": "How should asynchronous Express route handlers use JavaScript try/catch with async/await to forward rejected promises to next(err)?",
+    "modules": [
+      "js",
+      "node"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "JS async/await rejects promise -> Express route handler catches in try/catch -> passes to next(err)"
+  },
+  {
+    "id": "mh_2m_26",
+    "query": "How does ES6 Module syntax (import/export) compare with CommonJS (require/module.exports) in modern Node.js and Express setups?",
+    "modules": [
+      "js",
+      "node"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "ES6 import/export static loading vs CommonJS dynamic synchronous require in Node.js"
+  },
+  {
+    "id": "mh_2m_27",
+    "query": "How does the JavaScript call stack behave when an Express middleware calls next() versus when it returns an unawaited promise?",
+    "modules": [
+      "js",
+      "node"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "JS synchronous call stack execution of next() vs asynchronous promise dispatch"
+  },
+  {
+    "id": "mh_2m_28",
+    "query": "Why does a synchronous while(true) loop in JavaScript block the entire Node.js event loop and freeze incoming Express requests?",
+    "modules": [
+      "js",
+      "node"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Single-threaded JS event loop: synchronous loop blocks thread, preventing I/O polling in Express"
+  },
+  {
+    "id": "mh_2m_29",
+    "query": "How do JavaScript closures allow Express middleware factory functions to retain configuration options across multiple requests?",
+    "modules": [
+      "js",
+      "node"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Outer factory function arguments closed over by returned Express middleware function (req, res, next)"
+  },
+  {
+    "id": "mh_2m_30",
+    "query": "How do JavaScript Promise.all settled results allow an Express endpoint to aggregate multiple independent async I/O operations?",
+    "modules": [
+      "js",
+      "node"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Promise.all concurrent async operations -> Express awaits array of results and returns unified JSON"
+  },
+  {
+    "id": "mh_3m_01",
+    "query": "How does a user authentication workflow flow from React AuthContext through Express JWT verification middleware down to a PostgreSQL users table query?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React useContext stores JWT -> Express middleware verifies token -> PostgreSQL queries user record"
+  },
+  {
+    "id": "mh_3m_02",
+    "query": "When a React form submits new student profile data, how does Express validate the payload before executing a parameterized INSERT into PostgreSQL?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React useState captures form -> Express body parser validates -> PostgreSQL executes INSERT ($1, $2)"
+  },
+  {
+    "id": "mh_3m_03",
+    "query": "How should an application handle a PostgreSQL database deadlock error when propagating failure through Express error middleware back to React error boundary?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "PostgreSQL transaction deadlock -> Express maps to 500 error -> React error boundary catches in UI"
+  },
+  {
+    "id": "mh_3m_04",
+    "query": "How does pagination state in React useState coordinate with Express query parameters (page/limit) to perform indexed SQL queries in PostgreSQL?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React useState manages page number -> Express parses req.query -> PostgreSQL utilizes B-tree index on offset"
+  },
+  {
+    "id": "mh_3m_05",
+    "query": "Why does React useContext automatically write user authentication data directly into the PostgreSQL database without any backend server?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: React runs in browser; client state cannot directly connect or write to PostgreSQL without backend API"
+  },
+  {
+    "id": "mh_3m_06",
+    "query": "Why does a PostgreSQL foreign key constraint automatically trigger a client-side component re-render in React without an Express API call?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: PostgreSQL database events cannot directly update React client-side component state"
+  },
+  {
+    "id": "mh_3m_07",
+    "query": "Why does Express middleware automatically encrypt PostgreSQL database disk partitions when a React component calls useState?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: useState is client memory; Express middleware handles requests; neither encrypts Postgres disk partitions"
+  },
+  {
+    "id": "mh_3m_08",
+    "query": "How does an optimistic UI update in React rollback if the Express backend returns a PostgreSQL transaction serialization failure (40001)?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React optimistically sets state -> Express receives Postgres 40001 serialization error -> React reverts state"
+  },
+  {
+    "id": "mh_3m_09",
+    "query": "In an e-commerce LMS course checkout, how does React form submission trigger an Express route that wraps course enrollment in a PostgreSQL ACID transaction?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React button click -> Express POST endpoint -> PostgreSQL BEGIN, INSERT enrollments, UPDATE balance, COMMIT"
+  },
+  {
+    "id": "mh_3m_010",
+    "query": "Why does PostgreSQL create B-tree indexes directly inside the React virtual DOM tree when an Express route is defined?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: PostgreSQL indexes are server storage structures, completely unrelated to the browser Virtual DOM"
+  },
+  {
+    "id": "mh_3m_11",
+    "query": "How does a React search input with debouncing trigger Express search routes that leverage PostgreSQL ILIKE or full-text indexes?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React debounced state -> Express GET /api/search?q=... -> PostgreSQL index-backed query"
+  },
+  {
+    "id": "mh_3m_12",
+    "query": "Can an Express backend delete all tables in PostgreSQL if a React component encounters an unhandled JavaScript error in useEffect?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: React frontend UI errors are isolated in the browser and do not cause database dropping"
+  },
+  {
+    "id": "mh_3m_13",
+    "query": "How do CORS headers in Express protect PostgreSQL data from unauthorized cross-origin requests initiated by malicious React applications?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Browser enforces CORS headers from Express -> unauthorized origins blocked from reaching database queries"
+  },
+  {
+    "id": "mh_3m_14",
+    "query": "Why does React useRef automatically store PostgreSQL database connection credentials securely across client browser reloads?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: useRef is in-memory client state cleared on reload; database credentials must never be in frontend"
+  },
+  {
+    "id": "mh_3m_15",
+    "query": "How should an Express service handle a PostgreSQL connection pool exhaustion error and communicate service unavailability to a React frontend?",
+    "modules": [
+      "react",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "PostgreSQL pool timeout -> Express catches error, returns 503 Service Unavailable -> React displays retry UI"
+  },
+  {
+    "id": "mh_3m_16",
+    "query": "How does the JavaScript V8 event loop handle asynchronous non-blocking I/O when an Express handler queries PostgreSQL via pg.query()?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Node.js dispatches async socket query -> event loop continues -> PostgreSQL response triggers callback/promise in microtask queue"
+  },
+  {
+    "id": "mh_3m_17",
+    "query": "How should JavaScript async/await and try/catch be structured in an Express route to ensure PostgreSQL transaction client release in a finally block?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "JS async/await -> Express route executes pg.connect() -> client.release() in finally block guarantees pool health"
+  },
+  {
+    "id": "mh_3m_18",
+    "query": "Why does a JavaScript unhandled promise rejection in an Express route cause PostgreSQL database tables to be permanently dropped?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: An unhandled rejection in Node crashes the process or logs an error; it cannot drop PostgreSQL tables"
+  },
+  {
+    "id": "mh_3m_19",
+    "query": "How does JavaScript Promise.all allow an Express controller to fetch user profile, course enrollments, and quiz grades from PostgreSQL in parallel?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "JS Promise.all dispatches 3 concurrent PostgreSQL queries across connection pool -> awaits all results"
+  },
+  {
+    "id": "mh_3m_20",
+    "query": "Why does the JavaScript prototype chain in Node.js automatically generate PostgreSQL primary key UUID sequences on database tables?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: Prototype chain is JavaScript language object inheritance; PostgreSQL UUIDs are generated by database functions"
+  },
+  {
+    "id": "mh_3m_21",
+    "query": "How does JSON data serialization in JavaScript (JSON.stringify) interact with Express body parsing and PostgreSQL JSONB column storage?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Express parses JSON body into JS object -> passed as parameter to PostgreSQL JSONB column"
+  },
+  {
+    "id": "mh_3m_22",
+    "query": "Why does an unhandled JavaScript SyntaxError in an Express middleware automatically rollback committed PostgreSQL transactions?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: Committed transactions satisfy ACID Durability and cannot be rolled back by subsequent code errors"
+  },
+  {
+    "id": "mh_3m_23",
+    "query": "How do JavaScript Array reduction and mapping methods process tabular row results returned from a PostgreSQL JOIN query in Express?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "PostgreSQL returns flat array of joined rows -> JS Array.reduce transforms into nested parent-child objects"
+  },
+  {
+    "id": "mh_3m_24",
+    "query": "Can JavaScript arrow functions bypass PostgreSQL row-level security policies when executed inside an Express route?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: Arrow functions have no influence on PostgreSQL server-side security policies"
+  },
+  {
+    "id": "mh_3m_25",
+    "query": "How does the Node.js event loop scheduling of microtasks ensure that database query callbacks are processed promptly after PostgreSQL sends results?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Node.js poll phase receives socket data -> resolves promise -> microtask runs immediately at next tick"
+  },
+  {
+    "id": "mh_3m_26",
+    "query": "Why does JavaScript ES6 destructuring of an Express req.body object automatically sanitize SQL injection without parameterized queries in PostgreSQL?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: Destructuring merely unpacks object properties; it does not sanitize strings for SQL injection"
+  },
+  {
+    "id": "mh_3m_27",
+    "query": "How can an Express application use JavaScript BigInt or numeric strings when handling high-precision PostgreSQL BIGINT primary keys?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "PostgreSQL 64-bit BIGINT exceeds JS Number.MAX_SAFE_INTEGER -> pg driver returns string or BigInt to preserve precision"
+  },
+  {
+    "id": "mh_3m_28",
+    "query": "Why does a synchronous sleep in JavaScript make PostgreSQL queries execute ten times faster across the Express connection pool?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: Synchronous sleep blocks the Node thread and stalls all request processing"
+  },
+  {
+    "id": "mh_3m_29",
+    "query": "How does an Express batch endpoint use JavaScript async generators or streams to process large result sets from PostgreSQL without memory exhaustion?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "PostgreSQL cursor stream -> Node.js readable stream in Express pipeline -> backpressure managed by event loop"
+  },
+  {
+    "id": "mh_3m_30",
+    "query": "How does JavaScript Date parsing in Express map to PostgreSQL TIMESTAMP WITH TIME ZONE columns to prevent timezone drift across international students?",
+    "modules": [
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "JS ISO 8601 string -> Express validation -> PostgreSQL stores in UTC via TIMESTAMPTZ"
+  },
+  {
+    "id": "mh_4m_01",
+    "query": "Explain the end-to-end data flow when a React user submits a form: how JavaScript Promise and async/await handle the fetch, Express middleware validates the token, and PostgreSQL commits the transaction.",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React form -> JS async fetch -> Express auth middleware -> PostgreSQL ACID transaction"
+  },
+  {
+    "id": "mh_4m_02",
+    "query": "How does an authentication state flow from PostgreSQL password hash comparison in Express through JWT generation back to a React AuthContext using JavaScript destructuring?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Postgres bcrypt hash -> Express JWT issue -> JS destructuring of response -> React useContext"
+  },
+  {
+    "id": "mh_4m_03",
+    "query": "Why does a JavaScript microtask queue flush in the browser directly commit an uncommitted PostgreSQL transaction in the database without an Express API call?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: Browser microtask queue has no connection to server-side PostgreSQL transactions"
+  },
+  {
+    "id": "mh_4m_04",
+    "query": "How does an error propagate across the stack from a PostgreSQL foreign key error through Express next(err) middleware to a rejected JavaScript Promise caught in React useEffect?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Postgres FK violation -> Express error middleware 400 response -> JS fetch rejects/handles status -> React UI error state"
+  },
+  {
+    "id": "mh_4m_05",
+    "query": "Why does React useEffect automatically execute PostgreSQL EXPLAIN ANALYZE queries on database tables using JavaScript arrow functions without Express?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: React useEffect runs in browser; EXPLAIN ANALYZE is an administrative SQL command requiring server access"
+  },
+  {
+    "id": "mh_4m_06",
+    "query": "How do React custom hooks, JavaScript async/await, Express route handlers, and PostgreSQL parameterized queries collaborate to implement secure course enrollment?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React custom hook wraps async logic -> Express receives request -> PostgreSQL executes parameterized query"
+  },
+  {
+    "id": "mh_4m_07",
+    "query": "Why does the V8 microtask queue in JavaScript automatically rollback an uncommitted PostgreSQL transaction initiated by an Express endpoint when a React component unmounts?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: Client-side component unmounting does not automatically notify database server to rollback transactions"
+  },
+  {
+    "id": "mh_4m_08",
+    "query": "How does pagination data flow from PostgreSQL LIMIT/OFFSET through Express route queries and JavaScript JSON serialization into a React paginated list component?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Postgres query -> Express serializes rows -> JS fetch resolves JSON -> React renders list with pagination controls"
+  },
+  {
+    "id": "mh_4m_09",
+    "query": "Why does PostgreSQL ACID Isolation guarantee that React components will never encounter stale state closures in JavaScript?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: ACID Isolation governs database concurrency; stale closures are a JavaScript lexical scoping behavior"
+  },
+  {
+    "id": "mh_4m_10",
+    "query": "How can an LMS student dashboard use React useReducer, JavaScript immutable updates, Express REST routes, and PostgreSQL 3NF normalized tables to track module progress?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Postgres 3NF tables -> Express REST API -> JS immutable updates in React useReducer"
+  },
+  {
+    "id": "mh_4m_11",
+    "query": "Why does defining an index in PostgreSQL automatically memoize all React child components using JavaScript Object.is comparison without Express code?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: Database indexing has no link to React component memoization or Object.is"
+  },
+  {
+    "id": "mh_4m_12",
+    "query": "How does debounced user input in React interact with JavaScript event throttling, Express rate-limiting middleware, and PostgreSQL index lookups?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React debounce delays fetch -> Express rate limiter verifies threshold -> PostgreSQL executes B-tree lookup"
+  },
+  {
+    "id": "mh_4m_13",
+    "query": "Why does an Express JWT verification middleware failure trigger an immediate PostgreSQL database schema migration using React useState?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: JWT auth failures return 401 Unauthorized; they never trigger schema migrations or React state changes"
+  },
+  {
+    "id": "mh_4m_14",
+    "query": "Explain how a file upload progress bar in React uses JavaScript async events, Express multipart handling, and PostgreSQL metadata recording.",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React upload UI -> JS xhr progress event -> Express file handling -> PostgreSQL metadata insert"
+  },
+  {
+    "id": "mh_4m_15",
+    "query": "Why does a PostgreSQL CHECK constraint violation cause the browser's JavaScript event loop to terminate permanently in React?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: Database constraint errors are returned as HTTP 400/500 responses; they do not terminate the browser engine"
+  },
+  {
+    "id": "mh_4m_16",
+    "query": "How does an optimistic concurrency pattern manage updates across React state, JavaScript fetch headers (ETag/If-Match), Express validation, and PostgreSQL row versioning?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "Postgres version column -> Express sends ETag -> React sends If-Match -> conflict detected if mismatched"
+  },
+  {
+    "id": "mh_4m_17",
+    "query": "Why does React.memo automatically create PostgreSQL database indexes for every prop passed into a child component?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": false,
+    "reasoning_chain": "False premise: React.memo is purely client-side rendering optimization; it has no database interaction"
+  },
+  {
+    "id": "mh_4m_18",
+    "query": "How should a full-stack student grading workflow orchestrate React state, JavaScript async dispatch, Express transaction middleware, and PostgreSQL serializable transactions?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React submission -> JS async POST -> Express begins SERIALIZABLE transaction -> PostgreSQL commits grades"
+  },
+  {
+    "id": "mh_4m_19",
+    "query": "How does session revocation work across a React logout button, JavaScript cookie clearance, Express token blacklisting middleware, and PostgreSQL active session deletion?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React triggers logout -> Express receives request -> PostgreSQL deletes session record -> Express clears cookie"
+  },
+  {
+    "id": "mh_4m_20",
+    "query": "How does an LMS course search experience coordinate React controlled inputs, JavaScript debouncing, Express REST queries, and PostgreSQL B-tree indexed searching?",
+    "modules": [
+      "react",
+      "js",
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": false,
+    "is_trap": false,
+    "reasoning_chain": "React input -> JS debounce -> Express API call -> PostgreSQL indexed search -> React updates results"
+  },
+  {
+    "id": "mh_trap_01",
+    "query": "How does React useContext automatically sync state with an Apache Kafka cluster partition through Express middleware?",
+    "modules": [
+      "react",
+      "node"
+    ],
+    "expected_docs": [],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "reasoning_chain": "Apache Kafka is out-of-domain. Rejection required."
+  },
+  {
+    "id": "mh_trap_02",
+    "query": "How does an Express server coordinate PostgreSQL transactions with a Kubernetes pod autoscaler using Docker Swarm metrics?",
+    "modules": [
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "reasoning_chain": "Kubernetes and Docker Swarm are out-of-domain. Rejection required."
+  },
+  {
+    "id": "mh_trap_03",
+    "query": "Explain how JavaScript async/await in React connects directly to a MongoDB replica set without Express or PostgreSQL.",
+    "modules": [
+      "react",
+      "js"
+    ],
+    "expected_docs": [],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "reasoning_chain": "MongoDB is out-of-domain. Rejection required."
+  },
+  {
+    "id": "mh_trap_04",
+    "query": "How does an Express JWT middleware route verify client tokens using Redis in-memory cache and GraphQL subscriptions?",
+    "modules": [
+      "node"
+    ],
+    "expected_docs": [],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "reasoning_chain": "Redis and GraphQL are out-of-domain. Rejection required."
+  },
+  {
+    "id": "mh_trap_05",
+    "query": "How does a React custom hook subscribe to a RabbitMQ message exchange through Express WebSocket gateways?",
+    "modules": [
+      "react",
+      "node"
+    ],
+    "expected_docs": [],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "reasoning_chain": "RabbitMQ and WebSockets are out-of-domain. Rejection required."
+  },
+  {
+    "id": "mh_trap_06",
+    "query": "How does PostgreSQL database replication sync transactions with Cassandra wide-column families across AWS regions?",
+    "modules": [
+      "postgres"
+    ],
+    "expected_docs": [],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "reasoning_chain": "Cassandra and AWS multi-region replication are out-of-domain. Rejection required."
+  },
+  {
+    "id": "mh_trap_07",
+    "query": "Explain how Django ORM models in Python directly replace PostgreSQL schema migrations inside an Express Node.js application.",
+    "modules": [
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "reasoning_chain": "Django and Python are out-of-domain. Rejection required."
+  },
+  {
+    "id": "mh_trap_08",
+    "query": "How does Vue 3 Pinia store management communicate with an Express REST API to query PostgreSQL relational tables?",
+    "modules": [
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "reasoning_chain": "Vue 3 and Pinia are out-of-domain. Rejection required."
+  },
+  {
+    "id": "mh_trap_09",
+    "query": "How do Solidity smart contract events emit notifications that trigger React useEffect state updates via Express webhooks?",
+    "modules": [
+      "react",
+      "node"
+    ],
+    "expected_docs": [],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "reasoning_chain": "Solidity and smart contracts are out-of-domain. Rejection required."
+  },
+  {
+    "id": "mh_trap_10",
+    "query": "How does Spring Boot microservice security integrate with Node.js Express middleware to manage PostgreSQL ACID locks?",
+    "modules": [
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "reasoning_chain": "Spring Boot is out-of-domain. Rejection required."
+  },
+  {
+    "id": "mh_trap_11",
+    "query": "Why does PostgreSQL 3NF normalization require deleting all React useState hooks from frontend source code?",
+    "modules": [
+      "postgres",
+      "react"
+    ],
+    "expected_docs": [
+      "PostgreSQL Database Design & Optimization",
+      "React Hooks Tutorial"
+    ],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "reasoning_chain": "False premise: 3NF database design is server-side and has zero bearing on React component state hooks"
+  },
+  {
+    "id": "mh_trap_12",
+    "query": "Why does Express app.use(express.json()) automatically execute git commit and push commands on the developer's laptop?",
+    "modules": [
+      "node"
+    ],
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "reasoning_chain": "False premise: express.json() parses incoming HTTP request JSON bodies; it does not touch git version control"
+  },
+  {
+    "id": "mh_trap_13",
+    "query": "Why does the JavaScript event loop call stack run exclusively on GPU cores during PostgreSQL table joins?",
+    "modules": [
+      "js",
+      "postgres"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "reasoning_chain": "False premise: V8 event loop runs on CPU single thread; PostgreSQL joins run on database server CPU processes"
+  },
+  {
+    "id": "mh_trap_14",
+    "query": "How does a React component use useMemo to compile C++ binaries directly inside PostgreSQL server memory?",
+    "modules": [
+      "react",
+      "postgres"
+    ],
+    "expected_docs": [
+      "React Hooks Tutorial",
+      "PostgreSQL Database Design & Optimization"
+    ],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "reasoning_chain": "False premise: useMemo caches JS calculation in browser memory; it cannot compile C++ or access Postgres memory"
+  },
+  {
+    "id": "mh_trap_15",
+    "query": "Why does an uncommitted PostgreSQL transaction automatically corrupt the browser DOM when navigating pages in React?",
+    "modules": [
+      "postgres",
+      "react"
+    ],
+    "expected_docs": [
+      "PostgreSQL Database Design & Optimization",
+      "React Hooks Tutorial"
+    ],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "reasoning_chain": "False premise: PostgreSQL transactions are isolated on server; client DOM is unaffected by uncommitted transactions"
+  },
+  {
+    "id": "mh_trap_16",
+    "query": "How does an Express middleware authenticate users by querying their local Bluetooth devices via JavaScript Web Bluetooth API?",
+    "modules": [
+      "node",
+      "js"
+    ],
+    "expected_docs": [],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "reasoning_chain": "Web Bluetooth API is out-of-domain. Rejection required."
+  },
+  {
+    "id": "mh_trap_17",
+    "query": "Why does adding a B-tree index in PostgreSQL automatically format CSS styles with border-box in React components?",
+    "modules": [
+      "postgres",
+      "react"
+    ],
+    "expected_docs": [
+      "PostgreSQL Database Design & Optimization",
+      "React Hooks Tutorial"
+    ],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "reasoning_chain": "False premise: B-tree indexes speed up SQL queries; they do not manipulate CSS styles or React components"
+  },
+  {
+    "id": "mh_trap_18",
+    "query": "How does React useContext connect to Ethereum blockchain gas trackers to pay transaction fees in PostgreSQL?",
+    "modules": [
+      "react",
+      "postgres"
+    ],
+    "expected_docs": [],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "reasoning_chain": "Ethereum and blockchain gas are out-of-domain. Rejection required."
+  },
+  {
+    "id": "mh_trap_19",
+    "query": "Why does a JavaScript Promise resolve faster when a student uses a mechanical keyboard instead of a membrane keyboard?",
+    "modules": [
+      "js"
+    ],
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "reasoning_chain": "False premise: Hardware keyboard switches have no impact on JavaScript V8 Promise microtask execution speed"
+  },
+  {
+    "id": "mh_trap_20",
+    "query": "How does an Express server compress HTTP responses using Quantum Entanglement protocols in PostgreSQL?",
+    "modules": [
+      "node",
+      "postgres"
+    ],
+    "expected_docs": [],
+    "has_false_premise": true,
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "reasoning_chain": "Quantum Entanglement protocols are pseudo-scientific/out-of-domain. Rejection required."
+  }
+]

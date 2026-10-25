@@ -1,0 +1,1202 @@
+[
+    {
+        "id": "CHAL-NEG-0001",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Does const create a variable binding that cannot be reassigned after initialization?"
+    },
+    {
+        "id": "CHAL-NEG-0002",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Can arrow functions be passed as callbacks without creating their own dynamic this context?"
+    },
+    {
+        "id": "CHAL-NEG-0003",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Do arrow functions execute without receiving a local arguments object?"
+    },
+    {
+        "id": "CHAL-NEG-0004",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Does the temporal dead zone prevent accessing let variables before their declaration line?"
+    },
+    {
+        "id": "CHAL-NEG-0005",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Does updating a ref object current property avoid triggering a component re-render?"
+    },
+    {
+        "id": "CHAL-NEG-0006",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Can functional components use useRef to hold mutable references without forcing a render?"
+    },
+    {
+        "id": "CHAL-NEG-0007",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Does React state immutability require developers to avoid mutating existing array state directly?"
+    },
+    {
+        "id": "CHAL-NEG-0008",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Can Node.js handle asynchronous disk reads via libuv worker threads without blocking the main event loop thread?"
+    },
+    {
+        "id": "CHAL-NEG-0009",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Does non-blocking I\/O allow the server to process concurrent network requests without spawning a new thread per connection?"
+    },
+    {
+        "id": "CHAL-NEG-0010",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Does an idempotent HTTP GET request retrieve server data without altering server state?"
+    },
+    {
+        "id": "CHAL-NEG-0011",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Does Third Normal Form require eliminating transitive dependencies so non-key columns do not depend on other non-key columns?"
+    },
+    {
+        "id": "CHAL-NEG-0012",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Does transaction atomicity ensure an aborted transaction leaves no partial changes behind?"
+    },
+    {
+        "id": "CHAL-NEG-0013",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Does display: flex arrange child items without requiring float or clear properties?"
+    },
+    {
+        "id": "CHAL-NEG-0014",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Does box-sizing: border-box ensure that padding does not increase the rendered element width beyond its specified width?"
+    },
+    {
+        "id": "CHAL-NEG-0015",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Does Promise.all reject immediately without waiting for other promises if any single input promise rejects?"
+    },
+    {
+        "id": "CHAL-NEG-0016",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Does useEffect cleanup run before re-running the effect to avoid memory leaks?"
+    },
+    {
+        "id": "CHAL-NEG-0017",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Can express middleware call next() without arguments to pass control to the next handler without signaling an error?"
+    },
+    {
+        "id": "CHAL-NEG-0018",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "SUPPORTED",
+        "query": "Does a unique index prevent duplicate values without requiring the column to be designated as the primary key?"
+    },
+    {
+        "id": "CHAL-NEG-0019",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "REFUTED",
+        "query": "Does const prevent mutating the interior properties of an object bound to the variable?"
+    },
+    {
+        "id": "CHAL-NEG-0020",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "REFUTED",
+        "query": "Can var declarations avoid variable hoisting when defined inside a function scope?"
+    },
+    {
+        "id": "CHAL-NEG-0021",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "REFUTED",
+        "query": "Do arrow functions inherit dynamic this binding without relying on their lexical enclosing scope?"
+    },
+    {
+        "id": "CHAL-NEG-0022",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "REFUTED",
+        "query": "Does useState allow direct in-place mutation of state objects without calling the setter function?"
+    },
+    {
+        "id": "CHAL-NEG-0023",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "REFUTED",
+        "query": "Does useRef avoid persisting its current value across consecutive component renders?"
+    },
+    {
+        "id": "CHAL-NEG-0024",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "REFUTED",
+        "query": "Does Node.js execute CPU-intensive synchronous encryption loops on the main thread without causing latency spikes?"
+    },
+    {
+        "id": "CHAL-NEG-0025",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "REFUTED",
+        "query": "Can express.json() parse multipart\/form-data request payloads without additional middleware?"
+    },
+    {
+        "id": "CHAL-NEG-0026",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "REFUTED",
+        "query": "Is HTTP POST considered an idempotent operation that does not create new resources on repeated calls?"
+    },
+    {
+        "id": "CHAL-NEG-0027",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "REFUTED",
+        "query": "Does HTTP status code 404 indicate that the client request lacked valid authentication credentials without checking existence?"
+    },
+    {
+        "id": "CHAL-NEG-0028",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "REFUTED",
+        "query": "Does First Normal Form permit table columns to store comma-separated lists without requiring atomic scalar values?"
+    },
+    {
+        "id": "CHAL-NEG-0029",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "REFUTED",
+        "query": "Does Second Normal Form permit partial functional dependencies without requiring dependence on the full primary key?"
+    },
+    {
+        "id": "CHAL-NEG-0030",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "NEGATION_SCOPE",
+        "expected": "REFUTED",
+        "query": "Does COMMIT cancel pending transaction updates without persisting modifications to disk?"
+    },
+    {
+        "id": "CHAL-CMP-0001",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Is let block-scoped, and does it enter the temporal dead zone until declared?"
+    },
+    {
+        "id": "CHAL-CMP-0002",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Is const block-scoped, and does it require initialization at the declaration point?"
+    },
+    {
+        "id": "CHAL-CMP-0003",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Are microtasks processed with higher priority than macrotasks, and does the microtask queue drain before rendering?"
+    },
+    {
+        "id": "CHAL-CMP-0004",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Does flexbox support row layout, and does justify-content align items along the main axis?"
+    },
+    {
+        "id": "CHAL-CMP-0005",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Does CSS Grid support two-dimensional layouts, while flexbox is primarily designed for one-dimensional layouts?"
+    },
+    {
+        "id": "CHAL-CMP-0006",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Does content-box exclude padding from width, whereas border-box includes both padding and border in width?"
+    },
+    {
+        "id": "CHAL-CMP-0007",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Does useState manage local component state, while useEffect coordinates asynchronous side effects?"
+    },
+    {
+        "id": "CHAL-CMP-0008",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Does useCallback memoize a callback function, and does useMemo memoize the result of an expensive calculation?"
+    },
+    {
+        "id": "CHAL-CMP-0009",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Does useContext read shared state from a Provider, while avoiding deep prop drilling through intermediate components?"
+    },
+    {
+        "id": "CHAL-CMP-0010",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Is Node.js event-driven, and does it delegate operating system I\/O operations to libuv?"
+    },
+    {
+        "id": "CHAL-CMP-0011",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Can express middleware inspect incoming requests, and can it invoke next() to continue processing?"
+    },
+    {
+        "id": "CHAL-CMP-0012",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Does express.Router() isolate modular route endpoints, while app.use() mounts them onto the main application?"
+    },
+    {
+        "id": "CHAL-CMP-0013",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Is GET safe and idempotent, while PUT is idempotent but not designated as safe?"
+    },
+    {
+        "id": "CHAL-CMP-0014",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Does status code 200 OK signal success, while 201 Created signals successful resource creation?"
+    },
+    {
+        "id": "CHAL-CMP-0015",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Does a JSON Web Token contain a header and payload, and is it verified using a cryptographic signature?"
+    },
+    {
+        "id": "CHAL-CMP-0016",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Does a primary key enforce unique values, and does a foreign key maintain referential integrity?"
+    },
+    {
+        "id": "CHAL-CMP-0017",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Does ACID ensure transaction reliability, while B-tree indexes accelerate query lookup performance?"
+    },
+    {
+        "id": "CHAL-CMP-0018",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "SUPPORTED",
+        "query": "Does First Normal Form eliminate duplicate repeating groups, and does Second Normal Form eliminate partial dependencies?"
+    },
+    {
+        "id": "CHAL-CMP-0019",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "REFUTED",
+        "query": "Is var block-scoped, and does it refuse to hoist to the enclosing function top?"
+    },
+    {
+        "id": "CHAL-CMP-0020",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "REFUTED",
+        "query": "Do arrow functions bind dynamic this, and do they provide access to arguments?"
+    },
+    {
+        "id": "CHAL-CMP-0021",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "REFUTED",
+        "query": "Do timer callbacks execute on the microtask queue, and do Promises execute on the macrotask queue?"
+    },
+    {
+        "id": "CHAL-CMP-0022",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "REFUTED",
+        "query": "Does flex-direction default to column, and does align-items align along the main axis by default?"
+    },
+    {
+        "id": "CHAL-CMP-0023",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "REFUTED",
+        "query": "Does box-sizing default to border-box, and does content-box include padding inside element width?"
+    },
+    {
+        "id": "CHAL-CMP-0024",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "REFUTED",
+        "query": "Does useState trigger immediate synchronous state mutation, and does useEffect run before DOM paint?"
+    },
+    {
+        "id": "CHAL-CMP-0025",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "REFUTED",
+        "query": "Does updating a ref trigger a component re-render, and does useMemo recompute on every render regardless of dependencies?"
+    },
+    {
+        "id": "CHAL-CMP-0026",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "REFUTED",
+        "query": "Does Node.js run multiple JavaScript execution threads concurrently, and does V8 use multithreaded user script execution?"
+    },
+    {
+        "id": "CHAL-CMP-0027",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "REFUTED",
+        "query": "Does express.json() handle binary file uploads, and does it automatically authenticate incoming JWT tokens?"
+    },
+    {
+        "id": "CHAL-CMP-0028",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "REFUTED",
+        "query": "Is HTTP POST guaranteed to be idempotent, and does HTTP DELETE never modify database records?"
+    },
+    {
+        "id": "CHAL-CMP-0029",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "REFUTED",
+        "query": "Does status code 401 mean permission is denied for authenticated users, while 403 means authentication credentials were missing?"
+    },
+    {
+        "id": "CHAL-CMP-0030",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "COMPOUND_CLAUSES",
+        "expected": "REFUTED",
+        "query": "Does ROLLBACK persist uncommitted transactions, and does COMMIT erase all session updates from disk?"
+    },
+    {
+        "id": "CHAL-DIS-0001",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Does an Express middleware handler either invoke next() or terminate the request-response cycle?"
+    },
+    {
+        "id": "CHAL-DIS-0002",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Does transaction atomicity require that either all transaction operations succeed or all are rolled back?"
+    },
+    {
+        "id": "CHAL-DIS-0003",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Can a flex container align its items along either the row axis or the column axis?"
+    },
+    {
+        "id": "CHAL-DIS-0004",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Can justify-content distribute flex children using flex-start, flex-end, or center spacing?"
+    },
+    {
+        "id": "CHAL-DIS-0005",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Can variables be declared using let or const when block scoping is desired?"
+    },
+    {
+        "id": "CHAL-DIS-0006",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Does a Promise eventually settle into either a fulfilled or a rejected state?"
+    },
+    {
+        "id": "CHAL-DIS-0007",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Can asynchronous JavaScript code be coordinated using either Promise chaining or async\/await syntax?"
+    },
+    {
+        "id": "CHAL-DIS-0008",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Can a React component pass data to children either through explicit props or via Context Provider?"
+    },
+    {
+        "id": "CHAL-DIS-0009",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Can useEffect cleanup be triggered either when the component unmounts or before the effect re-runs?"
+    },
+    {
+        "id": "CHAL-DIS-0010",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Does a REST API client receive either a 200 OK or a 204 No Content response upon successful entity update?"
+    },
+    {
+        "id": "CHAL-DIS-0011",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Can client authentication be conveyed either in an Authorization bearer header or inside a session cookie?"
+    },
+    {
+        "id": "CHAL-DIS-0012",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Can an index on a PostgreSQL table be implemented as either a B-tree or a unique constraint index?"
+    },
+    {
+        "id": "CHAL-DIS-0013",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Can a relational query join tables using either an INNER JOIN or an outer LEFT JOIN?"
+    },
+    {
+        "id": "CHAL-DIS-0014",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Does an HTML document structure use either semantic elements like article or generic div containers?"
+    },
+    {
+        "id": "CHAL-DIS-0015",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "SUPPORTED",
+        "query": "Can the spread operator be applied to either arrays or iterable objects to unpack elements?"
+    },
+    {
+        "id": "CHAL-DIS-0016",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "REFUTED",
+        "query": "Can var declarations create either block-scoped variables or temporal dead zone bindings?"
+    },
+    {
+        "id": "CHAL-DIS-0017",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "REFUTED",
+        "query": "Can arrow functions access either their own dynamic this or a local arguments object?"
+    },
+    {
+        "id": "CHAL-DIS-0018",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "REFUTED",
+        "query": "Does flex-direction default to either column or column-reverse in standard flex containers?"
+    },
+    {
+        "id": "CHAL-DIS-0019",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "REFUTED",
+        "query": "Does box-sizing default to either border-box or padding-box in standard browser stylesheets?"
+    },
+    {
+        "id": "CHAL-DIS-0020",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "REFUTED",
+        "query": "Can useState state be updated by either direct property assignment or omitting the setter function?"
+    },
+    {
+        "id": "CHAL-DIS-0021",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "REFUTED",
+        "query": "Can hooks be legally invoked either inside nested for loops or outside React functional components?"
+    },
+    {
+        "id": "CHAL-DIS-0022",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "REFUTED",
+        "query": "Does Node.js run user JavaScript code across either multiple preemptive threads or parallel V8 isolates by default?"
+    },
+    {
+        "id": "CHAL-DIS-0023",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "REFUTED",
+        "query": "Is HTTP POST considered either an idempotent operation or a safe read-only method?"
+    },
+    {
+        "id": "CHAL-DIS-0024",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "REFUTED",
+        "query": "Does status code 500 signal either client syntax errors or missing client authentication credentials?"
+    },
+    {
+        "id": "CHAL-DIS-0025",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "DISJUNCTIONS",
+        "expected": "REFUTED",
+        "query": "Does Second Normal Form permit either partial key functional dependencies or transitive non-key dependencies?"
+    },
+    {
+        "id": "CHAL-CND-0001",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "SUPPORTED",
+        "query": "Why is HTTP PUT considered idempotent even if the server updates an internal last-modified timestamp on the record?"
+    },
+    {
+        "id": "CHAL-CND-0002",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "SUPPORTED",
+        "query": "Can a table satisfy Second Normal Form without satisfying Third Normal Form if transitive dependencies still exist?"
+    },
+    {
+        "id": "CHAL-CND-0003",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "SUPPORTED",
+        "query": "Does a transaction retain uncommitted state modifications if and only if a COMMIT command is successfully issued?"
+    },
+    {
+        "id": "CHAL-CND-0004",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "SUPPORTED",
+        "query": "Does accessing a let variable throw a ReferenceError if accessed before its declaration line is executed?"
+    },
+    {
+        "id": "CHAL-CND-0005",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "SUPPORTED",
+        "query": "When an async function encounters an await statement, does it pause execution of that function while allowing other tasks to run?"
+    },
+    {
+        "id": "CHAL-CND-0006",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "SUPPORTED",
+        "query": "Does useEffect skip executing its callback after re-render if its dependency array values have not changed?"
+    },
+    {
+        "id": "CHAL-CND-0007",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "SUPPORTED",
+        "query": "If a component re-renders, does useRef maintain the exact same object reference without recreating it?"
+    },
+    {
+        "id": "CHAL-CND-0008",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "SUPPORTED",
+        "query": "If an error occurs inside an Express route handler, does passing the error to next(err) invoke the registered error-handling middleware?"
+    },
+    {
+        "id": "CHAL-CND-0009",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "SUPPORTED",
+        "query": "When express.json() encounters a valid JSON request payload, does it populate req.body with the parsed JavaScript object?"
+    },
+    {
+        "id": "CHAL-CND-0010",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "SUPPORTED",
+        "query": "If flex-wrap is set to wrap, do flex items break into multiple lines when their combined size exceeds the container?"
+    },
+    {
+        "id": "CHAL-CND-0011",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "SUPPORTED",
+        "query": "When box-sizing is set to border-box, does adding internal padding keep the total box width unchanged?"
+    },
+    {
+        "id": "CHAL-CND-0012",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "SUPPORTED",
+        "query": "If an index exists on a queried column, can PostgreSQL locate matching records without scanning the entire table sequentially?"
+    },
+    {
+        "id": "CHAL-CND-0013",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "REFUTED",
+        "query": "If a variable is declared with const, can its identifier binding be reassigned if the new value has the same type?"
+    },
+    {
+        "id": "CHAL-CND-0014",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "REFUTED",
+        "query": "When an arrow function is executed inside a method, does it dynamically bind this to the object invoking the method?"
+    },
+    {
+        "id": "CHAL-CND-0015",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "REFUTED",
+        "query": "If a component state object is directly mutated in-place, does React automatically detect the mutation and schedule a re-render?"
+    },
+    {
+        "id": "CHAL-CND-0016",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "REFUTED",
+        "query": "When a functional component re-renders, does useRef reset its current property back to the initial value provided at mount?"
+    },
+    {
+        "id": "CHAL-CND-0017",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "REFUTED",
+        "query": "If CPU-heavy cryptographic operations are run synchronously on the event loop, does Node.js automatically offload them to background threads?"
+    },
+    {
+        "id": "CHAL-CND-0018",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "REFUTED",
+        "query": "Even if a client sends ten identical HTTP POST requests, does the server guarantee that only one resource is created?"
+    },
+    {
+        "id": "CHAL-CND-0019",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "REFUTED",
+        "query": "If an authenticated client lacks permissions for a specific resource, does the server return status code 401 Unauthorized?"
+    },
+    {
+        "id": "CHAL-CND-0020",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "CONDITIONALS",
+        "expected": "REFUTED",
+        "query": "If a database transaction executes a ROLLBACK, are all changes made within that transaction permanently committed to storage?"
+    },
+    {
+        "id": "CHAL-PRD-0001",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does First Normal Form (1NF) require table columns to contain atomic and scalar values?"
+    },
+    {
+        "id": "CHAL-PRD-0002",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does transaction atomicity guarantee that an entire sequence of database operations succeeds as a whole or leaves no partial traces?"
+    },
+    {
+        "id": "CHAL-PRD-0003",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Is HTTP PATCH typically utilized to apply partial modifications to an existing resource?"
+    },
+    {
+        "id": "CHAL-PRD-0004",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does const create an immutable variable identifier binding in JavaScript?"
+    },
+    {
+        "id": "CHAL-PRD-0005",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does assigning new values to a mutable reference object avoid initiating a fresh rendering cycle?"
+    },
+    {
+        "id": "CHAL-PRD-0006",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Can a functional React component use a ref to store mutable values without forcing a component re-render?"
+    },
+    {
+        "id": "CHAL-PRD-0007",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Are flex container descendants naturally lined up from left to right along the horizontal direction?"
+    },
+    {
+        "id": "CHAL-PRD-0008",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does the runtime event scheduler exhaust all pending microtasks before executing the subsequent timer macrotask?"
+    },
+    {
+        "id": "CHAL-PRD-0009",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does useMemo cache the calculated result of an expensive computation across component renders?"
+    },
+    {
+        "id": "CHAL-PRD-0010",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Is HTTP PUT considered idempotent because sending identical requests produces the same result?"
+    },
+    {
+        "id": "CHAL-PRD-0011",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "REFUTED",
+        "query": "Does First Normal Form allow table columns to store nested arrays and composite structures?"
+    },
+    {
+        "id": "CHAL-PRD-0012",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "REFUTED",
+        "query": "Does transaction atomicity permit individual failed queries to commit partial updates to the database?"
+    },
+    {
+        "id": "CHAL-PRD-0013",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "REFUTED",
+        "query": "Does HTTP PATCH require replacing the entire complete resource entity on every request?"
+    },
+    {
+        "id": "CHAL-PRD-0014",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "REFUTED",
+        "query": "Does const declare a mutable variable identifier that can be rebound to new primitive values?"
+    },
+    {
+        "id": "CHAL-PRD-0015",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "PREDICATE_MISMATCH",
+        "expected": "REFUTED",
+        "query": "Does flex-direction: row line up container descendants vertically from top to bottom by default?"
+    },
+    {
+        "id": "CHAL-ENT-0001",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Why does React batch multiple synchronous state setters inside event handlers into a single consolidated render pass?"
+    },
+    {
+        "id": "CHAL-ENT-0002",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Can Node.js process asynchronous file reads via libuv background threads without blocking the single JavaScript main thread?"
+    },
+    {
+        "id": "CHAL-ENT-0003",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does useRef maintain a persistent mutable ref object whose current value survives re-renders?"
+    },
+    {
+        "id": "CHAL-ENT-0004",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does useState provide a state variable and an asynchronous setter function to update component state?"
+    },
+    {
+        "id": "CHAL-ENT-0005",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does express.json() parse the incoming body stream without executing subsequent route handlers before parsing completes?"
+    },
+    {
+        "id": "CHAL-ENT-0006",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does display: flex convert an element into a flex container without affecting how sibling grid containers behave?"
+    },
+    {
+        "id": "CHAL-ENT-0007",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does CSS Grid allow defining explicit rows and columns using grid-template-columns and grid-template-rows?"
+    },
+    {
+        "id": "CHAL-ENT-0008",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does a B-tree index accelerate equality lookups on indexed columns without indexing unindexed table columns?"
+    },
+    {
+        "id": "CHAL-ENT-0009",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does Write-Ahead Logging (WAL) record changes before committing them to the main database tablespace?"
+    },
+    {
+        "id": "CHAL-ENT-0010",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "SUPPORTED",
+        "query": "Does status code 201 Created confirm that a requested entity has been successfully instantiated on the server?"
+    },
+    {
+        "id": "CHAL-ENT-0011",
+        "module": "REACT",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "REFUTED",
+        "query": "Does Node.js batch React component state updates into consolidated rendering cycles?"
+    },
+    {
+        "id": "CHAL-ENT-0012",
+        "module": "NODEJS",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "REFUTED",
+        "query": "Does React use libuv to handle asynchronous operating system file read operations?"
+    },
+    {
+        "id": "CHAL-ENT-0013",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "REFUTED",
+        "query": "Does flexbox define two-dimensional row and column tracks using grid-template-columns?"
+    },
+    {
+        "id": "CHAL-ENT-0014",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "REFUTED",
+        "query": "Does a foreign key constraint accelerate query lookups automatically without creating a B-tree index?"
+    },
+    {
+        "id": "CHAL-ENT-0015",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "ENTITY_MISMATCH",
+        "expected": "REFUTED",
+        "query": "Does status code 200 OK signal that a client request syntax error prevented the server from parsing the payload?"
+    },
+    {
+        "id": "CHAL-LEX-0001",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "SUPPORTED",
+        "query": "Does status code 401 Unauthorized mean the request lacks valid authentication credentials?"
+    },
+    {
+        "id": "CHAL-LEX-0002",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "SUPPORTED",
+        "query": "Does status code 403 Forbidden indicate that the server refuses to authorize the client action?"
+    },
+    {
+        "id": "CHAL-LEX-0003",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "SUPPORTED",
+        "query": "Does COMMIT finalize all pending database changes made inside the active transaction?"
+    },
+    {
+        "id": "CHAL-LEX-0004",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "SUPPORTED",
+        "query": "Does ROLLBACK cancel uncommitted modifications made during the current transaction?"
+    },
+    {
+        "id": "CHAL-LEX-0005",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "SUPPORTED",
+        "query": "Does align-items align flex items along the cross axis perpendicular to the flex-direction main axis?"
+    },
+    {
+        "id": "CHAL-LEX-0006",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "SUPPORTED",
+        "query": "Does justify-content align flex items along the main axis established by flex-direction?"
+    },
+    {
+        "id": "CHAL-LEX-0007",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "SUPPORTED",
+        "query": "Does the call stack handle synchronous function execution while Web APIs handle asynchronous callbacks?"
+    },
+    {
+        "id": "CHAL-LEX-0008",
+        "module": "JAVASCRIPT",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "SUPPORTED",
+        "query": "In modern ECMAScript, is variable binding reassignment prevented when using the const keyword?"
+    },
+    {
+        "id": "CHAL-LEX-0009",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "SUPPORTED",
+        "query": "Does Second Normal Form (2NF) require removing partial dependencies on composite primary keys?"
+    },
+    {
+        "id": "CHAL-LEX-0010",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "SUPPORTED",
+        "query": "Does box-sizing: content-box calculate width based strictly on content dimensions, excluding padding and borders?"
+    },
+    {
+        "id": "CHAL-LEX-0011",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "REFUTED",
+        "query": "Does status code 401 Unauthorized mean the client has valid credentials but lacks authorization for this endpoint?"
+    },
+    {
+        "id": "CHAL-LEX-0012",
+        "module": "REST_API",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "REFUTED",
+        "query": "Does status code 403 Forbidden indicate that authentication credentials were missing entirely from the request?"
+    },
+    {
+        "id": "CHAL-LEX-0013",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "REFUTED",
+        "query": "Does COMMIT discard all pending transaction operations and revert the database to its previous snapshot?"
+    },
+    {
+        "id": "CHAL-LEX-0014",
+        "module": "DATABASE",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "REFUTED",
+        "query": "Does ROLLBACK persist all transaction modifications to permanent storage on the database server?"
+    },
+    {
+        "id": "CHAL-LEX-0015",
+        "module": "HTML_CSS",
+        "category": "CHALLENGE",
+        "subcategory": "LEXICAL_COLLISION",
+        "expected": "REFUTED",
+        "query": "Does justify-content govern item positioning along the cross axis perpendicular to flex-direction?"
+    }
+]

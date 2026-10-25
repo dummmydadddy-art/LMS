@@ -1,0 +1,140 @@
+{
+    "experiment_id": "EXP-0035",
+    "evaluation_type": "FROZEN_BLIND_BENCHMARK",
+    "dataset_hash": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+    "modes": {
+        "B0": {
+            "name": "B0_Frozen_M2_Baseline",
+            "accuracy": 66.8,
+            "correct": 334,
+            "total": 500,
+            "macro_f1": 65.89,
+            "standard_far": 18.12,
+            "frr": 28.17,
+            "supported_recall": 71.83,
+            "refutation_recall": 53.7,
+            "ne_recall": 75.2,
+            "ood_recall": 92,
+            "novel_ood_recall": 0,
+            "false_abstentions": 30,
+            "category_accuracies": {
+                "SUPPORTED": 67.2,
+                "FALSE_PREMISE": 51.2,
+                "AMBIGUOUS": 64,
+                "OOD": 92,
+                "PARAPHRASE": 78,
+                "ADVERSARIAL": 70.67
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 153,
+                    "REFUTED": 30,
+                    "NOT_ESTABLISHED": 30
+                },
+                "REFUTED": {
+                    "SUPPORTED": 36,
+                    "REFUTED": 87,
+                    "NOT_ESTABLISHED": 39
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 16,
+                    "REFUTED": 15,
+                    "NOT_ESTABLISHED": 94
+                }
+            },
+            "multi_clause_metrics": {
+                "multi_clause_count": 0,
+                "clause_count_distribution": [],
+                "partial_grounding_count": 0
+            },
+            "total_latency_seconds": 63.54,
+            "mean_latency_ms": 127.07
+        },
+        "B1": {
+            "name": "B1_EXP0035_G6_Champion",
+            "accuracy": 67,
+            "correct": 335,
+            "total": 500,
+            "macro_f1": 66.07,
+            "standard_far": 18.12,
+            "frr": 27.7,
+            "supported_recall": 72.3,
+            "refutation_recall": 53.7,
+            "ne_recall": 75.2,
+            "ood_recall": 92,
+            "novel_ood_recall": 0,
+            "false_abstentions": 29,
+            "category_accuracies": {
+                "SUPPORTED": 68,
+                "FALSE_PREMISE": 51.2,
+                "AMBIGUOUS": 64,
+                "OOD": 92,
+                "PARAPHRASE": 78,
+                "ADVERSARIAL": 70.67
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 154,
+                    "REFUTED": 30,
+                    "NOT_ESTABLISHED": 29
+                },
+                "REFUTED": {
+                    "SUPPORTED": 36,
+                    "REFUTED": 87,
+                    "NOT_ESTABLISHED": 39
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 16,
+                    "REFUTED": 15,
+                    "NOT_ESTABLISHED": 94
+                }
+            },
+            "multi_clause_metrics": {
+                "multi_clause_count": 0,
+                "clause_count_distribution": {
+                    "1": 500
+                },
+                "partial_grounding_count": 0
+            },
+            "total_latency_seconds": 9.17,
+            "mean_latency_ms": 18.34
+        }
+    },
+    "statistical_test_b1_vs_b0": {
+        "n00": 165,
+        "n11": 334,
+        "n01": 1,
+        "n10": 0,
+        "discordant_count": 1,
+        "mcnemar_chi2": 0,
+        "p_value": 1,
+        "accuracy_diff_pp": 0.2,
+        "se_pp": 0.2,
+        "ci_95": [
+            -0.19,
+            0.59
+        ],
+        "discordant_cases": [
+            {
+                "id": "EXP33-SUP-0020",
+                "type": "B0_INC_B1_CORR",
+                "query": "Does em unit compute dimensions relative to the font size of the immediate parent?",
+                "expected": "SUPPORTED",
+                "b0_actual": "NOT_ESTABLISHED",
+                "b1_actual": "SUPPORTED",
+                "reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            }
+        ]
+    },
+    "retrieval_metrics": {
+        "retrieval_pipeline": "Hybrid Dense-Cross Pool-15 (alpha=0.50, Min-Max [0.4000, 0.8500])",
+        "N_queries": 500,
+        "recall_at_1": 93.11,
+        "recall_at_3": 98,
+        "recall_at_5": 99.33,
+        "recall_at_10": 100,
+        "candidate_pool_recall": 100,
+        "mrr": 0.9576,
+        "ndcg_at_5": 0.9659
+    }
+}

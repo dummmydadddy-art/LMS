@@ -24,7 +24,7 @@ import {
   AlertCircle,
   Video,
   Sparkles,
-  Zap
+  Cpu
 } from 'lucide-react';
 import AiTutorModal from './AiTutorModal';
 
@@ -45,6 +45,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const [showAiTutor, setShowAiTutor] = useState(false);
   const [notifications, setNotifications] = useState<any[]>([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [readNotifications, setReadNotifications] = useState<string[]>([]);
@@ -63,25 +64,6 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
   const [profileLoading, setProfileLoading] = useState(false);
   const [profileMsg, setProfileMsg] = useState('');
   const [profileError, setProfileError] = useState('');
-
-  // AI Course Tutor modal state
-  const [showAiTutor, setShowAiTutor] = useState(false);
-  const [aiTutorPrompt, setAiTutorPrompt] = useState<string | undefined>(undefined);
-  const [aiTutorCourseId, setAiTutorCourseId] = useState<string | undefined>(undefined);
-  const [aiTutorCourseName, setAiTutorCourseName] = useState<string | undefined>(undefined);
-
-  useEffect(() => {
-    const handleOpenTutor = (e: any) => {
-      const detail = e.detail || {};
-      if (detail.initialPrompt) setAiTutorPrompt(detail.initialPrompt);
-      if (detail.courseId) setAiTutorCourseId(detail.courseId);
-      if (detail.courseName) setAiTutorCourseName(detail.courseName);
-      setShowAiTutor(true);
-    };
-
-    window.addEventListener('open-ai-tutor', handleOpenTutor);
-    return () => window.removeEventListener('open-ai-tutor', handleOpenTutor);
-  }, []);
 
   useEffect(() => {
     if (user) {
@@ -149,6 +131,12 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
       setPasswordLoading(false);
     }
   };
+
+  useEffect(() => {
+    const handleOpenTutor = () => setShowAiTutor(true);
+    window.addEventListener('open-ai-tutor', handleOpenTutor);
+    return () => window.removeEventListener('open-ai-tutor', handleOpenTutor);
+  }, []);
 
   useEffect(() => {
     if (user) {
@@ -222,6 +210,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
           { name: 'Timetable', path: '/admin/timetable', icon: Calendar },
           { name: 'Notifications', path: '/admin/notifications', icon: Bell },
           { name: 'Reports', path: '/admin/reports', icon: FileText },
+          { name: 'RAG Pipeline', path: '/admin/rag-pipeline', icon: Cpu },
         ];
       case 'TEACHER':
         return [
@@ -254,7 +243,6 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
 
   const getNotifIcon = (type: string) => {
     switch (type) {
-      case 'QUIZ': return <Zap className="h-5 w-5 text-amber-400" />;
       case 'ANNOUNCEMENT': return <Megaphone className="h-5 w-5 text-amber-400" />;
       case 'EXAM': return <GraduationCap className="h-5 w-5 text-red-400" />;
       case 'LECTURE': return <BookOpen className="h-5 w-5 text-primary-400" />;
@@ -293,6 +281,17 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
               </button>
             );
           })}
+
+          <div className="pt-3 mt-3 border-t border-slate-800/80">
+            <button
+              onClick={() => setShowAiTutor(true)}
+              className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-blue-600/90 to-indigo-600/90 hover:from-blue-500 hover:to-indigo-500 shadow-md shadow-indigo-600/20 transition-all border border-indigo-400/20 group"
+            >
+              <Sparkles className="h-4 w-4 text-yellow-300 animate-pulse" />
+              <span>AI Course Tutor</span>
+              <span className="ml-auto text-[9px] bg-white/20 text-white uppercase px-1.5 py-0.5 rounded font-mono font-bold">RAG</span>
+            </button>
+          </div>
         </nav>
 
         <div className="p-4 border-t border-slate-800/80 bg-dark-950/20">
@@ -354,6 +353,20 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
                   </button>
                 );
               })}
+
+              <div className="pt-3 mt-3 border-t border-slate-800/80">
+                <button
+                  onClick={() => {
+                    setShowAiTutor(true);
+                    setSidebarOpen(false);
+                  }}
+                  className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-blue-600/90 to-indigo-600/90 hover:from-blue-500 hover:to-indigo-500 shadow-md shadow-indigo-600/20 transition-all border border-indigo-400/20 group"
+                >
+                  <Sparkles className="h-4 w-4 text-yellow-300 animate-pulse" />
+                  <span>AI Course Tutor</span>
+                  <span className="ml-auto text-[9px] bg-white/20 text-white uppercase px-1.5 py-0.5 rounded font-mono font-bold">RAG</span>
+                </button>
+              </div>
             </nav>
 
             <div className="p-4 border-t border-slate-800/80 bg-dark-950/20">
@@ -446,13 +459,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
                         return (
                           <div
                             key={n.id}
-                            onClick={() => {
-                              handleMarkAsRead(n.id);
-                              if (user?.role === 'STUDENT' && (n.notification_type === 'QUIZ' || n.notification_type === 'EXAM')) {
-                                setNotificationsOpen(false);
-                                navigate('/student/exams');
-                              }
-                            }}
+                            onClick={() => handleMarkAsRead(n.id)}
                             className={`flex gap-3 p-2.5 rounded-xl cursor-pointer transition-all duration-200 ${
                               isUnread 
                                 ? 'bg-primary-950/10 border border-primary-500/10 hover:bg-primary-950/20' 
@@ -643,13 +650,7 @@ const Layout: React.FC<LayoutProps> = ({ user, onLogout, onProfileUpdate, childr
       {/* Global AI Course Tutor Modal */}
       <AiTutorModal
         isOpen={showAiTutor}
-        onClose={() => {
-          setShowAiTutor(false);
-          setAiTutorPrompt(undefined);
-        }}
-        courseId={aiTutorCourseId}
-        courseName={aiTutorCourseName}
-        initialPrompt={aiTutorPrompt}
+        onClose={() => setShowAiTutor(false)}
       />
     </div>
   );

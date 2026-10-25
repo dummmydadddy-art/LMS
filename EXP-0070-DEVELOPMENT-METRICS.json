@@ -1,0 +1,376 @@
+{
+  "experiment_id": "EXP-0070",
+  "dataset": "EXP-0025-DEVELOPMENT-DATASET.json",
+  "n_total": 400,
+  "conditions": {
+    "C1": {
+      "total": 400,
+      "correct": 331,
+      "accuracy": 82.75,
+      "macro_f1": 82.34,
+      "supported_recall": 65.33,
+      "refutation_recall": 89.33,
+      "not_established_recall": 99.0,
+      "supported_precision": 98.0,
+      "refutation_precision": 87.58,
+      "not_established_precision": 67.35,
+      "f1_supported": 78.4,
+      "f1_refuted": 88.45,
+      "f1_not_established": 80.16,
+      "far": 1.33,
+      "frr": 12.0,
+      "false_abstentions": 34,
+      "refuted_to_supported_count": 2,
+      "refuted_to_not_established_count": 14,
+      "supported_to_refuted_count": 18,
+      "supported_to_not_established_count": 34,
+      "false_premise_accuracy": 89.33,
+      "ood_recall": 99.0,
+      "ood_false_acceptance_count": 0,
+      "ood_false_refutation_count": 1,
+      "average_latency_ms": 42.44,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 98,
+          "REFUTED": 18,
+          "NOT_ESTABLISHED": 34
+        },
+        "REFUTED": {
+          "SUPPORTED": 2,
+          "REFUTED": 134,
+          "NOT_ESTABLISHED": 14
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 0,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 99
+        }
+      },
+      "strata": {
+        "S1_antonym_assisted": {
+          "n": 166,
+          "correct": 139,
+          "accuracy": 83.73
+        },
+        "S2_non_antonym": {
+          "n": 234,
+          "correct": 192,
+          "accuracy": 82.05
+        },
+        "S3_high_overlap_support": {
+          "n": 100,
+          "correct": 61,
+          "accuracy": 61.0
+        },
+        "S4_low_overlap_paraphrase": {
+          "n": 50,
+          "correct": 37,
+          "accuracy": 74.0
+        },
+        "S5_normative_universal": {
+          "n": 81,
+          "correct": 65,
+          "accuracy": 80.25
+        },
+        "S6_compound_multi_clause": {
+          "n": 75,
+          "correct": 65,
+          "accuracy": 86.67
+        },
+        "S7_ood": {
+          "n": 100,
+          "correct": 99,
+          "accuracy": 99.0
+        }
+      }
+    },
+    "C0": {
+      "total": 400,
+      "correct": 368,
+      "accuracy": 92.0,
+      "macro_f1": 92.67,
+      "supported_recall": 87.33,
+      "refutation_recall": 92.67,
+      "not_established_recall": 98.0,
+      "supported_precision": 92.91,
+      "refutation_precision": 87.42,
+      "not_established_precision": 98.0,
+      "f1_supported": 90.03,
+      "f1_refuted": 89.97,
+      "f1_not_established": 98.0,
+      "far": 6.0,
+      "frr": 12.67,
+      "false_abstentions": 0,
+      "refuted_to_supported_count": 9,
+      "refuted_to_not_established_count": 2,
+      "supported_to_refuted_count": 19,
+      "supported_to_not_established_count": 0,
+      "false_premise_accuracy": 92.67,
+      "ood_recall": 98.0,
+      "ood_false_acceptance_count": 1,
+      "ood_false_refutation_count": 1,
+      "average_latency_ms": 1196.42,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 131,
+          "REFUTED": 19,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 9,
+          "REFUTED": 139,
+          "NOT_ESTABLISHED": 2
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "strata": {
+        "S1_antonym_assisted": {
+          "n": 166,
+          "correct": 155,
+          "accuracy": 93.37
+        },
+        "S2_non_antonym": {
+          "n": 234,
+          "correct": 213,
+          "accuracy": 91.03
+        },
+        "S3_high_overlap_support": {
+          "n": 100,
+          "correct": 85,
+          "accuracy": 85.0
+        },
+        "S4_low_overlap_paraphrase": {
+          "n": 50,
+          "correct": 46,
+          "accuracy": 92.0
+        },
+        "S5_normative_universal": {
+          "n": 81,
+          "correct": 74,
+          "accuracy": 91.36
+        },
+        "S6_compound_multi_clause": {
+          "n": 75,
+          "correct": 68,
+          "accuracy": 90.67
+        },
+        "S7_ood": {
+          "n": 100,
+          "correct": 98,
+          "accuracy": 98.0
+        }
+      }
+    },
+    "C2": {
+      "total": 400,
+      "correct": 125,
+      "accuracy": 31.25,
+      "macro_f1": 30.57,
+      "supported_recall": 33.33,
+      "refutation_recall": 16.67,
+      "not_established_recall": 50.0,
+      "supported_precision": 37.59,
+      "refutation_precision": 37.31,
+      "not_established_precision": 25.0,
+      "f1_supported": 35.33,
+      "f1_refuted": 23.04,
+      "f1_not_established": 33.33,
+      "far": 33.33,
+      "frr": 16.67,
+      "false_abstentions": 75,
+      "refuted_to_supported_count": 50,
+      "refuted_to_not_established_count": 75,
+      "supported_to_refuted_count": 25,
+      "supported_to_not_established_count": 75,
+      "false_premise_accuracy": 16.67,
+      "ood_recall": 50.0,
+      "ood_false_acceptance_count": 33,
+      "ood_false_refutation_count": 17,
+      "average_latency_ms": 42.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 50,
+          "REFUTED": 25,
+          "NOT_ESTABLISHED": 75
+        },
+        "REFUTED": {
+          "SUPPORTED": 50,
+          "REFUTED": 25,
+          "NOT_ESTABLISHED": 75
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 33,
+          "REFUTED": 17,
+          "NOT_ESTABLISHED": 50
+        }
+      },
+      "strata": {
+        "S1_antonym_assisted": {
+          "n": 166,
+          "correct": 44,
+          "accuracy": 26.51
+        },
+        "S2_non_antonym": {
+          "n": 234,
+          "correct": 81,
+          "accuracy": 34.62
+        },
+        "S3_high_overlap_support": {
+          "n": 100,
+          "correct": 33,
+          "accuracy": 33.0
+        },
+        "S4_low_overlap_paraphrase": {
+          "n": 50,
+          "correct": 17,
+          "accuracy": 34.0
+        },
+        "S5_normative_universal": {
+          "n": 81,
+          "correct": 19,
+          "accuracy": 23.46
+        },
+        "S6_compound_multi_clause": {
+          "n": 75,
+          "correct": 18,
+          "accuracy": 24.0
+        },
+        "S7_ood": {
+          "n": 100,
+          "correct": 50,
+          "accuracy": 50.0
+        }
+      }
+    }
+  },
+  "mcnemar_paired_tests": {
+    "C1_vs_C0": {
+      "n01": 4,
+      "n10": 41,
+      "n00": 28,
+      "n11": 327,
+      "discordant_total": 45,
+      "chi2_statistic": 28.8,
+      "p_value": 9.334883088740753e-09,
+      "paired_delta_pp": -9.25,
+      "ci_95": [
+        -12.41,
+        -6.09
+      ]
+    },
+    "C2_vs_C0": {
+      "n01": 6,
+      "n10": 249,
+      "n00": 26,
+      "n11": 119,
+      "discordant_total": 255,
+      "chi2_statistic": 229.6627,
+      "p_value": 1.2736884873070482e-65,
+      "paired_delta_pp": -60.75,
+      "ci_95": [
+        -65.83,
+        -55.67
+      ]
+    }
+  },
+  "advancement_gates": {
+    "C1": {
+      "overall_decision": "REJECTED",
+      "gates": {
+        "Gate_A_overall_accuracy": {
+          "description": "Out-of-fold accuracy not materially worse than C0 (Acc >= 90%, p >= 0.05)",
+          "threshold": "Acc >= 90.00% & p >= 0.05",
+          "actual": "Acc = 82.75%, p = 9.33e-09",
+          "passed": false
+        },
+        "Gate_B_supported_preservation": {
+          "description": "Supported Recall does not drop by >3 pp relative to C0",
+          "threshold": ">= 84.33%",
+          "actual": "65.33%",
+          "passed": false
+        },
+        "Gate_C_false_acceptance": {
+          "description": "REFUTED -> SUPPORTED decreases materially (<= 4 cases, FAR <= 3%)",
+          "threshold": "<= 4 cases & FAR <= 3.00%",
+          "actual": "2 cases (FAR = 1.33%)",
+          "passed": true
+        },
+        "Gate_D_hard_stratum_improvement": {
+          "description": "S2 non-antonym performance improves relative to raw cross-encoder baseline",
+          "threshold": "> 65.81%",
+          "actual": "82.05%",
+          "passed": true
+        },
+        "Gate_E_paraphrase_survival": {
+          "description": "S4 low-overlap paraphrase improves vs raw and does not collapse vs C0 (>= 80%)",
+          "threshold": "> 42.00% & >= 80.00%",
+          "actual": "74.0%",
+          "passed": false
+        },
+        "Gate_F_ood_safety": {
+          "description": "OOD Recall remains >= 95.00%",
+          "threshold": ">= 95.00%",
+          "actual": "99.0%",
+          "passed": true
+        },
+        "Gate_H_no_shortcut_only": {
+          "description": "Gain is not confined to antonym-assisted S1 cases",
+          "threshold": "S2 or S4 gain > raw",
+          "actual": "S2=82.05%, S4=74.0%",
+          "passed": true
+        }
+      }
+    },
+    "C2": {
+      "overall_decision": "REJECTED",
+      "gates": {
+        "Gate_A_overall_accuracy": {
+          "description": "Out-of-fold accuracy not materially worse than C0 (Acc >= 90%, p >= 0.05)",
+          "threshold": "Acc >= 90.00% & p >= 0.05",
+          "actual": "Acc = 31.25%, p = 1.27e-65",
+          "passed": false
+        },
+        "Gate_B_supported_preservation": {
+          "description": "Supported Recall does not drop by >3 pp relative to C0",
+          "threshold": ">= 84.33%",
+          "actual": "33.33%",
+          "passed": false
+        },
+        "Gate_C_false_acceptance": {
+          "description": "REFUTED -> SUPPORTED decreases materially (<= 4 cases, FAR <= 3%)",
+          "threshold": "<= 4 cases & FAR <= 3.00%",
+          "actual": "50 cases (FAR = 33.33%)",
+          "passed": false
+        },
+        "Gate_D_hard_stratum_improvement": {
+          "description": "S2 non-antonym performance improves relative to raw cross-encoder baseline",
+          "threshold": "> 65.81%",
+          "actual": "34.62%",
+          "passed": false
+        },
+        "Gate_E_paraphrase_survival": {
+          "description": "S4 low-overlap paraphrase improves vs raw and does not collapse vs C0 (>= 80%)",
+          "threshold": "> 42.00% & >= 80.00%",
+          "actual": "34.0%",
+          "passed": false
+        },
+        "Gate_F_ood_safety": {
+          "description": "OOD Recall remains >= 95.00%",
+          "threshold": ">= 95.00%",
+          "actual": "50.0%",
+          "passed": false
+        },
+        "Gate_H_no_shortcut_only": {
+          "description": "Gain is not confined to antonym-assisted S1 cases",
+          "threshold": "S2 or S4 gain > raw",
+          "actual": "S2=34.62%, S4=34.0%",
+          "passed": false
+        }
+      }
+    }
+  }
+}

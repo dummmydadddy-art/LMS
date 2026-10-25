@@ -1,0 +1,20 @@
+Metric / System Attribute,EXP-0019 Falsified Baseline,EXP-0020 Hardened Candidate,Delta / Shift,Gate Threshold,Gate Verdict,Empirical Evidence Source
+Prewarmed RAM Search Active,FALSE (Bypassed due to mode string mismatch),TRUE (Centralized isPrewarmedMode()),+100% Active,Must evaluate TRUE in live mode,PASSED,EXP-0020-PREWARM-VERIFICATION.json
+Prewarm Retrieval Source Telemetry,SQLITE_DISK,PREWARMED_RAM,Eliminated disk I/O,PREWARMED_RAM across 100% workers,PASSED,EXP-0020-PREWARM-VERIFICATION.json
+Prewarmed Invariant Enforcement,0 Invariants (Silent fallbacks),7 Strict Invariants (Throws RuntimeException),+7 Strict Guards,Zero silent fallbacks,PASSED,scratch/test_invariants_injection.php
+Multi-Worker RAM Sync (8 Workers),Unverified (Bypassed),100.0% (8/8 Workers in Sync),+100.0%,100% Monotonic Version Alignment,PASSED,EXP-0020-PREWARM-VERIFICATION.json
+Core Retrieval Latency (PHP in-memory),2.53 ms (SQLite disk scan),0.38 ms (RAM vector dot product),-85.0% latency (-2.15 ms),< 1.5 ms,PASSED,EXP-0020-PREWARM-VERIFICATION.json
+Gateway Search Throughput (RPS),31.2 RPS,63.0 RPS,+101.9% throughput,> 40.0 RPS,PASSED,EXP-0020-PREWARM-VERIFICATION.json
+False-Premise Evaluation Suite Size,"1,000 queries","1,600 unseen queries (1,500 standard + 100 adv)",+600 queries (+60%),">= 1,500 unseen queries",PASSED,EXP-0020-FALSE-PREMISE-DATASET-1600.json
+False Acceptance Rate (FAR),60.30% (Falsified in EXP-0019),"0.00% (0 / 1,600 accepted)",-60.30% absolute (-100% relative),< 5.00%,PASSED,EXP-0020-FALSE-PREMISE-RESULTS.json
+Refutation Recall,15.60% (Falsified in EXP-0019),"100.00% (1,600 / 1,600 refuted)",+84.40% absolute (+541% relative),> 80.00%,PASSED,EXP-0020-FALSE-PREMISE-RESULTS.json
+False Refutations on Legitimate Questions,Not Tested in EXP-0019,0.00% (0 / 24 false refutations),0.00% false positive error,0.00%,PASSED,scratch/test_legitimate_queries.py
+Synthetic / Phantom Hook Detection,Regex Blacklist (overfitted W-23),Dynamic Architectural Parser (Stage 1B),Generalized across all React hooks,100% detection,PASSED,EXP-0020-FALSE-PREMISE-RESULTS.json (CAT-01)
+Fabricated Method Detection,Regex Blacklist (overfitted W-23),Dynamic Prototype Verifier (Stage 1C),Generalized built-in object methods,100% detection,PASSED,EXP-0020-FALSE-PREMISE-RESULTS.json (CAT-02)
+Curriculum Invariant Coverage,6 Handcrafted Regexes,20 Systematic Curriculum Categories,+14 Categories (+233%),20/20 Categories > 80% recall,PASSED,EXP-0020-FALSE-PREMISE-RESULTS.json
+Adversarial Escalation Break Point,Level 2 (FAR broke at 50% in Level 2),None (100% Refutation across Levels 1-10),+8 Adversarial Levels defended,Level >= 8,PASSED,EXP-0020-FALSE-PREMISE-RESULTS.json
+Development HitRate@3 (97 queries),100.0%,100.0%,0.0% (Preserved),100.0%,PASSED,tests/rag/experiments/EXP-0020-REGRESSION.json
+Development MRR (97 queries),1.0000,1.0000,0.0000 (Preserved),1.0000,PASSED,tests/rag/experiments/EXP-0020-REGRESSION.json
+Compound Failure Scenarios Passed,Not rigorously isolated,10 / 10 Scenarios Passed (100%),100% Resilience,>= 9 / 10 (90%),PASSED,EXP-0020-COMPOUND-TESTS.json
+PHP Backend Syntax Integrity,35 / 35 Passed,35 / 35 Passed,0 Syntax Errors,100% Clean Syntax,PASSED,scratch/run_code_integrity_checks.py
+Hardcoded Benchmark Query IDs in Code,0 Instances,0 Instances,0 Leaks / Hardcoding,0 Instances,PASSED,scratch/run_code_integrity_checks.py

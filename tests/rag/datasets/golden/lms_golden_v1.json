@@ -1,0 +1,602 @@
+[
+  {
+    "id": "gold_01",
+    "query": "What is the purpose of the <main> HTML5 semantic element and how many can exist in a document?",
+    "query_type": "factoid",
+    "topic": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "<main>",
+      "unique content",
+      "only one",
+      "more than one"
+    ],
+    "expected_doc": "HTML & CSS Fundamentals",
+    "reference_answer": "The <main> element specifies the main, unique content of the document. There must not be more than one <main> element in a single document."
+  },
+  {
+    "id": "gold_02",
+    "query": "Explain the four layers of the CSS Box Model from inside out.",
+    "query_type": "factoid",
+    "topic": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "content",
+      "padding",
+      "border",
+      "margin",
+      "inside out"
+    ],
+    "expected_doc": "HTML & CSS Fundamentals",
+    "reference_answer": "The CSS box model consists of four layers from inside out: 1. Content (actual text/media), 2. Padding (clears space around content inside border), 3. Border (surrounds padding/content), 4. Margin (clears space outside border)."
+  },
+  {
+    "id": "gold_03",
+    "query": "Why is * { box-sizing: border-box; } recommended over content-box in CSS?",
+    "query_type": "architectural_conceptual",
+    "topic": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "box-sizing",
+      "border-box",
+      "content-box",
+      "padding",
+      "border",
+      "total declared width"
+    ],
+    "expected_doc": "HTML & CSS Fundamentals",
+    "reference_answer": "With border-box, padding and border are included within the element's total declared width and height, preventing layout breakage and unexpected overflow that occurs with content-box."
+  },
+  {
+    "id": "gold_04",
+    "query": "In CSS Flexbox, what is the difference between justify-content and align-items?",
+    "query_type": "architectural_conceptual",
+    "topic": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "justify-content",
+      "align-items",
+      "main axis",
+      "cross axis"
+    ],
+    "expected_doc": "HTML & CSS Fundamentals",
+    "reference_answer": "justify-content controls alignment along the Main Axis (e.g., row or column), while align-items controls alignment along the Cross Axis (perpendicular to the main axis)."
+  },
+  {
+    "id": "gold_05",
+    "query": "What are the core child flex properties that make up the flex shorthand in CSS?",
+    "query_type": "code_syntax",
+    "topic": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "flex-grow",
+      "flex-shrink",
+      "flex-basis",
+      "flex shorthand"
+    ],
+    "expected_doc": "HTML & CSS Fundamentals",
+    "reference_answer": "The flex shorthand is composed of flex-grow, flex-shrink, and flex-basis (e.g., flex: 1 1 auto)."
+  },
+  {
+    "id": "gold_06",
+    "query": "What is CSS Grid and how does it differ in dimensionality from Flexbox?",
+    "query_type": "architectural_conceptual",
+    "topic": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "2-dimensional",
+      "1-dimensional",
+      "columns and rows",
+      "flexbox",
+      "grid"
+    ],
+    "expected_doc": "HTML & CSS Fundamentals",
+    "reference_answer": "Flexbox is a 1-dimensional layout system designed for distributing space along a single axis (row or column), whereas CSS Grid is a 2-dimensional layout system designed for both columns and rows simultaneously."
+  },
+  {
+    "id": "gold_07",
+    "query": "What are the benefits of using HTML5 semantic elements instead of generic div tags?",
+    "query_type": "architectural_conceptual",
+    "topic": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "SEO",
+      "accessibility",
+      "A11y",
+      "maintainability",
+      "screen-reader"
+    ],
+    "expected_doc": "HTML & CSS Fundamentals",
+    "reference_answer": "Using semantic tags improves Search Engine Optimization (SEO), screen-reader accessibility (A11y), and code maintainability."
+  },
+  {
+    "id": "gold_08",
+    "query": "How does the gap property in CSS Flexbox simplify spacing between items?",
+    "query_type": "factoid",
+    "topic": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "gap",
+      "spacing",
+      "margins",
+      "flex items"
+    ],
+    "expected_doc": "HTML & CSS Fundamentals",
+    "reference_answer": "The gap property defines the exact spacing between flex items without requiring tricky margin hacks or last-child resets."
+  },
+  {
+    "id": "gold_09",
+    "query": "How do var, let, and const differ in terms of scoping, hoisting, and Temporal Dead Zone?",
+    "query_type": "architectural_conceptual",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "var",
+      "let",
+      "const",
+      "function-scoped",
+      "block-scoped",
+      "hoisting",
+      "TDZ",
+      "Temporal Dead Zone"
+    ],
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "reference_answer": "var is function-scoped and hoisted with undefined. let and const are block-scoped and hoisted into the Temporal Dead Zone (TDZ), throwing ReferenceError if accessed before declaration. const must also be initialized upon declaration and cannot be reassigned."
+  },
+  {
+    "id": "gold_10",
+    "query": "Can you mutate object properties or array elements declared with const in JavaScript?",
+    "query_type": "factoid",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "const",
+      "mutate",
+      "reassign",
+      "properties",
+      "mutable"
+    ],
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "reference_answer": "Yes, const prevents variable identifier reassignment, but objects and arrays declared with const remain mutable in their properties and elements."
+  },
+  {
+    "id": "gold_11",
+    "query": "How do arrow functions handle this differently from traditional function declarations?",
+    "query_type": "architectural_conceptual",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "arrow functions",
+      "lexical this",
+      "enclosing lexical context",
+      "bind"
+    ],
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "reference_answer": "Arrow functions do not bind their own this. Instead, they inherit this lexically from the enclosing outer execution context."
+  },
+  {
+    "id": "gold_12",
+    "query": "What happens if you invoke an arrow function using the new keyword?",
+    "query_type": "factoid",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "arrow function",
+      "new",
+      "TypeError",
+      "constructor"
+    ],
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "reference_answer": "Arrow functions cannot be used as constructors; invoking an arrow function with new throws a TypeError."
+  },
+  {
+    "id": "gold_13",
+    "query": "What is the difference between the spread operator and rest parameters in JavaScript ES6?",
+    "query_type": "code_syntax",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "spread",
+      "rest",
+      "...",
+      "expands",
+      "condenses",
+      "array"
+    ],
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "reference_answer": "Spread (...) expands an iterable (array/object) into individual elements or properties. Rest (...) condenses multiple elements/arguments into a single true array."
+  },
+  {
+    "id": "gold_14",
+    "query": "What are the three possible states of a JavaScript Promise?",
+    "query_type": "factoid",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "pending",
+      "fulfilled",
+      "rejected",
+      "Promise states"
+    ],
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "reference_answer": "A JavaScript Promise can be in one of three states: pending (initial state), fulfilled (operation completed successfully), or rejected (operation failed)."
+  },
+  {
+    "id": "gold_15",
+    "query": "How does async/await interact with JavaScript Promises and error handling?",
+    "query_type": "code_syntax",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "async",
+      "await",
+      "try",
+      "catch",
+      "Promises",
+      "syntactic sugar"
+    ],
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "reference_answer": "async/await is syntactic sugar over Promises that makes asynchronous code look synchronous. Async functions always return a Promise, and await pauses execution until the Promise settles, handled with standard try/catch blocks."
+  },
+  {
+    "id": "gold_16",
+    "query": "What is the Temporal Dead Zone (TDZ) in JavaScript let and const declarations?",
+    "query_type": "architectural_conceptual",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "TDZ",
+      "Temporal Dead Zone",
+      "ReferenceError",
+      "declaration"
+    ],
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "reference_answer": "The TDZ is the period between entering the scope where a let or const variable is declared and the actual line where it is initialized. Accessing the variable within this zone throws a ReferenceError."
+  },
+  {
+    "id": "gold_17",
+    "query": "What are the two fundamental Rules of Hooks in React?",
+    "query_type": "factoid",
+    "topic": "React Hooks Tutorial",
+    "target_keywords": [
+      "top level",
+      "loops",
+      "conditions",
+      "function components",
+      "custom hooks"
+    ],
+    "expected_doc": "React Hooks Tutorial",
+    "reference_answer": "1. Only call Hooks at the top level (never inside loops, conditions, or nested functions). 2. Only call Hooks from React function components or custom Hooks."
+  },
+  {
+    "id": "gold_18",
+    "query": "Why must state updates in useState be immutable when updating objects or arrays?",
+    "query_type": "architectural_conceptual",
+    "topic": "React Hooks Tutorial",
+    "target_keywords": [
+      "immutable",
+      "shallow comparison",
+      "Object.is",
+      "spread",
+      "re-render"
+    ],
+    "expected_doc": "React Hooks Tutorial",
+    "reference_answer": "React relies on shallow object comparison (Object.is) to detect changes and schedule re-renders. Directly mutating an object or array retains the same memory reference, causing React to skip re-rendering."
+  },
+  {
+    "id": "gold_19",
+    "query": "How does the dependency array in useEffect determine when the effect runs?",
+    "query_type": "architectural_conceptual",
+    "topic": "React Hooks Tutorial",
+    "target_keywords": [
+      "dependency array",
+      "every render",
+      "mount",
+      "empty array",
+      "dependencies change"
+    ],
+    "expected_doc": "React Hooks Tutorial",
+    "reference_answer": "No dependency array: runs on every render. Empty array ([]): runs once after initial mount. Array with variables ([a, b]): runs on mount and whenever any dependency value changes."
+  },
+  {
+    "id": "gold_20",
+    "query": "What is the purpose of the cleanup function returned by a useEffect hook?",
+    "query_type": "code_syntax",
+    "topic": "React Hooks Tutorial",
+    "target_keywords": [
+      "cleanup function",
+      "unmount",
+      "memory leaks",
+      "event listeners",
+      "timers",
+      "subscriptions"
+    ],
+    "expected_doc": "React Hooks Tutorial",
+    "reference_answer": "The cleanup function runs before the component unmounts and before re-running the effect on subsequent renders. It prevents memory leaks by canceling timers, cleaning up subscriptions, aborting network requests, or removing event listeners."
+  },
+  {
+    "id": "gold_21",
+    "query": "What is the difference between useMemo and useCallback in React?",
+    "query_type": "architectural_conceptual",
+    "topic": "React Hooks Tutorial",
+    "target_keywords": [
+      "useMemo",
+      "useCallback",
+      "memoizes result",
+      "memoizes function definition",
+      "expensive computation"
+    ],
+    "expected_doc": "React Hooks Tutorial",
+    "reference_answer": "useMemo memoizes the computed result of an expensive calculation. useCallback memoizes the callback function instance itself between re-renders to prevent unnecessary child re-renders."
+  },
+  {
+    "id": "gold_22",
+    "query": "How does useRef differ from useState in triggering component re-renders?",
+    "query_type": "architectural_conceptual",
+    "topic": "React Hooks Tutorial",
+    "target_keywords": [
+      "useRef",
+      "useState",
+      ".current",
+      "re-render",
+      "mutable ref"
+    ],
+    "expected_doc": "React Hooks Tutorial",
+    "reference_answer": "Modifying useState triggers a component re-render. Modifying useRef (.current) is mutable and does NOT trigger a component re-render."
+  },
+  {
+    "id": "gold_23",
+    "query": "How do createContext and useContext work together to eliminate prop drilling?",
+    "query_type": "code_syntax",
+    "topic": "React Hooks Tutorial",
+    "target_keywords": [
+      "createContext",
+      "useContext",
+      "Provider",
+      "prop drilling",
+      "global state"
+    ],
+    "expected_doc": "React Hooks Tutorial",
+    "reference_answer": "createContext creates a context object with a <Context.Provider value={...}> to wrap components. Any descendant component can directly access that data using useContext(Context) without passing props through intermediate layers."
+  },
+  {
+    "id": "gold_24",
+    "query": "What is the functional update form of useState and when should it be used?",
+    "query_type": "code_syntax",
+    "topic": "React Hooks Tutorial",
+    "target_keywords": [
+      "setCount(prev => prev + 1)",
+      "previous state",
+      "functional update",
+      "stale closures"
+    ],
+    "expected_doc": "React Hooks Tutorial",
+    "reference_answer": "The functional update form (e.g. setCount(prev => prev + 1)) accepts a callback receiving the most recent state value. It should be used whenever the new state depends on the previous state to avoid stale state bugs in closures."
+  },
+  {
+    "id": "gold_25",
+    "query": "What is the Node.js architecture and how does the Event Loop handle asynchronous operations?",
+    "query_type": "architectural_conceptual",
+    "topic": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "single-threaded",
+      "V8",
+      "Libuv",
+      "event loop",
+      "worker pool",
+      "non-blocking"
+    ],
+    "expected_doc": "Node.js & Express REST API Notes",
+    "reference_answer": "Node.js is an asynchronous, event-driven JavaScript runtime built on Chrome V8 and Libuv. The JavaScript execution is single-threaded, but Libuv delegates blocking I/O (files, DNS, crypto) to an underlying multi-threaded worker pool and schedules callbacks back onto the Event Loop."
+  },
+  {
+    "id": "gold_26",
+    "query": "What are the four parameters required in Express error-handling middleware?",
+    "query_type": "code_syntax",
+    "topic": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "err",
+      "req",
+      "res",
+      "next",
+      "four parameters",
+      "app.use((err, req, res, next)"
+    ],
+    "expected_doc": "Node.js & Express REST API Notes",
+    "reference_answer": "Express error-handling middleware must explicitly declare four parameters: (err, req, res, next). Express identifies it as an error handler by checking fn.length === 4."
+  },
+  {
+    "id": "gold_27",
+    "query": "What does the next() function do in an Express middleware chain?",
+    "query_type": "architectural_conceptual",
+    "topic": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "next()",
+      "middleware chain",
+      "subsequent middleware",
+      "hangs request"
+    ],
+    "expected_doc": "Node.js & Express REST API Notes",
+    "reference_answer": "Calling next() passes control to the next middleware function in the stack. If next() is not called and the response is not terminated, the client request will hang indefinitely."
+  },
+  {
+    "id": "gold_28",
+    "query": "What are the three parts of a JSON Web Token (JWT) and how are they separated?",
+    "query_type": "factoid",
+    "topic": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "header",
+      "payload",
+      "signature",
+      "dots",
+      "base64url"
+    ],
+    "expected_doc": "Node.js & Express REST API Notes",
+    "reference_answer": "A JWT consists of three parts separated by dots (.): Header (algorithm & token type), Payload (user claims & metadata), and Signature (verifies integrity)."
+  },
+  {
+    "id": "gold_29",
+    "query": "What are the key differences between HTTP 401 Unauthorized and 403 Forbidden status codes?",
+    "query_type": "factoid",
+    "topic": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "401 Unauthorized",
+      "403 Forbidden",
+      "authentication",
+      "authorization",
+      "credentials",
+      "permissions"
+    ],
+    "expected_doc": "Node.js & Express REST API Notes",
+    "reference_answer": "401 Unauthorized indicates authentication failure (missing or invalid credentials). 403 Forbidden indicates authorization failure (user is authenticated but lacks necessary permissions for the resource)."
+  },
+  {
+    "id": "gold_30",
+    "query": "What are the RESTful naming conventions for API endpoint URIs?",
+    "query_type": "architectural_conceptual",
+    "topic": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "nouns",
+      "plural",
+      "HTTP methods",
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE",
+      "resource-oriented"
+    ],
+    "expected_doc": "Node.js & Express REST API Notes",
+    "reference_answer": "RESTful URIs should use plural nouns representing resources (e.g., /api/courses, /api/students/:id) rather than verbs in the URL path, using standard HTTP methods (GET, POST, PUT, DELETE) to define actions."
+  },
+  {
+    "id": "gold_31",
+    "query": "What built-in Express middleware is used to parse incoming JSON request bodies?",
+    "query_type": "code_syntax",
+    "topic": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "express.json()",
+      "req.body",
+      "JSON bodies"
+    ],
+    "expected_doc": "Node.js & Express REST API Notes",
+    "reference_answer": "app.use(express.json()); is the built-in middleware used to parse incoming request payloads formatted as JSON and populate req.body."
+  },
+  {
+    "id": "gold_32",
+    "query": "Why should CPU-intensive tasks not be executed directly on the Node.js main thread?",
+    "query_type": "architectural_conceptual",
+    "topic": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "CPU-intensive",
+      "main thread",
+      "blocks event loop",
+      "freezes server"
+    ],
+    "expected_doc": "Node.js & Express REST API Notes",
+    "reference_answer": "Because Node.js executes JavaScript on a single thread, long CPU-intensive synchronous operations block the event loop, preventing any other incoming network requests or I/O callbacks from being processed."
+  },
+  {
+    "id": "gold_33",
+    "query": "How is a Many-to-Many relationship implemented between tables in a relational database?",
+    "query_type": "architectural_conceptual",
+    "topic": "PostgreSQL Database Design",
+    "target_keywords": [
+      "Many-to-Many",
+      "junction table",
+      "associative table",
+      "composite primary key",
+      "foreign keys"
+    ],
+    "expected_doc": "PostgreSQL Database Design",
+    "reference_answer": "A Many-to-Many relationship requires a junction (or associative) table containing foreign keys referencing the primary keys of both participating tables, often forming a composite primary key."
+  },
+  {
+    "id": "gold_34",
+    "query": "What are the requirements for a database table to satisfy First Normal Form (1NF)?",
+    "query_type": "factoid",
+    "topic": "PostgreSQL Database Design",
+    "target_keywords": [
+      "1NF",
+      "First Normal Form",
+      "atomic",
+      "repeating groups",
+      "primary key"
+    ],
+    "expected_doc": "PostgreSQL Database Design",
+    "reference_answer": "1NF requires that each column contains only atomic (indivisible) values, there are no repeating groups or arrays, and each record has a unique primary key."
+  },
+  {
+    "id": "gold_35",
+    "query": "What constitutes Second Normal Form (2NF) and how does it prevent partial dependency?",
+    "query_type": "architectural_conceptual",
+    "topic": "PostgreSQL Database Design",
+    "target_keywords": [
+      "2NF",
+      "Second Normal Form",
+      "1NF",
+      "partial dependency",
+      "composite primary key"
+    ],
+    "expected_doc": "PostgreSQL Database Design",
+    "reference_answer": "A table is in 2NF if it satisfies 1NF and all non-key attributes are fully functionally dependent on the entire primary key, eliminating partial dependency on composite keys."
+  },
+  {
+    "id": "gold_36",
+    "query": "What is Third Normal Form (3NF) and how does it eliminate transitive dependencies?",
+    "query_type": "architectural_conceptual",
+    "topic": "PostgreSQL Database Design",
+    "target_keywords": [
+      "3NF",
+      "Third Normal Form",
+      "transitive dependency",
+      "non-key attributes"
+    ],
+    "expected_doc": "PostgreSQL Database Design",
+    "reference_answer": "3NF requires the table to be in 2NF and have no transitive dependencies, meaning non-key columns must depend only directly on the primary key, not on other non-key columns."
+  },
+  {
+    "id": "gold_37",
+    "query": "What are the four ACID properties in database transactions and what do they guarantee?",
+    "query_type": "factoid",
+    "topic": "PostgreSQL Database Design",
+    "target_keywords": [
+      "ACID",
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "expected_doc": "PostgreSQL Database Design",
+    "reference_answer": "Atomicity (all or nothing), Consistency (preserves database integrity constraints), Isolation (concurrent transactions execute without interference), Durability (committed changes persist permanently even after system crashes)."
+  },
+  {
+    "id": "gold_38",
+    "query": "What is a B-tree index in PostgreSQL and what types of queries does it optimize?",
+    "query_type": "architectural_conceptual",
+    "topic": "PostgreSQL Database Design",
+    "target_keywords": [
+      "B-tree",
+      "index",
+      "equality",
+      "range queries",
+      "O(log n)",
+      "PostgreSQL"
+    ],
+    "expected_doc": "PostgreSQL Database Design",
+    "reference_answer": "B-Tree is the default PostgreSQL index structure that maintains sorted data in a balanced tree, offering O(log n) lookups for equality (=), range queries (<, <=, >, >=), and sorting (ORDER BY)."
+  },
+  {
+    "id": "gold_39",
+    "query": "What is the trade-off or downside of having too many indexes on a database table?",
+    "query_type": "architectural_conceptual",
+    "topic": "PostgreSQL Database Design",
+    "target_keywords": [
+      "indexes trade-off",
+      "write overhead",
+      "INSERT",
+      "UPDATE",
+      "DELETE",
+      "disk space"
+    ],
+    "expected_doc": "PostgreSQL Database Design",
+    "reference_answer": "While indexes accelerate SELECT query lookups, they add write overhead to INSERT, UPDATE, and DELETE operations (as indexes must be updated) and consume additional disk storage and memory."
+  },
+  {
+    "id": "gold_40",
+    "query": "What is the purpose of a composite primary key in database junction tables?",
+    "query_type": "factoid",
+    "topic": "PostgreSQL Database Design",
+    "target_keywords": [
+      "composite primary key",
+      "junction table",
+      "uniqueness",
+      "two columns"
+    ],
+    "expected_doc": "PostgreSQL Database Design",
+    "reference_answer": "A composite primary key combines two or more foreign key columns (e.g. student_id + batch_id) to uniquely identify the relationship and guarantee no duplicate pairings can exist."
+  }
+]

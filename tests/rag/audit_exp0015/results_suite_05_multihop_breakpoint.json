@@ -1,0 +1,428 @@
+{
+  "total_cases": 16,
+  "by_tier": {
+    "1_module": {
+      "count": 3,
+      "mean_coverage_at_3": 100,
+      "mean_coverage_at_5": 100,
+      "mean_coverage_at_8": 100
+    },
+    "2_modules": {
+      "count": 3,
+      "mean_coverage_at_3": 100,
+      "mean_coverage_at_5": 100,
+      "mean_coverage_at_8": 100
+    },
+    "3_modules": {
+      "count": 3,
+      "mean_coverage_at_3": 100,
+      "mean_coverage_at_5": 100,
+      "mean_coverage_at_8": 100
+    },
+    "4_modules": {
+      "count": 2,
+      "mean_coverage_at_3": 75,
+      "mean_coverage_at_5": 100,
+      "mean_coverage_at_8": 100
+    },
+    "5_modules": {
+      "count": 1,
+      "mean_coverage_at_3": 60,
+      "mean_coverage_at_5": 100,
+      "mean_coverage_at_8": 100
+    },
+    "high_constraint_3mod": {
+      "count": 2,
+      "mean_coverage_at_3": 100,
+      "mean_coverage_at_5": 100,
+      "mean_coverage_at_8": 100
+    },
+    "distracted_3mod": {
+      "count": 2,
+      "mean_coverage_at_3": 100,
+      "mean_coverage_at_5": 100,
+      "mean_coverage_at_8": 100
+    }
+  },
+  "breakdown": [
+    {
+      "id": "MH-01",
+      "tier": "1_module",
+      "query": "How does the React useEffect cleanup function prevent memory leaks?",
+      "required_modules": [
+        "React Hooks Tutorial"
+      ],
+      "retrieved_top_8": [
+        "React Hooks Tutorial",
+        "React Hooks Tutorial",
+        "React Hooks Tutorial",
+        "React Hooks Tutorial",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "coverage_at_3": 100,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "FULL_COVERAGE"
+    },
+    {
+      "id": "MH-02",
+      "tier": "1_module",
+      "query": "What is the role of the 4 worker threads in the Node.js libuv thread pool?",
+      "required_modules": [
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_top_8": [
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes",
+        "Node.js & Express REST API Notes",
+        "Node.js & Express REST API Notes",
+        "React Hooks Tutorial",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "coverage_at_3": 100,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "FULL_COVERAGE"
+    },
+    {
+      "id": "MH-03",
+      "tier": "1_module",
+      "query": "Why does a B-tree index in PostgreSQL accelerate range queries and equality lookups?",
+      "required_modules": [
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_top_8": [
+        "PostgreSQL Database Design",
+        "PostgreSQL Database Design",
+        "PostgreSQL Database Design",
+        "PostgreSQL Database Design",
+        "HTML & CSS Fundamentals",
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "coverage_at_3": 100,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "FULL_COVERAGE"
+    },
+    {
+      "id": "MH-04",
+      "tier": "2_modules",
+      "query": "How does an Express authentication middleware verify JWT tokens sent by a React frontend using fetch?",
+      "required_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_top_8": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "Node.js & Express REST API Notes"
+      ],
+      "coverage_at_3": 100,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "FULL_COVERAGE"
+    },
+    {
+      "id": "MH-05",
+      "tier": "2_modules",
+      "query": "How does an Express route handler execute parameterized SQL queries using a PostgreSQL connection pool?",
+      "required_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_top_8": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "PostgreSQL Database Design"
+      ],
+      "coverage_at_3": 100,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "FULL_COVERAGE"
+    },
+    {
+      "id": "MH-06",
+      "tier": "2_modules",
+      "query": "How do JavaScript ES6 closures maintain lexical state across React component re-renders?",
+      "required_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial"
+      ],
+      "retrieved_top_8": [
+        "React Hooks Tutorial",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes",
+        "React Hooks Tutorial",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial"
+      ],
+      "coverage_at_3": 100,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "FULL_COVERAGE"
+    },
+    {
+      "id": "MH-07",
+      "tier": "3_modules",
+      "query": "How does a React component fetch normalized 3NF data from an Express API powered by PostgreSQL transactions?",
+      "required_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_top_8": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "React Hooks Tutorial"
+      ],
+      "coverage_at_3": 100,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "FULL_COVERAGE"
+    },
+    {
+      "id": "MH-08",
+      "tier": "3_modules",
+      "query": "How do JavaScript async/await Promises handle errors thrown by Express error middleware when inserting into PostgreSQL?",
+      "required_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_top_8": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes",
+        "Node.js & Express REST API Notes"
+      ],
+      "coverage_at_3": 100,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "FULL_COVERAGE"
+    },
+    {
+      "id": "MH-09",
+      "tier": "3_modules",
+      "query": "How does CSS Flexbox layout student cards rendered by React after fetching JSON records from an Express endpoint?",
+      "required_modules": [
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_top_8": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "HTML & CSS Fundamentals",
+        "Node.js & Express REST API Notes",
+        "HTML & CSS Fundamentals"
+      ],
+      "coverage_at_3": 100,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "FULL_COVERAGE"
+    },
+    {
+      "id": "MH-10",
+      "tier": "4_modules",
+      "query": "How does modern JavaScript ES6 syntax power React hooks and Express REST endpoints that query indexed PostgreSQL tables?",
+      "required_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_top_8": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "coverage_at_3": 75,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "EXPANSION_NEEDED"
+    },
+    {
+      "id": "MH-11",
+      "tier": "4_modules",
+      "query": "How does CSS box-sizing style React components that display asynchronous data fetched from Express connected to PostgreSQL?",
+      "required_modules": [
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_top_8": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "HTML & CSS Fundamentals",
+        "Node.js & Express REST API Notes",
+        "HTML & CSS Fundamentals",
+        "Node.js & Express REST API Notes",
+        "HTML & CSS Fundamentals"
+      ],
+      "coverage_at_3": 75,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "EXPANSION_NEEDED"
+    },
+    {
+      "id": "MH-12",
+      "tier": "5_modules",
+      "query": "Design an end-to-end full-stack web application: HTML5 semantic tags and CSS Flexbox layout styling a React functional UI using hooks, calling Node.js Express middleware with JWT auth, executing parameterized queries against a 3NF PostgreSQL database with B-tree indexes, written in modern JavaScript ES6+.",
+      "required_modules": [
+        "HTML & CSS Fundamentals",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_top_8": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals",
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "coverage_at_3": 60,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "EXPANSION_NEEDED"
+    },
+    {
+      "id": "MH-13",
+      "tier": "high_constraint_3mod",
+      "query": "How to connect React to an Express backend querying PostgreSQL WITHOUT using class components, WITHOUT using var declarations, and WITHOUT raw unparameterized SQL?",
+      "required_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_top_8": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "Node.js & Express REST API Notes"
+      ],
+      "coverage_at_3": 100,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "FULL_COVERAGE"
+    },
+    {
+      "id": "MH-14",
+      "tier": "high_constraint_3mod",
+      "query": "How does Express stream PostgreSQL query results to a React client WITHOUT buffering the entire table in memory and WITHOUT blocking the libuv thread pool?",
+      "required_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_top_8": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "coverage_at_3": 100,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "FULL_COVERAGE"
+    },
+    {
+      "id": "MH-15",
+      "tier": "distracted_3mod",
+      "query": "How does React fetch PostgreSQL data through Express while ignoring Docker containers, Kubernetes pods, and Python Django settings?",
+      "required_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_top_8": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "coverage_at_3": 100,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "FULL_COVERAGE"
+    },
+    {
+      "id": "MH-16",
+      "tier": "distracted_3mod",
+      "query": "How do JavaScript arrow functions and React hooks interact with Express routes, regardless of AWS S3, Redis caching, or MongoDB collections?",
+      "required_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_top_8": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "coverage_at_3": 100,
+      "coverage_at_5": 100,
+      "coverage_at_8": 100,
+      "status": "FULL_COVERAGE"
+    }
+  ]
+}

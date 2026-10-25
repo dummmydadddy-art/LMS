@@ -1,0 +1,1159 @@
+{
+  "experiment_id": "EXP-0064",
+  "evaluation_type": "development_n400",
+  "total_queries": 400,
+  "development_outcome_c2": "DEGRADES",
+  "development_outcome_c3": "SIMILAR",
+  "conditions": {
+    "c0": {
+      "total": 400,
+      "correct": 368,
+      "accuracy": 92.0,
+      "accuracy_ci_95": [
+        88.92,
+        94.28
+      ],
+      "macro_f1": 92.67,
+      "far": 3.6,
+      "far_ci_95": [
+        1.91,
+        6.7
+      ],
+      "frr": 13.33,
+      "frr_ci_95": [
+        8.8,
+        19.7
+      ],
+      "supported_recall": 86.67,
+      "refutation_recall": 93.33,
+      "not_established_recall": 98.0,
+      "ood_recall": 98.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 130,
+          "REFUTED": 20,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 8,
+          "REFUTED": 140,
+          "NOT_ESTABLISHED": 2
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 84,
+          "total": 100,
+          "accuracy": 84.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 94,
+          "total": 100,
+          "accuracy": 94.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 98,
+          "total": 100,
+          "accuracy": 98.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 46,
+          "total": 50,
+          "accuracy": 92.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 46,
+          "total": 50,
+          "accuracy": 92.0
+        }
+      }
+    },
+    "c1": {
+      "total": 400,
+      "correct": 370,
+      "accuracy": 92.5,
+      "accuracy_ci_95": [
+        89.5,
+        94.7
+      ],
+      "macro_f1": 93.05,
+      "far": 4.0,
+      "far_ci_95": [
+        2.19,
+        7.21
+      ],
+      "frr": 10.67,
+      "frr_ci_95": [
+        6.67,
+        16.62
+      ],
+      "supported_recall": 89.33,
+      "refutation_recall": 92.0,
+      "not_established_recall": 98.0,
+      "ood_recall": 98.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 134,
+          "REFUTED": 16,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 9,
+          "REFUTED": 138,
+          "NOT_ESTABLISHED": 3
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 87,
+          "total": 100,
+          "accuracy": 87.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 94,
+          "total": 100,
+          "accuracy": 94.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 98,
+          "total": 100,
+          "accuracy": 98.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 47,
+          "total": 50,
+          "accuracy": 94.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 44,
+          "total": 50,
+          "accuracy": 88.0
+        }
+      }
+    },
+    "c2": {
+      "total": 400,
+      "correct": 354,
+      "accuracy": 88.5,
+      "accuracy_ci_95": [
+        85.0,
+        91.27
+      ],
+      "macro_f1": 89.34,
+      "far": 8.0,
+      "far_ci_95": [
+        5.24,
+        12.03
+      ],
+      "frr": 12.67,
+      "frr_ci_95": [
+        8.26,
+        18.94
+      ],
+      "supported_recall": 86.0,
+      "refutation_recall": 84.0,
+      "not_established_recall": 99.0,
+      "ood_recall": 99.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 129,
+          "REFUTED": 19,
+          "NOT_ESTABLISHED": 2
+        },
+        "REFUTED": {
+          "SUPPORTED": 20,
+          "REFUTED": 126,
+          "NOT_ESTABLISHED": 4
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 0,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 99
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 86,
+          "total": 100,
+          "accuracy": 86.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 86,
+          "total": 100,
+          "accuracy": 86.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 99,
+          "total": 100,
+          "accuracy": 99.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 43,
+          "total": 50,
+          "accuracy": 86.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 40,
+          "total": 50,
+          "accuracy": 80.0
+        }
+      }
+    },
+    "c3": {
+      "total": 400,
+      "correct": 369,
+      "accuracy": 92.25,
+      "accuracy_ci_95": [
+        89.21,
+        94.49
+      ],
+      "macro_f1": 92.83,
+      "far": 4.0,
+      "far_ci_95": [
+        2.19,
+        7.21
+      ],
+      "frr": 11.33,
+      "frr_ci_95": [
+        7.2,
+        17.4
+      ],
+      "supported_recall": 88.67,
+      "refutation_recall": 92.0,
+      "not_established_recall": 98.0,
+      "ood_recall": 98.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 133,
+          "REFUTED": 17,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 9,
+          "REFUTED": 138,
+          "NOT_ESTABLISHED": 3
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 86,
+          "total": 100,
+          "accuracy": 86.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 94,
+          "total": 100,
+          "accuracy": 94.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 98,
+          "total": 100,
+          "accuracy": 98.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 47,
+          "total": 50,
+          "accuracy": 94.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 44,
+          "total": 50,
+          "accuracy": 88.0
+        }
+      }
+    }
+  },
+  "retrieval_metrics": {
+    "c1": {
+      "recall_at_1": 96.88,
+      "recall_at_3": 99.61,
+      "recall_at_5": 99.61,
+      "recall_at_10": 99.61,
+      "ndcg_at_5": 98.55,
+      "ndcg_at_10": 98.55
+    },
+    "c2": {
+      "recall_at_1": 0.0,
+      "recall_at_3": 0.0,
+      "recall_at_5": 0.0,
+      "recall_at_10": 0.0,
+      "ndcg_at_5": 0.0,
+      "ndcg_at_10": 0.0
+    },
+    "c3": {
+      "recall_at_1": 100.0,
+      "recall_at_3": 100.0,
+      "recall_at_5": 100.0,
+      "recall_at_10": 100.0,
+      "ndcg_at_5": 100.0,
+      "ndcg_at_10": 100.0
+    }
+  },
+  "paired_comparisons": {
+    "c3_vs_c1": {
+      "comparator": "C3 vs C1",
+      "n11": 368,
+      "n00": 29,
+      "n10": 1,
+      "n01": 2,
+      "discordant_pairs": 3,
+      "mcnemar_exact_p": 1.0,
+      "accuracy_delta_pp": -0.25,
+      "accuracy_delta_ci_95": [
+        -1.1,
+        0.6
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-023",
+          "query": "How does const require initialization upon declaration?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-001",
+          "query": "Why does box-sizing: content-box include padding and border inside the declared width?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-065",
+          "query": "Why does Second Normal Form (2NF) permit partial functional dependencies on primary keys?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_CORRECT_C1_WRONG"
+        }
+      ]
+    },
+    "c2_vs_c1": {
+      "comparator": "C2 vs C1",
+      "n11": 347,
+      "n00": 23,
+      "n10": 7,
+      "n01": 23,
+      "discordant_pairs": 30,
+      "mcnemar_exact_p": 0.005223,
+      "accuracy_delta_pp": -4.0,
+      "accuracy_delta_ci_95": [
+        -6.66,
+        -1.34
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-026",
+          "query": "How do rest parameters (...args) condense arguments into a true Array?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-036",
+          "query": "How do default parameter values operate in JavaScript ES6 functions?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C1_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-041",
+          "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-055",
+          "query": "What is the significance of HTTP 403 Forbidden status code?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C1_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-077",
+          "query": "What index type is used for full-text search and JSONB containment in PostgreSQL?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-080",
+          "query": "How does COMMIT persist transaction changes permanently?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-099",
+          "query": "Why does direct state mutation fail to trigger component re-renders in React?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C1_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-011",
+          "query": "Why does <footer> belong inside the <header> element according to semantic HTML?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-020",
+          "query": "Why does minmax(280px, 1fr) require media queries to achieve responsive columns?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-024",
+          "query": "Why does accessing let before declaration return undefined instead of ReferenceError?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-028",
+          "query": "Why do objects declared with const automatically become completely immutable?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-040",
+          "query": "Why does JSON.stringify serialize circular object references without throwing?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-073",
+          "query": "Why does Write-Ahead Logging (WAL) write logs to disk only after database reboot?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-077",
+          "query": "Why does COMMIT roll back changes made by preceding SQL statements in a transaction?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_CORRECT_C1_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-087",
+          "query": "Why does useMemo execute an asynchronous side effect and return a cleanup callback?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-088",
+          "query": "Why does useCallback re-execute the wrapped function on every render regardless of dependencies?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-095",
+          "query": "Why does useLayoutEffect execute asynchronously after the browser paints the screen?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-010",
+          "query": "How does Alembic auto-generate database migration scripts from SQLAlchemy metadata?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_CORRECT_C1_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-029",
+          "query": "How does Android handle lifecycle events in ViewModel during configuration changes?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C1_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-038",
+          "query": "How does Envoy proxy handle client-side load balancing and service mesh routing?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-010",
+          "query": "Why doesn't Flexbox provide 2-dimensional grid layouts?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-023",
+          "query": "Why doesn't express.json() process multi-part form data by default?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-026",
+          "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C1_WRONG"
+        },
+        {
+          "query_id": "DEV-NEG-040",
+          "query": "Why doesn't content-box absorb border and padding within element width?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-047",
+          "query": "Why doesn't useLayoutEffect run asynchronously after visual layout paint?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-050",
+          "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-003",
+          "query": "Since useEffect executes after render, why does it run synchronously before browser paint?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-004",
+          "query": "Since useRef persists values across renders, why does it trigger a component re-render on change?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-011",
+          "query": "Since let is block-scoped, why does accessing it in the TDZ return undefined?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-036",
+          "query": "Since Object.freeze freezes objects shallowly, why does it make deeply nested objects immutable?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C1_CORRECT"
+        }
+      ]
+    },
+    "c3_vs_c0": {
+      "comparator": "C3 vs C0",
+      "n11": 359,
+      "n00": 22,
+      "n10": 10,
+      "n01": 9,
+      "discordant_pairs": 19,
+      "mcnemar_exact_p": 1.0,
+      "accuracy_delta_pp": 0.25,
+      "accuracy_delta_ci_95": [
+        -1.89,
+        2.39
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-023",
+          "query": "How does const require initialization upon declaration?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-031",
+          "query": "How does async/await allow asynchronous code to be written sequentially?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-041",
+          "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-055",
+          "query": "What is the significance of HTTP 403 Forbidden status code?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-077",
+          "query": "What index type is used for full-text search and JSONB containment in PostgreSQL?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-095",
+          "query": "How does useRef persist mutable values across renders without causing re-renders?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-001",
+          "query": "Why does box-sizing: content-box include padding and border inside the declared width?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-038",
+          "query": "Why does rest parameter syntax require parameters to be placed at the start of the list?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-046",
+          "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-065",
+          "query": "Why does Second Normal Form (2NF) permit partial functional dependencies on primary keys?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-077",
+          "query": "Why does COMMIT roll back changes made by preceding SQL statements in a transaction?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-086",
+          "query": "Why does useEffect with an empty dependency array run after every component render?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-014",
+          "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-029",
+          "query": "How does Android handle lifecycle events in ViewModel during configuration changes?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-010",
+          "query": "Why doesn't Flexbox provide 2-dimensional grid layouts?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-NEG-026",
+          "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-050",
+          "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-027",
+          "query": "Since var is hoisted with undefined, why does let also hoist with initial value of undefined?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-045",
+          "query": "Since CSS Grid defines columns with grid-template-columns, why does Flexbox define columns with grid-template-columns?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        }
+      ]
+    },
+    "c2_vs_c0": {
+      "comparator": "C2 vs C0",
+      "n11": 346,
+      "n00": 24,
+      "n10": 8,
+      "n01": 22,
+      "discordant_pairs": 30,
+      "mcnemar_exact_p": 0.016125,
+      "accuracy_delta_pp": -3.5,
+      "accuracy_delta_ci_95": [
+        -6.16,
+        -0.84
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-026",
+          "query": "How do rest parameters (...args) condense arguments into a true Array?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-031",
+          "query": "How does async/await allow asynchronous code to be written sequentially?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-036",
+          "query": "How do default parameter values operate in JavaScript ES6 functions?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-080",
+          "query": "How does COMMIT persist transaction changes permanently?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-095",
+          "query": "How does useRef persist mutable values across renders without causing re-renders?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-099",
+          "query": "Why does direct state mutation fail to trigger component re-renders in React?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-011",
+          "query": "Why does <footer> belong inside the <header> element according to semantic HTML?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-020",
+          "query": "Why does minmax(280px, 1fr) require media queries to achieve responsive columns?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-024",
+          "query": "Why does accessing let before declaration return undefined instead of ReferenceError?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-028",
+          "query": "Why do objects declared with const automatically become completely immutable?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-038",
+          "query": "Why does rest parameter syntax require parameters to be placed at the start of the list?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-040",
+          "query": "Why does JSON.stringify serialize circular object references without throwing?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-046",
+          "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-073",
+          "query": "Why does Write-Ahead Logging (WAL) write logs to disk only after database reboot?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-086",
+          "query": "Why does useEffect with an empty dependency array run after every component render?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-087",
+          "query": "Why does useMemo execute an asynchronous side effect and return a cleanup callback?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-088",
+          "query": "Why does useCallback re-execute the wrapped function on every render regardless of dependencies?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-095",
+          "query": "Why does useLayoutEffect execute asynchronously after the browser paints the screen?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-010",
+          "query": "How does Alembic auto-generate database migration scripts from SQLAlchemy metadata?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-014",
+          "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-038",
+          "query": "How does Envoy proxy handle client-side load balancing and service mesh routing?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-023",
+          "query": "Why doesn't express.json() process multi-part form data by default?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-040",
+          "query": "Why doesn't content-box absorb border and padding within element width?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-047",
+          "query": "Why doesn't useLayoutEffect run asynchronously after visual layout paint?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-003",
+          "query": "Since useEffect executes after render, why does it run synchronously before browser paint?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-004",
+          "query": "Since useRef persists values across renders, why does it trigger a component re-render on change?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-011",
+          "query": "Since let is block-scoped, why does accessing it in the TDZ return undefined?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-027",
+          "query": "Since var is hoisted with undefined, why does let also hoist with initial value of undefined?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-036",
+          "query": "Since Object.freeze freezes objects shallowly, why does it make deeply nested objects immutable?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-MIX-045",
+          "query": "Since CSS Grid defines columns with grid-template-columns, why does Flexbox define columns with grid-template-columns?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        }
+      ]
+    }
+  },
+  "text_visual_complementarity": {
+    "TEXT_ONLY_CORRECT": 23,
+    "VISUAL_ONLY_CORRECT": 7,
+    "BOTH_CORRECT": 347,
+    "BOTH_WRONG": 23,
+    "VISUAL_RECOVERS_TEXT_FAILURE": 7,
+    "TEXT_RECOVERS_VISUAL_FAILURE": 23
+  },
+  "fusion_analysis": {
+    "top_ranked_item_changed_count": 0,
+    "new_visual_page_added_count": 0,
+    "visual_introduced_error_count": 2,
+    "a4_outcome_changed_count": 3
+  },
+  "ood_metrics": {
+    "c0": {
+      "total_ood": 100,
+      "correct": 98,
+      "accuracy": 98.0,
+      "false_acceptances": 1,
+      "false_refutations": 1,
+      "false_abstentions": 0
+    },
+    "c1": {
+      "total_ood": 100,
+      "correct": 98,
+      "accuracy": 98.0,
+      "false_acceptances": 1,
+      "false_refutations": 1,
+      "false_abstentions": 0
+    },
+    "c2": {
+      "total_ood": 100,
+      "correct": 99,
+      "accuracy": 99.0,
+      "false_acceptances": 0,
+      "false_refutations": 1,
+      "false_abstentions": 0
+    },
+    "c3": {
+      "total_ood": 100,
+      "correct": 98,
+      "accuracy": 98.0,
+      "false_acceptances": 1,
+      "false_refutations": 1,
+      "false_abstentions": 0
+    }
+  }
+}

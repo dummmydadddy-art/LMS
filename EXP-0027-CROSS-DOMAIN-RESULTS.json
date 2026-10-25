@@ -1,0 +1,1982 @@
+{
+    "experiment_tag": "EXP-0027-CROSS-DOMAIN-RESULTS",
+    "timestamp": "2026-09-13T10:37:07+00:00",
+    "dataset": "EXP-0027-CROSS-DOMAIN-DATASET.json",
+    "total_cases": 200,
+    "cross_domain_summary": {
+        "baseline_exp0025_accuracy": "37%",
+        "baseline_exp0025_contradiction_recall": "35%",
+        "baseline_exp0025_entailment_recall": "39%",
+        "candidate_exp0027_accuracy": "58%",
+        "candidate_exp0027_contradiction_recall": "61%",
+        "candidate_exp0027_entailment_recall": "55%",
+        "contradiction_recall_delta": "26%",
+        "verdict": "CROSS_DOMAIN_FAILED"
+    },
+    "modes": {
+        "A0": {
+            "mode": "A0",
+            "description": "EXP-0025 Frozen Baseline",
+            "total_cases": 200,
+            "accuracy_pct": 37,
+            "contradiction_recall_pct": 35,
+            "entailment_recall_pct": 39,
+            "far_pct": 30,
+            "frr_pct": 20,
+            "refuted_unknown_pct": 35,
+            "supported_unknown_pct": 41,
+            "tier1_usage_pct": 100,
+            "tier2_usage_pct": 0,
+            "tier2_latency_p50_ms": 0,
+            "tier2_latency_p95_ms": 0,
+            "evidence_used_invariant_pct": 100,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 39,
+                    "REFUTED": 20,
+                    "NOT_ESTABLISHED": 41
+                },
+                "REFUTED": {
+                    "SUPPORTED": 30,
+                    "REFUTED": 35,
+                    "NOT_ESTABLISHED": 35
+                }
+            },
+            "elapsed_seconds": 5.66
+        },
+        "A5": {
+            "mode": "A5",
+            "description": "EXP-0027 Two-Tier Candidate",
+            "total_cases": 200,
+            "accuracy_pct": 58,
+            "contradiction_recall_pct": 61,
+            "entailment_recall_pct": 55,
+            "far_pct": 8,
+            "frr_pct": 27,
+            "refuted_unknown_pct": 31,
+            "supported_unknown_pct": 18,
+            "tier1_usage_pct": 15.5,
+            "tier2_usage_pct": 84.5,
+            "tier2_latency_p50_ms": 962,
+            "tier2_latency_p95_ms": 1206,
+            "evidence_used_invariant_pct": 100,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 55,
+                    "REFUTED": 27,
+                    "NOT_ESTABLISHED": 18
+                },
+                "REFUTED": {
+                    "SUPPORTED": 8,
+                    "REFUTED": 61,
+                    "NOT_ESTABLISHED": 31
+                }
+            },
+            "elapsed_seconds": 242.97
+        }
+    },
+    "sample_evaluations": [
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-001",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since <header> contains introductory content, how does JavaScript document.querySelector('header') access the header element?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since <header> contains introductory content, how does JavaScript document.querySelector('header') access the header element?",
+                    "extracted_proposition": "<header> contains introductory content",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <header>: Represents introductory content or a set of navigational links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1237.7
+                },
+                {
+                    "original_query": "Since <header> contains introductory content, how does JavaScript document.querySelector('header') access the header element?",
+                    "extracted_proposition": "JavaScript document.querySelector('header') access the header element",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <header>: Represents introductory content or a set of navigational links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 921.6
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-002",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Why does changing an element class with JavaScript element.classList.add() apply CSS flexbox properties?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does changing an element class with JavaScript element.classList.add() apply CSS flexbox properties?",
+                    "extracted_proposition": "changing an element class with JavaScript element.classList.add() apply CSS flexbox properties",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-basis: The default size of an element before the remaining space is distributed (e.g., flex-basis: 250px). Shorthand: flex: 1 1 auto.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 931.8
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-003",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since CSS border-box includes padding in width, how does JavaScript element.clientWidth reflect box-sizing styles?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since CSS border-box includes padding in width, how does JavaScript element.clientWidth reflect box-sizing styles?",
+                    "extracted_proposition": "CSS border-box includes padding in width",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: 3. Border: A border surrounding the padding and content (e.g., border: 1px solid #ccc).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 960.5
+                },
+                {
+                    "original_query": "Since CSS border-box includes padding in width, how does JavaScript element.clientWidth reflect box-sizing styles?",
+                    "extracted_proposition": "JavaScript element.clientWidth reflect box-sizing styles",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: Every HTML element in a document tree is formatted as a rectangular box. The CSS box model consists of four distinct layers from inside out:",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 977.3
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-004",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "How does JavaScript event handling interact with semantic HTML5 <nav> navigation links?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does JavaScript event handling interact with semantic HTML5 <nav> navigation links?",
+                    "extracted_proposition": "JavaScript event handling interact with semantic HTML5 <nav> navigation links",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <nav>: Defines a set of major navigation links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 935.7
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-005",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since <article> represents a standalone composition, how does JavaScript render an array of articles dynamically?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since <article> represents a standalone composition, how does JavaScript render an array of articles dynamically?",
+                    "extracted_proposition": "<article> represents a standalone composition",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <article>: Represents a self-contained composition (e.g., blog post, forum post, product card) that is independently distributable.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 940
+                },
+                {
+                    "original_query": "Since <article> represents a standalone composition, how does JavaScript render an array of articles dynamically?",
+                    "extracted_proposition": "JavaScript render an array of articles dynamically",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <article>: Represents a self-contained composition (e.g., blog post, forum post, product card) that is independently distributable.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 917.9
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-006",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Why does modifying element.style.display to 'grid' via JavaScript trigger a two-dimensional grid layout?",
+            "expected": "SUPPORTED",
+            "predicted": "REFUTED",
+            "match": false,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+            "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does modifying element.style.display to 'grid' via JavaScript trigger a two-dimensional grid layout?",
+                    "extracted_proposition": "modifying element.style.display to 'grid' via JavaScript trigger a two-dimensional grid layout",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1010.9
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-007",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since <footer> contains author copyright, how can JavaScript update the copyright year dynamically?",
+            "expected": "SUPPORTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since <footer> contains author copyright, how can JavaScript update the copyright year dynamically?",
+                    "extracted_proposition": "<footer> contains author copyright",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <footer>: Contains author information, copyright, or footer links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 948.7
+                },
+                {
+                    "original_query": "Since <footer> contains author copyright, how can JavaScript update the copyright year dynamically?",
+                    "extracted_proposition": "JavaScript update the copyright year dynamically",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: VARIABLE DECLARATIONS & SCOPING:",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 919.9
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-008",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "How does JavaScript add event listeners to semantic <section> buttons without using inline onclick attributes?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does JavaScript add event listeners to semantic <section> buttons without using inline onclick attributes?",
+                    "extracted_proposition": "JavaScript add event listeners to semantic <section> buttons without using inline onclick attributes",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: Arrow functions provide concise syntax: `const add = (a, b) => a + b;`",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 936.8
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-009",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since CSS flex-direction: row lays out items horizontally, how can JavaScript toggle it to column dynamically?",
+            "expected": "SUPPORTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since CSS flex-direction: row lays out items horizontally, how can JavaScript toggle it to column dynamically?",
+                    "extracted_proposition": "CSS flex-direction: row lays out items horizontally",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-direction: row (default, left to right) | column (top to bottom) | row-reverse | column-reverse.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 934.9
+                },
+                {
+                    "original_query": "Since CSS flex-direction: row lays out items horizontally, how can JavaScript toggle it to column dynamically?",
+                    "extracted_proposition": "JavaScript toggle it to column dynamically",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: VARIABLE DECLARATIONS & SCOPING:",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1169.1
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-010",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Why does JavaScript DOM manipulation preserve CSS gap spacing when appending new child elements?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does JavaScript DOM manipulation preserve CSS gap spacing when appending new child elements?",
+                    "extracted_proposition": "JavaScript DOM manipulation preserve CSS gap spacing when appending new child elements",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - gap: Sets spacing between grid cells (e.g., gap: 24px).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 929.9
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-011",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since <main> contains unique document content, how does JavaScript ensure only one <main> tag exists in the DOM?",
+            "expected": "SUPPORTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since <main> contains unique document content, how does JavaScript ensure only one <main> tag exists in the DOM?",
+                    "extracted_proposition": "<main> contains unique document content",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <main>: Specifies the main, unique content of the document. There must not be more than one <main> element in a document.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 957.1
+                },
+                {
+                    "original_query": "Since <main> contains unique document content, how does JavaScript ensure only one <main> tag exists in the DOM?",
+                    "extracted_proposition": "JavaScript ensure only one <main> tag exists in the DOM",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <main>: Specifies the main, unique content of the document. There must not be more than one <main> element in a document.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 929.6
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-012",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "How does CSS box-sizing: border-box simplify JavaScript element width calculations for dynamic layouts?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does CSS box-sizing: border-box simplify JavaScript element width calculations for dynamic layouts?",
+                    "extracted_proposition": "CSS box-sizing: border-box simplify JavaScript element width calculations for dynamic layouts",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: 3. Border: A border surrounding the padding and content (e.g., border: 1px solid #ccc).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 941.7
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-013",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since repeat(auto-fit, minmax(280px, 1fr)) creates responsive columns, how can JavaScript monitor grid container size?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since repeat(auto-fit, minmax(280px, 1fr)) creates responsive columns, how can JavaScript monitor grid container size?",
+                    "extracted_proposition": "repeat(auto-fit, minmax(280px, 1fr)) creates responsive columns",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 934.3
+                },
+                {
+                    "original_query": "Since repeat(auto-fit, minmax(280px, 1fr)) creates responsive columns, how can JavaScript monitor grid container size?",
+                    "extracted_proposition": "JavaScript monitor grid container size",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 949
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-014",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Why does JavaScript element.setAttribute('style', 'display: flex') activate flex item properties on child nodes?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does JavaScript element.setAttribute('style', 'display: flex') activate flex item properties on child nodes?",
+                    "extracted_proposition": "JavaScript element.setAttribute('style', 'display: flex') activate flex item properties on child nodes",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - display: flex (initiates the flex formatting context).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 931.8
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-015",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since semantic HTML elements improve accessibility, how does JavaScript ARIA attribute manipulation complement them?",
+            "expected": "SUPPORTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since semantic HTML elements improve accessibility, how does JavaScript ARIA attribute manipulation complement them?",
+                    "extracted_proposition": "semantic HTML elements improve accessibility",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: HTML5 SEMANTIC ELEMENTS:",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 932.4
+                },
+                {
+                    "original_query": "Since semantic HTML elements improve accessibility, how does JavaScript ARIA attribute manipulation complement them?",
+                    "extracted_proposition": "JavaScript ARIA attribute manipulation complement them",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: VARIABLE DECLARATIONS & SCOPING:",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 995.5
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-016",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "How does CSS gap work with dynamically rendered JavaScript card lists without extra margin classes?",
+            "expected": "SUPPORTED",
+            "predicted": "REFUTED",
+            "match": false,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": "The premise is incorrect according to the course curriculum: Returns a mutable ref object whose `.current` property persists across the entire component lifetime without triggering a re-render when changed:",
+            "citation": "[React Hooks Tutorial - Chunk 5]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "How does CSS gap work with dynamically rendered JavaScript card lists without extra margin classes?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-017",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since let and const are block-scoped, how do they safely manage loop counters when iterating over HTML elements?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since let and const are block-scoped, how do they safely manage loop counters when iterating over HTML elements?",
+                    "extracted_proposition": "let and const are block-scoped",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - const: Block-scoped, also TDZ hoisted. Must be initialized upon declaration and cannot be reassigned. However, objects and arrays declared with const remain mutable in their properties and elements.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1151.3
+                },
+                {
+                    "original_query": "Since let and const are block-scoped, how do they safely manage loop counters when iterating over HTML elements?",
+                    "extracted_proposition": "they safely manage loop counters when iterating over HTML elements",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - const: Block-scoped, also TDZ hoisted. Must be initialized upon declaration and cannot be reassigned. However, objects and arrays declared with const remain mutable in their properties and elements.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1179.5
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-018",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Why does destructuring user profile objects simplify injecting text into semantic HTML <header> tags?",
+            "expected": "SUPPORTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does destructuring user profile objects simplify injecting text into semantic HTML <header> tags?",
+                    "extracted_proposition": "destructuring user profile objects simplify injecting text into semantic HTML <header> tags",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <header>: Represents introductory content or a set of navigational links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 941.4
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-019",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since arrow functions inherit lexical this, how do they simplify DOM click listeners on flexbox items?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since arrow functions inherit lexical this, how do they simplify DOM click listeners on flexbox items?",
+                    "extracted_proposition": "arrow functions inherit lexical this",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: 1. Lexical `this`: Arrow functions do not bind their own `this`; they inherit `this` from the enclosing lexical execution context. This eliminates the need for `.bind(this)` or `const self = this` in callbacks.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 957.5
+                },
+                {
+                    "original_query": "Since arrow functions inherit lexical this, how do they simplify DOM click listeners on flexbox items?",
+                    "extracted_proposition": "they simplify DOM click listeners on flexbox items",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: 1. Lexical `this`: Arrow functions do not bind their own `this`; they inherit `this` from the enclosing lexical execution context. This eliminates the need for `.bind(this)` or `const self = this` in callbacks.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 939.1
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-020",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "How does asynchronous JavaScript fetch API populate a CSS grid gallery with remote course images?",
+            "expected": "SUPPORTED",
+            "predicted": "REFUTED",
+            "match": false,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": "The premise is incorrect according to the course curriculum: Avoid CPU-intensive operations (heavy loops, synchronous encryption) on the main thread to prevent blocking event handling.",
+            "citation": "[Node.js & Express REST API Notes - Chunk 0]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "How does asynchronous JavaScript fetch API populate a CSS grid gallery with remote course images?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-021",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since spread syntax merges arrays, how does it help combine CSS class names dynamically in JavaScript?",
+            "expected": "SUPPORTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since spread syntax merges arrays, how does it help combine CSS class names dynamically in JavaScript?",
+                    "extracted_proposition": "spread syntax merges arrays",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - Spread Operator (`...`): Expands an iterable into individual elements. Used for shallow copying (`const copy = { ...original };`) and merging (`const merged = [...arr1, ...arr2];`).",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1162.6
+                },
+                {
+                    "original_query": "Since spread syntax merges arrays, how does it help combine CSS class names dynamically in JavaScript?",
+                    "extracted_proposition": "it help combine CSS class names dynamically in JavaScript",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: DESTRUCTURING, SPREAD & REST OPERATORS:",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1235.4
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-022",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Why does Promise.all allow multiple HTML template fragments to load concurrently before DOM insertion?",
+            "expected": "SUPPORTED",
+            "predicted": "REFUTED",
+            "match": false,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": "The premise is incorrect according to the course curriculum: - <main>: Specifies the main, unique content of the document. There must not be more than one <main> element in a document.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why does Promise.all allow multiple HTML template fragments to load concurrently before DOM insertion?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-023",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since rest parameters collect arguments, how can a JavaScript utility function append variable child elements to <main>?",
+            "expected": "SUPPORTED",
+            "predicted": "REFUTED",
+            "match": false,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is incorrect according to the course curriculum: 2. No `arguments` object: Use rest parameters `(...args)` instead.",
+            "citation": "[JavaScript ES6+ Deep Dive - Chunk 1]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "rest parameters collect arguments",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                },
+                {
+                    "original_query": "Since rest parameters collect arguments, how can a JavaScript utility function append variable child elements to <main>?",
+                    "extracted_proposition": "a JavaScript utility function append variable child elements to <main>",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - Spread Operator (`...`): Expands an iterable into individual elements. Used for shallow copying (`const copy = { ...original };`) and merging (`const merged = [...arr1, ...arr2];`).",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1157.7
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-024",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "How does the JavaScript Call Stack handle execution when CSS transitions trigger layout reflows?",
+            "expected": "SUPPORTED",
+            "predicted": "REFUTED",
+            "match": false,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: JavaScript ES6+ Deep Dive: JavaScript is single-threaded and uses an event loop with a Call Stack, Web APIs, Task Queue (Macrotasks: setTimeout, setInterval), and Microtask Queue (Promises, queueMicrotask). Microtasks always take priority over macrotasks.",
+            "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does the JavaScript Call Stack handle execution when CSS transitions trigger layout reflows?",
+                    "extracted_proposition": "the JavaScript Call Stack handle execution when CSS transitions trigger layout reflows",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: JavaScript is single-threaded and uses an event loop with a Call Stack, Web APIs, Task Queue (Macrotasks: setTimeout, setInterval), and Microtask Queue (Promises, queueMicrotask). Microtasks always take priority over macrotasks.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 996.4
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-025",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since JavaScript is single-threaded, how does the event loop prevent UI freezing during complex CSS animations?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since JavaScript is single-threaded, how does the event loop prevent UI freezing during complex CSS animations?",
+                    "extracted_proposition": "JavaScript is single-threaded",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: JavaScript is single-threaded and uses an event loop with a Call Stack, Web APIs, Task Queue (Macrotasks: setTimeout, setInterval), and Microtask Queue (Promises, queueMicrotask). Microtasks always take priority over macrotasks.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 935.6
+                },
+                {
+                    "original_query": "Since JavaScript is single-threaded, how does the event loop prevent UI freezing during complex CSS animations?",
+                    "extracted_proposition": "the event loop prevent UI freezing during complex CSS animations",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "Node.js & Express REST API Notes: Avoid CPU-intensive operations (heavy loops, synchronous encryption) on the main thread to prevent blocking event handling.",
+                    "citation": "[Node.js & Express REST API Notes - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 945.1
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-026",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since the <main> element is block-scoped in JavaScript, why does declaring var inside <main> throw a ReferenceError?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": "The premise is incorrect according to the course curriculum: - var: Function-scoped, hoisted with an initial value of undefined, and allows re-declaration. This often caused subtle bugs.",
+            "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "the <main> element is block-scoped in JavaScript",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                },
+                {
+                    "clause": "why does declaring var inside <main> throw a ReferenceError?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-027",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Why does CSS display: flex execute JavaScript callbacks on a separate Libuv thread?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does CSS display: flex execute JavaScript callbacks on a separate Libuv thread?",
+                    "extracted_proposition": "CSS display: flex execute JavaScript callbacks on a separate Libuv thread",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - display: flex (initiates the flex formatting context).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 980
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-028",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since the CSS box model is an asynchronous JavaScript Promise, how does it resolve padding values?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is incorrect according to the course curriculum: Avoid CPU-intensive operations (heavy loops, synchronous encryption) on the main thread to prevent blocking event handling.",
+            "citation": "[Node.js & Express REST API Notes - Chunk 0]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "the CSS box model is an asynchronous JavaScript Promise",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                },
+                {
+                    "original_query": "Since the CSS box model is an asynchronous JavaScript Promise, how does it resolve padding values?",
+                    "extracted_proposition": "it resolve padding values",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: const fetchData = () => new Promise((resolve, reject) => {",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 930.8
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-029",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "How does the <article> tag prevent JavaScript variables from being reassigned inside its innerHTML?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does the <article> tag prevent JavaScript variables from being reassigned inside its innerHTML?",
+                    "extracted_proposition": "the <article> tag prevent JavaScript variables from being reassigned inside its innerHTML",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <article>: Represents a self-contained composition (e.g., blog post, forum post, product card) that is independently distributable.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 963.9
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-030",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since border-box is a JavaScript constructor function, why can it not be instantiated with new border-box()?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since border-box is a JavaScript constructor function, why can it not be instantiated with new border-box()?",
+                    "extracted_proposition": "border-box is a JavaScript constructor function",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: 3. Border: A border surrounding the padding and content (e.g., border: 1px solid #ccc).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 934.1
+                },
+                {
+                    "original_query": "Since border-box is a JavaScript constructor function, why can it not be instantiated with new border-box()?",
+                    "extracted_proposition": "it not be instantiated with new border-box()",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: 3. Border: A border surrounding the padding and content (e.g., border: 1px solid #ccc).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 952.1
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-031",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Why does declaring flex-wrap: nowrap force JavaScript to run in multi-threaded parallel mode?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": "The premise is incorrect according to the course curriculum: JavaScript is single-threaded and uses an event loop with a Call Stack, Web APIs, Task Queue (Macrotasks: setTimeout, setInterval), and Microtask Queue (Promises, queueMicrotask). Microtasks always take priority over macrotasks.",
+            "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why does declaring flex-wrap: nowrap force JavaScript to run in multi-threaded parallel mode?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-032",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since semantic <header> tags hoist JavaScript functions into the Temporal Dead Zone, how are they called?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since semantic <header> tags hoist JavaScript functions into the Temporal Dead Zone, how are they called?",
+                    "extracted_proposition": "semantic <header> tags hoist JavaScript functions into the Temporal Dead Zone",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - let: Block-scoped (confined within { }), hoisted into the Temporal Dead Zone (TDZ) where accessing it before declaration throws a ReferenceError. Allows re-assignment but not re-declaration in the same scope.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1181.1
+                },
+                {
+                    "original_query": "Since semantic <header> tags hoist JavaScript functions into the Temporal Dead Zone, how are they called?",
+                    "extracted_proposition": "how are they called",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: 1. Lexical `this`: Arrow functions do not bind their own `this`; they inherit `this` from the enclosing lexical execution context. This eliminates the need for `.bind(this)` or `const self = this` in callbacks.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 967.2
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-033",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "How does CSS grid-template-columns define JavaScript event loop macrotask queue sizes?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": "The premise is incorrect according to the course curriculum: JavaScript is single-threaded and uses an event loop with a Call Stack, Web APIs, Task Queue (Macrotasks: setTimeout, setInterval), and Microtask Queue (Promises, queueMicrotask). Microtasks always take priority over macrotasks.",
+            "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "How does CSS grid-template-columns define JavaScript event loop macrotask queue sizes?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-034",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since <footer> is a reserved keyword in JavaScript ES6, why does using it as a variable name succeed?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - <footer>: Contains author information, copyright, or footer links.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since <footer> is a reserved keyword in JavaScript ES6, why does using it as a variable name succeed?",
+                    "extracted_proposition": "<footer> is a reserved keyword in JavaScript ES6",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <footer>: Contains author information, copyright, or footer links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 982.6
+                },
+                {
+                    "original_query": "Since <footer> is a reserved keyword in JavaScript ES6, why does using it as a variable name succeed?",
+                    "extracted_proposition": "using it as a variable name succeed",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: VARIABLE DECLARATIONS & SCOPING:",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1155.1
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-035",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Why does the CSS margin property clear JavaScript call stack memory during garbage collection?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does the CSS margin property clear JavaScript call stack memory during garbage collection?",
+                    "extracted_proposition": "the CSS margin property clear JavaScript call stack memory during garbage collection",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: JavaScript is single-threaded and uses an event loop with a Call Stack, Web APIs, Task Queue (Macrotasks: setTimeout, setInterval), and Microtask Queue (Promises, queueMicrotask). Microtasks always take priority over macrotasks.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 967.5
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-036",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since <nav> elements inherit lexical this from JavaScript arrow functions, how are link clicks bound?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since <nav> elements inherit lexical this from JavaScript arrow functions, how are link clicks bound?",
+                    "extracted_proposition": "<nav> elements inherit lexical this from JavaScript arrow functions",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: 1. Lexical `this`: Arrow functions do not bind their own `this`; they inherit `this` from the enclosing lexical execution context. This eliminates the need for `.bind(this)` or `const self = this` in callbacks.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 988.9
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-037",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "How does CSS gap create a new JavaScript Promise whenever flex items overflow the container?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - gap: Defines spacing between flex items without using margins (e.g., gap: 1rem).",
+            "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does CSS gap create a new JavaScript Promise whenever flex items overflow the container?",
+                    "extracted_proposition": "CSS gap create a new JavaScript Promise whenever flex items overflow the container",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - gap: Defines spacing between flex items without using margins (e.g., gap: 1rem).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1023.7
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-038",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since box-sizing: content-box freezes JavaScript object properties, why does Object.freeze fail?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is incorrect according to the course curriculum: * { box-sizing: border-box; }",
+            "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "box-sizing: content-box freezes JavaScript object properties",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                },
+                {
+                    "original_query": "Since box-sizing: content-box freezes JavaScript object properties, why does Object.freeze fail?",
+                    "extracted_proposition": "Object.freeze fail",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - const: Block-scoped, also TDZ hoisted. Must be initialized upon declaration and cannot be reassigned. However, objects and arrays declared with const remain mutable in their properties and elements.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1187.5
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-039",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Why does display: grid require JavaScript to compile CSS selectors into WebAssembly binaries?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does display: grid require JavaScript to compile CSS selectors into WebAssembly binaries?",
+                    "extracted_proposition": "display: grid require JavaScript to compile CSS selectors into WebAssembly binaries",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.8,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 972.7
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-040",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since <section> tags execute JavaScript synchronously on the main thread, why do they block rendering?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is incorrect according to the course curriculum: - Libuv provides a thread pool (default 4 worker threads) to handle non-blocking asynchronous I\/O operations like file system reads, DNS lookups, and crypto hashing.",
+            "citation": "[Node.js & Express REST API Notes - Chunk 0]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "<section> tags execute JavaScript synchronously on the main thread",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                },
+                {
+                    "original_query": "Since <section> tags execute JavaScript synchronously on the main thread, why do they block rendering?",
+                    "extracted_proposition": "they block rendering",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - let: Block-scoped (confined within { }), hoisted into the Temporal Dead Zone (TDZ) where accessing it before declaration throws a ReferenceError. Allows re-assignment but not re-declaration in the same scope.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1204
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-041",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "How does flex-shrink: 0 prevent JavaScript variables from being garbage collected?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does flex-shrink: 0 prevent JavaScript variables from being garbage collected?",
+                    "extracted_proposition": "flex-shrink: 0 prevent JavaScript variables from being garbage collected",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-shrink: Defines the ability for a flex item to shrink if necessary (default 1).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 942.7
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-042",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since HTML5 semantic tags are compiled by the V8 engine into C++ classes, why are they styled with CSS?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since HTML5 semantic tags are compiled by the V8 engine into C++ classes, why are they styled with CSS?",
+                    "extracted_proposition": "HTML5 semantic tags are compiled by the V8 engine into C++ classes",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: HTML5 SEMANTIC ELEMENTS:",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.8,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 957.6
+                },
+                {
+                    "original_query": "Since HTML5 semantic tags are compiled by the V8 engine into C++ classes, why are they styled with CSS?",
+                    "extracted_proposition": "they styled with CSS",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: HTML5 SEMANTIC ELEMENTS:",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 929
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-043",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Why does CSS padding modify the length property of JavaScript array variables?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does CSS padding modify the length property of JavaScript array variables?",
+                    "extracted_proposition": "CSS padding modify the length property of JavaScript array variables",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - Object Destructuring: `const { name, age, role = 'student' } = user;` extracts properties into local variables with optional defaults.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1184.8
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-044",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since flex-grow converts HTML elements into JavaScript promises, how does await flex-grow work?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - flex-grow: Defines the ability for a flex item to grow if necessary (default 0).",
+            "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since flex-grow converts HTML elements into JavaScript promises, how does await flex-grow work?",
+                    "extracted_proposition": "flex-grow converts HTML elements into JavaScript promises",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-grow: Defines the ability for a flex item to grow if necessary (default 0).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 998
+                },
+                {
+                    "original_query": "Since flex-grow converts HTML elements into JavaScript promises, how does await flex-grow work?",
+                    "extracted_proposition": "await flex-grow work",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-grow: Defines the ability for a flex item to grow if necessary (default 0).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1154.7
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-045",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "How does grid-column: span 2 delete JavaScript variables declared in outer function scopes?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does grid-column: span 2 delete JavaScript variables declared in outer function scopes?",
+                    "extracted_proposition": "grid-column: span 2 delete JavaScript variables declared in outer function scopes",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1064.9
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-046",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since the <header> element requires JavaScript async\/await to render text, why does static HTML work?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since the <header> element requires JavaScript async\/await to render text, why does static HTML work?",
+                    "extracted_proposition": "the <header> element requires JavaScript async\/await to render text",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <header>: Represents introductory content or a set of navigational links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.8,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 983.8
+                },
+                {
+                    "original_query": "Since the <header> element requires JavaScript async\/await to render text, why does static HTML work?",
+                    "extracted_proposition": "static HTML work",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: HTML5 SEMANTIC ELEMENTS:",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.8,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 998.7
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-047",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Why does CSS flexbox disallow JavaScript DOM event listeners on flex child elements?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does CSS flexbox disallow JavaScript DOM event listeners on flex child elements?",
+                    "extracted_proposition": "CSS flexbox disallow JavaScript DOM event listeners on flex child elements",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - const: Block-scoped, also TDZ hoisted. Must be initialized upon declaration and cannot be reassigned. However, objects and arrays declared with const remain mutable in their properties and elements.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 971.3
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-048",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Since margin: auto evaluates as undefined in JavaScript, why does console.log throw an error?",
+            "expected": "REFUTED",
+            "predicted": "SUPPORTED",
+            "match": false,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since margin: auto evaluates as undefined in JavaScript, why does console.log throw an error?",
+                    "extracted_proposition": "margin: auto evaluates as undefined in JavaScript",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - var: Function-scoped, hoisted with an initial value of undefined, and allows re-declaration. This often caused subtle bugs.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1150.9
+                },
+                {
+                    "original_query": "Since margin: auto evaluates as undefined in JavaScript, why does console.log throw an error?",
+                    "extracted_proposition": "console.log throw an error",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: console.log(\"Loaded:\", student.name);",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1151.4
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-049",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "How does semantic HTML syntax restrict JavaScript execution strictly to the microtask queue?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: JavaScript ES6+ Deep Dive: JavaScript is single-threaded and uses an event loop with a Call Stack, Web APIs, Task Queue (Macrotasks: setTimeout, setInterval), and Microtask Queue (Promises, queueMicrotask). Microtasks always take priority over macrotasks.",
+            "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does semantic HTML syntax restrict JavaScript execution strictly to the microtask queue?",
+                    "extracted_proposition": "semantic HTML syntax restrict JavaScript execution strictly to the microtask queue",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: JavaScript is single-threaded and uses an event loop with a Call Stack, Web APIs, Task Queue (Macrotasks: setTimeout, setInterval), and Microtask Queue (Promises, queueMicrotask). Microtasks always take priority over macrotasks.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 987.8
+                }
+            ]
+        },
+        {
+            "id": "CROSS-HTML_CSS_AND_JS-050",
+            "interface_pair": "HTML_CSS_AND_JS",
+            "query": "Why does the CSS box model require JavaScript let declarations to use camelCase syntax?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: JavaScript ES6+ Deep Dive: - let: Block-scoped (confined within { }), hoisted into the Temporal Dead Zone (TDZ) where accessing it before declaration throws a ReferenceError. Allows re-assignment but not re-declaration in the same scope.",
+            "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does the CSS box model require JavaScript let declarations to use camelCase syntax?",
+                    "extracted_proposition": "the CSS box model require JavaScript let declarations to use camelCase syntax",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - let: Block-scoped (confined within { }), hoisted into the Temporal Dead Zone (TDZ) where accessing it before declaration throws a ReferenceError. Allows re-assignment but not re-declaration in the same scope.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1031.8
+                }
+            ]
+        }
+    ]
+}

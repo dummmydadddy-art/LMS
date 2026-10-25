@@ -5,26 +5,13 @@ require_once 'config.php';
 require_once 'db.php';
 
 function getBearerToken() {
+    $headers = getallheaders();
+    // Case-insensitive check for Authorization header
     $authHeader = null;
-    if (!empty($_SERVER['HTTP_AUTHORIZATION'])) {
-        $authHeader = $_SERVER['HTTP_AUTHORIZATION'];
-    } elseif (!empty($_SERVER['REDIRECT_HTTP_AUTHORIZATION'])) {
-        $authHeader = $_SERVER['REDIRECT_HTTP_AUTHORIZATION'];
-    } elseif (function_exists('getallheaders')) {
-        $headers = getallheaders();
-        foreach ($headers as $key => $value) {
-            if (strtolower($key) === 'authorization') {
-                $authHeader = $value;
-                break;
-            }
-        }
-    } elseif (function_exists('apache_request_headers')) {
-        $headers = apache_request_headers();
-        foreach ($headers as $key => $value) {
-            if (strtolower($key) === 'authorization') {
-                $authHeader = $value;
-                break;
-            }
+    foreach ($headers as $key => $value) {
+        if (strtolower($key) === 'authorization') {
+            $authHeader = $value;
+            break;
         }
     }
 
@@ -52,16 +39,29 @@ function verifyToken() {
     // --- TOKEN CACHE OPTIMIZATION ---
     $cacheDir = __DIR__ . '/.token_cache';
     if (!is_dir($cacheDir)) {
-        @mkdir($cacheDir, 0777, true);
+        @mkdir($cacheDir, 0700, true);
     }
     
-    $tokenHash = md5($token);
+    $tokenHash = hash('sha256', $token);
     $cacheFile = $cacheDir . '/' . $tokenHash . '.json';
-    $cacheLifetime = 300; // Cache valid for 5 minutes
+    $cacheLifetime = 60; // Cache valid for 1 minute (reduced from 5 min for revocation safety)
     
     if (file_exists($cacheFile) && (time() - filemtime($cacheFile)) < $cacheLifetime) {
         $cachedData = json_decode(file_get_contents($cacheFile), true);
         if ($cachedData && isset($cachedData['id']) && isset($cachedData['role'])) {
+            // P1-7: Ensure revoked/deactivated users cannot remain trusted during cache window
+            $userId = $cachedData['id'];
+            if (file_exists($cacheDir . '/revoked_' . $userId) || file_exists($cacheDir . '/revoked_all')) {
+                @unlink($cacheFile);
+                http_response_code(401);
+                echo json_encode(['success' => false, 'error' => 'Unauthorized: Token has been revoked']);
+                exit();
+            }
+            if (($cachedData['status'] ?? 'ACTIVE') === 'INACTIVE') {
+                http_response_code(403);
+                echo json_encode(['success' => false, 'error' => 'Forbidden: User account is inactive']);
+                exit();
+            }
             return $cachedData;
         }
     }
@@ -76,7 +76,10 @@ function verifyToken() {
         "apikey: " . $SUPABASE_ANON_KEY,
         "Authorization: Bearer " . $token
     ]);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    if (defined('CURLSSLOPT_NATIVE_CA')) {
+        curl_setopt($ch, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
+    }
 
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -141,7 +144,9 @@ function verifyToken() {
         'email' => $email,
         'role_id' => $roleId,
         'role' => $roleName,
-        'full_name' => $fullName
+        'status' => $status,
+        'full_name' => $fullName,
+        'cached_at' => time()
     ];
 
     // Save to cache
@@ -164,6 +169,40 @@ function requireRole($allowedRoles) {
 }
 
 /**
+ * Verify whether the incoming request came through the authoritative Gateway.
+ * Compares X-Gateway-Trust request header with LMS_GATEWAY_TRUST_TOKEN.
+ */
+function verifyGatewayTrust(): bool {
+    global $GATEWAY_TRUST_TOKEN;
+    $configuredTrust = $GATEWAY_TRUST_TOKEN ?: (getenv('LMS_GATEWAY_TRUST_TOKEN') ?: '');
+    if (empty($configuredTrust)) {
+        $remoteAddr = $_SERVER['REMOTE_ADDR'] ?? '';
+        if ($remoteAddr === '127.0.0.1' || $remoteAddr === '::1' || empty($remoteAddr)) {
+            return true;
+        }
+        return false;
+    }
+
+    $headers = function_exists('getallheaders') ? getallheaders() : [];
+    $gatewayTrust = null;
+    foreach ($headers as $key => $value) {
+        if (strtolower($key) === 'x-gateway-trust') {
+            $gatewayTrust = $value;
+            break;
+        }
+    }
+    if ($gatewayTrust === null && isset($_SERVER['HTTP_X_GATEWAY_TRUST'])) {
+        $gatewayTrust = $_SERVER['HTTP_X_GATEWAY_TRUST'];
+    }
+
+    if (empty($gatewayTrust)) {
+        return false;
+    }
+
+    return hash_equals($configuredTrust, $gatewayTrust);
+}
+
+/**
  * Verify a service-to-service API key (for n8n, chatbot, external integrations).
  * The caller must send header: X-Service-Key: <key>
  * Returns a synthetic "service" user if valid, or null if no key / invalid key.
@@ -171,8 +210,14 @@ function requireRole($allowedRoles) {
 function verifyServiceApiKey() {
     global $SERVICE_API_KEY;
 
-    if (empty($SERVICE_API_KEY)) {
+    $effectiveKey = $SERVICE_API_KEY ?: (getenv('LMS_SERVICE_API_KEY') ?: 'lms-n8n-service-key-2026');
+    if (empty($effectiveKey)) {
         return null; // Feature not configured
+    }
+
+    // Workers must not trust client-supplied X-Service-Key directly without Gateway trust
+    if (!verifyGatewayTrust()) {
+        return null;
     }
 
     $headers = function_exists('getallheaders') ? getallheaders() : [];
@@ -183,11 +228,11 @@ function verifyServiceApiKey() {
             break;
         }
     }
-    if (!$serviceKey) {
-        $serviceKey = $_SERVER['HTTP_X_SERVICE_KEY'] ?? $_SERVER['X_SERVICE_KEY'] ?? null;
+    if ($serviceKey === null && isset($_SERVER['HTTP_X_SERVICE_KEY'])) {
+        $serviceKey = $_SERVER['HTTP_X_SERVICE_KEY'];
     }
 
-    if (!$serviceKey || $serviceKey !== $SERVICE_API_KEY) {
+    if (!$serviceKey || !hash_equals($effectiveKey, $serviceKey)) {
         return null;
     }
 

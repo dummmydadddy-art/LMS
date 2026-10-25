@@ -1,0 +1,1389 @@
+[
+  {
+    "id": "blind_hc_01",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "Which HTML5 semantic tag should be used to wrap a blog post or independent product card that can be syndicated?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "<article>",
+      "self-contained",
+      "independently distributable"
+    ],
+    "reference": "The <article> tag represents a self-contained composition that is independently distributable, such as a blog post or product card."
+  },
+  {
+    "id": "blind_hc_02",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "In flexbox, how does align-items behave by default when no value is provided on the flex container?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "stretch",
+      "cross axis",
+      "align-items"
+    ],
+    "reference": "By default, align-items defaults to stretch, which stretches flex items to fill the container along the cross axis."
+  },
+  {
+    "id": "blind_hc_03",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "What is the specific purpose of the <footer> semantic tag according to HTML5 standards?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "<footer>",
+      "author information",
+      "copyright",
+      "footer links"
+    ],
+    "reference": "The <footer> tag contains author information, copyright data, or footer links."
+  },
+  {
+    "id": "blind_hc_04",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "If I set flex: 1 1 auto; on a flex item, what do the three individual values represent?",
+    "type": "CODE_REASONING",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "flex-grow",
+      "flex-shrink",
+      "flex-basis"
+    ],
+    "reference": "In the flex shorthand, the three values correspond to flex-grow (1), flex-shrink (1), and flex-basis (auto)."
+  },
+  {
+    "id": "blind_hc_05",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "Why would screen readers (A11y) struggle if an entire website is built using only <div> tags instead of semantic tags?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "accessibility",
+      "screen-reader",
+      "semantic tags",
+      "maintainability"
+    ],
+    "reference": "Semantic HTML clearly describes meaning to assistive tech and screen-readers; generic divs lack semantic landmarks like main, nav, and header."
+  },
+  {
+    "id": "blind_hc_06",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "How do you define a 3-column equal-width responsive grid using the fractional unit (fr) in CSS Grid?",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "repeat(3, 1fr)",
+      "grid-template-columns",
+      "display: grid"
+    ],
+    "reference": "Use grid-template-columns: repeat(3, 1fr); on a display: grid container."
+  },
+  {
+    "id": "blind_hc_07",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "What is the difference between space-between and space-evenly in flexbox justify-content?",
+    "type": "COMPARATIVE",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "space-between",
+      "space-evenly",
+      "main axis",
+      "justify-content"
+    ],
+    "reference": "space-between puts equal space between items with first/last flush to edges; space-evenly distributes equal space between and around all items."
+  },
+  {
+    "id": "blind_hc_08",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "Explain how the flex-direction property influences the orientation of the main axis and cross axis.",
+    "type": "CONCEPTUAL",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "flex-direction",
+      "main axis",
+      "cross axis",
+      "row",
+      "column"
+    ],
+    "reference": "flex-direction determines the main axis (row is horizontal, column is vertical); the cross axis runs perpendicular to the main axis."
+  },
+  {
+    "id": "blind_hc_09",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "In CSS box model, is the transparent space outside the element border referred to as margin or padding?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "margin",
+      "transparent space",
+      "outside the border"
+    ],
+    "reference": "Margin is the transparent space outside the border that separates the element from neighboring elements."
+  },
+  {
+    "id": "blind_hc_10",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "Can an individual flex item override its container's align-items setting, and which property does it use?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "align-self",
+      "cross axis",
+      "override"
+    ],
+    "reference": "Yes, an individual flex child can override container cross-axis alignment using the align-self property."
+  },
+  {
+    "id": "blind_hc_11",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "How does CSS Grid span an element across two columns from grid line 1 to grid line 3?",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "grid-column",
+      "1 / 3",
+      "grid lines"
+    ],
+    "reference": "Use grid-column: 1 / 3; to span from vertical grid line 1 to grid line 3."
+  },
+  {
+    "id": "blind_hc_12",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "What is the role of <nav> in an HTML document and can multiple nav blocks exist on a page?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "<nav>",
+      "navigational links",
+      "major navigation"
+    ],
+    "reference": "The <nav> tag defines a set of major navigation links; multiple nav elements can exist for header navigation, pagination, or footers."
+  },
+  {
+    "id": "blind_hc_13",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "Under content-box, if width is 200px, padding is 20px, and border is 5px, what is the total rendered width?",
+    "type": "CALCULATION_EDGE_CASE",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "content-box",
+      "250px",
+      "padding",
+      "border"
+    ],
+    "reference": "Total rendered width is 200 + 20(left) + 20(right) + 5(left) + 5(right) = 250px."
+  },
+  {
+    "id": "blind_hc_14",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "Explain the difference between 1-dimensional and 2-dimensional layouts in modern CSS design.",
+    "type": "COMPARATIVE",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "1-dimensional",
+      "2-dimensional",
+      "Flexbox",
+      "CSS Grid"
+    ],
+    "reference": "Flexbox is 1-dimensional (arranging items in a single row or column), whereas CSS Grid is 2-dimensional (handling rows and columns simultaneously)."
+  },
+  {
+    "id": "blind_hc_15",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "Why is gap preferred over child margins when spacing items inside flex and grid containers?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "gap",
+      "margins",
+      "between items",
+      "edges"
+    ],
+    "reference": "The gap property applies clean spacing strictly between adjacent items without adding unwanted outer margins to the perimeter."
+  },
+  {
+    "id": "blind_hc_16",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "yo how do i make flex items wrap into multiple rows when they run out of screen space??",
+    "type": "SLANG_TYPO",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "flex-wrap",
+      "wrap",
+      "nowrap"
+    ],
+    "reference": "Set flex-wrap: wrap; on the flex container to allow items to break into new rows."
+  },
+  {
+    "id": "blind_hc_17",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "what does the <section> element designate compared to a generic container?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "<section>",
+      "standalone section",
+      "thematic grouping"
+    ],
+    "reference": "<section> represents a standalone section of functionality or thematic grouping of content."
+  },
+  {
+    "id": "blind_hc_18",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "Explain flex-shrink: 0; behavior during container viewport narrowing.",
+    "type": "CODE_REASONING",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "flex-shrink: 0",
+      "prevent shrinking",
+      "original size"
+    ],
+    "reference": "flex-shrink: 0 prevents the item from shrinking smaller than its flex-basis or content width when the container narrows."
+  },
+  {
+    "id": "blind_hc_19",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "Does the <header> element only apply to the top of the entire webpage or can it belong to an <article>?",
+    "type": "EDGE_CASE",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "<header>",
+      "introductory content",
+      "<article>"
+    ],
+    "reference": "<header> represents introductory content; it can be used for the page header or as an intro header inside an <article> or <section>."
+  },
+  {
+    "id": "blind_hc_20",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "What happens when flex-direction is set to column-reverse in terms of child visual layout and main axis orientation?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "column-reverse",
+      "vertical",
+      "bottom to top",
+      "main axis"
+    ],
+    "reference": "column-reverse sets the main axis vertically with items stacked from bottom to top in reverse order."
+  },
+  {
+    "id": "blind_hc_21",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "In CSS Grid, how does grid-template-rows define horizontal row track sizes?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "grid-template-rows",
+      "row heights",
+      "tracks"
+    ],
+    "reference": "grid-template-rows defines the line names and track sizing functions of the grid rows."
+  },
+  {
+    "id": "blind_hc_22",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "Which box model layer sits immediately between the element content and the border?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "padding",
+      "content",
+      "border",
+      "inside out"
+    ],
+    "reference": "Padding sits directly between the content and the border, clearing space around the content inside the border."
+  },
+  {
+    "id": "blind_hc_23",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "Why does * { box-sizing: border-box; } simplify responsive grid and percentage-based width calculations?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "border-box",
+      "percentage",
+      "width",
+      "padding"
+    ],
+    "reference": "Because padding and border are included within the declared percentage width, preventing unexpected line breaks and overflow."
+  },
+  {
+    "id": "blind_hc_24",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "can grid-row: 2 / 4; be used to span multiple horizontal tracks in css grid?",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "grid-row",
+      "2 / 4",
+      "span",
+      "horizontal tracks"
+    ],
+    "reference": "Yes, grid-row: 2 / 4 spans from horizontal grid line 2 to line 4 across two row tracks."
+  },
+  {
+    "id": "blind_hc_25",
+    "topic": "HTML & CSS Fundamentals",
+    "query": "When creating a site layout, when should a developer choose CSS Grid over Flexbox?",
+    "type": "ARCHITECTURAL",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "target_keywords": [
+      "CSS Grid",
+      "Flexbox",
+      "2-dimensional",
+      "page layout"
+    ],
+    "reference": "CSS Grid is preferred for full-page, 2-dimensional layouts (rows and columns together), while Flexbox is preferred for 1-dimensional component alignment."
+  },
+  {
+    "id": "blind_js_01",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "What happens if a developer attempts to access a variable declared with let before its declaration line?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "ReferenceError",
+      "Temporal Dead Zone",
+      "TDZ"
+    ],
+    "reference": "Accessing a let variable before its declaration throws a ReferenceError because it resides in the Temporal Dead Zone (TDZ)."
+  },
+  {
+    "id": "blind_js_02",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "Do arrow functions have their own arguments object, and if not, what ES6 feature replaces it?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "arguments",
+      "rest parameters",
+      "(...args)"
+    ],
+    "reference": "No, arrow functions do not have an arguments object; rest parameters (...args) are used instead."
+  },
+  {
+    "id": "blind_js_03",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "Explain why invoking an arrow function with the new operator throws a TypeError.",
+    "type": "CODE_REASONING",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "TypeError",
+      "constructor",
+      "prototype",
+      "new"
+    ],
+    "reference": "Arrow functions lack a [[Construct]] method and prototype property, so invoking them with new throws a TypeError."
+  },
+  {
+    "id": "blind_js_04",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "How does Object.freeze() affect nested objects inside a frozen JavaScript object?",
+    "type": "EDGE_CASE",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "shallow",
+      "nested objects",
+      "mutable",
+      "Object.freeze"
+    ],
+    "reference": "Object.freeze() is shallow; properties referencing nested objects remain mutable unless recursively frozen."
+  },
+  {
+    "id": "blind_js_05",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "In the JavaScript event loop, which queue takes precedence when the call stack clears: microtasks or macrotasks?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "microtask queue",
+      "higher priority",
+      "macrotasks"
+    ],
+    "reference": "The microtask queue (Promises) has higher priority and empties immediately after the call stack clears before any macrotask runs."
+  },
+  {
+    "id": "blind_js_06",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "Show how to provide a default value when destructuring a property from an object in ES6.",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "destructuring",
+      "default value",
+      "role = 'student'"
+    ],
+    "reference": "Use const { name, role = 'student' } = user; to specify a default fallback value."
+  },
+  {
+    "id": "blind_js_07",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "Does the spread operator ({ ...obj }) perform a deep clone or a shallow clone of an object?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "shallow copy",
+      "spread operator",
+      "cloning"
+    ],
+    "reference": "The spread operator performs a shallow copy; nested object references are copied rather than duplicated."
+  },
+  {
+    "id": "blind_js_08",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "What are the three possible states of a JavaScript Promise?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "Pending",
+      "Fulfilled",
+      "Rejected"
+    ],
+    "reference": "A Promise exists in one of three states: Pending, Fulfilled, or Rejected."
+  },
+  {
+    "id": "blind_js_09",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "Why can properties of an array declared with const still be pushed to or modified without error?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "const",
+      "reassignment",
+      "mutable",
+      "binding"
+    ],
+    "reference": "const prevents variable identifier reassignment, but the underlying object or array in memory remains mutable."
+  },
+  {
+    "id": "blind_js_10",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "How do rest parameters gather an indefinite number of function arguments into an array in ES6?",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "rest parameters",
+      "...numbers",
+      "array"
+    ],
+    "reference": "Prefixing the last parameter with three dots (...args) captures remaining arguments into a true JavaScript array."
+  },
+  {
+    "id": "blind_js_11",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "What is the key scoping difference between var and let in JavaScript?",
+    "type": "COMPARATIVE",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "function-scoped",
+      "block-scoped",
+      "var",
+      "let"
+    ],
+    "reference": "var is function-scoped (or global), whereas let is block-scoped (confined strictly within curly braces {})."
+  },
+  {
+    "id": "blind_js_12",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "Why did ES6 arrow functions eliminate the need for patterns like const self = this or .bind(this)?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "lexical this",
+      "enclosing scope",
+      "bind(this)"
+    ],
+    "reference": "Arrow functions inherit lexical this from their enclosing execution scope, avoiding manual this rebinding."
+  },
+  {
+    "id": "blind_js_13",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "How should errors be caught when handling asynchronous operations using async and await?",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "try/catch",
+      "async/await",
+      "error handling"
+    ],
+    "reference": "Wrap the awaited asynchronous expressions inside a synchronous-style try/catch block."
+  },
+  {
+    "id": "blind_js_14",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "does setTimeout callback execute in the microtask queue or the macrotask/task queue?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "macrotask",
+      "task queue",
+      "setTimeout"
+    ],
+    "reference": "setTimeout callbacks are queued in the macrotask (Task/Callback) queue, not the microtask queue."
+  },
+  {
+    "id": "blind_js_15",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "Can a variable declared with var be re-declared in the exact same scope without throwing an error?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "var",
+      "re-declaration",
+      "allows re-declaration"
+    ],
+    "reference": "Yes, var permits re-declaration within the same scope, which often created subtle bugs in legacy JavaScript."
+  },
+  {
+    "id": "blind_js_16",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "What syntax extracts the first and second elements of an array and groups the remainder into a variable?",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "array destructuring",
+      "[first, second, ...remaining]"
+    ],
+    "reference": "Use array destructuring with rest: const [first, second, ...remaining] = items;."
+  },
+  {
+    "id": "blind_js_17",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "What happens if a developer reassigns a variable declared with const?",
+    "type": "EDGE_CASE",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "TypeError",
+      "reassignment",
+      "const"
+    ],
+    "reference": "Reassigning a const identifier throws a TypeError at runtime because const bindings are immutable."
+  },
+  {
+    "id": "blind_js_18",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "Explain what queueMicrotask() does in modern JavaScript execution.",
+    "type": "CONCEPTUAL",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "queueMicrotask",
+      "microtask queue",
+      "call stack"
+    ],
+    "reference": "queueMicrotask queues a callback on the microtask queue, which executes immediately after current synchronous execution clears."
+  },
+  {
+    "id": "blind_js_19",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "yo if i do const obj = Object.freeze({ a: 1 }); can i add obj.b = 2??",
+    "type": "SLANG_TYPO",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "Object.freeze",
+      "adding",
+      "modifying",
+      "prohibited"
+    ],
+    "reference": "No, Object.freeze prevents adding new properties, deleting existing ones, or modifying values."
+  },
+  {
+    "id": "blind_js_20",
+    "topic": "JavaScript ES6+ Deep Dive",
+    "query": "How is a Promise created using its constructor and what two callback parameters are passed to the executor?",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "target_keywords": [
+      "new Promise",
+      "resolve",
+      "reject"
+    ],
+    "reference": "A Promise is constructed via new Promise((resolve, reject) => { ... })."
+  },
+  {
+    "id": "blind_react_01",
+    "topic": "React Hooks Tutorial",
+    "query": "What are the two golden rules of React Hooks regarding where they can be called?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "top level",
+      "functional components",
+      "rules of hooks"
+    ],
+    "reference": "1. Only call hooks at top level (never inside loops, conditions, or nested functions), 2. Only call hooks from React function components or custom hooks."
+  },
+  {
+    "id": "blind_react_02",
+    "topic": "React Hooks Tutorial",
+    "query": "Why should you use the functional update form setCount(prev => prev + 1) in useState?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "functional update",
+      "stale state",
+      "batched updates"
+    ],
+    "reference": "The functional update receives the latest pending state, preventing stale state bugs when updates are batched."
+  },
+  {
+    "id": "blind_react_03",
+    "topic": "React Hooks Tutorial",
+    "query": "How do you run a useEffect hook strictly once when the component mounts and cleanup on unmount?",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "empty dependency array",
+      "[]",
+      "mount",
+      "unmount"
+    ],
+    "reference": "Pass an empty dependency array [] to useEffect to execute strictly on mount and cleanup on unmount."
+  },
+  {
+    "id": "blind_react_04",
+    "topic": "React Hooks Tutorial",
+    "query": "Does mutating the .current property of a useRef hook cause a component re-render?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "useRef",
+      ".current",
+      "does not trigger re-render"
+    ],
+    "reference": "No, mutating .current persists values across renders without triggering a component re-render."
+  },
+  {
+    "id": "blind_react_05",
+    "topic": "React Hooks Tutorial",
+    "query": "What is the primary problem that useContext solves in deeply nested component trees?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "prop drilling",
+      "useContext",
+      "global state"
+    ],
+    "reference": "useContext eliminates prop drilling by allowing child components anywhere in the tree to access shared state directly."
+  },
+  {
+    "id": "blind_react_06",
+    "topic": "React Hooks Tutorial",
+    "query": "What is the difference between useMemo and useCallback in React?",
+    "type": "COMPARATIVE",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "useMemo",
+      "useCallback",
+      "memoizes result",
+      "memoizes function definition"
+    ],
+    "reference": "useMemo memoizes the computed result of a function, whereas useCallback memoizes the callback function instance itself."
+  },
+  {
+    "id": "blind_react_07",
+    "topic": "React Hooks Tutorial",
+    "query": "How does returning a cleanup function from useEffect prevent memory leaks in web applications?",
+    "type": "CODE_REASONING",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "cleanup function",
+      "memory leaks",
+      "unmount",
+      "subscriptions"
+    ],
+    "reference": "The cleanup function cancels active timers, unsubscribes from event emitters, and aborts pending network requests when components unmount."
+  },
+  {
+    "id": "blind_react_08",
+    "topic": "React Hooks Tutorial",
+    "query": "Give a common use case for useRef that interacts directly with browser DOM elements.",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "inputRef.current.focus()",
+      "DOM node",
+      "useRef"
+    ],
+    "reference": "Focusing a text input directly via inputRef.current.focus() or measuring DOM dimensions."
+  },
+  {
+    "id": "blind_react_09",
+    "topic": "React Hooks Tutorial",
+    "query": "What happens if a useEffect hook has no dependency array passed to it?",
+    "type": "EDGE_CASE",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "no dependency array",
+      "runs on every render",
+      "after every render"
+    ],
+    "reference": "If omitted, the effect callback executes after every single render of the component."
+  },
+  {
+    "id": "blind_react_10",
+    "topic": "React Hooks Tutorial",
+    "query": "How do you provide a value to all child consumers using a context created with createContext?",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "<Context.Provider value={...}>",
+      "children"
+    ],
+    "reference": "Wrap consuming components in <MyContext.Provider value={{ ... }}>{children}</MyContext.Provider>."
+  },
+  {
+    "id": "blind_react_11",
+    "topic": "React Hooks Tutorial",
+    "query": "Why does passing an unmemoized callback to a child wrapped in React.memo defeat child memoization?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "React.memo",
+      "useCallback",
+      "new function reference",
+      "re-render"
+    ],
+    "reference": "A new function reference is created on every parent render, causing shallow prop comparison in React.memo to fail."
+  },
+  {
+    "id": "blind_react_12",
+    "topic": "React Hooks Tutorial",
+    "query": "Can a custom hook call built-in React hooks like useState and useEffect internally?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "custom hooks",
+      "call built-in hooks",
+      "usePrefix"
+    ],
+    "reference": "Yes, custom hooks are JavaScript functions whose names start with 'use' that can call built-in hooks to share stateful logic."
+  },
+  {
+    "id": "blind_react_13",
+    "topic": "React Hooks Tutorial",
+    "query": "How do you store a setInterval timer ID across renders without causing infinite re-renders?",
+    "type": "DEBUGGING",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "useRef",
+      "timer ID",
+      ".current",
+      "avoid re-render"
+    ],
+    "reference": "Store the timer ID in a ref (timerRef.current = setInterval(...)) because modifying a ref does not trigger a re-render."
+  },
+  {
+    "id": "blind_react_14",
+    "topic": "React Hooks Tutorial",
+    "query": "how do i consume auth context in a functional header component??",
+    "type": "SLANG_TYPO",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "useContext",
+      "AuthContext",
+      "consume"
+    ],
+    "reference": "Call const { user, logout } = useContext(AuthContext); inside the functional component."
+  },
+  {
+    "id": "blind_react_15",
+    "topic": "React Hooks Tutorial",
+    "query": "When does React run the cleanup function of a useEffect that has [count] in its dependency array?",
+    "type": "EDGE_CASE",
+    "expected_doc": "React Hooks Tutorial",
+    "target_keywords": [
+      "before re-running effect",
+      "unmount",
+      "dependency changes"
+    ],
+    "reference": "It runs the cleanup before re-running the effect with the new value, as well as upon final component unmount."
+  },
+  {
+    "id": "blind_ne_01",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "How does Node.js handle blocking asynchronous I/O despite having a single main execution thread?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "libuv",
+      "thread pool",
+      "single-threaded",
+      "V8"
+    ],
+    "reference": "Node.js offloads blocking I/O (filesystem, DNS, crypto) to the libuv background thread pool while the event loop stays responsive."
+  },
+  {
+    "id": "blind_ne_02",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "What are the exact four parameters required in order to define an error-handling middleware in Express?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "(err, req, res, next)",
+      "four parameters",
+      "error-handling middleware"
+    ],
+    "reference": "Error-handling middleware functions require exactly four arguments: (err, req, res, next)."
+  },
+  {
+    "id": "blind_ne_03",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "Which HTTP status code signifies that a request lacks a valid JSON Web Token for authentication?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "401 Unauthorized",
+      "authentication token",
+      "missing or invalid"
+    ],
+    "reference": "HTTP 401 Unauthorized indicates that the request lacks a valid authentication token."
+  },
+  {
+    "id": "blind_ne_04",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "What are the three dot-separated components of a JSON Web Token (JWT)?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "Header",
+      "Payload",
+      "Signature",
+      "Base64Url"
+    ],
+    "reference": "A JWT consists of Header.Payload.Signature encoded in Base64Url format."
+  },
+  {
+    "id": "blind_ne_05",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "Why should CPU-intensive operations like high-iteration password hashing not be executed on Node's main thread?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "block the event loop",
+      "CPU-intensive",
+      "single thread",
+      "worker threads"
+    ],
+    "reference": "CPU-intensive tasks block the single JavaScript execution thread, preventing the event loop from handling incoming network requests."
+  },
+  {
+    "id": "blind_ne_06",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "What built-in Express middleware parses incoming requests with JSON payloads?",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "express.json()",
+      "app.use(express.json())",
+      "parse JSON"
+    ],
+    "reference": "Use app.use(express.json()); which parses incoming request bodies with JSON payloads."
+  },
+  {
+    "id": "blind_ne_07",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "What is the difference between HTTP 401 Unauthorized and HTTP 403 Forbidden in RESTful APIs?",
+    "type": "COMPARATIVE",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "401 Unauthorized",
+      "403 Forbidden",
+      "authenticated",
+      "lacks permission"
+    ],
+    "reference": "401 means the client is unauthenticated (missing/invalid token); 403 means the user is authenticated but lacks required authorization permissions."
+  },
+  {
+    "id": "blind_ne_08",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "What HTTP method should be used for partially modifying specific fields of an existing user resource in REST design?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "PATCH",
+      "partially update",
+      "PUT"
+    ],
+    "reference": "PATCH is used to partially update specific fields, whereas PUT completely replaces the resource."
+  },
+  {
+    "id": "blind_ne_09",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "How does middleware pass execution flow to the subsequent middleware function in the Express pipeline?",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "next()",
+      "subsequent middleware",
+      "pipeline"
+    ],
+    "reference": "Middleware calls next() to pass execution flow to the next handler in the stack."
+  },
+  {
+    "id": "blind_ne_10",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "In standard REST URL design, why are plural nouns like /api/students preferred over verbs like /api/getStudents?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "resource-oriented",
+      "plural nouns",
+      "HTTP verbs indicate actions"
+    ],
+    "reference": "REST URLs are resource-oriented using plural nouns; actions are communicated via standard HTTP verbs (GET, POST, etc.)."
+  },
+  {
+    "id": "blind_ne_11",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "In JWT authentication, where does the client typically send the token on protected HTTP requests?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "Authorization header",
+      "Bearer <token>",
+      "Authorization"
+    ],
+    "reference": "Clients send the token in the Authorization request header formatted as Bearer <token>."
+  },
+  {
+    "id": "blind_ne_12",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "Which event loop phase executes callbacks scheduled with setImmediate() in Node.js?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "Check phase",
+      "setImmediate",
+      "event loop phases"
+    ],
+    "reference": "setImmediate() callbacks run in the Check phase of the Node.js event loop."
+  },
+  {
+    "id": "blind_ne_13",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "What HTTP status code should be returned after successfully creating a new course via a POST endpoint?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "201 Created",
+      "POST",
+      "resource successfully created"
+    ],
+    "reference": "Return HTTP 201 Created to indicate the resource was successfully created."
+  },
+  {
+    "id": "blind_ne_14",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "yo how do i sign a token with 7 days expiration in jsonwebtoken library??",
+    "type": "SLANG_TYPO",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "jwt.sign",
+      "expiresIn: '7d'",
+      "SECRET"
+    ],
+    "reference": "Call jwt.sign({ id: user.id, role: 'STUDENT' }, SECRET, { expiresIn: '7d' });."
+  },
+  {
+    "id": "blind_ne_15",
+    "topic": "Node.js & Express REST API Notes",
+    "query": "What happens if a middleware function neither sends a response nor calls next()?",
+    "type": "DEBUGGING",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "target_keywords": [
+      "request hangs",
+      "timeout",
+      "freeze"
+    ],
+    "reference": "The request-response cycle will hang indefinitely until the client or server times out."
+  },
+  {
+    "id": "blind_pg_01",
+    "topic": "PostgreSQL Database Design",
+    "query": "What are the specific requirements for a database relation to satisfy First Normal Form (1NF)?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "atomic values",
+      "unique rows",
+      "primary key",
+      "1NF"
+    ],
+    "reference": "1NF requires atomic (indivisible) column values, unique rows, and an identified primary key."
+  },
+  {
+    "id": "blind_pg_02",
+    "topic": "PostgreSQL Database Design",
+    "query": "How is a Many-to-Many relationship modeled in relational database design?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "junction table",
+      "bridge table",
+      "composite primary key",
+      "foreign keys"
+    ],
+    "reference": "Using a junction (bridge) table containing foreign keys referencing both parent tables, often combined into a composite primary key."
+  },
+  {
+    "id": "blind_pg_03",
+    "topic": "PostgreSQL Database Design",
+    "query": "What constitutes a transitive dependency in Second Normal Form, and how does 3NF eliminate it?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "transitive dependency",
+      "3NF",
+      "non-key attributes",
+      "separate table"
+    ],
+    "reference": "A transitive dependency occurs when a non-key attribute depends on another non-key attribute; 3NF eliminates it by moving them into a separate table."
+  },
+  {
+    "id": "blind_pg_04",
+    "topic": "PostgreSQL Database Design",
+    "query": "What search time complexity does a PostgreSQL B-tree index provide for equality lookups?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "O(log N)",
+      "B-tree index",
+      "equality lookups"
+    ],
+    "reference": "A B-tree index provides logarithmic O(log N) lookups for equality and range queries."
+  },
+  {
+    "id": "blind_pg_05",
+    "topic": "PostgreSQL Database Design",
+    "query": "Explain what the Durability property in ACID transactions guarantees in the event of a server power failure.",
+    "type": "CONCEPTUAL",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "Durability",
+      "write-ahead log",
+      "WAL",
+      "power failure",
+      "committed"
+    ],
+    "reference": "Durability guarantees committed changes are permanently recorded in non-volatile storage (WAL) and survive system crashes or power failures."
+  },
+  {
+    "id": "blind_pg_06",
+    "topic": "PostgreSQL Database Design",
+    "query": "What are two performance trade-offs or penalties of adding excessive B-tree indexes to a table?",
+    "type": "COMPARATIVE",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "write overhead",
+      "disk storage",
+      "INSERT",
+      "UPDATE"
+    ],
+    "reference": "Indexes consume additional disk storage and add write latency to INSERT, UPDATE, and DELETE queries because index trees must be updated."
+  },
+  {
+    "id": "blind_pg_07",
+    "topic": "PostgreSQL Database Design",
+    "query": "Why does a database query planner choose a Sequential Scan (Seq Scan) over an Index Scan on small tables?",
+    "type": "CODE_REASONING",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "Sequential Scan",
+      "Index Scan",
+      "small tables",
+      "disk pages"
+    ],
+    "reference": "Reading a few contiguous disk pages sequentially is faster than traversing index tree branches and fetching random heap pages."
+  },
+  {
+    "id": "blind_pg_08",
+    "topic": "PostgreSQL Database Design",
+    "query": "What is the Leftmost Prefix Rule in PostgreSQL composite indexes on columns (A, B)?",
+    "type": "EDGE_CASE",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "leftmost prefix rule",
+      "composite index",
+      "column ordering"
+    ],
+    "reference": "Queries filtering by column A (or A and B) can utilize the index, but queries filtering solely by column B cannot."
+  },
+  {
+    "id": "blind_pg_09",
+    "topic": "PostgreSQL Database Design",
+    "query": "What is a Foreign Key and what database guarantee does it enforce between two tables?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "foreign key",
+      "referential integrity",
+      "parent table"
+    ],
+    "reference": "A foreign key points to a primary key in another table, enforcing referential integrity by preventing orphan records."
+  },
+  {
+    "id": "blind_pg_10",
+    "topic": "PostgreSQL Database Design",
+    "query": "What SQL commands start a new transaction block and safely cancel all modifications on failure?",
+    "type": "CODE_SYNTAX",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "BEGIN",
+      "ROLLBACK",
+      "COMMIT"
+    ],
+    "reference": "Use BEGIN; to start a transaction block and ROLLBACK; to discard all modifications."
+  },
+  {
+    "id": "blind_pg_11",
+    "topic": "PostgreSQL Database Design",
+    "query": "Explain the Atomicity property in ACID transactions using a student bank transfer example.",
+    "type": "CONCEPTUAL",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "Atomicity",
+      "all or nothing",
+      "rollback",
+      "debit and credit"
+    ],
+    "reference": "Atomicity ensures all statements succeed or none do; if debit succeeds but credit fails, the entire transaction rolls back."
+  },
+  {
+    "id": "blind_pg_12",
+    "topic": "PostgreSQL Database Design",
+    "query": "What is Second Normal Form (2NF) and what kind of dependency does it explicitly ban on composite keys?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "2NF",
+      "partial dependency",
+      "composite primary key"
+    ],
+    "reference": "2NF requires 1NF and mandates that no non-key attribute is partially dependent on only part of a composite primary key."
+  },
+  {
+    "id": "blind_pg_13",
+    "topic": "PostgreSQL Database Design",
+    "query": "What concurrency phenomena does the Isolation property in ACID transactions aim to prevent?",
+    "type": "CONCEPTUAL",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "dirty reads",
+      "non-repeatable reads",
+      "phantom reads",
+      "Isolation"
+    ],
+    "reference": "Isolation prevents concurrent transactions from interfering, avoiding dirty reads, non-repeatable reads, and phantom reads."
+  },
+  {
+    "id": "blind_pg_14",
+    "topic": "PostgreSQL Database Design",
+    "query": "Can a primary key column contain NULL values in a relational PostgreSQL table?",
+    "type": "EXACT_LOOKUP",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "cannot be NULL",
+      "primary key",
+      "unique"
+    ],
+    "reference": "No, primary key values must be unique and cannot contain NULL."
+  },
+  {
+    "id": "blind_pg_15",
+    "topic": "PostgreSQL Database Design",
+    "query": "yo how do i index a column so range queries like score >= 80 run fast in postgres??",
+    "type": "SLANG_TYPO",
+    "expected_doc": "PostgreSQL Database Design",
+    "target_keywords": [
+      "CREATE INDEX",
+      "B-tree index",
+      "range queries"
+    ],
+    "reference": "Create a default B-tree index: CREATE INDEX idx_scores ON students(score); which optimizes equality and range queries."
+  },
+  {
+    "id": "blind_cm_01",
+    "topic": "Cross-Module (HTML/CSS + React)",
+    "query": "How should responsive CSS Flexbox classes be integrated with conditional React JSX rendering without breaking layout flow?",
+    "type": "CROSS_MODULE_SYNTHESIS",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "expected_modules": [
+      "HTML & CSS Fundamentals",
+      "React Hooks Tutorial"
+    ],
+    "target_keywords": [
+      "Flexbox",
+      "React JSX",
+      "conditional rendering",
+      "display: flex"
+    ],
+    "reference": "Apply display: flex and flex properties to parent wrapper divs/elements while conditionally rendering child items."
+  },
+  {
+    "id": "blind_cm_02",
+    "topic": "Cross-Module (React + Express)",
+    "query": "How does an Axios or fetch call from a React component authenticate against a protected Express JWT endpoint?",
+    "type": "CROSS_MODULE_SYNTHESIS",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_modules": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes"
+    ],
+    "target_keywords": [
+      "Authorization: Bearer <token>",
+      "fetch",
+      "Express middleware",
+      "JWT"
+    ],
+    "reference": "The React client retrieves the token (from context or state) and includes it in the HTTP Authorization header as Bearer <token>."
+  },
+  {
+    "id": "blind_cm_03",
+    "topic": "Cross-Module (Node/Express + PostgreSQL)",
+    "query": "How does an Express request handler ensure a multi-step financial transaction respects ACID Atomicity in PostgreSQL?",
+    "type": "CROSS_MODULE_SYNTHESIS",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_modules": [
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design"
+    ],
+    "target_keywords": [
+      "BEGIN",
+      "COMMIT",
+      "ROLLBACK",
+      "ACID Atomicity",
+      "Express"
+    ],
+    "reference": "The Express controller executes queries within BEGIN and COMMIT blocks, executing ROLLBACK inside a catch block if any error occurs."
+  },
+  {
+    "id": "blind_cm_04",
+    "topic": "Cross-Module (JavaScript + Node)",
+    "query": "Compare the execution priority of a JavaScript Promise microtask with an Express setImmediate callback in Node.js.",
+    "type": "CROSS_MODULE_SYNTHESIS",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "expected_modules": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes"
+    ],
+    "target_keywords": [
+      "microtask queue",
+      "setImmediate",
+      "Check phase",
+      "priority"
+    ],
+    "reference": "Promise microtasks run immediately after the current JavaScript call stack clears, before the event loop advances to the setImmediate Check phase."
+  },
+  {
+    "id": "blind_cm_05",
+    "topic": "Cross-Module (React + PostgreSQL)",
+    "query": "Explain how database normalization (3NF) in PostgreSQL affects the shape of JSON state managed by useState in React.",
+    "type": "CROSS_MODULE_SYNTHESIS",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_modules": [
+      "React Hooks Tutorial",
+      "PostgreSQL Database Design"
+    ],
+    "target_keywords": [
+      "3NF",
+      "normalized state",
+      "relational structure",
+      "useState"
+    ],
+    "reference": "Normalized tables return relational rows requiring joins or foreign key references, encouraging normalized or nested object state in React components."
+  },
+  {
+    "id": "blind_cm_06",
+    "topic": "Cross-Module (JavaScript + React)",
+    "query": "Why does mutating a JavaScript object property directly violate both const immutability principles and React state re-rendering?",
+    "type": "CROSS_MODULE_SYNTHESIS",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "expected_modules": [
+      "JavaScript ES6+ Deep Dive",
+      "React Hooks Tutorial"
+    ],
+    "target_keywords": [
+      "immutability",
+      "shallow comparison",
+      "re-render",
+      "useState"
+    ],
+    "reference": "React compares state references by identity (Object.is); in-place mutation does not create a new object reference, so React fails to trigger a re-render."
+  },
+  {
+    "id": "blind_cm_07",
+    "topic": "Cross-Module (HTML/CSS + PostgreSQL)",
+    "query": "When building an HTML table to display students and enrolled courses, how does a SQL Many-to-Many junction table supply the data?",
+    "type": "CROSS_MODULE_SYNTHESIS",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "expected_modules": [
+      "HTML & CSS Fundamentals",
+      "PostgreSQL Database Design"
+    ],
+    "target_keywords": [
+      "junction table",
+      "HTML table",
+      "Many-to-Many",
+      "JOIN"
+    ],
+    "reference": "A SQL query joins students, junction table, and courses, producing tabular rows that populate HTML <tr> and <td> table structures."
+  },
+  {
+    "id": "blind_cm_08",
+    "topic": "Cross-Module (React + Express + PostgreSQL)",
+    "query": "Trace a full-stack flow: a student clicks Delete Account in React, Express verifies JWT and authorization, and PostgreSQL executes a transaction.",
+    "type": "CROSS_MODULE_SYNTHESIS",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_modules": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design"
+    ],
+    "target_keywords": [
+      "React click",
+      "Express auth middleware",
+      "JWT",
+      "PostgreSQL transaction",
+      "DELETE"
+    ],
+    "reference": "React issues authenticated DELETE request with Bearer token; Express validates JWT role, then runs SQL transaction to remove user and foreign key references."
+  },
+  {
+    "id": "blind_cm_09",
+    "topic": "Cross-Module (Node/Express + React)",
+    "query": "When an Express endpoint returns an HTTP 401 response, how does a React application update its authentication context?",
+    "type": "CROSS_MODULE_SYNTHESIS",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_modules": [
+      "Node.js & Express REST API Notes",
+      "React Hooks Tutorial"
+    ],
+    "target_keywords": [
+      "401 Unauthorized",
+      "useContext",
+      "logout",
+      "AuthContext"
+    ],
+    "reference": "The React fetch handler catches the 401 status, triggers the AuthContext logout updater, and clears the user state and token."
+  },
+  {
+    "id": "blind_cm_10",
+    "topic": "Cross-Module (HTML/CSS + Express)",
+    "query": "How does an Express static middleware server serve semantic HTML5 pages and CSS stylesheets to client browsers?",
+    "type": "CROSS_MODULE_SYNTHESIS",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "expected_modules": [
+      "HTML & CSS Fundamentals",
+      "Node.js & Express REST API Notes"
+    ],
+    "target_keywords": [
+      "express.static()",
+      "public directory",
+      "semantic HTML5",
+      "CSS"
+    ],
+    "reference": "app.use(express.static('public')) serves static HTML and CSS asset files directly to requesting HTTP clients."
+  }
+]

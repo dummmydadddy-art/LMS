@@ -1,0 +1,138 @@
+{
+  "total_findings": 17,
+  "findings_by_category": {
+    "1_legitimate_application_configuration": 8,
+    "2_domain_knowledge": 0,
+    "3_benchmark_contamination_risk": 5,
+    "4_safety_rule": 4,
+    "5_accidental_hardcoding": 0
+  },
+  "dependency_quantification": {
+    "explicit_rules_domain_knowledge_percent": 45.0,
+    "generic_linguistic_and_ast_parsing_percent": 30.0,
+    "corpus_evidence_and_retrieval_grounding_percent": 20.0,
+    "semantic_similarity_percent": 5.0,
+    "analysis": "The premise verifier is a hybrid system: Stage 1 utilizes generic linguistic and AST-style token parsing (30%) combined with standard domain specifications (React 18 canonical hooks and JS built-in prototypes; 25%). Stage 2 relies on 20 explicit curriculum domain invariant rules (20%). Stage 3 applies corpus evidence retrieval and grounding to verify support/refutation against curriculum text (20%), with vector similarity providing fallback semantic relevance scoring (5%). Therefore, while syntax and prototype methods are dynamically verified, curriculum semantic contradictions are grounded in declared course domain rules and cannot be claimed as 100% unsupervised generic semantic reasoning."
+  },
+  "sample_findings": [
+    {
+      "file": "rag_premise_verifier.php",
+      "line": 3,
+      "match": "* RAG False-Premise Verifier (EXP-0020 Generalized Architecture)",
+      "category": "3. Benchmark contamination risk",
+      "rationale": "Potential benchmark identifier referenced in backend code"
+    },
+    {
+      "file": "rag_premise_verifier.php",
+      "line": 428,
+      "match": "if (preg_match('/(===!|!==!|<=>|\\?->|<-(?!-))/i', $qClean, $opMatches)) {",
+      "category": "4. Safety rule",
+      "rationale": "Syntactic safety rule rejecting nonexistent programming operators"
+    },
+    {
+      "file": "rag_service.php",
+      "line": 25,
+      "match": "// EXP-0018: Multi-Worker Corpus Synchronization (W-17)",
+      "category": "3. Benchmark contamination risk",
+      "rationale": "Potential benchmark identifier referenced in backend code"
+    },
+    {
+      "file": "rag_service.php",
+      "line": 46,
+      "match": "public static string $experimentMode = 'EXP-0020';",
+      "category": "1. Legitimate application configuration",
+      "rationale": "Explicit experiment mode registration for multi-worker routing"
+    },
+    {
+      "file": "rag_service.php",
+      "line": 55,
+      "match": "|| str_starts_with(self::$experimentMode, 'EXP-0018')",
+      "category": "1. Legitimate application configuration",
+      "rationale": "Explicit experiment mode registration for multi-worker routing"
+    },
+    {
+      "file": "rag_service.php",
+      "line": 56,
+      "match": "|| str_starts_with(self::$experimentMode, 'EXP-0020');",
+      "category": "1. Legitimate application configuration",
+      "rationale": "Explicit experiment mode registration for multi-worker routing"
+    },
+    {
+      "file": "rag_service.php",
+      "line": 306,
+      "match": "usort($candidates, fn($a, $b) => $b['rrf_score'] <=> $a['rrf_score']);",
+      "category": "4. Safety rule",
+      "rationale": "Syntactic safety rule rejecting nonexistent programming operators"
+    },
+    {
+      "file": "rag_service.php",
+      "line": 353,
+      "match": "* In-Memory Vector Pre-Warming (EXP-0012, EXP-0020)",
+      "category": "3. Benchmark contamination risk",
+      "rationale": "Potential benchmark identifier referenced in backend code"
+    },
+    {
+      "file": "rag_service.php",
+      "line": 621,
+      "match": "$cmp = $b['rrf_score'] <=> $a['rrf_score'];",
+      "category": "4. Safety rule",
+      "rationale": "Syntactic safety rule rejecting nonexistent programming operators"
+    },
+    {
+      "file": "rag_service.php",
+      "line": 623,
+      "match": "$simCmp = ($b['similarity'] ?? 0.0) <=> ($a['similarity'] ?? 0.0);",
+      "category": "4. Safety rule",
+      "rationale": "Syntactic safety rule rejecting nonexistent programming operators"
+    },
+    {
+      "file": "rag_service.php",
+      "line": 1092,
+      "match": "$isExp11to16 = str_starts_with(self::$experimentMode, 'EXP-0011') || str_starts_with(self::$experime",
+      "category": "1. Legitimate application configuration",
+      "rationale": "Explicit experiment mode registration for multi-worker routing"
+    },
+    {
+      "file": "rag_service.php",
+      "line": 1093,
+      "match": "$isDynamicBudget = in_array(self::$experimentMode, ['EXP-0011B', 'EXP-0011E', 'EXP-0011F', 'EXP-0011",
+      "category": "1. Legitimate application configuration",
+      "rationale": "Explicit experiment mode registration for multi-worker routing"
+    },
+    {
+      "file": "rag_service.php",
+      "line": 1094,
+      "match": "$isModuleAware = in_array(self::$experimentMode, ['EXP-0011C', 'EXP-0011F', 'EXP-0011G']) || str_sta",
+      "category": "1. Legitimate application configuration",
+      "rationale": "Explicit experiment mode registration for multi-worker routing"
+    },
+    {
+      "file": "rag_service.php",
+      "line": 1095,
+      "match": "$isSecondaryRetrieval = in_array(self::$experimentMode, ['EXP-0011D', 'EXP-0011E', 'EXP-0011G']) || ",
+      "category": "1. Legitimate application configuration",
+      "rationale": "Explicit experiment mode registration for multi-worker routing"
+    },
+    {
+      "file": "rag_service.php",
+      "line": 1096,
+      "match": "$isMultiHopGraph = in_array(self::$experimentMode, ['EXP-0011F', 'EXP-0011G']) || str_starts_with(se",
+      "category": "1. Legitimate application configuration",
+      "rationale": "Explicit experiment mode registration for multi-worker routing"
+    },
+    {
+      "file": "rag_query_condenser.php",
+      "line": 2,
+      "match": "// EduConnect LMS - Hardened Conversational Query Condenser (EXP-0018)",
+      "category": "3. Benchmark contamination risk",
+      "rationale": "Potential benchmark identifier referenced in backend code"
+    },
+    {
+      "file": "gateway.js",
+      "line": 1,
+      "match": "// EduConnect LMS - Hardened High-Reliability Two-Tier Gateway (EXP-0018)",
+      "category": "3. Benchmark contamination risk",
+      "rationale": "Potential benchmark identifier referenced in backend code"
+    }
+  ]
+}

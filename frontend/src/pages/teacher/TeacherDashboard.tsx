@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../../services/api';
 import { supabase } from '../../supabaseClient';
-import { KnowledgeGapHeatmap } from '../../components/KnowledgeGapHeatmap';
 import {
   Users,
   Calendar,
@@ -1013,7 +1012,7 @@ const TeacherDashboard: React.FC = () => {
     <div className="space-y-6">
       {/* Navigation tabs */}
       <div className="flex border-b border-slate-800 overflow-x-auto pb-1 gap-1">
-        {['attendance', 'materials', 'exams', 'timetable', 'live-sessions', 'notifications', 'progress', 'knowledge-gaps'].map((tabName) => (
+        {['attendance', 'materials', 'exams', 'timetable', 'live-sessions', 'notifications', 'progress'].map((tabName) => (
           <button
             key={tabName}
             onClick={() => {
@@ -1029,7 +1028,7 @@ const TeacherDashboard: React.FC = () => {
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            {tabName === 'progress' ? 'Student Progress' : tabName === 'live-sessions' ? 'Live Sessions' : tabName === 'knowledge-gaps' ? 'AI Knowledge Gaps' : tabName.replace('_', ' ')}
+            {tabName === 'progress' ? 'Student Progress' : tabName === 'live-sessions' ? 'Live Sessions' : tabName.replace('_', ' ')}
           </button>
         ))}
       </div>
@@ -2896,11 +2895,6 @@ const TeacherDashboard: React.FC = () => {
             </div>
           )}
         </div>
-      )}
-
-      {/* --- 8. AI KNOWLEDGE GAPS & TELEMETRY TAB --- */}
-      {activeTab === 'knowledge-gaps' && (
-        <KnowledgeGapHeatmap courses={courses} batches={batches} />
       )}
     </div>
   );

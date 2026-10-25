@@ -2,16 +2,18 @@
 // LMS Main Router & Controller
 ini_set('display_errors', '0');
 error_reporting(E_ALL);
-file_put_contents(__DIR__ . '/api_debug.log', date('Y-m-d H:i:s') . ' ' . ($_SERVER['REQUEST_METHOD'] ?? '') . ' ' . ($_SERVER['REQUEST_URI'] ?? '') . "\n", FILE_APPEND);
 
 require_once 'config.php';
+// Defensive: ensure display_errors stays off regardless of config.php
+ini_set('display_errors', '0');
+ini_set('display_startup_errors', '0');
+
 require_once 'db.php';
-require_once 'rag_service.php';
-require_once 'rag_safety_boundary.php';
-require_once 'rag_query_condenser.php';
-require_once 'document_extractor.php';
 require_once 'auth_middleware.php';
 require_once 'payment.php';
+require_once 'rag_flags.php';
+require_once 'rag_service.php';
+require_once 'rag_pipeline_metrics.php';
 
 // Helper function to resolve Auth requests in database.php
 function supabaseCreateUser($email, $password, $metadata = []) {
@@ -36,7 +38,10 @@ function supabaseCreateUser($email, $password, $metadata = []) {
         "Authorization: Bearer " . $SUPABASE_SERVICE_ROLE_KEY,
         "Content-Type: application/json"
     ]);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    if (defined('CURLSSLOPT_NATIVE_CA')) {
+        curl_setopt($ch, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
+    }
     
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -64,7 +69,10 @@ function supabaseDeleteUser($userId) {
         "Authorization: Bearer " . $SUPABASE_SERVICE_ROLE_KEY,
         "Content-Type: application/json"
     ]);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    if (defined('CURLSSLOPT_NATIVE_CA')) {
+        curl_setopt($ch, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
+    }
     
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -91,7 +99,10 @@ function supabaseUpdateAuthUser($userId, $data) {
         "Authorization: Bearer " . $SUPABASE_SERVICE_ROLE_KEY,
         "Content-Type: application/json"
     ]);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    if (defined('CURLSSLOPT_NATIVE_CA')) {
+        curl_setopt($ch, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
+    }
     
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -160,7 +171,42 @@ try {
                 break;
             }
 
-            // 1. Check if user exists
+            // 1. Rate limiting: max 3 OTP requests per email per 15 minutes
+            $otpFile = __DIR__ . '/otps.json';
+            $otps = [];
+            if (file_exists($otpFile)) {
+                $otps = json_decode(file_get_contents($otpFile), true) ?: [];
+            }
+
+            $now = time();
+            $rateLimitWindow = 900; // 15 minutes
+            $maxAttemptsPerWindow = 3;
+
+            if (isset($otps[$email]) && isset($otps[$email]['rate_limit'])) {
+                $rl = $otps[$email]['rate_limit'];
+                // Reset window if expired
+                if (($now - ($rl['window_start'] ?? 0)) < $rateLimitWindow) {
+                    if (($rl['attempts'] ?? 0) >= $maxAttemptsPerWindow) {
+                        $retryAfter = $rateLimitWindow - ($now - $rl['window_start']);
+                        http_response_code(429);
+                        echo json_encode([
+                            'success' => false,
+                            'error' => 'Too many OTP requests. Please try again later.',
+                            'retry_after_seconds' => $retryAfter
+                        ]);
+                        break;
+                    }
+                } else {
+                    // Window expired, reset
+                    $otps[$email]['rate_limit'] = ['window_start' => $now, 'attempts' => 0];
+                }
+            } else {
+                $otps[$email]['rate_limit'] = ['window_start' => $now, 'attempts' => 0];
+            }
+            $otps[$email]['rate_limit']['attempts'] = ($otps[$email]['rate_limit']['attempts'] ?? 0) + 1;
+            file_put_contents($otpFile, json_encode($otps, JSON_PRETTY_PRINT));
+
+            // 2. Check if user exists
             $userRes = supabaseSelect('users', 'id', ['email' => 'eq.' . $email], true);
             if (!$userRes['success'] || empty($userRes['data'])) {
                 http_response_code(404);
@@ -168,26 +214,18 @@ try {
                 break;
             }
 
-            // 2. Generate random 6-digit OTP
-            $otp = strval(rand(100000, 999999));
-            $expiresAt = time() + 300; // 5 minutes validity
+            // 3. Generate random 6-digit OTP using cryptographically secure random
+            $otp = strval(random_int(100000, 999999));
+            $expiresAt = $now + 300; // 5 minutes validity
 
-            // 3. Save to local otps.json cache file
-            $otpFile = __DIR__ . '/otps.json';
-            $otps = [];
-            if (file_exists($otpFile)) {
-                $otps = json_decode(file_get_contents($otpFile), true) ?: [];
-            }
-            $otps[$email] = [
-                'otp' => $otp,
-                'expires_at' => $expiresAt
-            ];
+            // 4. Save OTP to cache (rate limit tracking + OTP for verification)
+            $otps[$email]['otp_hash'] = password_hash($otp, PASSWORD_DEFAULT);
+            $otps[$email]['expires_at'] = $expiresAt;
+            // Remove plaintext OTP from storage
+            unset($otps[$email]['otp']);
             file_put_contents($otpFile, json_encode($otps, JSON_PRETTY_PRINT));
 
-            // 4. Log OTP to last_otp.txt for development testing
-            file_put_contents(__DIR__ . '/last_otp.txt', $otp);
-
-            // 5. Try to send email
+            // 5. Try to send email (OTP only sent via email, never stored in plaintext on disk)
             $subject = "LMS Password Reset OTP";
             $message = "Your verification OTP is: " . $otp . "\nThis OTP is valid for 5 minutes.";
             $headers = "From: noreply@lms.com\r\nReply-To: noreply@lms.com\r\n";
@@ -223,7 +261,14 @@ try {
             }
 
             $otpData = $otps[$email];
-            if ($otpData['otp'] !== $otp) {
+            // Support both hashed (new) and legacy plaintext (migration) OTP formats
+            $otpValid = false;
+            if (isset($otpData['otp_hash'])) {
+                $otpValid = password_verify($otp, $otpData['otp_hash']);
+            } elseif (isset($otpData['otp'])) {
+                $otpValid = ($otpData['otp'] === $otp);
+            }
+            if (!$otpValid) {
                 http_response_code(400);
                 echo json_encode(['success' => false, 'error' => 'Invalid OTP code entered']);
                 break;
@@ -262,7 +307,19 @@ try {
                 $otps = json_decode(file_get_contents($otpFile), true) ?: [];
             }
 
-            if (!isset($otps[$email]) || $otps[$email]['otp'] !== $otp || time() > $otps[$email]['expires_at']) {
+            if (!isset($otps[$email])) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'Invalid or expired OTP request']);
+                break;
+            }
+            $otpData = $otps[$email];
+            $otpMatches = false;
+            if (isset($otpData['otp_hash'])) {
+                $otpMatches = password_verify($otp, $otpData['otp_hash']);
+            } elseif (isset($otpData['otp'])) {
+                $otpMatches = ($otpData['otp'] === $otp);
+            }
+            if (!$otpMatches || time() > ($otpData['expires_at'] ?? 0)) {
                 http_response_code(400);
                 echo json_encode(['success' => false, 'error' => 'Invalid or expired OTP request']);
                 break;
@@ -285,8 +342,10 @@ try {
                 break;
             }
 
-            // 4. Invalidate OTP
-            unset($otps[$email]);
+            // 4. Invalidate OTP (keep rate limit record intact)
+            unset($otps[$email]['otp_hash']);
+            unset($otps[$email]['otp']);
+            unset($otps[$email]['expires_at']);
             file_put_contents($otpFile, json_encode($otps, JSON_PRETTY_PRINT));
 
             echo json_encode(['success' => true, 'message' => 'Password has been reset successfully']);
@@ -1004,41 +1063,25 @@ try {
             }
             $input['uploaded_by'] = $user['id'];
             $res = supabaseInsert('materials', $input);
-            
-            // Auto-ingest material content into RAG vector store
             if ($res['success'] && !empty($res['data'])) {
-                $matData = is_array($res['data']) ? (isset($res['data'][0]) ? $res['data'][0] : $res['data']) : [];
-                $matId = $matData['id'] ?? '';
+                $createdMat = is_array($res['data']) && isset($res['data'][0]) ? $res['data'][0] : $res['data'];
+                $matId = $createdMat['id'] ?? bin2hex(random_bytes(16));
                 $contentToIndex = trim(($input['content'] ?? '') ?: ($input['description'] ?? ''));
-                
-                // If content is empty or short, extract text from uploaded document file (PDF, TXT, MD, etc.)
-                if (strlen($contentToIndex) < 15 && !empty($input['file_url'])) {
-                    try {
-                        $extractedText = DocumentExtractor::extractFromUrl($input['file_url']);
-                        if (!empty($extractedText)) {
-                            $contentToIndex = $extractedText;
-                        }
-                    } catch (Throwable $e) {
-                        error_log("Document extraction error for material {$matId}: " . $e->getMessage());
-                    }
-                }
-
-                if (!empty($matId) && !empty($contentToIndex) && strlen($contentToIndex) >= 15) {
+                if (!empty($contentToIndex) && strlen($contentToIndex) >= 15) {
                     try {
                         RagService::ingestMaterial(
                             $matId,
                             $input['title'],
                             $contentToIndex,
-                            $input['course_id'] ?? null,
-                            $input['batch_id'] ?? null,
-                            ['file_name' => $input['file_name'] ?? '', 'file_type' => $input['file_type'] ?? 'notes', 'file_url' => $input['file_url'] ?? '']
+                            $input['course_id'],
+                            $input['batch_id'],
+                            ['file_name' => $input['file_name'] ?? '', 'file_type' => $input['file_type'] ?? 'notes']
                         );
                     } catch (Throwable $e) {
                         error_log("RAG auto-ingest error: " . $e->getMessage());
                     }
                 }
             }
-            
             echo json_encode(['success' => $res['success'], 'material' => $res['data'], 'error' => $res['error']]);
             break;
 
@@ -1056,53 +1099,180 @@ try {
             echo json_encode(['success' => $res['success'], 'error' => $res['error']]);
             break;
 
-        case (preg_match('/^\/api\/materials\/([a-zA-Z0-9-]+)$/', $route, $matches) && in_array($method, ['PUT', 'PATCH'])):
-            $user = requireRole(['TEACHER']);
-            $materialId = $matches[1];
-            
-            // 1. Update in Supabase
-            $res = supabaseUpdate('materials', $input, ['id' => $materialId]);
-            
-            // 2. Re-index RAG if content or file_url was modified
-            $contentToIndex = trim(($input['content'] ?? '') ?: ($input['description'] ?? ''));
-            if (strlen($contentToIndex) < 15 && !empty($input['file_url'])) {
-                try {
-                    $extractedText = DocumentExtractor::extractFromUrl($input['file_url']);
-                    if (!empty($extractedText)) {
-                        $contentToIndex = $extractedText;
-                    }
-                } catch (Throwable $e) {
-                    error_log("Document re-extraction error on material {$materialId}: " . $e->getMessage());
+        // --- TRUE RAG ENGINE ENDPOINTS ---
+        // P0-4: Reject unauthorized direct worker access. All RAG requests must be routed through Gateway.
+        case (str_starts_with($route, '/api/rag/') && !verifyGatewayTrust()):
+            http_response_code(403);
+            echo json_encode([
+                'success' => false,
+                'error' => 'Forbidden: Direct worker access rejected. Requests must be routed through Gateway.'
+            ]);
+            break;
+
+        case ($route === '/api/rag/stats' && $method === 'GET'):
+            $user = verifyTokenOrApiKey();
+            $stats = RagService::getStats();
+            echo json_encode($stats);
+            break;
+
+        case ($route === '/api/rag/ingest' && $method === 'POST'):
+            $user = verifyTokenOrApiKey();
+            if ($user['role'] !== 'SERVICE' && !in_array($user['role'], ['SUPER_ADMIN', 'TEACHER'])) {
+                http_response_code(403);
+                echo json_encode(['success' => false, 'error' => 'Forbidden: Teacher or Service Key required']);
+                break;
+            }
+            if (empty($input['title']) || empty($input['content'])) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'title and content are required for ingestion']);
+                break;
+            }
+            $matId = $input['material_id'] ?? bin2hex(random_bytes(16));
+            $res = RagService::ingestMaterial(
+                $matId,
+                $input['title'],
+                $input['content'],
+                $input['course_id'] ?? null,
+                $input['batch_id'] ?? null,
+                $input['metadata'] ?? []
+            );
+            echo json_encode($res);
+            break;
+
+        case ($route === '/api/rag/flags' && $method === 'GET'):
+            RagFlags::initFromRequest();
+            $user = verifyTokenOrApiKey();
+            echo json_encode([
+                'success' => true,
+                'flags' => RagFlags::getAll()
+            ]);
+            break;
+
+        case ($route === '/api/rag/search' && $method === 'POST'):
+            RagFlags::initFromRequest();
+            $user = verifyTokenOrApiKey();
+            $rawQuery = $input['query'] ?? $_GET['query'] ?? null;
+            if (RagFlags::isEnabled('ENABLE_INPUT_SANITY')) {
+                if ($rawQuery === null || strlen(trim((string)$rawQuery)) === 0) {
+                    http_response_code(400);
+                    echo json_encode(['success' => false, 'error' => 'query parameter is required']);
+                    break;
+                }
+                $query = trim((string)$rawQuery);
+            } else {
+                $query = trim($rawQuery ?? '');
+                if (empty($query)) {
+                    http_response_code(400);
+                    echo json_encode(['success' => false, 'error' => 'query parameter is required']);
+                    break;
                 }
             }
-            
-            if (!empty($contentToIndex) && strlen($contentToIndex) >= 15) {
-                try {
-                    $courseId = $input['course_id'] ?? null;
-                    $batchId = $input['batch_id'] ?? null;
-                    $title = $input['title'] ?? 'Updated Material';
-                    if (empty($courseId) || empty($batchId)) {
-                        $curr = supabaseSelect('materials', 'course_id, batch_id, title', ['id' => $materialId], true);
-                        if ($curr['success'] && !empty($curr['data'])) {
-                            if (empty($courseId)) $courseId = $curr['data']['course_id'] ?? null;
-                            if (empty($batchId)) $batchId = $curr['data']['batch_id'] ?? null;
-                            if (empty($input['title'])) $title = $curr['data']['title'] ?? $title;
-                        }
+
+            $courseId = $input['course_id'] ?? $_GET['course_id'] ?? null;
+            $batchId = $input['batch_id'] ?? $_GET['batch_id'] ?? null;
+            $studentId = $input['student_id'] ?? $_GET['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
+
+            // Auto-resolve batch_id and course_id for student if not provided
+            if (!empty($studentId) && empty($batchId)) {
+                $sb = supabaseSelect('student_batches', 'batch_id, batches(course_id)', ['student_id' => $studentId], true);
+                if ($sb['success'] && !empty($sb['data'])) {
+                    $batchId = $sb['data']['batch_id'] ?? null;
+                    if (empty($courseId)) {
+                        $courseId = $sb['data']['batches']['course_id'] ?? null;
                     }
-                    RagService::ingestMaterial(
-                        $materialId,
-                        $title,
-                        $contentToIndex,
-                        $courseId,
-                        $batchId,
-                        ['file_name' => $input['file_name'] ?? '', 'file_type' => $input['file_type'] ?? 'notes']
-                    );
-                } catch (Throwable $e) {
-                    error_log("RAG re-ingest error on update: " . $e->getMessage());
                 }
             }
-            
-            echo json_encode(['success' => $res['success'], 'material' => $res['data'], 'error' => $res['error']]);
+
+            $limit = isset($input['limit']) ? (int)$input['limit'] : 4;
+            $threshold = isset($input['threshold']) ? (float)$input['threshold'] : 0.30;
+            $history = $input['history'] ?? $input['messages'] ?? [];
+            $precomputedEmbedding = $input['precomputed_embedding'] ?? null;
+            $searchRes = RagService::search($query, $courseId, $batchId, $limit, $threshold, $history, $precomputedEmbedding);
+            echo json_encode($searchRes);
+            break;
+
+        case ($route === '/api/rag/ask' && $method === 'POST'):
+            RagFlags::initFromRequest();
+            @set_time_limit(180);
+            $user = verifyTokenOrApiKey();
+            $rawQuestion = $input['question'] ?? $input['query'] ?? null;
+            if (RagFlags::isEnabled('ENABLE_INPUT_SANITY')) {
+                if ($rawQuestion === null || strlen(trim((string)$rawQuestion)) === 0) {
+                    http_response_code(400);
+                    echo json_encode(['success' => false, 'error' => 'question is required']);
+                    break;
+                }
+                $question = trim((string)$rawQuestion);
+            } else {
+                $question = trim($rawQuestion ?? '');
+                if (empty($question)) {
+                    http_response_code(400);
+                    echo json_encode(['success' => false, 'error' => 'question is required']);
+                    break;
+                }
+            }
+
+            $courseId = $input['course_id'] ?? null;
+            $batchId = $input['batch_id'] ?? null;
+            $studentId = $input['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
+
+            if (!empty($studentId) && empty($batchId)) {
+                $sb = supabaseSelect('student_batches', 'batch_id, batches(course_id)', ['student_id' => $studentId], true);
+                if ($sb['success'] && !empty($sb['data'])) {
+                    $batchId = $sb['data']['batch_id'] ?? null;
+                    if (empty($courseId)) {
+                        $courseId = $sb['data']['batches']['course_id'] ?? null;
+                    }
+                }
+            }
+
+            $studentName = $user['full_name'] ?? ($user['role'] === 'STUDENT' ? ($user['email'] ?? 'Student') : 'Student');
+            $limit = isset($input['limit']) ? (int)$input['limit'] : 4;
+            $history = $input['history'] ?? $input['messages'] ?? [];
+            $precomputedEmbedding = $input['precomputed_embedding'] ?? null;
+            $stream = !empty($input['stream']) || (isset($_GET['stream']) && $_GET['stream'] === 'true') || (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'text/event-stream') !== false);
+            if ($stream) {
+                RagService::askStream($question, $courseId, $batchId, $studentName, $limit, $history, $precomputedEmbedding, $studentId);
+            } else {
+                $askRes = RagService::ask($question, $courseId, $batchId, $studentName, $limit, $history, $studentId);
+                echo json_encode($askRes);
+            }
+            break;
+
+        case ($route === '/api/rag/clear' && $method === 'POST'):
+            RagFlags::initFromRequest();
+            $user = verifyTokenOrApiKey();
+            $studentId = $input['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
+            if (empty($studentId)) {
+                http_response_code(400);
+                echo json_encode(['success' => false, 'error' => 'student_id is required']);
+                break;
+            }
+            if (!class_exists('StudentSessionStore') && file_exists(__DIR__ . '/storage/student_sessions.php')) {
+                require_once __DIR__ . '/storage/student_sessions.php';
+            }
+            if (class_exists('StudentSessionStore')) {
+                StudentSessionStore::clearSession($studentId);
+            }
+            echo json_encode(['success' => true, 'message' => 'Session history cleared successfully']);
+            break;
+
+        case ($route === '/api/rag/metrics' && $method === 'GET'):
+            RagFlags::initFromRequest();
+            $user = verifyServiceApiKey();
+            if (!$user) {
+                $user = verifyToken();
+                if (!$user || !in_array($user['role'] ?? '', ['ADMIN', 'SUPER_ADMIN'])) {
+                    http_response_code(403);
+                    echo json_encode(['success' => false, 'error' => 'Forbidden: Admin access required']);
+                    break;
+                }
+            }
+            $metrics = RagPipelineMetrics::getMetrics();
+            echo json_encode(array_merge([
+                'success' => true,
+                'metrics' => $metrics
+            ], $metrics));
             break;
 
         // --- ASSIGNMENTS ---
@@ -1231,7 +1401,7 @@ try {
             break;
 
         case ($route === '/api/exams' && $method === 'POST'):
-            $user = requireRole(['TEACHER', 'SUPER_ADMIN']);
+            $user = requireRole(['TEACHER']);
             if (empty($input['title']) || empty($input['exam_type']) || empty($input['batch_id']) || empty($input['course_id'])) {
                 http_response_code(400);
                 echo json_encode(['success' => false, 'error' => 'Missing exam parameters']);
@@ -1285,23 +1455,7 @@ try {
                     ]);
                 }
             }
-
-            // Auto-notify batch students of new pop-quiz or exam
-            $isPopQuiz = stripos($exam['title'] ?? '', 'pop quiz') !== false;
-            $notifTitle = $isPopQuiz ? "⚡ Remedial Pop Quiz: {$exam['title']}" : "📝 New Exam Scheduled: {$exam['title']}";
-            $notifMsg = $isPopQuiz
-                ? "A new targeted remedial pop-quiz '{$exam['title']}' has been dispatched to your batch. Complete it to reinforce key concepts!"
-                : "A new {$exam['exam_type']} exam '{$exam['title']}' has been scheduled for your batch. Time limit: {$exam['time_limit_minutes']} mins.";
-
-            supabaseInsert('notifications', [
-                'title' => $notifTitle,
-                'message' => $notifMsg,
-                'target_type' => 'BATCH',
-                'target_id' => $input['batch_id'],
-                'notification_type' => $isPopQuiz ? 'QUIZ' : 'EXAM',
-                'sender_id' => $user['id']
-            ]);
-
+            
             echo json_encode(['success' => true, 'exam' => $exam]);
             break;
 
@@ -1378,59 +1532,38 @@ try {
                 $qRes = supabaseSelect('mcq_questions', '*', ['exam_id' => $examId]);
                 $questions = $qRes['data'] ?: [];
                 
-                $questionsWithOpts = [];
+                $totalScore = 0;
+                $maxScore = 0;
+                
                 foreach ($questions as $q) {
-                    $optRes = supabaseSelect('mcq_options', '*', ['question_id' => $q['id']]);
-                    $q['options'] = $optRes['data'] ?: [];
-                    $questionsWithOpts[] = $q;
+                    $maxScore += (float)$q['marks'];
+                    $submittedOptId = $answers[$q['id']] ?? '';
+                    
+                    if (!empty($submittedOptId)) {
+                        $correctOptRes = supabaseSelect('mcq_options', 'id', [
+                            'question_id' => $q['id'],
+                            'is_correct' => true
+                        ], true);
+                        
+                        if ($correctOptRes['success'] && !empty($correctOptRes['data'])) {
+                            if ($correctOptRes['data']['id'] === $submittedOptId) {
+                                $totalScore += (float)$q['marks'];
+                            }
+                        }
+                    }
                 }
-
-                $evalResult = RagService::evaluateMcqBreakdown($questionsWithOpts, $answers);
-                $totalScore = $evalResult['score'];
-                $maxScore = $evalResult['max_score'];
-                $pct = $evalResult['percentage'];
-                $breakdown = $evalResult['breakdown'];
-                $guidance = $evalResult['guidance'];
-
+                
                 // Record MCQ Results (First Attempt is Final)
                 $resData = [
                     'exam_id' => $examId,
                     'student_id' => $user['id'],
                     'score' => $totalScore,
                     'max_score' => $maxScore,
-                    'feedback' => "Auto-evaluated MCQ Exam ({$totalScore}/{$maxScore}, {$pct}%)"
+                    'feedback' => 'Auto-evaluated MCQ Exam'
                 ];
                 
                 $res = supabaseInsert('exam_results', $resData);
-
-                // If this is a remedial pop-quiz, record evaluation analytics for knowledge gap resolution tracking
-                if (stripos($exam['title'] ?? '', 'pop quiz') !== false || stripos($exam['title'] ?? '', 'remedial') !== false) {
-                    RagService::recordRemedialResult(
-                        $examId,
-                        $exam['title'] ?? 'Pop Quiz',
-                        $exam['course_id'] ?? null,
-                        $exam['batch_id'] ?? null,
-                        $user['id'],
-                        (float)$totalScore,
-                        (float)$maxScore
-                    );
-                }
-
-                // Fetch remedial recommendations for reinforcement
-                $topicForRecs = $exam['title'] ?? 'Full Stack Development';
-                $recResult = RagService::getRemedialResourceRecommendations($topicForRecs, $exam['course_id'] ?? null, $exam['batch_id'] ?? null);
-                $recommendations = $recResult['recommendations'] ?? [];
-
-                echo json_encode([
-                    'success' => $res['success'],
-                    'score' => $totalScore,
-                    'max_score' => $maxScore,
-                    'percentage' => $pct,
-                    'breakdown' => $breakdown,
-                    'guidance' => $guidance,
-                    'recommendations' => $recommendations,
-                    'error' => $res['error']
-                ]);
+                echo json_encode(['success' => $res['success'], 'score' => $totalScore, 'max_score' => $maxScore, 'error' => $res['error']]);
             } else {
                 // Coding exam submission
                 // Check if this is a finalize request
@@ -2388,7 +2521,10 @@ try {
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
             curl_setopt($ch, CURLOPT_POSTFIELDS, $fileContent);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+            if (defined('CURLSSLOPT_NATIVE_CA')) {
+                curl_setopt($ch, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
+            }
             
             $headers = [
                 "apikey: " . $SUPABASE_SERVICE_ROLE_KEY,
@@ -2416,744 +2552,6 @@ try {
                 http_response_code($httpCode ?: 500);
                 echo json_encode(['success' => false, 'error' => 'Storage upload failed (HTTP ' . $httpCode . '): ' . $response]);
             }
-            break;
-
-        // --- RAG ENDPOINTS ---
-        
-        // RAG Stats
-        case ($route === '/api/rag/stats' && $method === 'GET'):
-            $user = verifyTokenOrApiKey();
-            echo json_encode(RagService::getStats());
-            break;
-
-        // RAG Ask & Stream - Grounded Q&A with confidence gate & Socratic mode
-        case (($route === '/api/rag/ask' || $route === '/api/rag/stream') && $method === 'POST'):
-            $user = verifyTokenOrApiKey();
-            $question = trim($input['question'] ?? $input['query'] ?? '');
-            if (empty($question)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'question is required']);
-                break;
-            }
-
-            $isStream = ($route === '/api/rag/stream') || !empty($input['stream']);
-            $mode = in_array(strtolower($input['mode'] ?? ''), ['socratic', 'direct']) ? strtolower($input['mode']) : 'direct';
-            
-            // Safety boundary check
-            $boundary = RagSafetyBoundary::evaluate($question);
-            if ($boundary['action'] === 'ABSTAIN') {
-                $abstainText = 'I apologize, but that question is outside the scope of the EduConnect LMS curriculum.';
-                if ($isStream) {
-                    if (!headers_sent()) {
-                        header('Content-Type: text/event-stream; charset=UTF-8');
-                        header('Cache-Control: no-cache, no-transform');
-                        header('Connection: keep-alive');
-                        header('X-Accel-Buffering: no');
-                    }
-                    while (ob_get_level() > 0) @ob_end_flush();
-                    flush();
-                    echo "event: metadata\ndata: " . json_encode(['sources' => [], 'confidence' => 0.0, 'abstain' => true, 'reason' => $boundary['reason'], 'mode' => $mode]) . "\n\n";
-                    echo "event: token\ndata: " . json_encode(['token' => $abstainText]) . "\n\n";
-                    echo "event: done\ndata: " . json_encode(['success' => true, 'answer' => $abstainText, 'sources' => [], 'abstain' => true, 'mode' => $mode]) . "\n\n";
-                    flush();
-                } else {
-                    echo json_encode([
-                        'success' => true,
-                        'answer' => $abstainText,
-                        'sources' => [],
-                        'grounded' => false,
-                        'abstain' => true,
-                        'reason' => $boundary['reason'],
-                        'mode' => $mode
-                    ]);
-                }
-                break;
-            }
-            
-            $courseId = $input['course_id'] ?? null;
-            $batchId = $input['batch_id'] ?? null;
-            $studentId = $input['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
-            
-            // Strict student authorization & scope enforcement
-            if ($user['role'] === 'STUDENT') {
-                $studentId = $user['id'];
-                $sb = supabaseSelect('student_batches', 'batch_id, batches(course_id)', ['student_id' => $studentId], true);
-                if ($sb['success'] && !empty($sb['data'])) {
-                    $authBatchId = $sb['data']['batch_id'] ?? null;
-                    $authCourseId = $sb['data']['batches']['course_id'] ?? null;
-                    if (!empty($courseId) && $courseId !== $authCourseId) {
-                        $authFailMsg = 'You do not have permission to access curriculum materials for this course.';
-                        if ($isStream) {
-                            if (!headers_sent()) {
-                                header('Content-Type: text/event-stream; charset=UTF-8');
-                                header('Cache-Control: no-cache, no-transform');
-                                header('Connection: keep-alive');
-                                header('X-Accel-Buffering: no');
-                            }
-                            while (ob_get_level() > 0) @ob_end_flush();
-                            flush();
-                            echo "event: metadata\ndata: " . json_encode(['sources' => [], 'confidence' => 0.0, 'abstain' => true, 'reason' => 'Unauthorized course access attempt', 'mode' => $mode]) . "\n\n";
-                            echo "event: token\ndata: " . json_encode(['token' => $authFailMsg]) . "\n\n";
-                            echo "event: done\ndata: " . json_encode(['success' => true, 'answer' => $authFailMsg, 'sources' => [], 'abstain' => true, 'mode' => $mode]) . "\n\n";
-                            flush();
-                        } else {
-                            echo json_encode([
-                                'success' => true,
-                                'answer' => $authFailMsg,
-                                'sources' => [],
-                                'grounded' => false,
-                                'abstain' => true,
-                                'reason' => 'Unauthorized course access attempt',
-                                'mode' => $mode
-                            ]);
-                        }
-                        break;
-                    }
-                    $courseId = $authCourseId;
-                    $batchId = $authBatchId;
-                }
-            } elseif (!empty($studentId) && (empty($courseId) || empty($batchId))) {
-                $sb = supabaseSelect('student_batches', 'batch_id, batches(course_id)', ['student_id' => $studentId], true);
-                if ($sb['success'] && !empty($sb['data'])) {
-                    if (empty($batchId)) $batchId = $sb['data']['batch_id'] ?? null;
-                    if (empty($courseId)) $courseId = $sb['data']['batches']['course_id'] ?? null;
-                }
-            }
-            
-            // Conversational query condensation
-            $history = $input['history'] ?? $input['messages'] ?? [];
-            $activeQuestion = $question;
-            if (!empty($history)) {
-                $condensed = RagQueryCondenser::condense($question, $history);
-                $activeQuestion = $condensed['condensed_query'];
-            }
-            
-            $studentName = $user['full_name'] ?? 'Student';
-
-            // Real-Time SSE Stream Mode
-            if ($isStream) {
-                RagService::askStream($activeQuestion, $courseId, $batchId, $studentName, 4, $mode, $history, $studentId);
-                break;
-            }
-
-            // Synchronous Mode
-            $askRes = RagService::ask($activeQuestion, $courseId, $batchId, $studentName, 4, $mode);
-
-            // Auto-persist conversation history if student context is present
-            if (!empty($studentId) && !empty($askRes['answer'])) {
-                try {
-                    supabaseInsert('conversation_history', [
-                        'student_id' => $studentId,
-                        'role' => 'user',
-                        'content' => $question
-                    ]);
-                    supabaseInsert('conversation_history', [
-                        'student_id' => $studentId,
-                        'role' => 'assistant',
-                        'content' => $askRes['answer']
-                    ]);
-                } catch (\Throwable $e) {
-                    // Silently ignore if conversation_history table is pending migration
-                }
-            }
-
-            echo json_encode($askRes);
-            break;
-
-        // RAG NLI Claim Fact-Checking & Grounding Verification
-        case ($route === '/api/rag/verify-claims' && $method === 'POST'):
-            $user = verifyTokenOrApiKey();
-            $answer = trim($input['answer'] ?? '');
-            $sources = $input['sources'] ?? [];
-            if (empty($answer)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'answer parameter is required']);
-                break;
-            }
-            $verificationRes = RagService::verifyAnswerClaims($answer, $sources);
-            echo json_encode(array_merge(['success' => true], $verificationRes));
-            break;
-
-        // Teacher Knowledge-Gap Heatmap & Curriculum Telemetry
-        case (($route === '/api/rag/teacher/analytics' || $route === '/api/rag/analytics') && in_array($method, ['GET', 'POST'])):
-            $user = verifyTokenOrApiKey();
-            if ($user['role'] !== 'SERVICE' && !in_array($user['role'], ['SUPER_ADMIN', 'ADMIN', 'TEACHER'])) {
-                http_response_code(403);
-                echo json_encode(['success' => false, 'error' => 'Forbidden: Teacher or Admin access required']);
-                break;
-            }
-            $courseId = $input['course_id'] ?? $_GET['course_id'] ?? null;
-            $batchId = $input['batch_id'] ?? $_GET['batch_id'] ?? null;
-            
-            $analytics = RagService::getTeacherAnalytics($courseId, $batchId);
-            echo json_encode($analytics);
-            break;
-
-        // Generate practice questions targeting specific knowledge gap or topic
-        case ($route === '/api/rag/teacher/generate-practice' && $method === 'POST'):
-            $user = verifyTokenOrApiKey();
-            if ($user['role'] !== 'SERVICE' && !in_array($user['role'], ['SUPER_ADMIN', 'ADMIN', 'TEACHER'])) {
-                http_response_code(403);
-                echo json_encode(['success' => false, 'error' => 'Forbidden: Teacher or Admin access required']);
-                break;
-            }
-            $topic = trim($input['topic'] ?? $input['question'] ?? '');
-            if (empty($topic)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'topic or question parameter is required']);
-                break;
-            }
-            $courseId = $input['course_id'] ?? null;
-            $batchId = $input['batch_id'] ?? null;
-            $count = isset($input['count']) ? max(1, min(10, (int)$input['count'])) : 3;
-            $difficulty = $input['difficulty'] ?? 'AUTO';
-            $studentId = $input['student_id'] ?? null;
-
-            $practiceRes = RagService::generateQuiz($topic, $courseId, $batchId, $count, $difficulty, $studentId);
-            if (!empty($practiceRes['questions']) && is_array($practiceRes['questions'])) {
-                $formattedQuiz = [];
-                foreach ($practiceRes['questions'] as $q) {
-                    $opts = [];
-                    $correct = $q['correct_answer'] ?? 'A';
-                    foreach (($q['options'] ?? []) as $key => $val) {
-                        $opts[] = [
-                            'id' => $key,
-                            'text' => $val,
-                            'is_correct' => ($key === $correct)
-                        ];
-                    }
-                    $formattedQuiz[] = [
-                        'question' => $q['question'],
-                        'options' => $opts,
-                        'difficulty_tier' => $q['difficulty_tier'] ?? $practiceRes['difficulty_tier'] ?? 'APPLICATION',
-                        'explanation' => "Grounded directly in indexed course curriculum.",
-                        'citation' => $q['source_citation'] ?? ''
-                    ];
-                }
-                $practiceRes['quiz'] = $formattedQuiz;
-            }
-            echo json_encode($practiceRes);
-            break;
-
-        // Teacher Autopilot Settings & Trigger Management
-        case ($route === '/api/rag/teacher/autopilot' && in_array($method, ['GET', 'POST'])):
-            $user = verifyTokenOrApiKey();
-            if ($user['role'] !== 'SERVICE' && !in_array($user['role'], ['SUPER_ADMIN', 'ADMIN', 'TEACHER'])) {
-                http_response_code(403);
-                echo json_encode(['success' => false, 'error' => 'Forbidden: Teacher or Admin access required']);
-                break;
-            }
-            $courseId = $input['course_id'] ?? $_GET['course_id'] ?? null;
-            $batchId = $input['batch_id'] ?? $_GET['batch_id'] ?? null;
-
-            if ($method === 'GET') {
-                $config = RagService::getAutopilotConfig($courseId, $batchId);
-                $events = RagService::getAutopilotEvents($courseId, $batchId, 10);
-                echo json_encode([
-                    'success' => true,
-                    'config' => $config,
-                    'events' => $events
-                ]);
-            } else {
-                $action = $input['action'] ?? 'save_config';
-                if ($action === 'evaluate' || $action === 'check_triggers') {
-                    $force = !empty($input['force']);
-                    $evalRes = RagService::evaluateAutopilotTriggers($courseId, $batchId, $user['id'], $force);
-                    echo json_encode($evalRes);
-                } else {
-                    // save config
-                    $savedConfig = RagService::saveAutopilotConfig([
-                        'course_id' => $courseId,
-                        'batch_id' => $batchId,
-                        'enabled' => !empty($input['enabled']),
-                        'threshold' => $input['threshold'] ?? 3,
-                        'auto_publish' => !empty($input['auto_publish']),
-                        'question_count' => $input['question_count'] ?? 3,
-                        'time_limit_minutes' => $input['time_limit_minutes'] ?? 15
-                    ]);
-                    echo json_encode(['success' => true, 'config' => $savedConfig]);
-                }
-            }
-            break;
-
-        // Student Personal Mastery & Remedial Learning Journey
-        case ($route === '/api/rag/student/mastery' && in_array($method, ['GET', 'POST'])):
-            $user = verifyTokenOrApiKey();
-            $studentId = $input['student_id'] ?? $_GET['student_id'] ?? $user['id'] ?? null;
-            if (empty($studentId)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'Student ID is required']);
-                break;
-            }
-            $courseId = $input['course_id'] ?? $_GET['course_id'] ?? null;
-            $batchId = $input['batch_id'] ?? $_GET['batch_id'] ?? null;
-
-            $masteryData = RagService::getStudentMasteryJourney($studentId, $courseId, $batchId);
-            echo json_encode($masteryData);
-            break;
-
-        // Remedial Resource Recommendations for Knowledge Gaps
-        case ($route === '/api/rag/remedial/resources' && in_array($method, ['GET', 'POST'])):
-            $user = verifyTokenOrApiKey();
-            $topic = trim($input['topic'] ?? $_GET['topic'] ?? '');
-            if (empty($topic)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'topic parameter is required']);
-                break;
-            }
-            $courseId = $input['course_id'] ?? $_GET['course_id'] ?? null;
-            $batchId = $input['batch_id'] ?? $_GET['batch_id'] ?? null;
-
-            $recs = RagService::getRemedialResourceRecommendations($topic, $courseId, $batchId);
-            echo json_encode($recs);
-            break;
-
-        // Resolve Adaptive Difficulty Tier for Student / Topic
-        case ($route === '/api/rag/adaptive/difficulty' && in_array($method, ['GET', 'POST'])):
-            $user = verifyTokenOrApiKey();
-            $topic = trim($input['topic'] ?? $_GET['topic'] ?? '');
-            if (empty($topic)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'topic parameter is required']);
-                break;
-            }
-            $studentId = $input['student_id'] ?? $_GET['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
-            $courseId = $input['course_id'] ?? $_GET['course_id'] ?? null;
-            $batchId = $input['batch_id'] ?? $_GET['batch_id'] ?? null;
-
-            $diffData = RagService::resolveAdaptiveDifficulty($studentId, $topic, $courseId, $batchId);
-            echo json_encode(array_merge(['success' => true, 'topic' => $topic, 'student_id' => $studentId], $diffData));
-            break;
-
-        // AI Concept Doctor: Initiate In-Context Socratic Consultation
-        case ($route === '/api/rag/concept-doctor/initiate' && $method === 'POST'):
-            $user = verifyTokenOrApiKey();
-            $studentId = $input['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
-            $topic = trim($input['topic'] ?? '');
-            $question = trim($input['question'] ?? '');
-            $studentChoice = trim($input['student_choice'] ?? '');
-            $correctChoice = trim($input['correct_choice'] ?? '');
-            $courseId = $input['course_id'] ?? null;
-            $batchId = $input['batch_id'] ?? null;
-
-            if (empty($topic) || empty($question)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'topic and question are required']);
-                break;
-            }
-
-            $docRes = RagService::initiateConceptDoctorSession(
-                $studentId ?: 'std_anon',
-                $topic,
-                $question,
-                $studentChoice,
-                $correctChoice,
-                $courseId,
-                $batchId
-            );
-            echo json_encode($docRes);
-            break;
-
-        // AI Concept Doctor: Interactive Turn & Breakthrough Evaluation
-        case ($route === '/api/rag/concept-doctor/message' && $method === 'POST'):
-            $user = verifyTokenOrApiKey();
-            $studentId = $input['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
-            $topic = trim($input['topic'] ?? '');
-            $question = trim($input['question'] ?? '');
-            $correctChoice = trim($input['correct_choice'] ?? '');
-            $studentMessage = trim($input['message'] ?? '');
-            $history = $input['history'] ?? [];
-            $courseId = $input['course_id'] ?? null;
-            $batchId = $input['batch_id'] ?? null;
-
-            if (empty($studentMessage)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'message is required']);
-                break;
-            }
-
-            $turnRes = RagService::respondConceptDoctorTurn(
-                $studentId ?: 'std_anon',
-                $topic,
-                $question,
-                $correctChoice,
-                $studentMessage,
-                $history,
-                $courseId,
-                $batchId
-            );
-            echo json_encode($turnRes);
-            break;
-
-        // RAG-Grounded Quiz Generator
-        case ($route === '/api/rag/quiz' && $method === 'POST'):
-            $user = verifyTokenOrApiKey();
-            $topic = trim($input['topic'] ?? $input['query'] ?? '');
-            if (empty($topic)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'topic parameter is required']);
-                break;
-            }
-            
-            $courseId = $input['course_id'] ?? null;
-            $batchId = $input['batch_id'] ?? null;
-            $studentId = $input['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
-
-            // Strict student authorization for quiz generation
-            if ($user['role'] === 'STUDENT') {
-                $studentId = $user['id'];
-                $sb = supabaseSelect('student_batches', 'batch_id, batches(course_id)', ['student_id' => $studentId], true);
-                if ($sb['success'] && !empty($sb['data'])) {
-                    $authBatchId = $sb['data']['batch_id'] ?? null;
-                    $authCourseId = $sb['data']['batches']['course_id'] ?? null;
-                    if (!empty($courseId) && $courseId !== $authCourseId) {
-                        echo json_encode([
-                            'success' => false,
-                            'error' => 'Unauthorized course quiz access',
-                            'quiz' => null,
-                            'sources' => []
-                        ]);
-                        break;
-                    }
-                    $courseId = $authCourseId;
-                    $batchId = $authBatchId;
-                }
-            } elseif (!empty($studentId) && (empty($courseId) || empty($batchId))) {
-                $sb = supabaseSelect('student_batches', 'batch_id, batches(course_id)', ['student_id' => $studentId], true);
-                if ($sb['success'] && !empty($sb['data'])) {
-                    if (empty($batchId)) $batchId = $sb['data']['batch_id'] ?? null;
-                    if (empty($courseId)) $courseId = $sb['data']['batches']['course_id'] ?? null;
-                }
-            }
-
-            $count = isset($input['count']) ? max(1, min(10, (int)$input['count'])) : 5;
-            $difficulty = $input['difficulty'] ?? 'AUTO';
-            $quizRes = RagService::generateQuiz($topic, $courseId, $batchId, $count, $difficulty, $studentId);
-            echo json_encode($quizRes);
-            break;
-
-        // RAG Active Quiz Session Sync (save/retrieve)
-        case ($route === '/api/rag/quiz/active' && $method === 'POST'):
-            $user = verifyTokenOrApiKey();
-            $chatId = trim((string)($input['chat_id'] ?? $input['session_id'] ?? ''));
-            $questions = $input['questions'] ?? [];
-            if (empty($chatId) || empty($questions)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'chat_id and questions are required']);
-                break;
-            }
-            RagService::saveActiveQuiz($chatId, $questions);
-            echo json_encode(['success' => true, 'chat_id' => $chatId, 'questions_count' => count($questions)]);
-            break;
-
-        case ($route === '/api/rag/quiz/active' && $method === 'GET'):
-            $user = verifyTokenOrApiKey();
-            $chatId = trim((string)($_GET['chat_id'] ?? $_GET['session_id'] ?? ''));
-            if (empty($chatId)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'chat_id is required']);
-                break;
-            }
-            $activeQuiz = RagService::getActiveQuiz($chatId);
-            echo json_encode(['success' => !empty($activeQuiz), 'questions' => $activeQuiz ?: []]);
-            break;
-
-        // RAG Deterministic Quiz Evaluator
-        case ($route === '/api/rag/quiz/evaluate' && $method === 'POST'):
-            $user = verifyTokenOrApiKey();
-            $chatId = trim((string)($input['chat_id'] ?? $input['session_id'] ?? ''));
-            $questions = $input['questions'] ?? [];
-            $answers = $input['answers'] ?? $input['student_answers'] ?? $input['response'] ?? '';
-
-            // If questions array is not provided, look up from persistent session store
-            if (empty($questions) && !empty($chatId)) {
-                $questions = RagService::getActiveQuiz($chatId) ?: [];
-            }
-
-            if (empty($questions) || empty($answers)) {
-                http_response_code(400);
-                echo json_encode([
-                    'success' => false,
-                    'error' => empty($answers) ? 'answers are required' : 'No active quiz found for this chat session'
-                ]);
-                break;
-            }
-
-            $evalRes = RagService::evaluateQuiz($questions, $answers);
-            if (!empty($chatId)) {
-                RagService::clearActiveQuiz($chatId);
-            }
-            echo json_encode($evalRes);
-            break;
-
-        
-        // Ingest document or document chunks
-        case ($route === '/api/rag/ingest' && $method === 'POST'):
-            $user = verifyTokenOrApiKey();
-            if ($user['role'] !== 'SERVICE' && !in_array($user['role'], ['SUPER_ADMIN', 'TEACHER'])) {
-                http_response_code(403);
-                echo json_encode(['success' => false, 'error' => 'Forbidden: Teacher, Admin, or Service Key required']);
-                break;
-            }
-            
-            // Support direct full-text document ingestion via RagService
-            if (!empty($input['content'])) {
-                $matId = $input['material_id'] ?? bin2hex(random_bytes(16));
-                $title = $input['title'] ?? 'Course Document';
-                $courseId = $input['course_id'] ?? null;
-                $batchId = $input['batch_id'] ?? null;
-                $metadata = $input['metadata'] ?? [];
-                
-                $ingestRes = RagService::ingestMaterial($matId, $title, $input['content'], $courseId, $batchId, $metadata);
-                echo json_encode($ingestRes);
-                break;
-            }
-
-            // Support direct document file URL or path ingestion (PDF, Markdown, TXT, etc.)
-            if (!empty($input['file_url']) || !empty($input['file_path'])) {
-                $matId = $input['material_id'] ?? bin2hex(random_bytes(16));
-                $title = $input['title'] ?? 'Course Document';
-                $target = $input['file_url'] ?? $input['file_path'];
-                $courseId = $input['course_id'] ?? null;
-                $batchId = $input['batch_id'] ?? null;
-                $metadata = $input['metadata'] ?? [];
-
-                $ingestRes = RagService::ingestMaterialDocument($matId, $title, $target, $courseId, $batchId, $metadata);
-                echo json_encode($ingestRes);
-                break;
-            }
-            
-            // Otherwise support pre-chunked ingestion
-            $materialId = $input['material_id'] ?? '';
-            $chunks = $input['chunks'] ?? [];
-            
-            if (empty($materialId) || empty($chunks)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'content OR (material_id and chunks[]) are required']);
-                break;
-            }
-            
-            // Update material status to processing
-            supabaseUpdate('materials', ['ingestion_status' => 'processing'], ['id' => $materialId]);
-            
-            $insertedCount = 0;
-            $errors = [];
-            
-            foreach ($chunks as $index => $chunk) {
-                $chunkContent = $chunk['content'] ?? '';
-                $chunkMetadata = $chunk['metadata'] ?? new stdClass();
-                $embedding = $chunk['embedding'] ?? null;
-                
-                if (empty($chunkContent)) continue;
-                
-                $chunkData = [
-                    'material_id' => $materialId,
-                    'chunk_index' => $index,
-                    'content' => $chunkContent,
-                    'metadata' => json_encode($chunkMetadata)
-                ];
-                
-                // If embedding provided, add it
-                if ($embedding && is_array($embedding)) {
-                    $chunkData['embedding'] = '[' . implode(',', $embedding) . ']';
-                }
-                
-                $res = supabaseInsert('document_chunks', $chunkData);
-                if ($res['success']) {
-                    $insertedCount++;
-                } else {
-                    $errors[] = "Chunk $index: " . ($res['error'] ?? 'unknown error');
-                }
-            }
-            
-            // Update material status
-            $status = empty($errors) ? 'completed' : (($insertedCount > 0) ? 'completed' : 'failed');
-            supabaseUpdate('materials', [
-                'ingestion_status' => $status,
-                'chunk_count' => $insertedCount
-            ], ['id' => $materialId]);
-            
-            echo json_encode([
-                'success' => true,
-                'inserted' => $insertedCount,
-                'total' => count($chunks),
-                'errors' => $errors
-            ]);
-            break;
-
-        // Semantic search across document chunks (hybrid BM25 + dense vector RRF)
-        case ($route === '/api/rag/search' && $method === 'POST'):
-            $user = verifyTokenOrApiKey();
-            $query = trim($input['query'] ?? $_GET['query'] ?? '');
-            
-            if (empty($query)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'query parameter is required']);
-                break;
-            }
-
-            $courseId = $input['course_id'] ?? $_GET['course_id'] ?? null;
-            $batchId = $input['batch_id'] ?? $_GET['batch_id'] ?? null;
-            $studentId = $input['student_id'] ?? $_GET['student_id'] ?? ($user['role'] === 'STUDENT' ? $user['id'] : null);
-
-            // Strict student authorization & scope enforcement
-            if ($user['role'] === 'STUDENT') {
-                $studentId = $user['id'];
-                $sb = supabaseSelect('student_batches', 'batch_id, batches(course_id)', ['student_id' => $studentId], true);
-                if ($sb['success'] && !empty($sb['data'])) {
-                    $authBatchId = $sb['data']['batch_id'] ?? null;
-                    $authCourseId = $sb['data']['batches']['course_id'] ?? null;
-                    if (!empty($courseId) && $courseId !== $authCourseId) {
-                        echo json_encode([
-                            'success' => true,
-                            'backend' => 'hybrid_rrf',
-                            'count' => 0,
-                            'results' => []
-                        ]);
-                        break;
-                    }
-                    $courseId = $authCourseId;
-                    $batchId = $authBatchId;
-                }
-            } elseif (!empty($studentId) && (empty($courseId) || empty($batchId))) {
-                $sb = supabaseSelect('student_batches', 'batch_id, batches(course_id)', ['student_id' => $studentId], true);
-                if ($sb['success'] && !empty($sb['data'])) {
-                    if (empty($batchId)) $batchId = $sb['data']['batch_id'] ?? null;
-                    if (empty($courseId)) $courseId = $sb['data']['batches']['course_id'] ?? null;
-                }
-            }
-
-            $limit = isset($input['limit']) ? (int)$input['limit'] : (isset($input['top_k']) ? (int)$input['top_k'] : 4);
-            $threshold = isset($input['threshold']) ? (float)$input['threshold'] : 0.20;
-            
-            $searchRes = RagService::search($query, $courseId, $batchId, $limit, $threshold);
-            echo json_encode($searchRes);
-            break;
-
-        // Generate embeddings via Ollama (used by n8n ingestion workflow)
-        case ($route === '/api/rag/embed' && $method === 'POST'):
-            $user = verifyTokenOrApiKey();
-            $texts = $input['texts'] ?? [];
-            
-            if (empty($texts) || !is_array($texts)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'texts[] array is required']);
-                break;
-            }
-            
-            // Prepend search_document: prefix for document embeddings
-            $prefixedTexts = array_map(function($t) {
-                return 'search_document: ' . $t;
-            }, $texts);
-            
-            $ollamaUrl = 'http://localhost:11434/api/embed';
-            $ch = curl_init($ollamaUrl);
-            curl_setopt_array($ch, [
-                CURLOPT_POST => true,
-                CURLOPT_POSTFIELDS => json_encode([
-                    'model' => 'nomic-embed-text',
-                    'input' => $prefixedTexts
-                ]),
-                CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_TIMEOUT => 120
-            ]);
-            $response = curl_exec($ch);
-            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            $error = curl_error($ch);
-            curl_close($ch);
-            
-            if ($error || $httpCode !== 200) {
-                http_response_code(502);
-                echo json_encode(['success' => false, 'error' => 'Ollama error: ' . ($error ?: "HTTP $httpCode")]);
-                break;
-            }
-            
-            $data = json_decode($response, true);
-            echo json_encode([
-                'success' => true,
-                'embeddings' => $data['embeddings'] ?? []
-            ]);
-            break;
-
-        // Check RAG ingestion status for a material  
-        case (preg_match('/^\/api\/rag\/status\/([a-zA-Z0-9-]+)$/', $route, $matches) && $method === 'GET'):
-            $user = verifyTokenOrApiKey();
-            $materialId = $matches[1];
-            
-            $res = supabaseSelect('materials', 'id,title,ingestion_status,chunk_count', ['id' => $materialId], true);
-            if (!$res['success'] || empty($res['data'])) {
-                http_response_code(404);
-                echo json_encode(['success' => false, 'error' => 'Material not found']);
-                break;
-            }
-            
-            echo json_encode(['success' => true, 'material' => $res['data']]);
-            break;
-
-        // Delete all chunks for a material (re-indexing)
-        case (preg_match('/^\/api\/rag\/chunks\/([a-zA-Z0-9-]+)$/', $route, $matches) && $method === 'DELETE'):
-            $user = verifyTokenOrApiKey();
-            $materialId = $matches[1];
-            
-            // Delete chunks
-            $res = supabaseDelete('document_chunks', ['material_id' => $materialId]);
-            
-            // Reset material status
-            supabaseUpdate('materials', [
-                'ingestion_status' => 'pending',
-                'chunk_count' => 0
-            ], ['id' => $materialId]);
-            
-            echo json_encode(['success' => true, 'message' => 'Chunks deleted, material ready for re-indexing']);
-            break;
-
-        // Save conversation turn
-        case ($route === '/api/rag/conversation' && $method === 'POST'):
-            $user = verifyTokenOrApiKey();
-            $studentId = ($user['role'] === 'STUDENT') ? $user['id'] : ($input['student_id'] ?? '');
-            $role = $input['role'] ?? '';
-            $content = $input['content'] ?? '';
-            
-            if (empty($studentId) || empty($role) || empty($content)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'student_id, role, and content are required']);
-                break;
-            }
-            
-            $res = supabaseInsert('conversation_history', [
-                'student_id' => $studentId,
-                'role' => $role,
-                'content' => $content
-            ]);
-            echo json_encode(['success' => $res['success'], 'error' => $res['error']]);
-            break;
-
-        // Get conversation history
-        case ($route === '/api/rag/conversation' && $method === 'GET'):
-            $user = verifyTokenOrApiKey();
-            $studentId = ($user['role'] === 'STUDENT') ? $user['id'] : ($_GET['student_id'] ?? '');
-            $limit = $_GET['limit'] ?? '10';
-            
-            if (empty($studentId)) {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'error' => 'student_id is required']);
-                break;
-            }
-            
-            $res = supabaseSelect(
-                'conversation_history',
-                '*',
-                [
-                    'student_id' => $studentId,
-                    'order' => 'created_at.desc',
-                    'limit' => $limit
-                ]
-            );
-            
-            // Reverse to get chronological order
-            $messages = array_reverse($res['data'] ?: []);
-            echo json_encode(['success' => true, 'messages' => $messages]);
             break;
 
         default:

@@ -1,0 +1,158 @@
+{
+  "experiment_tag": "EXP-0023-INFRASTRUCTURE-RESULTS-2026-09-12",
+  "timestamp": "2026-09-12T08:34:07.184Z",
+  "concurrency_ladder": {
+    "clients_1": {
+      "concurrency": 1,
+      "total_requests": 1,
+      "successful_responses": 1,
+      "failed_responses": 0,
+      "success_rate": "100.0%",
+      "duration_ms": 103,
+      "throughput_rps": 9.7
+    },
+    "clients_8": {
+      "concurrency": 8,
+      "total_requests": 8,
+      "successful_responses": 8,
+      "failed_responses": 0,
+      "success_rate": "100.0%",
+      "duration_ms": 147,
+      "throughput_rps": 54.4
+    },
+    "clients_16": {
+      "concurrency": 16,
+      "total_requests": 16,
+      "successful_responses": 16,
+      "failed_responses": 0,
+      "success_rate": "100.0%",
+      "duration_ms": 182,
+      "throughput_rps": 87.9
+    },
+    "clients_32": {
+      "concurrency": 32,
+      "total_requests": 32,
+      "successful_responses": 32,
+      "failed_responses": 0,
+      "success_rate": "100.0%",
+      "duration_ms": 349,
+      "throughput_rps": 91.7
+    },
+    "clients_64": {
+      "concurrency": 64,
+      "total_requests": 64,
+      "successful_responses": 64,
+      "failed_responses": 0,
+      "success_rate": "100.0%",
+      "duration_ms": 708,
+      "throughput_rps": 90.4
+    },
+    "clients_128": {
+      "concurrency": 128,
+      "total_requests": 128,
+      "successful_responses": 128,
+      "failed_responses": 0,
+      "success_rate": "100.0%",
+      "duration_ms": 1225,
+      "throughput_rps": 104.5
+    },
+    "clients_256": {
+      "concurrency": 256,
+      "total_requests": 256,
+      "successful_responses": 256,
+      "failed_responses": 0,
+      "success_rate": "100.0%",
+      "duration_ms": 2692,
+      "throughput_rps": 95.1
+    }
+  },
+  "prewarm_consistency": {
+    "all_8_workers_audited": true,
+    "all_workers_consistent": true,
+    "reference_corpus_version": "unknown",
+    "reference_vector_count": 23,
+    "reference_vector_dimension": 768,
+    "status": "PASSED_100_PERCENT_CONSISTENT",
+    "worker_audits": {
+      "port_8001": {
+        "port": 8001,
+        "role": "FAST",
+        "http_status": 200,
+        "corpus_version": "unknown",
+        "vector_count": 23,
+        "vector_dimensions": 768,
+        "prewarmed_cache_valid": true
+      },
+      "port_8002": {
+        "port": 8002,
+        "role": "FAST",
+        "http_status": 200,
+        "corpus_version": "unknown",
+        "vector_count": 23,
+        "vector_dimensions": 768,
+        "prewarmed_cache_valid": true
+      },
+      "port_8003": {
+        "port": 8003,
+        "role": "FAST",
+        "http_status": 200,
+        "corpus_version": "unknown",
+        "vector_count": 23,
+        "vector_dimensions": 768,
+        "prewarmed_cache_valid": true
+      },
+      "port_8004": {
+        "port": 8004,
+        "role": "FAST",
+        "http_status": 200,
+        "corpus_version": "unknown",
+        "vector_count": 23,
+        "vector_dimensions": 768,
+        "prewarmed_cache_valid": true
+      },
+      "port_8005": {
+        "port": 8005,
+        "role": "FAST",
+        "http_status": 200,
+        "corpus_version": "unknown",
+        "vector_count": 23,
+        "vector_dimensions": 768,
+        "prewarmed_cache_valid": true
+      },
+      "port_8006": {
+        "port": 8006,
+        "role": "FAST",
+        "http_status": 200,
+        "corpus_version": "unknown",
+        "vector_count": 23,
+        "vector_dimensions": 768,
+        "prewarmed_cache_valid": true
+      },
+      "port_8007": {
+        "port": 8007,
+        "role": "GEN",
+        "http_status": 200,
+        "corpus_version": "unknown",
+        "vector_count": 23,
+        "vector_dimensions": 768,
+        "prewarmed_cache_valid": true
+      },
+      "port_8008": {
+        "port": 8008,
+        "role": "GEN",
+        "http_status": 200,
+        "corpus_version": "unknown",
+        "vector_count": 23,
+        "vector_dimensions": 768,
+        "prewarmed_cache_valid": true
+      }
+    }
+  },
+  "supervisor_resiliency": {
+    "gateway_status": "HEALTHY",
+    "healthy_worker_count": 8,
+    "total_configured_workers": 8,
+    "restarts_observed": 2,
+    "status": "PASSED"
+  }
+}

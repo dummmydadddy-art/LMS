@@ -1,0 +1,74 @@
+{
+    "experiment_tag": "EXP-0026-RULE-ABLATION",
+    "timestamp": "2026-09-13T07:24:10+00:00",
+    "dataset": "EXP-0025-DEVELOPMENT-DATASET.json (400 cases)",
+    "conditions": {
+        "A0": {
+            "condition_name": "EXP-0025 Champion (Full Baseline)",
+            "overall_accuracy": "89.25%",
+            "false_acceptance_rate_far": "4%",
+            "refutation_recall": "92%",
+            "false_refutation_rate_frr": "0%",
+            "unknown_recall": "100%",
+            "supported_recall": "76%",
+            "delta_vs_a0_accuracy": "0%"
+        },
+        "A1": {
+            "condition_name": "No Semantic Opposites Dictionary (Mech A Removed)",
+            "overall_accuracy": "62.25%",
+            "false_acceptance_rate_far": "61%",
+            "refutation_recall": "9%",
+            "false_refutation_rate_frr": "0%",
+            "unknown_recall": "100%",
+            "supported_recall": "84%",
+            "delta_vs_a0_accuracy": "-27%"
+        },
+        "A2": {
+            "condition_name": "No Targeted Predicate List (Mech B Removed)",
+            "overall_accuracy": "85%",
+            "false_acceptance_rate_far": "9%",
+            "refutation_recall": "87%",
+            "false_refutation_rate_frr": "0%",
+            "unknown_recall": "100%",
+            "supported_recall": "69%",
+            "delta_vs_a0_accuracy": "-4.25%"
+        },
+        "A3": {
+            "condition_name": "No Out-of-Curriculum Topic List (Mech C Removed)",
+            "overall_accuracy": "87.25%",
+            "false_acceptance_rate_far": "5%",
+            "refutation_recall": "92%",
+            "false_refutation_rate_frr": "0%",
+            "unknown_recall": "98%",
+            "supported_recall": "68%",
+            "delta_vs_a0_accuracy": "-2%"
+        },
+        "A4": {
+            "condition_name": "Generic Polarity Inversion Only (No Domain Rules)",
+            "overall_accuracy": "64.5%",
+            "false_acceptance_rate_far": "38%",
+            "refutation_recall": "35%",
+            "false_refutation_rate_frr": "0%",
+            "unknown_recall": "98%",
+            "supported_recall": "59%",
+            "delta_vs_a0_accuracy": "-24.75%"
+        },
+        "A5": {
+            "condition_name": "Complete Ablation (No Manual Mechanisms A-G)",
+            "overall_accuracy": "52.5%",
+            "false_acceptance_rate_far": "68%",
+            "refutation_recall": "0%",
+            "false_refutation_rate_frr": "0%",
+            "unknown_recall": "99%",
+            "supported_recall": "85%",
+            "delta_vs_a0_accuracy": "-36.75%"
+        }
+    },
+    "analytical_findings": {
+        "semantic_opposite_dictionary_dependency": "Evaluated via A1 (removal of 138 pairs)",
+        "targeted_predicate_list_dependency": "Evaluated via A2 (removal of 23 predicates)",
+        "out_of_curriculum_topic_list_dependency": "Evaluated via A3 (removal of 15 tech regexes)",
+        "generic_evidence_grounding_viability": "Evaluated via A4 (pure polarity without domain rules)",
+        "total_manual_rule_contribution": "Evaluated via A5 (complete manual rule ablation)"
+    }
+}

@@ -1,0 +1,1182 @@
+{
+  "metadata": {
+    "timestamp": "2026-10-02T09:44:40.763Z",
+    "corpusSize": 1,
+    "embeddingModel": "nomic-embed-text",
+    "vectorDimensions": 768
+  },
+  "aggregateMetrics": {
+    "precision1": 0.2,
+    "precision3": 0.2,
+    "precision5": 0.2,
+    "recall5": 0.2,
+    "mrr": 0.2,
+    "ndcg5": 0.1073,
+    "keywordRecall": 0.0748,
+    "hitRate1": 0.2,
+    "hitRate3": 0.2,
+    "hitRate5": 0.2
+  },
+  "queryResults": [
+    {
+      "id": "gold_01",
+      "query": "What is the purpose of the <main> HTML5 semantic element and how many can exist in a document?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5090601880485779
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_02",
+      "query": "Explain the four layers of the CSS Box Model from inside out.",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.43698525703911045
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_03",
+      "query": "Why is * { box-sizing: border-box; } recommended over content-box in CSS?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.38064405126330453
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_04",
+      "query": "In CSS Flexbox, what is the difference between justify-content and align-items?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.43774859586179454
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_05",
+      "query": "What are the core child flex properties that make up the flex shorthand in CSS?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.4383900978793636
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_06",
+      "query": "What is CSS Grid and how does it differ in dimensionality from Flexbox?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.3869319766718252
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_07",
+      "query": "What are the benefits of using HTML5 semantic elements instead of generic div tags?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.45899583603908856
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_08",
+      "query": "How does the gap property in CSS Flexbox simplify spacing between items?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.4401083531214627
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_09",
+      "query": "How do var, let, and const differ in terms of scoping, hoisting, and Temporal Dead Zone?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.4751661992312222
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.125,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 1
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_10",
+      "query": "Can you mutate object properties or array elements declared with const in JavaScript?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5348523633474253
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.2,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 1
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_11",
+      "query": "How do arrow functions handle this differently from traditional function declarations?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.47465575412751493
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 1
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_12",
+      "query": "What happens if you invoke an arrow function using the new keyword?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.4511868341500195
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.25,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 1
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_13",
+      "query": "What is the difference between the spread operator and rest parameters in JavaScript ES6?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5496099706169957
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.16666666666666666,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 1
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_14",
+      "query": "What are the three possible states of a JavaScript Promise?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.7387674565441231
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.75,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 1
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_15",
+      "query": "How does async/await interact with JavaScript Promises and error handling?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.8473053559612146
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8333333333333334,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 1
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_16",
+      "query": "What is the Temporal Dead Zone (TDZ) in JavaScript let and const declarations?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.6039141778392061
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 1
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_17",
+      "query": "What are the two fundamental Rules of Hooks in React?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5247192431309463
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_18",
+      "query": "Why must state updates in useState be immutable when updating objects or arrays?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.48610965328591893
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_19",
+      "query": "How does the dependency array in useEffect determine when the effect runs?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.452416059136877
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_20",
+      "query": "What is the purpose of the cleanup function returned by a useEffect hook?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.4765591268266267
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_21",
+      "query": "What is the difference between useMemo and useCallback in React?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.45088357675413326
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_22",
+      "query": "How does useRef differ from useState in triggering component re-renders?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.4568839597935078
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_23",
+      "query": "How do createContext and useContext work together to eliminate prop drilling?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.45594793645378395
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_24",
+      "query": "What is the functional update form of useState and when should it be used?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.476155291803202
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_25",
+      "query": "What is the Node.js architecture and how does the Event Loop handle asynchronous operations?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.701925275754095
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0.3333333333333333,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0.2385191169365424,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_26",
+      "query": "What are the four parameters required in Express error-handling middleware?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.4545500790149212
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0.3333333333333333,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0.2385191169365424,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_27",
+      "query": "What does the next() function do in an Express middleware chain?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5176103015411484
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_28",
+      "query": "What are the three parts of a JSON Web Token (JWT) and how are they separated?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.47105433596265933
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_29",
+      "query": "What are the key differences between HTTP 401 Unauthorized and 403 Forbidden status codes?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.4304499095555098
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_30",
+      "query": "What are the RESTful naming conventions for API endpoint URIs?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.46240104968934326
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_31",
+      "query": "What built-in Express middleware is used to parse incoming JSON request bodies?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.47708956483224746
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_32",
+      "query": "Why should CPU-intensive tasks not be executed directly on the Node.js main thread?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.542586968651387
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_33",
+      "query": "How is a Many-to-Many relationship implemented between tables in a relational database?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.46398042687308033
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_34",
+      "query": "What are the requirements for a database table to satisfy First Normal Form (1NF)?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.3266397609029805
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_35",
+      "query": "What constitutes Second Normal Form (2NF) and how does it prevent partial dependency?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.32023172751682916
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_36",
+      "query": "What is Third Normal Form (3NF) and how does it eliminate transitive dependencies?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.3251671256474103
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_37",
+      "query": "What are the four ACID properties in database transactions and what do they guarantee?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.4310019877032363
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_38",
+      "query": "What is a B-tree index in PostgreSQL and what types of queries does it optimize?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.42227890139508617
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_39",
+      "query": "What is the trade-off or downside of having too many indexes on a database table?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.37562912073848154
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    },
+    {
+      "id": "gold_40",
+      "query": "What is the purpose of a composite primary key in database junction tables?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.39789240274416954
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 0,
+          "hit@5": 0
+        },
+        "moduleCoverage": {},
+        "mrr": 0,
+        "keywordRecall": 0,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0,
+          "p@5": 0
+        },
+        "ndcg5": 0,
+        "recall5": 0
+      }
+    }
+  ]
+}

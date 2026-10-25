@@ -1,0 +1,111 @@
+{
+    "experiment_tag": "EXP-0026-CROSS-RULE-RESULTS",
+    "timestamp": "2026-09-13T07:40:18Z",
+    "elapsed_seconds": 19.8,
+    "total_cases": 300,
+    "overall_accuracy": "37.67%",
+    "macro_f1": "30.60%",
+    "primary_gates": {
+        "false_acceptance_rate_far": {
+            "value": "4.00%",
+            "ci_95": "[1.57%, 9.84%]",
+            "target": "<= 15.00%",
+            "passed": true
+        },
+        "refutation_recall": {
+            "value": "0.00%",
+            "ci_95": "[0.00%, 3.70%]",
+            "target": ">= 80.00%",
+            "passed": false
+        },
+        "false_refutation_rate_frr": {
+            "value": "30.00%",
+            "ci_95": "[19.10%, 43.75%]",
+            "target": "<= 5.00%",
+            "passed": false
+        },
+        "unknown_recall": {
+            "value": "93.00%",
+            "ci_95": "[86.25%, 96.57%]",
+            "target": ">= 95.00%",
+            "passed": false
+        },
+        "evidence_used_invariant": {
+            "value": "100.00%",
+            "target": "100.00%",
+            "passed": true
+        }
+    },
+    "confusion_matrix": {
+        "SUPPORTED": {
+            "SUPPORTED": 20,
+            "REFUTED": 15,
+            "NOT_ESTABLISHED": 15
+        },
+        "REFUTED": {
+            "SUPPORTED": 52,
+            "REFUTED": 0,
+            "NOT_ESTABLISHED": 98
+        },
+        "NOT_ESTABLISHED": {
+            "SUPPORTED": 7,
+            "REFUTED": 0,
+            "NOT_ESTABLISHED": 93
+        }
+    },
+    "class_f1_scores": {
+        "SUPPORTED": {
+            "precision": "25.32%",
+            "recall": "40.00%",
+            "f1": "31.01%"
+        },
+        "REFUTED": {
+            "precision": "0.00%",
+            "recall": "0.00%",
+            "f1": "0.00%"
+        },
+        "NOT_ESTABLISHED": {
+            "precision": "45.15%",
+            "recall": "93.00%",
+            "f1": "60.78%"
+        }
+    },
+    "category_metrics": {
+        "supported_curriculum_recall": "0.00%",
+        "mixed_compound_refutation_rate": "0.00%"
+    },
+    "mechanism_evasion_breakdown": {
+        "MECH_A_SEMANTIC_OPPOSITES": {
+            "total": 100,
+            "accuracy": "0.00%",
+            "refuted": 0,
+            "refutation_rate": "0.00%",
+            "supported": 4,
+            "not_established": 96
+        },
+        "MECH_C_OOD_BLACKLIST": {
+            "total": 100,
+            "accuracy": "93.00%",
+            "refuted": 0,
+            "refutation_rate": "0.00%",
+            "supported": 7,
+            "not_established": 93
+        },
+        "MECH_E_CLAUSE_SPLITTING": {
+            "total": 50,
+            "accuracy": "0.00%",
+            "refuted": 0,
+            "refutation_rate": "0.00%",
+            "supported": 48,
+            "not_established": 2
+        },
+        "MECH_B_D_PREDICATE_NEGATION": {
+            "total": 50,
+            "accuracy": "40.00%",
+            "refuted": 15,
+            "refutation_rate": "30.00%",
+            "supported": 20,
+            "not_established": 15
+        }
+    }
+}

@@ -1,0 +1,29 @@
+﻿{
+    "timestamp":  "2026-10-04T14:01:43.8305577+05:30",
+    "services":  [
+                     {
+                         "Name":  "Ollama LLM Engine",
+                         "Port":  11434,
+                         "PID":  17028,
+                         "Endpoint":  "http://127.0.0.1:11434/api/tags"
+                     },
+                     {
+                         "Name":  "Cross-Encoder Reranker",
+                         "Port":  8100,
+                         "PID":  5604,
+                         "Endpoint":  "http://127.0.0.1:8100/health"
+                     },
+                     {
+                         "Name":  "FrankenPHP Gateway",
+                         "Port":  8000,
+                         "PID":  24696,
+                         "Endpoint":  "http://127.0.0.1:8000/api/rag/metrics"
+                     },
+                     {
+                         "Name":  "React Vite Web UI",
+                         "Port":  5173,
+                         "PID":  27248,
+                         "Endpoint":  "http://localhost:5173"
+                     }
+                 ]
+}

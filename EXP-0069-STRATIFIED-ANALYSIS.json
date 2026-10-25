@@ -1,0 +1,333 @@
+{
+  "strata": {
+    "S1_antonym_assisted": {
+      "C0": {
+        "n": 166,
+        "correct": 155,
+        "accuracy": 93.37
+      },
+      "MINILM_RAW": {
+        "n": 166,
+        "correct": 116,
+        "accuracy": 69.88
+      },
+      "MINILM_TEMP": {
+        "n": 166,
+        "correct": 86,
+        "accuracy": 51.81
+      },
+      "MINILM_BIAS": {
+        "n": 166,
+        "correct": 138,
+        "accuracy": 83.13
+      },
+      "MINILM_VEC": {
+        "n": 166,
+        "correct": 86,
+        "accuracy": 51.81
+      },
+      "DEBERTA_RAW": {
+        "n": 166,
+        "correct": 113,
+        "accuracy": 68.07
+      },
+      "DEBERTA_TEMP": {
+        "n": 166,
+        "correct": 86,
+        "accuracy": 51.81
+      },
+      "DEBERTA_BIAS": {
+        "n": 166,
+        "correct": 134,
+        "accuracy": 80.72
+      },
+      "DEBERTA_VEC": {
+        "n": 166,
+        "correct": 86,
+        "accuracy": 51.81
+      }
+    },
+    "S2_non_antonym": {
+      "C0": {
+        "n": 234,
+        "correct": 213,
+        "accuracy": 91.03
+      },
+      "MINILM_RAW": {
+        "n": 234,
+        "correct": 164,
+        "accuracy": 70.09
+      },
+      "MINILM_TEMP": {
+        "n": 234,
+        "correct": 140,
+        "accuracy": 59.83
+      },
+      "MINILM_BIAS": {
+        "n": 234,
+        "correct": 180,
+        "accuracy": 76.92
+      },
+      "MINILM_VEC": {
+        "n": 234,
+        "correct": 140,
+        "accuracy": 59.83
+      },
+      "DEBERTA_RAW": {
+        "n": 234,
+        "correct": 159,
+        "accuracy": 67.95
+      },
+      "DEBERTA_TEMP": {
+        "n": 234,
+        "correct": 140,
+        "accuracy": 59.83
+      },
+      "DEBERTA_BIAS": {
+        "n": 234,
+        "correct": 181,
+        "accuracy": 77.35
+      },
+      "DEBERTA_VEC": {
+        "n": 234,
+        "correct": 140,
+        "accuracy": 59.83
+      }
+    },
+    "S3_high_overlap_support": {
+      "C0": {
+        "n": 100,
+        "correct": 85,
+        "accuracy": 85.0
+      },
+      "MINILM_RAW": {
+        "n": 100,
+        "correct": 30,
+        "accuracy": 30.0
+      },
+      "MINILM_TEMP": {
+        "n": 100,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "MINILM_BIAS": {
+        "n": 100,
+        "correct": 54,
+        "accuracy": 54.0
+      },
+      "MINILM_VEC": {
+        "n": 100,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "DEBERTA_RAW": {
+        "n": 100,
+        "correct": 29,
+        "accuracy": 29.0
+      },
+      "DEBERTA_TEMP": {
+        "n": 100,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "DEBERTA_BIAS": {
+        "n": 100,
+        "correct": 51,
+        "accuracy": 51.0
+      },
+      "DEBERTA_VEC": {
+        "n": 100,
+        "correct": 0,
+        "accuracy": 0.0
+      }
+    },
+    "S4_low_overlap_paraphrase": {
+      "C0": {
+        "n": 50,
+        "correct": 46,
+        "accuracy": 92.0
+      },
+      "MINILM_RAW": {
+        "n": 50,
+        "correct": 28,
+        "accuracy": 56.0
+      },
+      "MINILM_TEMP": {
+        "n": 50,
+        "correct": 16,
+        "accuracy": 32.0
+      },
+      "MINILM_BIAS": {
+        "n": 50,
+        "correct": 41,
+        "accuracy": 82.0
+      },
+      "MINILM_VEC": {
+        "n": 50,
+        "correct": 16,
+        "accuracy": 32.0
+      },
+      "DEBERTA_RAW": {
+        "n": 50,
+        "correct": 21,
+        "accuracy": 42.0
+      },
+      "DEBERTA_TEMP": {
+        "n": 50,
+        "correct": 16,
+        "accuracy": 32.0
+      },
+      "DEBERTA_BIAS": {
+        "n": 50,
+        "correct": 35,
+        "accuracy": 70.0
+      },
+      "DEBERTA_VEC": {
+        "n": 50,
+        "correct": 16,
+        "accuracy": 32.0
+      }
+    },
+    "S5_normative_universal": {
+      "C0": {
+        "n": 81,
+        "correct": 74,
+        "accuracy": 91.36
+      },
+      "MINILM_RAW": {
+        "n": 81,
+        "correct": 48,
+        "accuracy": 59.26
+      },
+      "MINILM_TEMP": {
+        "n": 81,
+        "correct": 35,
+        "accuracy": 43.21
+      },
+      "MINILM_BIAS": {
+        "n": 81,
+        "correct": 61,
+        "accuracy": 75.31
+      },
+      "MINILM_VEC": {
+        "n": 81,
+        "correct": 35,
+        "accuracy": 43.21
+      },
+      "DEBERTA_RAW": {
+        "n": 81,
+        "correct": 50,
+        "accuracy": 61.73
+      },
+      "DEBERTA_TEMP": {
+        "n": 81,
+        "correct": 35,
+        "accuracy": 43.21
+      },
+      "DEBERTA_BIAS": {
+        "n": 81,
+        "correct": 62,
+        "accuracy": 76.54
+      },
+      "DEBERTA_VEC": {
+        "n": 81,
+        "correct": 35,
+        "accuracy": 43.21
+      }
+    },
+    "S6_compound_multi_clause": {
+      "C0": {
+        "n": 75,
+        "correct": 68,
+        "accuracy": 90.67
+      },
+      "MINILM_RAW": {
+        "n": 75,
+        "correct": 57,
+        "accuracy": 76.0
+      },
+      "MINILM_TEMP": {
+        "n": 75,
+        "correct": 46,
+        "accuracy": 61.33
+      },
+      "MINILM_BIAS": {
+        "n": 75,
+        "correct": 59,
+        "accuracy": 78.67
+      },
+      "MINILM_VEC": {
+        "n": 75,
+        "correct": 46,
+        "accuracy": 61.33
+      },
+      "DEBERTA_RAW": {
+        "n": 75,
+        "correct": 57,
+        "accuracy": 76.0
+      },
+      "DEBERTA_TEMP": {
+        "n": 75,
+        "correct": 46,
+        "accuracy": 61.33
+      },
+      "DEBERTA_BIAS": {
+        "n": 75,
+        "correct": 60,
+        "accuracy": 80.0
+      },
+      "DEBERTA_VEC": {
+        "n": 75,
+        "correct": 46,
+        "accuracy": 61.33
+      }
+    },
+    "S7_ood": {
+      "C0": {
+        "n": 100,
+        "correct": 98,
+        "accuracy": 98.0
+      },
+      "MINILM_RAW": {
+        "n": 100,
+        "correct": 97,
+        "accuracy": 97.0
+      },
+      "MINILM_TEMP": {
+        "n": 100,
+        "correct": 99,
+        "accuracy": 99.0
+      },
+      "MINILM_BIAS": {
+        "n": 100,
+        "correct": 96,
+        "accuracy": 96.0
+      },
+      "MINILM_VEC": {
+        "n": 100,
+        "correct": 99,
+        "accuracy": 99.0
+      },
+      "DEBERTA_RAW": {
+        "n": 100,
+        "correct": 99,
+        "accuracy": 99.0
+      },
+      "DEBERTA_TEMP": {
+        "n": 100,
+        "correct": 99,
+        "accuracy": 99.0
+      },
+      "DEBERTA_BIAS": {
+        "n": 100,
+        "correct": 99,
+        "accuracy": 99.0
+      },
+      "DEBERTA_VEC": {
+        "n": 100,
+        "correct": 99,
+        "accuracy": 99.0
+      }
+    }
+  }
+}

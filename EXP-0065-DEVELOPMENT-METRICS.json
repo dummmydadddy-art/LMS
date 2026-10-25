@@ -1,0 +1,296 @@
+{
+  "C0": {
+    "experiment_id": "EXP-0065",
+    "dataset": "dev",
+    "model": "llama3.2:latest",
+    "total_cases": 400,
+    "correct_total": 368,
+    "accuracy": 92,
+    "macro_f1": 92.67,
+    "standard_far": 4,
+    "frr": 12.67,
+    "supported_recall": 87.33,
+    "refutation_recall": 92.67,
+    "not_established_recall": 98,
+    "parse_failures": 0,
+    "confusion_matrix": {
+      "SUPPORTED": {
+        "SUPPORTED": 131,
+        "REFUTED": 19,
+        "NOT_ESTABLISHED": 0,
+        "PARSE_FAILURE": 0
+      },
+      "REFUTED": {
+        "SUPPORTED": 9,
+        "REFUTED": 139,
+        "NOT_ESTABLISHED": 2,
+        "PARSE_FAILURE": 0
+      },
+      "NOT_ESTABLISHED": {
+        "SUPPORTED": 1,
+        "REFUTED": 1,
+        "NOT_ESTABLISHED": 98,
+        "PARSE_FAILURE": 0
+      }
+    },
+    "class_metrics": {
+      "SUPPORTED": {
+        "precision": 92.91,
+        "recall": 87.33,
+        "f1": 90.03,
+        "tp": 131,
+        "fp": 10,
+        "fn": 19,
+        "support": 150
+      },
+      "REFUTED": {
+        "precision": 87.42,
+        "recall": 92.67,
+        "f1": 89.97,
+        "tp": 139,
+        "fp": 20,
+        "fn": 11,
+        "support": 150
+      },
+      "NOT_ESTABLISHED": {
+        "precision": 98,
+        "recall": 98,
+        "f1": 98,
+        "tp": 98,
+        "fp": 2,
+        "fn": 2,
+        "support": 100
+      }
+    },
+    "category_metrics": {
+      "SUPPORTED_CURRICULUM": {
+        "total": 100,
+        "correct": 85,
+        "accuracy": 85
+      },
+      "NOVEL_FALSE_PREMISE": {
+        "total": 100,
+        "correct": 94,
+        "accuracy": 94
+      },
+      "OUT_OF_CURRICULUM_UNKNOWN": {
+        "total": 100,
+        "correct": 98,
+        "accuracy": 98
+      },
+      "LEGITIMATE_NEGATION": {
+        "total": 50,
+        "correct": 46,
+        "accuracy": 92
+      },
+      "MIXED_COMPOUND_PREMISE": {
+        "total": 50,
+        "correct": 45,
+        "accuracy": 90
+      }
+    },
+    "latency": {
+      "mean_ms": 1196.42,
+      "p50_ms": 1701.25,
+      "p95_ms": 3503.7,
+      "total_duration_sec": 478.65
+    },
+    "verification_timestamp": "2026-09-26T08:41:05+00:00"
+  },
+  "C1": {
+    "experiment_id": "EXP-0065",
+    "dataset": "dev",
+    "model": "qwen3:4b",
+    "total_cases": 400,
+    "correct_total": 357,
+    "accuracy": 89.25,
+    "macro_f1": 89.56,
+    "standard_far": 2,
+    "frr": 22,
+    "supported_recall": 78,
+    "refutation_recall": 94,
+    "not_established_recall": 99,
+    "parse_failures": 0,
+    "confusion_matrix": {
+      "SUPPORTED": {
+        "SUPPORTED": 117,
+        "REFUTED": 24,
+        "NOT_ESTABLISHED": 9,
+        "PARSE_FAILURE": 0
+      },
+      "REFUTED": {
+        "SUPPORTED": 5,
+        "REFUTED": 141,
+        "NOT_ESTABLISHED": 4,
+        "PARSE_FAILURE": 0
+      },
+      "NOT_ESTABLISHED": {
+        "SUPPORTED": 0,
+        "REFUTED": 1,
+        "NOT_ESTABLISHED": 99,
+        "PARSE_FAILURE": 0
+      }
+    },
+    "class_metrics": {
+      "SUPPORTED": {
+        "precision": 95.9,
+        "recall": 78,
+        "f1": 86.03,
+        "tp": 117,
+        "fp": 5,
+        "fn": 33,
+        "support": 150
+      },
+      "REFUTED": {
+        "precision": 84.94,
+        "recall": 94,
+        "f1": 89.24,
+        "tp": 141,
+        "fp": 25,
+        "fn": 9,
+        "support": 150
+      },
+      "NOT_ESTABLISHED": {
+        "precision": 88.39,
+        "recall": 99,
+        "f1": 93.4,
+        "tp": 99,
+        "fp": 13,
+        "fn": 1,
+        "support": 100
+      }
+    },
+    "category_metrics": {
+      "SUPPORTED_CURRICULUM": {
+        "total": 100,
+        "correct": 74,
+        "accuracy": 74
+      },
+      "NOVEL_FALSE_PREMISE": {
+        "total": 100,
+        "correct": 95,
+        "accuracy": 95
+      },
+      "OUT_OF_CURRICULUM_UNKNOWN": {
+        "total": 100,
+        "correct": 99,
+        "accuracy": 99
+      },
+      "LEGITIMATE_NEGATION": {
+        "total": 50,
+        "correct": 43,
+        "accuracy": 86
+      },
+      "MIXED_COMPOUND_PREMISE": {
+        "total": 50,
+        "correct": 46,
+        "accuracy": 92
+      }
+    },
+    "latency": {
+      "mean_ms": 739.34,
+      "p50_ms": 1027.85,
+      "p95_ms": 2146.46,
+      "total_duration_sec": 295.79
+    },
+    "verification_timestamp": "2026-09-26T08:51:35+00:00"
+  },
+  "C2": {
+    "experiment_id": "EXP-0065",
+    "dataset": "dev",
+    "model": "qwen3:8b",
+    "total_cases": 400,
+    "correct_total": 344,
+    "accuracy": 86,
+    "macro_f1": 85.79,
+    "standard_far": 2,
+    "frr": 29.33,
+    "supported_recall": 70.67,
+    "refutation_recall": 92.67,
+    "not_established_recall": 99,
+    "parse_failures": 0,
+    "confusion_matrix": {
+      "SUPPORTED": {
+        "SUPPORTED": 106,
+        "REFUTED": 20,
+        "NOT_ESTABLISHED": 24,
+        "PARSE_FAILURE": 0
+      },
+      "REFUTED": {
+        "SUPPORTED": 5,
+        "REFUTED": 139,
+        "NOT_ESTABLISHED": 6,
+        "PARSE_FAILURE": 0
+      },
+      "NOT_ESTABLISHED": {
+        "SUPPORTED": 0,
+        "REFUTED": 1,
+        "NOT_ESTABLISHED": 99,
+        "PARSE_FAILURE": 0
+      }
+    },
+    "class_metrics": {
+      "SUPPORTED": {
+        "precision": 95.5,
+        "recall": 70.67,
+        "f1": 81.23,
+        "tp": 106,
+        "fp": 5,
+        "fn": 44,
+        "support": 150
+      },
+      "REFUTED": {
+        "precision": 86.88,
+        "recall": 92.67,
+        "f1": 89.68,
+        "tp": 139,
+        "fp": 21,
+        "fn": 11,
+        "support": 150
+      },
+      "NOT_ESTABLISHED": {
+        "precision": 76.74,
+        "recall": 99,
+        "f1": 86.46,
+        "tp": 99,
+        "fp": 30,
+        "fn": 1,
+        "support": 100
+      }
+    },
+    "category_metrics": {
+      "SUPPORTED_CURRICULUM": {
+        "total": 100,
+        "correct": 67,
+        "accuracy": 67
+      },
+      "NOVEL_FALSE_PREMISE": {
+        "total": 100,
+        "correct": 95,
+        "accuracy": 95
+      },
+      "OUT_OF_CURRICULUM_UNKNOWN": {
+        "total": 100,
+        "correct": 99,
+        "accuracy": 99
+      },
+      "LEGITIMATE_NEGATION": {
+        "total": 50,
+        "correct": 39,
+        "accuracy": 78
+      },
+      "MIXED_COMPOUND_PREMISE": {
+        "total": 50,
+        "correct": 44,
+        "accuracy": 88
+      }
+    },
+    "latency": {
+      "mean_ms": 2505.76,
+      "p50_ms": 3394.48,
+      "p95_ms": 6953.32,
+      "total_duration_sec": 1002.35
+    },
+    "verification_timestamp": "2026-09-26T09:08:28+00:00"
+  }
+}

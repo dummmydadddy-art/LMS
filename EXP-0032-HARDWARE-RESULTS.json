@@ -1,0 +1,57 @@
+{
+    "benchmark": "EXP-0032-HARDWARE-TELEMETRY",
+    "timestamp": "2026-09-16T11:30:27+00:00",
+    "machine": "RTX 3050 Laptop \/ Intel Core i5-12450H \/ 16 GB RAM",
+    "telemetry_by_mode": {
+        "R0": {
+            "mode": "R0",
+            "latency_ms": {
+                "mean": 25.42,
+                "p50": 22.9,
+                "p95": 39.45
+            },
+            "peak_vram_mb": 0,
+            "peak_ram_mb": 220
+        },
+        "R1": {
+            "mode": "R1",
+            "latency_ms": {
+                "mean": 27.99,
+                "p50": 22.85,
+                "p95": 67.22
+            },
+            "peak_vram_mb": 0,
+            "peak_ram_mb": 480
+        },
+        "R2": {
+            "mode": "R2",
+            "latency_ms": {
+                "mean": 25.52,
+                "p50": 22.27,
+                "p95": 32.71
+            },
+            "peak_vram_mb": 0,
+            "peak_ram_mb": 480
+        },
+        "R3": {
+            "mode": "R3",
+            "latency_ms": {
+                "mean": 383.9,
+                "p50": 410.17,
+                "p95": 467.67
+            },
+            "peak_vram_mb": 0,
+            "peak_ram_mb": 572
+        },
+        "R4": {
+            "mode": "R4",
+            "latency_ms": {
+                "mean": 426.8,
+                "p50": 461.61,
+                "p95": 492.03
+            },
+            "peak_vram_mb": 0,
+            "peak_ram_mb": 572
+        }
+    }
+}

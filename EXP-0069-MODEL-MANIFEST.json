@@ -1,0 +1,112 @@
+{
+  "experiment_id": "EXP-0069",
+  "experiment_name": "NLI Probability Calibration and Decision-Boundary Study",
+  "timestamp": "2026-09-26T17:42:00+05:30",
+  "repository": "EduConnect-LMS-Experimental",
+  "starting_head": "f6d1b2fa38efa20c06585e892422139fdd2fb255",
+  "models": {
+    "C0": {
+      "condition": "C0",
+      "name": "Frozen Control (llama3.2:latest on A4 verifier)",
+      "model_id": "llama3.2:latest",
+      "architecture": "Generative Instruction LLM (Llama-3.2-3B-Instruct)",
+      "backend": "Ollama local API (GGUF Q4_K_M)",
+      "parameters": 3212749824,
+      "prompt_hash_P4": "c3dadd0df526efd5edcf700919a6454c27a863363dd97793aee5efa1503d5db6",
+      "role": "Frozen reference baseline (EXP-0065/0066/0067/0068 certified C0)",
+      "dev_accuracy": 92.00,
+      "dev_correct": 368,
+      "dev_total": 400
+    },
+    "C1_MiniLM2": {
+      "candidate_id": "C1",
+      "name": "NLI MiniLM2 Cross-Encoder",
+      "model_id": "cross-encoder/nli-MiniLM2-L6-H768",
+      "repo_commit": "b95119ce93d3e065de6214e38cd4a97b0f2f2c6d",
+      "architecture": "BertForSequenceClassification (MiniLM2 6-layer, 768 hidden, 12 heads)",
+      "backend": "PyTorch native sequence classification",
+      "weights_format": "safetensors",
+      "weights_sha256": "ec9c5b6a08b60d7a01b465c7ed44b496244dfd1bed3274c95875a74cea89ab35",
+      "config_sha256": "8b0e41caff7567c0f53e6983f35591c3dec59507c9173ab125c5823394fb57f3",
+      "parameters": 82120707,
+      "native_id2label": {
+        "0": "contradiction",
+        "1": "entailment",
+        "2": "neutral"
+      },
+      "canonical_index_mapping": {
+        "0": 0,
+        "1": 1,
+        "2": 2
+      }
+    },
+    "C2_DeBERTa": {
+      "candidate_id": "C2",
+      "name": "DeBERTa-v3 NLI Cross-Encoder",
+      "model_id": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+      "repo_commit": "6f5cf0a2b59cabb106aca4c287eed12e357e90eb",
+      "architecture": "DebertaV2ForSequenceClassification",
+      "backend": "PyTorch native sequence classification",
+      "weights_format": "safetensors",
+      "weights_sha256": "06d6fd89edd4f97816831626daafbdb0b029cf63bae8edc0bccab1d64e2e7707",
+      "config_sha256": "a6c616d6dabeacf90fd0e776c741d3f0f30a05533ccf0bd3b5b62e94cfaa8d57",
+      "parameters": 184424451,
+      "native_id2label": {
+        "0": "entailment",
+        "1": "neutral",
+        "2": "contradiction"
+      },
+      "canonical_index_mapping": {
+        "0": 1,
+        "1": 2,
+        "2": 0
+      }
+    }
+  },
+  "canonical_class_definitions": {
+    "0": {
+      "nli_label": "CONTRADICTION",
+      "rag_status": "REFUTED"
+    },
+    "1": {
+      "nli_label": "ENTAILMENT",
+      "rag_status": "SUPPORTED"
+    },
+    "2": {
+      "nli_label": "NEUTRAL",
+      "rag_status": "NOT_ESTABLISHED"
+    }
+  },
+  "calibration_methods": {
+    "RAW": {
+      "formula": "z'_k = z_k",
+      "decision_rule": "argmax(z'_k)",
+      "num_parameters": 0
+    },
+    "TEMP": {
+      "formula": "z'_k = z_k / T",
+      "decision_rule": "argmax(z'_k)",
+      "num_parameters": 1,
+      "regularization": "lambda_T * (T - 1)^2"
+    },
+    "BIAS": {
+      "formula": "z'_k = z_k + b_k",
+      "decision_rule": "argmax(z'_k)",
+      "num_parameters": 3,
+      "regularization": "lambda_b * ||b||^2"
+    },
+    "VEC": {
+      "formula": "z'_k = a_k * z_k + b_k",
+      "decision_rule": "argmax(z'_k)",
+      "num_parameters": 6,
+      "regularization": "lambda_a * ||a - 1||^2 + lambda_b * ||b||^2"
+    }
+  },
+  "cross_fitting_protocol": {
+    "num_folds": 5,
+    "total_cases": 400,
+    "cases_per_fold": 80,
+    "stratification": "class_balanced (30 SUPPORTED, 30 REFUTED, 20 NOT_ESTABLISHED)",
+    "evaluation_mode": "Strictly out-of-fold inference"
+  }
+}

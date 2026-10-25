@@ -1,0 +1,65 @@
+{
+  "experiment_id": "EXP-0019",
+  "timestamp": "2026-09-09T18:03:00.000Z",
+  "protocol": "INDEPENDENT_SCIENTIFIC_VERIFICATION_AND_FALSIFICATION",
+  "codebase_frozen": true,
+  "system_under_test": "EXP-0018-CANDIDATE-HARDENED-2026-09-09",
+  "historical_control": "EXP-0013-CHAMPION-2026-09-09",
+  "git": {
+    "experimental_commit": "176883227602671b545e061dacf228aedc3271a5",
+    "working_tree_clean_for_code": true,
+    "production_untouched": true
+  },
+  "runtime": {
+    "os": "Windows 10 (10.0.26200)",
+    "node_version": "v24.11.0",
+    "php_version": "PHP 8.3.32 (cli) (built: Jul  1 2026 09:40:05) (ZTS Visual C++ 2019 x64)",
+    "sqlite_version": "3.53.2",
+    "python_version": "3.11.15"
+  },
+  "hardware_state": {
+    "architecture": "AMD64",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "cpu_count": 12
+  },
+  "corpus": {
+    "corpus_version": "1788956760705",
+    "sqlite_db_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "models": {
+    "embed_model": "nomic-embed-text:latest (768 dimensions)",
+    "chat_model": "llama3.2:latest",
+    "ollama_inventory": [
+      "nomic-embed-text:latest",
+      "llama3.2:latest",
+      "llama3:latest"
+    ]
+  },
+  "active_feature_flags": {
+    "ENABLE_INPUT_SANITY": true,
+    "ENABLE_TYPO_NORMALIZATION": true,
+    "ENABLE_SEMANTIC_RERANK": true,
+    "ENABLE_DYNAMIC_K": true,
+    "ENABLE_ENTITY_MEMORY": true,
+    "ENABLE_PREMISE_VERIFIER": true,
+    "ENABLE_CITATION_ENFORCEMENT": true,
+    "ENABLE_CURRICULUM_BOUNDARY": true,
+    "ENABLE_RATE_LIMIT": true,
+    "ENABLE_WARMUP": true
+  },
+  "source_file_hashes_sha256": {
+    "backend/gateway.js": "3c0308560a9a2bef75b2fed32a539a86a6378c73f642c1819c05b817a43a93c4",
+    "backend/rag_service.php": "a550d5f1fffea1aa0e46b97c7c99ba68efe5c2cd625519a684a7332cfbec6cee",
+    "backend/rag_premise_verifier.php": "957c40f40d3853fc5070689c1f455e3b810972a82da5166f6b8026dfe0bdb819",
+    "backend/rag_query_condenser.php": "6b400fc1d093712c385c42450af543708034781ca9ecbbbf02f676ae80b3cfb1",
+    "backend/rag_query_orchestrator.php": "644f466c88c1107ff5605e0dc60f0dc11b238b0842b6901ba571d955a21e82cc",
+    "backend/rag_safety_boundary.php": "805d501efb9a339dea21ed8d158522398c8f4dadaccc6beb9c4c81450e5121a2",
+    "backend/rag_semantic_mapper.php": "a1314dc897e5c1dc9ccb0eadf24f3d78060627a3cf9063aa5fb96d4cd353318c",
+    "backend/rag_flags.php": "aa8d3051873ea28cb6e8c7f7fa2ea4f47499614e7e6c63403390dd5d6829ed84",
+    "backend/rag_flags.json": "c814568feadfda105e84730d943fbe700ef55d61532a4067594e354b7c18f423",
+    "backend/embedding_coordinator.js": "221d86ede96ebe2938d6bd9a39b56ed718bee9586af0b5dcc70ba40f39854859",
+    "backend/seed_rag_knowledge.php": "ce188304300af7d4e8b7f5651ed653eeaeec4a6d1e6d79f91dd3be79dd7ed04f",
+    "database/rag_corpus_version.txt": "f927bc5ab0b06b4a85b1a6f3222e63c2f8140b991e64880688f5a9259cebbc9d",
+    "database/rag_schema.sql": "9cc10d6e028a0761ef0acbef01cdfb700a2a759e7c34cb17df44b23807114960"
+  }
+}

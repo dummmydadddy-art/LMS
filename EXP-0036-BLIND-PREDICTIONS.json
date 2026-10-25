@@ -1,0 +1,4002 @@
+{
+    "EXP33-SUP-0001": {
+        "case_id": "EXP33-SUP-0001",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 25.45
+    },
+    "EXP33-SUP-0002": {
+        "case_id": "EXP33-SUP-0002",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 987.26
+    },
+    "EXP33-SUP-0003": {
+        "case_id": "EXP33-SUP-0003",
+        "predicted_status": "REFUTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Polarity inversion established: border-box vs content-box",
+        "latency_ms": 0.2
+    },
+    "EXP33-SUP-0004": {
+        "case_id": "EXP33-SUP-0004",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 668.36
+    },
+    "EXP33-SUP-0005": {
+        "case_id": "EXP33-SUP-0005",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 623.35
+    },
+    "EXP33-SUP-0006": {
+        "case_id": "EXP33-SUP-0006",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 27.74
+    },
+    "EXP33-SUP-0007": {
+        "case_id": "EXP33-SUP-0007",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 619.12
+    },
+    "EXP33-SUP-0008": {
+        "case_id": "EXP33-SUP-0008",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 584.73
+    },
+    "EXP33-SUP-0009": {
+        "case_id": "EXP33-SUP-0009",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 621.7
+    },
+    "EXP33-SUP-0010": {
+        "case_id": "EXP33-SUP-0010",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 636.91
+    },
+    "EXP33-SUP-0011": {
+        "case_id": "EXP33-SUP-0011",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 643.69
+    },
+    "EXP33-SUP-0012": {
+        "case_id": "EXP33-SUP-0012",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 626.75
+    },
+    "EXP33-SUP-0013": {
+        "case_id": "EXP33-SUP-0013",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 619.54
+    },
+    "EXP33-SUP-0014": {
+        "case_id": "EXP33-SUP-0014",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 635.24
+    },
+    "EXP33-SUP-0015": {
+        "case_id": "EXP33-SUP-0015",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 622.75
+    },
+    "EXP33-SUP-0016": {
+        "case_id": "EXP33-SUP-0016",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 571.53
+    },
+    "EXP33-SUP-0017": {
+        "case_id": "EXP33-SUP-0017",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 602.96
+    },
+    "EXP33-SUP-0018": {
+        "case_id": "EXP33-SUP-0018",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 1055.14
+    },
+    "EXP33-SUP-0019": {
+        "case_id": "EXP33-SUP-0019",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 1124.3
+    },
+    "EXP33-SUP-0020": {
+        "case_id": "EXP33-SUP-0020",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 654.7
+    },
+    "EXP33-SUP-0021": {
+        "case_id": "EXP33-SUP-0021",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 610.34
+    },
+    "EXP33-SUP-0022": {
+        "case_id": "EXP33-SUP-0022",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 605.98
+    },
+    "EXP33-SUP-0023": {
+        "case_id": "EXP33-SUP-0023",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 822.99
+    },
+    "EXP33-SUP-0024": {
+        "case_id": "EXP33-SUP-0024",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 814.42
+    },
+    "EXP33-SUP-0025": {
+        "case_id": "EXP33-SUP-0025",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 635.15
+    },
+    "EXP33-SUP-0026": {
+        "case_id": "EXP33-SUP-0026",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 17.53
+    },
+    "EXP33-SUP-0027": {
+        "case_id": "EXP33-SUP-0027",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 855.63
+    },
+    "EXP33-SUP-0028": {
+        "case_id": "EXP33-SUP-0028",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 26.5
+    },
+    "EXP33-SUP-0029": {
+        "case_id": "EXP33-SUP-0029",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 649.93
+    },
+    "EXP33-SUP-0030": {
+        "case_id": "EXP33-SUP-0030",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 592.71
+    },
+    "EXP33-SUP-0031": {
+        "case_id": "EXP33-SUP-0031",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 595.62
+    },
+    "EXP33-SUP-0032": {
+        "case_id": "EXP33-SUP-0032",
+        "predicted_status": "REFUTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Polarity inversion established: microtask vs macrotask",
+        "latency_ms": 0.21
+    },
+    "EXP33-SUP-0033": {
+        "case_id": "EXP33-SUP-0033",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 636.06
+    },
+    "EXP33-SUP-0034": {
+        "case_id": "EXP33-SUP-0034",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 624.72
+    },
+    "EXP33-SUP-0035": {
+        "case_id": "EXP33-SUP-0035",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 613.67
+    },
+    "EXP33-SUP-0036": {
+        "case_id": "EXP33-SUP-0036",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 23.26
+    },
+    "EXP33-SUP-0037": {
+        "case_id": "EXP33-SUP-0037",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 611.18
+    },
+    "EXP33-SUP-0038": {
+        "case_id": "EXP33-SUP-0038",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 610.35
+    },
+    "EXP33-SUP-0039": {
+        "case_id": "EXP33-SUP-0039",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 1022.45
+    },
+    "EXP33-SUP-0040": {
+        "case_id": "EXP33-SUP-0040",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 661.88
+    },
+    "EXP33-SUP-0041": {
+        "case_id": "EXP33-SUP-0041",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 610.09
+    },
+    "EXP33-SUP-0042": {
+        "case_id": "EXP33-SUP-0042",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 616.53
+    },
+    "EXP33-SUP-0043": {
+        "case_id": "EXP33-SUP-0043",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 593.53
+    },
+    "EXP33-SUP-0044": {
+        "case_id": "EXP33-SUP-0044",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 824.44
+    },
+    "EXP33-SUP-0045": {
+        "case_id": "EXP33-SUP-0045",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 793.7
+    },
+    "EXP33-SUP-0046": {
+        "case_id": "EXP33-SUP-0046",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 399.97
+    },
+    "EXP33-SUP-0047": {
+        "case_id": "EXP33-SUP-0047",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 634.72
+    },
+    "EXP33-SUP-0048": {
+        "case_id": "EXP33-SUP-0048",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 824.66
+    },
+    "EXP33-SUP-0049": {
+        "case_id": "EXP33-SUP-0049",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 793.98
+    },
+    "EXP33-SUP-0050": {
+        "case_id": "EXP33-SUP-0050",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 625.24
+    },
+    "EXP33-SUP-0051": {
+        "case_id": "EXP33-SUP-0051",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 590.85
+    },
+    "EXP33-SUP-0052": {
+        "case_id": "EXP33-SUP-0052",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 594.4
+    },
+    "EXP33-SUP-0053": {
+        "case_id": "EXP33-SUP-0053",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 18.57
+    },
+    "EXP33-SUP-0054": {
+        "case_id": "EXP33-SUP-0054",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 18.43
+    },
+    "EXP33-SUP-0055": {
+        "case_id": "EXP33-SUP-0055",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 587.7
+    },
+    "EXP33-SUP-0056": {
+        "case_id": "EXP33-SUP-0056",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 14.25
+    },
+    "EXP33-SUP-0057": {
+        "case_id": "EXP33-SUP-0057",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 1037.43
+    },
+    "EXP33-SUP-0058": {
+        "case_id": "EXP33-SUP-0058",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 671.11
+    },
+    "EXP33-SUP-0059": {
+        "case_id": "EXP33-SUP-0059",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 1108
+    },
+    "EXP33-SUP-0060": {
+        "case_id": "EXP33-SUP-0060",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 627.39
+    },
+    "EXP33-SUP-0061": {
+        "case_id": "EXP33-SUP-0061",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 596.49
+    },
+    "EXP33-SUP-0062": {
+        "case_id": "EXP33-SUP-0062",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 599.73
+    },
+    "EXP33-SUP-0063": {
+        "case_id": "EXP33-SUP-0063",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 594.41
+    },
+    "EXP33-SUP-0064": {
+        "case_id": "EXP33-SUP-0064",
+        "predicted_status": "REFUTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Polarity inversion established: synchronous vs asynchronous",
+        "latency_ms": 0.21
+    },
+    "EXP33-SUP-0065": {
+        "case_id": "EXP33-SUP-0065",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 593.85
+    },
+    "EXP33-SUP-0066": {
+        "case_id": "EXP33-SUP-0066",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 608
+    },
+    "EXP33-SUP-0067": {
+        "case_id": "EXP33-SUP-0067",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 633.07
+    },
+    "EXP33-SUP-0068": {
+        "case_id": "EXP33-SUP-0068",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 613.83
+    },
+    "EXP33-SUP-0069": {
+        "case_id": "EXP33-SUP-0069",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 618.92
+    },
+    "EXP33-SUP-0070": {
+        "case_id": "EXP33-SUP-0070",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 587.69
+    },
+    "EXP33-SUP-0071": {
+        "case_id": "EXP33-SUP-0071",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 1022.55
+    },
+    "EXP33-SUP-0072": {
+        "case_id": "EXP33-SUP-0072",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 682.47
+    },
+    "EXP33-SUP-0073": {
+        "case_id": "EXP33-SUP-0073",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 634.91
+    },
+    "EXP33-SUP-0074": {
+        "case_id": "EXP33-SUP-0074",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 617.7
+    },
+    "EXP33-SUP-0075": {
+        "case_id": "EXP33-SUP-0075",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 605.12
+    },
+    "EXP33-SUP-0076": {
+        "case_id": "EXP33-SUP-0076",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 612.93
+    },
+    "EXP33-SUP-0077": {
+        "case_id": "EXP33-SUP-0077",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 1053.64
+    },
+    "EXP33-SUP-0078": {
+        "case_id": "EXP33-SUP-0078",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 18.85
+    },
+    "EXP33-SUP-0079": {
+        "case_id": "EXP33-SUP-0079",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 656.33
+    },
+    "EXP33-SUP-0080": {
+        "case_id": "EXP33-SUP-0080",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 632.32
+    },
+    "EXP33-SUP-0081": {
+        "case_id": "EXP33-SUP-0081",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 624.49
+    },
+    "EXP33-SUP-0082": {
+        "case_id": "EXP33-SUP-0082",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 637.22
+    },
+    "EXP33-SUP-0083": {
+        "case_id": "EXP33-SUP-0083",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.26)",
+        "latency_ms": 0.21
+    },
+    "EXP33-SUP-0084": {
+        "case_id": "EXP33-SUP-0084",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 1005.08
+    },
+    "EXP33-SUP-0085": {
+        "case_id": "EXP33-SUP-0085",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 653.49
+    },
+    "EXP33-SUP-0086": {
+        "case_id": "EXP33-SUP-0086",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 34.04
+    },
+    "EXP33-SUP-0087": {
+        "case_id": "EXP33-SUP-0087",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 618.07
+    },
+    "EXP33-SUP-0088": {
+        "case_id": "EXP33-SUP-0088",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 36.23
+    },
+    "EXP33-SUP-0089": {
+        "case_id": "EXP33-SUP-0089",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 617.42
+    },
+    "EXP33-SUP-0090": {
+        "case_id": "EXP33-SUP-0090",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 646.06
+    },
+    "EXP33-SUP-0091": {
+        "case_id": "EXP33-SUP-0091",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 632.03
+    },
+    "EXP33-SUP-0092": {
+        "case_id": "EXP33-SUP-0092",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 599.74
+    },
+    "EXP33-SUP-0093": {
+        "case_id": "EXP33-SUP-0093",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 617.07
+    },
+    "EXP33-SUP-0094": {
+        "case_id": "EXP33-SUP-0094",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 626.25
+    },
+    "EXP33-SUP-0095": {
+        "case_id": "EXP33-SUP-0095",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 621.72
+    },
+    "EXP33-SUP-0096": {
+        "case_id": "EXP33-SUP-0096",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 629.72
+    },
+    "EXP33-SUP-0097": {
+        "case_id": "EXP33-SUP-0097",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 633.4
+    },
+    "EXP33-SUP-0098": {
+        "case_id": "EXP33-SUP-0098",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 642.95
+    },
+    "EXP33-SUP-0099": {
+        "case_id": "EXP33-SUP-0099",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 618.07
+    },
+    "EXP33-SUP-0100": {
+        "case_id": "EXP33-SUP-0100",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 625.32
+    },
+    "EXP33-SUP-0101": {
+        "case_id": "EXP33-SUP-0101",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 603.27
+    },
+    "EXP33-SUP-0102": {
+        "case_id": "EXP33-SUP-0102",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 675.15
+    },
+    "EXP33-SUP-0103": {
+        "case_id": "EXP33-SUP-0103",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 597.57
+    },
+    "EXP33-SUP-0104": {
+        "case_id": "EXP33-SUP-0104",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 636.64
+    },
+    "EXP33-SUP-0105": {
+        "case_id": "EXP33-SUP-0105",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 643.67
+    },
+    "EXP33-SUP-0106": {
+        "case_id": "EXP33-SUP-0106",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 629.32
+    },
+    "EXP33-SUP-0107": {
+        "case_id": "EXP33-SUP-0107",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 638.72
+    },
+    "EXP33-SUP-0108": {
+        "case_id": "EXP33-SUP-0108",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 628.87
+    },
+    "EXP33-SUP-0109": {
+        "case_id": "EXP33-SUP-0109",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 606.85
+    },
+    "EXP33-SUP-0110": {
+        "case_id": "EXP33-SUP-0110",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 641.91
+    },
+    "EXP33-SUP-0111": {
+        "case_id": "EXP33-SUP-0111",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 631.04
+    },
+    "EXP33-SUP-0112": {
+        "case_id": "EXP33-SUP-0112",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 611.7
+    },
+    "EXP33-SUP-0113": {
+        "case_id": "EXP33-SUP-0113",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 613.15
+    },
+    "EXP33-SUP-0114": {
+        "case_id": "EXP33-SUP-0114",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 627.64
+    },
+    "EXP33-SUP-0115": {
+        "case_id": "EXP33-SUP-0115",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.26)",
+        "latency_ms": 0.24
+    },
+    "EXP33-SUP-0116": {
+        "case_id": "EXP33-SUP-0116",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.26)",
+        "latency_ms": 0.12
+    },
+    "EXP33-SUP-0117": {
+        "case_id": "EXP33-SUP-0117",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 617.35
+    },
+    "EXP33-SUP-0118": {
+        "case_id": "EXP33-SUP-0118",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.26)",
+        "latency_ms": 0.24
+    },
+    "EXP33-SUP-0119": {
+        "case_id": "EXP33-SUP-0119",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 643.61
+    },
+    "EXP33-SUP-0120": {
+        "case_id": "EXP33-SUP-0120",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.26)",
+        "latency_ms": 0.26
+    },
+    "EXP33-SUP-0121": {
+        "case_id": "EXP33-SUP-0121",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 630.65
+    },
+    "EXP33-SUP-0122": {
+        "case_id": "EXP33-SUP-0122",
+        "predicted_status": "REFUTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Polarity inversion established: commit vs rollback",
+        "latency_ms": 0.2
+    },
+    "EXP33-SUP-0123": {
+        "case_id": "EXP33-SUP-0123",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 619.98
+    },
+    "EXP33-SUP-0124": {
+        "case_id": "EXP33-SUP-0124",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 619.97
+    },
+    "EXP33-SUP-0125": {
+        "case_id": "EXP33-SUP-0125",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 641.3
+    },
+    "EXP33-FLS-0001": {
+        "case_id": "EXP33-FLS-0001",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 633.5
+    },
+    "EXP33-FLS-0002": {
+        "case_id": "EXP33-FLS-0002",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 30.94
+    },
+    "EXP33-FLS-0003": {
+        "case_id": "EXP33-FLS-0003",
+        "predicted_status": "REFUTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Polarity inversion established: border-box vs content-box",
+        "latency_ms": 0.23
+    },
+    "EXP33-FLS-0004": {
+        "case_id": "EXP33-FLS-0004",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 628.44
+    },
+    "EXP33-FLS-0005": {
+        "case_id": "EXP33-FLS-0005",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 629.47
+    },
+    "EXP33-FLS-0006": {
+        "case_id": "EXP33-FLS-0006",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 651.61
+    },
+    "EXP33-FLS-0007": {
+        "case_id": "EXP33-FLS-0007",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 684.46
+    },
+    "EXP33-FLS-0008": {
+        "case_id": "EXP33-FLS-0008",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 661.12
+    },
+    "EXP33-FLS-0009": {
+        "case_id": "EXP33-FLS-0009",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 619.2
+    },
+    "EXP33-FLS-0010": {
+        "case_id": "EXP33-FLS-0010",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 625.53
+    },
+    "EXP33-FLS-0011": {
+        "case_id": "EXP33-FLS-0011",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 619.49
+    },
+    "EXP33-FLS-0012": {
+        "case_id": "EXP33-FLS-0012",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 29.91
+    },
+    "EXP33-FLS-0013": {
+        "case_id": "EXP33-FLS-0013",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 823.85
+    },
+    "EXP33-FLS-0014": {
+        "case_id": "EXP33-FLS-0014",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 682.71
+    },
+    "EXP33-FLS-0015": {
+        "case_id": "EXP33-FLS-0015",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 622.3
+    },
+    "EXP33-FLS-0016": {
+        "case_id": "EXP33-FLS-0016",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 687.36
+    },
+    "EXP33-FLS-0017": {
+        "case_id": "EXP33-FLS-0017",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 644.94
+    },
+    "EXP33-FLS-0018": {
+        "case_id": "EXP33-FLS-0018",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 29.57
+    },
+    "EXP33-FLS-0019": {
+        "case_id": "EXP33-FLS-0019",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 636.62
+    },
+    "EXP33-FLS-0020": {
+        "case_id": "EXP33-FLS-0020",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 612.39
+    },
+    "EXP33-FLS-0021": {
+        "case_id": "EXP33-FLS-0021",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 20.29
+    },
+    "EXP33-FLS-0022": {
+        "case_id": "EXP33-FLS-0022",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 22.7
+    },
+    "EXP33-FLS-0023": {
+        "case_id": "EXP33-FLS-0023",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 22.26
+    },
+    "EXP33-FLS-0024": {
+        "case_id": "EXP33-FLS-0024",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 816.1
+    },
+    "EXP33-FLS-0025": {
+        "case_id": "EXP33-FLS-0025",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 20.67
+    },
+    "EXP33-FLS-0026": {
+        "case_id": "EXP33-FLS-0026",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 25.54
+    },
+    "EXP33-FLS-0027": {
+        "case_id": "EXP33-FLS-0027",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 680.16
+    },
+    "EXP33-FLS-0028": {
+        "case_id": "EXP33-FLS-0028",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 648.16
+    },
+    "EXP33-FLS-0029": {
+        "case_id": "EXP33-FLS-0029",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 34.87
+    },
+    "EXP33-FLS-0030": {
+        "case_id": "EXP33-FLS-0030",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 36.83
+    },
+    "EXP33-FLS-0031": {
+        "case_id": "EXP33-FLS-0031",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 634.91
+    },
+    "EXP33-FLS-0032": {
+        "case_id": "EXP33-FLS-0032",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 915.42
+    },
+    "EXP33-FLS-0033": {
+        "case_id": "EXP33-FLS-0033",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 680.64
+    },
+    "EXP33-FLS-0034": {
+        "case_id": "EXP33-FLS-0034",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 611.63
+    },
+    "EXP33-FLS-0035": {
+        "case_id": "EXP33-FLS-0035",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 622.16
+    },
+    "EXP33-FLS-0036": {
+        "case_id": "EXP33-FLS-0036",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 636.13
+    },
+    "EXP33-FLS-0037": {
+        "case_id": "EXP33-FLS-0037",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 617.93
+    },
+    "EXP33-FLS-0038": {
+        "case_id": "EXP33-FLS-0038",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 607.67
+    },
+    "EXP33-FLS-0039": {
+        "case_id": "EXP33-FLS-0039",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 624.22
+    },
+    "EXP33-FLS-0040": {
+        "case_id": "EXP33-FLS-0040",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 825.6
+    },
+    "EXP33-FLS-0041": {
+        "case_id": "EXP33-FLS-0041",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 647.69
+    },
+    "EXP33-FLS-0042": {
+        "case_id": "EXP33-FLS-0042",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 677.06
+    },
+    "EXP33-FLS-0043": {
+        "case_id": "EXP33-FLS-0043",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 22.27
+    },
+    "EXP33-FLS-0044": {
+        "case_id": "EXP33-FLS-0044",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 819.78
+    },
+    "EXP33-FLS-0045": {
+        "case_id": "EXP33-FLS-0045",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 409.4
+    },
+    "EXP33-FLS-0046": {
+        "case_id": "EXP33-FLS-0046",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 693.17
+    },
+    "EXP33-FLS-0047": {
+        "case_id": "EXP33-FLS-0047",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 40.19
+    },
+    "EXP33-FLS-0048": {
+        "case_id": "EXP33-FLS-0048",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 579.45
+    },
+    "EXP33-FLS-0049": {
+        "case_id": "EXP33-FLS-0049",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 731.86
+    },
+    "EXP33-FLS-0050": {
+        "case_id": "EXP33-FLS-0050",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 26.12
+    },
+    "EXP33-FLS-0051": {
+        "case_id": "EXP33-FLS-0051",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 677.85
+    },
+    "EXP33-FLS-0052": {
+        "case_id": "EXP33-FLS-0052",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 611.19
+    },
+    "EXP33-FLS-0053": {
+        "case_id": "EXP33-FLS-0053",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 865.62
+    },
+    "EXP33-FLS-0054": {
+        "case_id": "EXP33-FLS-0054",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 1198.76
+    },
+    "EXP33-FLS-0055": {
+        "case_id": "EXP33-FLS-0055",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 593.85
+    },
+    "EXP33-FLS-0056": {
+        "case_id": "EXP33-FLS-0056",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 634.28
+    },
+    "EXP33-FLS-0057": {
+        "case_id": "EXP33-FLS-0057",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 20.24
+    },
+    "EXP33-FLS-0058": {
+        "case_id": "EXP33-FLS-0058",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 617.83
+    },
+    "EXP33-FLS-0059": {
+        "case_id": "EXP33-FLS-0059",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 617.85
+    },
+    "EXP33-FLS-0060": {
+        "case_id": "EXP33-FLS-0060",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 609.57
+    },
+    "EXP33-FLS-0061": {
+        "case_id": "EXP33-FLS-0061",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 614.76
+    },
+    "EXP33-FLS-0062": {
+        "case_id": "EXP33-FLS-0062",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 698.01
+    },
+    "EXP33-FLS-0063": {
+        "case_id": "EXP33-FLS-0063",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 636.46
+    },
+    "EXP33-FLS-0064": {
+        "case_id": "EXP33-FLS-0064",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 29.82
+    },
+    "EXP33-FLS-0065": {
+        "case_id": "EXP33-FLS-0065",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 611.08
+    },
+    "EXP33-FLS-0066": {
+        "case_id": "EXP33-FLS-0066",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 647.8
+    },
+    "EXP33-FLS-0067": {
+        "case_id": "EXP33-FLS-0067",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 685.69
+    },
+    "EXP33-FLS-0068": {
+        "case_id": "EXP33-FLS-0068",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 655.02
+    },
+    "EXP33-FLS-0069": {
+        "case_id": "EXP33-FLS-0069",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 650.96
+    },
+    "EXP33-FLS-0070": {
+        "case_id": "EXP33-FLS-0070",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 35.42
+    },
+    "EXP33-FLS-0071": {
+        "case_id": "EXP33-FLS-0071",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 635.87
+    },
+    "EXP33-FLS-0072": {
+        "case_id": "EXP33-FLS-0072",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 29.98
+    },
+    "EXP33-FLS-0073": {
+        "case_id": "EXP33-FLS-0073",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)",
+        "latency_ms": 0.19
+    },
+    "EXP33-FLS-0074": {
+        "case_id": "EXP33-FLS-0074",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 645.02
+    },
+    "EXP33-FLS-0075": {
+        "case_id": "EXP33-FLS-0075",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 649.89
+    },
+    "EXP33-FLS-0076": {
+        "case_id": "EXP33-FLS-0076",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 690.35
+    },
+    "EXP33-FLS-0077": {
+        "case_id": "EXP33-FLS-0077",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 1953.75
+    },
+    "EXP33-FLS-0078": {
+        "case_id": "EXP33-FLS-0078",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 724.73
+    },
+    "EXP33-FLS-0079": {
+        "case_id": "EXP33-FLS-0079",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 670.79
+    },
+    "EXP33-FLS-0080": {
+        "case_id": "EXP33-FLS-0080",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)",
+        "latency_ms": 0.43
+    },
+    "EXP33-FLS-0081": {
+        "case_id": "EXP33-FLS-0081",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)",
+        "latency_ms": 0.18
+    },
+    "EXP33-FLS-0082": {
+        "case_id": "EXP33-FLS-0082",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 1547.32
+    },
+    "EXP33-FLS-0083": {
+        "case_id": "EXP33-FLS-0083",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 642.27
+    },
+    "EXP33-FLS-0084": {
+        "case_id": "EXP33-FLS-0084",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 634.61
+    },
+    "EXP33-FLS-0085": {
+        "case_id": "EXP33-FLS-0085",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 624.9
+    },
+    "EXP33-FLS-0086": {
+        "case_id": "EXP33-FLS-0086",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 35.72
+    },
+    "EXP33-FLS-0087": {
+        "case_id": "EXP33-FLS-0087",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 2007.36
+    },
+    "EXP33-FLS-0088": {
+        "case_id": "EXP33-FLS-0088",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 633.12
+    },
+    "EXP33-FLS-0089": {
+        "case_id": "EXP33-FLS-0089",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 29.47
+    },
+    "EXP33-FLS-0090": {
+        "case_id": "EXP33-FLS-0090",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 42.92
+    },
+    "EXP33-FLS-0091": {
+        "case_id": "EXP33-FLS-0091",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 623.41
+    },
+    "EXP33-FLS-0092": {
+        "case_id": "EXP33-FLS-0092",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 637.14
+    },
+    "EXP33-FLS-0093": {
+        "case_id": "EXP33-FLS-0093",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 628.98
+    },
+    "EXP33-FLS-0094": {
+        "case_id": "EXP33-FLS-0094",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 633.74
+    },
+    "EXP33-FLS-0095": {
+        "case_id": "EXP33-FLS-0095",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 41.34
+    },
+    "EXP33-FLS-0096": {
+        "case_id": "EXP33-FLS-0096",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 691.11
+    },
+    "EXP33-FLS-0097": {
+        "case_id": "EXP33-FLS-0097",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 636.31
+    },
+    "EXP33-FLS-0098": {
+        "case_id": "EXP33-FLS-0098",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 632.57
+    },
+    "EXP33-FLS-0099": {
+        "case_id": "EXP33-FLS-0099",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 618.68
+    },
+    "EXP33-FLS-0100": {
+        "case_id": "EXP33-FLS-0100",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 627.79
+    },
+    "EXP33-FLS-0101": {
+        "case_id": "EXP33-FLS-0101",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 617.09
+    },
+    "EXP33-FLS-0102": {
+        "case_id": "EXP33-FLS-0102",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 612
+    },
+    "EXP33-FLS-0103": {
+        "case_id": "EXP33-FLS-0103",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 651.77
+    },
+    "EXP33-FLS-0104": {
+        "case_id": "EXP33-FLS-0104",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 43.82
+    },
+    "EXP33-FLS-0105": {
+        "case_id": "EXP33-FLS-0105",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 650.13
+    },
+    "EXP33-FLS-0106": {
+        "case_id": "EXP33-FLS-0106",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 623.2
+    },
+    "EXP33-FLS-0107": {
+        "case_id": "EXP33-FLS-0107",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 641.14
+    },
+    "EXP33-FLS-0108": {
+        "case_id": "EXP33-FLS-0108",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 622.69
+    },
+    "EXP33-FLS-0109": {
+        "case_id": "EXP33-FLS-0109",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 26.39
+    },
+    "EXP33-FLS-0110": {
+        "case_id": "EXP33-FLS-0110",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 688.34
+    },
+    "EXP33-FLS-0111": {
+        "case_id": "EXP33-FLS-0111",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 649.1
+    },
+    "EXP33-FLS-0112": {
+        "case_id": "EXP33-FLS-0112",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 618.24
+    },
+    "EXP33-FLS-0113": {
+        "case_id": "EXP33-FLS-0113",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 610.67
+    },
+    "EXP33-FLS-0114": {
+        "case_id": "EXP33-FLS-0114",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 26.99
+    },
+    "EXP33-FLS-0115": {
+        "case_id": "EXP33-FLS-0115",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)",
+        "latency_ms": 0.17
+    },
+    "EXP33-FLS-0116": {
+        "case_id": "EXP33-FLS-0116",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)",
+        "latency_ms": 0.11
+    },
+    "EXP33-FLS-0117": {
+        "case_id": "EXP33-FLS-0117",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 1595.51
+    },
+    "EXP33-FLS-0118": {
+        "case_id": "EXP33-FLS-0118",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)",
+        "latency_ms": 0.27
+    },
+    "EXP33-FLS-0119": {
+        "case_id": "EXP33-FLS-0119",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 624.18
+    },
+    "EXP33-FLS-0120": {
+        "case_id": "EXP33-FLS-0120",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)",
+        "latency_ms": 0.27
+    },
+    "EXP33-FLS-0121": {
+        "case_id": "EXP33-FLS-0121",
+        "predicted_status": "REFUTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Polarity inversion established: commit vs rollback",
+        "latency_ms": 0.13
+    },
+    "EXP33-FLS-0122": {
+        "case_id": "EXP33-FLS-0122",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 630.05
+    },
+    "EXP33-FLS-0123": {
+        "case_id": "EXP33-FLS-0123",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 674.69
+    },
+    "EXP33-FLS-0124": {
+        "case_id": "EXP33-FLS-0124",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 641.96
+    },
+    "EXP33-FLS-0125": {
+        "case_id": "EXP33-FLS-0125",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 620.97
+    },
+    "EXP33-AMB-0001": {
+        "case_id": "EXP33-AMB-0001",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 632.23
+    },
+    "EXP33-AMB-0002": {
+        "case_id": "EXP33-AMB-0002",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 640.07
+    },
+    "EXP33-AMB-0003": {
+        "case_id": "EXP33-AMB-0003",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 626.25
+    },
+    "EXP33-AMB-0004": {
+        "case_id": "EXP33-AMB-0004",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 632.99
+    },
+    "EXP33-AMB-0005": {
+        "case_id": "EXP33-AMB-0005",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 1101.58
+    },
+    "EXP33-AMB-0006": {
+        "case_id": "EXP33-AMB-0006",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 678.26
+    },
+    "EXP33-AMB-0007": {
+        "case_id": "EXP33-AMB-0007",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 648.3
+    },
+    "EXP33-AMB-0008": {
+        "case_id": "EXP33-AMB-0008",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 631.55
+    },
+    "EXP33-AMB-0009": {
+        "case_id": "EXP33-AMB-0009",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 668.96
+    },
+    "EXP33-AMB-0010": {
+        "case_id": "EXP33-AMB-0010",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 644.87
+    },
+    "EXP33-AMB-0011": {
+        "case_id": "EXP33-AMB-0011",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 634.8
+    },
+    "EXP33-AMB-0012": {
+        "case_id": "EXP33-AMB-0012",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 647.34
+    },
+    "EXP33-AMB-0013": {
+        "case_id": "EXP33-AMB-0013",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.3)",
+        "latency_ms": 0.26
+    },
+    "EXP33-AMB-0014": {
+        "case_id": "EXP33-AMB-0014",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 691.18
+    },
+    "EXP33-AMB-0015": {
+        "case_id": "EXP33-AMB-0015",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 660.11
+    },
+    "EXP33-AMB-0016": {
+        "case_id": "EXP33-AMB-0016",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 629.24
+    },
+    "EXP33-AMB-0017": {
+        "case_id": "EXP33-AMB-0017",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 649.88
+    },
+    "EXP33-AMB-0018": {
+        "case_id": "EXP33-AMB-0018",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 637.58
+    },
+    "EXP33-AMB-0019": {
+        "case_id": "EXP33-AMB-0019",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 645.54
+    },
+    "EXP33-AMB-0020": {
+        "case_id": "EXP33-AMB-0020",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 645.33
+    },
+    "EXP33-AMB-0021": {
+        "case_id": "EXP33-AMB-0021",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 615.98
+    },
+    "EXP33-AMB-0022": {
+        "case_id": "EXP33-AMB-0022",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 636.19
+    },
+    "EXP33-AMB-0023": {
+        "case_id": "EXP33-AMB-0023",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 632.75
+    },
+    "EXP33-AMB-0024": {
+        "case_id": "EXP33-AMB-0024",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 34.52
+    },
+    "EXP33-AMB-0025": {
+        "case_id": "EXP33-AMB-0025",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 636.32
+    },
+    "EXP33-AMB-0026": {
+        "case_id": "EXP33-AMB-0026",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 644.94
+    },
+    "EXP33-AMB-0027": {
+        "case_id": "EXP33-AMB-0027",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 1108.58
+    },
+    "EXP33-AMB-0028": {
+        "case_id": "EXP33-AMB-0028",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 685.59
+    },
+    "EXP33-AMB-0029": {
+        "case_id": "EXP33-AMB-0029",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.3)",
+        "latency_ms": 0.26
+    },
+    "EXP33-AMB-0030": {
+        "case_id": "EXP33-AMB-0030",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 643.85
+    },
+    "EXP33-AMB-0031": {
+        "case_id": "EXP33-AMB-0031",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 643.34
+    },
+    "EXP33-AMB-0032": {
+        "case_id": "EXP33-AMB-0032",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 605.33
+    },
+    "EXP33-AMB-0033": {
+        "case_id": "EXP33-AMB-0033",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 19.55
+    },
+    "EXP33-AMB-0034": {
+        "case_id": "EXP33-AMB-0034",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 620.78
+    },
+    "EXP33-AMB-0035": {
+        "case_id": "EXP33-AMB-0035",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 622.35
+    },
+    "EXP33-AMB-0036": {
+        "case_id": "EXP33-AMB-0036",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 614.75
+    },
+    "EXP33-AMB-0037": {
+        "case_id": "EXP33-AMB-0037",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.3)",
+        "latency_ms": 0.23
+    },
+    "EXP33-AMB-0038": {
+        "case_id": "EXP33-AMB-0038",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 617.11
+    },
+    "EXP33-AMB-0039": {
+        "case_id": "EXP33-AMB-0039",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 616.01
+    },
+    "EXP33-AMB-0040": {
+        "case_id": "EXP33-AMB-0040",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 690.77
+    },
+    "EXP33-AMB-0041": {
+        "case_id": "EXP33-AMB-0041",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.3)",
+        "latency_ms": 0.23
+    },
+    "EXP33-AMB-0042": {
+        "case_id": "EXP33-AMB-0042",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 633.15
+    },
+    "EXP33-AMB-0043": {
+        "case_id": "EXP33-AMB-0043",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.3)",
+        "latency_ms": 0.2
+    },
+    "EXP33-AMB-0044": {
+        "case_id": "EXP33-AMB-0044",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 630.64
+    },
+    "EXP33-AMB-0045": {
+        "case_id": "EXP33-AMB-0045",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 1031.71
+    },
+    "EXP33-AMB-0046": {
+        "case_id": "EXP33-AMB-0046",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 664.71
+    },
+    "EXP33-AMB-0047": {
+        "case_id": "EXP33-AMB-0047",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 618.57
+    },
+    "EXP33-AMB-0048": {
+        "case_id": "EXP33-AMB-0048",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 623.38
+    },
+    "EXP33-AMB-0049": {
+        "case_id": "EXP33-AMB-0049",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 635.83
+    },
+    "EXP33-AMB-0050": {
+        "case_id": "EXP33-AMB-0050",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 641
+    },
+    "EXP33-AMB-0051": {
+        "case_id": "EXP33-AMB-0051",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 24.46
+    },
+    "EXP33-AMB-0052": {
+        "case_id": "EXP33-AMB-0052",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 656.09
+    },
+    "EXP33-AMB-0053": {
+        "case_id": "EXP33-AMB-0053",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.3)",
+        "latency_ms": 0.26
+    },
+    "EXP33-AMB-0054": {
+        "case_id": "EXP33-AMB-0054",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 663.6
+    },
+    "EXP33-AMB-0055": {
+        "case_id": "EXP33-AMB-0055",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 629.76
+    },
+    "EXP33-AMB-0056": {
+        "case_id": "EXP33-AMB-0056",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 664.49
+    },
+    "EXP33-AMB-0057": {
+        "case_id": "EXP33-AMB-0057",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 625.1
+    },
+    "EXP33-AMB-0058": {
+        "case_id": "EXP33-AMB-0058",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 619.65
+    },
+    "EXP33-AMB-0059": {
+        "case_id": "EXP33-AMB-0059",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 699.59
+    },
+    "EXP33-AMB-0060": {
+        "case_id": "EXP33-AMB-0060",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 709.31
+    },
+    "EXP33-AMB-0061": {
+        "case_id": "EXP33-AMB-0061",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 648.82
+    },
+    "EXP33-AMB-0062": {
+        "case_id": "EXP33-AMB-0062",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 670.8
+    },
+    "EXP33-AMB-0063": {
+        "case_id": "EXP33-AMB-0063",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 656.83
+    },
+    "EXP33-AMB-0064": {
+        "case_id": "EXP33-AMB-0064",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 655.92
+    },
+    "EXP33-AMB-0065": {
+        "case_id": "EXP33-AMB-0065",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 624.84
+    },
+    "EXP33-AMB-0066": {
+        "case_id": "EXP33-AMB-0066",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 630.76
+    },
+    "EXP33-AMB-0067": {
+        "case_id": "EXP33-AMB-0067",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 692
+    },
+    "EXP33-AMB-0068": {
+        "case_id": "EXP33-AMB-0068",
+        "predicted_status": "REFUTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Polarity inversion established: microtask vs macrotask",
+        "latency_ms": 0.29
+    },
+    "EXP33-AMB-0069": {
+        "case_id": "EXP33-AMB-0069",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 617.15
+    },
+    "EXP33-AMB-0070": {
+        "case_id": "EXP33-AMB-0070",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 624.86
+    },
+    "EXP33-AMB-0071": {
+        "case_id": "EXP33-AMB-0071",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 643.5
+    },
+    "EXP33-AMB-0072": {
+        "case_id": "EXP33-AMB-0072",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 636.9
+    },
+    "EXP33-AMB-0073": {
+        "case_id": "EXP33-AMB-0073",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 613.66
+    },
+    "EXP33-AMB-0074": {
+        "case_id": "EXP33-AMB-0074",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 1015.77
+    },
+    "EXP33-AMB-0075": {
+        "case_id": "EXP33-AMB-0075",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 18.58
+    },
+    "EXP33-OOD-0001": {
+        "case_id": "EXP33-OOD-0001",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.26
+    },
+    "EXP33-OOD-0002": {
+        "case_id": "EXP33-OOD-0002",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.13
+    },
+    "EXP33-OOD-0003": {
+        "case_id": "EXP33-OOD-0003",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.11
+    },
+    "EXP33-OOD-0004": {
+        "case_id": "EXP33-OOD-0004",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.13
+    },
+    "EXP33-OOD-0005": {
+        "case_id": "EXP33-OOD-0005",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.11
+    },
+    "EXP33-OOD-0006": {
+        "case_id": "EXP33-OOD-0006",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.1
+    },
+    "EXP33-OOD-0007": {
+        "case_id": "EXP33-OOD-0007",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.1
+    },
+    "EXP33-OOD-0008": {
+        "case_id": "EXP33-OOD-0008",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.13
+    },
+    "EXP33-OOD-0009": {
+        "case_id": "EXP33-OOD-0009",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.11
+    },
+    "EXP33-OOD-0010": {
+        "case_id": "EXP33-OOD-0010",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.11
+    },
+    "EXP33-OOD-0011": {
+        "case_id": "EXP33-OOD-0011",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 33.9
+    },
+    "EXP33-OOD-0012": {
+        "case_id": "EXP33-OOD-0012",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.22
+    },
+    "EXP33-OOD-0013": {
+        "case_id": "EXP33-OOD-0013",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.21
+    },
+    "EXP33-OOD-0014": {
+        "case_id": "EXP33-OOD-0014",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.13
+    },
+    "EXP33-OOD-0015": {
+        "case_id": "EXP33-OOD-0015",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.11
+    },
+    "EXP33-OOD-0016": {
+        "case_id": "EXP33-OOD-0016",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.12
+    },
+    "EXP33-OOD-0017": {
+        "case_id": "EXP33-OOD-0017",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.14
+    },
+    "EXP33-OOD-0018": {
+        "case_id": "EXP33-OOD-0018",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.14
+    },
+    "EXP33-OOD-0019": {
+        "case_id": "EXP33-OOD-0019",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.1
+    },
+    "EXP33-OOD-0020": {
+        "case_id": "EXP33-OOD-0020",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.13
+    },
+    "EXP33-OOD-0021": {
+        "case_id": "EXP33-OOD-0021",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.32
+    },
+    "EXP33-OOD-0022": {
+        "case_id": "EXP33-OOD-0022",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.15
+    },
+    "EXP33-OOD-0023": {
+        "case_id": "EXP33-OOD-0023",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.12
+    },
+    "EXP33-OOD-0024": {
+        "case_id": "EXP33-OOD-0024",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)",
+        "latency_ms": 0.11
+    },
+    "EXP33-OOD-0025": {
+        "case_id": "EXP33-OOD-0025",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Query refers to an external technology not covered in curriculum",
+        "latency_ms": 0.1
+    },
+    "EXP33-OOD-0026": {
+        "case_id": "EXP33-OOD-0026",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.32)",
+        "latency_ms": 0.24
+    },
+    "EXP33-OOD-0027": {
+        "case_id": "EXP33-OOD-0027",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.32)",
+        "latency_ms": 0.12
+    },
+    "EXP33-OOD-0028": {
+        "case_id": "EXP33-OOD-0028",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.32)",
+        "latency_ms": 0.11
+    },
+    "EXP33-OOD-0029": {
+        "case_id": "EXP33-OOD-0029",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.32)",
+        "latency_ms": 0.11
+    },
+    "EXP33-OOD-0030": {
+        "case_id": "EXP33-OOD-0030",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 671.21
+    },
+    "EXP33-OOD-0031": {
+        "case_id": "EXP33-OOD-0031",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.32)",
+        "latency_ms": 0.23
+    },
+    "EXP33-OOD-0032": {
+        "case_id": "EXP33-OOD-0032",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.32)",
+        "latency_ms": 0.11
+    },
+    "EXP33-OOD-0033": {
+        "case_id": "EXP33-OOD-0033",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 17.41
+    },
+    "EXP33-OOD-0034": {
+        "case_id": "EXP33-OOD-0034",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.32)",
+        "latency_ms": 0.19
+    },
+    "EXP33-OOD-0035": {
+        "case_id": "EXP33-OOD-0035",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 636.3
+    },
+    "EXP33-OOD-0036": {
+        "case_id": "EXP33-OOD-0036",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.32)",
+        "latency_ms": 0.26
+    },
+    "EXP33-OOD-0037": {
+        "case_id": "EXP33-OOD-0037",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 40.95
+    },
+    "EXP33-OOD-0038": {
+        "case_id": "EXP33-OOD-0038",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.32)",
+        "latency_ms": 0.22
+    },
+    "EXP33-OOD-0039": {
+        "case_id": "EXP33-OOD-0039",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 612.76
+    },
+    "EXP33-OOD-0040": {
+        "case_id": "EXP33-OOD-0040",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 637.91
+    },
+    "EXP33-OOD-0041": {
+        "case_id": "EXP33-OOD-0041",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.32)",
+        "latency_ms": 0.2
+    },
+    "EXP33-OOD-0042": {
+        "case_id": "EXP33-OOD-0042",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 1604.68
+    },
+    "EXP33-OOD-0043": {
+        "case_id": "EXP33-OOD-0043",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 620.69
+    },
+    "EXP33-OOD-0044": {
+        "case_id": "EXP33-OOD-0044",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.32)",
+        "latency_ms": 0.21
+    },
+    "EXP33-OOD-0045": {
+        "case_id": "EXP33-OOD-0045",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 633.05
+    },
+    "EXP33-OOD-0046": {
+        "case_id": "EXP33-OOD-0046",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 632.68
+    },
+    "EXP33-OOD-0047": {
+        "case_id": "EXP33-OOD-0047",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 623.13
+    },
+    "EXP33-OOD-0048": {
+        "case_id": "EXP33-OOD-0048",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 632.37
+    },
+    "EXP33-OOD-0049": {
+        "case_id": "EXP33-OOD-0049",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.32)",
+        "latency_ms": 0.23
+    },
+    "EXP33-OOD-0050": {
+        "case_id": "EXP33-OOD-0050",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.32)",
+        "latency_ms": 0.11
+    },
+    "EXP33-PAR-0001": {
+        "case_id": "EXP33-PAR-0001",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 636.76
+    },
+    "EXP33-PAR-0002": {
+        "case_id": "EXP33-PAR-0002",
+        "predicted_status": "REFUTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Polarity inversion established: border-box vs content-box",
+        "latency_ms": 0.22
+    },
+    "EXP33-PAR-0003": {
+        "case_id": "EXP33-PAR-0003",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 621.91
+    },
+    "EXP33-PAR-0004": {
+        "case_id": "EXP33-PAR-0004",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 731.89
+    },
+    "EXP33-PAR-0005": {
+        "case_id": "EXP33-PAR-0005",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 622.89
+    },
+    "EXP33-PAR-0006": {
+        "case_id": "EXP33-PAR-0006",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 645.36
+    },
+    "EXP33-PAR-0007": {
+        "case_id": "EXP33-PAR-0007",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 658.61
+    },
+    "EXP33-PAR-0008": {
+        "case_id": "EXP33-PAR-0008",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 648.93
+    },
+    "EXP33-PAR-0009": {
+        "case_id": "EXP33-PAR-0009",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 608.15
+    },
+    "EXP33-PAR-0010": {
+        "case_id": "EXP33-PAR-0010",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 896.18
+    },
+    "EXP33-PAR-0011": {
+        "case_id": "EXP33-PAR-0011",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 677.84
+    },
+    "EXP33-PAR-0012": {
+        "case_id": "EXP33-PAR-0012",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 1171.08
+    },
+    "EXP33-PAR-0013": {
+        "case_id": "EXP33-PAR-0013",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 43.84
+    },
+    "EXP33-PAR-0014": {
+        "case_id": "EXP33-PAR-0014",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 623.79
+    },
+    "EXP33-PAR-0015": {
+        "case_id": "EXP33-PAR-0015",
+        "predicted_status": "REFUTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Polarity inversion established: microtask vs macrotask",
+        "latency_ms": 0.28
+    },
+    "EXP33-PAR-0016": {
+        "case_id": "EXP33-PAR-0016",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 653.22
+    },
+    "EXP33-PAR-0017": {
+        "case_id": "EXP33-PAR-0017",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 1044.28
+    },
+    "EXP33-PAR-0018": {
+        "case_id": "EXP33-PAR-0018",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 687.21
+    },
+    "EXP33-PAR-0019": {
+        "case_id": "EXP33-PAR-0019",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 620.43
+    },
+    "EXP33-PAR-0020": {
+        "case_id": "EXP33-PAR-0020",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 663.19
+    },
+    "EXP33-PAR-0021": {
+        "case_id": "EXP33-PAR-0021",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 896.99
+    },
+    "EXP33-PAR-0022": {
+        "case_id": "EXP33-PAR-0022",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 790.95
+    },
+    "EXP33-PAR-0023": {
+        "case_id": "EXP33-PAR-0023",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 645.45
+    },
+    "EXP33-PAR-0024": {
+        "case_id": "EXP33-PAR-0024",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 857.72
+    },
+    "EXP33-PAR-0025": {
+        "case_id": "EXP33-PAR-0025",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 649.85
+    },
+    "EXP33-PAR-0026": {
+        "case_id": "EXP33-PAR-0026",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 631.03
+    },
+    "EXP33-PAR-0027": {
+        "case_id": "EXP33-PAR-0027",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 20.38
+    },
+    "EXP33-PAR-0028": {
+        "case_id": "EXP33-PAR-0028",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 607.31
+    },
+    "EXP33-PAR-0029": {
+        "case_id": "EXP33-PAR-0029",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 639.89
+    },
+    "EXP33-PAR-0030": {
+        "case_id": "EXP33-PAR-0030",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 631.33
+    },
+    "EXP33-PAR-0031": {
+        "case_id": "EXP33-PAR-0031",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 607.38
+    },
+    "EXP33-PAR-0032": {
+        "case_id": "EXP33-PAR-0032",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 687.21
+    },
+    "EXP33-PAR-0033": {
+        "case_id": "EXP33-PAR-0033",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 652.04
+    },
+    "EXP33-PAR-0034": {
+        "case_id": "EXP33-PAR-0034",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.26)",
+        "latency_ms": 0.3
+    },
+    "EXP33-PAR-0035": {
+        "case_id": "EXP33-PAR-0035",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.26)",
+        "latency_ms": 0.14
+    },
+    "EXP33-PAR-0036": {
+        "case_id": "EXP33-PAR-0036",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 1085.53
+    },
+    "EXP33-PAR-0037": {
+        "case_id": "EXP33-PAR-0037",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 685.04
+    },
+    "EXP33-PAR-0038": {
+        "case_id": "EXP33-PAR-0038",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 39.76
+    },
+    "EXP33-PAR-0039": {
+        "case_id": "EXP33-PAR-0039",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 650.17
+    },
+    "EXP33-PAR-0040": {
+        "case_id": "EXP33-PAR-0040",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 602.46
+    },
+    "EXP33-PAR-0041": {
+        "case_id": "EXP33-PAR-0041",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 630.39
+    },
+    "EXP33-PAR-0042": {
+        "case_id": "EXP33-PAR-0042",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 634.69
+    },
+    "EXP33-PAR-0043": {
+        "case_id": "EXP33-PAR-0043",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 679.83
+    },
+    "EXP33-PAR-0044": {
+        "case_id": "EXP33-PAR-0044",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 634.97
+    },
+    "EXP33-PAR-0045": {
+        "case_id": "EXP33-PAR-0045",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 653.56
+    },
+    "EXP33-PAR-0046": {
+        "case_id": "EXP33-PAR-0046",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 624.8
+    },
+    "EXP33-PAR-0047": {
+        "case_id": "EXP33-PAR-0047",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 635.27
+    },
+    "EXP33-PAR-0048": {
+        "case_id": "EXP33-PAR-0048",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 640.01
+    },
+    "EXP33-PAR-0049": {
+        "case_id": "EXP33-PAR-0049",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 636.71
+    },
+    "EXP33-PAR-0050": {
+        "case_id": "EXP33-PAR-0050",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 623.3
+    },
+    "EXP33-ADV-0001": {
+        "case_id": "EXP33-ADV-0001",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 627.52
+    },
+    "EXP33-ADV-0002": {
+        "case_id": "EXP33-ADV-0002",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 611.58
+    },
+    "EXP33-ADV-0003": {
+        "case_id": "EXP33-ADV-0003",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 645.76
+    },
+    "EXP33-ADV-0004": {
+        "case_id": "EXP33-ADV-0004",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 685.93
+    },
+    "EXP33-ADV-0005": {
+        "case_id": "EXP33-ADV-0005",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 49.63
+    },
+    "EXP33-ADV-0006": {
+        "case_id": "EXP33-ADV-0006",
+        "predicted_status": "REFUTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Polarity inversion established: border-box vs content-box",
+        "latency_ms": 0.19
+    },
+    "EXP33-ADV-0007": {
+        "case_id": "EXP33-ADV-0007",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 1249.07
+    },
+    "EXP33-ADV-0008": {
+        "case_id": "EXP33-ADV-0008",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 621.34
+    },
+    "EXP33-ADV-0009": {
+        "case_id": "EXP33-ADV-0009",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 642.87
+    },
+    "EXP33-ADV-0010": {
+        "case_id": "EXP33-ADV-0010",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 688.35
+    },
+    "EXP33-ADV-0011": {
+        "case_id": "EXP33-ADV-0011",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 654.25
+    },
+    "EXP33-ADV-0012": {
+        "case_id": "EXP33-ADV-0012",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 638.39
+    },
+    "EXP33-ADV-0013": {
+        "case_id": "EXP33-ADV-0013",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 644.71
+    },
+    "EXP33-ADV-0014": {
+        "case_id": "EXP33-ADV-0014",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 619.76
+    },
+    "EXP33-ADV-0015": {
+        "case_id": "EXP33-ADV-0015",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)",
+        "latency_ms": 0.19
+    },
+    "EXP33-ADV-0016": {
+        "case_id": "EXP33-ADV-0016",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 2011.31
+    },
+    "EXP33-ADV-0017": {
+        "case_id": "EXP33-ADV-0017",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 659.28
+    },
+    "EXP33-ADV-0018": {
+        "case_id": "EXP33-ADV-0018",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 663.5
+    },
+    "EXP33-ADV-0019": {
+        "case_id": "EXP33-ADV-0019",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 642.63
+    },
+    "EXP33-ADV-0020": {
+        "case_id": "EXP33-ADV-0020",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 592.85
+    },
+    "EXP33-ADV-0021": {
+        "case_id": "EXP33-ADV-0021",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 1197.28
+    },
+    "EXP33-ADV-0022": {
+        "case_id": "EXP33-ADV-0022",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 488.56
+    },
+    "EXP33-ADV-0023": {
+        "case_id": "EXP33-ADV-0023",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 695.99
+    },
+    "EXP33-ADV-0024": {
+        "case_id": "EXP33-ADV-0024",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 670.35
+    },
+    "EXP33-ADV-0025": {
+        "case_id": "EXP33-ADV-0025",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 855.43
+    },
+    "EXP33-ADV-0026": {
+        "case_id": "EXP33-ADV-0026",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 659.71
+    },
+    "EXP33-ADV-0027": {
+        "case_id": "EXP33-ADV-0027",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 654.73
+    },
+    "EXP33-ADV-0028": {
+        "case_id": "EXP33-ADV-0028",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 664.56
+    },
+    "EXP33-ADV-0029": {
+        "case_id": "EXP33-ADV-0029",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 658.39
+    },
+    "EXP33-ADV-0030": {
+        "case_id": "EXP33-ADV-0030",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 648.27
+    },
+    "EXP33-ADV-0031": {
+        "case_id": "EXP33-ADV-0031",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 614.39
+    },
+    "EXP33-ADV-0032": {
+        "case_id": "EXP33-ADV-0032",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 515.06
+    },
+    "EXP33-ADV-0033": {
+        "case_id": "EXP33-ADV-0033",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 696.39
+    },
+    "EXP33-ADV-0034": {
+        "case_id": "EXP33-ADV-0034",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 614.06
+    },
+    "EXP33-ADV-0035": {
+        "case_id": "EXP33-ADV-0035",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 626.24
+    },
+    "EXP33-ADV-0036": {
+        "case_id": "EXP33-ADV-0036",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 877.89
+    },
+    "EXP33-ADV-0037": {
+        "case_id": "EXP33-ADV-0037",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 665.12
+    },
+    "EXP33-ADV-0038": {
+        "case_id": "EXP33-ADV-0038",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 606.36
+    },
+    "EXP33-ADV-0039": {
+        "case_id": "EXP33-ADV-0039",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 630.13
+    },
+    "EXP33-ADV-0040": {
+        "case_id": "EXP33-ADV-0040",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 23.97
+    },
+    "EXP33-ADV-0041": {
+        "case_id": "EXP33-ADV-0041",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 40.26
+    },
+    "EXP33-ADV-0042": {
+        "case_id": "EXP33-ADV-0042",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 875.14
+    },
+    "EXP33-ADV-0043": {
+        "case_id": "EXP33-ADV-0043",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 39.38
+    },
+    "EXP33-ADV-0044": {
+        "case_id": "EXP33-ADV-0044",
+        "predicted_status": "REFUTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Polarity inversion established: border-box vs content-box",
+        "latency_ms": 0.2
+    },
+    "EXP33-ADV-0045": {
+        "case_id": "EXP33-ADV-0045",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 674.16
+    },
+    "EXP33-ADV-0046": {
+        "case_id": "EXP33-ADV-0046",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.9,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "All decomposed atomic claim predicates independently verified",
+        "latency_ms": 837.82
+    },
+    "EXP33-ADV-0047": {
+        "case_id": "EXP33-ADV-0047",
+        "predicted_status": "REFUTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Polarity inversion established: microtask vs macrotask",
+        "latency_ms": 0.24
+    },
+    "EXP33-ADV-0048": {
+        "case_id": "EXP33-ADV-0048",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 769.25
+    },
+    "EXP33-ADV-0049": {
+        "case_id": "EXP33-ADV-0049",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 632.29
+    },
+    "EXP33-ADV-0050": {
+        "case_id": "EXP33-ADV-0050",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 636.98
+    },
+    "EXP33-ADV-0051": {
+        "case_id": "EXP33-ADV-0051",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 35.9
+    },
+    "EXP33-ADV-0052": {
+        "case_id": "EXP33-ADV-0052",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 629.02
+    },
+    "EXP33-ADV-0053": {
+        "case_id": "EXP33-ADV-0053",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 644.41
+    },
+    "EXP33-ADV-0054": {
+        "case_id": "EXP33-ADV-0054",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 629.94
+    },
+    "EXP33-ADV-0055": {
+        "case_id": "EXP33-ADV-0055",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 663.85
+    },
+    "EXP33-ADV-0056": {
+        "case_id": "EXP33-ADV-0056",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 32.25
+    },
+    "EXP33-ADV-0057": {
+        "case_id": "EXP33-ADV-0057",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 22.2
+    },
+    "EXP33-ADV-0058": {
+        "case_id": "EXP33-ADV-0058",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 38.6
+    },
+    "EXP33-ADV-0059": {
+        "case_id": "EXP33-ADV-0059",
+        "predicted_status": "NOT_ESTABLISHED",
+        "confidence": 0.35,
+        "decision_tier": "TIER_2_ABSTENTION",
+        "decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+        "latency_ms": 631.86
+    },
+    "EXP33-ADV-0060": {
+        "case_id": "EXP33-ADV-0060",
+        "predicted_status": "REFUTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Polarity inversion established: commit vs rollback",
+        "latency_ms": 0.26
+    },
+    "EXP33-ADV-0061": {
+        "case_id": "EXP33-ADV-0061",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 646.36
+    },
+    "EXP33-ADV-0062": {
+        "case_id": "EXP33-ADV-0062",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 32.15
+    },
+    "EXP33-ADV-0063": {
+        "case_id": "EXP33-ADV-0063",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 636.98
+    },
+    "EXP33-ADV-0064": {
+        "case_id": "EXP33-ADV-0064",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 22.14
+    },
+    "EXP33-ADV-0065": {
+        "case_id": "EXP33-ADV-0065",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 641.5
+    },
+    "EXP33-ADV-0066": {
+        "case_id": "EXP33-ADV-0066",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 642.25
+    },
+    "EXP33-ADV-0067": {
+        "case_id": "EXP33-ADV-0067",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 627.24
+    },
+    "EXP33-ADV-0068": {
+        "case_id": "EXP33-ADV-0068",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 641.26
+    },
+    "EXP33-ADV-0069": {
+        "case_id": "EXP33-ADV-0069",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 18.3
+    },
+    "EXP33-ADV-0070": {
+        "case_id": "EXP33-ADV-0070",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 626.44
+    },
+    "EXP33-ADV-0071": {
+        "case_id": "EXP33-ADV-0071",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_1_DETERMINISTIC",
+        "decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "latency_ms": 33.66
+    },
+    "EXP33-ADV-0072": {
+        "case_id": "EXP33-ADV-0072",
+        "predicted_status": "REFUTED",
+        "confidence": 0.96,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "latency_ms": 642.35
+    },
+    "EXP33-ADV-0073": {
+        "case_id": "EXP33-ADV-0073",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 616.73
+    },
+    "EXP33-ADV-0074": {
+        "case_id": "EXP33-ADV-0074",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 645.52
+    },
+    "EXP33-ADV-0075": {
+        "case_id": "EXP33-ADV-0075",
+        "predicted_status": "SUPPORTED",
+        "confidence": 0.95,
+        "decision_tier": "TIER_2_SEMANTIC_NLI",
+        "decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "latency_ms": 636.56
+    }
+}

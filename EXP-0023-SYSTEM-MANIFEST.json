@@ -1,0 +1,92 @@
+{
+  "experiment_tag": "EXP-0023-BLIND-RE-CERTIFICATION-2026-09-12",
+  "candidate_under_test": "EXP-0022-REMEDIATED-CANDIDATE-2026-09-09",
+  "frozen_reference": "EXP-0020-CHAMPION-2026-09-09",
+  "independent_audit_reference": "CLAUDE-OPUS-EXP0022-AUDIT",
+  "git_commit": "176883227602671b545e061dacf228aedc3271a5",
+  "timestamp": "2026-09-12T08:24:02.869Z",
+  "environment": {
+    "node_version": "v24.11.0",
+    "php_version": "8.3.32",
+    "os_platform": "win32",
+    "os_arch": "x64",
+    "ollama_version": "0.34.0",
+    "embedding_model": "nomic-embed-text:latest (0a109f422b47, 768-dim)",
+    "generation_model": "llama3.2:latest (a80c4f17acd5)",
+    "fallback_generation_model": "llama3:latest (365c0bd3c000)",
+    "worker_count": 8,
+    "worker_ports": [
+      8001,
+      8002,
+      8003,
+      8004,
+      8005,
+      8006,
+      8007,
+      8008
+    ],
+    "gateway_port": 8000,
+    "two_tier_distribution": {
+      "fast_search_workers": [
+        8001,
+        8002,
+        8003,
+        8004,
+        8005,
+        8006
+      ],
+      "gen_llm_workers": [
+        8007,
+        8008
+      ]
+    },
+    "active_flags": {
+      "ENABLE_INPUT_SANITY": true,
+      "ENABLE_TYPO_NORMALIZATION": true,
+      "ENABLE_SEMANTIC_RERANK": true,
+      "ENABLE_DYNAMIC_K": true,
+      "ENABLE_ENTITY_MEMORY": true,
+      "ENABLE_PREMISE_VERIFIER": true,
+      "ENABLE_CITATION_ENFORCEMENT": true,
+      "ENABLE_CURRICULUM_BOUNDARY": true,
+      "ENABLE_RATE_LIMIT": true,
+      "ENABLE_WARMUP": true
+    }
+  },
+  "corpus_version": "1789199698190",
+  "source_hashes": {
+    "php": {
+      "backend/rag_service.php": "a8c1be453910f922ebbad7a792c06cd74154ec7b1df6f72a271f3279ca410aa6",
+      "backend/rag_premise_verifier.php": "5f6f51da1208f0bb514c6211acf79f2bd2bb1f821a7215736fb9d75e1cf70bf6",
+      "backend/rag_query_orchestrator.php": "45fba02152bbb9e4f7564bf32c0fc4027866b9fe384c4c929d04534500fff6c0",
+      "backend/rag_safety_boundary.php": "ec2870bc4b84b694aaa85033ca2cfca4382f8eb57aac4ae3ca2d9c4615592541",
+      "backend/rag_semantic_mapper.php": "a1314dc897e5c1dc9ccb0eadf24f3d78060627a3cf9063aa5fb96d4cd353318c",
+      "backend/rag_query_condenser.php": "80292a0b5b944066b1c40c5d692ee1316c1949b0666cda5d32dedd4bb5f1e105",
+      "backend/rag_flags.php": "aa8d3051873ea28cb6e8c7f7fa2ea4f47499614e7e6c63403390dd5d6829ed84",
+      "backend/index.php": "c469adb1fd5fdd6553506db5f33b01736ee4559146d3d95e195917a786faf04a",
+      "backend/config.php": "ec39826c30bc37869cba73ce758587a7016b7382aaea8971e9394d6e1ae6cda7",
+      "backend/auth_middleware.php": "2ed46f4da390f1a0e7046e368b032029566ec224a14a16a06844e49f49e727f9"
+    },
+    "node": {
+      "backend/gateway.js": "3c0308560a9a2bef75b2fed32a539a86a6378c73f642c1819c05b817a43a93c4",
+      "backend/embedding_coordinator.js": "221d86ede96ebe2938d6bd9a39b56ed718bee9586af0b5dcc70ba40f39854859"
+    },
+    "database_and_corpus": {
+      "backend/storage/vectors.sqlite": "697fae59a59dc3a2b67b7b2a94ada99e64bc8bb676a224e798ff2d5c99f678d5",
+      "database/rag_materials.sqlite3": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "database/lms.db": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "database/rag_corpus_version.txt": "a5fb73d9256a60e8487520bc1d398edae01994abced180f5ed69403c976a855e"
+    },
+    "config": {
+      "backend/rag_flags.json": "c814568feadfda105e84730d943fbe700ef55d61532a4067594e354b7c18f423"
+    },
+    "benchmark_runners": {
+      "tests/rag/runners/benchmark_runner.js": "8a3f908d1a9662cb3e0886eb0a84c68f89572f938250767e5d72ccda8c3cde4b",
+      "tests/rag/runners/blind_benchmark_runner.js": "8af30ca4d806fa012d1e733e8483ecc3c3b4f788fb2b4d4d516ff9416ff33f5c"
+    }
+  },
+  "freeze_policy": {
+    "rule": "NO_SOURCE_CHANGES_UNTIL_EXP0023_EVALUATION_COMPLETE",
+    "enforced": true
+  }
+}

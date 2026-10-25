@@ -1,0 +1,562 @@
+[
+  {
+    "id": "exp14_s4_001",
+    "query": "react me useEffect kab use karte hain?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useEffect Hook",
+    "expected_keyword": "useEffect"
+  },
+  {
+    "id": "exp14_s4_002",
+    "query": "useState aur useReducer me kya difference hai bhai?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useState Hook",
+    "expected_keyword": "useState"
+  },
+  {
+    "id": "exp14_s4_003",
+    "query": "useRef actually karta kya hai dom element access karne k alawa?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useRef Hook",
+    "expected_keyword": "useRef"
+  },
+  {
+    "id": "exp14_s4_004",
+    "query": "react context se prop drilling kaise avoid hoti hai?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useContext & State Propagation",
+    "expected_keyword": "useContext"
+  },
+  {
+    "id": "exp14_s4_005",
+    "query": "useCallback aur useMemo kab lagana chahiye performance k liye?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "Performance Hooks: useMemo & useCallback",
+    "expected_keyword": "useMemo"
+  },
+  {
+    "id": "exp14_s4_006",
+    "query": "hooks ko loop ya if condition me kyu nahi daal sakte?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "React Hooks Overview & Rules",
+    "expected_keyword": "rules of hooks"
+  },
+  {
+    "id": "exp14_s4_007",
+    "query": "cleanup function useEffect me return kyu karte hain?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useEffect Hook",
+    "expected_keyword": "cleanup"
+  },
+  {
+    "id": "exp14_s4_008",
+    "query": "useState me prev state use karna kyu zaroori hai?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useState Hook",
+    "expected_keyword": "functional updater"
+  },
+  {
+    "id": "exp14_s4_009",
+    "query": "bhai react me global state context se kaise banaye?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useContext & State Propagation",
+    "expected_keyword": "Provider"
+  },
+  {
+    "id": "exp14_s4_010",
+    "query": "useRef me value update karne par component re-render kyu nahi hota?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useRef Hook",
+    "expected_keyword": "current"
+  },
+  {
+    "id": "exp14_s4_011",
+    "query": "node me middleware actually karta kya hai?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "Middleware in Express",
+    "expected_keyword": "middleware"
+  },
+  {
+    "id": "exp14_s4_012",
+    "query": "express me next() call nahi karenge toh kya hoga request ka?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "Middleware in Express",
+    "expected_keyword": "next()"
+  },
+  {
+    "id": "exp14_s4_013",
+    "query": "jwt token verify kaise karte hain express backend me?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "JWT Authentication",
+    "expected_keyword": "jwt"
+  },
+  {
+    "id": "exp14_s4_014",
+    "query": "node ka event loop microtask aur macrotask kaise chalata hai?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "Node.js Architecture & Event Loop",
+    "expected_keyword": "event loop"
+  },
+  {
+    "id": "exp14_s4_015",
+    "query": "libuv thread pool node js me kab kaam aata hai?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "Node.js Architecture & Event Loop",
+    "expected_keyword": "libuv"
+  },
+  {
+    "id": "exp14_s4_016",
+    "query": "rest api me 401 aur 403 me kya difference hota hai?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "RESTful API Design Principles",
+    "expected_keyword": "401"
+  },
+  {
+    "id": "exp14_s4_017",
+    "query": "app.use aur app.get me kya antar hai express me?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "Express.js Core Concepts",
+    "expected_keyword": "app.use"
+  },
+  {
+    "id": "exp14_s4_018",
+    "query": "express me bearer token authorization header se kaise nikalte hain?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "JWT Authentication",
+    "expected_keyword": "bearer"
+  },
+  {
+    "id": "exp14_s4_019",
+    "query": "node js single threaded hai toh concurrent requests kaise handle hoti hain?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "Node.js Architecture & Event Loop",
+    "expected_keyword": "non-blocking"
+  },
+  {
+    "id": "exp14_s4_020",
+    "query": "restful endpoints me plural nouns kyu use karte hain /api/students type?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "RESTful API Design Principles",
+    "expected_keyword": "plural nouns"
+  },
+  {
+    "id": "exp14_s4_021",
+    "query": "postgres me join kaise hota hai tables ke beech?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Relational Database Modeling",
+    "expected_keyword": "foreign key"
+  },
+  {
+    "id": "exp14_s4_022",
+    "query": "database normalization me 1nf 2nf 3nf ka kya funda hai?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Database Normalization Forms",
+    "expected_keyword": "3NF"
+  },
+  {
+    "id": "exp14_s4_023",
+    "query": "b-tree index postgres me queries ko fast kaise banata hai?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Indexing Strategies & Performance",
+    "expected_keyword": "B-tree"
+  },
+  {
+    "id": "exp14_s4_024",
+    "query": "acid transactions me rollback kab trigger hota hai?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "ACID Transactions",
+    "expected_keyword": "ROLLBACK"
+  },
+  {
+    "id": "exp14_s4_025",
+    "query": "postgres me explain analyze command se query plan kaise check kare?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Indexing Strategies & Performance",
+    "expected_keyword": "EXPLAIN ANALYZE"
+  },
+  {
+    "id": "exp14_s4_026",
+    "query": "foreign key on delete cascade se child rows kaise delete hoti hain?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Relational Database Modeling",
+    "expected_keyword": "cascade"
+  },
+  {
+    "id": "exp14_s4_027",
+    "query": "database me transitive dependency kya hoti hai aur 3nf kaise hatata hai?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Database Normalization Forms",
+    "expected_keyword": "transitive"
+  },
+  {
+    "id": "exp14_s4_028",
+    "query": "acid me atomicity ka matlab kya hai agar beech me error aa jaye?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "ACID Transactions",
+    "expected_keyword": "Atomicity"
+  },
+  {
+    "id": "exp14_s4_029",
+    "query": "primary key aur unique constraint me kya difference hai postgres me?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Relational Database Modeling",
+    "expected_keyword": "primary key"
+  },
+  {
+    "id": "exp14_s4_030",
+    "query": "write ahead logging durability kaise guarantee karti hai postgres me?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "ACID Transactions",
+    "expected_keyword": "durability"
+  },
+  {
+    "id": "exp14_s4_031",
+    "query": "var let aur const me kya difference hai js scoping me?",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "expected_section": "Variable Declarations & Scoping",
+    "expected_keyword": "let"
+  },
+  {
+    "id": "exp14_s4_032",
+    "query": "temporal dead zone tdz kya hota hai let const ke sath?",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "expected_section": "Variable Declarations & Scoping",
+    "expected_keyword": "TDZ"
+  },
+  {
+    "id": "exp14_s4_033",
+    "query": "arrow function me lexical this ka kya chakkar hai?",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "expected_section": "Arrow Functions & Lexical this",
+    "expected_keyword": "lexical this"
+  },
+  {
+    "id": "exp14_s4_034",
+    "query": "promise chaining me .then aur .catch kaise handle kare?",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "expected_section": "Asynchronous JavaScript & Promises",
+    "expected_keyword": "promise"
+  },
+  {
+    "id": "exp14_s4_035",
+    "query": "async await me try catch se rejected promise kaise pakde?",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "expected_section": "Asynchronous JavaScript & Promises",
+    "expected_keyword": "async await"
+  },
+  {
+    "id": "exp14_s4_036",
+    "query": "object destructuring me default values aur rest operator kaise use kare?",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "expected_section": "Destructuring, Spread & Rest Operators",
+    "expected_keyword": "destructuring"
+  },
+  {
+    "id": "exp14_s4_037",
+    "query": "call stack aur callback queue me microtasks pehle kyu chalte hain?",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "expected_section": "Asynchronous JavaScript & Promises",
+    "expected_keyword": "microtask"
+  },
+  {
+    "id": "exp14_s4_038",
+    "query": "spread operator ... se array copy shallow hoti hai ya deep?",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "expected_section": "Destructuring, Spread & Rest Operators",
+    "expected_keyword": "spread"
+  },
+  {
+    "id": "exp14_s4_039",
+    "query": "es6 classes me arrow function use karke this bind kaise karte hain?",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "expected_section": "Arrow Functions & Lexical this",
+    "expected_keyword": "this"
+  },
+  {
+    "id": "exp14_s4_040",
+    "query": "settimeout 0 ms dene par bhi turant kyu nahi chalta js me?",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "expected_section": "Asynchronous JavaScript & Promises",
+    "expected_keyword": "event loop"
+  },
+  {
+    "id": "exp14_s4_041",
+    "query": "css box model me border-box lagana kyu best practice maana jata hai?",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "expected_section": "CSS Box Model",
+    "expected_keyword": "border-box"
+  },
+  {
+    "id": "exp14_s4_042",
+    "query": "flexbox me justify-content aur align-items me kya fark hai?",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "expected_section": "CSS Flexbox Layout Guide",
+    "expected_keyword": "justify-content"
+  },
+  {
+    "id": "exp14_s4_043",
+    "query": "css grid me fr unit aur repeat function kaise kaam karte hain?",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "expected_section": "CSS Grid System",
+    "expected_keyword": "fr"
+  },
+  {
+    "id": "exp14_s4_044",
+    "query": "div soup kyu nahi banana chahiye aur semantic html kyu zaroori hai?",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "expected_section": "HTML5 Semantic Elements",
+    "expected_keyword": "semantic"
+  },
+  {
+    "id": "exp14_s4_045",
+    "query": "flex-wrap wrap karne se items next line pe kaise aate hain?",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "expected_section": "CSS Flexbox Layout Guide",
+    "expected_keyword": "flex-wrap"
+  },
+  {
+    "id": "exp14_s4_046",
+    "query": "grid layout me auto-fit aur minmax se responsive columns kaise banaye?",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "expected_section": "CSS Grid System",
+    "expected_keyword": "auto-fit"
+  },
+  {
+    "id": "exp14_s4_047",
+    "query": "main tag aur section tag me kya difference hai semantic structure me?",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "expected_section": "HTML5 Semantic Elements",
+    "expected_keyword": "<main>"
+  },
+  {
+    "id": "exp14_s4_048",
+    "query": "content-box me padding add karne se total div width kyu badh jaati hai?",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "expected_section": "CSS Box Model",
+    "expected_keyword": "content-box"
+  },
+  {
+    "id": "exp14_s4_049",
+    "query": "flexbox 1D layout hai toh grid 2D kaise handle karta hai rows aur columns?",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "expected_section": "CSS Grid System",
+    "expected_keyword": "2D"
+  },
+  {
+    "id": "exp14_s4_050",
+    "query": "header nav article footer tags seo aur accessibility me kaise help karte hain?",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "expected_section": "HTML5 Semantic Elements",
+    "expected_keyword": "accessibility"
+  },
+  {
+    "id": "exp14_s4_051",
+    "query": "sir please explain react me useEffect kab use karte hain?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useEffect Hook",
+    "expected_keyword": "useEffect"
+  },
+  {
+    "id": "exp14_s4_052",
+    "query": "yaar mujhe samajh nahi aa raha useState aur useReducer me kya difference hai bhai?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useState Hook",
+    "expected_keyword": "useState"
+  },
+  {
+    "id": "exp14_s4_053",
+    "query": "project me problem aa rahi hai useRef actually karta kya hai dom element access karne k alawa?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useRef Hook",
+    "expected_keyword": "useRef"
+  },
+  {
+    "id": "exp14_s4_054",
+    "query": "bhai simple words me batao react context se prop drilling kaise avoid hoti hai?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useContext & State Propagation",
+    "expected_keyword": "useContext"
+  },
+  {
+    "id": "exp14_s4_055",
+    "query": "quick explanation chahiye useCallback aur useMemo kab lagana chahiye performance k liye?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "Performance Hooks: useMemo & useCallback",
+    "expected_keyword": "useMemo"
+  },
+  {
+    "id": "exp14_s4_056",
+    "query": "sir please explain hooks ko loop ya if condition me kyu nahi daal sakte?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "React Hooks Overview & Rules",
+    "expected_keyword": "rules of hooks"
+  },
+  {
+    "id": "exp14_s4_057",
+    "query": "yaar mujhe samajh nahi aa raha cleanup function useEffect me return kyu karte hain?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useEffect Hook",
+    "expected_keyword": "cleanup"
+  },
+  {
+    "id": "exp14_s4_058",
+    "query": "project me problem aa rahi hai useState me prev state use karna kyu zaroori hai?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useState Hook",
+    "expected_keyword": "functional updater"
+  },
+  {
+    "id": "exp14_s4_059",
+    "query": "bhai simple words me batao bhai react me global state context se kaise banaye?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useContext & State Propagation",
+    "expected_keyword": "Provider"
+  },
+  {
+    "id": "exp14_s4_060",
+    "query": "quick explanation chahiye useRef me value update karne par component re-render kyu nahi hota?",
+    "expected_doc": "React Hooks Tutorial",
+    "expected_section": "useRef Hook",
+    "expected_keyword": "current"
+  },
+  {
+    "id": "exp14_s4_061",
+    "query": "sir please explain node me middleware actually karta kya hai?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "Middleware in Express",
+    "expected_keyword": "middleware"
+  },
+  {
+    "id": "exp14_s4_062",
+    "query": "yaar mujhe samajh nahi aa raha express me next() call nahi karenge toh kya hoga request ka?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "Middleware in Express",
+    "expected_keyword": "next()"
+  },
+  {
+    "id": "exp14_s4_063",
+    "query": "project me problem aa rahi hai jwt token verify kaise karte hain express backend me?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "JWT Authentication",
+    "expected_keyword": "jwt"
+  },
+  {
+    "id": "exp14_s4_064",
+    "query": "bhai simple words me batao node ka event loop microtask aur macrotask kaise chalata hai?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "Node.js Architecture & Event Loop",
+    "expected_keyword": "event loop"
+  },
+  {
+    "id": "exp14_s4_065",
+    "query": "quick explanation chahiye libuv thread pool node js me kab kaam aata hai?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "Node.js Architecture & Event Loop",
+    "expected_keyword": "libuv"
+  },
+  {
+    "id": "exp14_s4_066",
+    "query": "sir please explain rest api me 401 aur 403 me kya difference hota hai?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "RESTful API Design Principles",
+    "expected_keyword": "401"
+  },
+  {
+    "id": "exp14_s4_067",
+    "query": "yaar mujhe samajh nahi aa raha app.use aur app.get me kya antar hai express me?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "Express.js Core Concepts",
+    "expected_keyword": "app.use"
+  },
+  {
+    "id": "exp14_s4_068",
+    "query": "project me problem aa rahi hai express me bearer token authorization header se kaise nikalte hain?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "JWT Authentication",
+    "expected_keyword": "bearer"
+  },
+  {
+    "id": "exp14_s4_069",
+    "query": "bhai simple words me batao node js single threaded hai toh concurrent requests kaise handle hoti hain?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "Node.js Architecture & Event Loop",
+    "expected_keyword": "non-blocking"
+  },
+  {
+    "id": "exp14_s4_070",
+    "query": "quick explanation chahiye restful endpoints me plural nouns kyu use karte hain /api/students type?",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "expected_section": "RESTful API Design Principles",
+    "expected_keyword": "plural nouns"
+  },
+  {
+    "id": "exp14_s4_071",
+    "query": "sir please explain postgres me join kaise hota hai tables ke beech?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Relational Database Modeling",
+    "expected_keyword": "foreign key"
+  },
+  {
+    "id": "exp14_s4_072",
+    "query": "yaar mujhe samajh nahi aa raha database normalization me 1nf 2nf 3nf ka kya funda hai?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Database Normalization Forms",
+    "expected_keyword": "3NF"
+  },
+  {
+    "id": "exp14_s4_073",
+    "query": "project me problem aa rahi hai b-tree index postgres me queries ko fast kaise banata hai?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Indexing Strategies & Performance",
+    "expected_keyword": "B-tree"
+  },
+  {
+    "id": "exp14_s4_074",
+    "query": "bhai simple words me batao acid transactions me rollback kab trigger hota hai?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "ACID Transactions",
+    "expected_keyword": "ROLLBACK"
+  },
+  {
+    "id": "exp14_s4_075",
+    "query": "quick explanation chahiye postgres me explain analyze command se query plan kaise check kare?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Indexing Strategies & Performance",
+    "expected_keyword": "EXPLAIN ANALYZE"
+  },
+  {
+    "id": "exp14_s4_076",
+    "query": "sir please explain foreign key on delete cascade se child rows kaise delete hoti hain?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Relational Database Modeling",
+    "expected_keyword": "cascade"
+  },
+  {
+    "id": "exp14_s4_077",
+    "query": "yaar mujhe samajh nahi aa raha database me transitive dependency kya hoti hai aur 3nf kaise hatata hai?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Database Normalization Forms",
+    "expected_keyword": "transitive"
+  },
+  {
+    "id": "exp14_s4_078",
+    "query": "project me problem aa rahi hai acid me atomicity ka matlab kya hai agar beech me error aa jaye?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "ACID Transactions",
+    "expected_keyword": "Atomicity"
+  },
+  {
+    "id": "exp14_s4_079",
+    "query": "bhai simple words me batao primary key aur unique constraint me kya difference hai postgres me?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "Relational Database Modeling",
+    "expected_keyword": "primary key"
+  },
+  {
+    "id": "exp14_s4_080",
+    "query": "quick explanation chahiye write ahead logging durability kaise guarantee karti hai postgres me?",
+    "expected_doc": "PostgreSQL Database Design",
+    "expected_section": "ACID Transactions",
+    "expected_keyword": "durability"
+  }
+]

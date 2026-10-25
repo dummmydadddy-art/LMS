@@ -1,0 +1,1119 @@
+{
+  "summary": {
+    "total_queries": 105,
+    "hit1": {
+      "p": 0.8857,
+      "lower": 0.8108,
+      "upper": 0.9334
+    },
+    "hit3": {
+      "p": 0.9714,
+      "lower": 0.9193,
+      "upper": 0.9902
+    },
+    "mrr": 0.9278,
+    "by_noise_type": {
+      "spelling_errors": {
+        "count": 15,
+        "hit1_pct": 93.3,
+        "hit3_pct": 100,
+        "mrr": 0.9667,
+        "latency_p50": 52
+      },
+      "missing_punctuation": {
+        "count": 15,
+        "hit1_pct": 93.3,
+        "hit3_pct": 100,
+        "mrr": 0.9667,
+        "latency_p50": 128
+      },
+      "repeated_words": {
+        "count": 15,
+        "hit1_pct": 93.3,
+        "hit3_pct": 100,
+        "mrr": 0.9667,
+        "latency_p50": 130
+      },
+      "capitalization_variation": {
+        "count": 15,
+        "hit1_pct": 93.3,
+        "hit3_pct": 100,
+        "mrr": 0.9667,
+        "latency_p50": 48
+      },
+      "keyboard_mistakes": {
+        "count": 15,
+        "hit1_pct": 60,
+        "hit3_pct": 80,
+        "mrr": 0.6944,
+        "latency_p50": 129
+      },
+      "abbreviated_terminology": {
+        "count": 15,
+        "hit1_pct": 93.3,
+        "hit3_pct": 100,
+        "mrr": 0.9667,
+        "latency_p50": 48
+      },
+      "phonetic_spelling": {
+        "count": 15,
+        "hit1_pct": 93.3,
+        "hit3_pct": 100,
+        "mrr": 0.9667,
+        "latency_p50": 49
+      }
+    }
+  },
+  "details": [
+    {
+      "canonical_id": "p1",
+      "noise_type": "spelling_errors",
+      "query": "How do you update state based on previous state using useStat in React?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 107
+    },
+    {
+      "canonical_id": "p1",
+      "noise_type": "missing_punctuation",
+      "query": "How do you update state based on previous state using useState in React",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 151
+    },
+    {
+      "canonical_id": "p1",
+      "noise_type": "repeated_words",
+      "query": "How how do you update state based on previous state using useState in React?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 199
+    },
+    {
+      "canonical_id": "p1",
+      "noise_type": "capitalization_variation",
+      "query": "HOW do YOU update STATE based ON previous STATE using USESTATE in REACT?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 139
+    },
+    {
+      "canonical_id": "p1",
+      "noise_type": "keyboard_mistakes",
+      "query": "How do you updstw ststw bsswd on prwvious ststw using uswStstw in Rwsc?",
+      "rank": 0,
+      "hit1": 0,
+      "hit3": 0,
+      "mrr": 0,
+      "latency_ms": 151
+    },
+    {
+      "canonical_id": "p1",
+      "noise_type": "abbreviated_terminology",
+      "query": "How do you update state based on previous state using useState in rct?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 224
+    },
+    {
+      "canonical_id": "p1",
+      "noise_type": "phonetic_spelling",
+      "query": "How do you update state based on previous state using useState in React?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 130
+    },
+    {
+      "canonical_id": "p2",
+      "noise_type": "spelling_errors",
+      "query": "How does the cleanup function work in React useEfect hook?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 209
+    },
+    {
+      "canonical_id": "p2",
+      "noise_type": "missing_punctuation",
+      "query": "How does the cleanup function work in React useEffect hook",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 115
+    },
+    {
+      "canonical_id": "p2",
+      "noise_type": "repeated_words",
+      "query": "How how does the cleanup function work in React useEffect hook?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 122
+    },
+    {
+      "canonical_id": "p2",
+      "noise_type": "capitalization_variation",
+      "query": "HOW does THE cleanup FUNCTION work IN react USEEFFECT hook?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 48
+    },
+    {
+      "canonical_id": "p2",
+      "noise_type": "keyboard_mistakes",
+      "query": "How dows thw clwsnup function work in Rwsct uswEffwct hoo?",
+      "rank": 3,
+      "hit1": 0,
+      "hit3": 1,
+      "mrr": 0.3333333333333333,
+      "latency_ms": 133
+    },
+    {
+      "canonical_id": "p2",
+      "noise_type": "abbreviated_terminology",
+      "query": "How does the cleanup fn work in rct useEffect hook?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 119
+    },
+    {
+      "canonical_id": "p2",
+      "noise_type": "phonetic_spelling",
+      "query": "How does the cleanup function work in React useEffect hook?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 47
+    },
+    {
+      "canonical_id": "p3",
+      "noise_type": "spelling_errors",
+      "query": "What is the purpose of useRef hook and how does it persist values without re-render?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 45
+    },
+    {
+      "canonical_id": "p3",
+      "noise_type": "missing_punctuation",
+      "query": "What is the purpose of useRef hook and how does it persist values without re-render",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 121
+    },
+    {
+      "canonical_id": "p3",
+      "noise_type": "repeated_words",
+      "query": "What what is the purpose of useRef hook and how does it persist values without re-render?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 120
+    },
+    {
+      "canonical_id": "p3",
+      "noise_type": "capitalization_variation",
+      "query": "WHAT is THE purpose OF useref HOOK and HOW does IT persist VALUES without RE-RENDER?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 44
+    },
+    {
+      "canonical_id": "p3",
+      "noise_type": "keyboard_mistakes",
+      "query": "Whst is thw purposw of uswRwf hook snd how dows it pwrsist vsluws without rw-rwndw?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 125
+    },
+    {
+      "canonical_id": "p3",
+      "noise_type": "abbreviated_terminology",
+      "query": "What is the purpose of useRef hook and how does it persist values without re-render?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 46
+    },
+    {
+      "canonical_id": "p3",
+      "noise_type": "phonetic_spelling",
+      "query": "What is the purpose of useRef hook and how does it persist values without re-render?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 47
+    },
+    {
+      "canonical_id": "p4",
+      "noise_type": "spelling_errors",
+      "query": "How do you avoid prop drilling using React Context and useContext hook?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 49
+    },
+    {
+      "canonical_id": "p4",
+      "noise_type": "missing_punctuation",
+      "query": "How do you avoid prop drilling using React Context and useContext hook",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 118
+    },
+    {
+      "canonical_id": "p4",
+      "noise_type": "repeated_words",
+      "query": "How how do you avoid prop drilling using React Context and useContext hook?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 122
+    },
+    {
+      "canonical_id": "p4",
+      "noise_type": "capitalization_variation",
+      "query": "HOW do YOU avoid PROP drilling USING react CONTEXT and USECONTEXT hook?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 45
+    },
+    {
+      "canonical_id": "p4",
+      "noise_type": "keyboard_mistakes",
+      "query": "How do you svoid prop drilling using Rwsct Contwxt snd uswContwxt hoo?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 124
+    },
+    {
+      "canonical_id": "p4",
+      "noise_type": "abbreviated_terminology",
+      "query": "How do you avoid prop drilling using rct Context and useContext hook?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 115
+    },
+    {
+      "canonical_id": "p4",
+      "noise_type": "phonetic_spelling",
+      "query": "How do you avoid prop drilling using React Context and useContext hook?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 49
+    },
+    {
+      "canonical_id": "p5",
+      "noise_type": "spelling_errors",
+      "query": "How does the Javscript event loop prioritize microtasks over macrotasks?",
+      "rank": 2,
+      "hit1": 0,
+      "hit3": 1,
+      "mrr": 0.5,
+      "latency_ms": 126
+    },
+    {
+      "canonical_id": "p5",
+      "noise_type": "missing_punctuation",
+      "query": "How does the JavaScript event loop prioritize microtasks over macrotasks",
+      "rank": 2,
+      "hit1": 0,
+      "hit3": 1,
+      "mrr": 0.5,
+      "latency_ms": 141
+    },
+    {
+      "canonical_id": "p5",
+      "noise_type": "repeated_words",
+      "query": "How how does the JavaScript event loop prioritize microtasks over macrotasks?",
+      "rank": 2,
+      "hit1": 0,
+      "hit3": 1,
+      "mrr": 0.5,
+      "latency_ms": 131
+    },
+    {
+      "canonical_id": "p5",
+      "noise_type": "capitalization_variation",
+      "query": "HOW does THE javascript EVENT loop PRIORITIZE microtasks OVER macrotasks?",
+      "rank": 2,
+      "hit1": 0,
+      "hit3": 1,
+      "mrr": 0.5,
+      "latency_ms": 47
+    },
+    {
+      "canonical_id": "p5",
+      "noise_type": "keyboard_mistakes",
+      "query": "How dows thw JsvsScript wvwnt loop prioritizw microtssks ovwr mscrotssk?",
+      "rank": 2,
+      "hit1": 0,
+      "hit3": 1,
+      "mrr": 0.5,
+      "latency_ms": 134
+    },
+    {
+      "canonical_id": "p5",
+      "noise_type": "abbreviated_terminology",
+      "query": "How does the JavaScript event loop prioritize microtasks over macrotasks?",
+      "rank": 2,
+      "hit1": 0,
+      "hit3": 1,
+      "mrr": 0.5,
+      "latency_ms": 48
+    },
+    {
+      "canonical_id": "p5",
+      "noise_type": "phonetic_spelling",
+      "query": "How does the JavaScript event loop prioritize microtasks over macrotasks?",
+      "rank": 2,
+      "hit1": 0,
+      "hit3": 1,
+      "mrr": 0.5,
+      "latency_ms": 49
+    },
+    {
+      "canonical_id": "p6",
+      "noise_type": "spelling_errors",
+      "query": "What is the difference between var, let, and const in Javscript scoping?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 262
+    },
+    {
+      "canonical_id": "p6",
+      "noise_type": "missing_punctuation",
+      "query": "What is the difference between var let and const in JavaScript scoping",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 246
+    },
+    {
+      "canonical_id": "p6",
+      "noise_type": "repeated_words",
+      "query": "What what is the difference between var, let, and const in JavaScript scoping?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 247
+    },
+    {
+      "canonical_id": "p6",
+      "noise_type": "capitalization_variation",
+      "query": "WHAT is THE difference BETWEEN var, LET, and CONST in JAVASCRIPT scoping?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 164
+    },
+    {
+      "canonical_id": "p6",
+      "noise_type": "keyboard_mistakes",
+      "query": "Whst is thw diffwrwncw bwtwwwn vsr, lwt, snd const in JsvsScript scopin?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 139
+    },
+    {
+      "canonical_id": "p6",
+      "noise_type": "abbreviated_terminology",
+      "query": "What is the difference between var, let, and const in JavaScript scoping?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 161
+    },
+    {
+      "canonical_id": "p6",
+      "noise_type": "phonetic_spelling",
+      "query": "What is the difference between var, let, and const in JavaScript scoping?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 181
+    },
+    {
+      "canonical_id": "p7",
+      "noise_type": "spelling_errors",
+      "query": "How do arrow functions handle lexical this compared to regular functions?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 48
+    },
+    {
+      "canonical_id": "p7",
+      "noise_type": "missing_punctuation",
+      "query": "How do arrow functions handle lexical this compared to regular functions",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 130
+    },
+    {
+      "canonical_id": "p7",
+      "noise_type": "repeated_words",
+      "query": "How how do arrow functions handle lexical this compared to regular functions?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 113
+    },
+    {
+      "canonical_id": "p7",
+      "noise_type": "capitalization_variation",
+      "query": "HOW do ARROW functions HANDLE lexical THIS compared TO regular FUNCTIONS?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 50
+    },
+    {
+      "canonical_id": "p7",
+      "noise_type": "keyboard_mistakes",
+      "query": "How do srrow functions hsndlw lwxicsl this compsrwd to rwgulsr function?",
+      "rank": 3,
+      "hit1": 0,
+      "hit3": 1,
+      "mrr": 0.3333333333333333,
+      "latency_ms": 144
+    },
+    {
+      "canonical_id": "p7",
+      "noise_type": "abbreviated_terminology",
+      "query": "How do arrow fns handle lexical this compared to regular functions?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 114
+    },
+    {
+      "canonical_id": "p7",
+      "noise_type": "phonetic_spelling",
+      "query": "How do arrow functions handle lexical this compared to regular functions?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 45
+    },
+    {
+      "canonical_id": "p8",
+      "noise_type": "spelling_errors",
+      "query": "Why is box-sizing border-box preferred over content-box in CSS layout?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 48
+    },
+    {
+      "canonical_id": "p8",
+      "noise_type": "missing_punctuation",
+      "query": "Why is box-sizing border-box preferred over content-box in CSS layout",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 128
+    },
+    {
+      "canonical_id": "p8",
+      "noise_type": "repeated_words",
+      "query": "Why is box-sizing border-box preferred over content-box in CSS layout?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 47
+    },
+    {
+      "canonical_id": "p8",
+      "noise_type": "capitalization_variation",
+      "query": "WHY is BOX-SIZING border-box PREFERRED over CONTENT-BOX in CSS layout?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 52
+    },
+    {
+      "canonical_id": "p8",
+      "noise_type": "keyboard_mistakes",
+      "query": "Why is box-sizing bordwr-box prwfwrrwd ovwr contwnt-box in CSS lsyou?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 127
+    },
+    {
+      "canonical_id": "p8",
+      "noise_type": "abbreviated_terminology",
+      "query": "Why is box-sizing border-box preferred over content-box in CSS layout?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 46
+    },
+    {
+      "canonical_id": "p8",
+      "noise_type": "phonetic_spelling",
+      "query": "Why is box-sizing border-box preferred over content-box in CSS layout?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 43
+    },
+    {
+      "canonical_id": "p9",
+      "noise_type": "spelling_errors",
+      "query": "How do you center an element vertically and horizontally using CSS Flexbox?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 52
+    },
+    {
+      "canonical_id": "p9",
+      "noise_type": "missing_punctuation",
+      "query": "How do you center an element vertically and horizontally using CSS Flexbox",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 121
+    },
+    {
+      "canonical_id": "p9",
+      "noise_type": "repeated_words",
+      "query": "How how do you center an element vertically and horizontally using CSS Flexbox?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 136
+    },
+    {
+      "canonical_id": "p9",
+      "noise_type": "capitalization_variation",
+      "query": "HOW do YOU center AN element VERTICALLY and HORIZONTALLY using CSS flexbox?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 49
+    },
+    {
+      "canonical_id": "p9",
+      "noise_type": "keyboard_mistakes",
+      "query": "How do you cwntwr sn wlwmwnt vwrticslly snd horizontslly using CSS Flwxbo?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 130
+    },
+    {
+      "canonical_id": "p9",
+      "noise_type": "abbreviated_terminology",
+      "query": "How do you center an element vertically and horizontally using CSS Flexbox?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 48
+    },
+    {
+      "canonical_id": "p9",
+      "noise_type": "phonetic_spelling",
+      "query": "How do you center an element vertically and horizontally using CSS Flexbox?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 53
+    },
+    {
+      "canonical_id": "p10",
+      "noise_type": "spelling_errors",
+      "query": "How do you define repeat and fractional fr units in CSS Grid template columns?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 49
+    },
+    {
+      "canonical_id": "p10",
+      "noise_type": "missing_punctuation",
+      "query": "How do you define repeat and fractional fr units in CSS Grid template columns",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 130
+    },
+    {
+      "canonical_id": "p10",
+      "noise_type": "repeated_words",
+      "query": "How how do you define repeat and fractional fr units in CSS Grid template columns?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 134
+    },
+    {
+      "canonical_id": "p10",
+      "noise_type": "capitalization_variation",
+      "query": "HOW do YOU define REPEAT and FRACTIONAL fr UNITS in CSS grid TEMPLATE columns?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 47
+    },
+    {
+      "canonical_id": "p10",
+      "noise_type": "keyboard_mistakes",
+      "query": "How do you dwfinw rwpwst snd frsctionsl fr units in CSS Grid twmplstw column?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 129
+    },
+    {
+      "canonical_id": "p10",
+      "noise_type": "abbreviated_terminology",
+      "query": "How do you define repeat and fractional fr units in CSS Grid template columns?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 48
+    },
+    {
+      "canonical_id": "p10",
+      "noise_type": "phonetic_spelling",
+      "query": "How do you define repeat and fractional fr units in CSS Grid template columns?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 50
+    },
+    {
+      "canonical_id": "p11",
+      "noise_type": "spelling_errors",
+      "query": "What role does Libuv thread pool play in Node.js asynchronous I/O execution?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 46
+    },
+    {
+      "canonical_id": "p11",
+      "noise_type": "missing_punctuation",
+      "query": "What role does Libuv thread pool play in Nodejs asynchronous I/O execution",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 127
+    },
+    {
+      "canonical_id": "p11",
+      "noise_type": "repeated_words",
+      "query": "What role does Libuv thread pool play in Node.js asynchronous I/O execution?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 47
+    },
+    {
+      "canonical_id": "p11",
+      "noise_type": "capitalization_variation",
+      "query": "WHAT role DOES libuv THREAD pool PLAY in NODE.JS asynchronous I/O execution?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 48
+    },
+    {
+      "canonical_id": "p11",
+      "noise_type": "keyboard_mistakes",
+      "query": "Whst rolw dows Libuv thrwsd pool plsy in Nodw.js ssynchronous I/O wxwcutio?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 128
+    },
+    {
+      "canonical_id": "p11",
+      "noise_type": "abbreviated_terminology",
+      "query": "What role does Libuv thread pool play in Node.js asynchronous I/O execution?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 45
+    },
+    {
+      "canonical_id": "p11",
+      "noise_type": "phonetic_spelling",
+      "query": "What role does Libuv thread pool play in Node.js asinkronus I/O execution?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 139
+    },
+    {
+      "canonical_id": "p12",
+      "noise_type": "spelling_errors",
+      "query": "How does midleware pass request context and call next() in Express.js?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 132
+    },
+    {
+      "canonical_id": "p12",
+      "noise_type": "missing_punctuation",
+      "query": "How does middleware pass request context and call next in Expressjs",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 130
+    },
+    {
+      "canonical_id": "p12",
+      "noise_type": "repeated_words",
+      "query": "How how does middleware pass request context and call next() in Express.js?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 130
+    },
+    {
+      "canonical_id": "p12",
+      "noise_type": "capitalization_variation",
+      "query": "HOW does MIDDLEWARE pass REQUEST context AND call NEXT() in EXPRESS.JS?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 45
+    },
+    {
+      "canonical_id": "p12",
+      "noise_type": "keyboard_mistakes",
+      "query": "How dows middlwwsrw psss rwquwst contwxt snd csll nwxt() in Exprwss.j?",
+      "rank": 0,
+      "hit1": 0,
+      "hit3": 0,
+      "mrr": 0,
+      "latency_ms": 129
+    },
+    {
+      "canonical_id": "p12",
+      "noise_type": "abbreviated_terminology",
+      "query": "How does middleware pass request context and call next() in Express.js?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 46
+    },
+    {
+      "canonical_id": "p12",
+      "noise_type": "phonetic_spelling",
+      "query": "How does middleware pass request context and call next() in Express.js?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 46
+    },
+    {
+      "canonical_id": "p13",
+      "noise_type": "spelling_errors",
+      "query": "How does JSON Web Token authentication verify user identity with bearer tokens?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 45
+    },
+    {
+      "canonical_id": "p13",
+      "noise_type": "missing_punctuation",
+      "query": "How does JSON Web Token authentication verify user identity with bearer tokens",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 126
+    },
+    {
+      "canonical_id": "p13",
+      "noise_type": "repeated_words",
+      "query": "How how does JSON Web Token authentication verify user identity with bearer tokens?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 139
+    },
+    {
+      "canonical_id": "p13",
+      "noise_type": "capitalization_variation",
+      "query": "HOW does JSON web TOKEN authentication VERIFY user IDENTITY with BEARER tokens?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 52
+    },
+    {
+      "canonical_id": "p13",
+      "noise_type": "keyboard_mistakes",
+      "query": "How dows JSON Wwb Tokwn suthwnticstion vwrify uswr idwntity with bwsrwr tokwn?",
+      "rank": 4,
+      "hit1": 0,
+      "hit3": 0,
+      "mrr": 0.25,
+      "latency_ms": 129
+    },
+    {
+      "canonical_id": "p13",
+      "noise_type": "abbreviated_terminology",
+      "query": "How does JSON Web Token authentication verify user identity with bearer tokens?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 45
+    },
+    {
+      "canonical_id": "p13",
+      "noise_type": "phonetic_spelling",
+      "query": "How does JSON Web tokin authentication verify user identity with bearer tokens?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 119
+    },
+    {
+      "canonical_id": "p14",
+      "noise_type": "spelling_errors",
+      "query": "What is the difference between Second Normal Form (2NF) and Third Normal Form (3NF)?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 181
+    },
+    {
+      "canonical_id": "p14",
+      "noise_type": "missing_punctuation",
+      "query": "What is the difference between Second Normal Form 2NF and Third Normal Form 3NF",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 252
+    },
+    {
+      "canonical_id": "p14",
+      "noise_type": "repeated_words",
+      "query": "What what is the difference between Second Normal Form (2NF) and Third Normal Form (3NF)?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 248
+    },
+    {
+      "canonical_id": "p14",
+      "noise_type": "capitalization_variation",
+      "query": "WHAT is THE difference BETWEEN second NORMAL form (2NF) and THIRD normal FORM (3nf)?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 192
+    },
+    {
+      "canonical_id": "p14",
+      "noise_type": "keyboard_mistakes",
+      "query": "Whst is thw diffwrwncw bwtwwwn Swcond Normsl Form (2NF) snd Third Normsl Form (3NF?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 143
+    },
+    {
+      "canonical_id": "p14",
+      "noise_type": "abbreviated_terminology",
+      "query": "What is the difference between Second Normal Form (2NF) and Third Normal Form (3NF)?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 169
+    },
+    {
+      "canonical_id": "p14",
+      "noise_type": "phonetic_spelling",
+      "query": "What is the difference between Second Normal Form (2NF) and Third Normal Form (3NF)?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 183
+    },
+    {
+      "canonical_id": "p15",
+      "noise_type": "spelling_errors",
+      "query": "How do BEGIN, COMMIT, and ROLLBACK guarantee ACID transactions in Postgress?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 134
+    },
+    {
+      "canonical_id": "p15",
+      "noise_type": "missing_punctuation",
+      "query": "How do BEGIN COMMIT and ROLLBACK guarantee ACID transactions in PostgreSQL",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 128
+    },
+    {
+      "canonical_id": "p15",
+      "noise_type": "repeated_words",
+      "query": "How how do BEGIN, COMMIT, and ROLLBACK guarantee ACID transactions in PostgreSQL?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 129
+    },
+    {
+      "canonical_id": "p15",
+      "noise_type": "capitalization_variation",
+      "query": "HOW do BEGIN, commit, AND rollback GUARANTEE acid TRANSACTIONS in POSTGRESQL?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 46
+    },
+    {
+      "canonical_id": "p15",
+      "noise_type": "keyboard_mistakes",
+      "query": "How do BEGIN, COMMIT, snd ROLLBACK gusrsntww ACID trsnssctions in PostgrwSQ?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 119
+    },
+    {
+      "canonical_id": "p15",
+      "noise_type": "abbreviated_terminology",
+      "query": "How do BEGIN, COMMIT, and ROLLBACK guarantee ACID transactions in PostgreSQL?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 45
+    },
+    {
+      "canonical_id": "p15",
+      "noise_type": "phonetic_spelling",
+      "query": "How do BEGIN, COMMIT, and ROLLBACK guarantee ACID transactions in PostgreSQL?",
+      "rank": 1,
+      "hit1": 1,
+      "hit3": 1,
+      "mrr": 1,
+      "latency_ms": 47
+    }
+  ]
+}

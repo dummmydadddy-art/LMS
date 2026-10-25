@@ -1,0 +1,1220 @@
+{
+  "summary": {
+    "total_queries": 60,
+    "mean_module_coverage_at_3": 0.9778,
+    "mean_module_coverage_at_5": 1,
+    "mean_hop_completeness": 1,
+    "grounded_hop_ratio": {
+      "p": 1,
+      "lower": 0.9802,
+      "upper": 1
+    },
+    "by_hop_count": {
+      "2_modules": {
+        "count": 20,
+        "coverage_at_3": 1,
+        "coverage_at_5": 1,
+        "completeness": 1
+      },
+      "3_modules": {
+        "count": 20,
+        "coverage_at_3": 0.9333,
+        "coverage_at_5": 1,
+        "completeness": 1
+      },
+      "4_modules": {
+        "count": 10,
+        "coverage_at_3": 1,
+        "coverage_at_5": 1,
+        "completeness": 1
+      },
+      "5_modules": {
+        "count": 10,
+        "coverage_at_3": 1,
+        "coverage_at_5": 1,
+        "completeness": 1
+      }
+    }
+  },
+  "details": [
+    {
+      "id": "exp14_s6_2mod_01",
+      "hop_count": 2,
+      "query": "How does React useState communicate state changes to an Express REST API endpoint?",
+      "expected_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 222
+    },
+    {
+      "id": "exp14_s6_2mod_02",
+      "hop_count": 2,
+      "query": "How does an Express backend verify JWT tokens and pass user authentication to React Context?",
+      "expected_modules": [
+        "Node.js & Express REST API Notes",
+        "React Hooks Tutorial"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 138
+    },
+    {
+      "id": "exp14_s6_2mod_03",
+      "hop_count": 2,
+      "query": "How does Express middleware query a PostgreSQL database using connection pools?",
+      "expected_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 136
+    },
+    {
+      "id": "exp14_s6_2mod_04",
+      "hop_count": 2,
+      "query": "How do PostgreSQL foreign keys enforce referential integrity for Express REST models?",
+      "expected_modules": [
+        "PostgreSQL Database Design",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 139
+    },
+    {
+      "id": "exp14_s6_2mod_05",
+      "hop_count": 2,
+      "query": "How do JavaScript Promises and async/await handle fetch requests to an Express server?",
+      "expected_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 139
+    },
+    {
+      "id": "exp14_s6_2mod_06",
+      "hop_count": 2,
+      "query": "How does the Node.js Libuv event loop coordinate with JavaScript microtasks?",
+      "expected_modules": [
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 139
+    },
+    {
+      "id": "exp14_s6_2mod_07",
+      "hop_count": 2,
+      "query": "How does CSS Box Model border-box styling affect components rendered by React?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 199
+    },
+    {
+      "id": "exp14_s6_2mod_08",
+      "hop_count": 2,
+      "query": "How do Flexbox layout containers organize dynamically mapped React component cards?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 192
+    },
+    {
+      "id": "exp14_s6_2mod_09",
+      "hop_count": 2,
+      "query": "How does JavaScript ES6 object destructuring unpack props inside React functional components?",
+      "expected_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 146
+    },
+    {
+      "id": "exp14_s6_2mod_10",
+      "hop_count": 2,
+      "query": "How does React useEffect manage asynchronous JavaScript Promises for data fetching?",
+      "expected_modules": [
+        "React Hooks Tutorial",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 137
+    },
+    {
+      "id": "exp14_s6_2mod_11",
+      "hop_count": 2,
+      "query": "How does an Express backend return HTML5 semantic tags versus JSON API responses?",
+      "expected_modules": [
+        "Node.js & Express REST API Notes",
+        "HTML & CSS Fundamentals"
+      ],
+      "retrieved_modules": [
+        "HTML & CSS Fundamentals",
+        "Node.js & Express REST API Notes"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 260
+    },
+    {
+      "id": "exp14_s6_2mod_12",
+      "hop_count": 2,
+      "query": "How do CSS Grid layouts display relational database rows fetched via REST APIs?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 275
+    },
+    {
+      "id": "exp14_s6_2mod_13",
+      "hop_count": 2,
+      "query": "How do JavaScript closures maintain persistent state compared to PostgreSQL tables?",
+      "expected_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 142
+    },
+    {
+      "id": "exp14_s6_2mod_14",
+      "hop_count": 2,
+      "query": "How does PostgreSQL B-Tree indexing compare to JavaScript array searching algorithms?",
+      "expected_modules": [
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "retrieved_modules": [
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 132
+    },
+    {
+      "id": "exp14_s6_2mod_15",
+      "hop_count": 2,
+      "query": "How do React Hooks adhere to rules when consuming asynchronous JavaScript fetch calls?",
+      "expected_modules": [
+        "React Hooks Tutorial",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 146
+    },
+    {
+      "id": "exp14_s6_2mod_16",
+      "hop_count": 2,
+      "query": "How does Express route error handling middleware map PostgreSQL transaction errors?",
+      "expected_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 133
+    },
+    {
+      "id": "exp14_s6_2mod_17",
+      "hop_count": 2,
+      "query": "How does React useContext prevent prop drilling for user data fetched from Express?",
+      "expected_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 144
+    },
+    {
+      "id": "exp14_s6_2mod_18",
+      "hop_count": 2,
+      "query": "How do ACID transactions in PostgreSQL guarantee consistency for Express e-commerce checkout?",
+      "expected_modules": [
+        "PostgreSQL Database Design",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 136
+    },
+    {
+      "id": "exp14_s6_2mod_19",
+      "hop_count": 2,
+      "query": "How does CSS Flexbox center a modal dialog controlled by React useState toggle?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 276
+    },
+    {
+      "id": "exp14_s6_2mod_20",
+      "hop_count": 2,
+      "query": "How does JavaScript lexical this in arrow functions interact with Node.js event emitters?",
+      "expected_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 135
+    },
+    {
+      "id": "exp14_s6_3mod_01",
+      "hop_count": 3,
+      "query": "How does a user login in React submit credentials to Express JWT middleware and verify password hashes in PostgreSQL?",
+      "expected_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 200
+    },
+    {
+      "id": "exp14_s6_3mod_11",
+      "hop_count": 3,
+      "query": "Detailed architectural explanation: How does a user login in React submit credentials to Express JWT middleware and verify password hashes in PostgreSQL?",
+      "expected_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 210
+    },
+    {
+      "id": "exp14_s6_3mod_02",
+      "hop_count": 3,
+      "query": "Explain the full flow where React useEffect dispatches an async JavaScript fetch to an Express REST API querying PostgreSQL.",
+      "expected_modules": [
+        "React Hooks Tutorial",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "cov3": 0.6667,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 143
+    },
+    {
+      "id": "exp14_s6_3mod_12",
+      "hop_count": 3,
+      "query": "Detailed architectural explanation: Explain the full flow where React useEffect dispatches an async JavaScript fetch to an Express REST API querying PostgreSQL.",
+      "expected_modules": [
+        "React Hooks Tutorial",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "cov3": 0.6667,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 153
+    },
+    {
+      "id": "exp14_s6_3mod_03",
+      "hop_count": 3,
+      "query": "How does an Express API query normalized 3NF PostgreSQL tables and return data to React useContext global state?",
+      "expected_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "React Hooks Tutorial"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 141
+    },
+    {
+      "id": "exp14_s6_3mod_13",
+      "hop_count": 3,
+      "query": "Detailed architectural explanation: How does an Express API query normalized 3NF PostgreSQL tables and return data to React useContext global state?",
+      "expected_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "React Hooks Tutorial"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 138
+    },
+    {
+      "id": "exp14_s6_3mod_04",
+      "hop_count": 3,
+      "query": "How do HTML5 semantic forms capture input, pass through React useState, and post to an Express REST backend?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 272
+    },
+    {
+      "id": "exp14_s6_3mod_14",
+      "hop_count": 3,
+      "query": "Detailed architectural explanation: How do HTML5 semantic forms capture input, pass through React useState, and post to an Express REST backend?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 281
+    },
+    {
+      "id": "exp14_s6_3mod_05",
+      "hop_count": 3,
+      "query": "How do JavaScript Promises in Node.js handle ACID transactions with BEGIN and COMMIT in PostgreSQL?",
+      "expected_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 138
+    },
+    {
+      "id": "exp14_s6_3mod_15",
+      "hop_count": 3,
+      "query": "Detailed architectural explanation: How do JavaScript Promises in Node.js handle ACID transactions with BEGIN and COMMIT in PostgreSQL?",
+      "expected_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 139
+    },
+    {
+      "id": "exp14_s6_3mod_06",
+      "hop_count": 3,
+      "query": "How does CSS Grid render a product catalog whose state is managed by React useReducer and fetched from Express?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 198
+    },
+    {
+      "id": "exp14_s6_3mod_16",
+      "hop_count": 3,
+      "query": "Detailed architectural explanation: How does CSS Grid render a product catalog whose state is managed by React useReducer and fetched from Express?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 194
+    },
+    {
+      "id": "exp14_s6_3mod_07",
+      "hop_count": 3,
+      "query": "How do JavaScript arrow functions inside React event handlers post data through Express into PostgreSQL foreign key tables?",
+      "expected_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "cov3": 0.6667,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 152
+    },
+    {
+      "id": "exp14_s6_3mod_17",
+      "hop_count": 3,
+      "query": "Detailed architectural explanation: How do JavaScript arrow functions inside React event handlers post data through Express into PostgreSQL foreign key tables?",
+      "expected_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "cov3": 0.6667,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 170
+    },
+    {
+      "id": "exp14_s6_3mod_08",
+      "hop_count": 3,
+      "query": "How does Express JWT authentication middleware protect routes that perform ACID transactions in PostgreSQL for React clients?",
+      "expected_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "React Hooks Tutorial"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 142
+    },
+    {
+      "id": "exp14_s6_3mod_18",
+      "hop_count": 3,
+      "query": "Detailed architectural explanation: How does Express JWT authentication middleware protect routes that perform ACID transactions in PostgreSQL for React clients?",
+      "expected_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "React Hooks Tutorial"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 131
+    },
+    {
+      "id": "exp14_s6_3mod_09",
+      "hop_count": 3,
+      "query": "How does React useRef capture form elements styled with CSS Box Model border-box and send them to Node.js?",
+      "expected_modules": [
+        "React Hooks Tutorial",
+        "HTML & CSS Fundamentals",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 211
+    },
+    {
+      "id": "exp14_s6_3mod_19",
+      "hop_count": 3,
+      "query": "Detailed architectural explanation: How does React useRef capture form elements styled with CSS Box Model border-box and send them to Node.js?",
+      "expected_modules": [
+        "React Hooks Tutorial",
+        "HTML & CSS Fundamentals",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 187
+    },
+    {
+      "id": "exp14_s6_3mod_10",
+      "hop_count": 3,
+      "query": "How does the Node.js event loop handle asynchronous JavaScript database queries using PostgreSQL B-tree indexes?",
+      "expected_modules": [
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 121
+    },
+    {
+      "id": "exp14_s6_3mod_20",
+      "hop_count": 3,
+      "query": "Detailed architectural explanation: How does the Node.js event loop handle asynchronous JavaScript database queries using PostgreSQL B-tree indexes?",
+      "expected_modules": [
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 116
+    },
+    {
+      "id": "exp14_s6_4mod_01",
+      "hop_count": 4,
+      "query": "Explain the complete pipeline: HTML5 semantic form input styled with Flexbox, managed by React useState, transmitted via asynchronous JavaScript fetch to an Express REST server.",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 220
+    },
+    {
+      "id": "exp14_s6_4mod_06",
+      "hop_count": 4,
+      "query": "Step-by-step cross-module breakdown: Explain the complete pipeline: HTML5 semantic form input styled with Flexbox, managed by React useState, transmitted via asynchronous JavaScript fetch to an Express REST server.",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial",
+        "JavaScript ES6+ Deep Dive",
+        "Node.js & Express REST API Notes"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 237
+    },
+    {
+      "id": "exp14_s6_4mod_02",
+      "hop_count": 4,
+      "query": "How does React useContext distribute authentication tokens across a component tree styled with CSS Box Model and validated by Express JWT middleware querying PostgreSQL?",
+      "expected_modules": [
+        "React Hooks Tutorial",
+        "HTML & CSS Fundamentals",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 216
+    },
+    {
+      "id": "exp14_s6_4mod_07",
+      "hop_count": 4,
+      "query": "Step-by-step cross-module breakdown: How does React useContext distribute authentication tokens across a component tree styled with CSS Box Model and validated by Express JWT middleware querying PostgreSQL?",
+      "expected_modules": [
+        "React Hooks Tutorial",
+        "HTML & CSS Fundamentals",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 219
+    },
+    {
+      "id": "exp14_s6_4mod_03",
+      "hop_count": 4,
+      "query": "Describe how JavaScript Promises in React useEffect call Express endpoints to execute ACID transactions on normalized PostgreSQL databases.",
+      "expected_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 130
+    },
+    {
+      "id": "exp14_s6_4mod_08",
+      "hop_count": 4,
+      "query": "Step-by-step cross-module breakdown: Describe how JavaScript Promises in React useEffect call Express endpoints to execute ACID transactions on normalized PostgreSQL databases.",
+      "expected_modules": [
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 122
+    },
+    {
+      "id": "exp14_s6_4mod_04",
+      "hop_count": 4,
+      "query": "How do CSS Grid layouts dynamically render student profiles retrieved by Express REST APIs from PostgreSQL tables using JavaScript destructuring?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 213
+    },
+    {
+      "id": "exp14_s6_4mod_09",
+      "hop_count": 4,
+      "query": "Step-by-step cross-module breakdown: How do CSS Grid layouts dynamically render student profiles retrieved by Express REST APIs from PostgreSQL tables using JavaScript destructuring?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive"
+      ],
+      "retrieved_modules": [
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 172
+    },
+    {
+      "id": "exp14_s6_4mod_05",
+      "hop_count": 4,
+      "query": "Trace a payment checkout: React form styled with Flexbox calls Express API via async/await to execute a BEGIN COMMIT transaction in PostgreSQL.",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 218
+    },
+    {
+      "id": "exp14_s6_4mod_10",
+      "hop_count": 4,
+      "query": "Step-by-step cross-module breakdown: Trace a payment checkout: React form styled with Flexbox calls Express API via async/await to execute a BEGIN COMMIT transaction in PostgreSQL.",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 224
+    },
+    {
+      "id": "exp14_s6_5mod_01",
+      "hop_count": 5,
+      "query": "Provide the complete full-stack architecture tracing a student submission: HTML5 semantic layout with CSS Grid, JavaScript ES6 async/await dispatch, React state reconciliation, Express JWT middleware verification, and PostgreSQL ACID transaction insertion into 3NF normalized tables.",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 280
+    },
+    {
+      "id": "exp14_s6_5mod_02",
+      "hop_count": 5,
+      "query": "How does an enterprise web application integrate CSS Box Model styling, ES6 destructuring, React useContext state management, Express REST route handling, and PostgreSQL B-tree indexing?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 221
+    },
+    {
+      "id": "exp14_s6_5mod_03",
+      "hop_count": 5,
+      "query": "Variant 3: Provide the complete full-stack architecture tracing a student submission: HTML5 semantic layout with CSS Grid, JavaScript ES6 async/await dispatch, React state reconciliation, Express JWT middleware verification, and PostgreSQL ACID transaction insertion into 3NF normalized tables.",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 289
+    },
+    {
+      "id": "exp14_s6_5mod_04",
+      "hop_count": 5,
+      "query": "Variant 4: How does an enterprise web application integrate CSS Box Model styling, ES6 destructuring, React useContext state management, Express REST route handling, and PostgreSQL B-tree indexing?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 180
+    },
+    {
+      "id": "exp14_s6_5mod_05",
+      "hop_count": 5,
+      "query": "Variant 5: Provide the complete full-stack architecture tracing a student submission: HTML5 semantic layout with CSS Grid, JavaScript ES6 async/await dispatch, React state reconciliation, Express JWT middleware verification, and PostgreSQL ACID transaction insertion into 3NF normalized tables.",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 234
+    },
+    {
+      "id": "exp14_s6_5mod_06",
+      "hop_count": 5,
+      "query": "Variant 6: How does an enterprise web application integrate CSS Box Model styling, ES6 destructuring, React useContext state management, Express REST route handling, and PostgreSQL B-tree indexing?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 188
+    },
+    {
+      "id": "exp14_s6_5mod_07",
+      "hop_count": 5,
+      "query": "Variant 7: Provide the complete full-stack architecture tracing a student submission: HTML5 semantic layout with CSS Grid, JavaScript ES6 async/await dispatch, React state reconciliation, Express JWT middleware verification, and PostgreSQL ACID transaction insertion into 3NF normalized tables.",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 175
+    },
+    {
+      "id": "exp14_s6_5mod_08",
+      "hop_count": 5,
+      "query": "Variant 8: How does an enterprise web application integrate CSS Box Model styling, ES6 destructuring, React useContext state management, Express REST route handling, and PostgreSQL B-tree indexing?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 193
+    },
+    {
+      "id": "exp14_s6_5mod_09",
+      "hop_count": 5,
+      "query": "Variant 9: Provide the complete full-stack architecture tracing a student submission: HTML5 semantic layout with CSS Grid, JavaScript ES6 async/await dispatch, React state reconciliation, Express JWT middleware verification, and PostgreSQL ACID transaction insertion into 3NF normalized tables.",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 158
+    },
+    {
+      "id": "exp14_s6_5mod_10",
+      "hop_count": 5,
+      "query": "Variant 10: How does an enterprise web application integrate CSS Box Model styling, ES6 destructuring, React useContext state management, Express REST route handling, and PostgreSQL B-tree indexing?",
+      "expected_modules": [
+        "HTML & CSS Fundamentals",
+        "JavaScript ES6+ Deep Dive",
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design"
+      ],
+      "retrieved_modules": [
+        "React Hooks Tutorial",
+        "Node.js & Express REST API Notes",
+        "PostgreSQL Database Design",
+        "JavaScript ES6+ Deep Dive",
+        "HTML & CSS Fundamentals"
+      ],
+      "cov3": 1,
+      "cov5": 1,
+      "completeness": 1,
+      "latency_ms": 186
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+mechanism_id,mechanism_name,line_range,rule_count,scope_type,hardcoded_entities,risk_of_overfitting,can_generalize_to_new_curriculum
+MECH_A,Semantic Opposites Dictionary,L25-L349,138,CURRICULUM,"138 domain antonym pairs across Flexbox, CSS Grid, Box Model, Scope, Mutability, Event Loop, REST, Promises, Transactions, ACID, JWT, Normalization, React Hooks",HIGH,NO
+MECH_B,Targeted Predicate & Negation Keywords,L629-L642,23,LEXICAL/CURRICULUM,"23 action predicates (reassign, mutate, hoist, constructors, arguments, clone, cache, xml, duplicate, render, re-render, batch, cleanup, encrypt, speed, drilling, unmount, transitive, anomalies)",HIGH,PARTIALLY
+MECH_C,Out-of-Curriculum Technology Regex,L456-L467,15,CURRICULUM,"15 external technologies (sidekiq, ruby, redis, flutter, widget tree, render tree, dart, django, python, rust, send and sync, golang, c#, asp.net, spring boot, laravel)",CRITICAL,NO
+MECH_D,Text Normalization & Suffix Stemmer,L351-L368,14,STRUCTURAL,"12 morphological English suffixes (ing, tion, tions, ed, es, s, ly, ment, ments, able, ive, al) + 2 punctuation sanitizers",LOW,YES
+MECH_E,Assertion Boundary & Clause Isolators,L370-L391; L508-L510,4,STRUCTURAL,"Discourse markers: instead of, rather than, since/while/although, and therefore/thus, so/then why",LOW,YES
+MECH_F,Comparative Query & Co-occurrence Guard,L591-L602,2,STRUCTURAL/CURRICULUM,"Comparative triggers (difference between, compare, comparison, versus, vs) + curriculum co-occurrence guard (row/column)",MEDIUM,PARTIALLY
+MECH_G,Technical Syntax Checks & Subject Disambiguation,L441-L453; L530-L575,58,CURRICULUM,"5 invalid operators (===!, !==!, <=>, ?->, <-) + 42 focal technical entities + 15 conflicting subject bullet exclusion rules",HIGH,NO

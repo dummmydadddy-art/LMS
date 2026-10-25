@@ -1,0 +1,62 @@
+{
+  "worker_crash_supervision": {
+    "scenario": "WORKER_CRASH_SUPERVISION",
+    "success": true,
+    "status": "AUTO_RECOVERED",
+    "latency_ms": 119
+  },
+  "malformed_payload_handling": [
+    {
+      "name": "Invalid UTF-8 control bytes",
+      "statusCode": 400,
+      "handled": true
+    },
+    {
+      "name": "Truncated JSON",
+      "statusCode": 400,
+      "handled": true
+    },
+    {
+      "name": "Nested array depth overflow",
+      "statusCode": 200,
+      "handled": true
+    },
+    {
+      "name": "Oversized 5MB Query",
+      "statusCode": 200,
+      "handled": true
+    }
+  ],
+  "invalid_route_handling": [
+    {
+      "route": "/api/rag/nonexistent_endpoint",
+      "statusCode": 404,
+      "safe": true
+    },
+    {
+      "route": "/admin/secret_dump",
+      "statusCode": 404,
+      "safe": true
+    },
+    {
+      "route": "/api/rag/search/../../index.php",
+      "statusCode": 404,
+      "safe": true
+    },
+    {
+      "route": "/null",
+      "statusCode": 404,
+      "safe": true
+    },
+    {
+      "route": "/api/rag/ask?stream=invalid",
+      "statusCode": 404,
+      "safe": true
+    }
+  ],
+  "findings": {
+    "unhandled_crashes": 0,
+    "resource_leak_risk": "LOW (Gateway cleans socket streams on error)",
+    "dos_resilience": "Moderate (Oversized 5MB payloads buffered in Node memory before PHP forwarding)"
+  }
+}

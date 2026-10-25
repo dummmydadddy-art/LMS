@@ -1,0 +1,26 @@
+{
+  "experiment_tag": "EXP-0021-CERTIFICATION-2026-09-09",
+  "timestamp": "2026-09-09T14:07:40.966Z",
+  "corpus_lifecycle": {
+    "add_document_propagated_workers": "0 / 8 (0.0%)",
+    "ghost_retrieval_workers": "0 / 8 (0.0%)",
+    "stale_citations_detected": false,
+    "status": "FAILED"
+  },
+  "observability_audit": {
+    "has_request_id": true,
+    "has_worker_id_or_port": true,
+    "has_corpus_version": true,
+    "has_retrieval_source": true,
+    "has_latency_metrics": false,
+    "private_data_scrubbed": true,
+    "status": "PASSED"
+  },
+  "rollback_test": {
+    "simulated_fault": "Configuration mutation in rag_flags.json",
+    "rollback_procedure": "Atomic config restoration & hot reload",
+    "rollback_duration_ms": 0.71,
+    "cluster_health_post_rollback": "HEALTHY",
+    "status": "PASSED"
+  }
+}

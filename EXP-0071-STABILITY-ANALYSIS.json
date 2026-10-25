@@ -1,0 +1,51 @@
+{
+  "experiment_id": "EXP-0071",
+  "model_architecture": "ExtraTreesClassifier(n_estimators=150, max_depth=8)",
+  "seeds_evaluated": [
+    42,
+    123,
+    456
+  ],
+  "seed_metrics": {
+    "42": {
+      "accuracy": 91.5,
+      "correct": 366,
+      "c0_calls": 57,
+      "llm_reduction_pct": 72.33,
+      "far": 5.33,
+      "frr": 12.67
+    },
+    "123": {
+      "accuracy": 91.25,
+      "correct": 365,
+      "c0_calls": 60,
+      "llm_reduction_pct": 70.87,
+      "far": 6.0,
+      "frr": 12.67
+    },
+    "456": {
+      "accuracy": 91.5,
+      "correct": 366,
+      "c0_calls": 58,
+      "llm_reduction_pct": 71.84,
+      "far": 5.33,
+      "frr": 12.67
+    }
+  },
+  "mean_accuracy": 91.42,
+  "std_dev_accuracy": 0.12,
+  "min_accuracy": 91.25,
+  "max_accuracy": 91.5,
+  "pairwise_agreements": {
+    "seed42_vs_seed123": 99.25,
+    "seed42_vs_seed456": 99.5,
+    "seed123_vs_seed456": 99.75
+  },
+  "cohen_kappas": {
+    "seed42_vs_seed123": 0.9886,
+    "seed42_vs_seed456": 0.9924,
+    "seed123_vs_seed456": 0.9962
+  },
+  "gate_h_threshold": 1.0,
+  "gate_h_status": "PASS"
+}

@@ -1,0 +1,3502 @@
+[
+  {
+    "id": "EXP33-SUP-0001",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does flex-direction: column establish the vertical axis as the main axis?"
+  },
+  {
+    "id": "EXP33-SUP-0002",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Can align-items: stretch expand flex items across the cross axis if their cross size is auto?"
+  },
+  {
+    "id": "EXP33-SUP-0003",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does box-sizing: border-box incorporate padding and border directly into the declared width?"
+  },
+  {
+    "id": "EXP33-SUP-0004",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Can display: flex be applied to an element to turn its immediate children into flex items?"
+  },
+  {
+    "id": "EXP33-SUP-0005",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does justify-content: space-between distribute remaining space evenly between flex children?"
+  },
+  {
+    "id": "EXP33-SUP-0006",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does flex-wrap: wrap permit flex items to break onto multiple lines along the cross axis?"
+  },
+  {
+    "id": "EXP33-SUP-0007",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Can align-self override the parent container align-items value on an individual flex item?"
+  },
+  {
+    "id": "EXP33-SUP-0008",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does flex-grow determine the proportion of available free space allocated to a flex item?"
+  },
+  {
+    "id": "EXP33-SUP-0009",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does position: absolute remove the targeted element from the normal document layout flow?"
+  },
+  {
+    "id": "EXP33-SUP-0010",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does position: relative keep the element in the normal flow while allowing offset via top and left?"
+  },
+  {
+    "id": "EXP33-SUP-0011",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does CSS specificity rank ID selectors higher than class selectors?"
+  },
+  {
+    "id": "EXP33-SUP-0012",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Can z-index specify the stacking order of positioned elements along the z-axis?"
+  },
+  {
+    "id": "EXP33-SUP-0013",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does the semantic nav element designate a section containing major navigational links?"
+  },
+  {
+    "id": "EXP33-SUP-0014",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does the semantic article tag represent a self-contained composition intended for independent distribution?"
+  },
+  {
+    "id": "EXP33-SUP-0015",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Can display: grid establish a two-dimensional layout system with rows and columns?"
+  },
+  {
+    "id": "EXP33-SUP-0016",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does grid-template-columns define the column track sizing of a grid container?"
+  },
+  {
+    "id": "EXP33-SUP-0017",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does gap define the gutters between grid rows and columns?"
+  },
+  {
+    "id": "EXP33-SUP-0018",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Can CSS media queries apply conditional styles according to the viewport width?"
+  },
+  {
+    "id": "EXP33-SUP-0019",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does rem unit calculate font size relative to the root html element?"
+  },
+  {
+    "id": "EXP33-SUP-0020",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does em unit compute dimensions relative to the font size of the immediate parent?"
+  },
+  {
+    "id": "EXP33-SUP-0021",
+    "module": "HTML_CSS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does opacity: 0 conceal an element visually while leaving it interactive in the document flow?"
+  },
+  {
+    "id": "EXP33-SUP-0022",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does const prevent the identifier from being rebound to a different memory address?"
+  },
+  {
+    "id": "EXP33-SUP-0023",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does let declare block-scoped variables that cannot be accessed before initialization?"
+  },
+  {
+    "id": "EXP33-SUP-0024",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does accessing a let variable within its temporal dead zone throw a ReferenceError?"
+  },
+  {
+    "id": "EXP33-SUP-0025",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Do arrow functions inherit their this binding lexically from the enclosing lexical scope?"
+  },
+  {
+    "id": "EXP33-SUP-0026",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Do arrow functions lack their own arguments object binding?"
+  },
+  {
+    "id": "EXP33-SUP-0027",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does a JavaScript closure retain access to variables in its outer lexical scope after that scope returns?"
+  },
+  {
+    "id": "EXP33-SUP-0028",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Promise.all reject immediately when any of the input promises rejects?"
+  },
+  {
+    "id": "EXP33-SUP-0029",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Promise.race resolve or reject as soon as the first promise settles?"
+  },
+  {
+    "id": "EXP33-SUP-0030",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does async keyword cause a function to return a Promise implicitly?"
+  },
+  {
+    "id": "EXP33-SUP-0031",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does await pause the execution of an async function until the awaited promise fulfills?"
+  },
+  {
+    "id": "EXP33-SUP-0032",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Are microtasks processed before the next macrotask in the JavaScript event loop?"
+  },
+  {
+    "id": "EXP33-SUP-0033",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Array.prototype.map return a new array without mutating the source array?"
+  },
+  {
+    "id": "EXP33-SUP-0034",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Array.prototype.filter construct a shallow copy array containing elements passing the predicate?"
+  },
+  {
+    "id": "EXP33-SUP-0035",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Array.prototype.reduce iterate over an array to accumulate a single result value?"
+  },
+  {
+    "id": "EXP33-SUP-0036",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Object.freeze make an object shallowly immutable?"
+  },
+  {
+    "id": "EXP33-SUP-0037",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does the spread operator copy enumerable own properties into a fresh object?"
+  },
+  {
+    "id": "EXP33-SUP-0038",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does array destructuring unpack elements into variables based on their array index position?"
+  },
+  {
+    "id": "EXP33-SUP-0039",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does typeof null return 'object' due to legacy JavaScript representation?"
+  },
+  {
+    "id": "EXP33-SUP-0040",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does strict equality === compare values without performing implicit type coercion?"
+  },
+  {
+    "id": "EXP33-SUP-0041",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Array.prototype.push append one or more elements to the end of an array in place?"
+  },
+  {
+    "id": "EXP33-SUP-0042",
+    "module": "JAVASCRIPT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does JSON.parse deserialize a valid JSON string into a JavaScript value?"
+  },
+  {
+    "id": "EXP33-SUP-0043",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does useState return a stateful value and an updater function to trigger re-renders?"
+  },
+  {
+    "id": "EXP33-SUP-0044",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does useEffect run its cleanup function before running the effect on subsequent renders?"
+  },
+  {
+    "id": "EXP33-SUP-0045",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does passing an empty dependency array to useEffect cause the effect to run only once after mounting?"
+  },
+  {
+    "id": "EXP33-SUP-0046",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does useRef return a mutable ref object whose .current property persists across renders?"
+  },
+  {
+    "id": "EXP33-SUP-0047",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does mutating the .current property of a ref avoid triggering a component re-render?"
+  },
+  {
+    "id": "EXP33-SUP-0048",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does useMemo cache the calculated result of a function across re-renders until dependencies change?"
+  },
+  {
+    "id": "EXP33-SUP-0049",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does useCallback return a memoized callback function instance across renders until dependencies change?"
+  },
+  {
+    "id": "EXP33-SUP-0050",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does useContext allow a component to subscribe to React context values without prop drilling?"
+  },
+  {
+    "id": "EXP33-SUP-0051",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Must React hooks be called only at the top level of function components or custom hooks?"
+  },
+  {
+    "id": "EXP33-SUP-0052",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does React batch multiple state updates inside event handlers to optimize rendering performance?"
+  },
+  {
+    "id": "EXP33-SUP-0053",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does a functional component re-render whenever its parent component re-renders by default?"
+  },
+  {
+    "id": "EXP33-SUP-0054",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does React.memo skip re-rendering a component if its incoming props have not changed?"
+  },
+  {
+    "id": "EXP33-SUP-0055",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does the key prop assist React reconciliation in identifying which list items have changed?"
+  },
+  {
+    "id": "EXP33-SUP-0056",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Should state in React be treated as immutable when updating complex objects or arrays?"
+  },
+  {
+    "id": "EXP33-SUP-0057",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does JSX require adjacent sibling elements to be wrapped in an enclosing parent tag or fragment?"
+  },
+  {
+    "id": "EXP33-SUP-0058",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does useReducer accept a reducer function and initial state to handle complex state transitions?"
+  },
+  {
+    "id": "EXP33-SUP-0059",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does useLayoutEffect fire synchronously after all DOM mutations but before paint?"
+  },
+  {
+    "id": "EXP33-SUP-0060",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Can custom hooks share stateful logic between components without sharing state instances?"
+  },
+  {
+    "id": "EXP33-SUP-0061",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does uncontrolled component rely on the DOM itself to manage form field state via refs?"
+  },
+  {
+    "id": "EXP33-SUP-0062",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does controlled component have its input value dictated directly by React state?"
+  },
+  {
+    "id": "EXP33-SUP-0063",
+    "module": "REACT",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does React virtual DOM compare previous and next virtual representations to minimize real DOM mutations?"
+  },
+  {
+    "id": "EXP33-SUP-0064",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Node.js execute non-blocking asynchronous I/O operations on an event-driven architecture?"
+  },
+  {
+    "id": "EXP33-SUP-0065",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Express middleware function receive request, response, and next callback arguments?"
+  },
+  {
+    "id": "EXP33-SUP-0066",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does calling next() in Express pass execution to the subsequent middleware handler in the pipeline?"
+  },
+  {
+    "id": "EXP33-SUP-0067",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Express error-handling middleware require exactly four arguments: err, req, res, and next?"
+  },
+  {
+    "id": "EXP33-SUP-0068",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does app.use() mount middleware at a specified path or across all incoming routes?"
+  },
+  {
+    "id": "EXP33-SUP-0069",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does express.json() parse incoming HTTP requests with JSON payloads?"
+  },
+  {
+    "id": "EXP33-SUP-0070",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does process.env store environment variables in a Node.js process?"
+  },
+  {
+    "id": "EXP33-SUP-0071",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does fs.promises provide Promise-based asynchronous file system APIs?"
+  },
+  {
+    "id": "EXP33-SUP-0072",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Node.js EventEmitter emit named events and register corresponding listener callbacks?"
+  },
+  {
+    "id": "EXP33-SUP-0073",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Readable stream in Node.js emit 'data' events as chunks of data become available?"
+  },
+  {
+    "id": "EXP33-SUP-0074",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does pipe() channel data from a Readable stream directly into a Writable stream?"
+  },
+  {
+    "id": "EXP33-SUP-0075",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does CommonJS use require() to import modules synchronously at runtime?"
+  },
+  {
+    "id": "EXP33-SUP-0076",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does ES Modules in Node.js support static import statements at the top level?"
+  },
+  {
+    "id": "EXP33-SUP-0077",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does the Node.js cluster module enable spawning worker child processes that share server ports?"
+  },
+  {
+    "id": "EXP33-SUP-0078",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Buffer represent fixed-length raw binary memory outside the V8 heap?"
+  },
+  {
+    "id": "EXP33-SUP-0079",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does cors middleware configure Cross-Origin Resource Sharing headers for Express applications?"
+  },
+  {
+    "id": "EXP33-SUP-0080",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does helmet middleware help secure Express apps by setting various HTTP security headers?"
+  },
+  {
+    "id": "EXP33-SUP-0081",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does process.nextTick schedule a callback to run before the event loop continues to the next phase?"
+  },
+  {
+    "id": "EXP33-SUP-0082",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does setImmediate queue its callback to execute in the check phase of the libuv event loop?"
+  },
+  {
+    "id": "EXP33-SUP-0083",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does path.join concatenate path segments using the platform-specific separator?"
+  },
+  {
+    "id": "EXP33-SUP-0084",
+    "module": "NODEJS",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does npm package.json declare project dependencies and metadata scripts?"
+  },
+  {
+    "id": "EXP33-SUP-0085",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP GET retrieve a resource representation without altering server resource state?"
+  },
+  {
+    "id": "EXP33-SUP-0086",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Is HTTP GET considered a safe and idempotent request method in REST architecture?"
+  },
+  {
+    "id": "EXP33-SUP-0087",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP POST create a new subordinate resource under the target URI collection?"
+  },
+  {
+    "id": "EXP33-SUP-0088",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Is HTTP POST non-idempotent because multiple identical calls can create duplicate resources?"
+  },
+  {
+    "id": "EXP33-SUP-0089",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP PUT replace the target resource entirely with the request payload representation?"
+  },
+  {
+    "id": "EXP33-SUP-0090",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Is HTTP PUT idempotent because multiple identical PUT requests produce the same end state?"
+  },
+  {
+    "id": "EXP33-SUP-0091",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP PATCH apply partial modifications to an existing target resource?"
+  },
+  {
+    "id": "EXP33-SUP-0092",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP DELETE delete the resource identified by the Request-URI?"
+  },
+  {
+    "id": "EXP33-SUP-0093",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP status code 200 OK signify that the request has succeeded?"
+  },
+  {
+    "id": "EXP33-SUP-0094",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP status code 201 Created indicate that a new resource was successfully created?"
+  },
+  {
+    "id": "EXP33-SUP-0095",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP status code 204 No Content indicate successful request processing without a response body?"
+  },
+  {
+    "id": "EXP33-SUP-0096",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP status code 400 Bad Request signal that the server cannot process the malformed request?"
+  },
+  {
+    "id": "EXP33-SUP-0097",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP status code 401 Unauthorized indicate that authentication credentials are required or invalid?"
+  },
+  {
+    "id": "EXP33-SUP-0098",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP status code 403 Forbidden indicate that the server understands the request but refuses authorization?"
+  },
+  {
+    "id": "EXP33-SUP-0099",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP status code 404 Not Found indicate that the requested resource could not be found?"
+  },
+  {
+    "id": "EXP33-SUP-0100",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP status code 500 Internal Server Error denote an unexpected server-side execution failure?"
+  },
+  {
+    "id": "EXP33-SUP-0101",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does JWT consist of three base64url-encoded parts: header, payload, and cryptographic signature?"
+  },
+  {
+    "id": "EXP33-SUP-0102",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does statelessness in REST dictate that each request must contain all information necessary to process it?"
+  },
+  {
+    "id": "EXP33-SUP-0103",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does the Authorization header typically carry bearer tokens for API authentication?"
+  },
+  {
+    "id": "EXP33-SUP-0104",
+    "module": "REST_API",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does the Content-Type header indicate the media type of the entity-body sent to the receiver?"
+  },
+  {
+    "id": "EXP33-SUP-0105",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Atomicity in ACID guarantee that all operations in a transaction succeed or all roll back?"
+  },
+  {
+    "id": "EXP33-SUP-0106",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Consistency ensure that a transaction transitions the database from one valid state to another?"
+  },
+  {
+    "id": "EXP33-SUP-0107",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Isolation ensure that concurrent transactions do not interfere with one another uncommitted state?"
+  },
+  {
+    "id": "EXP33-SUP-0108",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Durability ensure that committed transaction results persist even in the event of system crash?"
+  },
+  {
+    "id": "EXP33-SUP-0109",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does a PRIMARY KEY constraint enforce both uniqueness and non-nullability on the column?"
+  },
+  {
+    "id": "EXP33-SUP-0110",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does a FOREIGN KEY constraint maintain referential integrity between related relational tables?"
+  },
+  {
+    "id": "EXP33-SUP-0111",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does a B-tree index accelerate search and range queries on indexed column values in PostgreSQL?"
+  },
+  {
+    "id": "EXP33-SUP-0112",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does First Normal Form (1NF) require atomic values and prohibit repeating groups?"
+  },
+  {
+    "id": "EXP33-SUP-0113",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Second Normal Form (2NF) mandate 1NF and eliminate partial functional dependencies on composite keys?"
+  },
+  {
+    "id": "EXP33-SUP-0114",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does Third Normal Form (3NF) mandate 2NF and eliminate transitive dependencies on non-key attributes?"
+  },
+  {
+    "id": "EXP33-SUP-0115",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does an INNER JOIN return only matching rows that satisfy the join condition across both tables?"
+  },
+  {
+    "id": "EXP33-SUP-0116",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does a LEFT JOIN return all rows from the left table along with matched rows from the right table?"
+  },
+  {
+    "id": "EXP33-SUP-0117",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does GROUP BY aggregate multiple rows sharing identifier values into summary rows?"
+  },
+  {
+    "id": "EXP33-SUP-0118",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does the HAVING clause filter aggregated group records based on aggregate expression conditions?"
+  },
+  {
+    "id": "EXP33-SUP-0119",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does EXPLAIN ANALYZE execute an SQL query in PostgreSQL to display actual execution times and plan node costs?"
+  },
+  {
+    "id": "EXP33-SUP-0120",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Can connection pooling reuse existing active database connections to reduce connection establishment overhead?"
+  },
+  {
+    "id": "EXP33-SUP-0121",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does a UNIQUE constraint allow at most one NULL value per row in standard SQL columns?"
+  },
+  {
+    "id": "EXP33-SUP-0122",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does a database transaction begin with BEGIN and conclude with either COMMIT or ROLLBACK?"
+  },
+  {
+    "id": "EXP33-SUP-0123",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does PostgreSQL MVCC allow readers and writers to avoid mutually blocking each other?"
+  },
+  {
+    "id": "EXP33-SUP-0124",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Can parameterized queries safeguard relational database applications against SQL injection attacks?"
+  },
+  {
+    "id": "EXP33-SUP-0125",
+    "module": "DATABASE",
+    "category": "SUPPORTED",
+    "expected": "SUPPORTED",
+    "query": "Does an index scan reduce disk page reads compared to a sequential table scan on filtered queries?"
+  },
+  {
+    "id": "EXP33-FLS-0001",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does flex-direction: row orient the main axis vertically from top to bottom?"
+  },
+  {
+    "id": "EXP33-FLS-0002",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does justify-content align flex items along the cross axis rather than the main axis?"
+  },
+  {
+    "id": "EXP33-FLS-0003",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does box-sizing: content-box include border and padding inside the declared element width?"
+  },
+  {
+    "id": "EXP33-FLS-0004",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does flex-shrink: 0 force a flex item to shrink smaller than its base size when space is tight?"
+  },
+  {
+    "id": "EXP33-FLS-0005",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does position: static allow positioning coordinates via top and left properties?"
+  },
+  {
+    "id": "EXP33-FLS-0006",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does position: fixed position an element relative to its nearest relative parent container?"
+  },
+  {
+    "id": "EXP33-FLS-0007",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does a class selector have higher CSS specificity weight than an ID selector?"
+  },
+  {
+    "id": "EXP33-FLS-0008",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does display: inline allow developers to explicitly set width and height dimensions?"
+  },
+  {
+    "id": "EXP33-FLS-0009",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does display: none keep an element visible and interactive while only removing its margin?"
+  },
+  {
+    "id": "EXP33-FLS-0010",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does visibility: hidden completely remove an element from the document layout flow?"
+  },
+  {
+    "id": "EXP33-FLS-0011",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does the semantic footer element serve exclusively as the primary page title navigation bar?"
+  },
+  {
+    "id": "EXP33-FLS-0012",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does the header tag mandate that all paragraph text inside it be rendered in uppercase bold?"
+  },
+  {
+    "id": "EXP33-FLS-0013",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does CSS flexbox enforce strict two-dimensional table structures across both axes simultaneously?"
+  },
+  {
+    "id": "EXP33-FLS-0014",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does rem unit calculate font dimensions based on the immediate parent element font size?"
+  },
+  {
+    "id": "EXP33-FLS-0015",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does em unit always scale strictly against the root HTML document element font size?"
+  },
+  {
+    "id": "EXP33-FLS-0016",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does z-index control the horizontal position of non-positioned block elements?"
+  },
+  {
+    "id": "EXP33-FLS-0017",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does flex-grow: 0 force a flex child to expand and absorb all remaining container space?"
+  },
+  {
+    "id": "EXP33-FLS-0018",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does align-items align items along the primary main axis in a flex container?"
+  },
+  {
+    "id": "EXP33-FLS-0019",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does grid-column: auto force a grid item to span every column in the entire container?"
+  },
+  {
+    "id": "EXP33-FLS-0020",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does align-content distribute items when flex-wrap is set to nowrap?"
+  },
+  {
+    "id": "EXP33-FLS-0021",
+    "module": "HTML_CSS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does opacity: 1 render an element completely transparent to mouse pointer events?"
+  },
+  {
+    "id": "EXP33-FLS-0022",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does const permit reassigning a variable identifier to a new primitive number?"
+  },
+  {
+    "id": "EXP33-FLS-0023",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does var create block-scoped variables that cannot leak outside curly brace if blocks?"
+  },
+  {
+    "id": "EXP33-FLS-0024",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does the temporal dead zone allow accessing let variables before their declaration line?"
+  },
+  {
+    "id": "EXP33-FLS-0025",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How do arrow functions bind their own dynamic this context whenever invoked as object methods?"
+  },
+  {
+    "id": "EXP33-FLS-0026",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does arrow function syntax create an implicit arguments binding for caller arguments?"
+  },
+  {
+    "id": "EXP33-FLS-0027",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does a closure destroy its outer scope variables as soon as the outer function returns?"
+  },
+  {
+    "id": "EXP33-FLS-0028",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does Promise.all resolve successfully if one of its member promises encounters a rejection?"
+  },
+  {
+    "id": "EXP33-FLS-0029",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does Promise.race wait for all supplied promises to fulfill before resolving?"
+  },
+  {
+    "id": "EXP33-FLS-0030",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does an async function return undefined rather than wrapping its return value in a Promise?"
+  },
+  {
+    "id": "EXP33-FLS-0031",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does the await keyword block the entire Node.js main thread event loop synchronously?"
+  },
+  {
+    "id": "EXP33-FLS-0032",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does the event loop execute macrotasks like setTimeout before resolving microtask promise queues?"
+  },
+  {
+    "id": "EXP33-FLS-0033",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does Array.prototype.map mutate the original array elements directly in place?"
+  },
+  {
+    "id": "EXP33-FLS-0034",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does Array.prototype.forEach return a freshly allocated transformed array?"
+  },
+  {
+    "id": "EXP33-FLS-0035",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does Object.freeze deep freeze all nested inner sub-objects automatically without recursion?"
+  },
+  {
+    "id": "EXP33-FLS-0036",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does the spread operator {...obj} perform a deep recursive clone of all nested objects?"
+  },
+  {
+    "id": "EXP33-FLS-0037",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does typeof null evaluate to 'null' in standard JavaScript runtime engines?"
+  },
+  {
+    "id": "EXP33-FLS-0038",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does strict equality === automatically coerce string operands to numbers during evaluation?"
+  },
+  {
+    "id": "EXP33-FLS-0039",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does Array.prototype.filter modify the original source array in place by deleting items?"
+  },
+  {
+    "id": "EXP33-FLS-0040",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does JavaScript primitive number assignment copy values by reference instead of by value?"
+  },
+  {
+    "id": "EXP33-FLS-0041",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does Array.prototype.push remove and return the last element of an existing array?"
+  },
+  {
+    "id": "EXP33-FLS-0042",
+    "module": "JAVASCRIPT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does JSON.stringify preserve JavaScript function declarations inside serialized output?"
+  },
+  {
+    "id": "EXP33-FLS-0043",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does updating a useRef .current property trigger an immediate component re-render?"
+  },
+  {
+    "id": "EXP33-FLS-0044",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does useState allow reading the updated state value synchronously on the line right after setState?"
+  },
+  {
+    "id": "EXP33-FLS-0045",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does an empty dependency array in useEffect cause the effect callback to re-execute after every render?"
+  },
+  {
+    "id": "EXP33-FLS-0046",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does React permit calling custom hooks conditionally inside if branches and loops?"
+  },
+  {
+    "id": "EXP33-FLS-0047",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does useMemo execute an asynchronous network request to fetch external data on mount?"
+  },
+  {
+    "id": "EXP33-FLS-0048",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does useCallback cache the return value of an expensive calculation rather than the function reference?"
+  },
+  {
+    "id": "EXP33-FLS-0049",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does mutating a state object directly without calling setState reliably trigger re-rendering?"
+  },
+  {
+    "id": "EXP33-FLS-0050",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does React.memo force child components to re-render even when their incoming props are unchanged?"
+  },
+  {
+    "id": "EXP33-FLS-0051",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does using array indices as list keys guarantee optimal reconciliation during item reordering?"
+  },
+  {
+    "id": "EXP33-FLS-0052",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does useContext replace the need for state by storing values permanently in browser cookies?"
+  },
+  {
+    "id": "EXP33-FLS-0053",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does useEffect run synchronously before the browser repaints the layout to the screen?"
+  },
+  {
+    "id": "EXP33-FLS-0054",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does useLayoutEffect execute asynchronously after the browser has completed painting?"
+  },
+  {
+    "id": "EXP33-FLS-0055",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does a custom hook create a single global shared state instance accessible by all component callers?"
+  },
+  {
+    "id": "EXP33-FLS-0056",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does controlled component let the native HTML DOM maintain its internal input value independently?"
+  },
+  {
+    "id": "EXP33-FLS-0057",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does React virtual DOM completely discard and recreate the entire actual browser DOM on every render?"
+  },
+  {
+    "id": "EXP33-FLS-0058",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does useReducer eliminate the necessity of dispatching action objects during state transitions?"
+  },
+  {
+    "id": "EXP33-FLS-0059",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does React state batching execute state setters one by one with immediate synchronous DOM repaints?"
+  },
+  {
+    "id": "EXP33-FLS-0060",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does JSX syntax allow returning multiple unparented root elements without any fragment container?"
+  },
+  {
+    "id": "EXP33-FLS-0061",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does props modification inside a child component safely update the parent component state?"
+  },
+  {
+    "id": "EXP33-FLS-0062",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does React reconcile components by matching them purely based on variable names?"
+  },
+  {
+    "id": "EXP33-FLS-0063",
+    "module": "REACT",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does useEffect cleanup callback run only once when the application server terminates?"
+  },
+  {
+    "id": "EXP33-FLS-0064",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does Express error middleware define exactly two arguments: req and res?"
+  },
+  {
+    "id": "EXP33-FLS-0065",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does app.use() mount routes that execute exclusively for incoming HTTP DELETE requests?"
+  },
+  {
+    "id": "EXP33-FLS-0066",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does omitting next() in an Express middleware automatically forward the request to the next route?"
+  },
+  {
+    "id": "EXP33-FLS-0067",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does Node.js handle CPU-heavy calculations by utilizing a multi-threaded execution model for user JS?"
+  },
+  {
+    "id": "EXP33-FLS-0068",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does express.json() parse multipart/form-data image uploads without third-party middleware?"
+  },
+  {
+    "id": "EXP33-FLS-0069",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does fs.readFileSync execute without blocking the main event loop thread?"
+  },
+  {
+    "id": "EXP33-FLS-0070",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does EventEmitter require all listeners to be asynchronous async/await functions?"
+  },
+  {
+    "id": "EXP33-FLS-0071",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does pipe() automatically transform incoming JSON data into binary audio streams?"
+  },
+  {
+    "id": "EXP33-FLS-0072",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does CommonJS require() allow asynchronous conditional dynamic imports at compile time?"
+  },
+  {
+    "id": "EXP33-FLS-0073",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does process.env automatically synchronize environment variables across different physical servers?"
+  },
+  {
+    "id": "EXP33-FLS-0074",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does Node.js cluster module share memory heap spaces between all child workers?"
+  },
+  {
+    "id": "EXP33-FLS-0075",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does Buffer allocate its memory directly inside the managed V8 garbage-collected heap?"
+  },
+  {
+    "id": "EXP33-FLS-0076",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does cors middleware block all requests originating from the same protocol and domain?"
+  },
+  {
+    "id": "EXP33-FLS-0077",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does helmet middleware encrypt PostgreSQL database columns before queries execute?"
+  },
+  {
+    "id": "EXP33-FLS-0078",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does process.nextTick defer callback execution until after all pending timers have fired?"
+  },
+  {
+    "id": "EXP33-FLS-0079",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does setImmediate run prior to any microtasks in the current event loop iteration?"
+  },
+  {
+    "id": "EXP33-FLS-0080",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does path.join always use forward slashes even on Windows operating systems?"
+  },
+  {
+    "id": "EXP33-FLS-0081",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does npm install save production dependencies into devDependencies by default?"
+  },
+  {
+    "id": "EXP33-FLS-0082",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does Readable stream 'data' event emit only after the entire file has finished loading?"
+  },
+  {
+    "id": "EXP33-FLS-0083",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does Express response.send() require manual stringification of JavaScript objects to JSON?"
+  },
+  {
+    "id": "EXP33-FLS-0084",
+    "module": "NODEJS",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does package.json enforce strict static typing on all Node.js source files?"
+  },
+  {
+    "id": "EXP33-FLS-0085",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does HTTP GET modify server resource records on every invocation by specification?"
+  },
+  {
+    "id": "EXP33-FLS-0086",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How is HTTP POST defined as an idempotent method that never produces side effects?"
+  },
+  {
+    "id": "EXP33-FLS-0087",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does HTTP PUT apply partial field patches rather than replacing the complete resource?"
+  },
+  {
+    "id": "EXP33-FLS-0088",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How is HTTP PATCH required to replace the entire resource entity with complete defaults?"
+  },
+  {
+    "id": "EXP33-FLS-0089",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why is HTTP DELETE non-idempotent because repeatedly calling it creates new deleted markers?"
+  },
+  {
+    "id": "EXP33-FLS-0090",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does HTTP status 200 indicate that an entity was freshly created with a Location header?"
+  },
+  {
+    "id": "EXP33-FLS-0091",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does HTTP status 204 No Content require returning a rich JSON body with confirmation messages?"
+  },
+  {
+    "id": "EXP33-FLS-0092",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does HTTP status 401 Unauthorized mean the client has valid permissions but the resource is missing?"
+  },
+  {
+    "id": "EXP33-FLS-0093",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does HTTP status 403 Forbidden indicate that user authentication credentials were completely omitted?"
+  },
+  {
+    "id": "EXP33-FLS-0094",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does HTTP status 404 Not Found indicate that the server encountered an unhandled code exception?"
+  },
+  {
+    "id": "EXP33-FLS-0095",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does HTTP status 500 indicate that the client submitted invalid query parameter syntax?"
+  },
+  {
+    "id": "EXP33-FLS-0096",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does JWT store its secret signing key inside the unencrypted base64 payload section?"
+  },
+  {
+    "id": "EXP33-FLS-0097",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does REST architecture mandate storing client session state inside server-side memory tables?"
+  },
+  {
+    "id": "EXP33-FLS-0098",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does the Content-Type header specify the identity of the authenticated user making the call?"
+  },
+  {
+    "id": "EXP33-FLS-0099",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does the Authorization header instruct the browser how to cache HTML static assets?"
+  },
+  {
+    "id": "EXP33-FLS-0100",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does REST require all URIs to include HTTP verbs like /getUsers or /deleteUser in the path?"
+  },
+  {
+    "id": "EXP33-FLS-0101",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does HTTP 301 Moved Permanently indicate a temporary redirect that clients should not cache?"
+  },
+  {
+    "id": "EXP33-FLS-0102",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does HTTP OPTIONS delete the targeted endpoint from the API routing table?"
+  },
+  {
+    "id": "EXP33-FLS-0103",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does JSON Web Token encrypt payload data so that clients cannot read payload claims?"
+  },
+  {
+    "id": "EXP33-FLS-0104",
+    "module": "REST_API",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does rate limiting guarantee unlimited API throughput for unauthenticated clients?"
+  },
+  {
+    "id": "EXP33-FLS-0105",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does Atomicity permit half of the operations in a failed transaction to remain committed?"
+  },
+  {
+    "id": "EXP33-FLS-0106",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does Consistency allow transactions to violate database constraints and foreign key rules?"
+  },
+  {
+    "id": "EXP33-FLS-0107",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does Isolation expose uncommitted dirty reads to other concurrent transactions by default?"
+  },
+  {
+    "id": "EXP33-FLS-0108",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does Durability discard committed data changes if the server powers off unexpectedly?"
+  },
+  {
+    "id": "EXP33-FLS-0109",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does a PRIMARY KEY column allow duplicate values as long as they occur on weekends?"
+  },
+  {
+    "id": "EXP33-FLS-0110",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does a FOREIGN KEY permit inserting child records with foreign keys that do not exist in the parent?"
+  },
+  {
+    "id": "EXP33-FLS-0111",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does a B-tree index slow down SELECT query lookups compared to scanning full tables?"
+  },
+  {
+    "id": "EXP33-FLS-0112",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does First Normal Form (1NF) encourage storing comma-separated multi-value lists in columns?"
+  },
+  {
+    "id": "EXP33-FLS-0113",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does Second Normal Form (2NF) mandate partial dependencies on candidate keys?"
+  },
+  {
+    "id": "EXP33-FLS-0114",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does Third Normal Form (3NF) permit non-key attributes to transitively determine other non-keys?"
+  },
+  {
+    "id": "EXP33-FLS-0115",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does an INNER JOIN return unmatched rows from both tables filled with NULL values?"
+  },
+  {
+    "id": "EXP33-FLS-0116",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does a LEFT JOIN drop rows from the left table if they lack corresponding right table matches?"
+  },
+  {
+    "id": "EXP33-FLS-0117",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does the WHERE clause filter records after GROUP BY aggregations have already been calculated?"
+  },
+  {
+    "id": "EXP33-FLS-0118",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does the HAVING clause filter individual raw rows before any grouping operations occur?"
+  },
+  {
+    "id": "EXP33-FLS-0119",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does EXPLAIN ANALYZE optimize queries by permanently rewriting table schema definitions?"
+  },
+  {
+    "id": "EXP33-FLS-0120",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does connection pooling create a brand new physical database socket for every incoming query?"
+  },
+  {
+    "id": "EXP33-FLS-0121",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does a ROLLBACK command permanently write uncommitted transaction data to disk storage?"
+  },
+  {
+    "id": "EXP33-FLS-0122",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does PostgreSQL MVCC force all concurrent SELECT queries to wait for active UPDATE locks?"
+  },
+  {
+    "id": "EXP33-FLS-0123",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why do parameterized queries concatenate raw user strings directly into SQL statements without escaping?"
+  },
+  {
+    "id": "EXP33-FLS-0124",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "How does a sequential scan outperform index lookups on selective single-row primary key queries?"
+  },
+  {
+    "id": "EXP33-FLS-0125",
+    "module": "DATABASE",
+    "category": "FALSE_PREMISE",
+    "expected": "REFUTED",
+    "query": "Why does a UNIQUE constraint enforce non-nullability on all columns it covers?"
+  },
+  {
+    "id": "EXP33-AMB-0001",
+    "module": "REACT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is React state management superior to Vue composition API for enterprise applications?"
+  },
+  {
+    "id": "EXP33-AMB-0002",
+    "module": "HTML_CSS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "What is the single best layout system between CSS flexbox and CSS grid?"
+  },
+  {
+    "id": "EXP33-AMB-0003",
+    "module": "DATABASE",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is PostgreSQL always more cost-effective than MongoDB for web development?"
+  },
+  {
+    "id": "EXP33-AMB-0004",
+    "module": "JAVASCRIPT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should developers always prefer arrow functions over standard function declarations in all files?"
+  },
+  {
+    "id": "EXP33-AMB-0005",
+    "module": "NODEJS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is Express fast enough to handle any web traffic load without bottlenecks?"
+  },
+  {
+    "id": "EXP33-AMB-0006",
+    "module": "REST_API",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is REST always better suited than GraphQL for public API services?"
+  },
+  {
+    "id": "EXP33-AMB-0007",
+    "module": "HTML_CSS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should every web design use exactly 12 columns in its grid layout?"
+  },
+  {
+    "id": "EXP33-AMB-0008",
+    "module": "JAVASCRIPT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "What is the optimal size limit for a JavaScript closure to prevent memory issues?"
+  },
+  {
+    "id": "EXP33-AMB-0009",
+    "module": "REACT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is useReducer always preferable to useState when a component has more than two state values?"
+  },
+  {
+    "id": "EXP33-AMB-0010",
+    "module": "DATABASE",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How many indexes are considered optimal for an average database table?"
+  },
+  {
+    "id": "EXP33-AMB-0011",
+    "module": "NODEJS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should all production Node services use clustering regardless of server CPU core counts?"
+  },
+  {
+    "id": "EXP33-AMB-0012",
+    "module": "REST_API",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is JWT authentication more secure than server-side session cookies in all circumstances?"
+  },
+  {
+    "id": "EXP33-AMB-0013",
+    "module": "HTML_CSS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Which font sizing unit is universally best for all responsive typography: rem, em, or vw?"
+  },
+  {
+    "id": "EXP33-AMB-0014",
+    "module": "JAVASCRIPT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is functional programming style universally cleaner than object-oriented style in JS?"
+  },
+  {
+    "id": "EXP33-AMB-0015",
+    "module": "REACT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should every function passed to a child component be wrapped in useCallback?"
+  },
+  {
+    "id": "EXP33-AMB-0016",
+    "module": "DATABASE",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is third normal form always the best database schema structure for read-heavy workloads?"
+  },
+  {
+    "id": "EXP33-AMB-0017",
+    "module": "NODEJS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "What is the recommended timeout duration for Express HTTP incoming connections?"
+  },
+  {
+    "id": "EXP33-AMB-0018",
+    "module": "REST_API",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should an API always return 200 OK with error messages inside the response payload?"
+  },
+  {
+    "id": "EXP33-AMB-0019",
+    "module": "HTML_CSS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is using CSS utility classes better than writing traditional semantic BEM stylesheets?"
+  },
+  {
+    "id": "EXP33-AMB-0020",
+    "module": "JAVASCRIPT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How many microtasks can run before the browser UI experiences visible stutter?"
+  },
+  {
+    "id": "EXP33-AMB-0021",
+    "module": "REACT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "What is the maximum acceptable number of dependencies in a useEffect hook array?"
+  },
+  {
+    "id": "EXP33-AMB-0022",
+    "module": "DATABASE",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "At what table row count does an index scan become necessary in relational databases?"
+  },
+  {
+    "id": "EXP33-AMB-0023",
+    "module": "NODEJS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is it better practice to catch errors inside route handlers or delegate to centralized error middleware?"
+  },
+  {
+    "id": "EXP33-AMB-0024",
+    "module": "REST_API",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should API versioning be implemented in the URL path, query params, or accept headers?"
+  },
+  {
+    "id": "EXP33-AMB-0025",
+    "module": "HTML_CSS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Does flex-shrink 1 look better than flex-shrink 0 on modern smartphone screens?"
+  },
+  {
+    "id": "EXP33-AMB-0026",
+    "module": "JAVASCRIPT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is Promise.allSettled cleaner than wrapping individual promises in try/catch blocks?"
+  },
+  {
+    "id": "EXP33-AMB-0027",
+    "module": "REACT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is React Context capable of replacing external state libraries like Redux completely?"
+  },
+  {
+    "id": "EXP33-AMB-0028",
+    "module": "DATABASE",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is foreign key cascade deletion safe for all e-commerce order relationships?"
+  },
+  {
+    "id": "EXP33-AMB-0029",
+    "module": "NODEJS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "What is the perfect memory limit to allocate to Node V8 max-old-space-size?"
+  },
+  {
+    "id": "EXP33-AMB-0030",
+    "module": "REST_API",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How long should access tokens remain valid before expiring in secure API ecosystems?"
+  },
+  {
+    "id": "EXP33-AMB-0031",
+    "module": "HTML_CSS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should web designers prefer pure CSS animations over JavaScript requestAnimationFrame?"
+  },
+  {
+    "id": "EXP33-AMB-0032",
+    "module": "JAVASCRIPT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is destructuring assignment faster than direct dot property access in V8 engines?"
+  },
+  {
+    "id": "EXP33-AMB-0033",
+    "module": "REACT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Does wrapping components in React.memo always improve web application rendering performance?"
+  },
+  {
+    "id": "EXP33-AMB-0034",
+    "module": "DATABASE",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is denormalization better than complex joins when querying large reporting analytics tables?"
+  },
+  {
+    "id": "EXP33-AMB-0035",
+    "module": "NODEJS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should console.log be completely banned in production Express servers?"
+  },
+  {
+    "id": "EXP33-AMB-0036",
+    "module": "REST_API",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "What is the ideal batch size for REST API bulk insert endpoints?"
+  },
+  {
+    "id": "EXP33-AMB-0037",
+    "module": "HTML_CSS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is mobile-first design approach strictly superior to desktop-first responsive design?"
+  },
+  {
+    "id": "EXP33-AMB-0038",
+    "module": "JAVASCRIPT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should async functions always return explicit values rather than letting them resolve undefined?"
+  },
+  {
+    "id": "EXP33-AMB-0039",
+    "module": "REACT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "What is the cleanest folder structure for organizing React component files?"
+  },
+  {
+    "id": "EXP33-AMB-0040",
+    "module": "DATABASE",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Which PostgreSQL isolation level is universally optimal for high-throughput transactional systems?"
+  },
+  {
+    "id": "EXP33-AMB-0041",
+    "module": "NODEJS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is it better to use environment variables or encrypted configuration files for server secrets?"
+  },
+  {
+    "id": "EXP33-AMB-0042",
+    "module": "REST_API",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should HTTP status 204 or 200 be returned when updating an existing resource via PUT?"
+  },
+  {
+    "id": "EXP33-AMB-0043",
+    "module": "HTML_CSS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "What is the most readable color contrast ratio for dark mode background surfaces?"
+  },
+  {
+    "id": "EXP33-AMB-0044",
+    "module": "JAVASCRIPT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is Object.assign or spread syntax more idiomatic for object cloning in modern JS?"
+  },
+  {
+    "id": "EXP33-AMB-0045",
+    "module": "REACT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should business logic be encapsulated in custom hooks or pure helper utility functions?"
+  },
+  {
+    "id": "EXP33-AMB-0046",
+    "module": "DATABASE",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is UUID or auto-incrementing integer better for database primary key columns?"
+  },
+  {
+    "id": "EXP33-AMB-0047",
+    "module": "NODEJS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is Morgan logging middleware suitable for mission-critical enterprise banking systems?"
+  },
+  {
+    "id": "EXP33-AMB-0048",
+    "module": "REST_API",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "What is the proper HTTP status code when an external third-party API service times out?"
+  },
+  {
+    "id": "EXP33-AMB-0049",
+    "module": "HTML_CSS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should developers avoid using CSS !important in all possible scenarios?"
+  },
+  {
+    "id": "EXP33-AMB-0050",
+    "module": "JAVASCRIPT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Does using for...of loops provide better code clarity than Array.prototype.forEach?"
+  },
+  {
+    "id": "EXP33-AMB-0051",
+    "module": "REACT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is server-side rendering always necessary for good search engine optimization in React apps?"
+  },
+  {
+    "id": "EXP33-AMB-0052",
+    "module": "DATABASE",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How frequently should VACUUM FULL be executed on production PostgreSQL databases?"
+  },
+  {
+    "id": "EXP33-AMB-0053",
+    "module": "NODEJS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is PM2 process manager better than systemd for managing background Node processes?"
+  },
+  {
+    "id": "EXP33-AMB-0054",
+    "module": "REST_API",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should API endpoints accept plural or singular noun resources in their URI paths?"
+  },
+  {
+    "id": "EXP33-AMB-0055",
+    "module": "HTML_CSS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is CSS grid overkill for laying out a simple one-row navigation bar?"
+  },
+  {
+    "id": "EXP33-AMB-0056",
+    "module": "JAVASCRIPT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is optional chaining ?. always safer than explicit null checking with if conditions?"
+  },
+  {
+    "id": "EXP33-AMB-0057",
+    "module": "REACT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should state initialization use lazy initializer functions for all useState hooks?"
+  },
+  {
+    "id": "EXP33-AMB-0058",
+    "module": "DATABASE",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Does adding an index to a small table of 50 rows create noticeable query overhead?"
+  },
+  {
+    "id": "EXP33-AMB-0059",
+    "module": "NODEJS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is CORS origin wildcard '*' acceptable during internal staging environment testing?"
+  },
+  {
+    "id": "EXP33-AMB-0060",
+    "module": "REST_API",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should pagination metadata be returned in response headers or the response JSON body?"
+  },
+  {
+    "id": "EXP33-AMB-0061",
+    "module": "HTML_CSS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "What is the best naming convention for CSS variables in design systems?"
+  },
+  {
+    "id": "EXP33-AMB-0062",
+    "module": "JAVASCRIPT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is using symbols for private object properties better than prefixing with underscores?"
+  },
+  {
+    "id": "EXP33-AMB-0063",
+    "module": "REACT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How deep can React component trees grow before performance degradation occurs?"
+  },
+  {
+    "id": "EXP33-AMB-0064",
+    "module": "DATABASE",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should relational database foreign keys always be indexed manually in PostgreSQL?"
+  },
+  {
+    "id": "EXP33-AMB-0065",
+    "module": "NODEJS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "What is the best strategy to prevent event loop starvation during massive file parsing?"
+  },
+  {
+    "id": "EXP33-AMB-0066",
+    "module": "REST_API",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is it acceptable for a REST API to support HTTP POST for search queries with large payloads?"
+  },
+  {
+    "id": "EXP33-AMB-0067",
+    "module": "HTML_CSS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should media query breakpoints be defined in pixels or rems for responsive sites?"
+  },
+  {
+    "id": "EXP33-AMB-0068",
+    "module": "JAVASCRIPT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is the event loop macrotask queue strictly FIFO across all browser implementations?"
+  },
+  {
+    "id": "EXP33-AMB-0069",
+    "module": "REACT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "When is it appropriate to bypass React state entirely and use direct DOM manipulation?"
+  },
+  {
+    "id": "EXP33-AMB-0070",
+    "module": "DATABASE",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "What threshold of query execution time warrants rewriting an SQL query plan?"
+  },
+  {
+    "id": "EXP33-AMB-0071",
+    "module": "NODEJS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Should uncaughtException event listeners always terminate the process immediately?"
+  },
+  {
+    "id": "EXP33-AMB-0072",
+    "module": "REST_API",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is 422 Unprocessable Entity preferred over 400 Bad Request for validation errors?"
+  },
+  {
+    "id": "EXP33-AMB-0073",
+    "module": "HTML_CSS",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Does using CSS flexbox reduce browser layout recalculation times compared to floats?"
+  },
+  {
+    "id": "EXP33-AMB-0074",
+    "module": "JAVASCRIPT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is strict mode 'use strict' still relevant when authoring modern ES6 modules?"
+  },
+  {
+    "id": "EXP33-AMB-0075",
+    "module": "REACT",
+    "category": "AMBIGUOUS",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Is prop drilling acceptable if the component hierarchy is only two levels deep?"
+  },
+  {
+    "id": "EXP33-OOD-0001",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Django manage automatic database migrations across models?"
+  },
+  {
+    "id": "EXP33-OOD-0002",
+    "module": "FRONTEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Flutter build its reactive widget tree during application startup?"
+  },
+  {
+    "id": "EXP33-OOD-0003",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Ruby on Rails implement Active Record pattern associations?"
+  },
+  {
+    "id": "EXP33-OOD-0004",
+    "module": "DATABASE_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Redis use in-memory data structures for publish-subscribe messaging?"
+  },
+  {
+    "id": "EXP33-OOD-0005",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Python GIL affect multi-threaded CPU-bound execution performance?"
+  },
+  {
+    "id": "EXP33-OOD-0006",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Rust enforce memory safety through ownership and borrow checker rules?"
+  },
+  {
+    "id": "EXP33-OOD-0007",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How do Golang goroutines communicate over typed channels safely?"
+  },
+  {
+    "id": "EXP33-OOD-0008",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Spring Boot auto-configuration discover beans in the application context?"
+  },
+  {
+    "id": "EXP33-OOD-0009",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Laravel handle queue worker dispatching via artisan commands?"
+  },
+  {
+    "id": "EXP33-OOD-0010",
+    "module": "FRONTEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Dart handle ahead-of-time compilation for native mobile binaries?"
+  },
+  {
+    "id": "EXP33-OOD-0011",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does C# implement asynchronous programming with Task and ValueTask?"
+  },
+  {
+    "id": "EXP33-OOD-0012",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does ASP.NET Core configure dependency injection service lifetimes?"
+  },
+  {
+    "id": "EXP33-OOD-0013",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Sidekiq process background job queues in Ruby web stacks?"
+  },
+  {
+    "id": "EXP33-OOD-0014",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Does Python list comprehension generate byte-code optimized iteration loops?"
+  },
+  {
+    "id": "EXP33-OOD-0015",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Django middleware authenticate incoming user session cookies?"
+  },
+  {
+    "id": "EXP33-OOD-0016",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Does Rust Send and Sync traits verify thread-safe memory sharing at compile time?"
+  },
+  {
+    "id": "EXP33-OOD-0017",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Golang handle error propagation without traditional try-catch exceptions?"
+  },
+  {
+    "id": "EXP33-OOD-0018",
+    "module": "FRONTEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Does Flutter RenderTree translate render objects directly to GPU canvas commands?"
+  },
+  {
+    "id": "EXP33-OOD-0019",
+    "module": "DATABASE_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Redis persist snapshot dumps to disk using RDB and AOF log files?"
+  },
+  {
+    "id": "EXP33-OOD-0020",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Spring Boot configure Hibernate JPA repository interfaces?"
+  },
+  {
+    "id": "EXP33-OOD-0021",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Does Laravel Eloquent support polymorphic relationships across database models?"
+  },
+  {
+    "id": "EXP33-OOD-0022",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Python asyncio run event loop coroutines with async and await?"
+  },
+  {
+    "id": "EXP33-OOD-0023",
+    "module": "FRONTEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "Does Dart garbage collector use generational collection for short-lived UI widgets?"
+  },
+  {
+    "id": "EXP33-OOD-0024",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does C# Entity Framework handle database schema migration scripts?"
+  },
+  {
+    "id": "EXP33-OOD-0025",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does ASP.NET Core middleware pipeline handle HTTP request routing?"
+  },
+  {
+    "id": "EXP33-OOD-0026",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Apache Kafka partition topic logs across distributed broker clusters?"
+  },
+  {
+    "id": "EXP33-OOD-0027",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Elixir leverage Erlang BEAM actor model for fault-tolerant concurrency?"
+  },
+  {
+    "id": "EXP33-OOD-0028",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Kubernetes manage pod replica sets through control loop reconciliation?"
+  },
+  {
+    "id": "EXP33-OOD-0029",
+    "module": "FRONTEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does SwiftUI use declarative view structures to manage iOS user interfaces?"
+  },
+  {
+    "id": "EXP33-OOD-0030",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does GraphQL Schema Definition Language resolve fields via resolver functions?"
+  },
+  {
+    "id": "EXP33-OOD-0031",
+    "module": "DATABASE_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Apache Cassandra achieve masterless peer-to-peer write availability?"
+  },
+  {
+    "id": "EXP33-OOD-0032",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Zig manage explicit manual memory allocations without hidden control flow?"
+  },
+  {
+    "id": "EXP33-OOD-0033",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Haskell enforce pure referential transparency through lazy evaluation?"
+  },
+  {
+    "id": "EXP33-OOD-0034",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Apache Spark distribute resilient datasets across worker cluster nodes?"
+  },
+  {
+    "id": "EXP33-OOD-0035",
+    "module": "FRONTEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does WebAssembly execute compiled linear memory instructions in client runtimes?"
+  },
+  {
+    "id": "EXP33-OOD-0036",
+    "module": "DATABASE_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Neo4j traverse graph nodes and relationship edges using Cypher query language?"
+  },
+  {
+    "id": "EXP33-OOD-0037",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does RabbitMQ route AMQP messages through exchange bindings to queues?"
+  },
+  {
+    "id": "EXP33-OOD-0038",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does gRPC serialize protocol buffer messages over HTTP/2 multiplexed streams?"
+  },
+  {
+    "id": "EXP33-OOD-0039",
+    "module": "FRONTEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Svelte compile reactive component templates into direct DOM updates at build time?"
+  },
+  {
+    "id": "EXP33-OOD-0040",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Clojure ensure thread safety with software transactional memory and persistent data structures?"
+  },
+  {
+    "id": "EXP33-OOD-0041",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Docker isolate container processes using Linux namespaces and cgroups?"
+  },
+  {
+    "id": "EXP33-OOD-0042",
+    "module": "DATABASE_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Elasticsearch distribute inverted index shards across Lucene search nodes?"
+  },
+  {
+    "id": "EXP33-OOD-0043",
+    "module": "FRONTEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does React Native bridge JavaScript threads with native platform UI components?"
+  },
+  {
+    "id": "EXP33-OOD-0044",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Terraform track cloud infrastructure resource states in statefiles?"
+  },
+  {
+    "id": "EXP33-OOD-0045",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Nginx utilize event-driven epoll loops to handle concurrent reverse proxy connections?"
+  },
+  {
+    "id": "EXP33-OOD-0046",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does OCaml implement algebraic data types and pattern matching algorithms?"
+  },
+  {
+    "id": "EXP33-OOD-0047",
+    "module": "DATABASE_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does DynamoDB use partition keys and hash rings for scalable distributed storage?"
+  },
+  {
+    "id": "EXP33-OOD-0048",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Scala bridge object-oriented and functional programming paradigms on the JVM?"
+  },
+  {
+    "id": "EXP33-OOD-0049",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Prometheus scrape metric time-series data over HTTP pull endpoints?"
+  },
+  {
+    "id": "EXP33-OOD-0050",
+    "module": "BACKEND_EXTERNAL",
+    "category": "OOD",
+    "expected": "NOT_ESTABLISHED",
+    "query": "How does Envoy proxy manage dynamic service discovery through xDS API endpoints?"
+  },
+  {
+    "id": "EXP33-PAR-0001",
+    "module": "HTML_CSS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Could you confirm if setting flex-direction to column orients child flex items from the top downward?"
+  },
+  {
+    "id": "EXP33-PAR-0002",
+    "module": "HTML_CSS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Is it correct that border-box calculation causes padding and borders to sit inside the declared width?"
+  },
+  {
+    "id": "EXP33-PAR-0003",
+    "module": "HTML_CSS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does setting display to flex transform all direct child nodes into flex items automatically?"
+  },
+  {
+    "id": "EXP33-PAR-0004",
+    "module": "HTML_CSS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Can you explain how justify-content space-between pushes child elements toward the outer edges of the container?"
+  },
+  {
+    "id": "EXP33-PAR-0005",
+    "module": "HTML_CSS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does flex-wrap wrap make items drop onto a second line whenever there is not enough room on the first?"
+  },
+  {
+    "id": "EXP33-PAR-0006",
+    "module": "HTML_CSS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Is it true that position absolute removes an element entirely from the standard document layout flow?"
+  },
+  {
+    "id": "EXP33-PAR-0007",
+    "module": "HTML_CSS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Can an ID selector in CSS override styles declared on an element by a class selector because of specificity?"
+  },
+  {
+    "id": "EXP33-PAR-0008",
+    "module": "HTML_CSS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does the semantic article tag tell screen readers that the enclosed text represents a standalone self-contained piece?"
+  },
+  {
+    "id": "EXP33-PAR-0009",
+    "module": "JAVASCRIPT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Is it true that declaring a variable using const prevents someone from assigning a new reference to that identifier?"
+  },
+  {
+    "id": "EXP33-PAR-0010",
+    "module": "JAVASCRIPT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does attempting to read a let variable before its initialization line result in a temporal dead zone ReferenceError?"
+  },
+  {
+    "id": "EXP33-PAR-0011",
+    "module": "JAVASCRIPT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Can an arrow function pick up whatever this context was active in the enclosing code where it was created?"
+  },
+  {
+    "id": "EXP33-PAR-0012",
+    "module": "JAVASCRIPT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does a closure allow an inner function to remember variables from its parent function even after that parent has finished executing?"
+  },
+  {
+    "id": "EXP33-PAR-0013",
+    "module": "JAVASCRIPT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Is it true that Promise.all fails fast and stops waiting if any single promise in the list gets rejected?"
+  },
+  {
+    "id": "EXP33-PAR-0014",
+    "module": "JAVASCRIPT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does placing the async keyword in front of a function guarantee that its return value will be wrapped in a Promise?"
+  },
+  {
+    "id": "EXP33-PAR-0015",
+    "module": "JAVASCRIPT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does the JavaScript runtime drain the microtask queue before picking up the next task from the macrotask queue?"
+  },
+  {
+    "id": "EXP33-PAR-0016",
+    "module": "JAVASCRIPT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Can the map method produce an entirely new array containing transformed values without altering the original array?"
+  },
+  {
+    "id": "EXP33-PAR-0017",
+    "module": "JAVASCRIPT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does Object.freeze protect an object from having its top-level properties added, deleted, or modified?"
+  },
+  {
+    "id": "EXP33-PAR-0018",
+    "module": "JAVASCRIPT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does the triple equals operator evaluate both value and data type without doing implicit type conversions?"
+  },
+  {
+    "id": "EXP33-PAR-0019",
+    "module": "REACT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does invoking the setter function returned by useState schedule a re-render of the component?"
+  },
+  {
+    "id": "EXP33-PAR-0020",
+    "module": "REACT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Is it true that the cleanup function inside useEffect is executed before the effect runs again on the next render?"
+  },
+  {
+    "id": "EXP33-PAR-0021",
+    "module": "REACT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does supplying an empty array [] to useEffect ensure that the setup logic runs only after the initial component mount?"
+  },
+  {
+    "id": "EXP33-PAR-0022",
+    "module": "REACT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Can updating ref.current hold a new value across renders without causing React to trigger a component re-render?"
+  },
+  {
+    "id": "EXP33-PAR-0023",
+    "module": "REACT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does useMemo keep the result of a computationally expensive operation cached until one of its dependencies changes?"
+  },
+  {
+    "id": "EXP33-PAR-0024",
+    "module": "REACT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does useCallback preserve the same function reference across render cycles until its dependency array updates?"
+  },
+  {
+    "id": "EXP33-PAR-0025",
+    "module": "REACT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Can useContext provide component access to global state without manually passing props down through every level?"
+  },
+  {
+    "id": "EXP33-PAR-0026",
+    "module": "REACT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Must all React hooks be called unconditionally at the very top of a functional component body?"
+  },
+  {
+    "id": "EXP33-PAR-0027",
+    "module": "REACT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does React group multiple state updates occurring inside the same event handler into a single render pass?"
+  },
+  {
+    "id": "EXP33-PAR-0028",
+    "module": "REACT",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Can wrapping a component in React.memo prevent it from re-rendering if its incoming props are unchanged?"
+  },
+  {
+    "id": "EXP33-PAR-0029",
+    "module": "NODEJS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does Node.js handle heavy concurrent I/O by executing operations asynchronously on a single main event loop thread?"
+  },
+  {
+    "id": "EXP33-PAR-0030",
+    "module": "NODEJS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Is it standard practice for Express middleware functions to receive the request, response, and next callback parameters?"
+  },
+  {
+    "id": "EXP33-PAR-0031",
+    "module": "NODEJS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does calling next() tell Express to pass control forward to the subsequent middleware function in the stack?"
+  },
+  {
+    "id": "EXP33-PAR-0032",
+    "module": "NODEJS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does an Express error-handling middleware identify itself by taking exactly four parameters: err, req, res, and next?"
+  },
+  {
+    "id": "EXP33-PAR-0033",
+    "module": "NODEJS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Can express.json() decode incoming request bodies formatted as JSON and attach the parsed object to req.body?"
+  },
+  {
+    "id": "EXP33-PAR-0034",
+    "module": "NODEJS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does process.env give your backend access to system and environment variables configured on the host?"
+  },
+  {
+    "id": "EXP33-PAR-0035",
+    "module": "NODEJS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Can the pipe method route a readable data stream straight into a writable file stream without manual buffering?"
+  },
+  {
+    "id": "EXP33-PAR-0036",
+    "module": "NODEJS",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does the cluster module in Node allow multiple worker processes to be forked to utilize multi-core processors?"
+  },
+  {
+    "id": "EXP33-PAR-0037",
+    "module": "REST_API",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Is an HTTP GET request expected to fetch data from the server without modifying the server database records?"
+  },
+  {
+    "id": "EXP33-PAR-0038",
+    "module": "REST_API",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Is HTTP GET considered both safe and idempotent according to the official HTTP REST standards?"
+  },
+  {
+    "id": "EXP33-PAR-0039",
+    "module": "REST_API",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does sending an HTTP POST request generally lead to creating a brand new resource entry on the server?"
+  },
+  {
+    "id": "EXP33-PAR-0040",
+    "module": "REST_API",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does an HTTP PUT request replace the entire target resource with the data provided in the request body?"
+  },
+  {
+    "id": "EXP33-PAR-0041",
+    "module": "REST_API",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Can HTTP PATCH be used when you only want to update a subset of fields on an existing database resource?"
+  },
+  {
+    "id": "EXP33-PAR-0042",
+    "module": "REST_API",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP status code 201 Created confirm that a new resource has been successfully generated?"
+  },
+  {
+    "id": "EXP33-PAR-0043",
+    "module": "REST_API",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does HTTP status 204 No Content indicate the server handled the request successfully but has no content to send back?"
+  },
+  {
+    "id": "EXP33-PAR-0044",
+    "module": "REST_API",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does a 401 Unauthorized response signal that the user needs to supply valid authentication credentials?"
+  },
+  {
+    "id": "EXP33-PAR-0045",
+    "module": "DATABASE",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does the Atomicity property guarantee that a transaction will either execute every single statement or roll back entirely?"
+  },
+  {
+    "id": "EXP33-PAR-0046",
+    "module": "DATABASE",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does a PRIMARY KEY constraint enforce that every row in the table must have a unique non-null identifier?"
+  },
+  {
+    "id": "EXP33-PAR-0047",
+    "module": "DATABASE",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does a FOREIGN KEY link records between tables to make sure foreign references always point to existing parent rows?"
+  },
+  {
+    "id": "EXP33-PAR-0048",
+    "module": "DATABASE",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Can creating a B-tree index in PostgreSQL significantly accelerate filtering rows in a large table?"
+  },
+  {
+    "id": "EXP33-PAR-0049",
+    "module": "DATABASE",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does First Normal Form require that every column in a relational table contain only atomic indivisible values?"
+  },
+  {
+    "id": "EXP33-PAR-0050",
+    "module": "DATABASE",
+    "category": "PARAPHRASE",
+    "expected": "SUPPORTED",
+    "query": "Does EXPLAIN ANALYZE run the query and show the planner estimates alongside actual execution timings in PostgreSQL?"
+  },
+  {
+    "id": "EXP33-ADV-0001",
+    "module": "JAVASCRIPT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does const prevent reassigning the variable identifier without preventing in-place mutations of object properties?"
+  },
+  {
+    "id": "EXP33-ADV-0002",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does mutating useRef .current avoid re-rendering while state setters trigger component render passes?"
+  },
+  {
+    "id": "EXP33-ADV-0003",
+    "module": "NODEJS",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does Express error middleware require all four parameters (err, req, res, next) even if next is never called?"
+  },
+  {
+    "id": "EXP33-ADV-0004",
+    "module": "DATABASE",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does a PRIMARY KEY constraint implicitly create a unique index without requiring an explicit CREATE INDEX statement?"
+  },
+  {
+    "id": "EXP33-ADV-0005",
+    "module": "REST_API",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why is HTTP DELETE considered idempotent even if the second identical call returns a 404 status code?"
+  },
+  {
+    "id": "EXP33-ADV-0006",
+    "module": "HTML_CSS",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does box-sizing: border-box affect padding and border calculations without altering external margin spacing?"
+  },
+  {
+    "id": "EXP33-ADV-0007",
+    "module": "JAVASCRIPT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does typeof null return 'object' despite null being a primitive value rather than an Object instance?"
+  },
+  {
+    "id": "EXP33-ADV-0008",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does passing an empty array to useEffect run the setup effect on mount while postponing cleanup until unmount?"
+  },
+  {
+    "id": "EXP33-ADV-0009",
+    "module": "NODEJS",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does process.nextTick execute callbacks before standard setTimeout timers even when timeout is zero?"
+  },
+  {
+    "id": "EXP33-ADV-0010",
+    "module": "DATABASE",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does an INNER JOIN exclude rows from both tables that lack a matching key in the opposing table?"
+  },
+  {
+    "id": "EXP33-ADV-0011",
+    "module": "REST_API",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does HTTP PUT mandate idempotency while HTTP POST allows non-idempotent resource creation?"
+  },
+  {
+    "id": "EXP33-ADV-0012",
+    "module": "HTML_CSS",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does position: absolute position elements relative to the viewport when no positioned ancestor exists?"
+  },
+  {
+    "id": "EXP33-ADV-0013",
+    "module": "JAVASCRIPT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does Promise.all reject immediately on the first error without waiting for other concurrent promises to settle?"
+  },
+  {
+    "id": "EXP33-ADV-0014",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does React batch multiple setState calls inside an event handler into a single render cycle?"
+  },
+  {
+    "id": "EXP33-ADV-0015",
+    "module": "NODEJS",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does stream pipe() manage backpressure automatically without needing manual pause and resume calls?"
+  },
+  {
+    "id": "EXP33-ADV-0016",
+    "module": "DATABASE",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does Third Normal Form require eliminating transitive dependencies after 2NF requirements are already satisfied?"
+  },
+  {
+    "id": "EXP33-ADV-0017",
+    "module": "REST_API",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does a JWT bearer token enable stateless authorization without requiring the server to query session memory?"
+  },
+  {
+    "id": "EXP33-ADV-0018",
+    "module": "HTML_CSS",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does flex-grow: 1 distribute remaining free space among items without equalizing their total rendered widths?"
+  },
+  {
+    "id": "EXP33-ADV-0019",
+    "module": "JAVASCRIPT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why do arrow functions inherit this from their lexical enclosing scope without having their own prototype property?"
+  },
+  {
+    "id": "EXP33-ADV-0020",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does useMemo skip recomputing cached values when dependency references remain strictly identical?"
+  },
+  {
+    "id": "EXP33-ADV-0021",
+    "module": "NODEJS",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does the cluster module spawn independent worker processes rather than sharing thread memory heaps?"
+  },
+  {
+    "id": "EXP33-ADV-0022",
+    "module": "DATABASE",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does PostgreSQL MVCC create new row versions during UPDATE operations instead of overwriting table disk pages in place?"
+  },
+  {
+    "id": "EXP33-ADV-0023",
+    "module": "REST_API",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does HTTP 204 No Content indicate successful processing while strictly forbidding a message body in the response?"
+  },
+  {
+    "id": "EXP33-ADV-0024",
+    "module": "HTML_CSS",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does align-items control cross-axis alignment while justify-content controls main-axis positioning?"
+  },
+  {
+    "id": "EXP33-ADV-0025",
+    "module": "JAVASCRIPT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does the temporal dead zone throw a ReferenceError when accessing let variables before their declaration line?"
+  },
+  {
+    "id": "EXP33-ADV-0026",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does React.memo perform shallow prop comparison by default rather than deep recursive object comparison?"
+  },
+  {
+    "id": "EXP33-ADV-0027",
+    "module": "NODEJS",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does express.json() middleware populate req.body while leaving GET requests without a body untouched?"
+  },
+  {
+    "id": "EXP33-ADV-0028",
+    "module": "DATABASE",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does a FOREIGN KEY constraint prevent deleting parent rows that have existing referencing child records?"
+  },
+  {
+    "id": "EXP33-ADV-0029",
+    "module": "REST_API",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does HTTP 401 indicate unauthenticated requests while HTTP 403 indicates unauthorized authenticated requests?"
+  },
+  {
+    "id": "EXP33-ADV-0030",
+    "module": "HTML_CSS",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does opacity: 0 preserve element layout geometry and clickability while visibility: hidden blocks mouse events?"
+  },
+  {
+    "id": "EXP33-ADV-0031",
+    "module": "JAVASCRIPT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does Array.prototype.map return a newly allocated array without mutating the caller array elements?"
+  },
+  {
+    "id": "EXP33-ADV-0032",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does useLayoutEffect execute synchronously before screen paint while useEffect executes asynchronously after paint?"
+  },
+  {
+    "id": "EXP33-ADV-0033",
+    "module": "NODEJS",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does CommonJS require() execute synchronously at runtime while ES Module imports are evaluated statically?"
+  },
+  {
+    "id": "EXP33-ADV-0034",
+    "module": "DATABASE",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does a B-tree index accelerate equality and range queries while adding maintenance cost to write queries?"
+  },
+  {
+    "id": "EXP33-ADV-0035",
+    "module": "REST_API",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does HTTP PATCH represent partial resource modification while HTTP PUT represents complete resource replacement?"
+  },
+  {
+    "id": "EXP33-ADV-0036",
+    "module": "HTML_CSS",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does CSS specificity prioritize class selectors over element tag selectors regardless of stylesheet order?"
+  },
+  {
+    "id": "EXP33-ADV-0037",
+    "module": "JAVASCRIPT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does Object.freeze enforce shallow immutability without automatically freezing nested child object references?"
+  },
+  {
+    "id": "EXP33-ADV-0038",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "SUPPORTED",
+    "query": "Why does useContext trigger a component re-render whenever the provided context value reference changes?"
+  },
+  {
+    "id": "EXP33-ADV-0039",
+    "module": "JAVASCRIPT",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does const prevent mutating properties inside an object assigned to that constant identifier?"
+  },
+  {
+    "id": "EXP33-ADV-0040",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does updating a ref .current value trigger an immediate synchronous re-render of the component tree?"
+  },
+  {
+    "id": "EXP33-ADV-0041",
+    "module": "NODEJS",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does Express error-handling middleware execute with only two parameters: req and res?"
+  },
+  {
+    "id": "EXP33-ADV-0042",
+    "module": "DATABASE",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does a PRIMARY KEY constraint permit multiple duplicate NULL values across different table rows?"
+  },
+  {
+    "id": "EXP33-ADV-0043",
+    "module": "REST_API",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why is HTTP POST defined as an idempotent operation according to the REST architectural specification?"
+  },
+  {
+    "id": "EXP33-ADV-0044",
+    "module": "HTML_CSS",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does box-sizing: content-box include border and padding inside the declared CSS width property?"
+  },
+  {
+    "id": "EXP33-ADV-0045",
+    "module": "JAVASCRIPT",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does typeof null return 'null' in all ECMAScript compliant runtime engines?"
+  },
+  {
+    "id": "EXP33-ADV-0046",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does useEffect with an empty dependency array [] re-execute after every single component render?"
+  },
+  {
+    "id": "EXP33-ADV-0047",
+    "module": "NODEJS",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does process.nextTick wait until after the entire macrotask queue has emptied before running?"
+  },
+  {
+    "id": "EXP33-ADV-0048",
+    "module": "DATABASE",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does an INNER JOIN retain non-matching rows from the left table with NULL right-side columns?"
+  },
+  {
+    "id": "EXP33-ADV-0049",
+    "module": "REST_API",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does HTTP GET modify database state on the server during standard retrieval operations?"
+  },
+  {
+    "id": "EXP33-ADV-0050",
+    "module": "HTML_CSS",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does position: relative remove an element completely from the document layout flow?"
+  },
+  {
+    "id": "EXP33-ADV-0051",
+    "module": "JAVASCRIPT",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does Promise.all wait for all promises to reject before returning a rejected promise?"
+  },
+  {
+    "id": "EXP33-ADV-0052",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does React state batching execute state setters synchronously with immediate DOM repaints?"
+  },
+  {
+    "id": "EXP33-ADV-0053",
+    "module": "NODEJS",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does fs.readFileSync execute asynchronously in the background libuv thread pool?"
+  },
+  {
+    "id": "EXP33-ADV-0054",
+    "module": "DATABASE",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does Second Normal Form (2NF) allow partial functional dependencies on composite candidate keys?"
+  },
+  {
+    "id": "EXP33-ADV-0055",
+    "module": "REST_API",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does JWT authentication require the server to store full session state in database memory?"
+  },
+  {
+    "id": "EXP33-ADV-0056",
+    "module": "HTML_CSS",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does flex-direction: column align items horizontally along the cross axis as its main axis?"
+  },
+  {
+    "id": "EXP33-ADV-0057",
+    "module": "JAVASCRIPT",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why do arrow functions bind their own dynamic this context whenever invoked as object methods?"
+  },
+  {
+    "id": "EXP33-ADV-0058",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does useMemo execute asynchronous network requests to fetch external data across renders?"
+  },
+  {
+    "id": "EXP33-ADV-0059",
+    "module": "NODEJS",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does the cluster module share V8 heap memory objects directly between child worker processes?"
+  },
+  {
+    "id": "EXP33-ADV-0060",
+    "module": "DATABASE",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does Atomicity in ACID permit a failed transaction to permanently commit half of its queries?"
+  },
+  {
+    "id": "EXP33-ADV-0061",
+    "module": "REST_API",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does HTTP 204 No Content mandate returning a JSON object explaining the operation outcome?"
+  },
+  {
+    "id": "EXP33-ADV-0062",
+    "module": "HTML_CSS",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does justify-content align flex children along the vertical cross axis when flex-direction is row?"
+  },
+  {
+    "id": "EXP33-ADV-0063",
+    "module": "JAVASCRIPT",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does the temporal dead zone allow reading let variables prior to their declaration line?"
+  },
+  {
+    "id": "EXP33-ADV-0064",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does React.memo force child components to re-render when incoming props are strictly identical?"
+  },
+  {
+    "id": "EXP33-ADV-0065",
+    "module": "NODEJS",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does calling next() in Express terminate the request and return an immediate response to the client?"
+  },
+  {
+    "id": "EXP33-ADV-0066",
+    "module": "DATABASE",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does a FOREIGN KEY constraint allow child rows to reference non-existent parent primary keys?"
+  },
+  {
+    "id": "EXP33-ADV-0067",
+    "module": "REST_API",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does HTTP 403 Forbidden indicate that the user omitted their authentication bearer token entirely?"
+  },
+  {
+    "id": "EXP33-ADV-0068",
+    "module": "HTML_CSS",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does display: inline permit developers to set explicit height and width dimensions?"
+  },
+  {
+    "id": "EXP33-ADV-0069",
+    "module": "JAVASCRIPT",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does Array.prototype.map mutate the original array elements directly in place?"
+  },
+  {
+    "id": "EXP33-ADV-0070",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does useState allow reading the updated state value synchronously on the immediate next code line?"
+  },
+  {
+    "id": "EXP33-ADV-0071",
+    "module": "NODEJS",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does CommonJS require() support asynchronous static module imports at compile time?"
+  },
+  {
+    "id": "EXP33-ADV-0072",
+    "module": "DATABASE",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does a B-tree index force full table scans for all equality lookups on indexed columns?"
+  },
+  {
+    "id": "EXP33-ADV-0073",
+    "module": "REST_API",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does HTTP PUT apply partial patch modifications to a subset of resource fields?"
+  },
+  {
+    "id": "EXP33-ADV-0074",
+    "module": "HTML_CSS",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does an element selector have higher CSS specificity weighting than a class selector?"
+  },
+  {
+    "id": "EXP33-ADV-0075",
+    "module": "REACT",
+    "category": "ADVERSARIAL",
+    "expected": "REFUTED",
+    "query": "Why does custom hook share a single global state instance between all distinct component callers?"
+  }
+]

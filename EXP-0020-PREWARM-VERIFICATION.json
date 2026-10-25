@@ -1,0 +1,163 @@
+{
+  "timestamp": "2026-09-09T13:35:55.514Z",
+  "workers_tested": 8,
+  "worker_results": {
+    "8001": {
+      "port": 8001,
+      "http_status": 200,
+      "success": true,
+      "retrieval_source": "PREWARMED_RAM",
+      "corpus_version": 1788960892998,
+      "chunk_count": 23,
+      "vector_dimension": 768,
+      "results_returned": 4,
+      "is_prewarmed": true
+    },
+    "8002": {
+      "port": 8002,
+      "http_status": 200,
+      "success": true,
+      "retrieval_source": "PREWARMED_RAM",
+      "corpus_version": 1788960892998,
+      "chunk_count": 23,
+      "vector_dimension": 768,
+      "results_returned": 4,
+      "is_prewarmed": true
+    },
+    "8003": {
+      "port": 8003,
+      "http_status": 200,
+      "success": true,
+      "retrieval_source": "PREWARMED_RAM",
+      "corpus_version": 1788960892998,
+      "chunk_count": 23,
+      "vector_dimension": 768,
+      "results_returned": 4,
+      "is_prewarmed": true
+    },
+    "8004": {
+      "port": 8004,
+      "http_status": 200,
+      "success": true,
+      "retrieval_source": "PREWARMED_RAM",
+      "corpus_version": 1788960892998,
+      "chunk_count": 23,
+      "vector_dimension": 768,
+      "results_returned": 4,
+      "is_prewarmed": true
+    },
+    "8005": {
+      "port": 8005,
+      "http_status": 200,
+      "success": true,
+      "retrieval_source": "PREWARMED_RAM",
+      "corpus_version": 1788960892998,
+      "chunk_count": 23,
+      "vector_dimension": 768,
+      "results_returned": 4,
+      "is_prewarmed": true
+    },
+    "8006": {
+      "port": 8006,
+      "http_status": 200,
+      "success": true,
+      "retrieval_source": "PREWARMED_RAM",
+      "corpus_version": 1788960892998,
+      "chunk_count": 23,
+      "vector_dimension": 768,
+      "results_returned": 4,
+      "is_prewarmed": true
+    },
+    "8007": {
+      "port": 8007,
+      "http_status": 200,
+      "success": true,
+      "retrieval_source": "PREWARMED_RAM",
+      "corpus_version": 1788960892998,
+      "chunk_count": 23,
+      "vector_dimension": 768,
+      "results_returned": 4,
+      "is_prewarmed": true
+    },
+    "8008": {
+      "port": 8008,
+      "http_status": 200,
+      "success": true,
+      "retrieval_source": "PREWARMED_RAM",
+      "corpus_version": 1788960892998,
+      "chunk_count": 23,
+      "vector_dimension": 768,
+      "results_returned": 4,
+      "is_prewarmed": true
+    }
+  },
+  "all_workers_prewarmed": true,
+  "cache_consistency_test": {
+    "steps": [
+      {
+        "step": "INITIAL_READ",
+        "version": 1788960892998,
+        "consistent": true
+      },
+      {
+        "step": "VERSION_BUMP",
+        "old_version": 1788960892998,
+        "new_version": "1788960957089"
+      },
+      {
+        "step": "POST_BUMP_VERIFY",
+        "all_synchronized": true,
+        "versions": {
+          "8001": "1788960957089",
+          "8002": "1788960957089",
+          "8003": "1788960957089",
+          "8004": "1788960957089",
+          "8005": "1788960957089",
+          "8006": "1788960957089",
+          "8007": "1788960957089",
+          "8008": "1788960957089"
+        }
+      }
+    ]
+  },
+  "invariant_injection_tests": {
+    "invariant_7_zero_version": {
+      "threw": true,
+      "error": "[Prewarm Invariant Error] Invariant 7 failure: Corpus version must be a positive integer, got 0"
+    },
+    "invariant_5_dimension_mismatch": {
+      "threw": true,
+      "error": "[Prewarm Invariant Error] Invariant 5 failure: Vector dimension mismatch in chunk id 'ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0'. Expected 768, got 512"
+    },
+    "invariant_3_zero_norm": {
+      "threw": true,
+      "error": "[Prewarm Invariant Error] Invariant 3 failure: Zero, NaN, or Infinite norm (0) in chunk id 'ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0'"
+    }
+  },
+  "performance_benchmark": {
+    "prewarmed_ram": {
+      "retrieval_source": "PREWARMED_RAM",
+      "requests": 100,
+      "mean_ms": 15.86,
+      "p50_ms": 15,
+      "p95_ms": 21,
+      "p99_ms": 25,
+      "rps": 63
+    },
+    "sqlite_disk": {
+      "retrieval_source": "SQLITE_DISK",
+      "mean_ms": 2.53,
+      "p50_ms": 2.21,
+      "p95_ms": 3.23,
+      "p99_ms": 5.34,
+      "rps": 395.9
+    },
+    "speedup_factor": 0.16
+  },
+  "gateway_routed_search": {
+    "http_status": 200,
+    "retrieval_source": "PREWARMED_RAM",
+    "worker_port": "8004",
+    "results_count": 6
+  }
+}

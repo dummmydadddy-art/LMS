@@ -1,0 +1,39 @@
+# EXP-0013 FROZEN CHAMPION ARTIFACT MANIFEST
+# Generated: 2026-09-09T09:01:37.069482+00:00
+# Experiment ID: EXP-0013-CHAMPION-2026-09-09
+# Status: FROZEN CHAMPION
+# Format: SHA-256 | Bytes | Relative Path
+====================================================================================================
+221d86ede96ebe2938d6bd9a39b56ed718bee9586af0b5dcc70ba40f39854859      6782 B  backend/embedding_coordinator.exp0013_champion.js
+221d86ede96ebe2938d6bd9a39b56ed718bee9586af0b5dcc70ba40f39854859      6782 B  backend/embedding_coordinator.js
+692b5e314b1a14a13cb674341be8f9bc5caa1d0bfab953f9c00b807c4717d798      4995 B  backend/gateway.exp0012_champion.js
+f20feb370466ead92d25037781cb14904060a7156b3e712f81cffc2c1ace5fe6      6766 B  backend/gateway.exp0013_champion.js
+f20feb370466ead92d25037781cb14904060a7156b3e712f81cffc2c1ace5fe6      6766 B  backend/gateway.js
+8a1c91a4284659546f77865db31c02c18645d88a3bed16001225935e3a0dfaa8    118755 B  backend/index.php
+401e50cf6dd88dc226d6ba0394ec93b023ffeb6f4e696c7c223a79fcbda0d559     15069 B  backend/rag_query_condenser.php
+644f466c88c1107ff5605e0dc60f0dc11b238b0842b6901ba571d955a21e82cc     13539 B  backend/rag_query_orchestrator.php
+8d4ed3fd87f5a86bfe9cb01d11fe4fb26de728d241cee823975d55ac7dc695c8     12161 B  backend/rag_safety_boundary.php
+a1314dc897e5c1dc9ccb0eadf24f3d78060627a3cf9063aa5fb96d4cd353318c     25041 B  backend/rag_semantic_mapper.php
+616ad66f0ca6930f7428ed2c8a5f683f51739b7189cfa359c211acb87e6c373c     71707 B  backend/rag_service.exp0012_champion.php
+78106272e60b58dbe05744fef599e3545f62ea3735433f2cac78f84b4b8b4d39     72952 B  backend/rag_service.exp0013_champion.php
+78106272e60b58dbe05744fef599e3545f62ea3735433f2cac78f84b4b8b4d39     72952 B  backend/rag_service.php
+b4a75ccb3abd5bde15c90596c88a24e2d9ee007b5daf73b78896a1fa6007b441      8118 B  tests\rag\datasets\adversarial\lms_adversarial_v1.json
+c51ece5567ceaae21d7036df69b77428aad2ef186861c2458c65e8c0f25454de     52478 B  tests\rag\datasets\blind_holdout\blind_holdout_v1.json
+de18861222c9721e1d67683dfa206bdee2e57918933f4e1e147acf72083f0449      5931 B  tests\rag\datasets\conversational\conversational_holdout_v1.json
+df33a4007c8d7a44d8f2d793b1def797fecea29eb6c82727a0c1e7955c4b95b3     18813 B  tests\rag\datasets\conversational\conversational_holdout_v2.json
+10838031308d8a8a2c228a5ec234bf36f74f9ce60b0422563037b80a8aa29326     10450 B  tests\rag\datasets\cross_module\lms_cross_module_v1.json
+09115818c8c6d23eae3ac4739d64fc21a2b1115ef98604fab2f1316988700efe     10151 B  tests\rag\datasets\cross_module\lms_cross_module_v2.json
+342985599d457641d310a7e9e63858978d4f69b5a5dc5289de90d5a308daddcf      7993 B  tests\rag\datasets\false_premise\blind_false_premise_v2.json
+c7d838437b5405046ef1b353c6b411c8db39733b32286fb2cd87e623d3c1efd7      5873 B  tests\rag\datasets\false_premise\false_premise_holdout_v1.json
+d6b1f0e9464af4e254dc2885f7f764b416b171015e039f11d6ca0eec5f542469     23763 B  tests\rag\datasets\golden\lms_golden_v1.json
+833ea1a2c8bcbfc96a4e6e06c15612f8d5923443cad2b237977fb2d33577b006     56502 B  tests\rag\datasets\multi_hop\multi_hop_holdout_v1.json
+5ddf9ec0764f8c03557a0465c3b8f37ccfd271ef752b672f828ff90254113d9c     41721 B  tests\rag\datasets\semantic\semantic_holdout_v1.json
+f801fe34ce811f22eb7888c5bebf3f08ada4aa88add9e85c758fdbe81c1214a1      4588 B  tests\rag\datasets\unanswerable\blind_unanswerable_v1.json
+9e7e873f90f9162158b9a2c4c743ba76e23e6458220cbbe5b0078da7e20b503d     15999 B  tests\rag\datasets\unanswerable\blind_unanswerable_v2.json
+b88316dcea3bf2ce6a8d09a1978aacdd72e04b84c9d1bc31c96c998cf71974a4      4437 B  tests\rag\datasets\unanswerable\lms_unanswerable_v1.json
+efa5230fe560c138ad7ab56ec6399330c614680f13de02cf759a41db575daf8a      9669 B  tests\rag\evaluators\claim_grounding_engine.js
+06f84a1f1d45e9de0e0d5de108c469b434d1599b2450f1f99f8bcb27748f7f58      3504 B  tests\rag\evaluators\generation_metrics.js
+7defcc79875376b9e1dc1346cbf63414aaa91f229ee723c6e8086087af311213      3475 B  tests\rag\evaluators\ir_metrics.js
+4c90b519a5467dd794c7f336d33322017a9926b81b41835d6b540866aa6ba7df      2610 B  tests\rag\evaluators\retrieval_integrity_test.js
+8a3f908d1a9662cb3e0886eb0a84c68f89572f938250767e5d72ccda8c3cde4b     14327 B  tests\rag\runners\benchmark_runner.js
+8af30ca4d806fa012d1e733e8483ecc3c3b4f788fb2b4d4d516ff9416ff33f5c     13351 B  tests\rag\runners\blind_benchmark_runner.js

@@ -1,0 +1,21 @@
+experiment_id: EXP-0061
+base_commit: fc7e5021a40566f040fbbdaea4d5f04e770a6b40
+description: BitNet 1.58-bit Low-Bit Local Inference Research Adapter
+feature_flags:
+  ENABLE_DOCLING_RS: false
+  ENABLE_PAGEINDEX: false
+  ENABLE_LLAMA_CPP: false
+  ENABLE_LLMLINGUA: false
+  ENABLE_SURYA: false
+  ENABLE_GEMMA3N: false
+  ENABLE_BITNET: true
+  ENABLE_MARKER: false
+llm_backend: bitnet
+model_id: microsoft/BitNet-b1.58-large
+bit_width: 1.58
+retriever: exp0040
+verifier:
+  name: A4
+  frozen: true
+device: cpu
+seed: 42

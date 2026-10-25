@@ -1,0 +1,103 @@
+{
+  "experiment_id": "EXP-0038",
+  "audit_date": "2026-09-17T14:40:00+05:30",
+  "audit_type": "INDEPENDENT_DEVELOPMENT_CHECKPOINT_AUDIT",
+  "auditor": "Independent Scientific Auditor (Antigravity)",
+  "branch": "exp-0038",
+  "parent_commit": "4372d43",
+  "working_tree_clean": true,
+  "production_untouched": true,
+  "dataset_sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+  "blind_dataset_sha256": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+  "content_preservation_gate": {
+    "status": "PASS",
+    "word_tokens_matched": 1320,
+    "word_tokens_total": 1320,
+    "word_coverage_pct": 100.0,
+    "missing_technical_terms": 0
+  },
+  "chunking_metrics": {
+    "C0_control": {
+      "chunks": 23,
+      "mean_tokens": 163.61,
+      "max_tokens": 342.0,
+      "overlap_rate_pct": 15.38
+    },
+    "C1_docling": {
+      "chunks": 21,
+      "mean_tokens": 177.57,
+      "max_tokens": 331.0,
+      "overlap_rate_pct": 0.0
+    }
+  },
+  "retrieval_metrics": {
+    "C0_control": {
+      "recall_at_1": 0.9805,
+      "recall_at_5": 1.0,
+      "mrr": 0.9886,
+      "ndcg_at_5": 0.9746,
+      "p50_latency_ms": 859.55,
+      "p95_latency_ms": 949.48
+    },
+    "C1_docling": {
+      "recall_at_1": 0.9648,
+      "recall_at_5": 1.0,
+      "mrr": 0.9806,
+      "ndcg_at_5": 0.9689,
+      "p50_latency_ms": 829.75,
+      "p95_latency_ms": 874.49
+    }
+  },
+  "downstream_verifier_metrics": {
+    "C0_control": {
+      "accuracy": 92.0,
+      "macro_f1": 92.77,
+      "far": 2.4,
+      "frr": 16.0,
+      "supported_recall": 84.0,
+      "refutation_recall": 95.33,
+      "ne_recall": 99.0,
+      "false_acceptances": 6,
+      "false_abstentions": 0
+    },
+    "C1_docling": {
+      "accuracy": 90.75,
+      "macro_f1": 91.7,
+      "far": 2.8,
+      "frr": 19.33,
+      "supported_recall": 80.67,
+      "refutation_recall": 95.33,
+      "ne_recall": 99.0,
+      "false_acceptances": 7,
+      "false_abstentions": 0
+    }
+  },
+  "paired_mcnemar_analysis": {
+    "n11": 361,
+    "n00": 30,
+    "n01": 2,
+    "n10": 7,
+    "total_discordant": 9,
+    "concordance_rate_pct": 97.75,
+    "mcnemar_chi2": 1.7778,
+    "p_value": 0.091211,
+    "statistically_significant_alpha_0_05": false,
+    "gains_cases": [
+      "DEV-FLS-099",
+      "DEV-SUP-077"
+    ],
+    "losses_cases": [
+      "DEV-SUP-002",
+      "DEV-SUP-021",
+      "DEV-SUP-037",
+      "DEV-SUP-039",
+      "DEV-SUP-042",
+      "DEV-SUP-049",
+      "DEV-MIX-027"
+    ]
+  },
+  "protocol_deviation_status": "PASS",
+  "protocol_deviations": [],
+  "audit_decision": "PASS \u2014 BLIND READY",
+  "audit_summary": "Independent audit complete. Content preservation verified at 100.0%. Dual storage tables isolated without corruption. Retrieval Recall@5 verified at 100.0% for both C0 and C1. Downstream verifier A4 achieves 90.75% accuracy and 2.80% FAR on C1 evidence. McNemar paired test confirms no statistically significant regression (chi2=1.7778, p=0.0912 > 0.05) with 97.75% concordance across 400 cases. Blind dataset remains strictly uninspected (SHA-256 verified). System is certified PASS \u2014 BLIND READY."
+}

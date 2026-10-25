@@ -1,0 +1,19 @@
+{
+  "server": "FrankenPHP 1.12.7 (PHP 8.5.11, Caddy v2.11.4)",
+  "port": 8000,
+  "timestamp": "2026-10-02T12:54:05.816Z",
+  "burst_test": {
+    "concurrent_requests": 20,
+    "successful": 20,
+    "total_elapsed_ms": 1123,
+    "min_latency_ms": 400,
+    "max_latency_ms": 1119,
+    "avg_latency_ms": 849.9,
+    "throughput_req_sec": 17.809439002671414
+  },
+  "interleaving_test": {
+    "heavy_request_ms": 229,
+    "fast_request_ms": 4,
+    "non_blocking": true
+  }
+}

@@ -1,16 +1,16 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Bot, Send, Sparkles, X, BookOpen, AlertCircle, RefreshCw, GraduationCap, Mic, MicOff, MessageSquareText } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { Send, Sparkles, X, BookOpen, AlertCircle, RefreshCw, RotateCcw } from 'lucide-react';
 import api from '../services/api';
 import { supabase } from '../supabaseClient';
-
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 interface SourceCitation {
   title: string;
   chunk_index: number;
   similarity: number;
+  page?: string | number;
+  page_citation?: string;
+  page_number?: number;
+  content?: string;
 }
 
 interface ChatMessage {
@@ -19,42 +19,60 @@ interface ChatMessage {
   text: string;
   sources?: SourceCitation[];
   timestamp: string;
-  mode?: 'direct' | 'socratic';
+  interpretedQuery?: string;
+  isAbstained?: boolean;
+  backend?: string;
+  isStreaming?: boolean;
 }
 
 interface AiTutorModalProps {
   isOpen: boolean;
   onClose: () => void;
+  studentId?: string;
   courseId?: string;
   batchId?: string;
   courseName?: string;
-  initialPrompt?: string;
 }
 
 export const AiTutorModal: React.FC<AiTutorModalProps> = ({
   isOpen,
   onClose,
+  studentId,
   courseId,
   batchId,
-  courseName = 'Full Stack Web Development',
-  initialPrompt
+  courseName = 'Full Stack Web Development'
 }) => {
-  const [mode, setMode] = useState<'direct' | 'socratic'>('direct');
+  const [effectiveStudentId, setEffectiveStudentId] = useState<string>(studentId || '');
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: 'welcome',
       sender: 'assistant',
-      text: `Hello! I'm your EduConnect AI Course Tutor for **${courseName}**. I answer questions grounded strictly in your official syllabus and study materials.\n\nChoose **Direct** for instant factual explanations or **Socratic Tutor** for guided hints and practice questions. What would you like to explore today?`,
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      mode: 'direct'
+      text: `Hello! I'm your EduConnect AI Course Tutor for **${courseName}**. I answer questions grounded strictly in your official syllabus and study materials. What would you like to explore today?`,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [isListening, setIsListening] = useState(false);
+  const [isStreaming, setIsStreaming] = useState(false);
+  const [isClearing, setIsClearing] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const lastInitialPromptRef = useRef<string | null>(null);
-  const recognitionRef = useRef<any>(null);
+  const abortControllerRef = useRef<AbortController | null>(null);
+
+  useEffect(() => {
+    return () => {
+      abortControllerRef.current?.abort();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!studentId) {
+      supabase.auth.getUser().then(({ data: { user } }) => {
+        if (user) {
+          setEffectiveStudentId(user.id);
+        }
+      });
+    }
+  }, [studentId]);
 
   const sampleQuestions = [
     'How does Flexbox justify-content differ from align-items?',
@@ -69,371 +87,482 @@ export const AiTutorModal: React.FC<AiTutorModalProps> = ({
     }
   }, [messages, isOpen]);
 
-  useEffect(() => {
-    if (isOpen && initialPrompt && lastInitialPromptRef.current !== initialPrompt) {
-      lastInitialPromptRef.current = initialPrompt;
-      handleSend(initialPrompt);
-    }
-  }, [isOpen, initialPrompt]);
+  const API_BASE = (api.defaults.baseURL || import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '');
 
-  // Web Speech API Voice Recognition setup
-  useEffect(() => {
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    if (SpeechRecognition) {
-      const recognition = new SpeechRecognition();
-      recognition.continuous = false;
-      recognition.interimResults = true;
-      recognition.lang = 'en-US';
-
-      recognition.onresult = (event: any) => {
-        let transcript = '';
-        for (let i = event.resultIndex; i < event.results.length; i++) {
-          transcript += event.results[i][0].transcript;
-        }
-        if (transcript) {
-          setInput(transcript);
-        }
-      };
-
-      recognition.onerror = () => {
-        setIsListening(false);
-      };
-
-      recognition.onend = () => {
-        setIsListening(false);
-      };
-
-      recognitionRef.current = recognition;
-    }
-  }, []);
-
-  const toggleVoice = () => {
-    if (!recognitionRef.current) {
-      alert('Voice speech recognition is not supported in this browser. Please use Chrome, Edge, or Safari.');
-      return;
-    }
-
-    if (isListening) {
-      recognitionRef.current.stop();
-      setIsListening(false);
-    } else {
+  const handleNewConversation = async () => {
+    abortControllerRef.current?.abort();
+    setIsStreaming(false);
+    setLoading(false);
+    setIsClearing(true);
+    setMessages([
+      {
+        id: 'welcome',
+        sender: 'assistant',
+        text: `Hello! I'm your EduConnect AI Course Tutor for **${courseName}**. I answer questions grounded strictly in your official syllabus and study materials. What would you like to explore today?`,
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      }
+    ]);
+    setInput('');
+    const targetStudentId = studentId || effectiveStudentId;
+    if (targetStudentId) {
       try {
-        recognitionRef.current.start();
-        setIsListening(true);
+        await api.post('/api/rag/clear', {
+          student_id: targetStudentId
+        }, {
+          headers: {
+            'X-Service-Key': 'lms-n8n-service-key-2026'
+          }
+        });
       } catch (err) {
-        setIsListening(false);
+        console.warn('[AiTutorModal] Failed to clear session store:', err);
       }
     }
+    setIsClearing(false);
   };
 
-  if (!isOpen) return null;
-
-  const handleSend = async (questionText?: string) => {
+  const handleSend = useCallback(async (questionText?: string) => {
     const q = (questionText || input).trim();
-    if (!q || loading) return;
+    if (!q || loading || isStreaming) return;
 
-    if (isListening && recognitionRef.current) {
-      recognitionRef.current.stop();
-      setIsListening(false);
-    }
+    abortControllerRef.current?.abort();
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
 
+    const userMsgId = String(Date.now());
     const userMsg: ChatMessage = {
-      id: String(Date.now()),
+      id: userMsgId,
       sender: 'user',
       text: q,
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
 
-    const assistantMsgId = String(Date.now() + 1);
-    const initialAssistantMsg: ChatMessage = {
-      id: assistantMsgId,
-      sender: 'assistant',
-      text: '',
-      sources: [],
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      mode: mode
-    };
-
-    setMessages((prev) => [...prev, userMsg, initialAssistantMsg]);
+    setMessages((prev) => [...prev, userMsg]);
     if (!questionText) setInput('');
     setLoading(true);
 
+    const targetStudentId = effectiveStudentId || studentId;
+    const assistantMsgId = String(Date.now() + 1);
+
+    let streamSuccess = false;
+    let receivedFirstToken = false;
+
     try {
-      const historyPayload = messages.map(m => ({
-        role: m.sender === 'user' ? 'user' : 'assistant',
-        content: m.text
-      }));
-
-      // Retrieve session token if available
       const { data: { session } } = await supabase.auth.getSession();
-      const token = session?.access_token;
+      const headers: Record<string, string> = {
+        'Content-Type': 'application/json',
+        'Accept': 'text/event-stream',
+        'X-Service-Key': 'lms-n8n-service-key-2026'
+      };
+      if (session?.access_token) {
+        headers['Authorization'] = `Bearer ${session.access_token}`;
+      }
 
-      // Stream request to /api/rag/stream
-      const response = await fetch(`${API_URL}/api/rag/stream`, {
+      const res = await fetch(`${API_BASE}/api/rag/ask?stream=true`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          ...(token ? { 'Authorization': `Bearer ${token}` } : {})
-        },
+        headers,
+        signal: controller.signal,
         body: JSON.stringify({
           question: q,
+          stream: true,
+          student_id: targetStudentId || undefined,
           course_id: courseId,
-          batch_id: batchId,
-          history: historyPayload,
-          mode: mode,
-          stream: true
+          batch_id: batchId
         })
       });
 
-      if (!response.ok || !response.body) {
-        throw new Error('Streaming failed, falling back to standard endpoint');
+      if (!res.ok || !res.body) {
+        throw new Error(`HTTP stream error: ${res.status}`);
       }
 
-      const reader = response.body.getReader();
+      const reader = res.body.getReader();
       const decoder = new TextDecoder();
       let buffer = '';
       let accumulatedText = '';
-      let detectedSources: SourceCitation[] = [];
 
       while (true) {
-        const { value, done } = await reader.read();
+        const { done, value } = await reader.read();
         if (done) break;
 
         buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split('\n');
-        buffer = lines.pop() || '';
+        const blocks = buffer.split(/\r?\n\r?\n/);
+        buffer = blocks.pop() || '';
 
-        let currentEvent = '';
-        for (const line of lines) {
-          const trimmed = line.trim();
-          if (trimmed.startsWith('event:')) {
-            currentEvent = trimmed.replace('event:', '').trim();
-          } else if (trimmed.startsWith('data:')) {
-            const dataStr = trimmed.replace('data:', '').trim();
-            if (!dataStr) continue;
-            try {
-              const data = JSON.parse(dataStr);
-              if (currentEvent === 'metadata') {
-                if (data.sources) {
-                  detectedSources = data.sources;
-                }
-              } else if (currentEvent === 'token') {
-                if (data.token) {
-                  accumulatedText += data.token;
-                  setMessages((prev) =>
-                    prev.map((m) =>
-                      m.id === assistantMsgId
-                        ? { ...m, text: accumulatedText, sources: detectedSources, mode: mode }
-                        : m
-                    )
-                  );
-                }
-              } else if (currentEvent === 'done') {
-                if (data.sources && detectedSources.length === 0) {
-                  detectedSources = data.sources;
-                }
-                if (data.answer && !accumulatedText) {
-                  accumulatedText = data.answer;
-                }
+        for (const block of blocks) {
+          if (!block.trim()) continue;
+          let eventName = 'token';
+          const dataLines: string[] = [];
+
+          for (const rawLine of block.split(/\r?\n/)) {
+            const line = rawLine.trim();
+            if (line.startsWith('event:')) {
+              eventName = line.slice(6).trim();
+            } else if (line.startsWith('data:')) {
+              dataLines.push(line.slice(5).trim());
+            }
+          }
+
+          const dataStr = dataLines.join('\n');
+          if (!dataStr) continue;
+
+          try {
+            const payload = JSON.parse(dataStr);
+
+            if (eventName === 'token' && typeof payload.token === 'string') {
+              accumulatedText += payload.token;
+              if (!receivedFirstToken) {
+                receivedFirstToken = true;
+                setLoading(false);
+                setIsStreaming(true);
+                setMessages((prev) => [
+                  ...prev,
+                  {
+                    id: assistantMsgId,
+                    sender: 'assistant',
+                    text: accumulatedText,
+                    sources: [],
+                    isStreaming: true,
+                    timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                  }
+                ]);
+              } else {
                 setMessages((prev) =>
                   prev.map((m) =>
                     m.id === assistantMsgId
-                      ? { ...m, text: accumulatedText, sources: detectedSources, mode: mode }
+                      ? { ...m, text: accumulatedText }
                       : m
                   )
                 );
               }
-            } catch (jsonErr) {
-              // Ignore partial JSON
+            } else if (eventName === 'done') {
+              streamSuccess = true;
+              const isAbstained = Boolean(
+                payload.abstain ||
+                payload.abstained ||
+                payload.backend === 'crag_fallback_gate' ||
+                payload.backend === 'safety_boundary_gate' ||
+                payload.backend === 'safety_trap_gate' ||
+                payload.backend === 'calibrated_abstention_gate' ||
+                payload.backend === 'unverified_premise_gate'
+              );
+
+              if (payload.query_condensation?.rewritten && payload.query_condensation?.condensed_query) {
+                setMessages((prev) =>
+                  prev.map((m) =>
+                    m.id === userMsgId
+                      ? { ...m, interpretedQuery: payload.query_condensation.condensed_query }
+                      : m
+                  )
+                );
+              }
+
+              const finalText = payload.answer || accumulatedText;
+              const sources: SourceCitation[] = payload.sources || [];
+
+              setMessages((prev) =>
+                prev.map((m) =>
+                  m.id === assistantMsgId
+                    ? {
+                        ...m,
+                        text: finalText,
+                        sources,
+                        isAbstained,
+                        backend: payload.backend,
+                        isStreaming: false
+                      }
+                    : m
+                )
+              );
             }
+          } catch (parseErr) {
+            console.warn('[AiTutorModal] SSE JSON parse error:', parseErr, dataStr);
           }
         }
       }
 
-      // If finished streaming and accumulatedText is empty, provide fallback
-      if (!accumulatedText) {
-        setMessages((prev) =>
-          prev.map((m) =>
-            m.id === assistantMsgId
-              ? { ...m, text: 'I could not generate an answer at this time.' }
-              : m
-          )
-        );
-      }
-    } catch (err: any) {
-      // Fallback to synchronous ask if streaming encounters connection error
-      try {
-        const historyPayload = messages.map(m => ({
-          role: m.sender === 'user' ? 'user' : 'assistant',
-          content: m.text
-        }));
+      // Handle any trailing complete SSE event remaining in buffer
+      if (buffer.trim()) {
+        let eventName = 'token';
+        const dataLines: string[] = [];
+        for (const rawLine of buffer.split(/\r?\n/)) {
+          const line = rawLine.trim();
+          if (line.startsWith('event:')) {
+            eventName = line.slice(6).trim();
+          } else if (line.startsWith('data:')) {
+            dataLines.push(line.slice(5).trim());
+          }
+        }
+        const dataStr = dataLines.join('\n');
+        if (dataStr) {
+          try {
+            const payload = JSON.parse(dataStr);
+            if (eventName === 'done') {
+              streamSuccess = true;
+              const isAbstained = Boolean(
+                payload.abstain ||
+                payload.abstained ||
+                payload.backend === 'crag_fallback_gate' ||
+                payload.backend === 'safety_boundary_gate' ||
+                payload.backend === 'safety_trap_gate' ||
+                payload.backend === 'calibrated_abstention_gate' ||
+                payload.backend === 'unverified_premise_gate'
+              );
 
+              if (payload.query_condensation?.rewritten && payload.query_condensation?.condensed_query) {
+                setMessages((prev) =>
+                  prev.map((m) =>
+                    m.id === userMsgId
+                      ? { ...m, interpretedQuery: payload.query_condensation.condensed_query }
+                      : m
+                  )
+                );
+              }
+
+              setMessages((prev) =>
+                prev.map((m) =>
+                  m.id === assistantMsgId
+                    ? {
+                        ...m,
+                        text: payload.answer || accumulatedText,
+                        sources: payload.sources || [],
+                        isAbstained,
+                        backend: payload.backend,
+                        isStreaming: false
+                      }
+                    : m
+                )
+              );
+            }
+          } catch (parseErr) {
+            console.warn('[AiTutorModal] SSE trailing parse error:', parseErr);
+          }
+        }
+      }
+    } catch (streamErr: unknown) {
+      if (controller.signal.aborted) {
+        setIsStreaming(false);
+        setLoading(false);
+        return;
+      }
+      console.warn('[AiTutorModal] SSE streaming failed or disconnected, falling back to buffered mode:', streamErr);
+    } finally {
+      setIsStreaming(false);
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === assistantMsgId && m.isStreaming
+            ? { ...m, isStreaming: false }
+            : m
+        )
+      );
+    }
+
+    // Automatic Fallback to Buffered Axios Mode if streaming failed without receiving tokens
+    if (!streamSuccess && !receivedFirstToken) {
+      setLoading(true);
+      try {
         const res = await api.post('/api/rag/ask', {
           question: q,
+          stream: false,
+          student_id: targetStudentId || undefined,
           course_id: courseId,
-          batch_id: batchId,
-          history: historyPayload,
-          mode: mode
+          batch_id: batchId
+        }, {
+          headers: {
+            'X-Service-Key': 'lms-n8n-service-key-2026'
+          }
         });
 
         const reply = res.data?.answer || 'I could not generate an answer at this time.';
-        const sources = res.data?.sources || [];
+        const sources: SourceCitation[] = res.data?.sources || [];
+        const backend = res.data?.backend;
 
-        setMessages((prev) =>
-          prev.map((m) =>
-            m.id === assistantMsgId
-              ? { ...m, text: reply, sources: sources, mode: mode }
-              : m
-          )
+        const isAbstained = Boolean(
+          res.data?.abstain ||
+          res.data?.abstained ||
+          backend === 'crag_fallback_gate' ||
+          backend === 'safety_boundary_gate' ||
+          backend === 'safety_trap_gate' ||
+          backend === 'calibrated_abstention_gate' ||
+          backend === 'unverified_premise_gate'
         );
-      } catch (fallbackErr) {
-        setMessages((prev) =>
-          prev.map((m) =>
-            m.id === assistantMsgId
-              ? {
-                  ...m,
-                  text: 'Sorry, I encountered an issue connecting to the AI Tutor service. Please ensure the backend server and Ollama are running.'
-                }
-              : m
-          )
-        );
+
+        const queryCondensation = res.data?.query_condensation;
+        if (queryCondensation?.rewritten === true && queryCondensation?.condensed_query) {
+          setMessages((prev) =>
+            prev.map((m) =>
+              m.id === userMsgId
+                ? { ...m, interpretedQuery: queryCondensation.condensed_query }
+                : m
+            )
+          );
+        }
+
+        const botMsg: ChatMessage = {
+          id: assistantMsgId,
+          sender: 'assistant',
+          text: reply,
+          sources: sources,
+          isAbstained: isAbstained,
+          backend: backend,
+          isStreaming: false,
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        };
+
+        setMessages((prev) => [...prev, botMsg]);
+      } catch {
+        const errorMsg: ChatMessage = {
+          id: assistantMsgId,
+          sender: 'assistant',
+          text: 'Sorry, I encountered an issue connecting to the AI Tutor service. Please ensure the backend server and Ollama are running.',
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        };
+        setMessages((prev) => [...prev, errorMsg]);
+      } finally {
+        setLoading(false);
       }
-    } finally {
+    } else {
       setLoading(false);
     }
-  };
+  }, [input, loading, isStreaming, effectiveStudentId, studentId, courseId, batchId, API_BASE]);
+
+  if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-      <div className="flex flex-col w-full max-w-2xl h-[660px] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="AI Course Tutor"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+    >
+      <div className="flex flex-col w-full max-w-2xl h-[640px] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden animate-in zoom-in-95 duration-150">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-sm">
+        <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-sm">
           <div className="flex items-center space-x-3">
             <div className="p-2 bg-white/20 rounded-xl backdrop-blur-md">
               <Sparkles className="w-5 h-5 text-yellow-300" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <h2 className="text-base font-semibold">EduConnect AI Course Tutor</h2>
-                <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-white/20 text-white border border-white/30">
-                  {mode === 'socratic' ? '🧠 Socratic' : '⚡ Direct'}
-                </span>
-              </div>
-              <p className="text-xs text-blue-100 flex items-center gap-1">
+              <h2 className="text-base font-semibold leading-tight text-balance">EduConnect AI Course Tutor</h2>
+              <p className="text-xs text-blue-100 flex items-center gap-1.5 mt-0.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
-                Grounded in Approved Syllabus (SSE Streaming Active)
+                Grounded in Approved Syllabus & Notes (True RAG)
               </p>
             </div>
           </div>
-          <button
-            onClick={onClose}
-            className="p-1.5 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
-
-        {/* Mode Switcher Pill Banner */}
-        <div className="px-6 py-2 bg-slate-100/90 border-b border-slate-200/80 flex items-center justify-between text-xs">
-          <span className="text-slate-600 font-medium flex items-center gap-1.5">
-            Pedagogical Mode:
-          </span>
-          <div className="inline-flex rounded-lg bg-white p-0.5 border border-slate-300 shadow-xs">
+          <div className="flex items-center gap-2">
             <button
-              onClick={() => setMode('direct')}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-md font-medium text-xs transition-all ${
-                mode === 'direct'
-                  ? 'bg-blue-600 text-white shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900'
-              }`}
+              onClick={handleNewConversation}
+              disabled={loading || isStreaming || isClearing}
+              title="Clear conversation history and start fresh"
+              aria-label="New Conversation"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 active:bg-white/25 text-white transition-colors border border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
             >
-              <BookOpen className="w-3.5 h-3.5" />
-              Direct Answer
+              <RotateCcw className={`w-3.5 h-3.5 ${isClearing ? 'animate-spin' : ''}`} />
+              <span className="hidden sm:inline">New Conversation</span>
             </button>
             <button
-              onClick={() => setMode('socratic')}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-md font-medium text-xs transition-all ${
-                mode === 'socratic'
-                  ? 'bg-indigo-600 text-white shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900'
-              }`}
+              onClick={onClose}
+              aria-label="Close AI Course Tutor"
+              className="p-1.5 rounded-lg text-white/80 hover:text-white hover:bg-white/10 active:bg-white/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
             >
-              <GraduationCap className="w-3.5 h-3.5" />
-              Socratic Guide
+              <X className="w-5 h-5" />
             </button>
           </div>
         </div>
 
         {/* Messages Body */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50">
+        <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50 scrollbar-thin scrollbar-thumb-slate-200">
           {messages.map((m) => (
             <div
               key={m.id}
               className={`flex ${m.sender === 'user' ? 'justify-end' : 'justify-start'}`}
             >
-              <div
-                className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm shadow-sm ${
-                  m.sender === 'user'
-                    ? 'bg-blue-600 text-white rounded-tr-none'
-                    : 'bg-white text-slate-800 border border-slate-200/80 rounded-tl-none'
-                }`}
-              >
-                {/* Socratic indicator tag */}
-                {m.sender === 'assistant' && m.mode === 'socratic' && m.id !== 'welcome' && (
-                  <div className="inline-flex items-center gap-1 mb-2 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">
-                    <GraduationCap className="w-3 h-3 text-indigo-600" /> Socratic Guided Learning
-                  </div>
-                )}
-
-                {m.sender === 'user' ? (
-                  <div className="whitespace-pre-wrap leading-relaxed">{m.text}</div>
-                ) : (
-                  <div className="prose prose-sm prose-slate max-w-none leading-relaxed
-                    prose-p:my-1.5 prose-li:my-0.5 prose-ul:my-1 prose-ol:my-1
-                    prose-headings:text-slate-800 prose-headings:font-semibold prose-headings:mt-3 prose-headings:mb-1
-                    prose-code:text-indigo-700 prose-code:bg-indigo-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:font-mono prose-code:before:content-none prose-code:after:content-none
-                    prose-pre:bg-slate-800 prose-pre:text-slate-100 prose-pre:rounded-lg prose-pre:p-3 prose-pre:text-xs prose-pre:overflow-x-auto prose-pre:my-2
-                    prose-a:text-blue-600 prose-strong:text-slate-900">
-                    {m.text ? (
-                      <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.text}</ReactMarkdown>
-                    ) : (
-                      <span className="flex items-center gap-2 text-slate-400 italic">
-                        <RefreshCw className="w-3.5 h-3.5 animate-spin text-blue-600" />
-                        Synthesizing verified answer...
+              {m.sender === 'user' ? (
+                <div className="max-w-[85%] rounded-2xl px-4 py-3 text-sm shadow-sm bg-blue-600 text-white rounded-tr-none">
+                  <div className="whitespace-pre-wrap leading-relaxed text-pretty">{m.text}</div>
+                  {m.interpretedQuery && (
+                    <div className="mt-2 pt-2 border-t border-blue-400/30 text-[11px] text-blue-100 flex items-start gap-1.5 font-medium">
+                      <span className="text-yellow-300 font-bold text-xs leading-none mt-0.5">↳</span>
+                      <span className="leading-tight">
+                        Interpreted as: <span className="italic font-normal text-white">"{m.interpretedQuery}"</span>
                       </span>
+                    </div>
+                  )}
+                  <span className="block text-[10px] mt-1 text-right text-blue-200">
+                    {m.timestamp}
+                  </span>
+                </div>
+              ) : m.isAbstained ? (
+                /* CRAG Fallback / Out-of-Domain Abstention Card */
+                <div className="max-w-[85%] rounded-2xl rounded-tl-none p-4 text-sm shadow-sm bg-amber-50 border border-amber-300 text-amber-900 animate-in fade-in duration-200">
+                  <div className="flex items-center gap-1.5 mb-2 pb-1.5 border-b border-amber-200/80 text-amber-800 font-semibold text-xs">
+                    <AlertCircle className="w-4 h-4 text-amber-600 shrink-0" />
+                    <span>Curriculum Boundary Notice (CRAG Fallback)</span>
+                  </div>
+                  <div className="whitespace-pre-wrap leading-relaxed text-pretty text-amber-950 font-normal">
+                    {m.text}
+                    {m.isStreaming && (
+                      <span
+                        aria-hidden="true"
+                        className="inline-block w-1.5 h-4 ml-1 bg-amber-600 animate-pulse align-middle rounded-sm"
+                      />
                     )}
                   </div>
-                )}
-
-                {/* Sources Section */}
-                {m.sources && m.sources.length > 0 && (
-                  <div className="mt-3 pt-2 border-t border-slate-100 space-y-1">
-                    <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1">
-                      <BookOpen className="w-3 h-3 text-indigo-500" /> Verified Course Sources:
-                    </p>
-                    <div className="flex flex-wrap gap-1.5 mt-1">
-                      {m.sources.map((s, idx) => (
-                        <span
-                          key={idx}
-                          className="inline-flex items-center gap-1 text-[11px] font-medium bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full border border-indigo-100"
-                        >
-                          {s.title} (Sec {s.chunk_index + 1}) • {Math.round(s.similarity * 100)}%
-                        </span>
-                      ))}
-                    </div>
+                  <span className="block text-[10px] mt-2 text-right text-amber-700/80">
+                    {m.timestamp}
+                  </span>
+                </div>
+              ) : (
+                /* Standard Assistant Message */
+                <div className="max-w-[85%] rounded-2xl px-4 py-3 text-sm shadow-sm bg-white text-slate-800 border border-slate-200/80 rounded-tl-none">
+                  <div className="whitespace-pre-wrap leading-relaxed text-pretty">
+                    {m.text}
+                    {m.isStreaming && (
+                      <span
+                        aria-hidden="true"
+                        className="inline-block w-1.5 h-4 ml-1 bg-indigo-600 dark:bg-indigo-400 animate-pulse align-middle rounded-sm"
+                      />
+                    )}
                   </div>
-                )}
 
-                <span
-                  className={`block text-[10px] mt-1 text-right ${
-                    m.sender === 'user' ? 'text-blue-200' : 'text-slate-400'
-                  }`}
-                >
-                  {m.timestamp}
-                </span>
-              </div>
+                  {/* Sources Section */}
+                  {m.sources && m.sources.length > 0 && (
+                    <div className="mt-3 pt-2.5 border-t border-slate-100 space-y-1.5">
+                      <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1">
+                        <BookOpen className="w-3.5 h-3.5 text-indigo-500" /> Verified Course Sources:
+                      </p>
+                      <div className="flex flex-wrap gap-1.5 mt-1">
+                        {m.sources.map((s, idx) => {
+                          const pageDisplay = s.page || s.page_citation || (s.page_number ? `p. ${s.page_number}` : null);
+                          return (
+                            <span
+                              key={idx}
+                              title={s.content ? s.content.substring(0, 150) + '...' : undefined}
+                              className="inline-flex items-center gap-1 text-[11px] font-medium bg-indigo-50 text-indigo-700 px-2.5 py-0.5 rounded-full border border-indigo-100 hover:bg-indigo-100/70 transition-colors cursor-default"
+                            >
+                              {s.title} (Sec {s.chunk_index + 1}{pageDisplay ? ` • ${pageDisplay}` : ''}) • {Math.round(s.similarity * 100)}%
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                  <span className="block text-[10px] mt-2 text-right text-slate-400">
+                    {m.timestamp}
+                  </span>
+                </div>
+              )}
             </div>
           ))}
+
+          {loading && (
+            <div className="flex justify-start">
+              <div className="bg-white border border-slate-200 text-slate-600 rounded-2xl rounded-tl-none px-4 py-3 text-xs flex items-center gap-2.5 shadow-sm">
+                <RefreshCw className="w-4 h-4 animate-spin text-blue-600 shrink-0" />
+                <span>Searching course knowledge base & synthesizing answer...</span>
+              </div>
+            </div>
+          )}
 
           <div ref={messagesEndRef} />
         </div>
@@ -444,58 +573,30 @@ export const AiTutorModal: React.FC<AiTutorModalProps> = ({
             <button
               key={i}
               onClick={() => handleSend(sq)}
-              disabled={loading}
-              className="text-xs whitespace-nowrap bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 font-medium px-3 py-1.5 rounded-full transition-colors border border-slate-200/60"
+              disabled={loading || isStreaming}
+              className="text-xs whitespace-nowrap bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 font-medium px-3 py-1.5 rounded-full transition-colors border border-slate-200/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 disabled:opacity-50"
             >
               {sq}
             </button>
           ))}
         </div>
 
-        {/* Input Bar with Voice & Send */}
+        {/* Input Bar */}
         <div className="p-4 bg-white border-t border-slate-200 flex items-center gap-2">
-          <button
-            type="button"
-            onClick={toggleVoice}
-            disabled={loading}
-            title={isListening ? 'Stop voice recording' : 'Speak your question'}
-            className={`p-2.5 rounded-xl border transition flex items-center justify-center ${
-              isListening
-                ? 'bg-red-500 text-white animate-pulse border-red-600 shadow-md'
-                : 'bg-slate-100 hover:bg-slate-200 text-slate-600 border-slate-200'
-            }`}
-          >
-            {isListening ? <MicOff className="w-4 h-4" /> : <Mic className="w-4 h-4" />}
-          </button>
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSend()}
-            placeholder={
-              isListening
-                ? 'Listening... speak clearly into your microphone'
-                : mode === 'socratic'
-                ? 'Ask for guidance on a concept, code problem, or error...'
-                : 'Ask anything about your syllabus or study notes...'
-            }
-            disabled={loading}
-            className={`flex-1 px-4 py-2.5 bg-slate-50 border rounded-xl text-sm focus:outline-none focus:ring-2 transition ${
-              isListening
-                ? 'border-red-400 focus:ring-red-400 bg-red-50/30'
-                : mode === 'socratic'
-                ? 'border-indigo-200 focus:ring-indigo-500 focus:bg-white'
-                : 'border-slate-300 focus:ring-blue-500 focus:bg-white'
-            }`}
+            placeholder="Ask anything about your syllabus or study notes..."
+            disabled={loading || isStreaming}
+            className="flex-1 px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition disabled:opacity-50"
           />
           <button
             onClick={() => handleSend()}
-            disabled={loading || !input.trim()}
-            className={`p-2.5 disabled:bg-slate-300 text-white rounded-xl shadow-sm transition flex items-center justify-center ${
-              mode === 'socratic'
-                ? 'bg-indigo-600 hover:bg-indigo-700'
-                : 'bg-blue-600 hover:bg-blue-700'
-            }`}
+            disabled={loading || isStreaming || !input.trim()}
+            aria-label="Send message"
+            className="p-2.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 disabled:bg-slate-300 text-white rounded-xl shadow-sm transition flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             <Send className="w-4 h-4" />
           </button>

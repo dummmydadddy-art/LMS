@@ -1,0 +1,61 @@
+{
+  "experiment_tag": "EXP-0023-SECURITY-FLAGS-RESULTS-2026-09-12",
+  "timestamp": "2026-09-12T08:32:50.894Z",
+  "total_flags_tested": 5,
+  "unauthorized_overrides_successful": 5,
+  "vulnerability_status": "VULNERABILITY_CONFIRMED_UNAUTHENTICATED_FLAG_MUTATION",
+  "security_verdict": "FAIL_CLIENT_HEADER_TAMPERING",
+  "finding_summary": "RagFlags::initFromRequest() blindly trusts client-supplied X-RAG-FLAGS headers, allowing any untrusted caller to turn off safety boundaries, input sanity, and premise verification.",
+  "test_records": [
+    {
+      "flag": "ENABLE_PREMISE_VERIFIER",
+      "description": "Disable false-premise verifier via X-RAG-FLAGS",
+      "severity": "CRITICAL",
+      "baseline_http_status": 200,
+      "override_http_status": 200,
+      "override_succeeded": true,
+      "vulnerability_confirmed": true,
+      "detail": "External client successfully injected 'X-RAG-FLAGS: ENABLE_PREMISE_VERIFIER=false'. The server honored the override."
+    },
+    {
+      "flag": "ENABLE_CURRICULUM_BOUNDARY",
+      "description": "Disable curriculum boundary safety gate via X-RAG-FLAGS",
+      "severity": "CRITICAL",
+      "baseline_http_status": 200,
+      "override_http_status": 200,
+      "override_succeeded": true,
+      "vulnerability_confirmed": true,
+      "detail": "External client successfully injected 'X-RAG-FLAGS: ENABLE_CURRICULUM_BOUNDARY=false'. The server honored the override."
+    },
+    {
+      "flag": "ENABLE_INPUT_SANITY",
+      "description": "Disable non-lexical input sanity check via X-RAG-FLAGS",
+      "severity": "HIGH",
+      "baseline_http_status": 200,
+      "override_http_status": 200,
+      "override_succeeded": true,
+      "vulnerability_confirmed": true,
+      "detail": "External client successfully injected 'X-RAG-FLAGS: ENABLE_INPUT_SANITY=false'. The server honored the override."
+    },
+    {
+      "flag": "ENABLE_DYNAMIC_K",
+      "description": "Force static K by disabling dynamic K via X-RAG-FLAGS",
+      "severity": "MEDIUM",
+      "baseline_http_status": 200,
+      "override_http_status": 200,
+      "override_succeeded": true,
+      "vulnerability_confirmed": true,
+      "detail": "External client successfully injected 'X-RAG-FLAGS: ENABLE_DYNAMIC_K=false'. The server honored the override."
+    },
+    {
+      "flag": "ENABLE_SEMANTIC_RERANK",
+      "description": "Disable semantic concept reranker via X-RAG-FLAGS",
+      "severity": "MEDIUM",
+      "baseline_http_status": 200,
+      "override_http_status": 200,
+      "override_succeeded": true,
+      "vulnerability_confirmed": true,
+      "detail": "External client successfully injected 'X-RAG-FLAGS: ENABLE_SEMANTIC_RERANK=false'. The server honored the override."
+    }
+  ]
+}

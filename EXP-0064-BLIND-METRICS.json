@@ -1,0 +1,1784 @@
+{
+  "experiment_id": "EXP-0064",
+  "phase": "PHASE_2_BLIND_VALIDATION",
+  "dataset": "EXP-0033-BLIND-DATASET.json",
+  "total_queries": 500,
+  "blind_outcome_vs_b1": "SIMILAR",
+  "blind_outcome_vs_b0": "SIMILAR",
+  "conditions": {
+    "b0": {
+      "total": 500,
+      "correct": 364,
+      "accuracy": 72.8,
+      "accuracy_ci_95": [
+        68.74,
+        76.52
+      ],
+      "macro_f1": 73.04,
+      "far": 16.03,
+      "far_ci_95": [
+        12.24,
+        20.72
+      ],
+      "frr": 27.23,
+      "frr_ci_95": [
+        21.69,
+        33.57
+      ],
+      "supported_recall": 72.77,
+      "refutation_recall": 68.52,
+      "not_established_recall": 78.4,
+      "ood_recall": 96.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 155,
+          "REFUTED": 45,
+          "NOT_ESTABLISHED": 13
+        },
+        "REFUTED": {
+          "SUPPORTED": 35,
+          "REFUTED": 111,
+          "NOT_ESTABLISHED": 16
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 11,
+          "REFUTED": 16,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED": {
+          "correct": 91,
+          "total": 125,
+          "accuracy": 72.8
+        },
+        "FALSE_PREMISE": {
+          "correct": 87,
+          "total": 125,
+          "accuracy": 69.6
+        },
+        "AMBIGUOUS": {
+          "correct": 50,
+          "total": 75,
+          "accuracy": 66.67
+        },
+        "OOD": {
+          "correct": 48,
+          "total": 50,
+          "accuracy": 96.0
+        },
+        "PARAPHRASE": {
+          "correct": 38,
+          "total": 50,
+          "accuracy": 76.0
+        },
+        "ADVERSARIAL": {
+          "correct": 50,
+          "total": 75,
+          "accuracy": 66.67
+        }
+      }
+    },
+    "b1": {
+      "total": 500,
+      "correct": 364,
+      "accuracy": 72.8,
+      "accuracy_ci_95": [
+        68.74,
+        76.52
+      ],
+      "macro_f1": 73.0,
+      "far": 17.07,
+      "far_ci_95": [
+        13.16,
+        21.85
+      ],
+      "frr": 27.23,
+      "frr_ci_95": [
+        21.69,
+        33.57
+      ],
+      "supported_recall": 72.77,
+      "refutation_recall": 70.99,
+      "not_established_recall": 75.2,
+      "ood_recall": 92.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 155,
+          "REFUTED": 42,
+          "NOT_ESTABLISHED": 16
+        },
+        "REFUTED": {
+          "SUPPORTED": 36,
+          "REFUTED": 115,
+          "NOT_ESTABLISHED": 11
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 13,
+          "REFUTED": 18,
+          "NOT_ESTABLISHED": 94
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED": {
+          "correct": 92,
+          "total": 125,
+          "accuracy": 73.6
+        },
+        "FALSE_PREMISE": {
+          "correct": 90,
+          "total": 125,
+          "accuracy": 72.0
+        },
+        "AMBIGUOUS": {
+          "correct": 48,
+          "total": 75,
+          "accuracy": 64.0
+        },
+        "OOD": {
+          "correct": 46,
+          "total": 50,
+          "accuracy": 92.0
+        },
+        "PARAPHRASE": {
+          "correct": 38,
+          "total": 50,
+          "accuracy": 76.0
+        },
+        "ADVERSARIAL": {
+          "correct": 50,
+          "total": 75,
+          "accuracy": 66.67
+        }
+      }
+    },
+    "b2": {
+      "total": 500,
+      "correct": 365,
+      "accuracy": 73.0,
+      "accuracy_ci_95": [
+        68.94,
+        76.71
+      ],
+      "macro_f1": 73.22,
+      "far": 17.42,
+      "far_ci_95": [
+        13.47,
+        22.23
+      ],
+      "frr": 26.76,
+      "frr_ci_95": [
+        21.27,
+        33.08
+      ],
+      "supported_recall": 73.24,
+      "refutation_recall": 70.37,
+      "not_established_recall": 76.0,
+      "ood_recall": 92.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 156,
+          "REFUTED": 41,
+          "NOT_ESTABLISHED": 16
+        },
+        "REFUTED": {
+          "SUPPORTED": 37,
+          "REFUTED": 114,
+          "NOT_ESTABLISHED": 11
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 13,
+          "REFUTED": 17,
+          "NOT_ESTABLISHED": 95
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED": {
+          "correct": 92,
+          "total": 125,
+          "accuracy": 73.6
+        },
+        "FALSE_PREMISE": {
+          "correct": 90,
+          "total": 125,
+          "accuracy": 72.0
+        },
+        "AMBIGUOUS": {
+          "correct": 49,
+          "total": 75,
+          "accuracy": 65.33
+        },
+        "OOD": {
+          "correct": 46,
+          "total": 50,
+          "accuracy": 92.0
+        },
+        "PARAPHRASE": {
+          "correct": 38,
+          "total": 50,
+          "accuracy": 76.0
+        },
+        "ADVERSARIAL": {
+          "correct": 50,
+          "total": 75,
+          "accuracy": 66.67
+        }
+      }
+    }
+  },
+  "paired_comparisons": {
+    "b2_vs_b1": {
+      "comparator": "B2 vs B1",
+      "n11": 361,
+      "n00": 132,
+      "n10": 4,
+      "n01": 3,
+      "discordant_pairs": 7,
+      "mcnemar_exact_p": 1.0,
+      "accuracy_delta_pp": 0.2,
+      "accuracy_delta_ci_95": [
+        -0.84,
+        1.24
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "EXP33-FLS-0003",
+          "query": "Why does box-sizing: content-box include border and padding inside the declared element width?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B1_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0030",
+          "query": "Why does an async function return undefined rather than wrapping its return value in a Promise?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B1_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0113",
+          "query": "Why does Second Normal Form (2NF) mandate partial dependencies on candidate keys?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_CORRECT_B1_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0116",
+          "query": "How does a LEFT JOIN drop rows from the left table if they lack corresponding right table matches?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_CORRECT_B1_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0069",
+          "query": "When is it appropriate to bypass React state entirely and use direct DOM manipulation?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B1_WRONG"
+        },
+        {
+          "query_id": "EXP33-ADV-0005",
+          "query": "Why is HTTP DELETE considered idempotent even if the second identical call returns a 404 status code?",
+          "category": "ADVERSARIAL",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B1_WRONG"
+        },
+        {
+          "query_id": "EXP33-ADV-0044",
+          "query": "Why does box-sizing: content-box include border and padding inside the declared CSS width property?",
+          "category": "ADVERSARIAL",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B1_CORRECT"
+        }
+      ]
+    },
+    "b2_vs_b0": {
+      "comparator": "B2 vs B0",
+      "n11": 334,
+      "n00": 105,
+      "n10": 31,
+      "n01": 30,
+      "discordant_pairs": 61,
+      "mcnemar_exact_p": 1.0,
+      "accuracy_delta_pp": 0.2,
+      "accuracy_delta_ci_95": [
+        -2.86,
+        3.26
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "EXP33-SUP-0009",
+          "query": "Does position: absolute remove the targeted element from the normal document layout flow?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0011",
+          "query": "Does CSS specificity rank ID selectors higher than class selectors?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0018",
+          "query": "Can CSS media queries apply conditional styles according to the viewport width?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0019",
+          "query": "Does rem unit calculate font size relative to the root html element?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0030",
+          "query": "Does async keyword cause a function to return a Promise implicitly?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0032",
+          "query": "Are microtasks processed before the next macrotask in the JavaScript event loop?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0034",
+          "query": "Does Array.prototype.filter construct a shallow copy array containing elements passing the predicate?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0038",
+          "query": "Does array destructuring unpack elements into variables based on their array index position?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0040",
+          "query": "Does strict equality === compare values without performing implicit type coercion?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0056",
+          "query": "Should state in React be treated as immutable when updating complex objects or arrays?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0064",
+          "query": "Does Node.js execute non-blocking asynchronous I/O operations on an event-driven architecture?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0068",
+          "query": "Does app.use() mount middleware at a specified path or across all incoming routes?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0095",
+          "query": "Does HTTP status code 204 No Content indicate successful request processing without a response body?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0098",
+          "query": "Does HTTP status code 403 Forbidden indicate that the server understands the request but refuses authorization?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0115",
+          "query": "Does an INNER JOIN return only matching rows that satisfy the join condition across both tables?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0003",
+          "query": "Why does box-sizing: content-box include border and padding inside the declared element width?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0012",
+          "query": "How does the header tag mandate that all paragraph text inside it be rendered in uppercase bold?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0014",
+          "query": "How does rem unit calculate font dimensions based on the immediate parent element font size?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0015",
+          "query": "Why does em unit always scale strictly against the root HTML document element font size?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0030",
+          "query": "Why does an async function return undefined rather than wrapping its return value in a Promise?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0034",
+          "query": "Why does Array.prototype.forEach return a freshly allocated transformed array?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0035",
+          "query": "How does Object.freeze deep freeze all nested inner sub-objects automatically without recursion?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0036",
+          "query": "Why does the spread operator {...obj} perform a deep recursive clone of all nested objects?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0038",
+          "query": "Why does strict equality === automatically coerce string operands to numbers during evaluation?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0045",
+          "query": "Why does an empty dependency array in useEffect cause the effect callback to re-execute after every render?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0055",
+          "query": "Why does a custom hook create a single global shared state instance accessible by all component callers?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0056",
+          "query": "How does controlled component let the native HTML DOM maintain its internal input value independently?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0073",
+          "query": "How does process.env automatically synchronize environment variables across different physical servers?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0081",
+          "query": "How does npm install save production dependencies into devDependencies by default?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0083",
+          "query": "How does Express response.send() require manual stringification of JavaScript objects to JSON?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0086",
+          "query": "How is HTTP POST defined as an idempotent method that never produces side effects?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0100",
+          "query": "How does REST require all URIs to include HTTP verbs like /getUsers or /deleteUser in the path?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0113",
+          "query": "Why does Second Normal Form (2NF) mandate partial dependencies on candidate keys?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0116",
+          "query": "How does a LEFT JOIN drop rows from the left table if they lack corresponding right table matches?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0011",
+          "query": "Should all production Node services use clustering regardless of server CPU core counts?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-AMB-0014",
+          "query": "Is functional programming style universally cleaner than object-oriented style in JS?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0024",
+          "query": "Should API versioning be implemented in the URL path, query params, or accept headers?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0031",
+          "query": "Should web designers prefer pure CSS animations over JavaScript requestAnimationFrame?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0044",
+          "query": "Is Object.assign or spread syntax more idiomatic for object cloning in modern JS?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-AMB-0049",
+          "query": "Should developers avoid using CSS !important in all possible scenarios?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0057",
+          "query": "Should state initialization use lazy initializer functions for all useState hooks?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0066",
+          "query": "Is it acceptable for a REST API to support HTTP POST for search queries with large payloads?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-AMB-0067",
+          "query": "Should media query breakpoints be defined in pixels or rems for responsive sites?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-AMB-0069",
+          "query": "When is it appropriate to bypass React state entirely and use direct DOM manipulation?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0070",
+          "query": "What threshold of query execution time warrants rewriting an SQL query plan?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-AMB-0071",
+          "query": "Should uncaughtException event listeners always terminate the process immediately?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-AMB-0075",
+          "query": "Is prop drilling acceptable if the component hierarchy is only two levels deep?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-OOD-0035",
+          "query": "How does WebAssembly execute compiled linear memory instructions in client runtimes?",
+          "category": "OOD",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-OOD-0043",
+          "query": "How does React Native bridge JavaScript threads with native platform UI components?",
+          "category": "OOD",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-PAR-0002",
+          "query": "Is it correct that border-box calculation causes padding and borders to sit inside the declared width?",
+          "category": "PARAPHRASE",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-PAR-0006",
+          "query": "Is it true that position absolute removes an element entirely from the standard document layout flow?",
+          "category": "PARAPHRASE",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-PAR-0027",
+          "query": "Does React group multiple state updates occurring inside the same event handler into a single render pass?",
+          "category": "PARAPHRASE",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-PAR-0047",
+          "query": "Does a FOREIGN KEY link records between tables to make sure foreign references always point to existing parent rows?",
+          "category": "PARAPHRASE",
+          "expected": "SUPPORTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-ADV-0005",
+          "query": "Why is HTTP DELETE considered idempotent even if the second identical call returns a 404 status code?",
+          "category": "ADVERSARIAL",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-ADV-0015",
+          "query": "Why does stream pipe() manage backpressure automatically without needing manual pause and resume calls?",
+          "category": "ADVERSARIAL",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-ADV-0044",
+          "query": "Why does box-sizing: content-box include border and padding inside the declared CSS width property?",
+          "category": "ADVERSARIAL",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-ADV-0046",
+          "query": "Why does useEffect with an empty dependency array [] re-execute after every single component render?",
+          "category": "ADVERSARIAL",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-ADV-0050",
+          "query": "Why does position: relative remove an element completely from the document layout flow?",
+          "category": "ADVERSARIAL",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-ADV-0068",
+          "query": "Why does display: inline permit developers to set explicit height and width dimensions?",
+          "category": "ADVERSARIAL",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-ADV-0071",
+          "query": "Why does CommonJS require() support asynchronous static module imports at compile time?",
+          "category": "ADVERSARIAL",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B2_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-ADV-0075",
+          "query": "Why does custom hook share a single global state instance between all distinct component callers?",
+          "category": "ADVERSARIAL",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B2_CORRECT_B0_WRONG"
+        }
+      ]
+    },
+    "b1_vs_b0": {
+      "comparator": "B1 vs B0",
+      "n11": 337,
+      "n00": 109,
+      "n10": 27,
+      "n01": 27,
+      "discordant_pairs": 54,
+      "mcnemar_exact_p": 1.0,
+      "accuracy_delta_pp": 0.0,
+      "accuracy_delta_ci_95": [
+        -2.88,
+        2.88
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "EXP33-SUP-0009",
+          "query": "Does position: absolute remove the targeted element from the normal document layout flow?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0011",
+          "query": "Does CSS specificity rank ID selectors higher than class selectors?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0018",
+          "query": "Can CSS media queries apply conditional styles according to the viewport width?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0019",
+          "query": "Does rem unit calculate font size relative to the root html element?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0030",
+          "query": "Does async keyword cause a function to return a Promise implicitly?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0032",
+          "query": "Are microtasks processed before the next macrotask in the JavaScript event loop?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0034",
+          "query": "Does Array.prototype.filter construct a shallow copy array containing elements passing the predicate?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0038",
+          "query": "Does array destructuring unpack elements into variables based on their array index position?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0040",
+          "query": "Does strict equality === compare values without performing implicit type coercion?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0056",
+          "query": "Should state in React be treated as immutable when updating complex objects or arrays?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0064",
+          "query": "Does Node.js execute non-blocking asynchronous I/O operations on an event-driven architecture?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0068",
+          "query": "Does app.use() mount middleware at a specified path or across all incoming routes?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0095",
+          "query": "Does HTTP status code 204 No Content indicate successful request processing without a response body?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-SUP-0098",
+          "query": "Does HTTP status code 403 Forbidden indicate that the server understands the request but refuses authorization?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-SUP-0115",
+          "query": "Does an INNER JOIN return only matching rows that satisfy the join condition across both tables?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0012",
+          "query": "How does the header tag mandate that all paragraph text inside it be rendered in uppercase bold?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0014",
+          "query": "How does rem unit calculate font dimensions based on the immediate parent element font size?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0015",
+          "query": "Why does em unit always scale strictly against the root HTML document element font size?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0034",
+          "query": "Why does Array.prototype.forEach return a freshly allocated transformed array?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0035",
+          "query": "How does Object.freeze deep freeze all nested inner sub-objects automatically without recursion?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0036",
+          "query": "Why does the spread operator {...obj} perform a deep recursive clone of all nested objects?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0038",
+          "query": "Why does strict equality === automatically coerce string operands to numbers during evaluation?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0045",
+          "query": "Why does an empty dependency array in useEffect cause the effect callback to re-execute after every render?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0055",
+          "query": "Why does a custom hook create a single global shared state instance accessible by all component callers?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0056",
+          "query": "How does controlled component let the native HTML DOM maintain its internal input value independently?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0073",
+          "query": "How does process.env automatically synchronize environment variables across different physical servers?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0081",
+          "query": "How does npm install save production dependencies into devDependencies by default?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0083",
+          "query": "How does Express response.send() require manual stringification of JavaScript objects to JSON?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-FLS-0086",
+          "query": "How is HTTP POST defined as an idempotent method that never produces side effects?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-FLS-0100",
+          "query": "How does REST require all URIs to include HTTP verbs like /getUsers or /deleteUser in the path?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0011",
+          "query": "Should all production Node services use clustering regardless of server CPU core counts?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-AMB-0014",
+          "query": "Is functional programming style universally cleaner than object-oriented style in JS?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0024",
+          "query": "Should API versioning be implemented in the URL path, query params, or accept headers?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0031",
+          "query": "Should web designers prefer pure CSS animations over JavaScript requestAnimationFrame?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0044",
+          "query": "Is Object.assign or spread syntax more idiomatic for object cloning in modern JS?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-AMB-0049",
+          "query": "Should developers avoid using CSS !important in all possible scenarios?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0057",
+          "query": "Should state initialization use lazy initializer functions for all useState hooks?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-AMB-0066",
+          "query": "Is it acceptable for a REST API to support HTTP POST for search queries with large payloads?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-AMB-0067",
+          "query": "Should media query breakpoints be defined in pixels or rems for responsive sites?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-AMB-0070",
+          "query": "What threshold of query execution time warrants rewriting an SQL query plan?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-AMB-0071",
+          "query": "Should uncaughtException event listeners always terminate the process immediately?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-AMB-0075",
+          "query": "Is prop drilling acceptable if the component hierarchy is only two levels deep?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-OOD-0035",
+          "query": "How does WebAssembly execute compiled linear memory instructions in client runtimes?",
+          "category": "OOD",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-OOD-0043",
+          "query": "How does React Native bridge JavaScript threads with native platform UI components?",
+          "category": "OOD",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-PAR-0002",
+          "query": "Is it correct that border-box calculation causes padding and borders to sit inside the declared width?",
+          "category": "PARAPHRASE",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-PAR-0006",
+          "query": "Is it true that position absolute removes an element entirely from the standard document layout flow?",
+          "category": "PARAPHRASE",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-PAR-0027",
+          "query": "Does React group multiple state updates occurring inside the same event handler into a single render pass?",
+          "category": "PARAPHRASE",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-PAR-0047",
+          "query": "Does a FOREIGN KEY link records between tables to make sure foreign references always point to existing parent rows?",
+          "category": "PARAPHRASE",
+          "expected": "SUPPORTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-ADV-0015",
+          "query": "Why does stream pipe() manage backpressure automatically without needing manual pause and resume calls?",
+          "category": "ADVERSARIAL",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-ADV-0046",
+          "query": "Why does useEffect with an empty dependency array [] re-execute after every single component render?",
+          "category": "ADVERSARIAL",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-ADV-0050",
+          "query": "Why does position: relative remove an element completely from the document layout flow?",
+          "category": "ADVERSARIAL",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-ADV-0068",
+          "query": "Why does display: inline permit developers to set explicit height and width dimensions?",
+          "category": "ADVERSARIAL",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        },
+        {
+          "query_id": "EXP33-ADV-0071",
+          "query": "Why does CommonJS require() support asynchronous static module imports at compile time?",
+          "category": "ADVERSARIAL",
+          "expected": "REFUTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "B1_WRONG_B0_CORRECT"
+        },
+        {
+          "query_id": "EXP33-ADV-0075",
+          "query": "Why does custom hook share a single global state instance between all distinct component callers?",
+          "category": "ADVERSARIAL",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "B1_CORRECT_B0_WRONG"
+        }
+      ]
+    }
+  },
+  "visual_complementarity": {
+    "VISUAL_ADDS_NO_CHANGE": 493,
+    "VISUAL_RECOVERS_TEXT_FAILURE": 4,
+    "VISUAL_HARMS_TEXT_SUCCESS": 3,
+    "FUSION_CHANGES_WRONG_TO_RIGHT": 4,
+    "FUSION_CHANGES_CORRECT_TO_WRONG": 3,
+    "changed_predictions_analysis": [
+      {
+        "query_id": "EXP33-FLS-0003",
+        "query": "Why does box-sizing: content-box include border and padding inside the declared element width?",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "b1_predicted": "REFUTED",
+        "b2_predicted": "SUPPORTED",
+        "type": "B2_WRONG_B1_CORRECT",
+        "text_chunk_ids": [
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_7"
+        ],
+        "visual_top_pages": [
+          [
+            2,
+            20.482
+          ],
+          [
+            3,
+            15.6934
+          ],
+          [
+            4,
+            13.5775
+          ],
+          [
+            22,
+            12.8958
+          ],
+          [
+            5,
+            12.5159
+          ]
+        ],
+        "fused_chunk_ids": [
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_7",
+          "page_02",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_6",
+          "page_03",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_10"
+        ],
+        "structural_gate_retained": [
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_7",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_6",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_10"
+        ],
+        "gate_reason": "REMOVED_STRUCTURALLY_DISJOINT_EVIDENCE",
+        "b1_decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "b2_decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+      },
+      {
+        "query_id": "EXP33-FLS-0030",
+        "query": "Why does an async function return undefined rather than wrapping its return value in a Promise?",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "b1_predicted": "REFUTED",
+        "b2_predicted": "SUPPORTED",
+        "type": "B2_WRONG_B1_CORRECT",
+        "text_chunk_ids": [
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_12"
+        ],
+        "visual_top_pages": [
+          [
+            8,
+            17.226
+          ],
+          [
+            6,
+            15.124
+          ],
+          [
+            17,
+            14.2522
+          ],
+          [
+            11,
+            14.1318
+          ],
+          [
+            16,
+            13.4847
+          ]
+        ],
+        "fused_chunk_ids": [
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_12",
+          "page_08",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_14",
+          "page_06",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_13"
+        ],
+        "structural_gate_retained": [
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_12",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_14",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_13"
+        ],
+        "gate_reason": "REMOVED_STRUCTURALLY_DISJOINT_EVIDENCE",
+        "b1_decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "b2_decision_reason": "All decomposed atomic claim predicates independently verified"
+      },
+      {
+        "query_id": "EXP33-FLS-0113",
+        "query": "Why does Second Normal Form (2NF) mandate partial dependencies on candidate keys?",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "b1_predicted": "SUPPORTED",
+        "b2_predicted": "REFUTED",
+        "type": "B2_CORRECT_B1_WRONG",
+        "text_chunk_ids": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_4"
+        ],
+        "visual_top_pages": [
+          [
+            21,
+            15.5098
+          ],
+          [
+            18,
+            10.9272
+          ],
+          [
+            1,
+            10.5852
+          ],
+          [
+            22,
+            10.1159
+          ],
+          [
+            20,
+            10.0839
+          ]
+        ],
+        "fused_chunk_ids": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_4",
+          "page_21",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_5",
+          "page_18",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1"
+        ],
+        "structural_gate_retained": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_4",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_5"
+        ],
+        "gate_reason": "REMOVED_STRUCTURALLY_DISJOINT_EVIDENCE",
+        "b1_decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "b2_decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+      },
+      {
+        "query_id": "EXP33-FLS-0116",
+        "query": "How does a LEFT JOIN drop rows from the left table if they lack corresponding right table matches?",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "b1_predicted": "SUPPORTED",
+        "b2_predicted": "REFUTED",
+        "type": "B2_CORRECT_B1_WRONG",
+        "text_chunk_ids": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_0"
+        ],
+        "visual_top_pages": [
+          [
+            22,
+            14.4018
+          ],
+          [
+            20,
+            14.2374
+          ],
+          [
+            3,
+            13.4654
+          ],
+          [
+            4,
+            12.8587
+          ],
+          [
+            18,
+            12.4773
+          ]
+        ],
+        "fused_chunk_ids": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_0",
+          "page_22",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_6",
+          "page_20",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_10"
+        ],
+        "structural_gate_retained": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_0"
+        ],
+        "gate_reason": "REMOVED_STRUCTURALLY_DISJOINT_EVIDENCE",
+        "b1_decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+        "b2_decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+      },
+      {
+        "query_id": "EXP33-AMB-0069",
+        "query": "When is it appropriate to bypass React state entirely and use direct DOM manipulation?",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "b1_predicted": "REFUTED",
+        "b2_predicted": "NOT_ESTABLISHED",
+        "type": "B2_CORRECT_B1_WRONG",
+        "text_chunk_ids": [
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_3"
+        ],
+        "visual_top_pages": [
+          [
+            14,
+            13.0587
+          ],
+          [
+            5,
+            13.0459
+          ],
+          [
+            10,
+            12.7527
+          ],
+          [
+            7,
+            12.7077
+          ],
+          [
+            8,
+            12.5233
+          ]
+        ],
+        "fused_chunk_ids": [
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_3",
+          "page_14",
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_0",
+          "page_05",
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_10"
+        ],
+        "structural_gate_retained": [
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_3"
+        ],
+        "gate_reason": "REMOVED_STRUCTURALLY_DISJOINT_EVIDENCE",
+        "b1_decision_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+        "b2_decision_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+      },
+      {
+        "query_id": "EXP33-ADV-0005",
+        "query": "Why is HTTP DELETE considered idempotent even if the second identical call returns a 404 status code?",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "b1_predicted": "REFUTED",
+        "b2_predicted": "SUPPORTED",
+        "type": "B2_CORRECT_B1_WRONG",
+        "text_chunk_ids": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_10"
+        ],
+        "visual_top_pages": [
+          [
+            18,
+            20.1646
+          ],
+          [
+            8,
+            16.7966
+          ],
+          [
+            17,
+            16.1998
+          ],
+          [
+            11,
+            15.8531
+          ],
+          [
+            14,
+            15.5588
+          ]
+        ],
+        "fused_chunk_ids": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_10",
+          "page_18",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_8",
+          "page_08",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11"
+        ],
+        "structural_gate_retained": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_10",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11"
+        ],
+        "gate_reason": "REMOVED_STRUCTURALLY_DISJOINT_EVIDENCE",
+        "b1_decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "b2_decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+      },
+      {
+        "query_id": "EXP33-ADV-0044",
+        "query": "Why does box-sizing: content-box include border and padding inside the declared CSS width property?",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "b1_predicted": "REFUTED",
+        "b2_predicted": "SUPPORTED",
+        "type": "B2_WRONG_B1_CORRECT",
+        "text_chunk_ids": [
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_7"
+        ],
+        "visual_top_pages": [
+          [
+            2,
+            20.7309
+          ],
+          [
+            3,
+            16.4558
+          ],
+          [
+            4,
+            14.9432
+          ],
+          [
+            1,
+            13.4535
+          ],
+          [
+            22,
+            13.3997
+          ]
+        ],
+        "fused_chunk_ids": [
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_7",
+          "page_02",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_10",
+          "page_03",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_6"
+        ],
+        "structural_gate_retained": [
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_7",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_10",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_6"
+        ],
+        "gate_reason": "REMOVED_STRUCTURALLY_DISJOINT_EVIDENCE",
+        "b1_decision_reason": "Contradictory evidence found via Tier-1 curriculum fast path",
+        "b2_decision_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+      }
+    ]
+  },
+  "ood_metrics": {
+    "b0": {
+      "total_ood": 50,
+      "correct": 48,
+      "accuracy": 96.0,
+      "false_acceptances": 0,
+      "false_refutations": 2,
+      "false_abstentions": 0
+    },
+    "b1": {
+      "total_ood": 50,
+      "correct": 46,
+      "accuracy": 92.0,
+      "false_acceptances": 0,
+      "false_refutations": 4,
+      "false_abstentions": 0
+    },
+    "b2": {
+      "total_ood": 50,
+      "correct": 46,
+      "accuracy": 92.0,
+      "false_acceptances": 0,
+      "false_refutations": 4,
+      "false_abstentions": 0
+    }
+  },
+  "efficiency": {
+    "visual_retrieval_latency_ms": {
+      "mean": 76.31,
+      "median": 74.77,
+      "p95": 87.57
+    },
+    "text_retrieval_latency_ms": {
+      "mean": 2215.6,
+      "median": 2213.05,
+      "p95": 2440.45
+    },
+    "fusion_latency_ms": {
+      "mean": 0.07,
+      "median": 0.0,
+      "p95": 0.99
+    },
+    "structural_gating_latency_ms": {
+      "mean": 0.04,
+      "median": 0.0,
+      "p95": 0.0
+    },
+    "a4_latency_ms": {
+      "mean": 1638.93,
+      "median": 1774.55,
+      "p95": 3440.9
+    },
+    "total_latency_ms": {
+      "mean": 3930.95,
+      "median": 4059.25,
+      "p95": 5649.8
+    },
+    "peak_ram_mb": 12089.8,
+    "peak_vram_mb": 0.0,
+    "incremental_visual_cost_ms": 80.56
+  }
+}

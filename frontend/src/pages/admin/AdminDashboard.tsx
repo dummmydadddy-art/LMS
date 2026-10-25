@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../../services/api';
+import RagPipelineTab from './components/RagPipelineTab';
 import {
   BookOpen,
   Calendar,
@@ -15,7 +16,6 @@ import {
   Briefcase,
   Layers,
   Search,
-  CheckCircle,
   XCircle,
   FileSpreadsheet,
   Bell,
@@ -748,7 +748,7 @@ const AdminDashboard: React.FC = () => {
     <div className="space-y-6">
       {/* Navigation tabs */}
       <div className="flex border-b border-slate-800 overflow-x-auto pb-1 gap-1">
-        {['summary', 'courses', 'batches', 'teachers', 'students', 'fees', 'timetable', 'certificates', 'notifications', 'reports'].map((tabName) => (
+        {['summary', 'courses', 'batches', 'teachers', 'students', 'fees', 'timetable', 'certificates', 'notifications', 'reports', 'rag-pipeline'].map((tabName) => (
           <button
             key={tabName}
             onClick={() => {
@@ -762,7 +762,7 @@ const AdminDashboard: React.FC = () => {
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            {tabName.replace('_', ' ')}
+            {tabName === 'rag-pipeline' ? 'RAG Pipeline' : tabName.replace('_', ' ')}
           </button>
         ))}
       </div>
@@ -2126,6 +2126,9 @@ const AdminDashboard: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* --- 11. RAG PIPELINE TELEMETRY TAB --- */}
+      {activeTab === 'rag-pipeline' && <RagPipelineTab />}
       {/* Revenue & Outstanding Fees detail modal */}
       {feeModalType && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay">

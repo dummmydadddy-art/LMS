@@ -1,0 +1,1551 @@
+{
+  "MINILM_TEMP_vs_MINILM_RAW": {
+    "candidate": "MINILM_TEMP",
+    "base": "MINILM_RAW",
+    "recovered_count": 2,
+    "regressed_count": 56,
+    "net_recovery": -54,
+    "transitions": {
+      "REFUTED_to_SUPPORTED": 0,
+      "SUPPORTED_to_REFUTED": 0,
+      "SUPPORTED_to_NOT_ESTABLISHED": 43,
+      "REFUTED_to_NOT_ESTABLISHED": 21,
+      "NOT_ESTABLISHED_to_SUPPORTED": 0,
+      "NOT_ESTABLISHED_to_REFUTED": 0
+    },
+    "recovered_cases": [
+      {
+        "case_id": "DEV-UNK-008",
+        "query": "Why does Gunicorn use pre-fork worker models to serve WSGI applications?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "base_predicted": "REFUTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-UNK-025",
+        "query": "How does Jetpack Compose handle state hoisting in Android applications?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "base_predicted": "REFUTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      }
+    ],
+    "regressed_cases": [
+      {
+        "case_id": "DEV-SUP-001",
+        "query": "How does display: flex initiate flex formatting context?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-002",
+        "query": "How does justify-content align items along the main axis in Flexbox?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-009",
+        "query": "How does grid-template-columns repeat(3, 1fr) create three equal tracks?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-010",
+        "query": "How does minmax(280px, 1fr) provide responsive columns in CSS Grid?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-014",
+        "query": "Why can there only be one <main> element per HTML document?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-016",
+        "query": "How does semantic <header> represent introductory content?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-017",
+        "query": "How does semantic <footer> contain copyright and author links?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-018",
+        "query": "How do semantic HTML tags improve accessibility and screen-reader navigation?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-022",
+        "query": "What happens when a variable in the Temporal Dead Zone is accessed before declaration?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-024",
+        "query": "How do arrow functions inherit this from their enclosing lexical context?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-025",
+        "query": "Why do arrow functions eliminate the need for .bind(this) in callbacks?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-027",
+        "query": "How does object destructuring extract properties into local variables?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-031",
+        "query": "How does async/await allow asynchronous code to be written sequentially?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-034",
+        "query": "How does Promise.race resolve or reject as soon as the first promise settles?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-037",
+        "query": "How does let prevent re-declaration within the same block scope?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-042",
+        "query": "How does the single main thread execute JavaScript sequentially in Node.js?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-045",
+        "query": "How does middleware access req, res, and next in Express?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-059",
+        "query": "How does the server sign a JWT with a secret key?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-061",
+        "query": "How is a One-to-Many relationship modeled using a foreign key in PostgreSQL?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-062",
+        "query": "How does a junction table model a Many-to-Many relationship between students and batches?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      }
+    ]
+  },
+  "MINILM_BIAS_vs_MINILM_RAW": {
+    "candidate": "MINILM_BIAS",
+    "base": "MINILM_RAW",
+    "recovered_count": 40,
+    "regressed_count": 2,
+    "net_recovery": 38,
+    "transitions": {
+      "REFUTED_to_SUPPORTED": 0,
+      "SUPPORTED_to_REFUTED": 0,
+      "SUPPORTED_to_NOT_ESTABLISHED": 0,
+      "REFUTED_to_NOT_ESTABLISHED": 1,
+      "NOT_ESTABLISHED_to_SUPPORTED": 40,
+      "NOT_ESTABLISHED_to_REFUTED": 10
+    },
+    "recovered_cases": [
+      {
+        "case_id": "DEV-SUP-004",
+        "query": "What is the function of the gap property in CSS Flexbox?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-005",
+        "query": "How does flex-direction column stack items vertically?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-020",
+        "query": "What layers constitute the CSS box model from inside out?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-021",
+        "query": "How does let confine variables to block scope?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-029",
+        "query": "What are the three distinct states of a JavaScript Promise?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-032",
+        "query": "How does Promise.all fail fast if any input promise rejects?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-035",
+        "query": "How does array destructuring assign variables from array positions?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-039",
+        "query": "What triggers a ReferenceError when accessing let before initialization?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-046",
+        "query": "Why must Express error-handling middleware declare four arguments (err, req, res, next)?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-048",
+        "query": "What does calling next() do in an Express middleware chain?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-053",
+        "query": "What is the significance of HTTP 400 Bad Request status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-055",
+        "query": "What is the significance of HTTP 403 Forbidden status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-056",
+        "query": "What is the significance of HTTP 404 Not Found status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-060",
+        "query": "How does a client transmit a JWT in the Authorization header using Bearer scheme?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-069",
+        "query": "What is the leftmost prefix rule in composite indexing?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-070",
+        "query": "What is the tradeoff of adding indexes on tables with frequent INSERT and UPDATE operations?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-071",
+        "query": "How does Atomicity guarantee that all transaction operations succeed or roll back?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-073",
+        "query": "What is the default transaction isolation level in PostgreSQL?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-075",
+        "query": "What is the purpose of a composite primary key in a junction table?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-081",
+        "query": "What is the rule regarding calling React Hooks only at the top level of function components?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      }
+    ],
+    "regressed_cases": [
+      {
+        "case_id": "DEV-UNK-010",
+        "query": "How does Alembic auto-generate database migration scripts from SQLAlchemy metadata?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "REFUTED"
+      },
+      {
+        "case_id": "DEV-MIX-009",
+        "query": "Since 2NF eliminates partial dependencies, why does it allow non-key attributes to depend on composite keys?",
+        "category": "MIXED_COMPOUND_PREMISE",
+        "expected": "REFUTED",
+        "base_predicted": "REFUTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      }
+    ]
+  },
+  "MINILM_VEC_vs_MINILM_RAW": {
+    "candidate": "MINILM_VEC",
+    "base": "MINILM_RAW",
+    "recovered_count": 2,
+    "regressed_count": 56,
+    "net_recovery": -54,
+    "transitions": {
+      "REFUTED_to_SUPPORTED": 0,
+      "SUPPORTED_to_REFUTED": 0,
+      "SUPPORTED_to_NOT_ESTABLISHED": 43,
+      "REFUTED_to_NOT_ESTABLISHED": 21,
+      "NOT_ESTABLISHED_to_SUPPORTED": 0,
+      "NOT_ESTABLISHED_to_REFUTED": 0
+    },
+    "recovered_cases": [
+      {
+        "case_id": "DEV-UNK-008",
+        "query": "Why does Gunicorn use pre-fork worker models to serve WSGI applications?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "base_predicted": "REFUTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-UNK-025",
+        "query": "How does Jetpack Compose handle state hoisting in Android applications?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "base_predicted": "REFUTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      }
+    ],
+    "regressed_cases": [
+      {
+        "case_id": "DEV-SUP-001",
+        "query": "How does display: flex initiate flex formatting context?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-002",
+        "query": "How does justify-content align items along the main axis in Flexbox?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-009",
+        "query": "How does grid-template-columns repeat(3, 1fr) create three equal tracks?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-010",
+        "query": "How does minmax(280px, 1fr) provide responsive columns in CSS Grid?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-014",
+        "query": "Why can there only be one <main> element per HTML document?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-016",
+        "query": "How does semantic <header> represent introductory content?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-017",
+        "query": "How does semantic <footer> contain copyright and author links?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-018",
+        "query": "How do semantic HTML tags improve accessibility and screen-reader navigation?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-022",
+        "query": "What happens when a variable in the Temporal Dead Zone is accessed before declaration?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-024",
+        "query": "How do arrow functions inherit this from their enclosing lexical context?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-025",
+        "query": "Why do arrow functions eliminate the need for .bind(this) in callbacks?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-027",
+        "query": "How does object destructuring extract properties into local variables?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-031",
+        "query": "How does async/await allow asynchronous code to be written sequentially?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-034",
+        "query": "How does Promise.race resolve or reject as soon as the first promise settles?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-037",
+        "query": "How does let prevent re-declaration within the same block scope?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-042",
+        "query": "How does the single main thread execute JavaScript sequentially in Node.js?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-045",
+        "query": "How does middleware access req, res, and next in Express?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-059",
+        "query": "How does the server sign a JWT with a secret key?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-061",
+        "query": "How is a One-to-Many relationship modeled using a foreign key in PostgreSQL?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-062",
+        "query": "How does a junction table model a Many-to-Many relationship between students and batches?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      }
+    ]
+  },
+  "DEBERTA_TEMP_vs_DEBERTA_RAW": {
+    "candidate": "DEBERTA_TEMP",
+    "base": "DEBERTA_RAW",
+    "recovered_count": 0,
+    "regressed_count": 46,
+    "net_recovery": -46,
+    "transitions": {
+      "REFUTED_to_SUPPORTED": 0,
+      "SUPPORTED_to_REFUTED": 0,
+      "SUPPORTED_to_NOT_ESTABLISHED": 36,
+      "REFUTED_to_NOT_ESTABLISHED": 17,
+      "NOT_ESTABLISHED_to_SUPPORTED": 0,
+      "NOT_ESTABLISHED_to_REFUTED": 0
+    },
+    "recovered_cases": [],
+    "regressed_cases": [
+      {
+        "case_id": "DEV-SUP-001",
+        "query": "How does display: flex initiate flex formatting context?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-010",
+        "query": "How does minmax(280px, 1fr) provide responsive columns in CSS Grid?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-014",
+        "query": "Why can there only be one <main> element per HTML document?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-020",
+        "query": "What layers constitute the CSS box model from inside out?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-021",
+        "query": "How does let confine variables to block scope?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-022",
+        "query": "What happens when a variable in the Temporal Dead Zone is accessed before declaration?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-024",
+        "query": "How do arrow functions inherit this from their enclosing lexical context?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-025",
+        "query": "Why do arrow functions eliminate the need for .bind(this) in callbacks?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-027",
+        "query": "How does object destructuring extract properties into local variables?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-031",
+        "query": "How does async/await allow asynchronous code to be written sequentially?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-032",
+        "query": "How does Promise.all fail fast if any input promise rejects?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-034",
+        "query": "How does Promise.race resolve or reject as soon as the first promise settles?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-037",
+        "query": "How does let prevent re-declaration within the same block scope?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-042",
+        "query": "How does the single main thread execute JavaScript sequentially in Node.js?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-045",
+        "query": "How does middleware access req, res, and next in Express?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-048",
+        "query": "What does calling next() do in an Express middleware chain?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-060",
+        "query": "How does a client transmit a JWT in the Authorization header using Bearer scheme?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-061",
+        "query": "How is a One-to-Many relationship modeled using a foreign key in PostgreSQL?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-062",
+        "query": "How does a junction table model a Many-to-Many relationship between students and batches?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-069",
+        "query": "What is the leftmost prefix rule in composite indexing?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      }
+    ]
+  },
+  "DEBERTA_BIAS_vs_DEBERTA_RAW": {
+    "candidate": "DEBERTA_BIAS",
+    "base": "DEBERTA_RAW",
+    "recovered_count": 43,
+    "regressed_count": 0,
+    "net_recovery": 43,
+    "transitions": {
+      "REFUTED_to_SUPPORTED": 0,
+      "SUPPORTED_to_REFUTED": 0,
+      "SUPPORTED_to_NOT_ESTABLISHED": 0,
+      "REFUTED_to_NOT_ESTABLISHED": 0,
+      "NOT_ESTABLISHED_to_SUPPORTED": 38,
+      "NOT_ESTABLISHED_to_REFUTED": 12
+    },
+    "recovered_cases": [
+      {
+        "case_id": "DEV-SUP-002",
+        "query": "How does justify-content align items along the main axis in Flexbox?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-004",
+        "query": "What is the function of the gap property in CSS Flexbox?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-005",
+        "query": "How does flex-direction column stack items vertically?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-006",
+        "query": "How does flex-grow distribute remaining space in a flex container?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-007",
+        "query": "How does flex-shrink allow items to shrink when space is constrained?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-016",
+        "query": "How does semantic <header> represent introductory content?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-017",
+        "query": "How does semantic <footer> contain copyright and author links?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-018",
+        "query": "How do semantic HTML tags improve accessibility and screen-reader navigation?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-029",
+        "query": "What are the three distinct states of a JavaScript Promise?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-035",
+        "query": "How does array destructuring assign variables from array positions?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-036",
+        "query": "How do default parameter values operate in JavaScript ES6 functions?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-043",
+        "query": "What are the primary phases of the Node.js Libuv event loop?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-044",
+        "query": "What is the purpose of express.json() built-in middleware?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-059",
+        "query": "How does the server sign a JWT with a secret key?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-064",
+        "query": "What requirement must be satisfied for a table to meet First Normal Form (1NF)?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-070",
+        "query": "What is the tradeoff of adding indexes on tables with frequent INSERT and UPDATE operations?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-071",
+        "query": "How does Atomicity guarantee that all transaction operations succeed or roll back?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-075",
+        "query": "What is the purpose of a composite primary key in a junction table?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-078",
+        "query": "What is the purpose of Write-Ahead Logging (WAL) in PostgreSQL?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-086",
+        "query": "How does useEffect with an empty dependency array run once after initial component mount?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "SUPPORTED"
+      }
+    ],
+    "regressed_cases": []
+  },
+  "DEBERTA_VEC_vs_DEBERTA_RAW": {
+    "candidate": "DEBERTA_VEC",
+    "base": "DEBERTA_RAW",
+    "recovered_count": 0,
+    "regressed_count": 46,
+    "net_recovery": -46,
+    "transitions": {
+      "REFUTED_to_SUPPORTED": 0,
+      "SUPPORTED_to_REFUTED": 0,
+      "SUPPORTED_to_NOT_ESTABLISHED": 36,
+      "REFUTED_to_NOT_ESTABLISHED": 17,
+      "NOT_ESTABLISHED_to_SUPPORTED": 0,
+      "NOT_ESTABLISHED_to_REFUTED": 0
+    },
+    "recovered_cases": [],
+    "regressed_cases": [
+      {
+        "case_id": "DEV-SUP-001",
+        "query": "How does display: flex initiate flex formatting context?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-010",
+        "query": "How does minmax(280px, 1fr) provide responsive columns in CSS Grid?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-014",
+        "query": "Why can there only be one <main> element per HTML document?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-020",
+        "query": "What layers constitute the CSS box model from inside out?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-021",
+        "query": "How does let confine variables to block scope?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-022",
+        "query": "What happens when a variable in the Temporal Dead Zone is accessed before declaration?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-024",
+        "query": "How do arrow functions inherit this from their enclosing lexical context?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-025",
+        "query": "Why do arrow functions eliminate the need for .bind(this) in callbacks?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-027",
+        "query": "How does object destructuring extract properties into local variables?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-031",
+        "query": "How does async/await allow asynchronous code to be written sequentially?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-032",
+        "query": "How does Promise.all fail fast if any input promise rejects?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-034",
+        "query": "How does Promise.race resolve or reject as soon as the first promise settles?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-037",
+        "query": "How does let prevent re-declaration within the same block scope?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-042",
+        "query": "How does the single main thread execute JavaScript sequentially in Node.js?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-045",
+        "query": "How does middleware access req, res, and next in Express?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-048",
+        "query": "What does calling next() do in an Express middleware chain?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-060",
+        "query": "How does a client transmit a JWT in the Authorization header using Bearer scheme?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-061",
+        "query": "How is a One-to-Many relationship modeled using a foreign key in PostgreSQL?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-062",
+        "query": "How does a junction table model a Many-to-Many relationship between students and batches?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-069",
+        "query": "What is the leftmost prefix rule in composite indexing?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      }
+    ]
+  },
+  "MINILM_BIAS_vs_C0": {
+    "candidate": "MINILM_BIAS",
+    "base": "C0",
+    "recovered_count": 3,
+    "regressed_count": 53,
+    "net_recovery": -50,
+    "transitions": {
+      "REFUTED_to_SUPPORTED": 5,
+      "SUPPORTED_to_REFUTED": 9,
+      "SUPPORTED_to_NOT_ESTABLISHED": 38,
+      "REFUTED_to_NOT_ESTABLISHED": 11,
+      "NOT_ESTABLISHED_to_SUPPORTED": 0,
+      "NOT_ESTABLISHED_to_REFUTED": 2
+    },
+    "recovered_cases": [
+      {
+        "case_id": "DEV-SUP-005",
+        "query": "How does flex-direction column stack items vertically?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "REFUTED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-031",
+        "query": "How does async/await allow asynchronous code to be written sequentially?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "REFUTED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-FLS-046",
+        "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+        "category": "NOVEL_FALSE_PREMISE",
+        "expected": "REFUTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "REFUTED"
+      }
+    ],
+    "regressed_cases": [
+      {
+        "case_id": "DEV-SUP-003",
+        "query": "How does align-items control cross-axis alignment in Flexbox?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-006",
+        "query": "How does flex-grow distribute remaining space in a flex container?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-007",
+        "query": "How does flex-shrink allow items to shrink when space is constrained?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-013",
+        "query": "What is the purpose of the semantic <main> element in HTML5?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-019",
+        "query": "How does grid-column span 2 span an item across two tracks?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "REFUTED"
+      },
+      {
+        "case_id": "DEV-SUP-023",
+        "query": "How does const require initialization upon declaration?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-026",
+        "query": "How do rest parameters (...args) condense arguments into a true Array?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "REFUTED"
+      },
+      {
+        "case_id": "DEV-SUP-028",
+        "query": "How does the spread operator perform shallow copying of arrays and objects?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-043",
+        "query": "What are the primary phases of the Node.js Libuv event loop?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-044",
+        "query": "What is the purpose of express.json() built-in middleware?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-047",
+        "query": "How does req.user store decoded authentication tokens in middleware?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-049",
+        "query": "How does res.status(401).json() end the request-response cycle on unauthorized access?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-050",
+        "query": "Why should plural nouns be used for resource-oriented RESTful API URLs?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-051",
+        "query": "What is the significance of HTTP 200 OK status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "REFUTED"
+      },
+      {
+        "case_id": "DEV-SUP-052",
+        "query": "What is the significance of HTTP 201 Created status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "REFUTED"
+      },
+      {
+        "case_id": "DEV-SUP-054",
+        "query": "What is the significance of HTTP 401 Unauthorized status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-057",
+        "query": "What is the significance of HTTP 500 Internal Server Error status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-058",
+        "query": "What are the three Base64Url-encoded parts of a JSON Web Token?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-063",
+        "query": "How does a UNIQUE foreign key model a One-to-One relationship?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-064",
+        "query": "What requirement must be satisfied for a table to meet First Normal Form (1NF)?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      }
+    ]
+  },
+  "DEBERTA_BIAS_vs_C0": {
+    "candidate": "DEBERTA_BIAS",
+    "base": "C0",
+    "recovered_count": 6,
+    "regressed_count": 59,
+    "net_recovery": -53,
+    "transitions": {
+      "REFUTED_to_SUPPORTED": 6,
+      "SUPPORTED_to_REFUTED": 9,
+      "SUPPORTED_to_NOT_ESTABLISHED": 48,
+      "REFUTED_to_NOT_ESTABLISHED": 10,
+      "NOT_ESTABLISHED_to_SUPPORTED": 0,
+      "NOT_ESTABLISHED_to_REFUTED": 1
+    },
+    "recovered_cases": [
+      {
+        "case_id": "DEV-SUP-005",
+        "query": "How does flex-direction column stack items vertically?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "REFUTED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-031",
+        "query": "How does async/await allow asynchronous code to be written sequentially?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "REFUTED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-SUP-036",
+        "query": "How do default parameter values operate in JavaScript ES6 functions?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "REFUTED",
+        "cand_predicted": "SUPPORTED"
+      },
+      {
+        "case_id": "DEV-FLS-046",
+        "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+        "category": "NOVEL_FALSE_PREMISE",
+        "expected": "REFUTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "REFUTED"
+      },
+      {
+        "case_id": "DEV-FLS-099",
+        "query": "Why does useContext modify server-side database state upon invocation?",
+        "category": "NOVEL_FALSE_PREMISE",
+        "expected": "REFUTED",
+        "base_predicted": "NOT_ESTABLISHED",
+        "cand_predicted": "REFUTED"
+      },
+      {
+        "case_id": "DEV-UNK-010",
+        "query": "How does Alembic auto-generate database migration scripts from SQLAlchemy metadata?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      }
+    ],
+    "regressed_cases": [
+      {
+        "case_id": "DEV-SUP-003",
+        "query": "How does align-items control cross-axis alignment in Flexbox?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-009",
+        "query": "How does grid-template-columns repeat(3, 1fr) create three equal tracks?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "REFUTED"
+      },
+      {
+        "case_id": "DEV-SUP-013",
+        "query": "What is the purpose of the semantic <main> element in HTML5?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-019",
+        "query": "How does grid-column span 2 span an item across two tracks?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "REFUTED"
+      },
+      {
+        "case_id": "DEV-SUP-023",
+        "query": "How does const require initialization upon declaration?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-026",
+        "query": "How do rest parameters (...args) condense arguments into a true Array?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-028",
+        "query": "How does the spread operator perform shallow copying of arrays and objects?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-039",
+        "query": "What triggers a ReferenceError when accessing let before initialization?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-046",
+        "query": "Why must Express error-handling middleware declare four arguments (err, req, res, next)?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-047",
+        "query": "How does req.user store decoded authentication tokens in middleware?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-049",
+        "query": "How does res.status(401).json() end the request-response cycle on unauthorized access?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-050",
+        "query": "Why should plural nouns be used for resource-oriented RESTful API URLs?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-051",
+        "query": "What is the significance of HTTP 200 OK status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-052",
+        "query": "What is the significance of HTTP 201 Created status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-053",
+        "query": "What is the significance of HTTP 400 Bad Request status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-054",
+        "query": "What is the significance of HTTP 401 Unauthorized status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-055",
+        "query": "What is the significance of HTTP 403 Forbidden status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-056",
+        "query": "What is the significance of HTTP 404 Not Found status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-057",
+        "query": "What is the significance of HTTP 500 Internal Server Error status code?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      },
+      {
+        "case_id": "DEV-SUP-058",
+        "query": "What are the three Base64Url-encoded parts of a JSON Web Token?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "base_predicted": "SUPPORTED",
+        "cand_predicted": "NOT_ESTABLISHED"
+      }
+    ]
+  }
+}

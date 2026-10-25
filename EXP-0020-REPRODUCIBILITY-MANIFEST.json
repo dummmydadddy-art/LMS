@@ -1,0 +1,110 @@
+{
+  "experiment_id": "EXP-0020",
+  "candidate_tag": "EXP-0020-CANDIDATE-HARDENED-2026-09-09",
+  "timestamp": "2026-09-09T13:51:25.124142+00:00",
+  "environment": {
+    "os": "Windows 11 / Windows NT",
+    "php_version": "PHP 8.3.32 (cli) (built: Jul  1 2026 09:40:05) (ZTS Visual C++ 2019 x64)",
+    "node_version": "v24.11.0",
+    "git_commit": "176883227602671b545e061dacf228aedc3271a5",
+    "git_status_dirty": true
+  },
+  "targets_remediated": {
+    "TARGET_A_PREWARMED_PATH": {
+      "status": "REMEDIATED_AND_VERIFIED",
+      "centralized_method": "RagService::isPrewarmedMode()",
+      "active_experiment_mode": "EXP-0020",
+      "prewarm_invariants_count": 7,
+      "invariant_behavior": "Strict RuntimeException (no silent fallback)",
+      "workers_verified": 8,
+      "worker_ports": [
+        8001,
+        8002,
+        8003,
+        8004,
+        8005,
+        8006,
+        8007,
+        8008
+      ],
+      "gateway_port": 8000,
+      "retrieval_source": "PREWARMED_RAM",
+      "vector_dimension": 768,
+      "chunk_count": 23
+    },
+    "TARGET_B_FALSE_PREMISE_VERIFIER": {
+      "status": "REMEDIATED_AND_VERIFIED",
+      "architecture": "Two-Stage Three-State Evidence-Grounded Semantic Verifier",
+      "state_model": [
+        "SUPPORTED",
+        "REFUTED",
+        "NOT_ESTABLISHED"
+      ],
+      "blind_suite_total_queries": 1600,
+      "standard_queries": 1500,
+      "adversarial_queries": 100,
+      "curriculum_categories": 20,
+      "adversarial_levels": 10,
+      "false_acceptance_rate": 0.0,
+      "refutation_recall": 100.0,
+      "false_refutations_legitimate_queries": 0.0,
+      "mean_latency_ms": 0.036
+    }
+  },
+  "file_integrity_hashes": {
+    "backend/rag_service.php": {
+      "sha256": "99fb4a2bae3e25a267f2131dbde88c518b0035ab40cceb8b53a49c4795b954ed",
+      "size_bytes": 98221,
+      "exists": true
+    },
+    "backend/rag_premise_verifier.php": {
+      "sha256": "31be3339bf1fe08b8c4a84eaff20d6421a293769a71018ab96e31e1c16560bf2",
+      "size_bytes": 38250,
+      "exists": true
+    },
+    "backend/rag_flags.php": {
+      "sha256": "aa8d3051873ea28cb6e8c7f7fa2ea4f47499614e7e6c63403390dd5d6829ed84",
+      "size_bytes": 2458,
+      "exists": true
+    },
+    "backend/gateway.js": {
+      "sha256": "3c0308560a9a2bef75b2fed32a539a86a6378c73f642c1819c05b817a43a93c4",
+      "size_bytes": 18937,
+      "exists": true
+    },
+    "EXP-0020-CONTROL-MANIFEST.json": {
+      "sha256": "b56171a0c30a898836f7c3bf63a2c5febc1d07d5880130ed4e1af3673dac0a49",
+      "size_bytes": 2612,
+      "exists": true
+    },
+    "EXP-0020-FALSE-PREMISE-DATASET-1600.json": {
+      "sha256": "3f8af6c4223cb2c65a2e3030951297f91884046da18a45878709499e75003dc7",
+      "size_bytes": 491860,
+      "exists": true
+    },
+    "EXP-0020-FALSE-PREMISE-RESULTS.json": {
+      "sha256": "333a3290afdf3bdc1a7e40177bd831f6810b291068ffce7e1874dc188e32cd47",
+      "size_bytes": 39871,
+      "exists": true
+    },
+    "EXP-0020-PREWARM-VERIFICATION.json": {
+      "sha256": "504e1a42190fb35fc815f3b672357cce45e516226c162b37ee4251ea395aef08",
+      "size_bytes": 4337,
+      "exists": true
+    },
+    "EXP-0020-COMPOUND-TESTS.json": {
+      "sha256": "500b7e8d34ea90c5992ed8bcb1294c92147cf66c11bcff47ece6edf5009a9eb8",
+      "size_bytes": 3631,
+      "exists": true
+    },
+    "EXP-0020-CONTROL-VS-CANDIDATE.csv": {
+      "sha256": "dd484b90703ae54300d6315d493c0b5d904ac7f4ca3c2dfdff49161012d65fd8",
+      "size_bytes": 3377,
+      "exists": true
+    }
+  },
+  "random_seeds": {
+    "dataset_generation_seed": "EXP0020_SEED_20260909_UNSEEN_1600",
+    "train_test_overlap": 0.0
+  }
+}

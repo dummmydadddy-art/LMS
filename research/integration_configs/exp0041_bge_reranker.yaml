@@ -1,0 +1,45 @@
+experiment_id: EXP-0041
+base_commit: 63d961ee9a94d69c911f785a8b6a7d25cabd18f9
+description: BGE Reranker v2 M3 Replacement over Frozen BGE-small Dense Retrieval
+  and C2_085 Hierarchy
+feature_flags:
+  ENABLE_BGE_M3: false
+  ENABLE_BGE_RERANKER_M3: true
+  ENABLE_QDRANT: false
+  ENABLE_PYLATE: false
+  ENABLE_LLAMAINDEX_FUSION: false
+  ENABLE_HAYSTACK_HIERARCHY: false
+  ENABLE_CRAG: false
+  ENABLE_LIGHTRAG: false
+retriever: bge_flag
+mode: reranker
+embedding_model: BAAI/bge-small-en-v1.5
+embedding_dim: 384
+reranker: BAAI/bge-reranker-v2-m3
+chunker: C2_ChonkieSemantic_085
+chunk_count: 76
+hierarchy: adopted_exp0040_small_to_big
+query_strategy: single_query
+correction_strategy: none
+graph_strategy: none
+verifier:
+  name: A4
+  file: backend/rag_ambiguity_guard_verifier.php
+  frozen: true
+  prompt: P4_neutral
+  thresholds:
+    entailment: 0.85
+    contradiction: 0.8
+dataset:
+  dev: EXP-0025-DEVELOPMENT-DATASET.json
+  blind: EXP-0033-BLIND-DATASET.json
+device: auto
+seed: 42
+software_versions:
+  python: '3.12'
+  torch: 2.11.0
+  FlagEmbedding: 1.4.2
+model_revisions:
+  reranker: BAAI/bge-reranker-v2-m3
+blind_evaluation:
+  enabled: false

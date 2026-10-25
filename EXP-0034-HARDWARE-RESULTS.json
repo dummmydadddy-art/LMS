@@ -1,0 +1,76 @@
+{
+  "experiment_id": "EXP-0034",
+  "timestamp": "2026-09-16T14:40:00+00:00",
+  "hardware_environment": {
+    "cpu": "12th Gen Intel Core i5-12450H (8 cores, 16 threads)",
+    "total_host_ram_gb": 15.68,
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU (4 GB VRAM)",
+    "os": "Windows 11 (10.0.26200)"
+  },
+  "memory_footprint": {
+    "dedicated_benchmark_rss_mb": {
+      "python_retrieval_bridge": 393.75,
+      "ollama_inference_daemon": 452.10,
+      "php_benchmark_process_peak": 32.50,
+      "total_dedicated_rss_mb": 878.35,
+      "total_dedicated_rss_gb": 0.86
+    },
+    "host_system_ram_snapshot": {
+      "total_gb": 15.68,
+      "used_gb": 13.26,
+      "available_gb": 2.41,
+      "utilization_percent": 84.6,
+      "paging_risk_assessment": "NOMINAL (dedicated memory < 1.0 GB; system load includes background host processes)"
+    },
+    "gpu_vram_usage_mb": {
+      "allocated_mb": 0.0,
+      "note": "BAAI/bge-small-en-v1.5 and ms-marco-MiniLM-L-6-v2 both execute entirely on CPU via PyTorch threads"
+    }
+  },
+  "latency_profiles": {
+    "dense_embedding_bge_small": {
+      "batch_size": 1,
+      "dimension": 384,
+      "mean_ms": 26.4,
+      "p50_ms": 24.1,
+      "p95_ms": 54.8,
+      "p99_ms": 68.2
+    },
+    "cross_encoder_reranking": {
+      "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+      "pool_10": {
+        "mean_ms": 45.2,
+        "p50_ms": 44.5,
+        "p95_ms": 53.4,
+        "p99_ms": 61.0
+      },
+      "pool_15": {
+        "mean_ms": 55.6,
+        "p50_ms": 54.8,
+        "p95_ms": 63.1,
+        "p99_ms": 72.4
+      },
+      "pool_20": {
+        "mean_ms": 66.1,
+        "p50_ms": 65.4,
+        "p95_ms": 73.4,
+        "p99_ms": 84.2
+      }
+    },
+    "e4_verifier_execution": {
+      "cached_nli_ms": 1.1,
+      "live_nli_call_mean_ms": 32.5,
+      "p50_ms": 1.2,
+      "p95_ms": 35.0
+    },
+    "end_to_end_query_pipeline": {
+      "pool_15_champion": {
+        "mean_ms": 83.1,
+        "p50_ms": 79.2,
+        "p95_ms": 125.4,
+        "p99_ms": 145.8
+      }
+    }
+  },
+  "hardware_compliance_verdict": "PASS — All operations strictly within 4 GB VRAM and 16 GB host RAM constraints. Interactive latency < 150 ms at p95."
+}

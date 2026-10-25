@@ -1,0 +1,208 @@
+{
+  "experiment": "EXP-0039",
+  "branch": "exp-0039",
+  "audited_commit": "3376305",
+  "parent_commit": "e1cf1503851a5ff2fc1b3a86897556943878cf13",
+  "reconciliation_timestamp": "2026-09-17T10:45:00+00:00",
+  "production_repo_status": "d:\\Collage project\\EduConnect-LMS-Production UNTOUCHED at commit 1768832",
+  "blind_dataset_status": "EXP-0033-BLIND-DATASET.json UNTOUCHED (SHA-256: 3b4fd6c7a70a8d672808c1b3f94ee9baefbe6a09074b1bda1b4b1a8f6be4e3f3)",
+  "underlying_predictions_changed": false,
+  "underlying_predictions_artifact": "scratch/exp0039_dev_predictions.json (UNCHANGED)",
+  "discrepancies": [
+    {
+      "id": "DISCREPANCY-1",
+      "title": "Contaminated EXP-0037 Comparator",
+      "source_artifacts": [
+        "EXP-0039-DEVELOPMENT-ANALYSIS.md",
+        "EXP-0039-INDEPENDENT-AUDIT.md",
+        "EXP-0039-DEVELOPMENT-RESULTS.json"
+      ],
+      "original_reported_comparator": {
+        "label": "EXP-0037 Champion",
+        "accuracy": 90.75,
+        "macro_f1": 90.7,
+        "standard_far": 18.5,
+        "frr": 0.0
+      },
+      "corrected_authoritative_exp0037_blind": {
+        "label": "EXP-0037 A4 Blind Benchmark Champion (EXP-0033 N=500)",
+        "dataset": "EXP-0033-BLIND-DATASET.json",
+        "sample_size": 500,
+        "accuracy": 71.6,
+        "macro_f1": 71.81,
+        "standard_far": 15.33,
+        "frr": 30.99,
+        "supported_recall": 69.01,
+        "refutation_recall": 70.37,
+        "ne_recall": 77.6,
+        "ood_recall": 94.0,
+        "novel_ood_recall": 92.0,
+        "false_acceptances": 44,
+        "false_abstentions": 19
+      },
+      "proper_development_baseline": {
+        "label": "Control C0 Baseline (EXP-0025 N=400)",
+        "dataset": "EXP-0025-DEVELOPMENT-DATASET.json",
+        "sample_size": 400,
+        "accuracy": 92.0,
+        "macro_f1": 92.77,
+        "standard_far": 2.4,
+        "frr": 16.0,
+        "supported_recall": 84.0,
+        "refutation_recall": 95.33,
+        "ne_recall": 99.0,
+        "ood_recall": 99.0,
+        "false_acceptances": 6,
+        "false_abstentions": 0,
+        "novel_ood_recall": "N/A \u2014 separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json"
+      },
+      "root_cause": "The previous EXP-0039 report mistakenly copied 90.75% from EXP-0038 development results on EXP-0025 (Docling HybridChunker C1 development accuracy) and combined it with the 18.50% FAR safety ceiling from EXP-0036. This conflated the development population (N=400) with the blind population (N=500).",
+      "recomputation_method": "Extracted authentic metrics directly from committed lineage artifact EXP-0037-BLIND-RESULTS.json.",
+      "scientific_impact": "Completely resolves historical reporting confusion. Development interventions are properly benchmarked against Control C0 (92.00% accuracy) on the same N=400 development population."
+    },
+    {
+      "id": "DISCREPANCY-2",
+      "title": "Defective Retrieval Metric Implementation (nDCG@5 > 100%)",
+      "source_artifacts": [
+        "scratch/run_exp0039_retrieval_benchmark.py",
+        "scratch/exp0039_retrieval_metrics.json",
+        "EXP-0039-DEVELOPMENT-ANALYSIS.md"
+      ],
+      "original_reported_values": {
+        "C0": 123.77,
+        "C1": 124.7,
+        "C2_075": 207.86,
+        "C2_080": 208.27,
+        "C2_085": 212.88
+      },
+      "corrected_recomputed_values": {
+        "C0": 90.29,
+        "C1": 95.45,
+        "C2_075": 86.09,
+        "C2_080": 86.23,
+        "C2_085": 86.02
+      },
+      "root_cause": "In scratch/run_exp0039_retrieval_benchmark.py lines 256-257, IDCG was hardcoded as idcg = 1.0 / np.log2(2), assuming binary relevance with only 1 relevant chunk. In semantic chunking, fine-grained proposition chunking causes an average of 4.8 to 5.1 chunks per query to match the curriculum rule. When multiple matching chunks appeared in top-5, DCG summed up to 2.56, producing nDCG values > 100% when divided by 1.0.",
+      "recomputation_method": "Applied standard bounded nDCG@5 formula where IDCG@5 is the ideal discounted cumulative gain for min(|Gold|, 5) relevant chunks: IDCG@5 = sum_{r=1}^{min(|G|, 5)} 1 / log2(r + 1). Strictly bounded in [0%, 100%].",
+      "scientific_impact": "Retrieval Recall@5 remains 100.0% for all conditions. Corrected nDCG@5 reveals that semantic chunking achieves 86.02% (due to multiple granular chunks sharing relevance) while providing superior downstream verifier precision."
+    },
+    {
+      "id": "DISCREPANCY-3",
+      "title": "Paired Contingency Table Subscript Inversion (n01 vs n10)",
+      "source_artifacts": [
+        "EXP-0039-DEVELOPMENT-RESULTS.json",
+        "EXP-0039-DEVELOPMENT-ANALYSIS.md"
+      ],
+      "original_reported_values": {
+        "C1_vs_C0": {
+          "n01_c0_only": 6,
+          "n10_cand_only": 2,
+          "delta_pp": -1.0
+        },
+        "C2_075_vs_C0": {
+          "n01_c0_only": 3,
+          "n10_cand_only": 10,
+          "delta_pp": 1.75
+        },
+        "C2_080_vs_C0": {
+          "n01_c0_only": 3,
+          "n10_cand_only": 9,
+          "delta_pp": 1.5
+        },
+        "C2_085_vs_C0": {
+          "n01_c0_only": 2,
+          "n10_cand_only": 9,
+          "delta_pp": 1.75
+        }
+      },
+      "corrected_recomputed_values": {
+        "convention": "n01 = baseline incorrect, candidate correct; n10 = baseline correct, candidate incorrect",
+        "C1_vs_C0": {
+          "n01": 2,
+          "n10": 6,
+          "n11": 362,
+          "n00": 30,
+          "tot_disc": 8,
+          "delta_pp": -1.0
+        },
+        "C2_075_vs_C0": {
+          "n01": 10,
+          "n10": 3,
+          "n11": 365,
+          "n00": 22,
+          "tot_disc": 13,
+          "delta_pp": 1.75
+        },
+        "C2_080_vs_C0": {
+          "n01": 9,
+          "n10": 3,
+          "n11": 365,
+          "n00": 23,
+          "tot_disc": 12,
+          "delta_pp": 1.5
+        },
+        "C2_085_vs_C0": {
+          "n01": 9,
+          "n10": 2,
+          "n11": 366,
+          "n00": 23,
+          "tot_disc": 11,
+          "delta_pp": 1.75
+        }
+      },
+      "root_cause": "The previous code inverted the subscript notation, assigning n01 to 'C0 only' and n10 to 'Candidate only'. Under standard paired contingency convention, n01 represents the candidate winning (baseline=0, candidate=1) and n10 represents the baseline winning (baseline=1, candidate=0).",
+      "recomputation_method": "Direct vectorized computation from scratch/exp0039_dev_predictions.json without altering any prediction.",
+      "scientific_impact": "Restores mathematical consistency between table counts, forensic narrative, and delta: delta = 100 * (n01 - n10) / 400."
+    },
+    {
+      "id": "DISCREPANCY-4",
+      "title": "OOD Recall Reporting Text Inconsistency for C2_085",
+      "source_artifacts": [
+        "EXP-0039-DEVELOPMENT-ANALYSIS.md"
+      ],
+      "original_reported_text": "OOD Recall: 100.00%",
+      "corrected_recomputed_value": 99.0,
+      "root_cause": "Typographical error in narrative text. Case DEV-UNK-010 (SQLAlchemy/Alembic) was predicted SUPPORTED by C2_085, yielding 99/100 correct (99.00%). The JSON result already had 99.00%, but the text claimed 100.00%.",
+      "recomputation_method": "Count of correct predictions in OUT_OF_CURRICULUM_UNKNOWN category (99 / 100).",
+      "scientific_impact": "Ensures complete alignment between narrative claims and exact confusion matrix."
+    },
+    {
+      "id": "DISCREPANCY-5",
+      "title": "C1 FRR Arithmetic Inconsistency",
+      "source_artifacts": [
+        "EXP-0039-DEVELOPMENT-RESULTS.json"
+      ],
+      "original_reported_value": 16.67,
+      "corrected_recomputed_value": 18.0,
+      "root_cause": "Original script computed C1 FRR as 25/150 (only counting Supported->Refuted), omitting 2 Supported->Not_Established false abstentions. Total rejected supported claims = 27 / 150 = 18.00%, which aligns with FRR = 100% - Supported Recall (82.00%).",
+      "recomputation_method": "(150 - 123) / 150 = 27 / 150 = 18.00%.",
+      "scientific_impact": "Restores arithmetic consistency across all confusion matrix derivations."
+    },
+    {
+      "id": "DISCREPANCY-6",
+      "title": "Novel-OOD Development Metric Clarification",
+      "source_artifacts": [
+        "EXP-0039-RECONCILED-DEVELOPMENT-RESULTS.json",
+        "EXP-0039-RECONCILIATION-REPORT.md"
+      ],
+      "original_reported_value": "Novel-OOD Recall = 99.00%",
+      "corrected_recomputed_value": "Novel-OOD Recall: N/A \u2014 separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json",
+      "root_cause": "EXP-0025-DEVELOPMENT-DATASET.json contains an overall OUT_OF_CURRICULUM_UNKNOWN category (100 cases, 99.00% recall), but does not contain a dedicated isolated Novel-OOD subset. Conflating OOD with Novel-OOD was a reporting imprecision.",
+      "recomputation_method": "Formal distinction between development OOD (99.00%) and blind benchmark Novel-OOD (50 cases in EXP-0033).",
+      "predictions_changed": false,
+      "scientific_impact": "Ensures metric definitions strictly reflect dataset category composition without reporting phantom subsets."
+    }
+  ],
+  "candidate_selection_audit": {
+    "candidate": "C2_085",
+    "hierarchy_level_1_gating": "PASS (100.0% content preservation, 0 tokenizer overflows)",
+    "hierarchy_level_2_safety": "PASS (FAR 2.80% <= 18.50% ceiling, 0 false abstentions on supported)",
+    "hierarchy_level_3_accuracy": "PASS (Joint-highest accuracy 93.75%, highest Macro F1 94.33%, highest 95% LCB +0.39 pp)",
+    "hierarchy_level_4_retrieval": "PASS (Recall@5 100.0%)",
+    "hierarchy_level_5_boundary_forensics": "PASS (Resolves context fragmentation, fewest candidate regressions n10=2)",
+    "hierarchy_level_6_latency": "PASS (Lowest P50 latency among semantic chunkers: 409.2ms)",
+    "hierarchy_level_7_simplicity": "PASS (Threshold 0.85 optimal)",
+    "decision": "SELECTION RETAINED"
+  },
+  "audit_verdict": "CONDITIONAL PASS \u2014 C2_085 BLIND READY AFTER DOCUMENTED REPORT CORRECTIONS"
+}

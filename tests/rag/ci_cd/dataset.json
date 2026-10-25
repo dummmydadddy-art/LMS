@@ -1,0 +1,126 @@
+[
+  {
+    "id": "eval_01",
+    "category": "HTML & CSS",
+    "question": "Explain the four layers of the CSS Box Model from inside out.",
+    "expected_key_facts": [
+      "Content: the actual text, image, or media content",
+      "Padding: transparent area clearing space around content inside border",
+      "Border: a frame surrounding padding and content",
+      "Margin: transparent space outside border separating elements"
+    ],
+    "is_adversarial": false
+  },
+  {
+    "id": "eval_02",
+    "category": "JavaScript ES6+",
+    "question": "What is the Temporal Dead Zone (TDZ) in JavaScript and how does it relate to let and const?",
+    "expected_key_facts": [
+      "let and const are hoisted to the top of the block but are not initialized",
+      "Accessing a variable in the TDZ throws a ReferenceError",
+      "TDZ exists from the start of the block until declaration line"
+    ],
+    "is_adversarial": false
+  },
+  {
+    "id": "eval_03",
+    "category": "React Hooks",
+    "question": "What are the two fundamental Rules of Hooks in React?",
+    "expected_key_facts": [
+      "Only call Hooks at the top level (never inside loops, conditions, or nested functions)",
+      "Only call Hooks from React function components or custom Hooks"
+    ],
+    "is_adversarial": false
+  },
+  {
+    "id": "eval_04",
+    "category": "React Hooks",
+    "question": "How does useRef differ from useState in triggering re-renders?",
+    "expected_key_facts": [
+      "useRef returns a mutable object with a .current property",
+      "Modifying .current does not cause a re-render",
+      "useState updates cause the component to re-render"
+    ],
+    "is_adversarial": false
+  },
+  {
+    "id": "eval_05",
+    "category": "Node.js & Express",
+    "question": "What is the mandatory four-parameter signature required for error-handling middleware in Express?",
+    "expected_key_facts": [
+      "Takes exactly four arguments: err, req, res, next",
+      "Must include err as the first parameter so Express identifies it as error handler"
+    ],
+    "is_adversarial": false
+  },
+  {
+    "id": "eval_06",
+    "category": "Database Systems",
+    "question": "What are the requirements for Third Normal Form (3NF) in relational database design?",
+    "expected_key_facts": [
+      "Must already meet Second Normal Form (2NF)",
+      "No transitive dependencies (non-key attributes must depend directly on the primary key, not another non-key attribute)"
+    ],
+    "is_adversarial": false
+  },
+  {
+    "id": "eval_07",
+    "category": "Database Systems",
+    "question": "What is a B-tree index in PostgreSQL and what types of queries does it optimize?",
+    "expected_key_facts": [
+      "Default index type in PostgreSQL",
+      "Optimized for equality (=) and range queries (<, <=, >, >=)",
+      "Supports sorting (ORDER BY)"
+    ],
+    "is_adversarial": false
+  },
+  {
+    "id": "eval_08",
+    "category": "Version Control & Git",
+    "question": "How does Git represent file revisions and directories using blobs and trees under the hood?",
+    "expected_key_facts": [
+      "Blobs store file contents (payload without filename)",
+      "Trees correspond to directories containing filenames, modes, and SHA-1 pointers to blobs or subtrees"
+    ],
+    "is_adversarial": false
+  },
+  {
+    "id": "eval_09",
+    "category": "Python Algorithms",
+    "question": "How do dictionaries achieve average constant time O(1) lookups in Python?",
+    "expected_key_facts": [
+      "Implemented using hash tables",
+      "Hashes the key to compute an array index for fast lookup"
+    ],
+    "is_adversarial": false
+  },
+  {
+    "id": "eval_10",
+    "category": "Adversarial Trap",
+    "question": "How do you configure quantum teleportation entanglement inside a CSS Flexbox container?",
+    "expected_key_facts": [
+      "Not possible / outside the scope of web development and CSS",
+      "CSS is a stylesheet language for styling web documents, not quantum physics"
+    ],
+    "is_adversarial": true
+  },
+  {
+    "id": "eval_11",
+    "category": "Adversarial Trap",
+    "question": "What is the syntax for the SQL INVERT TABLE statement to reverse database rows in PostgreSQL?",
+    "expected_key_facts": [
+      "No such command as INVERT TABLE exists in SQL or PostgreSQL",
+      "Rows can be queried in reverse order using ORDER BY column DESC"
+    ],
+    "is_adversarial": true
+  },
+  {
+    "id": "eval_12",
+    "category": "Adversarial Trap",
+    "question": "Explain the recipe for making dark chocolate brownies using the React useState hook.",
+    "expected_key_facts": [
+      "Refusal or clarification: React useState is a programming state hook, not a baking recipe"
+    ],
+    "is_adversarial": true
+  }
+]

@@ -1,0 +1,146 @@
+{
+  "experiment": "EXP-0040",
+  "dataset": "EXP-0025-DEVELOPMENT-DATASET.json",
+  "dataset_sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+  "sample_size": 400,
+  "p0_child_baseline": {
+    "condition": "P0",
+    "name": "Control P0 (C2_085 Child-Only Retrieval)",
+    "accuracy": 93.75,
+    "correct_count": 375,
+    "total_count": 400,
+    "macro_f1": 94.33,
+    "standard_far": 2.8,
+    "frr": 11.33,
+    "supported_recall": 88.67,
+    "refutation_recall": 95.33,
+    "not_established_recall": 99,
+    "ood_recall": 0,
+    "novel_ood_recall": "N/A \u2014 separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json",
+    "false_acceptances": 7,
+    "false_refutations": 17,
+    "false_abstentions_supported": 0,
+    "confusion_matrix": {
+      "SUPPORTED": {
+        "SUPPORTED": 133,
+        "REFUTED": 17,
+        "NOT_ESTABLISHED": 0
+      },
+      "REFUTED": {
+        "SUPPORTED": 6,
+        "REFUTED": 143,
+        "NOT_ESTABLISHED": 1
+      },
+      "NOT_ESTABLISHED": {
+        "SUPPORTED": 1,
+        "REFUTED": 0,
+        "NOT_ESTABLISHED": 99
+      }
+    },
+    "category_accuracies": {
+      "SUPPORTED_CURRICULUM": {
+        "total": 100,
+        "correct": 86
+      },
+      "NOVEL_FALSE_PREMISE": {
+        "total": 100,
+        "correct": 96
+      },
+      "OUT_OF_CURRICULUM_UNKNOWN": {
+        "total": 100,
+        "correct": 99
+      },
+      "LEGITIMATE_NEGATION": {
+        "total": 50,
+        "correct": 47
+      },
+      "MIXED_COMPOUND_PREMISE": {
+        "total": 50,
+        "correct": 47
+      }
+    },
+    "latency_p50_ms": 7.3,
+    "latency_p95_ms": 17.6,
+    "latency_mean_ms": 7.3,
+    "wallclock_time_s": 3
+  },
+  "p1_hierarchical_candidate": {
+    "condition": "P1",
+    "name": "Candidate P1 (Hierarchical Parent-Child Retrieval)",
+    "accuracy": 92.75,
+    "correct_count": 371,
+    "total_count": 400,
+    "macro_f1": 93.39,
+    "standard_far": 3.2,
+    "frr": 12.67,
+    "supported_recall": 87.33,
+    "refutation_recall": 94.67,
+    "not_established_recall": 98,
+    "ood_recall": 0,
+    "novel_ood_recall": "N/A \u2014 separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json",
+    "false_acceptances": 8,
+    "false_refutations": 19,
+    "false_abstentions_supported": 0,
+    "confusion_matrix": {
+      "SUPPORTED": {
+        "SUPPORTED": 131,
+        "REFUTED": 19,
+        "NOT_ESTABLISHED": 0
+      },
+      "REFUTED": {
+        "SUPPORTED": 7,
+        "REFUTED": 142,
+        "NOT_ESTABLISHED": 1
+      },
+      "NOT_ESTABLISHED": {
+        "SUPPORTED": 1,
+        "REFUTED": 1,
+        "NOT_ESTABLISHED": 98
+      }
+    },
+    "category_accuracies": {
+      "SUPPORTED_CURRICULUM": {
+        "total": 100,
+        "correct": 85
+      },
+      "NOVEL_FALSE_PREMISE": {
+        "total": 100,
+        "correct": 95
+      },
+      "OUT_OF_CURRICULUM_UNKNOWN": {
+        "total": 100,
+        "correct": 98
+      },
+      "LEGITIMATE_NEGATION": {
+        "total": 50,
+        "correct": 46
+      },
+      "MIXED_COMPOUND_PREMISE": {
+        "total": 50,
+        "correct": 47
+      }
+    },
+    "latency_p50_ms": 14.3,
+    "latency_p95_ms": 41.4,
+    "latency_mean_ms": 32.7,
+    "wallclock_time_s": 13.1
+  },
+  "paired_statistics": {
+    "n11": 370,
+    "n00": 24,
+    "n01": 1,
+    "n10": 5,
+    "discordant_total": 6,
+    "accuracy_delta_pp": -1.0,
+    "mcnemar_chi2_cc": 1.5,
+    "exact_p_value": 0.21875,
+    "paired_se_pp": 0.6103,
+    "ci_95_pp": [
+      -2.2,
+      0.2
+    ],
+    "one_sided_95_lcb_pp": -2.0039,
+    "non_inferiority_margin_pp": -3.0,
+    "non_inferiority_satisfied": true
+  }
+}
