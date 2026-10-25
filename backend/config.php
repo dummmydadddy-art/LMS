@@ -1,7 +1,8 @@
 <?php
-// LMS Configuration
+// LMS Configuration — Template
+// Fill in your own values or configure environment variables.
+// ⚠️ Do not commit real keys or credentials to a public repository.
 
-// Enable error reporting for development (disable in production)
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -10,18 +11,18 @@ error_reporting(E_ALL);
 $APP_NAME = "LMS";
 $APP_ENV = "production";
 
-$SUPABASE_PROJECT_URL = "https://cjhfnaubbfqhwveuhslh.supabase.co"; // e.g. https://xxxxx.supabase.co
-$SUPABASE_URL = "https://cjhfnaubbfqhwveuhslh.supabase.co/rest/v1/"; // e.g. https://xxxxx.supabase.co/rest/v1/
-$SUPABASE_ANON_KEY = "sb_publishable_nKnJWB2nMK1c_EORxrhr_w_PPvsvPSJ";
-$SUPABASE_SERVICE_ROLE_KEY = getenv("SUPABASE_SERVICE_ROLE_KEY") ?: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNqaGZuYXViYmZxaHd2ZXVoc2xoIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4NTA0Nzc1MSwiZXhwIjoyMTAwNjIzNzUxfQ.c48rHq8hf7ZGyG7wMlerKmaDcQUi3A51M2QpI2dRU1U";
+// Supabase Configuration
+$SUPABASE_PROJECT_URL = getenv("SUPABASE_PROJECT_URL") ?: "https://YOUR_PROJECT_ID.supabase.co";
+$SUPABASE_URL = getenv("SUPABASE_URL") ?: "https://YOUR_PROJECT_ID.supabase.co/rest/v1/";
+$SUPABASE_ANON_KEY = getenv("SUPABASE_ANON_KEY") ?: "YOUR_SUPABASE_ANON_KEY";
+$SUPABASE_SERVICE_ROLE_KEY = getenv("SUPABASE_SERVICE_ROLE_KEY") ?: "";
 
 // Payment gateway variables
 $PAYMENT_GATEWAY_KEY = getenv("PAYMENT_GATEWAY_KEY") ?: "";
 $PAYMENT_GATEWAY_SECRET = getenv("PAYMENT_GATEWAY_SECRET") ?: "";
 
 // Service-to-service API key (for n8n chatbot, external integrations)
-// n8n sends this in X-Service-Key header to bypass JWT auth
-$SERVICE_API_KEY = getenv("LMS_SERVICE_API_KEY") ?: "lms-n8n-service-key-2026";
+$SERVICE_API_KEY = getenv("LMS_SERVICE_API_KEY") ?: "YOUR_SERVICE_API_KEY";
 
 // Ollama AI Configuration
 $OLLAMA_BASE_URL = getenv("OLLAMA_BASE_URL") ?: "http://localhost:11434";
