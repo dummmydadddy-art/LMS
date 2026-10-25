@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "experiment": "EXP-0039",
+    "branch": "exp-0039",
+    "execution_date": "2026-09-17",
+    "dataset_hash": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+    "predictions_hash": "e3522d62f948d977b40aa5aba3bb90d438d453a161117825e94bb77668db49e5",
+    "candidate": "C2_085 (Chonkie SemanticChunker threshold=0.85, 76 chunks)",
+    "decision": "ADOPT"
+  },
+  "metrics": {
+    "accuracy": 71.4,
+    "correct_count": 357,
+    "macro_f1": 71.64,
+    "standard_far": 18.47,
+    "frr": 27.7,
+    "supported_recall": 72.3,
+    "refutation_recall": 64.81,
+    "not_established_recall": 78.4,
+    "ood_recall": 96.0,
+    "novel_ood_recall": "N/A — separate Novel-OOD subset is not present in EXP-0033-BLIND-DATASET.json",
+    "false_acceptances": 53,
+    "false_refutations": 15,
+    "false_abstentions_supported": 15,
+    "false_abstentions_all": 31
+  },
+  "class_metrics": {
+    "SUPPORTED": {
+      "precision": 74.4,
+      "recall": 72.3,
+      "f1": 73.33,
+      "tp": 154,
+      "actual_total": 213,
+      "pred_total": 207
+    },
+    "REFUTED": {
+      "precision": 64.02,
+      "recall": 64.81,
+      "f1": 64.42,
+      "tp": 105,
+      "actual_total": 162,
+      "pred_total": 164
+    },
+    "NOT_ESTABLISHED": {
+      "precision": 75.97,
+      "recall": 78.4,
+      "f1": 77.17,
+      "tp": 98,
+      "actual_total": 125,
+      "pred_total": 129
+    }
+  },
+  "confusion_matrix": {
+    "SUPPORTED": {
+      "SUPPORTED": 154,
+      "REFUTED": 44,
+      "NOT_ESTABLISHED": 15
+    },
+    "REFUTED": {
+      "SUPPORTED": 41,
+      "REFUTED": 105,
+      "NOT_ESTABLISHED": 16
+    },
+    "NOT_ESTABLISHED": {
+      "SUPPORTED": 12,
+      "REFUTED": 15,
+      "NOT_ESTABLISHED": 98
+    }
+  },
+  "category_accuracy": {
+    "SUPPORTED": {
+      "total": 125,
+      "correct": 90,
+      "accuracy": 72.0
+    },
+    "FALSE_PREMISE": {
+      "total": 125,
+      "correct": 82,
+      "accuracy": 65.6
+    },
+    "AMBIGUOUS": {
+      "total": 75,
+      "correct": 50,
+      "accuracy": 66.67
+    },
+    "OOD": {
+      "total": 50,
+      "correct": 48,
+      "accuracy": 96.0
+    },
+    "PARAPHRASE": {
+      "total": 50,
+      "correct": 39,
+      "accuracy": 78.0
+    },
+    "ADVERSARIAL": {
+      "total": 75,
+      "correct": 48,
+      "accuracy": 64.0
+    }
+  },
+  "paired_comparison_exp0037": {
+    "comparator": "EXP-0037 A4 (Frozen Blind Champion)",
+    "comparator_accuracy": 71.6,
+    "candidate_accuracy": 71.4,
+    "delta_accuracy_pp": -0.2,
+    "n11": 334,
+    "n00": 119,
+    "n01": 23,
+    "n10": 24,
+    "total_discordant": 47,
+    "mcnemar_chi2_cc": 0.0,
+    "exact_binomial_p": 1.0,
+    "paired_se_pp": 1.3711,
+    "confidence_interval_95_pp": [
+      -2.8873,
+      2.4873
+    ],
+    "one_sided_95_lcb_pp": -2.4553,
+    "non_inferiority_margin_pp": -3.0,
+    "non_inferiority_established": true,
+    "superiority_established": false
+  },
+  "timing": {
+    "total_wallclock_seconds": 328.1,
+    "retrieval_seconds": 205.1,
+    "verifier_seconds": 123.0,
+    "retrieval_p50_ms": 413.04,
+    "retrieval_p95_ms": 474.79,
+    "retrieval_mean_ms": 410.06,
+    "verifier_p50_ms": 17.59,
+    "verifier_p95_ms": 723.38,
+    "verifier_mean_ms": 245.87,
+    "throughput_cases_per_sec": 4.07
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "experiment": "EXP-0040",
+  "checkpoint_type": "DEVELOPMENT_BENCHMARK_AND_BLIND_READY_AUDIT",
+  "timestamp": "2026-09-17T11:25:00+00:00",
+  "branch": "exp-0040",
+  "parent_commit": "f556585ea166406bbe8961ebeedac8b8950c3f54",
+  "candidate": {
+    "name": "P1",
+    "description": "Hierarchical Parent-Child Retrieval (C2_085 leaves -> bounded parents)",
+    "leaf_chunk_count": 76,
+    "parent_group_count": 36,
+    "max_parent_tokens": 210,
+    "mean_parent_tokens": 106.86
+  },
+  "control": {
+    "name": "P0",
+    "description": "C2_085 Child-Only Retrieval (Frozen EXP-0039 Baseline)"
+  },
+  "verifier": {
+    "name": "Candidate A4",
+    "path": "backend/rag_ambiguity_guard_verifier.php",
+    "sha256": "31c7c31ef6301156bb0318cb35ba5879e5ca3c25acdd6f705cd2f6c0e3b0fc2e"
+  },
+  "development_dataset": {
+    "name": "EXP-0025-DEVELOPMENT-DATASET.json",
+    "sample_size": 400,
+    "sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b"
+  },
+  "blind_dataset": {
+    "name": "EXP-0033-BLIND-DATASET.json",
+    "sample_size": 500,
+    "sha256": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+    "status": "SEALED_UNREAD"
+  },
+  "gates": {
+    "gate_a": "PASS",
+    "gate_b": "PASS",
+    "gate_c": "PASS",
+    "gate_d": "PASS",
+    "gate_e": "PASS",
+    "gate_f": "PASS",
+    "gate_g": "PASS",
+    "gate_h": "PASS",
+    "gate_i": "PASS",
+    "gate_j": "PASS"
+  },
+  "development_summary": {
+    "p0_accuracy": 93.75,
+    "p1_accuracy": 92.75,
+    "accuracy_delta_pp": -1.0,
+    "p0_macro_f1": 94.33,
+    "p1_macro_f1": 93.39,
+    "p0_far": 2.8,
+    "p1_far": 3.2,
+    "p0_frr": 11.33,
+    "p1_frr": 12.67,
+    "p0_supported_recall": 88.67,
+    "p1_supported_recall": 87.33,
+    "p0_refutation_recall": 95.33,
+    "p1_refutation_recall": 94.67,
+    "p0_not_established_recall": 99.0,
+    "p1_not_established_recall": 98.0,
+    "p0_ood_recall": 99.0,
+    "p1_ood_recall": 98.0,
+    "novel_ood_recall": "N/A",
+    "p0_recall_at_5": 100.0,
+    "p1_recall_at_5": 100.0,
+    "p0_ndcg_at_5": 86.12,
+    "p1_ndcg_at_5": 87.55,
+    "n11": 370,
+    "n00": 24,
+    "n01": 1,
+    "n10": 5,
+    "mcnemar_p": 0.21875,
+    "ci_95_pp": [
+      -2.2,
+      0.2
+    ],
+    "one_sided_95_lcb_pp": -2.0039
+  },
+  "audit_verdict": "PASS \u2014 BLIND READY",
+  "next_step": "STOP before blind evaluation"
+}

@@ -1,0 +1,88 @@
+# =============================================
+# NODE / FRONTEND BUILD ARTIFACTS
+# =============================================
+**/node_modules/
+node_modules/
+**/dist/
+**/dist-ssr/
+dist/
+
+# =============================================
+# BINARY / LARGE RUNTIME FILES
+# =============================================
+# ZIP archives
+*.zip
+*.tar.gz
+*.7z
+
+# Compiled binaries
+bin/
+*.exe
+
+# =============================================
+# DATABASES / VECTOR STORES
+# =============================================
+**/*.sqlite
+**/*.sqlite3
+**/*.sqlite-journal
+**/*.db
+
+# =============================================
+# EXPERIMENT SCRATCH / ARCHIVE (HUGE - 2.7GB)
+# =============================================
+EduConnect-LMS-Experimental/archive/
+EduConnect-LMS-Experimental/scratch/
+EduConnect-LMS-Experimental/bin/
+
+# =============================================
+# NESTED GIT REPOSITORIES
+# (prevent submodule confusion in root repo)
+# =============================================
+EduConnect-LMS-Production/.git/
+EduConnect-LMS-Experimental/.git/
+docs_and_archive/backups/Learning Management System_original/.git/
+
+# =============================================
+# ENV / SECRETS
+# =============================================
+.env
+.env.*
+*.local
+
+# =============================================
+# BACKEND TEMP FILES / LOGS
+# =============================================
+backend/.token_cache/
+backend/last_otp.txt
+backend/api_debug.log
+backend/settings.json
+backend/security_events.log
+backend/otps.json
+
+# =============================================
+# PYTHON CACHE
+# =============================================
+**/__pycache__/
+**/.pytest_cache/
+**/*.py[cod]
+**/*$py.class
+research/data/
+research/model_cache/
+
+# =============================================
+# IDE / OS FILES
+# =============================================
+.serena/
+**/.serena/
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.log
+
+# Temporarily renamed nested git dirs
+**/_git_bak/

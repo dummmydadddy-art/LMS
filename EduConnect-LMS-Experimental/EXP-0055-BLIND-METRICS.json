@@ -1,0 +1,75 @@
+{
+    "experiment": "EXP-0055",
+    "phase": "BLIND",
+    "N": 500,
+    "control_b0": {
+        "accuracy": 72,
+        "accuracy_ci95": {
+            "lower": 67.91,
+            "upper": 75.76
+        },
+        "macro_f1": 72.24,
+        "far": 17.07,
+        "far_ci95": {
+            "lower": 13.16,
+            "upper": 21.85
+        },
+        "frr": 27.7,
+        "frr_ci95": {
+            "lower": 22.13,
+            "upper": 34.06
+        },
+        "supported_recall": 72.3,
+        "refutation_recall": 67.9,
+        "not_established_recall": 76.8,
+        "latency_ms": {
+            "mean": 13.5,
+            "median": 14,
+            "p95": 24.2,
+            "total_sec": 6.76
+        }
+    },
+    "candidate_c1": {
+        "accuracy": 72,
+        "accuracy_ci95": {
+            "lower": 67.91,
+            "upper": 75.76
+        },
+        "macro_f1": 72.24,
+        "far": 17.07,
+        "far_ci95": {
+            "lower": 13.16,
+            "upper": 21.85
+        },
+        "frr": 27.7,
+        "frr_ci95": {
+            "lower": 22.13,
+            "upper": 34.06
+        },
+        "supported_recall": 72.3,
+        "refutation_recall": 67.9,
+        "not_established_recall": 76.8,
+        "latency_ms": {
+            "mean": 13.3,
+            "median": 13.8,
+            "p95": 24.2,
+            "total_sec": 6.63
+        }
+    },
+    "delta": {
+        "accuracy": 0,
+        "macro_f1": 0,
+        "far": 0,
+        "frr": 0
+    },
+    "paired_statistics": {
+        "n11": 360,
+        "n00": 140,
+        "n10": 0,
+        "n01": 0,
+        "discordant_count": 0,
+        "mcnemar_chi2": 0,
+        "mcnemar_note": "no evidence of paired disagreement was observed because all 500 paired outcomes were identical",
+        "inferential_status": "Formal non-inferiority was not inferentially established; observed paired parity was exact in the locked sample."
+    }
+}

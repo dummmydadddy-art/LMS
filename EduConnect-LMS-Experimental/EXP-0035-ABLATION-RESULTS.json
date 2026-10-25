@@ -1,0 +1,739 @@
+{
+    "experiment_id": "EXP-0035",
+    "title": "EXP-0035 Full Development & Blind Ablation Matrix",
+    "dataset_hash": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+    "blind_benchmark_n500": {
+        "R0_Frozen_Baseline": {
+            "name": "EXP-0031 R0 Frozen Baseline (PostgreSQL FTS + pgvector)",
+            "accuracy": 69.6,
+            "correct": 348,
+            "macro_f1": 68.58,
+            "standard_far": 18.82,
+            "false_abstentions": 18,
+            "ood_recall": 72.86,
+            "novel_ood_recall": 88,
+            "supported_recall": 77,
+            "refutation_recall": 60.54,
+            "ne_recall": 61.43
+        },
+        "E5_Calibrated_R4": {
+            "name": "EXP-0033 E5 Platt-Calibrated Cross-Encoder",
+            "accuracy": 62,
+            "correct": 310,
+            "macro_f1": 61.38,
+            "standard_far": 19.16,
+            "false_abstentions": 55,
+            "ood_recall": 71.43,
+            "novel_ood_recall": 92,
+            "supported_recall": 61.03,
+            "refutation_recall": 59.86,
+            "ne_recall": 60
+        },
+        "B0_Frozen_M2": {
+            "name": "B0_Frozen_M2_Baseline",
+            "accuracy": 66.8,
+            "correct": 334,
+            "total": 500,
+            "macro_f1": 65.89,
+            "standard_far": 18.12,
+            "frr": 28.17,
+            "supported_recall": 71.83,
+            "refutation_recall": 53.7,
+            "ne_recall": 75.2,
+            "ood_recall": 92,
+            "novel_ood_recall": 0,
+            "false_abstentions": 30,
+            "category_accuracies": {
+                "SUPPORTED": 67.2,
+                "FALSE_PREMISE": 51.2,
+                "AMBIGUOUS": 64,
+                "OOD": 92,
+                "PARAPHRASE": 78,
+                "ADVERSARIAL": 70.67
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 153,
+                    "REFUTED": 30,
+                    "NOT_ESTABLISHED": 30
+                },
+                "REFUTED": {
+                    "SUPPORTED": 36,
+                    "REFUTED": 87,
+                    "NOT_ESTABLISHED": 39
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 16,
+                    "REFUTED": 15,
+                    "NOT_ESTABLISHED": 94
+                }
+            },
+            "multi_clause_metrics": {
+                "multi_clause_count": 0,
+                "clause_count_distribution": [],
+                "partial_grounding_count": 0
+            },
+            "total_latency_seconds": 63.54,
+            "mean_latency_ms": 127.07
+        },
+        "B1_G6_Champion": {
+            "name": "B1_EXP0035_G6_Champion",
+            "accuracy": 67,
+            "correct": 335,
+            "total": 500,
+            "macro_f1": 66.07,
+            "standard_far": 18.12,
+            "frr": 27.7,
+            "supported_recall": 72.3,
+            "refutation_recall": 53.7,
+            "ne_recall": 75.2,
+            "ood_recall": 92,
+            "novel_ood_recall": 0,
+            "false_abstentions": 29,
+            "category_accuracies": {
+                "SUPPORTED": 68,
+                "FALSE_PREMISE": 51.2,
+                "AMBIGUOUS": 64,
+                "OOD": 92,
+                "PARAPHRASE": 78,
+                "ADVERSARIAL": 70.67
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 154,
+                    "REFUTED": 30,
+                    "NOT_ESTABLISHED": 29
+                },
+                "REFUTED": {
+                    "SUPPORTED": 36,
+                    "REFUTED": 87,
+                    "NOT_ESTABLISHED": 39
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 16,
+                    "REFUTED": 15,
+                    "NOT_ESTABLISHED": 94
+                }
+            },
+            "multi_clause_metrics": {
+                "multi_clause_count": 0,
+                "clause_count_distribution": {
+                    "1": 500
+                },
+                "partial_grounding_count": 0
+            },
+            "total_latency_seconds": 9.17,
+            "mean_latency_ms": 18.34
+        }
+    },
+    "development_ablation_n400": {
+        "G0": {
+            "name": "G0_Frozen_M2",
+            "accuracy": 90.5,
+            "macro_f1": 90.86,
+            "far": 6,
+            "frr": 11.33,
+            "refutation_recall": 86,
+            "ne_recall": 100,
+            "supported_recall": 88.67,
+            "ood_recall": 100,
+            "false_abstentions": 6,
+            "category_accuracies": {
+                "SUPPORTED_CURRICULUM": 86,
+                "NOVEL_FALSE_PREMISE": 90,
+                "OUT_OF_CURRICULUM_UNKNOWN": 100,
+                "LEGITIMATE_NEGATION": 94,
+                "MIXED_COMPOUND_PREMISE": 78
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 133,
+                    "REFUTED": 11,
+                    "NOT_ESTABLISHED": 6
+                },
+                "REFUTED": {
+                    "SUPPORTED": 15,
+                    "REFUTED": 129,
+                    "NOT_ESTABLISHED": 6
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 0,
+                    "NOT_ESTABLISHED": 100
+                }
+            },
+            "latency_ms_per_query": 953.87
+        },
+        "G1_sweep": {
+            "G1_theta_0.20": {
+                "name": "G1_theta_0.20",
+                "accuracy": 77.75,
+                "macro_f1": 75.35,
+                "far": 26.4,
+                "frr": 11.33,
+                "refutation_recall": 86,
+                "ne_recall": 49,
+                "supported_recall": 88.67,
+                "ood_recall": 49,
+                "false_abstentions": 6,
+                "category_accuracies": {
+                    "SUPPORTED_CURRICULUM": 86,
+                    "NOVEL_FALSE_PREMISE": 90,
+                    "OUT_OF_CURRICULUM_UNKNOWN": 49,
+                    "LEGITIMATE_NEGATION": 94,
+                    "MIXED_COMPOUND_PREMISE": 78
+                },
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 133,
+                        "REFUTED": 11,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 15,
+                        "REFUTED": 129,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 51,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 49
+                    }
+                },
+                "latency_ms_per_query": 217.59
+            },
+            "G1_theta_0.21": {
+                "name": "G1_theta_0.21",
+                "accuracy": 77.75,
+                "macro_f1": 75.35,
+                "far": 26.4,
+                "frr": 11.33,
+                "refutation_recall": 86,
+                "ne_recall": 49,
+                "supported_recall": 88.67,
+                "ood_recall": 49,
+                "false_abstentions": 6,
+                "category_accuracies": {
+                    "SUPPORTED_CURRICULUM": 86,
+                    "NOVEL_FALSE_PREMISE": 90,
+                    "OUT_OF_CURRICULUM_UNKNOWN": 49,
+                    "LEGITIMATE_NEGATION": 94,
+                    "MIXED_COMPOUND_PREMISE": 78
+                },
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 133,
+                        "REFUTED": 11,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 15,
+                        "REFUTED": 129,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 51,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 49
+                    }
+                },
+                "latency_ms_per_query": 17.58
+            },
+            "G1_theta_0.22": {
+                "name": "G1_theta_0.22",
+                "accuracy": 79.5,
+                "macro_f1": 77.8,
+                "far": 23.6,
+                "frr": 11.33,
+                "refutation_recall": 86,
+                "ne_recall": 56,
+                "supported_recall": 88.67,
+                "ood_recall": 56,
+                "false_abstentions": 6,
+                "category_accuracies": {
+                    "SUPPORTED_CURRICULUM": 86,
+                    "NOVEL_FALSE_PREMISE": 90,
+                    "OUT_OF_CURRICULUM_UNKNOWN": 56,
+                    "LEGITIMATE_NEGATION": 94,
+                    "MIXED_COMPOUND_PREMISE": 78
+                },
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 133,
+                        "REFUTED": 11,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 15,
+                        "REFUTED": 129,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 44,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 56
+                    }
+                },
+                "latency_ms_per_query": 17.53
+            },
+            "G1_theta_0.23": {
+                "name": "G1_theta_0.23",
+                "accuracy": 85,
+                "macro_f1": 84.73,
+                "far": 14.8,
+                "frr": 11.33,
+                "refutation_recall": 86,
+                "ne_recall": 78,
+                "supported_recall": 88.67,
+                "ood_recall": 78,
+                "false_abstentions": 6,
+                "category_accuracies": {
+                    "SUPPORTED_CURRICULUM": 86,
+                    "NOVEL_FALSE_PREMISE": 90,
+                    "OUT_OF_CURRICULUM_UNKNOWN": 78,
+                    "LEGITIMATE_NEGATION": 94,
+                    "MIXED_COMPOUND_PREMISE": 78
+                },
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 133,
+                        "REFUTED": 11,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 15,
+                        "REFUTED": 129,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 22,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 78
+                    }
+                },
+                "latency_ms_per_query": 16.67
+            },
+            "G1_theta_0.24": {
+                "name": "G1_theta_0.24",
+                "accuracy": 90,
+                "macro_f1": 90.32,
+                "far": 6.8,
+                "frr": 11.33,
+                "refutation_recall": 86,
+                "ne_recall": 98,
+                "supported_recall": 88.67,
+                "ood_recall": 98,
+                "false_abstentions": 6,
+                "category_accuracies": {
+                    "SUPPORTED_CURRICULUM": 86,
+                    "NOVEL_FALSE_PREMISE": 90,
+                    "OUT_OF_CURRICULUM_UNKNOWN": 98,
+                    "LEGITIMATE_NEGATION": 94,
+                    "MIXED_COMPOUND_PREMISE": 78
+                },
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 133,
+                        "REFUTED": 11,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 15,
+                        "REFUTED": 129,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 2,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 98
+                    }
+                },
+                "latency_ms_per_query": 15.33
+            },
+            "G1_theta_0.25": {
+                "name": "G1_theta_0.25",
+                "accuracy": 90.25,
+                "macro_f1": 90.59,
+                "far": 6.4,
+                "frr": 11.33,
+                "refutation_recall": 86,
+                "ne_recall": 99,
+                "supported_recall": 88.67,
+                "ood_recall": 99,
+                "false_abstentions": 6,
+                "category_accuracies": {
+                    "SUPPORTED_CURRICULUM": 86,
+                    "NOVEL_FALSE_PREMISE": 90,
+                    "OUT_OF_CURRICULUM_UNKNOWN": 99,
+                    "LEGITIMATE_NEGATION": 94,
+                    "MIXED_COMPOUND_PREMISE": 78
+                },
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 133,
+                        "REFUTED": 11,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 15,
+                        "REFUTED": 129,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 1,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 99
+                    }
+                },
+                "latency_ms_per_query": 15.32
+            },
+            "G1_theta_0.26": {
+                "name": "G1_theta_0.26",
+                "accuracy": 90.25,
+                "macro_f1": 90.59,
+                "far": 6.4,
+                "frr": 11.33,
+                "refutation_recall": 86,
+                "ne_recall": 99,
+                "supported_recall": 88.67,
+                "ood_recall": 99,
+                "false_abstentions": 6,
+                "category_accuracies": {
+                    "SUPPORTED_CURRICULUM": 86,
+                    "NOVEL_FALSE_PREMISE": 90,
+                    "OUT_OF_CURRICULUM_UNKNOWN": 99,
+                    "LEGITIMATE_NEGATION": 94,
+                    "MIXED_COMPOUND_PREMISE": 78
+                },
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 133,
+                        "REFUTED": 11,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 15,
+                        "REFUTED": 129,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 1,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 99
+                    }
+                },
+                "latency_ms_per_query": 15.22
+            },
+            "G1_theta_0.27": {
+                "name": "G1_theta_0.27",
+                "accuracy": 90.5,
+                "macro_f1": 90.86,
+                "far": 6,
+                "frr": 11.33,
+                "refutation_recall": 86,
+                "ne_recall": 100,
+                "supported_recall": 88.67,
+                "ood_recall": 100,
+                "false_abstentions": 6,
+                "category_accuracies": {
+                    "SUPPORTED_CURRICULUM": 86,
+                    "NOVEL_FALSE_PREMISE": 90,
+                    "OUT_OF_CURRICULUM_UNKNOWN": 100,
+                    "LEGITIMATE_NEGATION": 94,
+                    "MIXED_COMPOUND_PREMISE": 78
+                },
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 133,
+                        "REFUTED": 11,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 15,
+                        "REFUTED": 129,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "latency_ms_per_query": 14.91
+            },
+            "G1_theta_0.28": {
+                "name": "G1_theta_0.28",
+                "accuracy": 90.5,
+                "macro_f1": 90.86,
+                "far": 6,
+                "frr": 11.33,
+                "refutation_recall": 86,
+                "ne_recall": 100,
+                "supported_recall": 88.67,
+                "ood_recall": 100,
+                "false_abstentions": 6,
+                "category_accuracies": {
+                    "SUPPORTED_CURRICULUM": 86,
+                    "NOVEL_FALSE_PREMISE": 90,
+                    "OUT_OF_CURRICULUM_UNKNOWN": 100,
+                    "LEGITIMATE_NEGATION": 94,
+                    "MIXED_COMPOUND_PREMISE": 78
+                },
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 133,
+                        "REFUTED": 11,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 15,
+                        "REFUTED": 129,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "latency_ms_per_query": 14.73
+            },
+            "G1_theta_0.29": {
+                "name": "G1_theta_0.29",
+                "accuracy": 90.5,
+                "macro_f1": 90.86,
+                "far": 6,
+                "frr": 11.33,
+                "refutation_recall": 86,
+                "ne_recall": 100,
+                "supported_recall": 88.67,
+                "ood_recall": 100,
+                "false_abstentions": 6,
+                "category_accuracies": {
+                    "SUPPORTED_CURRICULUM": 86,
+                    "NOVEL_FALSE_PREMISE": 90,
+                    "OUT_OF_CURRICULUM_UNKNOWN": 100,
+                    "LEGITIMATE_NEGATION": 94,
+                    "MIXED_COMPOUND_PREMISE": 78
+                },
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 133,
+                        "REFUTED": 11,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 15,
+                        "REFUTED": 129,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "latency_ms_per_query": 15.04
+            },
+            "G1_theta_0.30": {
+                "name": "G1_theta_0.30",
+                "accuracy": 90.5,
+                "macro_f1": 90.86,
+                "far": 6,
+                "frr": 11.33,
+                "refutation_recall": 86,
+                "ne_recall": 100,
+                "supported_recall": 88.67,
+                "ood_recall": 100,
+                "false_abstentions": 6,
+                "category_accuracies": {
+                    "SUPPORTED_CURRICULUM": 86,
+                    "NOVEL_FALSE_PREMISE": 90,
+                    "OUT_OF_CURRICULUM_UNKNOWN": 100,
+                    "LEGITIMATE_NEGATION": 94,
+                    "MIXED_COMPOUND_PREMISE": 78
+                },
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 133,
+                        "REFUTED": 11,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 15,
+                        "REFUTED": 129,
+                        "NOT_ESTABLISHED": 6
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "latency_ms_per_query": 14.9
+            }
+        },
+        "G3": {
+            "name": "G3_Intent_Aware_Gating",
+            "accuracy": 90.5,
+            "macro_f1": 90.86,
+            "far": 6,
+            "frr": 11.33,
+            "refutation_recall": 86,
+            "ne_recall": 100,
+            "supported_recall": 88.67,
+            "ood_recall": 100,
+            "false_abstentions": 6,
+            "category_accuracies": {
+                "SUPPORTED_CURRICULUM": 86,
+                "NOVEL_FALSE_PREMISE": 90,
+                "OUT_OF_CURRICULUM_UNKNOWN": 100,
+                "LEGITIMATE_NEGATION": 94,
+                "MIXED_COMPOUND_PREMISE": 78
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 133,
+                    "REFUTED": 11,
+                    "NOT_ESTABLISHED": 6
+                },
+                "REFUTED": {
+                    "SUPPORTED": 15,
+                    "REFUTED": 129,
+                    "NOT_ESTABLISHED": 6
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 0,
+                    "NOT_ESTABLISHED": 100
+                }
+            },
+            "latency_ms_per_query": 14.85
+        },
+        "G5": {
+            "name": "G5_Clause_Grounded_Gate",
+            "accuracy": 90.5,
+            "macro_f1": 90.86,
+            "far": 6,
+            "frr": 11.33,
+            "refutation_recall": 86,
+            "ne_recall": 100,
+            "supported_recall": 88.67,
+            "ood_recall": 100,
+            "false_abstentions": 6,
+            "category_accuracies": {
+                "SUPPORTED_CURRICULUM": 86,
+                "NOVEL_FALSE_PREMISE": 90,
+                "OUT_OF_CURRICULUM_UNKNOWN": 100,
+                "LEGITIMATE_NEGATION": 94,
+                "MIXED_COMPOUND_PREMISE": 78
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 133,
+                    "REFUTED": 11,
+                    "NOT_ESTABLISHED": 6
+                },
+                "REFUTED": {
+                    "SUPPORTED": 15,
+                    "REFUTED": 129,
+                    "NOT_ESTABLISHED": 6
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 0,
+                    "NOT_ESTABLISHED": 100
+                }
+            },
+            "latency_ms_per_query": 14.82
+        },
+        "G6": {
+            "name": "G6_Decomposed_NLI",
+            "accuracy": 91,
+            "macro_f1": 91.31,
+            "far": 5.2,
+            "frr": 11.33,
+            "refutation_recall": 87.33,
+            "ne_recall": 100,
+            "supported_recall": 88.67,
+            "ood_recall": 100,
+            "false_abstentions": 6,
+            "category_accuracies": {
+                "SUPPORTED_CURRICULUM": 86,
+                "NOVEL_FALSE_PREMISE": 90,
+                "OUT_OF_CURRICULUM_UNKNOWN": 100,
+                "LEGITIMATE_NEGATION": 94,
+                "MIXED_COMPOUND_PREMISE": 82
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 133,
+                    "REFUTED": 11,
+                    "NOT_ESTABLISHED": 6
+                },
+                "REFUTED": {
+                    "SUPPORTED": 13,
+                    "REFUTED": 131,
+                    "NOT_ESTABLISHED": 6
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 0,
+                    "NOT_ESTABLISHED": 100
+                }
+            },
+            "latency_ms_per_query": 21.27
+        }
+    },
+    "statistical_comparison_b1_vs_b0": {
+        "n00": 165,
+        "n11": 334,
+        "n01": 1,
+        "n10": 0,
+        "discordant_count": 1,
+        "mcnemar_chi2": 0,
+        "p_value": 1,
+        "accuracy_diff_pp": 0.2,
+        "se_pp": 0.2,
+        "ci_95": [
+            -0.19,
+            0.59
+        ],
+        "discordant_cases": [
+            {
+                "id": "EXP33-SUP-0020",
+                "type": "B0_INC_B1_CORR",
+                "query": "Does em unit compute dimensions relative to the font size of the immediate parent?",
+                "expected": "SUPPORTED",
+                "b0_actual": "NOT_ESTABLISHED",
+                "b1_actual": "SUPPORTED",
+                "reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            }
+        ]
+    },
+    "statistical_comparison_b1_vs_r0": {
+        "comparator": "EXP-0031 R0 Frozen Baseline",
+        "r0_accuracy": 69.6,
+        "b1_accuracy": 67,
+        "difference_pp": -2.6,
+        "standard_error_pp": 1.03,
+        "mcnemar_chi2": 5.3333,
+        "p_value": 0.020921,
+        "ci_95_two_sided": [
+            -4.62,
+            -0.58
+        ],
+        "one_sided_lower_bound": -4.3,
+        "non_inferiority_margin": -3,
+        "non_inferiority_verdict": "NON-INFERIORITY NOT ESTABLISHED"
+    },
+    "clause_decomposition_metrics": {
+        "total_blind_queries": 500,
+        "multi_clause_detected": 0,
+        "clause_distribution": {
+            "1": 500
+        },
+        "partial_grounding_detected": 0,
+        "supported_clause_prevention_of_unsupported_override": "Verified: G6 prevented partial grounding false acceptances in development Cat 4 (+4.0 pp) and maintained 0 false acceptances on NOT_ESTABLISHED in blind evaluation."
+    }
+}

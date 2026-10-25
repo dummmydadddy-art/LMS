@@ -1,0 +1,52 @@
+{
+    "experiment_id": "EXP-0033",
+    "device": {
+        "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU (4 GB VRAM)",
+        "cpu": "12th Gen Intel(R) Core(TM) i5-12450H",
+        "ram_gb": 16
+    },
+    "telemetry": {
+        "E0": {
+            "calibration_overhead_p50_us": 10.01,
+            "verifier_latency_p50_ms": 1113.86,
+            "verifier_latency_p95_ms": 2184.78,
+            "total_eval_time_s": 604.17
+        },
+        "E1": {
+            "calibration_overhead_p50_us": 3.1,
+            "verifier_latency_p50_ms": 0.01,
+            "verifier_latency_p95_ms": 26.02,
+            "total_eval_time_s": 5.72
+        },
+        "E2": {
+            "calibration_overhead_p50_us": 6.2,
+            "verifier_latency_p50_ms": 17.65,
+            "verifier_latency_p95_ms": 40.67,
+            "total_eval_time_s": 29.75
+        },
+        "E3": {
+            "calibration_overhead_p50_us": 4.05,
+            "verifier_latency_p50_ms": 0.01,
+            "verifier_latency_p95_ms": 24.52,
+            "total_eval_time_s": 3.95
+        },
+        "E4": {
+            "calibration_overhead_p50_us": 4.05,
+            "verifier_latency_p50_ms": 0.02,
+            "verifier_latency_p95_ms": 24.89,
+            "total_eval_time_s": 4.57
+        },
+        "E5": {
+            "calibration_overhead_p50_us": 6.2,
+            "verifier_latency_p50_ms": 16.55,
+            "verifier_latency_p95_ms": 30.7,
+            "total_eval_time_s": 15.11
+        },
+        "E6": {
+            "calibration_overhead_p50_us": 5.96,
+            "verifier_latency_p50_ms": 15,
+            "verifier_latency_p95_ms": 25.53,
+            "total_eval_time_s": 6.16
+        }
+    }
+}

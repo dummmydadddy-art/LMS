@@ -1,0 +1,2902 @@
+[
+    {
+        "id": "EXP30-SUP-0001",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does display: flex convert an HTML container into a flex formatting context?"
+    },
+    {
+        "id": "EXP30-SUP-0002",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "In the CSS box model, is padding positioned between content and the border?"
+    },
+    {
+        "id": "EXP30-SUP-0003",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does setting box-sizing to border-box incorporate padding into the declared width?"
+    },
+    {
+        "id": "EXP30-SUP-0004",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does flex-direction: row align child items along a horizontal axis by default?"
+    },
+    {
+        "id": "EXP30-SUP-0005",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does justify-content control the spacing of items along the main flex axis?"
+    },
+    {
+        "id": "EXP30-SUP-0006",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does align-items align items perpendicular to the main flex axis?"
+    },
+    {
+        "id": "EXP30-SUP-0007",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does CSS Grid allow items to be positioned across both rows and columns?"
+    },
+    {
+        "id": "EXP30-SUP-0008",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does grid-template-rows define the height sizes of rows in a grid container?"
+    },
+    {
+        "id": "EXP30-SUP-0009",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Is the <header> semantic tag used to encapsulate introductory header material?"
+    },
+    {
+        "id": "EXP30-SUP-0010",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does the <footer> element typically contain copyright, author info, or related links?"
+    },
+    {
+        "id": "EXP30-SUP-0011",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can <section> be used to define a thematic grouping of related document content?"
+    },
+    {
+        "id": "EXP30-SUP-0012",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does the gap property provide consistent spacing between adjacent flex items?"
+    },
+    {
+        "id": "EXP30-SUP-0013",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does flex-wrap: nowrap force all flex children to fit onto a single line?"
+    },
+    {
+        "id": "EXP30-SUP-0014",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does flex-grow determine how much an item will enlarge relative to siblings when space is available?"
+    },
+    {
+        "id": "EXP30-SUP-0015",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does flex-shrink determine how an item shrinks when the container lacks sufficient space?"
+    },
+    {
+        "id": "EXP30-SUP-0016",
+        "module": "HTML_CSS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Is the content area the innermost part of the standard CSS box model hierarchy?"
+    },
+    {
+        "id": "EXP30-SUP-0017",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does const create an immutable variable identifier binding in JavaScript?"
+    },
+    {
+        "id": "EXP30-SUP-0018",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Are variables declared with let confined in scope to their enclosing curly braces?"
+    },
+    {
+        "id": "EXP30-SUP-0019",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does the temporal dead zone exist from entering block scope until variable initialization?"
+    },
+    {
+        "id": "EXP30-SUP-0020",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Do arrow function expressions capture the this value from their outer lexical scope?"
+    },
+    {
+        "id": "EXP30-SUP-0021",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Do arrow functions omit the special arguments identifier from their local scope?"
+    },
+    {
+        "id": "EXP30-SUP-0022",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does Promise.reject create an immediately rejected promise instance with an error reason?"
+    },
+    {
+        "id": "EXP30-SUP-0023",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Are callbacks registered via .then() placed into the microtask queue upon resolution?"
+    },
+    {
+        "id": "EXP30-SUP-0024",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does the JavaScript engine drain all queued microtasks before starting the next macrotask?"
+    },
+    {
+        "id": "EXP30-SUP-0025",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does array destructuring assign array elements to corresponding variable names by position?"
+    },
+    {
+        "id": "EXP30-SUP-0026",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does the rest syntax gather arbitrary remaining function arguments into an array?"
+    },
+    {
+        "id": "EXP30-SUP-0027",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does Array.prototype.filter return a new filtered array without modifying the original array?"
+    },
+    {
+        "id": "EXP30-SUP-0028",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does Array.prototype.reduce iterate over an array to accumulate a single resulting output?"
+    },
+    {
+        "id": "EXP30-SUP-0029",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does the spread operator expand iterable collections into individual element arguments?"
+    },
+    {
+        "id": "EXP30-SUP-0030",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can template literals contain embedded interpolation expressions wrapped in dollar-curly syntax?"
+    },
+    {
+        "id": "EXP30-SUP-0031",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does async function execution always return a Promise resolving to the return expression?"
+    },
+    {
+        "id": "EXP30-SUP-0032",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does the await keyword pause async function execution until the evaluated promise settles?"
+    },
+    {
+        "id": "EXP30-SUP-0033",
+        "module": "JAVASCRIPT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does Object.freeze prevent new properties from being added or existing ones from being altered?"
+    },
+    {
+        "id": "EXP30-SUP-0034",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does useState return a tuple containing the current state value and a state updater function?"
+    },
+    {
+        "id": "EXP30-SUP-0035",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can the useState updater function receive an updater callback containing previous state?"
+    },
+    {
+        "id": "EXP30-SUP-0036",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does useEffect execute its effect callback after the DOM has been rendered on screen?"
+    },
+    {
+        "id": "EXP30-SUP-0037",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does passing an empty dependency array to useEffect run the effect exclusively once on mount?"
+    },
+    {
+        "id": "EXP30-SUP-0038",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does returning a cleanup function from useEffect run prior to the component unmounting?"
+    },
+    {
+        "id": "EXP30-SUP-0039",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does useLayoutEffect execute synchronously immediately following DOM mutations before paint?"
+    },
+    {
+        "id": "EXP30-SUP-0040",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does useRef maintain a persistent mutable ref object whose current value survives re-renders?"
+    },
+    {
+        "id": "EXP30-SUP-0041",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does updating the current property of a ref object avoid triggering a component re-render?"
+    },
+    {
+        "id": "EXP30-SUP-0042",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does useMemo cache the calculated result of an expensive computation across component renders?"
+    },
+    {
+        "id": "EXP30-SUP-0043",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does useCallback return a memoized callback function reference across re-renders?"
+    },
+    {
+        "id": "EXP30-SUP-0044",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Must React hooks be invoked exclusively at the top level of function components?"
+    },
+    {
+        "id": "EXP30-SUP-0045",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does React batch multiple state updates occurring within event handlers into a single render?"
+    },
+    {
+        "id": "EXP30-SUP-0046",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does useContext subscribe a functional component to context changes without prop drilling?"
+    },
+    {
+        "id": "EXP30-SUP-0047",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does React reconcile UI changes by computing diffs against the virtual DOM representation?"
+    },
+    {
+        "id": "EXP30-SUP-0048",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Should state in React be treated as immutable rather than modified in-place?"
+    },
+    {
+        "id": "EXP30-SUP-0049",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does passing custom dependencies to useMemo re-run the calculation only when dependencies change?"
+    },
+    {
+        "id": "EXP30-SUP-0050",
+        "module": "REACT",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can custom React hooks invoke other built-in React hooks inside their body implementation?"
+    },
+    {
+        "id": "EXP30-SUP-0051",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does Node.js rely on the single-threaded V8 engine to execute JavaScript code?"
+    },
+    {
+        "id": "EXP30-SUP-0052",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does the libuv library manage the event loop and asynchronous I\/O thread pool in Node.js?"
+    },
+    {
+        "id": "EXP30-SUP-0053",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can Express middleware inspect and mutate the incoming request and outgoing response objects?"
+    },
+    {
+        "id": "EXP30-SUP-0054",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Must Express middleware invoke next() to pass execution control to subsequent middleware?"
+    },
+    {
+        "id": "EXP30-SUP-0055",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can express.json() parse incoming HTTP request bodies formatted as JSON payloads?"
+    },
+    {
+        "id": "EXP30-SUP-0056",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Are Express error-handling middleware functions identified by accepting four parameters?"
+    },
+    {
+        "id": "EXP30-SUP-0057",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does process.env store environment variables accessible to Node.js application code?"
+    },
+    {
+        "id": "EXP30-SUP-0058",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can fs.promises perform non-blocking file system reading returning Promise objects?"
+    },
+    {
+        "id": "EXP30-SUP-0059",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does app.use() mount middleware for incoming HTTP requests across matching route paths?"
+    },
+    {
+        "id": "EXP30-SUP-0060",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can Express router instances modularize route definitions into separate manageable files?"
+    },
+    {
+        "id": "EXP30-SUP-0061",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does EventEmitter permit objects in Node.js to emit named events and register listeners?"
+    },
+    {
+        "id": "EXP30-SUP-0062",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does the Node.js event loop handle timers, I\/O callbacks, and close events in distinct phases?"
+    },
+    {
+        "id": "EXP30-SUP-0063",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can streams in Node.js handle large datasets in chunks without reading the entire file into memory?"
+    },
+    {
+        "id": "EXP30-SUP-0064",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does setImmediate schedule a callback to run in the check phase of the event loop?"
+    },
+    {
+        "id": "EXP30-SUP-0065",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does process.nextTick schedule callbacks to run immediately after the current operation finishes?"
+    },
+    {
+        "id": "EXP30-SUP-0066",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does path.join concatenate path segments together using the platform-specific delimiter?"
+    },
+    {
+        "id": "EXP30-SUP-0067",
+        "module": "NODEJS",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can res.status(code).json(body) set the HTTP status code and transmit a JSON response in Express?"
+    },
+    {
+        "id": "EXP30-SUP-0068",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Is HTTP GET designed to retrieve data without creating side effects on the server?"
+    },
+    {
+        "id": "EXP30-SUP-0069",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Is HTTP PUT considered idempotent because sending identical requests produces the same result?"
+    },
+    {
+        "id": "EXP30-SUP-0070",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can HTTP POST be used to submit data that creates a new subordinate resource?"
+    },
+    {
+        "id": "EXP30-SUP-0071",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does HTTP DELETE request the server to remove the specified target resource?"
+    },
+    {
+        "id": "EXP30-SUP-0072",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does status code 200 OK signify that an HTTP request was processed successfully?"
+    },
+    {
+        "id": "EXP30-SUP-0073",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does status code 201 Created indicate that a new resource has been successfully generated?"
+    },
+    {
+        "id": "EXP30-SUP-0074",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does status code 400 Bad Request indicate client error due to malformed request syntax?"
+    },
+    {
+        "id": "EXP30-SUP-0075",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does status code 401 Unauthorized mean the request lacks valid authentication credentials?"
+    },
+    {
+        "id": "EXP30-SUP-0076",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does status code 403 Forbidden indicate that the server refuses to authorize the client action?"
+    },
+    {
+        "id": "EXP30-SUP-0077",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does status code 404 Not Found indicate that the requested resource could not be found?"
+    },
+    {
+        "id": "EXP30-SUP-0078",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does status code 500 Internal Server Error represent an unexpected server-side execution failure?"
+    },
+    {
+        "id": "EXP30-SUP-0079",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does a JSON Web Token consist of three base64url segments: header, payload, and signature?"
+    },
+    {
+        "id": "EXP30-SUP-0080",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can the Authorization header transmit Bearer tokens to authenticate stateless REST API requests?"
+    },
+    {
+        "id": "EXP30-SUP-0081",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does REST use standard HTTP response status codes to communicate outcome states to clients?"
+    },
+    {
+        "id": "EXP30-SUP-0082",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Is HTTP PATCH typically utilized to apply partial modifications to an existing resource?"
+    },
+    {
+        "id": "EXP30-SUP-0083",
+        "module": "REST_API",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does CORS header Access-Control-Allow-Origin control which domains may access resources?"
+    },
+    {
+        "id": "EXP30-SUP-0084",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does ACID atomicity ensure that all statements in a transaction either complete or abort?"
+    },
+    {
+        "id": "EXP30-SUP-0085",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does ACID consistency maintain database integrity constraints before and after transactions?"
+    },
+    {
+        "id": "EXP30-SUP-0086",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does ACID isolation keep concurrent transactions from interfering with each other?"
+    },
+    {
+        "id": "EXP30-SUP-0087",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does ACID durability guarantee that committed transaction records persist across system crashes?"
+    },
+    {
+        "id": "EXP30-SUP-0088",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does write-ahead logging record transaction modifications before writing changes to disk pages?"
+    },
+    {
+        "id": "EXP30-SUP-0089",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does First Normal Form (1NF) require table columns to contain atomic and scalar values?"
+    },
+    {
+        "id": "EXP30-SUP-0090",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does Second Normal Form (2NF) require removing partial dependencies on composite primary keys?"
+    },
+    {
+        "id": "EXP30-SUP-0091",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does Third Normal Form (3NF) mandate eliminating transitive functional dependencies?"
+    },
+    {
+        "id": "EXP30-SUP-0092",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does a B-tree index maintain balanced tree depth with logarithmic search lookup complexity?"
+    },
+    {
+        "id": "EXP30-SUP-0093",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can primary key constraints enforce uniqueness and non-null values across table records?"
+    },
+    {
+        "id": "EXP30-SUP-0094",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can foreign key constraints establish referential integrity between related relational tables?"
+    },
+    {
+        "id": "EXP30-SUP-0095",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does COMMIT finalize all pending database changes made inside the active transaction?"
+    },
+    {
+        "id": "EXP30-SUP-0096",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does ROLLBACK cancel uncommitted modifications made during the current transaction?"
+    },
+    {
+        "id": "EXP30-SUP-0097",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can SQL transactions be initiated using the BEGIN or START TRANSACTION commands?"
+    },
+    {
+        "id": "EXP30-SUP-0098",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does an INNER JOIN return only matching rows found in both participating tables?"
+    },
+    {
+        "id": "EXP30-SUP-0099",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Does a LEFT JOIN return all rows from the left table alongside matching rows from the right?"
+    },
+    {
+        "id": "EXP30-SUP-0100",
+        "module": "DATABASE",
+        "category": "SUPPORTED",
+        "expected": "SUPPORTED",
+        "query": "Can database indexes speed up SELECT query filtering while adding modest overhead to writes?"
+    },
+    {
+        "id": "EXP30-REF-0001",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does display: flex arrange child items in a rigid two-dimensional table grid by default?"
+    },
+    {
+        "id": "EXP30-REF-0002",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does content-box include border and padding inside the declared CSS width calculation?"
+    },
+    {
+        "id": "EXP30-REF-0003",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does margin lie inside the element border according to the standard box model?"
+    },
+    {
+        "id": "EXP30-REF-0004",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does flex-direction: column arrange flex items horizontally from left to right?"
+    },
+    {
+        "id": "EXP30-REF-0005",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does justify-content control alignment along the cross axis rather than main axis?"
+    },
+    {
+        "id": "EXP30-REF-0006",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does align-items align flex children along the primary main axis of the container?"
+    },
+    {
+        "id": "EXP30-REF-0007",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Is CSS Flexbox inherently a two-dimensional layout system capable of simultaneous row and column placement?"
+    },
+    {
+        "id": "EXP30-REF-0008",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does the semantic <header> tag automatically create a sticky fixed navigation bar across pages?"
+    },
+    {
+        "id": "EXP30-REF-0009",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Can the <main> element be placed multiple times inside an HTML document without restriction?"
+    },
+    {
+        "id": "EXP30-REF-0010",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does the gap property only function on block elements and never inside flex containers?"
+    },
+    {
+        "id": "EXP30-REF-0011",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does flex-wrap: wrap prevent flex items from wrapping onto new lines?"
+    },
+    {
+        "id": "EXP30-REF-0012",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does flex-grow: 0 cause an item to expand and consume all available empty container space?"
+    },
+    {
+        "id": "EXP30-REF-0013",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does setting box-sizing to border-box remove margin from the total page layout space?"
+    },
+    {
+        "id": "EXP30-REF-0014",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does grid-template-columns specify row heights instead of column widths?"
+    },
+    {
+        "id": "EXP30-REF-0015",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does the <footer> element automatically restrict its contents to plain unstyled text?"
+    },
+    {
+        "id": "EXP30-REF-0016",
+        "module": "HTML_CSS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does border-box cause element padding to expand outwards beyond the specified box dimensions?"
+    },
+    {
+        "id": "EXP30-REF-0017",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Can variables declared with const be reassigned to a new primitive value later in scope?"
+    },
+    {
+        "id": "EXP30-REF-0018",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Are let variables hoisted with default initialization to undefined like var declarations?"
+    },
+    {
+        "id": "EXP30-REF-0019",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Do arrow functions construct their own independent this binding based on runtime call site?"
+    },
+    {
+        "id": "EXP30-REF-0020",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Can arrow functions be used as constructors with the new keyword in JavaScript?"
+    },
+    {
+        "id": "EXP30-REF-0021",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does the temporal dead zone allow accessing let variables prior to their declaration line?"
+    },
+    {
+        "id": "EXP30-REF-0022",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Are Promise .then() callbacks executed synchronously before any following procedural lines?"
+    },
+    {
+        "id": "EXP30-REF-0023",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does the event loop execute macrotasks from the timer queue before clearing microtasks?"
+    },
+    {
+        "id": "EXP30-REF-0024",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does Array.prototype.map mutate the calling array directly instead of creating a new one?"
+    },
+    {
+        "id": "EXP30-REF-0025",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does the rest operator allow additional formal parameters to be defined following it?"
+    },
+    {
+        "id": "EXP30-REF-0026",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does Object.freeze perform a deep recursive freeze of all nested object properties?"
+    },
+    {
+        "id": "EXP30-REF-0027",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does async function execution block the main thread until the awaited promise resolves?"
+    },
+    {
+        "id": "EXP30-REF-0028",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does Array.prototype.filter modify the original array by deleting non-matching elements?"
+    },
+    {
+        "id": "EXP30-REF-0029",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does the spread operator perform deep cloning of nested sub-objects during copying?"
+    },
+    {
+        "id": "EXP30-REF-0030",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Can let variables be redeclared multiple times within the exact same block scope?"
+    },
+    {
+        "id": "EXP30-REF-0031",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does setTimeout with a delay of zero execute synchronously before the current script block?"
+    },
+    {
+        "id": "EXP30-REF-0032",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Do arrow functions possess an internal prototype property that can be mutated?"
+    },
+    {
+        "id": "EXP30-REF-0033",
+        "module": "JAVASCRIPT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does Promise.all resolve successfully if one of the input promises rejects with an error?"
+    },
+    {
+        "id": "EXP30-REF-0034",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does mutating a state object directly trigger a re-render in functional React components?"
+    },
+    {
+        "id": "EXP30-REF-0035",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does useEffect run synchronously and block the browser paint cycle during execution?"
+    },
+    {
+        "id": "EXP30-REF-0036",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does modifying the current value of a useRef object trigger a component re-render?"
+    },
+    {
+        "id": "EXP30-REF-0037",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Can React hooks be called inside conditional if blocks or iterative loops without issue?"
+    },
+    {
+        "id": "EXP30-REF-0038",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does useLayoutEffect execute asynchronously after the browser paints screen updates?"
+    },
+    {
+        "id": "EXP30-REF-0039",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does passing no dependency array to useEffect cause the effect to run only once on mount?"
+    },
+    {
+        "id": "EXP30-REF-0040",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does useMemo guarantee that its cached value will never be recalculated across renders?"
+    },
+    {
+        "id": "EXP30-REF-0041",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does useCallback re-execute the memoized function body on every single component render?"
+    },
+    {
+        "id": "EXP30-REF-0042",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does React useState updater function immediately update the state variable synchronously?"
+    },
+    {
+        "id": "EXP30-REF-0043",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does useContext require passing props manually through intermediate parent components?"
+    },
+    {
+        "id": "EXP30-REF-0044",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does returning null from a functional React component cause a fatal rendering error?"
+    },
+    {
+        "id": "EXP30-REF-0045",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does React batching execute state updates in separate independent browser render passes?"
+    },
+    {
+        "id": "EXP30-REF-0046",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does useEffect cleanup run only when the application completely unmounts from window?"
+    },
+    {
+        "id": "EXP30-REF-0047",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Can functional components declare multiple hooks conditionally based on prop values?"
+    },
+    {
+        "id": "EXP30-REF-0048",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does useState allow initializing state to undefined but forbids initializing state to null?"
+    },
+    {
+        "id": "EXP30-REF-0049",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does useMemo accept an async function and automatically resolve the returned Promise?"
+    },
+    {
+        "id": "EXP30-REF-0050",
+        "module": "REACT",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does React create a brand new physical DOM tree from scratch on every state update?"
+    },
+    {
+        "id": "EXP30-REF-0051",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does Node.js execute application JavaScript across multiple operating system threads simultaneously?"
+    },
+    {
+        "id": "EXP30-REF-0052",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Can Express middleware omit the next() call and expect following routes to execute automatically?"
+    },
+    {
+        "id": "EXP30-REF-0053",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Is express.json() responsible for parsing URL query string parameters into request objects?"
+    },
+    {
+        "id": "EXP30-REF-0054",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Do Express error handling middlewares require exactly two parameters to function correctly?"
+    },
+    {
+        "id": "EXP30-REF-0055",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does fs.readFileSync perform asynchronous non-blocking file reads in Node.js?"
+    },
+    {
+        "id": "EXP30-REF-0056",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does process.nextTick schedule callbacks to run after the current macrotask timer completes?"
+    },
+    {
+        "id": "EXP30-REF-0057",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does libuv run JavaScript bytecode execution while V8 handles asynchronous I\/O polling?"
+    },
+    {
+        "id": "EXP30-REF-0058",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does app.use() mount routes that only match HTTP GET requests and ignore POST requests?"
+    },
+    {
+        "id": "EXP30-REF-0059",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does setImmediate execute before microtasks in the Node.js event loop cycle?"
+    },
+    {
+        "id": "EXP30-REF-0060",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does EventEmitter require all registered listener callbacks to return boolean values?"
+    },
+    {
+        "id": "EXP30-REF-0061",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does Node.js process.env automatically persist mutated variables back to the host operating system disk?"
+    },
+    {
+        "id": "EXP30-REF-0062",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does res.send() allow sending additional HTTP header modifications after the body has flushed?"
+    },
+    {
+        "id": "EXP30-REF-0063",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Can an Express application have only one single middleware function mounted globally?"
+    },
+    {
+        "id": "EXP30-REF-0064",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does path.join fail if relative dot-dot parent segments are passed as arguments?"
+    },
+    {
+        "id": "EXP30-REF-0065",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does the Node.js stream pipe method buffer all chunk data into memory before streaming?"
+    },
+    {
+        "id": "EXP30-REF-0066",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does res.json() convert JSON string responses into plain HTML document strings?"
+    },
+    {
+        "id": "EXP30-REF-0067",
+        "module": "NODEJS",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does the Node.js single-threaded model prevent libuv from using any background worker threads?"
+    },
+    {
+        "id": "EXP30-REF-0068",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Is HTTP POST considered an idempotent method where duplicate requests produce identical state?"
+    },
+    {
+        "id": "EXP30-REF-0069",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does HTTP GET allow transmitting request payload bodies intended to modify server resources?"
+    },
+    {
+        "id": "EXP30-REF-0070",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does HTTP PUT append new items to a collection without replacing the target resource?"
+    },
+    {
+        "id": "EXP30-REF-0071",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does status code 201 Created indicate that an existing resource was successfully deleted?"
+    },
+    {
+        "id": "EXP30-REF-0072",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does status code 401 Unauthorized mean that user access is forbidden despite valid credentials?"
+    },
+    {
+        "id": "EXP30-REF-0073",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does status code 404 Not Found represent an internal database connection error on the server?"
+    },
+    {
+        "id": "EXP30-REF-0074",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does status code 500 indicate that the client submitted an invalid JSON payload body?"
+    },
+    {
+        "id": "EXP30-REF-0075",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Is a JWT payload encrypted by default so that intermediate proxies cannot inspect its claims?"
+    },
+    {
+        "id": "EXP30-REF-0076",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does the JWT signature segment contain the user profile database record in plaintext?"
+    },
+    {
+        "id": "EXP30-REF-0077",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does status code 204 No Content mandate returning a JSON confirmation object in the body?"
+    },
+    {
+        "id": "EXP30-REF-0078",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does HTTP DELETE guarantee that the resource will remain accessible via archived GET endpoints?"
+    },
+    {
+        "id": "EXP30-REF-0079",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does REST architectural style mandate establishing permanent stateful TCP socket sessions?"
+    },
+    {
+        "id": "EXP30-REF-0080",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does CORS browser policy apply to direct server-to-server HTTP API communications?"
+    },
+    {
+        "id": "EXP30-REF-0081",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does Bearer token authentication transmit user credentials inside the URL query string by design?"
+    },
+    {
+        "id": "EXP30-REF-0082",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does status code 403 Forbidden indicate that the user has not yet submitted authentication credentials?"
+    },
+    {
+        "id": "EXP30-REF-0083",
+        "module": "REST_API",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Is HTTP PATCH required to contain the full entire resource representation during updates?"
+    },
+    {
+        "id": "EXP30-REF-0084",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does ACID atomicity allow transactions to commit partial subsets of operations on failure?"
+    },
+    {
+        "id": "EXP30-REF-0085",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does ACID durability permit committed transactions to be discarded following sudden server crashes?"
+    },
+    {
+        "id": "EXP30-REF-0086",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does ACID isolation guarantee that concurrent transactions always share uncommitted dirty memory reads?"
+    },
+    {
+        "id": "EXP30-REF-0087",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does write-ahead logging defer log writing until after all database disk pages are flushed?"
+    },
+    {
+        "id": "EXP30-REF-0088",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does First Normal Form (1NF) encourage storing comma-separated lists within a single column?"
+    },
+    {
+        "id": "EXP30-REF-0089",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does Second Normal Form (2NF) tolerate partial key dependencies in tables with composite keys?"
+    },
+    {
+        "id": "EXP30-REF-0090",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does Third Normal Form (3NF) permit non-key columns to depend on other non-key columns?"
+    },
+    {
+        "id": "EXP30-REF-0091",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does a B-tree index require scanning every table record sequentially to evaluate search criteria?"
+    },
+    {
+        "id": "EXP30-REF-0092",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Can primary key columns contain duplicate values as long as the record timestamps differ?"
+    },
+    {
+        "id": "EXP30-REF-0093",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does ROLLBACK write uncommitted transaction updates permanently to database storage?"
+    },
+    {
+        "id": "EXP30-REF-0094",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does COMMIT revert all changes made inside the current transaction block?"
+    },
+    {
+        "id": "EXP30-REF-0095",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does an INNER JOIN return all unmatched rows from both participating tables with nulls?"
+    },
+    {
+        "id": "EXP30-REF-0096",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does a LEFT JOIN drop rows from the left table whenever the right table lacks a match?"
+    },
+    {
+        "id": "EXP30-REF-0097",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does adding indexes to table columns dramatically accelerate write transaction speeds?"
+    },
+    {
+        "id": "EXP30-REF-0098",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does foreign key constraint enforcement allow referencing values not present in the parent table?"
+    },
+    {
+        "id": "EXP30-REF-0099",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does normalization deliberately increase data redundancy to minimize the number of table joins?"
+    },
+    {
+        "id": "EXP30-REF-0100",
+        "module": "DATABASE",
+        "category": "FALSE_PREMISE",
+        "expected": "REFUTED",
+        "query": "Does SQL BEGIN command commit all open transactions before starting a new one?"
+    },
+    {
+        "id": "EXP30-AMB-0001",
+        "module": "HTML_CSS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the best layout choice between Flexbox and Grid for web development?"
+    },
+    {
+        "id": "EXP30-AMB-0002",
+        "module": "HTML_CSS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is it recommended to always use border-box on every HTML element in a layout?"
+    },
+    {
+        "id": "EXP30-AMB-0003",
+        "module": "HTML_CSS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What percentage of developers prefer Flexbox over CSS Grid for responsive components?"
+    },
+    {
+        "id": "EXP30-AMB-0004",
+        "module": "HTML_CSS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the optimal number of grid columns for high-end desktop web applications?"
+    },
+    {
+        "id": "EXP30-AMB-0005",
+        "module": "HTML_CSS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is using inline flex easier to maintain than standard block flex in large projects?"
+    },
+    {
+        "id": "EXP30-AMB-0006",
+        "module": "HTML_CSS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the ideal font size scaling ratio across responsive media queries?"
+    },
+    {
+        "id": "EXP30-AMB-0007",
+        "module": "HTML_CSS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "How many pixels of padding produce the most aesthetic card UI design?"
+    },
+    {
+        "id": "EXP30-AMB-0008",
+        "module": "HTML_CSS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is semantic HTML strictly necessary for internal corporate dashboard websites?"
+    },
+    {
+        "id": "EXP30-AMB-0009",
+        "module": "HTML_CSS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the nicest color contrast ratio for dark mode background surfaces?"
+    },
+    {
+        "id": "EXP30-AMB-0010",
+        "module": "HTML_CSS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is it better to style layout wrappers with section tags instead of div tags?"
+    },
+    {
+        "id": "EXP30-AMB-0011",
+        "module": "JAVASCRIPT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the ideal code architecture between object-oriented and functional JavaScript?"
+    },
+    {
+        "id": "EXP30-AMB-0012",
+        "module": "JAVASCRIPT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is using let always preferable to using const when writing performance-critical loops?"
+    },
+    {
+        "id": "EXP30-AMB-0013",
+        "module": "JAVASCRIPT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "How many lines of code should a well-designed JavaScript function contain?"
+    },
+    {
+        "id": "EXP30-AMB-0014",
+        "module": "JAVASCRIPT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the exact execution time overhead of capturing lexical this in arrow functions?"
+    },
+    {
+        "id": "EXP30-AMB-0015",
+        "module": "JAVASCRIPT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is async\/await cleaner and better than Promise chaining in all application contexts?"
+    },
+    {
+        "id": "EXP30-AMB-0016",
+        "module": "JAVASCRIPT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the optimal garbage collection threshold for modern V8 heap memory?"
+    },
+    {
+        "id": "EXP30-AMB-0017",
+        "module": "JAVASCRIPT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Should developers avoid using ternary operators in favor of explicit if statements?"
+    },
+    {
+        "id": "EXP30-AMB-0018",
+        "module": "JAVASCRIPT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the easiest way to master JavaScript closures and prototype inheritance?"
+    },
+    {
+        "id": "EXP30-AMB-0019",
+        "module": "JAVASCRIPT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is it recommended to freeze all state objects in production JavaScript apps?"
+    },
+    {
+        "id": "EXP30-AMB-0020",
+        "module": "JAVASCRIPT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the best naming convention for asynchronous helper utility functions?"
+    },
+    {
+        "id": "EXP30-AMB-0021",
+        "module": "REACT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the best state management approach between Redux and React Context?"
+    },
+    {
+        "id": "EXP30-AMB-0022",
+        "module": "REACT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is it recommended to wrap every component callback in useCallback for optimization?"
+    },
+    {
+        "id": "EXP30-AMB-0023",
+        "module": "REACT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What percentage of re-renders are typically eliminated by React useMemo in production?"
+    },
+    {
+        "id": "EXP30-AMB-0024",
+        "module": "REACT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is it better to split a large component into multiple micro-components or keep it cohesive?"
+    },
+    {
+        "id": "EXP30-AMB-0025",
+        "module": "REACT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the ideal directory folder structure for mid-sized React single page applications?"
+    },
+    {
+        "id": "EXP30-AMB-0026",
+        "module": "REACT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Should developers always use functional components instead of class components?"
+    },
+    {
+        "id": "EXP30-AMB-0027",
+        "module": "REACT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the optimal threshold for component re-render execution time in milliseconds?"
+    },
+    {
+        "id": "EXP30-AMB-0028",
+        "module": "REACT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is useLayoutEffect preferable over useEffect for animations in modern React?"
+    },
+    {
+        "id": "EXP30-AMB-0029",
+        "module": "REACT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the easiest way to manage deeply nested form state in functional components?"
+    },
+    {
+        "id": "EXP30-AMB-0030",
+        "module": "REACT",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is prop drilling acceptable if the component hierarchy is less than three levels deep?"
+    },
+    {
+        "id": "EXP30-AMB-0031",
+        "module": "NODEJS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the best directory structure for organizing Express controllers and routes?"
+    },
+    {
+        "id": "EXP30-AMB-0032",
+        "module": "NODEJS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is it recommended to run Node.js in cluster mode or use container replicas?"
+    },
+    {
+        "id": "EXP30-AMB-0033",
+        "module": "NODEJS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the optimal size for the libuv worker thread pool in production servers?"
+    },
+    {
+        "id": "EXP30-AMB-0034",
+        "module": "NODEJS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is Express better and faster than modern minimalist HTTP routing frameworks?"
+    },
+    {
+        "id": "EXP30-AMB-0035",
+        "module": "NODEJS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the recommended logging library for enterprise Node.js microservices?"
+    },
+    {
+        "id": "EXP30-AMB-0036",
+        "module": "NODEJS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "How many concurrent requests can a single-threaded Node.js server handle comfortably?"
+    },
+    {
+        "id": "EXP30-AMB-0037",
+        "module": "NODEJS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Should developers always catch uncaught exceptions or let the container crash and restart?"
+    },
+    {
+        "id": "EXP30-AMB-0038",
+        "module": "NODEJS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the easiest method for debugging memory leaks in Node.js event listeners?"
+    },
+    {
+        "id": "EXP30-AMB-0039",
+        "module": "NODEJS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is it preferable to validate request schemas at the middleware or service layer?"
+    },
+    {
+        "id": "EXP30-AMB-0040",
+        "module": "NODEJS",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the optimal keep-alive timeout duration for Node.js HTTP servers?"
+    },
+    {
+        "id": "EXP30-AMB-0041",
+        "module": "REST_API",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the best URI naming convention for REST API filtering parameters?"
+    },
+    {
+        "id": "EXP30-AMB-0042",
+        "module": "REST_API",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is HTTP PUT better than HTTP PATCH for modifying user profile attributes?"
+    },
+    {
+        "id": "EXP30-AMB-0043",
+        "module": "REST_API",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the ideal expiration lifespan for JWT access tokens in web applications?"
+    },
+    {
+        "id": "EXP30-AMB-0044",
+        "module": "REST_API",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Should API versioning be placed in the URL path or in custom request headers?"
+    },
+    {
+        "id": "EXP30-AMB-0045",
+        "module": "REST_API",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the optimal pagination strategy between offset-based and cursor-based pagination?"
+    },
+    {
+        "id": "EXP30-AMB-0046",
+        "module": "REST_API",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is it recommended to return detailed stack traces in status 500 error bodies?"
+    },
+    {
+        "id": "EXP30-AMB-0047",
+        "module": "REST_API",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the nicest format for serializing multi-level REST error response objects?"
+    },
+    {
+        "id": "EXP30-AMB-0048",
+        "module": "REST_API",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is REST preferable to alternative query architectures for modern mobile apps?"
+    },
+    {
+        "id": "EXP30-AMB-0049",
+        "module": "REST_API",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What percentage of public web APIs adhere strictly to HATEOAS level 3 constraints?"
+    },
+    {
+        "id": "EXP30-AMB-0050",
+        "module": "REST_API",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "How many rate-limited requests per minute should a standard public API permit?"
+    },
+    {
+        "id": "EXP30-AMB-0051",
+        "module": "DATABASE",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the best normalization level for high-throughput ecommerce databases?"
+    },
+    {
+        "id": "EXP30-AMB-0052",
+        "module": "DATABASE",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is it recommended to denormalize tables specifically to avoid multi-table SQL joins?"
+    },
+    {
+        "id": "EXP30-AMB-0053",
+        "module": "DATABASE",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "How fast does PostgreSQL execute an indexed B-tree point lookup query?"
+    },
+    {
+        "id": "EXP30-AMB-0054",
+        "module": "DATABASE",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the maximum number of indexes a single database table should possess?"
+    },
+    {
+        "id": "EXP30-AMB-0055",
+        "module": "DATABASE",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is using UUID primary keys cleaner and better than auto-incrementing integer keys?"
+    },
+    {
+        "id": "EXP30-AMB-0056",
+        "module": "DATABASE",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the optimal transaction isolation level for banking checkout operations?"
+    },
+    {
+        "id": "EXP30-AMB-0057",
+        "module": "DATABASE",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the ideal connection pool capacity for a high-traffic PostgreSQL server?"
+    },
+    {
+        "id": "EXP30-AMB-0058",
+        "module": "DATABASE",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Is it better to enforce domain validation rules in SQL constraints or application code?"
+    },
+    {
+        "id": "EXP30-AMB-0059",
+        "module": "DATABASE",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "What is the easiest way to tune PostgreSQL autovacuum settings for write-heavy tables?"
+    },
+    {
+        "id": "EXP30-AMB-0060",
+        "module": "DATABASE",
+        "category": "AMBIGUOUS",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Should soft deletes using deleted_at flags be preferred over physical row deletion?"
+    },
+    {
+        "id": "EXP30-OOD-0001",
+        "module": "BACKEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Go use goroutines and channels to handle concurrent routine communication?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0002",
+        "module": "BACKEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Go compile directly to native machine code without requiring an interpreter?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0003",
+        "module": "DATABASE_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does MongoDB store schema-free documents in binary BSON format?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0004",
+        "module": "DATABASE_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does the MongoDB aggregation pipeline use $lookup to perform cross-collection joins?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0005",
+        "module": "DATABASE_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Cassandra distribute partitions across a cluster using the Murmur3Partitioner?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0006",
+        "module": "FRONTEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Svelte compile component code into surgical DOM-updating JavaScript at build time?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0007",
+        "module": "FRONTEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does SolidJS use fine-grained signals for state reactivity without a virtual DOM?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0008",
+        "module": "FRONTEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Alpine.js provide lightweight reactive directives like x-data and x-model?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0009",
+        "module": "FRONTEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Vue Composition API expose reactive primitives using ref() and reactive()?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0010",
+        "module": "FRONTEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Angular use the @Component decorator to define component metadata?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0011",
+        "module": "CSS_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Tailwind CSS generate atomic utility classes on demand using a JIT engine?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0012",
+        "module": "TOOLING_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Webpack bundle assets together into dependency graphs starting from entry points?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0013",
+        "module": "TOOLING_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Rollup specialize in generating optimized ES module bundles via tree-shaking?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0014",
+        "module": "TOOLING_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Vite leverage native browser ES modules to achieve instant local server startup?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0015",
+        "module": "TOOLING_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Babel transpile modern ECMAScript syntax down to backwards-compatible ES5 code?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0016",
+        "module": "TESTING_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Cypress execute automated end-to-end integration tests directly inside the browser?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0017",
+        "module": "ASYNC_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does RxJS manage asynchronous stream sequences through observable pipelines?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0018",
+        "module": "ASYNC_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Redux Saga handle application side effects using generator functions and yield effects?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0019",
+        "module": "LINTING_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does ESLint parse JavaScript code into abstract syntax trees to flag stylistic errors?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0020",
+        "module": "API_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does GraphQL let clients request specific fields via strongly typed schema resolvers?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0021",
+        "module": "NETWORK_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Do WebSockets establish full-duplex persistent bidirectional communication channels?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0022",
+        "module": "AUTH_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does OAuth 2.0 PKCE flow protect authorization codes from interception vulnerabilities?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0023",
+        "module": "CACHE_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Redis operate as an in-memory key-value data structure store?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0024",
+        "module": "DEVOPS_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Docker package applications and dependencies into isolated container images?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0025",
+        "module": "DEVOPS_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Kubernetes orchestrate automated container deployment, scaling, and networking?",
+        "subcategory": "KNOWN_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0026",
+        "module": "BACKEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Deno enforce explicit security permissions for file system and network access?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0027",
+        "module": "BACKEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Bun use the JavaScriptCore engine to deliver high-performance package execution?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0028",
+        "module": "FRONTEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Htmx allow web applications to access AJAX and WebSockets directly from HTML attributes?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0029",
+        "module": "FRONTEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Lit utilize standard Web Components and tagged template literals for fast rendering?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0030",
+        "module": "BACKEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Elixir execute on the BEAM virtual machine with lightweight actor concurrency?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0031",
+        "module": "BACKEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Clojure provide persistent immutable data structures and software transactional memory?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0032",
+        "module": "BACKEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does FastAPI utilize Pydantic models for automated request data validation and OpenAPI generation?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0033",
+        "module": "BACKEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Django include a built-in object-relational mapper (ORM) and administrative web interface?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0034",
+        "module": "BACKEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Spring Boot use auto-configuration annotations to wire enterprise Java service beans?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0035",
+        "module": "BACKEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Laravel provide the Eloquent ORM for handling active record database modeling?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0036",
+        "module": "BACKEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Ruby on Rails follow convention over configuration to structure MVC web applications?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0037",
+        "module": "ORM_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Prisma use a declarative schema file and a Rust engine to query relational databases?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0038",
+        "module": "API_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does tRPC enable end-to-end type safety between client and server without code generation?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0039",
+        "module": "FRONTEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Astro implement an island architecture to selectively hydrate interactive components?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0040",
+        "module": "FRONTEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Qwik achieve near-instant page loads through resumability without JavaScript hydration?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0041",
+        "module": "FRONTEND_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does SolidStart offer fine-grained fullstack reactivity based on SolidJS primitives?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0042",
+        "module": "TOOLING_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Turbopack function as an incremental Rust-based bundler designed as a Webpack successor?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0043",
+        "module": "DATABASE_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does CockroachDB use Raft consensus to achieve distributed serializable SQL transactions?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0044",
+        "module": "DATABASE_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Neo4j store graph nodes and relationships queried using the Cypher query language?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0045",
+        "module": "DATABASE_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does DynamoDB use partition keys and sort keys to manage managed NoSQL document tables?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0046",
+        "module": "BLOCKCHAIN_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Solidity compile smart contract source code into EVM bytecode for blockchain execution?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0047",
+        "module": "DEVOPS_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Terraform use declarative HCL configuration to provision cloud infrastructure resources?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0048",
+        "module": "DEVOPS_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Ansible execute agentless infrastructure configuration using YAML playbook files?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0049",
+        "module": "QUEUE_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does RabbitMQ route message payloads between producers and queues using AMQP exchanges?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-OOD-0050",
+        "module": "STREAM_EXTERNAL",
+        "category": "OOD",
+        "expected": "NOT_ESTABLISHED",
+        "query": "Does Kafka store partitioned event stream logs across fault-tolerant distributed broker clusters?",
+        "subcategory": "NOVEL_OOD"
+    },
+    {
+        "id": "EXP30-PAR-0001",
+        "module": "HTML_CSS",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "In standard web document architecture, is the outer perimeter clearance governed by the margin box?"
+    },
+    {
+        "id": "EXP30-PAR-0002",
+        "module": "HTML_CSS",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does configuring border-box layout prevent inner element padding from expanding the specified width?"
+    },
+    {
+        "id": "EXP30-PAR-0003",
+        "module": "HTML_CSS",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Are flex container descendants naturally lined up from left to right along the horizontal direction?"
+    },
+    {
+        "id": "EXP30-PAR-0004",
+        "module": "HTML_CSS",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does the justify-content rule regulate spacing distributions along whichever path represents the main axis?"
+    },
+    {
+        "id": "EXP30-PAR-0005",
+        "module": "HTML_CSS",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does the align-items rule govern positioning along the transverse axis orthogonal to the main direction?"
+    },
+    {
+        "id": "EXP30-PAR-0006",
+        "module": "HTML_CSS",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does CSS Grid empower developers to build complex structural matrices spanning rows and columns simultaneously?"
+    },
+    {
+        "id": "EXP30-PAR-0007",
+        "module": "HTML_CSS",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does the semantic nav container enclose navigational hyperlinks that guide visitors across a web page?"
+    },
+    {
+        "id": "EXP30-PAR-0008",
+        "module": "JAVASCRIPT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "In modern ECMAScript, is variable binding reassignment prevented when using the const keyword?"
+    },
+    {
+        "id": "EXP30-PAR-0009",
+        "module": "JAVASCRIPT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Are identifiers declared via the let keyword restricted to their containing block statement boundary?"
+    },
+    {
+        "id": "EXP30-PAR-0010",
+        "module": "JAVASCRIPT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does attempting to evaluate a let binding before reaching its physical declaration trigger a reference exception?"
+    },
+    {
+        "id": "EXP30-PAR-0011",
+        "module": "JAVASCRIPT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Do arrow expression functions borrow their surrounding lexical context for the evaluation of this?"
+    },
+    {
+        "id": "EXP30-PAR-0012",
+        "module": "JAVASCRIPT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does the runtime event scheduler exhaust all pending microtasks before executing the subsequent timer macrotask?"
+    },
+    {
+        "id": "EXP30-PAR-0013",
+        "module": "JAVASCRIPT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does Array.prototype.map generate a freshly allocated array populated with the return values of a transformation function?"
+    },
+    {
+        "id": "EXP30-PAR-0014",
+        "module": "JAVASCRIPT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does destructuring allow properties from complex data objects to be extracted into distinct standalone variables?"
+    },
+    {
+        "id": "EXP30-PAR-0015",
+        "module": "REACT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does the useState hook yield a state value paired with a dedicated mechanism to request state modifications?"
+    },
+    {
+        "id": "EXP30-PAR-0016",
+        "module": "REACT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does the standard useEffect lifecycle hook defer callback execution until after visual DOM reconciliation finishes?"
+    },
+    {
+        "id": "EXP30-PAR-0017",
+        "module": "REACT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does attaching an empty dependency list cause an effect callback to run exclusively once after initial component mount?"
+    },
+    {
+        "id": "EXP30-PAR-0018",
+        "module": "REACT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does assigning new values to a mutable reference object avoid initiating a fresh rendering cycle?"
+    },
+    {
+        "id": "EXP30-PAR-0019",
+        "module": "REACT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does useMemo retain the previously evaluated outcome of a computation until tracked input variables shift?"
+    },
+    {
+        "id": "EXP30-PAR-0020",
+        "module": "REACT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Are multiple state updates scheduled within event listeners batched together into a consolidated render step?"
+    },
+    {
+        "id": "EXP30-PAR-0021",
+        "module": "REACT",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does the useContext mechanism allow descendant components to consume broadcasted shared values without passing attributes through intermediate layers?"
+    },
+    {
+        "id": "EXP30-PAR-0022",
+        "module": "NODEJS",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does the Node.js execution runtime execute ECMAScript code using the Google V8 engine?"
+    },
+    {
+        "id": "EXP30-PAR-0023",
+        "module": "NODEJS",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does the underlying libuv subsystem manage non-blocking I\/O operations and the event dispatch cycle in Node.js?"
+    },
+    {
+        "id": "EXP30-PAR-0024",
+        "module": "NODEJS",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Is invocation of the next() callback required for an Express middleware to forward processing to subsequent handlers?"
+    },
+    {
+        "id": "EXP30-PAR-0025",
+        "module": "NODEJS",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does express.json() decode incoming request payloads serialized as JSON formatted text?"
+    },
+    {
+        "id": "EXP30-PAR-0026",
+        "module": "NODEJS",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does the global process.env object reflect runtime environment variables supplied to the operating system process?"
+    },
+    {
+        "id": "EXP30-PAR-0027",
+        "module": "NODEJS",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Can Express route definitions be partitioned into modular router mini-applications?"
+    },
+    {
+        "id": "EXP30-PAR-0028",
+        "module": "REST_API",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Is the HTTP GET action defined as safe and incapable of altering the persistent state of remote server resources?"
+    },
+    {
+        "id": "EXP30-PAR-0029",
+        "module": "REST_API",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does issuing repeated identical HTTP PUT requests leave the target server resource in an identical condition?"
+    },
+    {
+        "id": "EXP30-PAR-0030",
+        "module": "REST_API",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does response status code 200 denote the successful completion of an incoming client HTTP transmission?"
+    },
+    {
+        "id": "EXP30-PAR-0031",
+        "module": "REST_API",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does response status code 201 confirm that a requested entity has been successfully instantiated on the server?"
+    },
+    {
+        "id": "EXP30-PAR-0032",
+        "module": "REST_API",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does the 404 response indicate that no matching endpoint or resource exists at the requested URI location?"
+    },
+    {
+        "id": "EXP30-PAR-0033",
+        "module": "REST_API",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Is a JSON Web Token structured as three base64url encoded parts divided by period delimiters?"
+    },
+    {
+        "id": "EXP30-PAR-0034",
+        "module": "REST_API",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Can stateless web servers authenticate requests by validating the cryptographic signature embedded within a Bearer token?"
+    },
+    {
+        "id": "EXP30-PAR-0035",
+        "module": "DATABASE",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does transaction atomicity guarantee that an entire sequence of database operations succeeds as a whole or leaves no partial traces?"
+    },
+    {
+        "id": "EXP30-PAR-0036",
+        "module": "DATABASE",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does write-ahead logging record transaction operations to persistent journal logs before writing dirty blocks to data tables?"
+    },
+    {
+        "id": "EXP30-PAR-0037",
+        "module": "DATABASE",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does First Normal Form dictate that each column in a relational table must store indivisible atomic values?"
+    },
+    {
+        "id": "EXP30-PAR-0038",
+        "module": "DATABASE",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does Third Normal Form demand the elimination of indirect functional dependencies between non-primary key attributes?"
+    },
+    {
+        "id": "EXP30-PAR-0039",
+        "module": "DATABASE",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does a B-tree search structure enable lookup operations to complete within time bounded by the logarithm of table size?"
+    },
+    {
+        "id": "EXP30-PAR-0040",
+        "module": "DATABASE",
+        "category": "PARAPHRASE",
+        "expected": "SUPPORTED",
+        "query": "Does issuing a ROLLBACK command restore the database state to the snapshot preceding the active transaction?"
+    },
+    {
+        "id": "EXP30-ADV-0001",
+        "module": "HTML_CSS",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Why does setting box-sizing to border-box not shrink the content area below zero when padding exceeds width?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0002",
+        "module": "HTML_CSS",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Can a flex item maintain flex-grow: 0 without preventing its width from shrinking if flex-shrink is active?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0003",
+        "module": "HTML_CSS",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Does CSS Grid allow overlapping grid items to occupy the exact same cell area without breaking layout?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0004",
+        "module": "HTML_CSS",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Why does the gap property not apply margins to the outer outer boundaries of the flex container?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0005",
+        "module": "JAVASCRIPT",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Can properties of an object declared with const be mutated without violating the binding immutability guarantee?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0006",
+        "module": "JAVASCRIPT",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Why does accessing a let variable inside the temporal dead zone throw a ReferenceError instead of returning undefined?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0007",
+        "module": "JAVASCRIPT",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Can arrow functions be passed as method callbacks without creating their own dynamic this binding?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0008",
+        "module": "JAVASCRIPT",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Why does Promise.resolve() schedule its callback into the microtask queue without executing it synchronously?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0009",
+        "module": "JAVASCRIPT",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Does Array.prototype.slice return a shallow copy of an array without mutating the original element indices?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0010",
+        "module": "REACT",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Why does useEffect not execute synchronously during the render phase before screen paint?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0011",
+        "module": "REACT",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Can a functional React component use a ref to store mutable values without forcing a component re-render?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0012",
+        "module": "REACT",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Does useMemo return the cached value without invoking its calculation function when dependency references remain identical?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0013",
+        "module": "REACT",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Why does React batch multiple synchronous state setters inside event handlers into a single consolidated render pass?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0014",
+        "module": "REACT",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Does the cleanup callback of useEffect execute before running the next effect cycle without unmounting the whole component?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0015",
+        "module": "NODEJS",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Can Node.js process asynchronous file reads via libuv background threads without blocking the single JavaScript main thread?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0016",
+        "module": "NODEJS",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Why does Express error middleware require four declared parameters in order to intercept uncaught pipeline errors?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0017",
+        "module": "NODEJS",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Does express.json() parse the incoming body stream without executing subsequent route handlers before parsing completes?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0018",
+        "module": "NODEJS",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Can res.status(200).send() be invoked inside middleware without causing an error if next() is not called?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0019",
+        "module": "REST_API",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Why is HTTP PUT considered idempotent even if the server updates an internal last-modified timestamp on the record?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0020",
+        "module": "REST_API",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Can a client send an HTTP GET request without being permitted to cause persistent server data mutations?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0021",
+        "module": "REST_API",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Why does status code 204 No Content forbid transmitting an HTTP response body payload to the client?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0022",
+        "module": "REST_API",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Does a JWT base64url payload remain publicly readable without requiring the secret signature key to decode?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0023",
+        "module": "DATABASE",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Why does write-ahead logging record transaction operations to log files before committing dirty pages to database tables?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0024",
+        "module": "DATABASE",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Can a table satisfy Second Normal Form without satisfying Third Normal Form if transitive dependencies still exist?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0025",
+        "module": "DATABASE",
+        "category": "ADVERSARIAL",
+        "expected": "SUPPORTED",
+        "query": "Does an uncommitted transaction in PostgreSQL avoid making its modifications visible to concurrent read-committed transactions?",
+        "subcategory": "SUPPORTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0026",
+        "module": "HTML_CSS",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does setting box-sizing to border-box subtract margins from the total declared CSS width?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0027",
+        "module": "HTML_CSS",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does flex-direction: row-reverse place the main axis vertically from bottom to top?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0028",
+        "module": "HTML_CSS",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does the gap property on flex containers subtract spacing from item border boxes?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0029",
+        "module": "HTML_CSS",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does setting align-items: center automatically center flex children along the main horizontal axis?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0030",
+        "module": "JAVASCRIPT",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does Object.freeze make nested sub-object properties immutable without shallowing?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0031",
+        "module": "JAVASCRIPT",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does the temporal dead zone assign undefined to let variables during compilation?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0032",
+        "module": "JAVASCRIPT",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Do arrow functions construct a fresh this binding whenever invoked through .bind()?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0033",
+        "module": "JAVASCRIPT",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does Promise.all resolve immediately when the first promise in an array settles?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0034",
+        "module": "JAVASCRIPT",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does Array.prototype.filter return the identical array instance after in-place modification?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0035",
+        "module": "REACT",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does useEffect cleanup execute immediately before the initial component mount phase?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0036",
+        "module": "REACT",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does mutating a useRef current value trigger a synchronous component re-render pass?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0037",
+        "module": "REACT",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Can React custom hooks be invoked inside iterative for loops as long as they return JSX?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0038",
+        "module": "REACT",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does useLayoutEffect run asynchronously after the browser paints UI frames on screen?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0039",
+        "module": "REACT",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does passing an empty array to useMemo execute the memoized function on every render cycle?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0040",
+        "module": "NODEJS",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does process.nextTick schedule callbacks in the check phase after setImmediate callbacks?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0041",
+        "module": "NODEJS",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does Express error handling middleware execute automatically if only two parameters are declared?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0042",
+        "module": "NODEJS",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does express.json() parse incoming URL-encoded form data into req.body objects?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0043",
+        "module": "NODEJS",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does Node.js execute synchronous fs.readFileSync without blocking the single event loop thread?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0044",
+        "module": "REST_API",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does HTTP POST guarantee idempotency when multiple duplicate requests are transmitted?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0045",
+        "module": "REST_API",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does status code 401 indicate that user access is forbidden due to insufficient authorization roles?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0046",
+        "module": "REST_API",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does status code 204 No Content require a serialized JSON object inside the response payload?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0047",
+        "module": "REST_API",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does a JSON Web Token payload encrypt user claims so that intermediate clients cannot view them?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0048",
+        "module": "DATABASE",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does First Normal Form permit storing nested array objects in relational database columns?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0049",
+        "module": "DATABASE",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does write-ahead logging guarantee persistence by writing data pages before logging journal entries?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    },
+    {
+        "id": "EXP30-ADV-0050",
+        "module": "DATABASE",
+        "category": "ADVERSARIAL",
+        "expected": "REFUTED",
+        "query": "Does Third Normal Form permit non-prime attributes to functionally depend on non-prime attributes?",
+        "subcategory": "REFUTED_ADVERSARIAL"
+    }
+]

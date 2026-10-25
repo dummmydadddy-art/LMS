@@ -1,0 +1,117 @@
+{
+  "experiment_id": "EXP-0034",
+  "name": "Hybrid Dense-Cross Reranking and Candidate Pool Study",
+  "frozen_at": "2026-09-16T14:45:00+00:00",
+  "status": "FROZEN",
+  "lineage": {
+    "git_branch": "exp-0034",
+    "git_parent": "0d1ecc9",
+    "exp0033_audited_commit": "75f4755",
+    "exp0032_parent_commit": "79ef335",
+    "frozen_verifier_ancestor": "01d6220"
+  },
+  "models": {
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_dimension": 384,
+    "cross_encoder_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "cross_encoder_device": "cpu",
+    "verifier_llm_model": "llama3.2:latest",
+    "verifier_llm_endpoint": "http://127.0.0.1:11434"
+  },
+  "configurations": {
+    "M0": {
+      "name": "Frozen Baseline R0",
+      "embedding": "nomic-embed-text",
+      "dimension": 768,
+      "candidate_pool_size": 10,
+      "fusion_alpha": 0.0,
+      "evidence_gate_threshold": 0.28,
+      "reranker": "rule-based"
+    },
+    "M1": {
+      "name": "Hybrid Top-10 (BGE + MiniLM)",
+      "embedding": "BAAI/bge-small-en-v1.5",
+      "dimension": 384,
+      "candidate_pool_size": 10,
+      "fusion_alpha": 0.5,
+      "dense_normalization": "min_max_robust",
+      "dense_norm_params": {
+        "s_min": 0.4000,
+        "s_max": 0.8500,
+        "clip_min": 0.0,
+        "clip_max": 1.0
+      },
+      "platt_calibration_params": {
+        "a": 0.6236,
+        "b": 3.2801,
+        "source": "EXP-0033-FROZEN"
+      },
+      "evidence_gate_threshold": 0.28,
+      "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2"
+    },
+    "M2": {
+      "name": "Champion Hybrid Top-15 (BGE + MiniLM)",
+      "embedding": "BAAI/bge-small-en-v1.5",
+      "dimension": 384,
+      "candidate_pool_size": 15,
+      "fusion_alpha": 0.5,
+      "dense_normalization": "min_max_robust",
+      "dense_norm_params": {
+        "s_min": 0.4000,
+        "s_max": 0.8500,
+        "clip_min": 0.0,
+        "clip_max": 1.0
+      },
+      "platt_calibration_params": {
+        "a": 0.6236,
+        "b": 3.2801,
+        "source": "EXP-0033-FROZEN"
+      },
+      "evidence_gate_threshold": 0.28,
+      "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2"
+    },
+    "M3": {
+      "name": "Hybrid Top-20 (BGE + MiniLM)",
+      "embedding": "BAAI/bge-small-en-v1.5",
+      "dimension": 384,
+      "candidate_pool_size": 20,
+      "fusion_alpha": 0.5,
+      "dense_normalization": "min_max_robust",
+      "dense_norm_params": {
+        "s_min": 0.4000,
+        "s_max": 0.8500,
+        "clip_min": 0.0,
+        "clip_max": 1.0
+      },
+      "platt_calibration_params": {
+        "a": 0.6236,
+        "b": 3.2801,
+        "source": "EXP-0033-FROZEN"
+      },
+      "evidence_gate_threshold": 0.28,
+      "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2"
+    }
+  },
+  "selected_champion": "M2",
+  "fusion_formula": "S_final = alpha * S_dense_norm + (1 - alpha) * P_platt",
+  "top_k_final": 5,
+  "random_seed": 42,
+  "corpus": {
+    "db_file": "database/rag_materials.sqlite3",
+    "db_sha256": "7dd32951cd70cea34d4d69484a3f594757702d1373377aee2bb91d57c6d866e1",
+    "table": "material_chunks_exp0032",
+    "chunk_count": 23,
+    "chunking_version": "EXP-0032-FROZEN"
+  },
+  "verifier": {
+    "script": "backend/rag_premise_verifier.php",
+    "sha256": "68d1a8f4661e7e770eab613c75b75e047ff1b7d994ba3dd5865e0c09ffbea860",
+    "mode": "E4",
+    "prompt_version": "EXP-0031-E4-FROZEN"
+  },
+  "software_environment": {
+    "php_version": "8.3.32",
+    "python_version": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "experiment_id": "EXP-0071",
+  "ablation_analysis": {
+    "C3_full_policy": {
+      "correct": 366,
+      "accuracy": 91.5,
+      "far": 4.67,
+      "frr": 14.67,
+      "c0_calls": 58,
+      "c0_call_reduction_pct": 71.84
+    },
+    "Ablation_A_counter_evidence_causal_noop": {
+      "correct": 366,
+      "accuracy": 91.5,
+      "far": 5.33,
+      "frr": 12.67,
+      "c0_calls": 57,
+      "c0_call_reduction_pct": 72.33
+    },
+    "C4_prior_retrained_confounded": {
+      "accuracy": 78.25,
+      "frr": 9.33,
+      "far": 0.67,
+      "llm_calls": 1,
+      "methodology_defect": "Prior C4 retrained the ExtraTrees routing classifier with action 1 remapped to 2. This caused policy probability shift where action 0 (cheap MiniLM) was chosen for 99.5% of cases, confounding counter-evidence ablation with complete lack of LLM escalation."
+    },
+    "causal_counter_evidence_effect": {
+      "delta_accuracy_pp": 0.0,
+      "delta_frr_pp": 2.0,
+      "interpretation": "Clean causal ablation reveals that targeted counter-evidence retrieval does NOT drive a 12.75 pp gain. Instead, overall accuracy remains identical (91.50% vs 91.50%), while removing counter-evidence actually REDUCES FRR from 14.67% down to 12.67%, confirming that unconstrained counter-evidence retrieval was harmful to supported claims."
+    },
+    "evidence_sufficiency_ablation": {
+      "causal_feature_ablation_no_retrain": {
+        "correct": 362,
+        "accuracy": 90.5,
+        "far": 5.33,
+        "frr": 14.0,
+        "c0_calls": 52,
+        "c0_call_reduction_pct": 74.76
+      },
+      "retrained_model_c5": {
+        "accuracy": 91.0,
+        "frr": 14.0,
+        "far": 6.0
+      },
+      "interpretation": "Zeroing out evidence sufficiency features (indices 9..12) at inference time reduces accuracy slightly from 91.50% to 90.50% (-1.00 pp), demonstrating modest feature attribution without destabilizing the policy."
+    }
+  }
+}

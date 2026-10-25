@@ -1,0 +1,221 @@
+external_components:
+- component: FlagEmbedding
+  repository: FlagOpen/FlagEmbedding
+  commit_or_version: v1.4.2
+  license: MIT
+  package_version: 1.4.2
+  model: BAAI/bge-m3 / BAAI/bge-reranker-v2-m3
+  model_revision: main
+  model_license: MIT
+  integration_purpose: Dense embedding, sparse lexical weights, ColBERT multi-vector,
+    and cross-encoder reranking
+  enabled_experiment: EXP-0041 (Reranker) / EXP-0042 (Dense) / EXP-0043 (Hybrid)
+  hardware_profile: Sequential GPU residency, 4 GB VRAM protection, CPU fallback
+  integration_status: REAL_RUNTIME
+  runtime_status: INSTALLED_EXECUTABLE
+  actual_execution_verified: true
+- component: Qdrant
+  repository: qdrant/qdrant
+  commit_or_version: v1.19.1
+  license: Apache-2.0
+  package_version: 1.19.1
+  model: N/A (Vector DB Engine)
+  model_revision: N/A
+  model_license: Apache-2.0
+  integration_purpose: Local research vector database with dense, sparse, payload
+    filtering, and RRF hybrid search
+  enabled_experiment: EXP-0043 (Dense+Sparse Hybrid)
+  hardware_profile: Local in-memory (:memory:) or local disk path, zero hosted dependency
+  integration_status: REAL_RUNTIME
+  runtime_status: INSTALLED_EXECUTABLE
+  actual_execution_verified: true
+- component: PyLate
+  repository: lightonai/pylate
+  commit_or_version: v1.6.0
+  license: Apache-2.0
+  package_version: 1.6.0
+  model: lightonai/GTE-ModernColBERT-v1
+  model_revision: main
+  model_license: Apache-2.0
+  integration_purpose: Isolated late-interaction retrieval via MaxSim scoring
+  enabled_experiment: EXP-0044 (Late Interaction)
+  hardware_profile: CPU-compatible fallback, batch size <= 8, sequential residency
+  integration_status: REAL_RUNTIME
+  runtime_status: INSTALLED_EXECUTABLE
+  actual_execution_verified: true
+- component: LlamaIndex
+  repository: run-llama/llama_index
+  commit_or_version: v0.14.24
+  license: MIT
+  package_version: 0.14.24
+  model: N/A (Retrieval & Fusion Engine)
+  model_revision: N/A
+  model_license: MIT
+  integration_purpose: Isolated multi-query expansion and Reciprocal Rank Fusion over
+    frozen baseline
+  enabled_experiment: EXP-0045 (Query Fusion)
+  hardware_profile: Lightweight CPU compute, deterministic expansion rules
+  integration_status: REAL_RUNTIME
+  runtime_status: INSTALLED_EXECUTABLE
+  actual_execution_verified: true
+- component: Haystack
+  repository: deepset-ai/haystack
+  commit_or_version: v3.1.1
+  license: Apache-2.0
+  package_version: 3.1.1
+  model: N/A (Document Hierarchy Splitter)
+  model_revision: N/A
+  model_license: Apache-2.0
+  integration_purpose: Root-parent-child hierarchy construction comparator for EXP-0040-H
+    validation
+  enabled_experiment: EXP-0040-H (Comparator)
+  hardware_profile: Document abstraction, zero model weight residency
+  integration_status: REAL_RUNTIME
+  runtime_status: INSTALLED_EXECUTABLE
+  actual_execution_verified: true
+- component: CRAG
+  repository: HuskyInSalt/CRAG
+  commit_or_version: main
+  license: MIT
+  package_version: research-adapter
+  model: Closed-corpus rule & retrieval quality evaluator
+  model_revision: N/A
+  model_license: MIT
+  integration_purpose: Retrieval quality evaluation (CORRECT/AMBIGUOUS/INCORRECT)
+    and corrective context actions without web search
+  enabled_experiment: EXP-0046 (Corrective Retrieval)
+  hardware_profile: Zero GPU memory, strictly local closed educational corpus
+  integration_status: REAL_RUNTIME
+  runtime_status: INSTALLED_EXECUTABLE
+  actual_execution_verified: true
+- component: LightRAG
+  repository: HKUDS/LightRAG
+  commit_or_version: v1.5.7
+  license: MIT
+  package_version: 1.5.7
+  model: llama3.2:latest (Local Ollama) / BAAI/bge-small-en-v1.5
+  model_revision: v1.5.7
+  model_license: MIT
+  integration_purpose: Educational knowledge graph sidecar (naive, local, global,
+    hybrid, mix modes)
+  enabled_experiment: EXP-0047 (Graph Retrieval)
+  hardware_profile: Local storage in research/data/lightrag_storage, isolated from
+    vector index
+  integration_status: REAL_RUNTIME
+  runtime_status: INSTALLED_EXECUTABLE
+  actual_execution_verified: true
+- component: Docling.rs
+  repository: docling-project/docling.rs
+  revision_status: UNPINNED
+  license: MIT
+  package_version: docling-rs-adapter
+  model: N/A (Streaming Ingestion Engine)
+  model_revision: N/A
+  runtime: Native Rust CLI (docling-project/docling.rs)
+  purpose: Low-memory, streaming document ingestion and selective page windows
+  hardware_profile: Bounded RAM, streaming iterators, no full-book memory accumulation
+  enabled_experiment: EXP-0055
+  integration_status: NOT_READY
+  runtime_status: COMPILE_REQUIRED
+  actual_execution_verified: false
+  notes: Native Rust CLI requires cargo/MSVC compilation from source. Python Docling (NativePdfPipeline, docling==2.128.0) is verified executable as REAL_RUNTIME.
+- component: PageIndex
+  repository: VectifyAI/PageIndex
+  revision_status: UNPINNED
+  license: Apache-2.0
+  package_version: 0.2.18
+  model: N/A (Structural Tree Index)
+  model_revision: N/A
+  runtime: Local structural document tree (upstream pageindex.page_index_flash PDF-native engine)
+  purpose: Structural document navigation (root -> chapter -> section -> page window)
+  hardware_profile: Zero GPU memory, strictly local execution (no cloud, no web search)
+  enabled_experiment: EXP-0056
+  integration_status: REAL_RUNTIME
+  runtime_status: INSTALLED_EXECUTABLE
+  actual_execution_verified: true
+  notes: Verified execution path is upstream pageindex.page_index_flash operating directly on authentic multi-page PDFs with character span clustering and embedded bookmarks, without markdown surrogates.
+- component: llama.cpp
+  repository: ggml-org/llama.cpp
+  revision_status: UNPINNED
+  license: MIT
+  package_version: b11026 (llama-cli / llama-server)
+  model: Llama 3.2 3B Instruct (Q4_K_M GGUF)
+  model_revision: sha256-dde5aa3fc5ff
+  runtime: GGUF CPU / hybrid offloading via llama-cli
+  purpose: High-efficiency local LLM inference, bounded context, bounded VRAM
+  hardware_profile: Hybrid CPU + GPU layers <= 16 on 4 GB VRAM RTX 3050, CPU fallback
+  enabled_experiment: EXP-0057
+  integration_status: REAL_RUNTIME
+  runtime_status: INSTALLED_EXECUTABLE
+  actual_execution_verified: true
+- component: LLMLingua
+  repository: microsoft/LLMLingua
+  revision_status: UNPINNED
+  license: MIT
+  package_version: 0.2.2
+  model: microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank
+  model_revision: main
+  runtime: PyTorch / Transformers CPU/GPU
+  purpose: Context token compression preserving evidence provenance and source IDs
+  hardware_profile: Lightweight compressor, temporary context memory only
+  enabled_experiment: EXP-0058
+  integration_status: FRAMEWORK_READY
+  runtime_status: PACKAGE_INSTALLED_WEIGHTS_UNAVAILABLE
+  actual_execution_verified: false
+- component: Surya
+  repository: VikParuchuri/surya
+  revision_status: UNPINNED
+  license: GPL-3.0
+  package_version: 0.22.1
+  model: Surya Layout, OCR & Table Models
+  model_revision: main
+  runtime: PyTorch selective OCR pipeline
+  purpose: Selective OCR, layout, table, and equation processing for difficult pages
+  hardware_profile: Conservative batch size <= 2, CPU fallback for 4 GB VRAM safety
+  enabled_experiment: EXP-0059
+  integration_status: FRAMEWORK_READY
+  runtime_status: PACKAGE_INSTALLED_WEIGHTS_UNAVAILABLE
+  actual_execution_verified: false
+- component: Gemma 3n E2B
+  repository: google/gemma-3n-E2B-it
+  revision_status: UNPINNED
+  license: Gemma Terms of Use
+  package_version: gemma-3n-adapter
+  model: google/gemma-3n-E2B-it
+  model_revision: main
+  runtime: Transformers / GGUF llama.cpp compatible
+  purpose: Lightweight local routing, query classification, and preliminary helper reasoning
+  hardware_profile: Optional helper backend, graceful degradation if model unavailable
+  enabled_experiment: EXP-0060
+  integration_status: FRAMEWORK_READY
+  runtime_status: MODEL_UNAVAILABLE
+  actual_execution_verified: false
+- component: BitNet
+  repository: microsoft/BitNet
+  revision_status: UNPINNED
+  license: MIT
+  package_version: bitnet-adapter
+  model: microsoft/BitNet-b1.58-large
+  model_revision: main
+  runtime: Official BitNet low-bit C++ runtime / CPU kernels
+  purpose: Ultra-efficient 1-bit / 1.58-bit low-bit local inference research
+  hardware_profile: CPU-optimized low-power execution, zero GPU VRAM requirement
+  enabled_experiment: EXP-0061
+  integration_status: FRAMEWORK_READY
+  runtime_status: RUNTIME_UNAVAILABLE
+  actual_execution_verified: false
+- component: Marker
+  repository: datalab-to/marker
+  revision_status: UNPINNED
+  license: GPL-3.0
+  package_version: 2.0.0
+  model: Marker OCR and Layout Pipeline
+  model_revision: main
+  runtime: PyTorch / OCR / VLM
+  purpose: Alternative document processing pipeline and EXP-0062 parser comparator
+  hardware_profile: Selective OCR mode, bounded memory, CPU mode supported
+  enabled_experiment: EXP-0062
+  integration_status: FRAMEWORK_READY
+  runtime_status: PACKAGE_INSTALLED_WEIGHTS_UNAVAILABLE
+  actual_execution_verified: false
+

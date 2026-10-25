@@ -1,0 +1,16 @@
+{
+  "name": "experimental-project-viewer",
+  "version": "1.0.0",
+  "description": "Strictly Read-Only MCP Server providing view-only research access to the EduConnect-LMS-Experimental project for Qwen and other LLM assistants.",
+  "main": "index.js",
+  "type": "commonjs",
+  "bin": {
+    "experimental-project-viewer": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test-client.js"
+  },
+  "author": "Mukul",
+  "license": "ISC"
+}

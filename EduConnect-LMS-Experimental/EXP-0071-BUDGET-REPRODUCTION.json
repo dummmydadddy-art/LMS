@@ -1,0 +1,62 @@
+{
+  "experiment_id": "EXP-0071",
+  "budgets_evaluated": [
+    1,
+    2,
+    3
+  ],
+  "experimental_conditions_verified": {
+    "identical_cases": true,
+    "identical_cv_folds": true,
+    "identical_initial_features": true,
+    "frozen_component_models": true,
+    "zero_budget_specific_tuning": true
+  },
+  "p0_heuristic_curve": {
+    "B1": {
+      "budget": 1,
+      "accuracy": 82.75,
+      "mean_cost": 1.0,
+      "c0_calls": 0,
+      "reduction_pct": 100.0
+    },
+    "B2": {
+      "budget": 2,
+      "accuracy": 84.75,
+      "mean_cost": 1.62,
+      "c0_calls": 22,
+      "reduction_pct": 89.32
+    },
+    "B3": {
+      "budget": 3,
+      "accuracy": 85.0,
+      "mean_cost": 2.1,
+      "c0_calls": 40,
+      "reduction_pct": 80.58
+    }
+  },
+  "p1_learned_curve": {
+    "B1": {
+      "budget": 1,
+      "accuracy": 82.75,
+      "mean_cost": 1.0,
+      "c0_calls": 0,
+      "reduction_pct": 100.0
+    },
+    "B2": {
+      "budget": 2,
+      "accuracy": 88.5,
+      "mean_cost": 1.74,
+      "c0_calls": 37,
+      "reduction_pct": 82.04
+    },
+    "B3": {
+      "budget": 3,
+      "accuracy": 91.0,
+      "mean_cost": 2.28,
+      "c0_calls": 76,
+      "reduction_pct": 63.11
+    }
+  },
+  "finding": "Under B=1, both controllers default to cheap MiniLM alone (82.75%). Headroom to execute A2 and A3 under B=3 is required to reach 91.00%."
+}

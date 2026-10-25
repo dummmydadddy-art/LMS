@@ -1,0 +1,41 @@
+<?php
+// LMS Configuration
+
+// Enable error reporting for development (disable in production)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Load deployment variables
+$APP_NAME = "LMS";
+$APP_ENV = "production";
+
+$SUPABASE_PROJECT_URL = "https://cjhfnaubbfqhwveuhslh.supabase.co"; // e.g. https://xxxxx.supabase.co
+$SUPABASE_URL = "https://cjhfnaubbfqhwveuhslh.supabase.co/rest/v1/"; // e.g. https://xxxxx.supabase.co/rest/v1/
+$SUPABASE_ANON_KEY = "sb_publishable_nKnJWB2nMK1c_EORxrhr_w_PPvsvPSJ";
+$SUPABASE_SERVICE_ROLE_KEY = getenv("SUPABASE_SERVICE_ROLE_KEY") ?: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNqaGZuYXViYmZxaHd2ZXVoc2xoIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4NTA0Nzc1MSwiZXhwIjoyMTAwNjIzNzUxfQ.c48rHq8hf7ZGyG7wMlerKmaDcQUi3A51M2QpI2dRU1U";
+
+// Payment gateway variables
+$PAYMENT_GATEWAY_KEY = getenv("PAYMENT_GATEWAY_KEY") ?: "";
+$PAYMENT_GATEWAY_SECRET = getenv("PAYMENT_GATEWAY_SECRET") ?: "";
+
+// Service-to-service API key (for n8n chatbot, external integrations)
+// n8n sends this in X-Service-Key header to bypass JWT auth
+$SERVICE_API_KEY = getenv("LMS_SERVICE_API_KEY") ?: "lms-n8n-service-key-2026";
+
+// Ollama AI Configuration
+$OLLAMA_BASE_URL = getenv("OLLAMA_BASE_URL") ?: "http://localhost:11434";
+$OLLAMA_EMBED_MODEL = getenv("OLLAMA_EMBED_MODEL") ?: "nomic-embed-text";
+$OLLAMA_CHAT_MODEL = getenv("OLLAMA_CHAT_MODEL") ?: "llama3.2:latest";
+
+// Helper headers
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With, apikey");
+header("Content-Type: application/json; charset=UTF-8");
+
+// Handle CORS preflight request
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}

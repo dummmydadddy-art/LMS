@@ -1,0 +1,47 @@
+# Dependency directories
+node_modules/
+frontend/node_modules/
+
+# Production build outputs
+dist/
+frontend/dist/
+frontend/dist-ssr/
+
+# Local env files
+*.local
+.env
+.env.*
+
+# Backend temporary cache/logs
+backend/.token_cache/
+backend/last_otp.txt
+backend/settings.json
+backend/config.php
+backend/otps.json
+backend/api_debug.log
+backend/security_events.log
+
+# IDEs & System files
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.log
+
+# Python cache & research ephemeral storage
+__pycache__/
+*.py[cod]
+*$py.class
+research/data/
+research/model_cache/
+
+scratch/
+archive/
+bin/
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.db

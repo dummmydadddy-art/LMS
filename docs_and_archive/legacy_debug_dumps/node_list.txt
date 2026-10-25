@@ -1,0 +1,36 @@
+﻿Normalize Incoming Message | Type: n8n-nodes-base.code
+Has Valid Message? | Type: n8n-nodes-base.if
+Ignore Non-Message Event | Type: n8n-nodes-base.noOp
+Lookup Student in LMS | Type: n8n-nodes-base.httpRequest
+Build Session Context | Type: n8n-nodes-base.set
+Token State Loader | Type: n8n-nodes-base.code
+Tokens Exhausted? | Type: n8n-nodes-base.if
+Fail-Safe Recovery | Type: n8n-nodes-base.code
+Token Budget Check | Type: n8n-nodes-base.code
+Low Token Warning? | Type: n8n-nodes-base.if
+Save Checkpoint | Type: n8n-nodes-base.code
+Get Attendance Records | Type: @n8n/n8n-nodes-langchain.toolHttpRequest
+Mark Attendance | Type: @n8n/n8n-nodes-langchain.toolHttpRequest
+Attendance Agent | Type: @n8n/n8n-nodes-langchain.agentTool
+Get Fee Status | Type: @n8n/n8n-nodes-langchain.toolHttpRequest
+Generate Payment Link | Type: @n8n/n8n-nodes-langchain.toolHttpRequest
+Fees Agent | Type: @n8n/n8n-nodes-langchain.agentTool
+Fetch Course Content | Type: @n8n/n8n-nodes-langchain.toolHttpRequest
+Quiz Generator Agent | Type: @n8n/n8n-nodes-langchain.agentTool
+Create Support Ticket | Type: @n8n/n8n-nodes-langchain.toolHttpRequest
+Student Support Agent | Type: @n8n/n8n-nodes-langchain.agentTool
+Conversation Memory | Type: @n8n/n8n-nodes-langchain.memoryBufferWindow
+Orchestrator Agent | Type: @n8n/n8n-nodes-langchain.agent
+Fallback Apology Message | Type: n8n-nodes-base.set
+Format Reply for WhatsApp | Type: n8n-nodes-base.code
+Note: ATTENDANCE AGENT | Type: n8n-nodes-base.stickyNote
+Note: FEES AGENT | Type: n8n-nodes-base.stickyNote
+Note: QUIZ GENERATOR | Type: n8n-nodes-base.stickyNote
+Note: SUPPORT AGENT | Type: n8n-nodes-base.stickyNote
+Ollama Chat Model1 | Type: @n8n/n8n-nodes-langchain.lmChatOllama
+Ollama Chat Model2 | Type: @n8n/n8n-nodes-langchain.lmChatOllama
+OpenRouter Chat Model | Type: @n8n/n8n-nodes-langchain.lmChatOpenRouter
+OpenRouter Chat Model1 | Type: @n8n/n8n-nodes-langchain.lmChatOpenRouter
+OpenRouter Chat Model2 | Type: @n8n/n8n-nodes-langchain.lmChatOpenRouter
+Telegram Trigger | Type: n8n-nodes-base.telegramTrigger
+Send a text message | Type: n8n-nodes-base.telegram

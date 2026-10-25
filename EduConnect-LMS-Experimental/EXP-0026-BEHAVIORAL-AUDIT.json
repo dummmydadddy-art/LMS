@@ -1,0 +1,93 @@
+{
+  "experiment_tag": "EXP-0026-BEHAVIORAL-AUDIT",
+  "timestamp": "2026-09-13T07:38:52.976Z",
+  "verdict": "BEHAVIORAL_AUDIT_PASSED",
+  "latency_profiles_by_category": {
+    "SUPPORTED": {
+      "sample_query": "How does justify-content space-between distribute space in flexbox?",
+      "latencies_ms": [
+        1395,
+        1190,
+        1196
+      ],
+      "average_latency_ms": 1260.3
+    },
+    "FALSE_PREMISE": {
+      "sample_query": "Why does var have block scope in JavaScript?",
+      "latencies_ms": [
+        101,
+        62,
+        70
+      ],
+      "average_latency_ms": 77.7
+    },
+    "UNKNOWN_OOD": {
+      "sample_query": "How does Django ORM handle migrations in Python?",
+      "latencies_ms": [
+        55,
+        15,
+        14
+      ],
+      "average_latency_ms": 28
+    },
+    "LEGITIMATE_NEGATION": {
+      "sample_query": "Why can let not be re-declared in the same block scope?",
+      "latencies_ms": [
+        2758,
+        2544,
+        2768
+      ],
+      "average_latency_ms": 2690
+    }
+  },
+  "edge_cases": [
+    {
+      "name": "empty_query",
+      "http_status": 400,
+      "success": true,
+      "backend": "none",
+      "passed": true
+    },
+    {
+      "name": "whitespace_only",
+      "http_status": 400,
+      "success": true,
+      "backend": "none",
+      "passed": true
+    },
+    {
+      "name": "very_long_query_4kb",
+      "http_status": 200,
+      "success": true,
+      "backend": "premise_verifier_guard",
+      "passed": true
+    },
+    {
+      "name": "unicode_emoji",
+      "http_status": 200,
+      "success": true,
+      "backend": "premise_verifier_guard",
+      "passed": true
+    },
+    {
+      "name": "special_characters",
+      "http_status": 200,
+      "success": true,
+      "backend": "premise_verifier_guard",
+      "passed": true
+    },
+    {
+      "name": "sql_characters",
+      "http_status": 200,
+      "success": true,
+      "backend": "safety_boundary_gate",
+      "passed": true
+    }
+  ],
+  "determinism_evaluation": {
+    "total_queries": 50,
+    "identical_verdicts": 50,
+    "determinism_rate": "100.00%",
+    "passed": true
+  }
+}

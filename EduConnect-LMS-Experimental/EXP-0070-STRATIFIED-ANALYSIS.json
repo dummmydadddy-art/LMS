@@ -1,0 +1,133 @@
+{
+  "experiment_id": "EXP-0070",
+  "strata_definitions": {
+    "S1": "Antonym-Assisted Refutation",
+    "S2": "Non-Antonym Structural Refutation",
+    "S3": "High-Overlap Supported Curriculum",
+    "S4": "Low-Overlap Paraphrase & Legitimate Negation",
+    "S5": "Normative & Universal Assertions",
+    "S6": "Compound Multi-Clause Queries",
+    "S7": "Out-of-Domain Inquiries"
+  },
+  "strata_metrics": {
+    "S1_antonym_assisted": {
+      "C1": {
+        "n": 166,
+        "correct": 139,
+        "accuracy": 83.73
+      },
+      "C0": {
+        "n": 166,
+        "correct": 155,
+        "accuracy": 93.37
+      },
+      "C2": {
+        "n": 166,
+        "correct": 44,
+        "accuracy": 26.51
+      }
+    },
+    "S2_non_antonym": {
+      "C1": {
+        "n": 234,
+        "correct": 192,
+        "accuracy": 82.05
+      },
+      "C0": {
+        "n": 234,
+        "correct": 213,
+        "accuracy": 91.03
+      },
+      "C2": {
+        "n": 234,
+        "correct": 81,
+        "accuracy": 34.62
+      }
+    },
+    "S3_high_overlap_support": {
+      "C1": {
+        "n": 100,
+        "correct": 61,
+        "accuracy": 61.0
+      },
+      "C0": {
+        "n": 100,
+        "correct": 85,
+        "accuracy": 85.0
+      },
+      "C2": {
+        "n": 100,
+        "correct": 33,
+        "accuracy": 33.0
+      }
+    },
+    "S4_low_overlap_paraphrase": {
+      "C1": {
+        "n": 50,
+        "correct": 37,
+        "accuracy": 74.0
+      },
+      "C0": {
+        "n": 50,
+        "correct": 46,
+        "accuracy": 92.0
+      },
+      "C2": {
+        "n": 50,
+        "correct": 17,
+        "accuracy": 34.0
+      }
+    },
+    "S5_normative_universal": {
+      "C1": {
+        "n": 81,
+        "correct": 65,
+        "accuracy": 80.25
+      },
+      "C0": {
+        "n": 81,
+        "correct": 74,
+        "accuracy": 91.36
+      },
+      "C2": {
+        "n": 81,
+        "correct": 19,
+        "accuracy": 23.46
+      }
+    },
+    "S6_compound_multi_clause": {
+      "C1": {
+        "n": 75,
+        "correct": 65,
+        "accuracy": 86.67
+      },
+      "C0": {
+        "n": 75,
+        "correct": 68,
+        "accuracy": 90.67
+      },
+      "C2": {
+        "n": 75,
+        "correct": 18,
+        "accuracy": 24.0
+      }
+    },
+    "S7_ood": {
+      "C1": {
+        "n": 100,
+        "correct": 99,
+        "accuracy": 99.0
+      },
+      "C0": {
+        "n": 100,
+        "correct": 98,
+        "accuracy": 98.0
+      },
+      "C2": {
+        "n": 100,
+        "correct": 50,
+        "accuracy": 50.0
+      }
+    }
+  }
+}

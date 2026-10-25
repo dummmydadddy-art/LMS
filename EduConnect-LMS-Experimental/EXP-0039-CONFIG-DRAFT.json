@@ -1,0 +1,112 @@
+{
+  "experiment": "EXP-0039",
+  "title": "Conservative RAG Chunking with Chonkie",
+  "branch": "exp-0039",
+  "parent_commit": "e1cf1503851a5ff2fc1b3a86897556943878cf13",
+  "champion_comparator": {
+    "experiment": "EXP-0037",
+    "accuracy": 90.75,
+    "macro_f1": 90.70,
+    "far": 18.50,
+    "frr": 0.00,
+    "recall_at_5": 100.00
+  },
+  "dataset": {
+    "development_file": "EXP-0025-DEVELOPMENT-DATASET.json",
+    "development_sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+    "sample_size": 400,
+    "blind_dataset_file": "EXP-0033-BLIND-DATASET.json",
+    "blind_dataset_sha256": "3b4fd6c7a70a8d672808c1b3f94ee9baefbe6a09074b1bda1b4b1a8f6be4e3f3",
+    "blind_dataset_status": "SEALED_PROTECTED_UNTOUCHED"
+  },
+  "chunking_configurations": {
+    "C0": {
+      "name": "Legacy Regex Chunker",
+      "table": "material_chunks_exp0032",
+      "chunk_count": 23,
+      "max_tokens": 512
+    },
+    "C1": {
+      "name": "Chonkie RecursiveChunker",
+      "library": "chonkie",
+      "version": "1.7.0",
+      "table": "C1_ChonkieRecursive",
+      "tokenizer": "BAAI/bge-small-en-v1.5",
+      "chunk_size": 512,
+      "chunk_count": 10
+    },
+    "C2_075": {
+      "name": "Chonkie SemanticChunker 0.75",
+      "library": "chonkie",
+      "version": "1.7.0",
+      "table": "C2_ChonkieSemantic_075",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "threshold": 0.75,
+      "chunk_size": 384,
+      "similarity_window": 1,
+      "min_sentences_per_chunk": 1,
+      "mode": "window",
+      "mode_note": "Intrinsic default algorithm of Chonkie 1.7.0 via similarity_window=1 and kwargs",
+      "chunk_count": 69
+    },
+    "C2_080": {
+      "name": "Chonkie SemanticChunker 0.80",
+      "library": "chonkie",
+      "version": "1.7.0",
+      "table": "C2_ChonkieSemantic_080",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "threshold": 0.80,
+      "chunk_size": 384,
+      "similarity_window": 1,
+      "min_sentences_per_chunk": 1,
+      "mode": "window",
+      "mode_note": "Intrinsic default algorithm of Chonkie 1.7.0 via similarity_window=1 and kwargs",
+      "chunk_count": 71
+    },
+    "C2_085": {
+      "name": "Chonkie SemanticChunker 0.85",
+      "library": "chonkie",
+      "version": "1.7.0",
+      "table": "C2_ChonkieSemantic_085",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "threshold": 0.85,
+      "chunk_size": 384,
+      "similarity_window": 1,
+      "min_sentences_per_chunk": 1,
+      "mode": "window",
+      "mode_note": "Intrinsic default algorithm of Chonkie 1.7.0 via similarity_window=1 and kwargs",
+      "chunk_count": 76
+    }
+  },
+  "retrieval_pipeline": {
+    "dense_model": "BAAI/bge-small-en-v1.5",
+    "dense_pool": 15,
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "reranker_top_n": 5,
+    "fusion": "M2",
+    "fusion_alpha": 0.50,
+    "dense_norm_min": 0.4000,
+    "dense_norm_max": 0.8500,
+    "platt_scale": 0.6236,
+    "platt_shift": 3.2801
+  },
+  "verifier_configuration": {
+    "verifier": "RagAmbiguityGuardVerifier",
+    "verifier_file": "backend/rag_ambiguity_guard_verifier.php",
+    "mode": "A4",
+    "premise_verifier": "backend/rag_premise_verifier.php",
+    "prompt": "P4_neutral",
+    "model": "llama3.2:latest",
+    "temperature": 0.0,
+    "num_predict": 25,
+    "num_thread": 8,
+    "evidence_threshold": 0.85,
+    "fallback_threshold": 0.80
+  },
+  "statistical_parameters": {
+    "non_inferiority_margin_pp": -3.00,
+    "alpha": 0.05,
+    "z_critical_one_sided": 1.645,
+    "mcnemar_test": "with_continuity_correction"
+  }
+}

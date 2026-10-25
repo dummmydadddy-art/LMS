@@ -1,0 +1,49 @@
+{
+    "experiment": "EXP-0055",
+    "phase": "DEVELOPMENT",
+    "N": 400,
+    "control_b0": {
+        "accuracy": 92.75,
+        "accuracy_ci95": {
+            "lower": 89.78,
+            "upper": 94.9
+        },
+        "macro_f1": 93.39,
+        "far": 3.2,
+        "frr": 12.67,
+        "supported_recall": 87.33,
+        "refutation_recall": 94.67,
+        "not_established_recall": 98,
+        "latency_ms": {
+            "mean": 12.7,
+            "median": 13.9,
+            "p95": 30.3,
+            "total_sec": 5.09
+        }
+    },
+    "candidate_c1": {
+        "accuracy": 92.75,
+        "accuracy_ci95": {
+            "lower": 89.78,
+            "upper": 94.9
+        },
+        "macro_f1": 93.39,
+        "far": 3.2,
+        "frr": 12.67,
+        "supported_recall": 87.33,
+        "refutation_recall": 94.67,
+        "not_established_recall": 98,
+        "latency_ms": {
+            "mean": 12.6,
+            "median": 13.9,
+            "p95": 29.7,
+            "total_sec": 5.05
+        }
+    },
+    "delta": {
+        "accuracy": 0,
+        "macro_f1": 0,
+        "far": 0,
+        "frr": 0
+    }
+}

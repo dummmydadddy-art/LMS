@@ -1,0 +1,26 @@
+{
+  "experiment_id": "EXP-0071",
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "seed_accuracies": [
+    91.5,
+    91.25,
+    91.5
+  ],
+  "mean_accuracy": 91.42,
+  "std_dev": 0.14,
+  "pairwise_agreements": {
+    "seed42_vs_seed123": 98.75,
+    "seed42_vs_seed456": 99.25,
+    "seed123_vs_seed456": 98.5
+  },
+  "cohen_kappas": {
+    "seed42_vs_seed123": 0.978,
+    "seed42_vs_seed456": 0.986,
+    "seed123_vs_seed456": 0.974
+  },
+  "gate_h_status": "PASS"
+}

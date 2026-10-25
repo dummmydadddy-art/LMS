@@ -1,0 +1,55 @@
+{
+  "experiment_tag": "EXP-0024-STATIC-AUDIT",
+  "timestamp": "2026-09-12T09:40:11.248Z",
+  "invariants_tested": 6,
+  "invariants_passed": 6,
+  "invariants_failed": 0,
+  "anti_cheating_checks": {
+    "backdoors_detected": 0,
+    "detected_items": [],
+    "pass": true
+  },
+  "invariant_verifications": {
+    "invariant_1_no_benchmark_leakage": {
+      "pass": true,
+      "leaked_query_count": 0,
+      "leaked_id_count": 0,
+      "details": "Clean: Zero benchmark queries or test IDs detected in active backend code"
+    },
+    "invariant_2_retrieved_chunks_consumed": {
+      "pass": true,
+      "parameter_declared": true,
+      "iterated_or_indexed": true,
+      "evidence_units_extracted": true,
+      "similarity_checked": true,
+      "details": "Passed: $retrievedChunks is parsed into atomic evidence units and scored"
+    },
+    "invariant_3_evidence_used_invariant": {
+      "pass": true,
+      "evidence_used_true_present": true,
+      "evidence_used_false_present": false,
+      "details": "Passed: evidence_used is strictly true across all exit paths"
+    },
+    "invariant_4_unauthenticated_flag_mutation_blocked": {
+      "pass": true,
+      "flags_service_key_enforced": true,
+      "safety_critical_flags_hardlocked": true,
+      "gateway_header_stripping_present": true,
+      "details": "Passed: Multi-layer security defense active in gateway.js and rag_flags.php"
+    },
+    "invariant_5_absence_of_evidence_not_established": {
+      "pass": true,
+      "status_not_established_defined": true,
+      "refutation_requires_evidence_contradiction": true,
+      "low_similarity_or_empty_returns_not_established": true,
+      "details": "Passed: Invariant satisfied. Claims lacking positive evidence return NOT_ESTABLISHED."
+    },
+    "invariant_6_legitimate_negation_supported": {
+      "pass": true,
+      "negation_inquiry_detected": true,
+      "polarity_inversion_active": true,
+      "details": "Passed: Invariant satisfied. Inquiries asking why prohibited behaviors fail are mapped to SUPPORTED."
+    }
+  },
+  "verdict": "CERTIFIED_STATIC_AUDIT_PASS"
+}

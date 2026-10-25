@@ -1,0 +1,2102 @@
+[
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0001",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does CSS z-index override parent opacity stacking contexts? (Variation 1)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0002",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does position: fixed scroll along with document flow? (Variation 2)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0003",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does CSS class selector .item override an ID selector #item in specificity? (Variation 3)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0004",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does typeof null evaluate to \"null\" in JavaScript? (Variation 4)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0005",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does NaN === NaN evaluate to true in ECMAScript strict equality? (Variation 5)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0006",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does JavaScript strict mode allow implicit globals without throwing? (Variation 6)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0007",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does Array.prototype.map mutate the source array in place? (Variation 7)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0008",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does Array.prototype.reduce return a filtered subarray of items? (Variation 8)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0009",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does Array.prototype.filter transform array elements via expression evaluation? (Variation 9)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0010",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do template literals require double quotes for string interpolation? (Variation 10)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0011",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does a JavaScript Set allow duplicate numbers to be stored? (Variation 11)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0012",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does a JavaScript Map restrict keys to string primitive types? (Variation 12)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0013",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do two Symbol(\"test\") calls evaluate as strictly equal? (Variation 13)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0014",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does for...in iterate array values in index order? (Variation 14)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0015",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does optional chaining (?.) throw a TypeError on null targets? (Variation 15)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0016",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does nullish coalescing (??) evaluate fallback for numeric 0? (Variation 16)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0017",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does an async function return a raw non-Promise string? (Variation 17)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0018",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does the finally block get skipped when errors are caught? (Variation 18)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0019",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does React reconciliation re-mount the entire DOM on every setState? (Variation 19)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0020",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does JSX execute natively in browser V8 engines without transpilation? (Variation 20)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0021",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do controlled inputs allow the DOM to hold state outside React? (Variation 21)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0022",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do array indices serve as ideal unique keys for sorted React lists? (Variation 22)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0023",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does React.memo perform deep recursive equality checks on nested props? (Variation 23)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0024",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why can custom hooks omit the \"use\" prefix in React? (Variation 24)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0025",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does CommonJS require() load files asynchronously via worker threads? (Variation 25)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0026",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does CSS z-index override parent opacity stacking contexts? (Variation 26)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0027",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does position: fixed scroll along with document flow? (Variation 27)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0028",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does CSS class selector .item override an ID selector #item in specificity? (Variation 28)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0029",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does typeof null evaluate to \"null\" in JavaScript? (Variation 29)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0030",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does NaN === NaN evaluate to true in ECMAScript strict equality? (Variation 30)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0031",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does JavaScript strict mode allow implicit globals without throwing? (Variation 31)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0032",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does Array.prototype.map mutate the source array in place? (Variation 32)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0033",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does Array.prototype.reduce return a filtered subarray of items? (Variation 33)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0034",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does Array.prototype.filter transform array elements via expression evaluation? (Variation 34)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0035",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do template literals require double quotes for string interpolation? (Variation 35)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0036",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does a JavaScript Set allow duplicate numbers to be stored? (Variation 36)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0037",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does a JavaScript Map restrict keys to string primitive types? (Variation 37)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0038",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do two Symbol(\"test\") calls evaluate as strictly equal? (Variation 38)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0039",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does for...in iterate array values in index order? (Variation 39)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0040",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does optional chaining (?.) throw a TypeError on null targets? (Variation 40)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0041",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does nullish coalescing (??) evaluate fallback for numeric 0? (Variation 41)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0042",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does an async function return a raw non-Promise string? (Variation 42)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0043",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does the finally block get skipped when errors are caught? (Variation 43)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0044",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does React reconciliation re-mount the entire DOM on every setState? (Variation 44)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0045",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does JSX execute natively in browser V8 engines without transpilation? (Variation 45)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0046",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do controlled inputs allow the DOM to hold state outside React? (Variation 46)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0047",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do array indices serve as ideal unique keys for sorted React lists? (Variation 47)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0048",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does React.memo perform deep recursive equality checks on nested props? (Variation 48)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0049",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why can custom hooks omit the \"use\" prefix in React? (Variation 49)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0050",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does CommonJS require() load files asynchronously via worker threads? (Variation 50)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0051",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does CSS z-index override parent opacity stacking contexts? (Variation 51)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0052",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does position: fixed scroll along with document flow? (Variation 52)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0053",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does CSS class selector .item override an ID selector #item in specificity? (Variation 53)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0054",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does typeof null evaluate to \"null\" in JavaScript? (Variation 54)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0055",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does NaN === NaN evaluate to true in ECMAScript strict equality? (Variation 55)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0056",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does JavaScript strict mode allow implicit globals without throwing? (Variation 56)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0057",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does Array.prototype.map mutate the source array in place? (Variation 57)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0058",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does Array.prototype.reduce return a filtered subarray of items? (Variation 58)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0059",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does Array.prototype.filter transform array elements via expression evaluation? (Variation 59)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0060",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do template literals require double quotes for string interpolation? (Variation 60)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0061",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does a JavaScript Set allow duplicate numbers to be stored? (Variation 61)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0062",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does a JavaScript Map restrict keys to string primitive types? (Variation 62)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0063",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do two Symbol(\"test\") calls evaluate as strictly equal? (Variation 63)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0064",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does for...in iterate array values in index order? (Variation 64)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0065",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does optional chaining (?.) throw a TypeError on null targets? (Variation 65)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0066",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does nullish coalescing (??) evaluate fallback for numeric 0? (Variation 66)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0067",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does an async function return a raw non-Promise string? (Variation 67)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0068",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does the finally block get skipped when errors are caught? (Variation 68)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0069",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does React reconciliation re-mount the entire DOM on every setState? (Variation 69)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0070",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does JSX execute natively in browser V8 engines without transpilation? (Variation 70)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0071",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do controlled inputs allow the DOM to hold state outside React? (Variation 71)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0072",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do array indices serve as ideal unique keys for sorted React lists? (Variation 72)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0073",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does React.memo perform deep recursive equality checks on nested props? (Variation 73)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0074",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why can custom hooks omit the \"use\" prefix in React? (Variation 74)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0075",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does CommonJS require() load files asynchronously via worker threads? (Variation 75)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0076",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does CSS z-index override parent opacity stacking contexts? (Variation 76)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0077",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does position: fixed scroll along with document flow? (Variation 77)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0078",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does CSS class selector .item override an ID selector #item in specificity? (Variation 78)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0079",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does typeof null evaluate to \"null\" in JavaScript? (Variation 79)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0080",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does NaN === NaN evaluate to true in ECMAScript strict equality? (Variation 80)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0081",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does JavaScript strict mode allow implicit globals without throwing? (Variation 81)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0082",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does Array.prototype.map mutate the source array in place? (Variation 82)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0083",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does Array.prototype.reduce return a filtered subarray of items? (Variation 83)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0084",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does Array.prototype.filter transform array elements via expression evaluation? (Variation 84)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0085",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do template literals require double quotes for string interpolation? (Variation 85)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0086",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does a JavaScript Set allow duplicate numbers to be stored? (Variation 86)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0087",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does a JavaScript Map restrict keys to string primitive types? (Variation 87)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0088",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do two Symbol(\"test\") calls evaluate as strictly equal? (Variation 88)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0089",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does for...in iterate array values in index order? (Variation 89)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0090",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does optional chaining (?.) throw a TypeError on null targets? (Variation 90)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0091",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does nullish coalescing (??) evaluate fallback for numeric 0? (Variation 91)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0092",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does an async function return a raw non-Promise string? (Variation 92)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0093",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does the finally block get skipped when errors are caught? (Variation 93)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0094",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does React reconciliation re-mount the entire DOM on every setState? (Variation 94)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0095",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does JSX execute natively in browser V8 engines without transpilation? (Variation 95)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0096",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do controlled inputs allow the DOM to hold state outside React? (Variation 96)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0097",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why do array indices serve as ideal unique keys for sorted React lists? (Variation 97)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0098",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does React.memo perform deep recursive equality checks on nested props? (Variation 98)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0099",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why can custom hooks omit the \"use\" prefix in React? (Variation 99)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-FALSE_EVADE_MECH_A-0100",
+    "category": "NOVEL_FALSE_PREMISE",
+    "query": "Why does CommonJS require() load files asynchronously via worker threads? (Variation 100)",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_A_SEMANTIC_OPPOSITES"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0101",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 1, how does Kubernetes ingress controller pod routing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0102",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 2, how does Terraform remote state locking with DynamoDB function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0103",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 3, how does GraphQL schema AST parsing and query depth limiting function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0104",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 4, how does Vue 3 reactive proxy traps with Ref and Reactive function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0105",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 5, how does Svelte 5 rune signal reactivity model function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0106",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 6, how does Apache Kafka consumer partition rebalancing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0107",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 7, how does RabbitMQ dead letter exchanges and TTL queues function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0108",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 8, how does AWS DynamoDB global secondary index projection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0109",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 9, how does MongoDB replica set oplog replication window function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0110",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 10, how does Swift SwiftUI environment object injection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0111",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 11, how does Kotlin coroutine dispatchers and structured concurrency function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0112",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 12, how does PyTorch CUDA tensor device memory allocation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0113",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 13, how does WebAssembly linear memory boundary validation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0114",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 14, how does Solidity smart contract EVM gas estimation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0115",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 15, how does Unreal Engine 5 Nanite geometry virtualization function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0116",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 16, how does Kubernetes ingress controller pod routing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0117",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 17, how does Terraform remote state locking with DynamoDB function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0118",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 18, how does GraphQL schema AST parsing and query depth limiting function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0119",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 19, how does Vue 3 reactive proxy traps with Ref and Reactive function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0120",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 20, how does Svelte 5 rune signal reactivity model function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0121",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 21, how does Apache Kafka consumer partition rebalancing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0122",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 22, how does RabbitMQ dead letter exchanges and TTL queues function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0123",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 23, how does AWS DynamoDB global secondary index projection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0124",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 24, how does MongoDB replica set oplog replication window function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0125",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 25, how does Swift SwiftUI environment object injection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0126",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 26, how does Kotlin coroutine dispatchers and structured concurrency function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0127",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 27, how does PyTorch CUDA tensor device memory allocation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0128",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 28, how does WebAssembly linear memory boundary validation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0129",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 29, how does Solidity smart contract EVM gas estimation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0130",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 30, how does Unreal Engine 5 Nanite geometry virtualization function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0131",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 31, how does Kubernetes ingress controller pod routing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0132",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 32, how does Terraform remote state locking with DynamoDB function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0133",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 33, how does GraphQL schema AST parsing and query depth limiting function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0134",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 34, how does Vue 3 reactive proxy traps with Ref and Reactive function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0135",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 35, how does Svelte 5 rune signal reactivity model function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0136",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 36, how does Apache Kafka consumer partition rebalancing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0137",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 37, how does RabbitMQ dead letter exchanges and TTL queues function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0138",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 38, how does AWS DynamoDB global secondary index projection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0139",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 39, how does MongoDB replica set oplog replication window function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0140",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 40, how does Swift SwiftUI environment object injection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0141",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 41, how does Kotlin coroutine dispatchers and structured concurrency function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0142",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 42, how does PyTorch CUDA tensor device memory allocation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0143",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 43, how does WebAssembly linear memory boundary validation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0144",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 44, how does Solidity smart contract EVM gas estimation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0145",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 45, how does Unreal Engine 5 Nanite geometry virtualization function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0146",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 46, how does Kubernetes ingress controller pod routing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0147",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 47, how does Terraform remote state locking with DynamoDB function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0148",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 48, how does GraphQL schema AST parsing and query depth limiting function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0149",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 49, how does Vue 3 reactive proxy traps with Ref and Reactive function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0150",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 50, how does Svelte 5 rune signal reactivity model function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0151",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 51, how does Apache Kafka consumer partition rebalancing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0152",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 52, how does RabbitMQ dead letter exchanges and TTL queues function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0153",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 53, how does AWS DynamoDB global secondary index projection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0154",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 54, how does MongoDB replica set oplog replication window function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0155",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 55, how does Swift SwiftUI environment object injection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0156",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 56, how does Kotlin coroutine dispatchers and structured concurrency function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0157",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 57, how does PyTorch CUDA tensor device memory allocation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0158",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 58, how does WebAssembly linear memory boundary validation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0159",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 59, how does Solidity smart contract EVM gas estimation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0160",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 60, how does Unreal Engine 5 Nanite geometry virtualization function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0161",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 61, how does Kubernetes ingress controller pod routing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0162",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 62, how does Terraform remote state locking with DynamoDB function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0163",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 63, how does GraphQL schema AST parsing and query depth limiting function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0164",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 64, how does Vue 3 reactive proxy traps with Ref and Reactive function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0165",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 65, how does Svelte 5 rune signal reactivity model function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0166",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 66, how does Apache Kafka consumer partition rebalancing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0167",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 67, how does RabbitMQ dead letter exchanges and TTL queues function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0168",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 68, how does AWS DynamoDB global secondary index projection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0169",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 69, how does MongoDB replica set oplog replication window function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0170",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 70, how does Swift SwiftUI environment object injection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0171",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 71, how does Kotlin coroutine dispatchers and structured concurrency function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0172",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 72, how does PyTorch CUDA tensor device memory allocation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0173",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 73, how does WebAssembly linear memory boundary validation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0174",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 74, how does Solidity smart contract EVM gas estimation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0175",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 75, how does Unreal Engine 5 Nanite geometry virtualization function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0176",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 76, how does Kubernetes ingress controller pod routing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0177",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 77, how does Terraform remote state locking with DynamoDB function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0178",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 78, how does GraphQL schema AST parsing and query depth limiting function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0179",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 79, how does Vue 3 reactive proxy traps with Ref and Reactive function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0180",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 80, how does Svelte 5 rune signal reactivity model function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0181",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 81, how does Apache Kafka consumer partition rebalancing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0182",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 82, how does RabbitMQ dead letter exchanges and TTL queues function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0183",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 83, how does AWS DynamoDB global secondary index projection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0184",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 84, how does MongoDB replica set oplog replication window function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0185",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 85, how does Swift SwiftUI environment object injection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0186",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 86, how does Kotlin coroutine dispatchers and structured concurrency function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0187",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 87, how does PyTorch CUDA tensor device memory allocation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0188",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 88, how does WebAssembly linear memory boundary validation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0189",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 89, how does Solidity smart contract EVM gas estimation function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0190",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 90, how does Unreal Engine 5 Nanite geometry virtualization function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0191",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 91, how does Kubernetes ingress controller pod routing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0192",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 92, how does Terraform remote state locking with DynamoDB function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0193",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 93, how does GraphQL schema AST parsing and query depth limiting function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0194",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 94, how does Vue 3 reactive proxy traps with Ref and Reactive function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0195",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 95, how does Svelte 5 rune signal reactivity model function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0196",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 96, how does Apache Kafka consumer partition rebalancing function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0197",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 97, how does RabbitMQ dead letter exchanges and TTL queues function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0198",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 98, how does AWS DynamoDB global secondary index projection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0199",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 99, how does MongoDB replica set oplog replication window function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-OOD_EVADE_MECH_C-0200",
+    "category": "OUT_OF_CURRICULUM_UNKNOWN",
+    "query": "In enterprise system architecture 100, how does Swift SwiftUI environment object injection function internally?",
+    "expected": "NOT_ESTABLISHED",
+    "evaded_mechanism": "MECH_C_OOD_BLACKLIST"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0201",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does CSS z-index override parent opacity stacking contexts? in multi-tier setup 1",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0202",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does position: fixed scroll along with document flow? in multi-tier setup 2",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0203",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does CSS class selector .item override an ID selector #item in specificity? in multi-tier setup 3",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0204",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does typeof null evaluate to \"null\" in JavaScript? in multi-tier setup 4",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0205",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does NaN === NaN evaluate to true in ECMAScript strict equality? in multi-tier setup 5",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0206",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does JavaScript strict mode allow implicit globals without throwing? in multi-tier setup 6",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0207",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does Array.prototype.map mutate the source array in place? in multi-tier setup 7",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0208",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does Array.prototype.reduce return a filtered subarray of items? in multi-tier setup 8",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0209",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does Array.prototype.filter transform array elements via expression evaluation? in multi-tier setup 9",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0210",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why do template literals require double quotes for string interpolation? in multi-tier setup 10",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0211",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does a JavaScript Set allow duplicate numbers to be stored? in multi-tier setup 11",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0212",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does a JavaScript Map restrict keys to string primitive types? in multi-tier setup 12",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0213",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why do two Symbol(\"test\") calls evaluate as strictly equal? in multi-tier setup 13",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0214",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does for...in iterate array values in index order? in multi-tier setup 14",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0215",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does optional chaining (?.) throw a TypeError on null targets? in multi-tier setup 15",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0216",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does nullish coalescing (??) evaluate fallback for numeric 0? in multi-tier setup 16",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0217",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does an async function return a raw non-Promise string? in multi-tier setup 17",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0218",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does the finally block get skipped when errors are caught? in multi-tier setup 18",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0219",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does React reconciliation re-mount the entire DOM on every setState? in multi-tier setup 19",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0220",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does JSX execute natively in browser V8 engines without transpilation? in multi-tier setup 20",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0221",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why do controlled inputs allow the DOM to hold state outside React? in multi-tier setup 21",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0222",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why do array indices serve as ideal unique keys for sorted React lists? in multi-tier setup 22",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0223",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does React.memo perform deep recursive equality checks on nested props? in multi-tier setup 23",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0224",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why can custom hooks omit the \"use\" prefix in React? in multi-tier setup 24",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0225",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does CommonJS require() load files asynchronously via worker threads? in multi-tier setup 25",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0226",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does CSS z-index override parent opacity stacking contexts? in multi-tier setup 26",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0227",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does position: fixed scroll along with document flow? in multi-tier setup 27",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0228",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does CSS class selector .item override an ID selector #item in specificity? in multi-tier setup 28",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0229",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does typeof null evaluate to \"null\" in JavaScript? in multi-tier setup 29",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0230",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does NaN === NaN evaluate to true in ECMAScript strict equality? in multi-tier setup 30",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0231",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does JavaScript strict mode allow implicit globals without throwing? in multi-tier setup 31",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0232",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does Array.prototype.map mutate the source array in place? in multi-tier setup 32",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0233",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does Array.prototype.reduce return a filtered subarray of items? in multi-tier setup 33",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0234",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does Array.prototype.filter transform array elements via expression evaluation? in multi-tier setup 34",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0235",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why do template literals require double quotes for string interpolation? in multi-tier setup 35",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0236",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does a JavaScript Set allow duplicate numbers to be stored? in multi-tier setup 36",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0237",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does a JavaScript Map restrict keys to string primitive types? in multi-tier setup 37",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0238",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why do two Symbol(\"test\") calls evaluate as strictly equal? in multi-tier setup 38",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0239",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does for...in iterate array values in index order? in multi-tier setup 39",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0240",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does optional chaining (?.) throw a TypeError on null targets? in multi-tier setup 40",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0241",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does nullish coalescing (??) evaluate fallback for numeric 0? in multi-tier setup 41",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0242",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does an async function return a raw non-Promise string? in multi-tier setup 42",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0243",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does the finally block get skipped when errors are caught? in multi-tier setup 43",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0244",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does React reconciliation re-mount the entire DOM on every setState? in multi-tier setup 44",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0245",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does JSX execute natively in browser V8 engines without transpilation? in multi-tier setup 45",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0246",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why do controlled inputs allow the DOM to hold state outside React? in multi-tier setup 46",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0247",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why do array indices serve as ideal unique keys for sorted React lists? in multi-tier setup 47",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0248",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does React.memo perform deep recursive equality checks on nested props? in multi-tier setup 48",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0249",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why can custom hooks omit the \"use\" prefix in React? in multi-tier setup 49",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-COMPOUND_EVADE_MECH_E-0250",
+    "category": "MIXED_COMPOUND_PREMISE",
+    "query": "Seeing as HTML semantic elements provide structural clarity; explain furthermore why does CommonJS require() load files asynchronously via worker threads? in multi-tier setup 50",
+    "expected": "REFUTED",
+    "evaded_mechanism": "MECH_E_CLAUSE_SPLITTING"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0251",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing re-declaring let variables in identical block scope in curriculum context 1?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0252",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing reassigning constant primitive identifiers in curriculum context 2?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0253",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing mutating frozen object structures directly in curriculum context 3?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0254",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing calling hooks inside nested iteration loops in curriculum context 4?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0255",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing instantiating arrow functions with constructor invocation in curriculum context 5?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0256",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing modifying JWT signature bytes without detection in curriculum context 6?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0257",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing submitting empty student question payloads in curriculum context 7?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0258",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing reading state synchronously prior to batch commit in curriculum context 8?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0259",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing creating duplicate primary key rows under foreign key constraints in curriculum context 9?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0260",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing executing database commits during active transaction rollback in curriculum context 10?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0261",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing re-declaring let variables in identical block scope in curriculum context 11?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0262",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing reassigning constant primitive identifiers in curriculum context 12?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0263",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing mutating frozen object structures directly in curriculum context 13?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0264",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing calling hooks inside nested iteration loops in curriculum context 14?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0265",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing instantiating arrow functions with constructor invocation in curriculum context 15?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0266",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing modifying JWT signature bytes without detection in curriculum context 16?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0267",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing submitting empty student question payloads in curriculum context 17?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0268",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing reading state synchronously prior to batch commit in curriculum context 18?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0269",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing creating duplicate primary key rows under foreign key constraints in curriculum context 19?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0270",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing executing database commits during active transaction rollback in curriculum context 20?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0271",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing re-declaring let variables in identical block scope in curriculum context 21?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0272",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing reassigning constant primitive identifiers in curriculum context 22?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0273",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing mutating frozen object structures directly in curriculum context 23?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0274",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing calling hooks inside nested iteration loops in curriculum context 24?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0275",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing instantiating arrow functions with constructor invocation in curriculum context 25?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0276",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing modifying JWT signature bytes without detection in curriculum context 26?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0277",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing submitting empty student question payloads in curriculum context 27?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0278",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing reading state synchronously prior to batch commit in curriculum context 28?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0279",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing creating duplicate primary key rows under foreign key constraints in curriculum context 29?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0280",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing executing database commits during active transaction rollback in curriculum context 30?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0281",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing re-declaring let variables in identical block scope in curriculum context 31?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0282",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing reassigning constant primitive identifiers in curriculum context 32?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0283",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing mutating frozen object structures directly in curriculum context 33?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0284",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing calling hooks inside nested iteration loops in curriculum context 34?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0285",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing instantiating arrow functions with constructor invocation in curriculum context 35?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0286",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing modifying JWT signature bytes without detection in curriculum context 36?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0287",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing submitting empty student question payloads in curriculum context 37?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0288",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing reading state synchronously prior to batch commit in curriculum context 38?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0289",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing creating duplicate primary key rows under foreign key constraints in curriculum context 39?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0290",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing executing database commits during active transaction rollback in curriculum context 40?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0291",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing re-declaring let variables in identical block scope in curriculum context 41?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0292",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing reassigning constant primitive identifiers in curriculum context 42?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0293",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing mutating frozen object structures directly in curriculum context 43?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0294",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing calling hooks inside nested iteration loops in curriculum context 44?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0295",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing instantiating arrow functions with constructor invocation in curriculum context 45?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0296",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing modifying JWT signature bytes without detection in curriculum context 46?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0297",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing submitting empty student question payloads in curriculum context 47?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0298",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing reading state synchronously prior to batch commit in curriculum context 48?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0299",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing creating duplicate primary key rows under foreign key constraints in curriculum context 49?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  },
+  {
+    "id": "CROSS-NEGATION_EVADE_MECH_BD-0300",
+    "category": "LEGITIMATE_NEGATION",
+    "query": "Clarify the architectural rationale behind strictly disallowing executing database commits during active transaction rollback in curriculum context 50?",
+    "expected": "SUPPORTED",
+    "evaded_mechanism": "MECH_B_D_PREDICATE_NEGATION"
+  }
+]

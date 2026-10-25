@@ -1,0 +1,70 @@
+{
+  "experiment": "EXP-0040",
+  "sample_size": 400,
+  "concordant_count": 394,
+  "discordant_count": 6,
+  "p1_wins": [
+    {
+      "case_id": "DEV-MIX-021",
+      "category": "MIXED_COMPOUND_PREMISE",
+      "query": "Since useMemo memoizes calculations, why does it execute asynchronous API calls by default?",
+      "expected": "REFUTED",
+      "p0_prediction": "SUPPORTED",
+      "p1_prediction": "REFUTED",
+      "mechanism": "CONTEXT_EXPANSION_RESTORATION",
+      "analysis": "In P0, the retrieved child chunk only addressed calculation memoization and omitted the synchronous execution constraint, leading to a false acceptance. In P1, parent expansion restored the full section context, enabling the compound verifier to identify that API calls are not executed asynchronously by useMemo and correctly refuting the claim."
+    }
+  ],
+  "p1_losses": [
+    {
+      "case_id": "DEV-SUP-041",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?",
+      "expected": "SUPPORTED",
+      "p0_prediction": "SUPPORTED",
+      "p1_prediction": "REFUTED",
+      "mechanism": "SIBLING_ANTONYM_COLLISION",
+      "analysis": "The parent group bundled adjacent text containing 'synchronous encryption'. Tier-1 deterministic polarity matching detected 'synchronous' in evidence against 'asynchronous' in query, causing a false polarity refutation of a true supported claim."
+    },
+    {
+      "case_id": "DEV-FLS-046",
+      "category": "NOVEL_FALSE_PREMISE",
+      "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+      "expected": "REFUTED",
+      "p0_prediction": "REFUTED",
+      "p1_prediction": "SUPPORTED",
+      "mechanism": "DISTRACTOR_INTERFERENCE",
+      "analysis": "In P0, child chunk explicitly isolated POST method properties. In P1, parent expansion included sibling HTTP methods (GET, PUT, DELETE), diluting the evidence density and causing Tier-2 NLI to falsely entail idempotency."
+    },
+    {
+      "case_id": "DEV-UNK-014",
+      "category": "OUT_OF_CURRICULUM_UNKNOWN",
+      "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+      "expected": "NOT_ESTABLISHED",
+      "p0_prediction": "NOT_ESTABLISHED",
+      "p1_prediction": "REFUTED",
+      "mechanism": "SIBLING_ANTONYM_COLLISION",
+      "analysis": "Parent expansion introduced adjacent 'synchronous' keyword into retrieved context for an out-of-curriculum query, triggering Tier-1 fast path polarity inversion instead of abstaining via out-of-curriculum boundary detection."
+    },
+    {
+      "case_id": "DEV-NEG-050",
+      "category": "LEGITIMATE_NEGATION",
+      "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+      "expected": "SUPPORTED",
+      "p0_prediction": "SUPPORTED",
+      "p1_prediction": "REFUTED",
+      "mechanism": "SIBLING_ANTONYM_COLLISION",
+      "analysis": "Parent expansion included adjacent rollback description. Tier-1 detected 'commit' vs 'rollback' antonym collision on a legitimate negation query, falsely refuting the premise."
+    },
+    {
+      "case_id": "DEV-MIX-031",
+      "category": "MIXED_COMPOUND_PREMISE",
+      "query": "Since JWT contains a signature, why can the payload be modified by clients without invalidating the token?",
+      "expected": "REFUTED",
+      "p0_prediction": "REFUTED",
+      "p1_prediction": "SUPPORTED",
+      "mechanism": "EVIDENCE_DILUTION",
+      "analysis": "In P0, child chunk specifically stated auth middleware verifies token signature. In P1, the parent group included JWT header and payload structural details, causing the compound verifier to accept the sub-clause."
+    }
+  ]
+}

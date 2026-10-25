@@ -1,0 +1,301 @@
+{
+  "experiment": "EXP-0040",
+  "total_cases": 500,
+  "concordant_cases": 477,
+  "discordant_cases": 23,
+  "concordance_rate_pct": 95.4,
+  "p1_wins_count": 13,
+  "p1_losses_count": 10,
+  "p1_wins": [
+    {
+      "case_id": "EXP33-SUP-0030",
+      "category": "SUPPORTED",
+      "query": "Does async keyword cause a function to return a Promise implicitly?",
+      "expected": "SUPPORTED",
+      "p0_pred": "REFUTED",
+      "p1_pred": "SUPPORTED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+      "p1_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+    },
+    {
+      "case_id": "EXP33-SUP-0038",
+      "category": "SUPPORTED",
+      "query": "Does array destructuring unpack elements into variables based on their array index position?",
+      "expected": "SUPPORTED",
+      "p0_pred": "REFUTED",
+      "p1_pred": "SUPPORTED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+      "p1_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+    },
+    {
+      "case_id": "EXP33-FLS-0030",
+      "category": "FALSE_PREMISE",
+      "query": "Why does an async function return undefined rather than wrapping its return value in a Promise?",
+      "expected": "REFUTED",
+      "p0_pred": "SUPPORTED",
+      "p1_pred": "REFUTED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_1_DETERMINISTIC",
+      "p0_reason": "All decomposed atomic claim predicates independently verified",
+      "p1_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+    },
+    {
+      "case_id": "EXP33-FLS-0034",
+      "category": "FALSE_PREMISE",
+      "query": "Why does Array.prototype.forEach return a freshly allocated transformed array?",
+      "expected": "REFUTED",
+      "p0_pred": "SUPPORTED",
+      "p1_pred": "REFUTED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "p1_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+    },
+    {
+      "case_id": "EXP33-FLS-0037",
+      "category": "FALSE_PREMISE",
+      "query": "How does typeof null evaluate to 'null' in standard JavaScript runtime engines?",
+      "expected": "REFUTED",
+      "p0_pred": "SUPPORTED",
+      "p1_pred": "REFUTED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "p1_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+    },
+    {
+      "case_id": "EXP33-FLS-0038",
+      "category": "FALSE_PREMISE",
+      "query": "Why does strict equality === automatically coerce string operands to numbers during evaluation?",
+      "expected": "REFUTED",
+      "p0_pred": "NOT_ESTABLISHED",
+      "p1_pred": "REFUTED",
+      "p0_tier": "TIER_1_DETERMINISTIC",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+      "p1_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+    },
+    {
+      "case_id": "EXP33-FLS-0056",
+      "category": "FALSE_PREMISE",
+      "query": "How does controlled component let the native HTML DOM maintain its internal input value independently?",
+      "expected": "REFUTED",
+      "p0_pred": "SUPPORTED",
+      "p1_pred": "REFUTED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "p1_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+    },
+    {
+      "case_id": "EXP33-FLS-0072",
+      "category": "FALSE_PREMISE",
+      "query": "Why does CommonJS require() allow asynchronous conditional dynamic imports at compile time?",
+      "expected": "REFUTED",
+      "p0_pred": "NOT_ESTABLISHED",
+      "p1_pred": "REFUTED",
+      "p0_tier": "TIER_2_ABSTENTION",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+      "p1_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+    },
+    {
+      "case_id": "EXP33-FLS-0083",
+      "category": "FALSE_PREMISE",
+      "query": "How does Express response.send() require manual stringification of JavaScript objects to JSON?",
+      "expected": "REFUTED",
+      "p0_pred": "SUPPORTED",
+      "p1_pred": "REFUTED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "p1_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+    },
+    {
+      "case_id": "EXP33-FLS-0118",
+      "category": "FALSE_PREMISE",
+      "query": "How does the HAVING clause filter individual raw rows before any grouping operations occur?",
+      "expected": "REFUTED",
+      "p0_pred": "SUPPORTED",
+      "p1_pred": "REFUTED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "p1_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+    },
+    {
+      "case_id": "EXP33-AMB-0066",
+      "category": "AMBIGUOUS",
+      "query": "Is it acceptable for a REST API to support HTTP POST for search queries with large payloads?",
+      "expected": "NOT_ESTABLISHED",
+      "p0_pred": "SUPPORTED",
+      "p1_pred": "NOT_ESTABLISHED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_ABSTENTION",
+      "p0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "p1_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+    },
+    {
+      "case_id": "EXP33-ADV-0026",
+      "category": "ADVERSARIAL",
+      "query": "Why does React.memo perform shallow prop comparison by default rather than deep recursive object comparison?",
+      "expected": "SUPPORTED",
+      "p0_pred": "NOT_ESTABLISHED",
+      "p1_pred": "SUPPORTED",
+      "p0_tier": "TIER_2_ABSTENTION",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+      "p1_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+    },
+    {
+      "case_id": "EXP33-ADV-0030",
+      "category": "ADVERSARIAL",
+      "query": "Why does opacity: 0 preserve element layout geometry and clickability while visibility: hidden blocks mouse events?",
+      "expected": "SUPPORTED",
+      "p0_pred": "NOT_ESTABLISHED",
+      "p1_pred": "SUPPORTED",
+      "p0_tier": "TIER_1_DETERMINISTIC",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+      "p1_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+    }
+  ],
+  "p1_losses": [
+    {
+      "case_id": "EXP33-SUP-0019",
+      "category": "SUPPORTED",
+      "query": "Does rem unit calculate font size relative to the root html element?",
+      "expected": "SUPPORTED",
+      "p0_pred": "SUPPORTED",
+      "p1_pred": "NOT_ESTABLISHED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_ABSTENTION",
+      "p0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "p1_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+    },
+    {
+      "case_id": "EXP33-SUP-0071",
+      "category": "SUPPORTED",
+      "query": "Does fs.promises provide Promise-based asynchronous file system APIs?",
+      "expected": "SUPPORTED",
+      "p0_pred": "SUPPORTED",
+      "p1_pred": "NOT_ESTABLISHED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_ABSTENTION",
+      "p0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "p1_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+    },
+    {
+      "case_id": "EXP33-SUP-0116",
+      "category": "SUPPORTED",
+      "query": "Does a LEFT JOIN return all rows from the left table along with matched rows from the right table?",
+      "expected": "SUPPORTED",
+      "p0_pred": "SUPPORTED",
+      "p1_pred": "REFUTED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "p1_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+    },
+    {
+      "case_id": "EXP33-FLS-0027",
+      "category": "FALSE_PREMISE",
+      "query": "How does a closure destroy its outer scope variables as soon as the outer function returns?",
+      "expected": "REFUTED",
+      "p0_pred": "REFUTED",
+      "p1_pred": "SUPPORTED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+      "p1_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+    },
+    {
+      "case_id": "EXP33-FLS-0035",
+      "category": "FALSE_PREMISE",
+      "query": "How does Object.freeze deep freeze all nested inner sub-objects automatically without recursion?",
+      "expected": "REFUTED",
+      "p0_pred": "REFUTED",
+      "p1_pred": "NOT_ESTABLISHED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_ABSTENTION",
+      "p0_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+      "p1_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+    },
+    {
+      "case_id": "EXP33-FLS-0065",
+      "category": "FALSE_PREMISE",
+      "query": "How does app.use() mount routes that execute exclusively for incoming HTTP DELETE requests?",
+      "expected": "REFUTED",
+      "p0_pred": "REFUTED",
+      "p1_pred": "SUPPORTED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+      "p1_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+    },
+    {
+      "case_id": "EXP33-AMB-0024",
+      "category": "AMBIGUOUS",
+      "query": "Should API versioning be implemented in the URL path, query params, or accept headers?",
+      "expected": "NOT_ESTABLISHED",
+      "p0_pred": "NOT_ESTABLISHED",
+      "p1_pred": "REFUTED",
+      "p0_tier": "TIER_2_ABSTENTION",
+      "p1_tier": "TIER_1_DETERMINISTIC",
+      "p0_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+      "p1_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+    },
+    {
+      "case_id": "EXP33-AMB-0049",
+      "category": "AMBIGUOUS",
+      "query": "Should developers avoid using CSS !important in all possible scenarios?",
+      "expected": "NOT_ESTABLISHED",
+      "p0_pred": "NOT_ESTABLISHED",
+      "p1_pred": "SUPPORTED",
+      "p0_tier": "TIER_2_AMBIGUITY_GUARD",
+      "p1_tier": "TIER_2_SEMANTIC_NLI",
+      "p0_reason": "Ambiguity Routing Guard (Case B): Subjective or normative query lacks explicit universal rule mandate in curriculum evidence (normative_modal (should))",
+      "p1_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+    },
+    {
+      "case_id": "EXP33-OOD-0011",
+      "category": "OOD",
+      "query": "How does C# implement asynchronous programming with Task and ValueTask?",
+      "expected": "NOT_ESTABLISHED",
+      "p0_pred": "NOT_ESTABLISHED",
+      "p1_pred": "REFUTED",
+      "p0_tier": "TIER_2_ABSTENTION",
+      "p1_tier": "TIER_1_DETERMINISTIC",
+      "p0_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+      "p1_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+    },
+    {
+      "case_id": "EXP33-PAR-0018",
+      "category": "PARAPHRASE",
+      "query": "Does the triple equals operator evaluate both value and data type without doing implicit type conversions?",
+      "expected": "SUPPORTED",
+      "p0_pred": "SUPPORTED",
+      "p1_pred": "NOT_ESTABLISHED",
+      "p0_tier": "TIER_2_SEMANTIC_NLI",
+      "p1_tier": "TIER_2_ABSTENTION",
+      "p0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+      "p1_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+    }
+  ],
+  "mechanisms_summary": {
+    "p1_wins_mechanisms": {
+      "restored_complementary_counter_evidence": 8,
+      "multi_clause_context_unification": 3,
+      "unambiguous_operational_clarification": 2
+    },
+    "p1_losses_mechanisms": {
+      "sibling_antonym_keyword_collision": 4,
+      "contextual_evidence_dilution": 4,
+      "adjacent_concept_over_entailment": 2
+    }
+  }
+}

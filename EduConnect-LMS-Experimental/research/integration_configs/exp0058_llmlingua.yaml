@@ -1,0 +1,21 @@
+experiment_id: EXP-0058
+base_commit: fc7e5021a40566f040fbbdaea4d5f04e770a6b40
+description: LLMLingua Context Compression with Evidence ID Traceability
+feature_flags:
+  ENABLE_DOCLING_RS: false
+  ENABLE_PAGEINDEX: false
+  ENABLE_LLAMA_CPP: false
+  ENABLE_LLMLINGUA: true
+  ENABLE_SURYA: false
+  ENABLE_GEMMA3N: false
+  ENABLE_BITNET: false
+  ENABLE_MARKER: false
+context_processor: llmlingua
+compression_mode: LLMLingua-2
+target_rate: 0.55
+retriever: exp0040
+verifier:
+  name: A4
+  frozen: true
+device: cpu
+seed: 42

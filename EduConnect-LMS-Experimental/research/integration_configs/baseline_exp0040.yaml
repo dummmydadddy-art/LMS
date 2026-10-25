@@ -1,0 +1,56 @@
+experiment_id: EXP-0040-CONTROL
+base_commit: 63d961ee9a94d69c911f785a8b6a7d25cabd18f9
+description: 'Adopted Frozen Baseline: C2_085 Chonkie Semantic + EXP-0040 Hierarchical
+  Parent-Child + BGE-small + MiniLM + A4'
+feature_flags:
+  ENABLE_BGE_M3: false
+  ENABLE_BGE_RERANKER_M3: false
+  ENABLE_QDRANT: false
+  ENABLE_PYLATE: false
+  ENABLE_LLAMAINDEX_FUSION: false
+  ENABLE_HAYSTACK_HIERARCHY: false
+  ENABLE_CRAG: false
+  ENABLE_LIGHTRAG: false
+retriever: exp0040
+embedding_model: BAAI/bge-small-en-v1.5
+embedding_dim: 384
+reranker: cross-encoder/ms-marco-MiniLM-L-6-v2
+chunker: C2_ChonkieSemantic_085
+chunk_count: 76
+hierarchy: adopted_exp0040_small_to_big
+parent_window: 1
+max_parent_chunks: 3
+max_parent_tokens: 512
+query_strategy: single_query
+correction_strategy: none
+graph_strategy: none
+fusion_formula: 0.50 * dense_norm + 0.50 * platt_prob
+dense_norm_bounds:
+- 0.4
+- 0.85
+platt_coefficients:
+  a: 0.6236
+  b: 3.2801
+verifier:
+  name: A4
+  file: backend/rag_ambiguity_guard_verifier.php
+  frozen: true
+  prompt: P4_neutral
+  thresholds:
+    entailment: 0.85
+    contradiction: 0.8
+dataset:
+  dev: EXP-0025-DEVELOPMENT-DATASET.json
+  blind: EXP-0033-BLIND-DATASET.json
+device: auto
+seed: 42
+software_versions:
+  python: '3.12'
+  torch: 2.11.0
+  transformers: 5.3.0
+  sentence_transformers: 5.3.0
+model_revisions:
+  bge_small: BAAI/bge-small-en-v1.5
+  minilm_reranker: cross-encoder/ms-marco-MiniLM-L-6-v2
+blind_evaluation:
+  enabled: false

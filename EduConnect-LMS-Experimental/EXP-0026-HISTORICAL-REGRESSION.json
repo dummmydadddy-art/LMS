@@ -1,0 +1,51 @@
+{
+    "experiment_tag": "EXP-0026-HISTORICAL-REGRESSION",
+    "timestamp": "2026-09-13T07:35:21Z",
+    "evaluation_scope": "Historical EXP-0023 2,000-Case Blind Test Suite",
+    "elapsed_seconds": 79.6,
+    "summary_verdict": "HISTORICAL_REGRESSION_FAILED",
+    "reproduced_metrics": {
+        "total_cases": 2000,
+        "overall_accuracy": "60.75%",
+        "false_acceptance_rate_far": "27.17%",
+        "refutation_recall": "37%",
+        "false_refutation_rate_frr": "20%",
+        "unknown_recall": "89.5%",
+        "supported_recall": "72%",
+        "mixed_refutation_rate": "30%"
+    },
+    "comparative_matrix": {
+        "novel_false_premise_far": {
+            "exp0021_baseline": "84.00%",
+            "exp0024_candidate": "26.67%",
+            "exp0025_champion": "9.50%",
+            "exp0026_reproduced": "27.17%",
+            "gate_target": "<= 15.00%",
+            "passed": false
+        },
+        "false_premise_refutation_recall": {
+            "exp0021_baseline": "16.00%",
+            "exp0024_candidate": "31.50%",
+            "exp0025_champion": "84.67%",
+            "exp0026_reproduced": "37%",
+            "gate_target": ">= 80.00%",
+            "passed": false
+        },
+        "legitimate_negation_frr": {
+            "exp0021_baseline": "22.50%",
+            "exp0024_candidate": "20.00%",
+            "exp0025_champion": "0.00%",
+            "exp0026_reproduced": "20%",
+            "gate_target": "<= 5.00%",
+            "passed": false
+        },
+        "unknown_claim_recall": {
+            "exp0021_baseline": "96.20%",
+            "exp0024_candidate": "100.00%",
+            "exp0025_champion": "100.00%",
+            "exp0026_reproduced": "89.5%",
+            "gate_target": ">= 95.00%",
+            "passed": false
+        }
+    }
+}

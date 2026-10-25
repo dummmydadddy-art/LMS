@@ -1,0 +1,73 @@
+{
+    "experiment": "EXP-0028",
+    "experiment_title": "EXP-0028: Next-Generation Semantic NLI Premise Verifier",
+    "created_at": "2026-09-15T16:57:39+00:00",
+    "branch": "exp-0028",
+    "base_commit": "e40be39c80e5db488ac9c26c274d1e5a983fadfa",
+    "champion_mode": "B5",
+    "champion_status": "CHAMPION",
+    "decision_gate": "CHAMPION",
+    "verifier_file": "backend\/rag_premise_verifier.php",
+    "verifier_sha256": "BD800F2EAA3E10398E4ABD328E6B699B7621E83BC2AE42682CF9192C965543AA",
+    "model": {
+        "name": "llama3.2:latest",
+        "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+        "family": "llama",
+        "parameters": "3.2B",
+        "quantization": "Q4_K_M",
+        "endpoint": "http:\/\/127.0.0.1:11434\/api\/generate",
+        "inference_settings": {
+            "temperature": 0,
+            "num_predict": 25,
+            "num_thread": 8,
+            "keep_alive": -1,
+            "format": "json"
+        }
+    },
+    "datasets": {
+        "EXP-0028-FAILURE-DATASET.json": {
+            "cases": 600,
+            "sha256": "1F05411DB9101F08D450D7115DF420D6AB2876D4D58003CD2F8A7DFA18DAF92B",
+            "categories": {
+                "SEMANTIC_CONTRADICTION": 200,
+                "POLARITY_NEGATION": 150,
+                "PARAPHRASE": 100,
+                "INSUFFICIENT_EVIDENCE_NEUTRAL": 100,
+                "FALSE_REFUTATION_TRAP": 50
+            }
+        },
+        "EXP-0027-LEAVEOUT-DATASET.json": {
+            "cases": 300,
+            "sha256": "7CEDCEFCA1FA7F95B4954A93EEB428B2DA2D93C24EA374CD4DE6151120C0F54A"
+        },
+        "EXP-0027-CROSS-DOMAIN-DATASET.json": {
+            "cases": 200,
+            "sha256": "55DDFC52D1FA557CBF4E42D3788938E7151BFEC1214B4D3142511228C1437238"
+        },
+        "EXP-0027-OOD-DATASET.json": {
+            "cases": 200,
+            "sha256": "9DA525333226F652EDA737E65FA9D11A6E68727536F77646F9BFAE65FADECD48"
+        },
+        "EXP-0027-PARAPHRASE-DATASET.json": {
+            "cases": 300,
+            "sha256": "8BEE0785E60E40340961EE88F499DA519776539E77701D36F442F4AAA9E59F63"
+        }
+    },
+    "statistical_summary": {
+        "generalization_pool_1000": {
+            "A5_accuracy": 57.3,
+            "B5_accuracy": 69.5,
+            "delta_pp": 12.2,
+            "mcnemar_chi2": 61.004,
+            "mcnemar_p_value": 0.001,
+            "mcnemar_significant": true
+        },
+        "failure_600": {
+            "A5_accuracy": 49.17,
+            "B5_accuracy": 55.67,
+            "delta_pp": 6.5,
+            "mcnemar_p_value": 0.01,
+            "mcnemar_significant": true
+        }
+    }
+}

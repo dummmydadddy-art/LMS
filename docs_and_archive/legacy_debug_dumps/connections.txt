@@ -1,0 +1,360 @@
+﻿{
+    "Normalize Incoming Message":  {
+                                       "main":  [
+                                                    [
+                                                        {
+                                                            "node":  "Has Valid Message?",
+                                                            "type":  "main",
+                                                            "index":  0
+                                                        }
+                                                    ]
+                                                ]
+                                   },
+    "Has Valid Message?":  {
+                               "main":  [
+                                            [
+                                                {
+                                                    "node":  "Lookup Student in LMS",
+                                                    "type":  "main",
+                                                    "index":  0
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "node":  "Ignore Non-Message Event",
+                                                    "type":  "main",
+                                                    "index":  0
+                                                }
+                                            ]
+                                        ]
+                           },
+    "Lookup Student in LMS":  {
+                                  "main":  [
+                                               [
+                                                   {
+                                                       "node":  "Build Session Context",
+                                                       "type":  "main",
+                                                       "index":  0
+                                                   }
+                                               ]
+                                           ]
+                              },
+    "Build Session Context":  {
+                                  "main":  [
+                                               [
+                                                   {
+                                                       "node":  "Token State Loader",
+                                                       "type":  "main",
+                                                       "index":  0
+                                                   }
+                                               ]
+                                           ]
+                              },
+    "Token State Loader":  {
+                               "main":  [
+                                            [
+                                                {
+                                                    "node":  "Tokens Exhausted?",
+                                                    "type":  "main",
+                                                    "index":  0
+                                                }
+                                            ]
+                                        ]
+                           },
+    "Tokens Exhausted?":  {
+                              "main":  [
+                                           [
+                                               {
+                                                   "node":  "Fail-Safe Recovery",
+                                                   "type":  "main",
+                                                   "index":  0
+                                               }
+                                           ],
+                                           [
+                                               {
+                                                   "node":  "Token Budget Check",
+                                                   "type":  "main",
+                                                   "index":  0
+                                               }
+                                           ]
+                                       ]
+                          },
+    "Token Budget Check":  {
+                               "main":  [
+                                            [
+                                                {
+                                                    "node":  "Low Token Warning?",
+                                                    "type":  "main",
+                                                    "index":  0
+                                                }
+                                            ]
+                                        ]
+                           },
+    "Low Token Warning?":  {
+                               "main":  [
+                                            [
+                                                {
+                                                    "node":  "Save Checkpoint",
+                                                    "type":  "main",
+                                                    "index":  0
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "node":  "Orchestrator Agent",
+                                                    "type":  "main",
+                                                    "index":  0
+                                                }
+                                            ]
+                                        ]
+                           },
+    "Save Checkpoint":  {
+                            "main":  [
+                                         [
+                                             {
+                                                 "node":  "Orchestrator Agent",
+                                                 "type":  "main",
+                                                 "index":  0
+                                             }
+                                         ]
+                                     ]
+                        },
+    "Fail-Safe Recovery":  {
+                               "main":  [
+                                            [
+                                                {
+                                                    "node":  "Format Reply for WhatsApp",
+                                                    "type":  "main",
+                                                    "index":  0
+                                                }
+                                            ]
+                                        ]
+                           },
+    "Orchestrator Agent":  {
+                               "main":  [
+                                            [
+                                                {
+                                                    "node":  "Format Reply for WhatsApp",
+                                                    "type":  "main",
+                                                    "index":  0
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "node":  "Fallback Apology Message",
+                                                    "type":  "main",
+                                                    "index":  0
+                                                }
+                                            ]
+                                        ]
+                           },
+    "Fallback Apology Message":  {
+                                     "main":  [
+                                                  [
+                                                      {
+                                                          "node":  "Format Reply for WhatsApp",
+                                                          "type":  "main",
+                                                          "index":  0
+                                                      }
+                                                  ]
+                                              ]
+                                 },
+    "Format Reply for WhatsApp":  {
+                                      "main":  [
+                                                   [
+                                                       {
+                                                           "node":  "Send a text message",
+                                                           "type":  "main",
+                                                           "index":  0
+                                                       }
+                                                   ]
+                                               ]
+                                  },
+    "Conversation Memory":  {
+                                "ai_memory":  [
+                                                  [
+                                                      {
+                                                          "node":  "Orchestrator Agent",
+                                                          "type":  "ai_memory",
+                                                          "index":  0
+                                                      }
+                                                  ]
+                                              ]
+                            },
+    "Attendance Agent":  {
+                             "ai_tool":  [
+                                             [
+                                                 {
+                                                     "node":  "Orchestrator Agent",
+                                                     "type":  "ai_tool",
+                                                     "index":  0
+                                                 }
+                                             ]
+                                         ]
+                         },
+    "Fees Agent":  {
+                       "ai_tool":  [
+                                       [
+                                           {
+                                               "node":  "Orchestrator Agent",
+                                               "type":  "ai_tool",
+                                               "index":  0
+                                           }
+                                       ]
+                                   ]
+                   },
+    "Quiz Generator Agent":  {
+                                 "ai_tool":  [
+                                                 [
+                                                     {
+                                                         "node":  "Orchestrator Agent",
+                                                         "type":  "ai_tool",
+                                                         "index":  0
+                                                     }
+                                                 ]
+                                             ]
+                             },
+    "Student Support Agent":  {
+                                  "ai_tool":  [
+                                                  [
+                                                      {
+                                                          "node":  "Orchestrator Agent",
+                                                          "type":  "ai_tool",
+                                                          "index":  0
+                                                      }
+                                                  ]
+                                              ]
+                              },
+    "Get Attendance Records":  {
+                                   "ai_tool":  [
+                                                   [
+                                                       {
+                                                           "node":  "Attendance Agent",
+                                                           "type":  "ai_tool",
+                                                           "index":  0
+                                                       }
+                                                   ]
+                                               ]
+                               },
+    "Mark Attendance":  {
+                            "ai_tool":  [
+                                            [
+                                                {
+                                                    "node":  "Attendance Agent",
+                                                    "type":  "ai_tool",
+                                                    "index":  0
+                                                }
+                                            ]
+                                        ]
+                        },
+    "Get Fee Status":  {
+                           "ai_tool":  [
+                                           [
+                                               {
+                                                   "node":  "Fees Agent",
+                                                   "type":  "ai_tool",
+                                                   "index":  0
+                                               }
+                                           ]
+                                       ]
+                       },
+    "Generate Payment Link":  {
+                                  "ai_tool":  [
+                                                  [
+                                                      {
+                                                          "node":  "Fees Agent",
+                                                          "type":  "ai_tool",
+                                                          "index":  0
+                                                      }
+                                                  ]
+                                              ]
+                              },
+    "Fetch Course Content":  {
+                                 "ai_tool":  [
+                                                 [
+                                                     {
+                                                         "node":  "Quiz Generator Agent",
+                                                         "type":  "ai_tool",
+                                                         "index":  0
+                                                     }
+                                                 ]
+                                             ]
+                             },
+    "Create Support Ticket":  {
+                                  "ai_tool":  [
+                                                  [
+                                                      {
+                                                          "node":  "Student Support Agent",
+                                                          "type":  "ai_tool",
+                                                          "index":  0
+                                                      }
+                                                  ]
+                                              ]
+                              },
+    "Ollama Chat Model1":  {
+                               "ai_languageModel":  [
+                                                        [
+                                                            {
+                                                                "node":  "Orchestrator Agent",
+                                                                "type":  "ai_languageModel",
+                                                                "index":  0
+                                                            }
+                                                        ]
+                                                    ]
+                           },
+    "Ollama Chat Model2":  {
+                               "ai_languageModel":  [
+                                                        [
+                                                            {
+                                                                "node":  "Fees Agent",
+                                                                "type":  "ai_languageModel",
+                                                                "index":  0
+                                                            }
+                                                        ]
+                                                    ]
+                           },
+    "OpenRouter Chat Model":  {
+                                  "ai_languageModel":  [
+                                                           [
+                                                               {
+                                                                   "node":  "Attendance Agent",
+                                                                   "type":  "ai_languageModel",
+                                                                   "index":  0
+                                                               }
+                                                           ]
+                                                       ]
+                              },
+    "OpenRouter Chat Model1":  {
+                                   "ai_languageModel":  [
+                                                            [
+                                                                {
+                                                                    "node":  "Quiz Generator Agent",
+                                                                    "type":  "ai_languageModel",
+                                                                    "index":  0
+                                                                }
+                                                            ]
+                                                        ]
+                               },
+    "OpenRouter Chat Model2":  {
+                                   "ai_languageModel":  [
+                                                            [
+                                                                {
+                                                                    "node":  "Student Support Agent",
+                                                                    "type":  "ai_languageModel",
+                                                                    "index":  0
+                                                                }
+                                                            ]
+                                                        ]
+                               },
+    "Telegram Trigger":  {
+                             "main":  [
+                                          [
+                                              {
+                                                  "node":  "Normalize Incoming Message",
+                                                  "type":  "main",
+                                                  "index":  0
+                                              }
+                                          ]
+                                      ]
+                         }
+}

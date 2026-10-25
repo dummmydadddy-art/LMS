@@ -1,0 +1,559 @@
+{
+  "experiment_id": "EXP-0071",
+  "dataset": "EXP-0025-DEVELOPMENT-DATASET.json",
+  "n_total": 400,
+  "conditions": {
+    "C0": {
+      "condition": "C0",
+      "total": 400,
+      "correct": 368,
+      "accuracy": 92.0,
+      "macro_f1": 92.67,
+      "supported_recall": 87.33,
+      "refutation_recall": 92.67,
+      "not_established_recall": 98.0,
+      "supported_precision": 92.91,
+      "refutation_precision": 87.42,
+      "not_established_precision": 98.0,
+      "f1_supported": 90.03,
+      "f1_refuted": 89.97,
+      "f1_not_established": 98.0,
+      "far": 6.0,
+      "frr": 12.67,
+      "false_abstentions": 0,
+      "false_premise_accuracy": 92.67,
+      "ood_recall": 98.0,
+      "expensive_llm_calls": 206,
+      "llm_call_reduction_pct": 0.0,
+      "average_latency_ms": 1196.42,
+      "median_latency_ms": 1700.61,
+      "p95_latency_ms": 3500.31,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 131,
+          "REFUTED": 19,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 9,
+          "REFUTED": 139,
+          "NOT_ESTABLISHED": 2
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "strata": {
+        "S1_antonym_assisted": {
+          "n": 166,
+          "correct": 155,
+          "accuracy": 93.37
+        },
+        "S2_non_antonym": {
+          "n": 234,
+          "correct": 213,
+          "accuracy": 91.03
+        },
+        "S3_high_overlap_support": {
+          "n": 100,
+          "correct": 85,
+          "accuracy": 85.0
+        },
+        "S4_low_overlap_paraphrase": {
+          "n": 50,
+          "correct": 46,
+          "accuracy": 92.0
+        },
+        "S5_normative_universal": {
+          "n": 81,
+          "correct": 74,
+          "accuracy": 91.36
+        },
+        "S6_compound_multi_clause": {
+          "n": 75,
+          "correct": 68,
+          "accuracy": 90.67
+        },
+        "S7_ood": {
+          "n": 100,
+          "correct": 98,
+          "accuracy": 98.0
+        }
+      }
+    },
+    "C1": {
+      "condition": "C1",
+      "total": 400,
+      "correct": 331,
+      "accuracy": 82.75,
+      "macro_f1": 82.34,
+      "supported_recall": 65.33,
+      "refutation_recall": 89.33,
+      "not_established_recall": 99.0,
+      "supported_precision": 98.0,
+      "refutation_precision": 87.58,
+      "not_established_precision": 67.35,
+      "f1_supported": 78.4,
+      "f1_refuted": 88.45,
+      "f1_not_established": 80.16,
+      "far": 1.33,
+      "frr": 12.0,
+      "false_abstentions": 34,
+      "false_premise_accuracy": 89.33,
+      "ood_recall": 99.0,
+      "expensive_llm_calls": 0,
+      "llm_call_reduction_pct": 100.0,
+      "average_latency_ms": 42.44,
+      "median_latency_ms": 36.16,
+      "p95_latency_ms": 105.76,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 98,
+          "REFUTED": 18,
+          "NOT_ESTABLISHED": 34
+        },
+        "REFUTED": {
+          "SUPPORTED": 2,
+          "REFUTED": 134,
+          "NOT_ESTABLISHED": 14
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 0,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 99
+        }
+      },
+      "strata": {
+        "S1_antonym_assisted": {
+          "n": 166,
+          "correct": 139,
+          "accuracy": 83.73
+        },
+        "S2_non_antonym": {
+          "n": 234,
+          "correct": 192,
+          "accuracy": 82.05
+        },
+        "S3_high_overlap_support": {
+          "n": 100,
+          "correct": 61,
+          "accuracy": 61.0
+        },
+        "S4_low_overlap_paraphrase": {
+          "n": 50,
+          "correct": 37,
+          "accuracy": 74.0
+        },
+        "S5_normative_universal": {
+          "n": 81,
+          "correct": 65,
+          "accuracy": 80.25
+        },
+        "S6_compound_multi_clause": {
+          "n": 75,
+          "correct": 65,
+          "accuracy": 86.67
+        },
+        "S7_ood": {
+          "n": 100,
+          "correct": 99,
+          "accuracy": 99.0
+        }
+      }
+    },
+    "C2": {
+      "condition": "C2",
+      "total": 400,
+      "correct": 340,
+      "accuracy": 85.0,
+      "macro_f1": 85.05,
+      "supported_recall": 68.67,
+      "refutation_recall": 92.67,
+      "not_established_recall": 98.0,
+      "supported_precision": 95.37,
+      "refutation_precision": 81.29,
+      "not_established_precision": 80.99,
+      "f1_supported": 79.85,
+      "f1_refuted": 86.61,
+      "f1_not_established": 88.69,
+      "far": 2.67,
+      "frr": 20.67,
+      "false_abstentions": 16,
+      "false_premise_accuracy": 92.67,
+      "ood_recall": 98.0,
+      "expensive_llm_calls": 40,
+      "llm_call_reduction_pct": 80.58,
+      "average_latency_ms": 237.89,
+      "median_latency_ms": 39.81,
+      "p95_latency_ms": 1861.84,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 103,
+          "REFUTED": 31,
+          "NOT_ESTABLISHED": 16
+        },
+        "REFUTED": {
+          "SUPPORTED": 4,
+          "REFUTED": 139,
+          "NOT_ESTABLISHED": 7
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "strata": {
+        "S1_antonym_assisted": {
+          "n": 166,
+          "correct": 145,
+          "accuracy": 87.35
+        },
+        "S2_non_antonym": {
+          "n": 234,
+          "correct": 195,
+          "accuracy": 83.33
+        },
+        "S3_high_overlap_support": {
+          "n": 100,
+          "correct": 64,
+          "accuracy": 64.0
+        },
+        "S4_low_overlap_paraphrase": {
+          "n": 50,
+          "correct": 39,
+          "accuracy": 78.0
+        },
+        "S5_normative_universal": {
+          "n": 81,
+          "correct": 69,
+          "accuracy": 85.19
+        },
+        "S6_compound_multi_clause": {
+          "n": 75,
+          "correct": 66,
+          "accuracy": 88.0
+        },
+        "S7_ood": {
+          "n": 100,
+          "correct": 98,
+          "accuracy": 98.0
+        }
+      }
+    },
+    "C3": {
+      "condition": "C3",
+      "total": 400,
+      "correct": 364,
+      "accuracy": 91.0,
+      "macro_f1": 91.77,
+      "supported_recall": 84.67,
+      "refutation_recall": 92.67,
+      "not_established_recall": 98.0,
+      "supported_precision": 92.7,
+      "refutation_precision": 85.28,
+      "not_established_precision": 98.0,
+      "f1_supported": 88.5,
+      "f1_refuted": 88.82,
+      "f1_not_established": 98.0,
+      "far": 6.0,
+      "frr": 15.33,
+      "false_abstentions": 0,
+      "false_premise_accuracy": 92.67,
+      "ood_recall": 98.0,
+      "expensive_llm_calls": 76,
+      "llm_call_reduction_pct": 63.11,
+      "average_latency_ms": 393.27,
+      "median_latency_ms": 48.73,
+      "p95_latency_ms": 1999.77,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 127,
+          "REFUTED": 23,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 9,
+          "REFUTED": 139,
+          "NOT_ESTABLISHED": 2
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "strata": {
+        "S1_antonym_assisted": {
+          "n": 166,
+          "correct": 156,
+          "accuracy": 93.98
+        },
+        "S2_non_antonym": {
+          "n": 234,
+          "correct": 208,
+          "accuracy": 88.89
+        },
+        "S3_high_overlap_support": {
+          "n": 100,
+          "correct": 81,
+          "accuracy": 81.0
+        },
+        "S4_low_overlap_paraphrase": {
+          "n": 50,
+          "correct": 46,
+          "accuracy": 92.0
+        },
+        "S5_normative_universal": {
+          "n": 81,
+          "correct": 73,
+          "accuracy": 90.12
+        },
+        "S6_compound_multi_clause": {
+          "n": 75,
+          "correct": 68,
+          "accuracy": 90.67
+        },
+        "S7_ood": {
+          "n": 100,
+          "correct": 98,
+          "accuracy": 98.0
+        }
+      }
+    },
+    "C4": {
+      "condition": "C4",
+      "total": 400,
+      "correct": 313,
+      "accuracy": 78.25,
+      "macro_f1": 78.02,
+      "supported_recall": 61.33,
+      "refutation_recall": 81.33,
+      "not_established_recall": 99.0,
+      "supported_precision": 98.92,
+      "refutation_precision": 89.05,
+      "not_established_precision": 58.24,
+      "f1_supported": 75.72,
+      "f1_refuted": 85.02,
+      "f1_not_established": 73.34,
+      "far": 0.67,
+      "frr": 9.33,
+      "false_abstentions": 44,
+      "false_premise_accuracy": 81.33,
+      "ood_recall": 99.0,
+      "expensive_llm_calls": 1,
+      "llm_call_reduction_pct": 99.51,
+      "average_latency_ms": 47.38,
+      "median_latency_ms": 42.37,
+      "p95_latency_ms": 159.2,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 92,
+          "REFUTED": 14,
+          "NOT_ESTABLISHED": 44
+        },
+        "REFUTED": {
+          "SUPPORTED": 1,
+          "REFUTED": 122,
+          "NOT_ESTABLISHED": 27
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 0,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 99
+        }
+      },
+      "strata": {
+        "S1_antonym_assisted": {
+          "n": 166,
+          "correct": 128,
+          "accuracy": 77.11
+        },
+        "S2_non_antonym": {
+          "n": 234,
+          "correct": 185,
+          "accuracy": 79.06
+        },
+        "S3_high_overlap_support": {
+          "n": 100,
+          "correct": 56,
+          "accuracy": 56.0
+        },
+        "S4_low_overlap_paraphrase": {
+          "n": 50,
+          "correct": 36,
+          "accuracy": 72.0
+        },
+        "S5_normative_universal": {
+          "n": 81,
+          "correct": 55,
+          "accuracy": 67.9
+        },
+        "S6_compound_multi_clause": {
+          "n": 75,
+          "correct": 58,
+          "accuracy": 77.33
+        },
+        "S7_ood": {
+          "n": 100,
+          "correct": 99,
+          "accuracy": 99.0
+        }
+      }
+    },
+    "C5": {
+      "condition": "C5",
+      "total": 400,
+      "correct": 364,
+      "accuracy": 91.0,
+      "macro_f1": 91.65,
+      "supported_recall": 85.33,
+      "refutation_recall": 92.0,
+      "not_established_recall": 98.0,
+      "supported_precision": 92.75,
+      "refutation_precision": 86.25,
+      "not_established_precision": 96.08,
+      "f1_supported": 88.89,
+      "f1_refuted": 89.03,
+      "f1_not_established": 97.03,
+      "far": 6.0,
+      "frr": 14.0,
+      "false_abstentions": 1,
+      "false_premise_accuracy": 92.0,
+      "ood_recall": 98.0,
+      "expensive_llm_calls": 80,
+      "llm_call_reduction_pct": 61.17,
+      "average_latency_ms": 408.81,
+      "median_latency_ms": 48.08,
+      "p95_latency_ms": 1996.66,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 128,
+          "REFUTED": 21,
+          "NOT_ESTABLISHED": 1
+        },
+        "REFUTED": {
+          "SUPPORTED": 9,
+          "REFUTED": 138,
+          "NOT_ESTABLISHED": 3
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "strata": {
+        "S1_antonym_assisted": {
+          "n": 166,
+          "correct": 156,
+          "accuracy": 93.98
+        },
+        "S2_non_antonym": {
+          "n": 234,
+          "correct": 208,
+          "accuracy": 88.89
+        },
+        "S3_high_overlap_support": {
+          "n": 100,
+          "correct": 82,
+          "accuracy": 82.0
+        },
+        "S4_low_overlap_paraphrase": {
+          "n": 50,
+          "correct": 46,
+          "accuracy": 92.0
+        },
+        "S5_normative_universal": {
+          "n": 81,
+          "correct": 73,
+          "accuracy": 90.12
+        },
+        "S6_compound_multi_clause": {
+          "n": 75,
+          "correct": 68,
+          "accuracy": 90.67
+        },
+        "S7_ood": {
+          "n": 100,
+          "correct": 98,
+          "accuracy": 98.0
+        }
+      }
+    }
+  },
+  "mcnemar_paired_tests": {
+    "C1_vs_C0": {
+      "n01_candidate_only_correct": 4,
+      "n10_reference_only_correct": 41,
+      "n00_both_wrong": 28,
+      "n11_both_correct": 327,
+      "discordant_total": 45,
+      "chi2_statistic": 28.8,
+      "p_value": 0.0,
+      "paired_delta_pp": -9.25,
+      "ci_95": [
+        -12.41,
+        -6.09
+      ]
+    },
+    "C2_vs_C0": {
+      "n01_candidate_only_correct": 4,
+      "n10_reference_only_correct": 32,
+      "n00_both_wrong": 28,
+      "n11_both_correct": 336,
+      "discordant_total": 36,
+      "chi2_statistic": 20.25,
+      "p_value": 0.0,
+      "paired_delta_pp": -7.0,
+      "ci_95": [
+        -9.86,
+        -4.14
+      ]
+    },
+    "C3_vs_C0": {
+      "n01_candidate_only_correct": 4,
+      "n10_reference_only_correct": 8,
+      "n00_both_wrong": 28,
+      "n11_both_correct": 360,
+      "discordant_total": 12,
+      "chi2_statistic": 0.75,
+      "p_value": 0.3877,
+      "paired_delta_pp": -1.0,
+      "ci_95": [
+        -2.69,
+        0.69
+      ]
+    },
+    "C4_vs_C0": {
+      "n01_candidate_only_correct": 3,
+      "n10_reference_only_correct": 58,
+      "n00_both_wrong": 29,
+      "n11_both_correct": 310,
+      "discordant_total": 61,
+      "chi2_statistic": 47.8033,
+      "p_value": 0.0,
+      "paired_delta_pp": -13.75,
+      "ci_95": [
+        -17.33,
+        -10.17
+      ]
+    },
+    "C5_vs_C0": {
+      "n01_candidate_only_correct": 4,
+      "n10_reference_only_correct": 8,
+      "n00_both_wrong": 28,
+      "n11_both_correct": 360,
+      "discordant_total": 12,
+      "chi2_statistic": 0.75,
+      "p_value": 0.3877,
+      "paired_delta_pp": -1.0,
+      "ci_95": [
+        -2.69,
+        0.69
+      ]
+    }
+  }
+}
