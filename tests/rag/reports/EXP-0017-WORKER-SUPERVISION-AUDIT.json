@@ -1,0 +1,10 @@
+{
+  "test": "worker_supervision_and_stream_cleanup",
+  "port_distribution": {
+    "8001": 12
+  },
+  "vulnerabilities_confirmed": {
+    "one_shot_restart_bug": true,
+    "stream_destroy_counter_leak": true
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "experiment_id": "EXP-0065",
+  "title": "Verifier/NLI Capacity Isolation Benchmark",
+  "date": "2026-09-26",
+  "ollama_version": "0.34.2",
+  "hardware": {
+    "cpu": "12th Gen Intel(R) Core(TM) i5-12450H (8 Cores, 12 Threads)",
+    "system_ram_gb": 16.0,
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "vram_total_mib": 4096,
+    "gpu_driver": "610.88",
+    "cuda_version": "13.3"
+  },
+  "dataset_hashes": {
+    "development_dataset": {
+      "file": "EXP-0025-DEVELOPMENT-DATASET.json",
+      "sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+      "n": 400
+    },
+    "blind_dataset": {
+      "file": "EXP-0033-BLIND-DATASET.json",
+      "sha256": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+      "status": "SEALED_UNOPENED",
+      "n": 500
+    }
+  },
+  "verifier": {
+    "implementation": "backend/rag_ambiguity_guard_verifier.php",
+    "sha256": "31c7c31ef6301156bb0318cb35ba5879e5ca3c25acdd6f705cd2f6c0e3b0fc2e",
+    "status": "FROZEN_A4"
+  },
+  "prompt_mode": "P4 / P4_neutral (Frozen A4)",
+  "models": {
+    "C0": {
+      "role": "Frozen Control",
+      "tag": "llama3.2:latest",
+      "digest": "a80c4f17acd5",
+      "family": "llama",
+      "parameter_size": "3.2B",
+      "quantization": "Q4_K_M",
+      "runtime_configuration": {
+        "num_ctx": 2048,
+        "temperature": 0.0,
+        "num_predict": 25,
+        "format": "json",
+        "residency": "GPU_RESIDENT (100% in VRAM, ~2.0 GB)"
+      }
+    },
+    "C1": {
+      "role": "Intermediate Candidate",
+      "tag": "qwen3:4b",
+      "digest": "359d7dd4bcda",
+      "family": "qwen3",
+      "parameter_size": "4.0B",
+      "quantization": "Q4_K_M",
+      "runtime_configuration": {
+        "num_ctx": 2048,
+        "temperature": 0.0,
+        "num_predict": 25,
+        "format": "json",
+        "template_mode": "DIRECT_ASSISTANT_NO_THINK",
+        "residency": "GPU_RESIDENT (100% in VRAM, ~2.5 GB)"
+      }
+    },
+    "C2": {
+      "role": "Larger Candidate",
+      "tag": "qwen3:8b",
+      "digest": "c4e987c7865397ddbc807f6c4627935fbf143679788893a65a2aab8c2be6206f",
+      "family": "qwen3",
+      "parameter_size": "8.2B",
+      "quantization": "Q4_K_M",
+      "runtime_configuration": {
+        "num_ctx": 2048,
+        "temperature": 0.0,
+        "num_predict": 25,
+        "format": "json",
+        "template_mode": "DIRECT_ASSISTANT_NO_THINK",
+        "residency": "PARTIALLY_OFFLOADED (2.33 GB VRAM + 3.32 GB Host RAM)"
+      }
+    }
+  }
+}

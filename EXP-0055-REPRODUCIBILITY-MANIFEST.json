@@ -1,0 +1,47 @@
+{
+  "experiment_id": "EXP-0055",
+  "title": "Low-Memory Windowed & Streaming Document Ingestion with Python Docling",
+  "operational_decision": "ADOPT",
+  "scientific_claim": "CONDITIONAL",
+  "timestamp_iso": "2026-09-17T21:07:00+05:30",
+  "hardware": {
+    "cpu": "12th Gen Intel(R) Core(TM) i5-12450H (8 cores / 12 threads)",
+    "system_ram_gb": 16.0,
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpu_vram_gb": 4.0,
+    "os": "Microsoft Windows 11 Home (x86_64)"
+  },
+  "runtimes": {
+    "python": "3.12",
+    "php": "8.3.32",
+    "docling": "2.128.0",
+    "docling_core": "2.97.0",
+    "docling_ibm_models": "4.0.2",
+    "docling_parse": "7.20.0",
+    "pymupdf": "1.25.3",
+    "psutil": "6.1.1",
+    "transformers": "4.49.0",
+    "torch": "2.6.0+cpu"
+  },
+  "dataset_hashes": {
+    "EXP-0025-DEVELOPMENT-DATASET.json": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+    "EXP-0033-BLIND-DATASET.json": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+    "EXP-0040-BLIND-PREDICTIONS.json": "56003df48c432baca1f042be75c12bf652f2a298a875727d7b694421bfd5ebd1",
+    "EXP-0055-BLIND-PREDICTIONS.json": "fe2c71a87738f242a9e480b2e8329c39dc2252d04e087a0b6236270bb719bba2",
+    "backend/rag_ambiguity_guard_verifier.php": "31c7c31ef6301156bb0318cb35ba5879e5ca3c25acdd6f705cd2f6c0e3b0fc2e"
+  },
+  "git_tracking": {
+    "base_research_head": "55aa4ac3c582f632de1946885de1b9daed892417",
+    "production_head": "176883227602671b545e061dacf228aedc3271a5",
+    "branch": "research-integration"
+  },
+  "replication_commands": [
+    "py -3.12 scratch/create_scaled_curriculum_pdfs.py",
+    "py -3.12 research/benchmarks/exp0055_document_ingestion_benchmark.py",
+    "py -3.12 scratch/exp0055_retrieval_builder.py",
+    "php scratch/run_exp0055_benchmark.php",
+    "py -3.12 -m unittest tests.research.test_wave2_document_adapters",
+    "py -3.12 -m unittest tests.research.test_real_execution.TestRealPythonDoclingInvocation",
+    "py -3.12 research/run_integration_tests.py"
+  ]
+}

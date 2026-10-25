@@ -1,0 +1,2552 @@
+{
+  "experimentId": "EXP-0020-REGRESSION",
+  "description": "Baseline Dense Vector Search",
+  "hypothesis": "Baseline nomic-embed-text dense retrieval with cosine similarity and SQLite vector table",
+  "timestamp": "2026-09-09T13:49:19.239Z",
+  "suites": {
+    "Golden (40)": [
+      {
+        "id": "gold_01",
+        "query": "What is the purpose of the <main> HTML5 semantic element and how many can exist in a document?",
+        "retrievalLatencyMs": 127,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_02",
+        "query": "Explain the four layers of the CSS Box Model from inside out.",
+        "retrievalLatencyMs": 95,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7780158492147935
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_03",
+        "query": "Why is * { box-sizing: border-box; } recommended over content-box in CSS?",
+        "retrievalLatencyMs": 115,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_04",
+        "query": "In CSS Flexbox, what is the difference between justify-content and align-items?",
+        "retrievalLatencyMs": 254,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_05",
+        "query": "What are the core child flex properties that make up the flex shorthand in CSS?",
+        "retrievalLatencyMs": 95,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.6824874185069553
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_06",
+        "query": "What is CSS Grid and how does it differ in dimensionality from Flexbox?",
+        "retrievalLatencyMs": 105,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_07",
+        "query": "What are the benefits of using HTML5 semantic elements instead of generic div tags?",
+        "retrievalLatencyMs": 111,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7780158492147935
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_08",
+        "query": "How does the gap property in CSS Flexbox simplify spacing between items?",
+        "retrievalLatencyMs": 104,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.6
+          },
+          "ndcg5": 0.9210065354434976
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_09",
+        "query": "How do var, let, and const differ in terms of scoping, hoisting, and Temporal Dead Zone?",
+        "retrievalLatencyMs": 182,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.875,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_10",
+        "query": "Can you mutate object properties or array elements declared with const in JavaScript?",
+        "retrievalLatencyMs": 96,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_11",
+        "query": "How do arrow functions handle this differently from traditional function declarations?",
+        "retrievalLatencyMs": 121,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.6
+          },
+          "ndcg5": 0.8670309984389659
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_12",
+        "query": "What happens if you invoke an arrow function using the new keyword?",
+        "retrievalLatencyMs": 106,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7155573508096272
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_13",
+        "query": "What is the difference between the spread operator and rest parameters in JavaScript ES6?",
+        "retrievalLatencyMs": 206,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 4,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.5
+          },
+          "ndcg5": 0.8660461584804816
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_14",
+        "query": "What are the three possible states of a JavaScript Promise?",
+        "retrievalLatencyMs": 72,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_15",
+        "query": "How does async/await interact with JavaScript Promises and error handling?",
+        "retrievalLatencyMs": 77,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8333333333333334,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.8660461584804816
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_16",
+        "query": "What is the Temporal Dead Zone (TDZ) in JavaScript let and const declarations?",
+        "retrievalLatencyMs": 125,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_17",
+        "query": "What are the two fundamental Rules of Hooks in React?",
+        "retrievalLatencyMs": 69,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.8078291407756325
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_18",
+        "query": "Why must state updates in useState be immutable when updating objects or arrays?",
+        "retrievalLatencyMs": 124,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_19",
+        "query": "How does the dependency array in useEffect determine when the effect runs?",
+        "retrievalLatencyMs": 79,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_20",
+        "query": "What is the purpose of the cleanup function returned by a useEffect hook?",
+        "retrievalLatencyMs": 69,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.6666666666666666,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7780158492147935
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_21",
+        "query": "What is the difference between useMemo and useCallback in React?",
+        "retrievalLatencyMs": 209,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 4,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.4,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.75
+          },
+          "ndcg5": 0.983465033848664
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_22",
+        "query": "How does useRef differ from useState in triggering component re-renders?",
+        "retrievalLatencyMs": 130,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.6
+          },
+          "ndcg5": 0.9625594291468043
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_23",
+        "query": "How do createContext and useContext work together to eliminate prop drilling?",
+        "retrievalLatencyMs": 119,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.6615818138050954
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_24",
+        "query": "What is the functional update form of useState and when should it be used?",
+        "retrievalLatencyMs": 128,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_25",
+        "query": "What is the Node.js architecture and how does the Event Loop handle asynchronous operations?",
+        "retrievalLatencyMs": 81,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.6666666666666666,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_26",
+        "query": "What are the four parameters required in Express error-handling middleware?",
+        "retrievalLatencyMs": 82,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_27",
+        "query": "What does the next() function do in an Express middleware chain?",
+        "retrievalLatencyMs": 83,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.25,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_28",
+        "query": "What are the three parts of a JSON Web Token (JWT) and how are they separated?",
+        "retrievalLatencyMs": 81,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.6275270415439392
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_29",
+        "query": "What are the key differences between HTTP 401 Unauthorized and 403 Forbidden status codes?",
+        "retrievalLatencyMs": 80,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8333333333333334,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7155573508096272
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_30",
+        "query": "What are the RESTful naming conventions for API endpoint URIs?",
+        "retrievalLatencyMs": 79,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.875,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.5693100238390901
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_31",
+        "query": "What built-in Express middleware is used to parse incoming JSON request bodies?",
+        "retrievalLatencyMs": 96,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.6666666666666666,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_32",
+        "query": "Why should CPU-intensive tasks not be executed directly on the Node.js main thread?",
+        "retrievalLatencyMs": 109,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.5,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.6
+          },
+          "ndcg5": 0.983465033848664
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_33",
+        "query": "How is a Many-to-Many relationship implemented between tables in a relational database?",
+        "retrievalLatencyMs": 102,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.6,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_34",
+        "query": "What are the requirements for a database table to satisfy First Normal Form (1NF)?",
+        "retrievalLatencyMs": 108,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_35",
+        "query": "What constitutes Second Normal Form (2NF) and how does it prevent partial dependency?",
+        "retrievalLatencyMs": 103,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_36",
+        "query": "What is Third Normal Form (3NF) and how does it eliminate transitive dependencies?",
+        "retrievalLatencyMs": 100,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_37",
+        "query": "What are the four ACID properties in database transactions and what do they guarantee?",
+        "retrievalLatencyMs": 95,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7780158492147935
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_38",
+        "query": "What is a B-tree index in PostgreSQL and what types of queries does it optimize?",
+        "retrievalLatencyMs": 98,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8333333333333334,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_39",
+        "query": "What is the trade-off or downside of having too many indexes on a database table?",
+        "retrievalLatencyMs": 104,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.6666666666666666,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.6
+          },
+          "ndcg5": 0.9210065354434976
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_40",
+        "query": "What is the purpose of a composite primary key in database junction tables?",
+        "retrievalLatencyMs": 102,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.25,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.6
+          },
+          "ndcg5": 0.983465033848664
+        },
+        "generationMetrics": null
+      }
+    ],
+    "Adversarial (20)": [
+      {
+        "id": "adv_01",
+        "query": "how dos useEfect clenaup prevent memry leeks in recat",
+        "retrievalLatencyMs": 154,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_02",
+        "query": "postgre b-tre indexx vs full table scan performence",
+        "retrievalLatencyMs": 155,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_03",
+        "query": "js const muttable propeties reassinment diference",
+        "retrievalLatencyMs": 82,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_04",
+        "query": "cs flexboks main axiss vs crss axis justfy contnt",
+        "retrievalLatencyMs": 177,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.6
+          },
+          "ndcg5": 0.9625594291468043
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_05",
+        "query": "exprss middlware 4 paramters err req res nxt syntax",
+        "retrievalLatencyMs": 87,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.9687707507974168
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_06",
+        "query": "3nf databaes normalizaton transitve dependancy",
+        "retrievalLatencyMs": 81,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_07",
+        "query": "tempral ded zon tdz referenserror in javascrip",
+        "retrievalLatencyMs": 116,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.57976282619002
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_08",
+        "query": "that box sizing hack everyone puts at the top of their css to stop padding making things huge",
+        "retrievalLatencyMs": 151,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_09",
+        "query": "how to freeze a callback in react so child components don't keep lagging and rerendering",
+        "retrievalLatencyMs": 131,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_10",
+        "query": "the secret sauce in node that lets it do disk and network stuff without freezing the main loop",
+        "retrievalLatencyMs": 118,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_11",
+        "query": "magic variable container in react that holds stuff without refreshing the screen",
+        "retrievalLatencyMs": 135,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.6666666666666666,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_12",
+        "query": "how to connect two tables when multiple things can have multiple other things",
+        "retrievalLatencyMs": 123,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.6666666666666666,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_13",
+        "query": "the dot dot dot thing in js functions that sucks all arguments into a real array",
+        "retrievalLatencyMs": 160,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7155573508096272
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_14",
+        "query": "What is the difference between middleware in Express and Hooks in React for managing state and side-effects?",
+        "retrievalLatencyMs": 156,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 4,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8333333333333334,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.25
+          },
+          "ndcg5": 0.8495111923291456
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_15",
+        "query": "Compare CSS Grid 2D layout with HTML semantic article tags for content organization",
+        "retrievalLatencyMs": 156,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7780158492147935
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_16",
+        "query": "In PostgreSQL database normalization, how does 1NF atomicity compare to JavaScript object destructuring?",
+        "retrievalLatencyMs": 102,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_17",
+        "query": "Explain JWT token authentication in Express versus React Context for user sessions",
+        "retrievalLatencyMs": 209,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7808413722733667
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_18",
+        "query": "How does the ACID Isolation property in SQL compare to JavaScript single-threaded asynchronous execution?",
+        "retrievalLatencyMs": 97,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.6824874185069553
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_19",
+        "query": "Why does invoking arrow functions with new fail, and how does this relate to object modeling in databases?",
+        "retrievalLatencyMs": 81,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.8972754076830647
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_20",
+        "query": "Difference between flex-basis in Flexbox and column width in CSS Grid",
+        "retrievalLatencyMs": 151,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7780158492147935
+        },
+        "generationMetrics": null
+      }
+    ],
+    "Unanswerable (15)": [
+      {
+        "id": "unans_01",
+        "query": "What is quantum entanglement and how does the Einstein-Podolsky-Rosen paradox describe it?",
+        "retrievalLatencyMs": 76,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_02",
+        "query": "How do you prepare authentic French Beef Bourguignon with red wine and pearl onions?",
+        "retrievalLatencyMs": 75,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_03",
+        "query": "How do you configure Kubernetes PodDisruptionBudgets and StatefulSets for MongoDB replication?",
+        "retrievalLatencyMs": 78,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_04",
+        "query": "Explain the biochemical pathway of glycolysis and Krebs cycle in cellular respiration.",
+        "retrievalLatencyMs": 80,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_05",
+        "query": "How does Python Django ORM implement select_related vs prefetch_related for foreign keys?",
+        "retrievalLatencyMs": 187,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_06",
+        "query": "What are the rules of Texas Hold'em poker and how does the pot-odds ratio work?",
+        "retrievalLatencyMs": 76,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_07",
+        "query": "What is the aerodynamic difference between a cambered airfoil and a symmetrical airfoil?",
+        "retrievalLatencyMs": 148,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 4,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_08",
+        "query": "How do you tune the carburetor on a 1968 Chevrolet Camaro V8 engine?",
+        "retrievalLatencyMs": 78,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_09",
+        "query": "What were the geopolitical consequences of the Treaty of Westphalia in 1648?",
+        "retrievalLatencyMs": 76,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_10",
+        "query": "How do you calculate the Black-Scholes formula for pricing European call options in financial derivatives?",
+        "retrievalLatencyMs": 77,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_11",
+        "query": "What is the CRISPR-Cas9 mechanism for targeted gene editing in mammalian zygotes?",
+        "retrievalLatencyMs": 74,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_12",
+        "query": "How do you write smart contracts in Solidity using the ERC-721 non-fungible token standard?",
+        "retrievalLatencyMs": 75,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_13",
+        "query": "What is the difference between supervised gradient boosting and unsupervised t-SNE dimensionality reduction?",
+        "retrievalLatencyMs": 146,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 4,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_14",
+        "query": "How do you tune guitar strings to Open D tuning (D-A-D-F#-A-D)?",
+        "retrievalLatencyMs": 85,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "unans_15",
+        "query": "What are the dental requirements for tooth extraction under general anesthesia?",
+        "retrievalLatencyMs": 82,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": null
+      }
+    ],
+    "Cross-Module (22)": [
+      {
+        "id": "cm_01",
+        "query": "How does the HTML5 <main> semantic element interact with CSS Flexbox when building responsive application layouts?",
+        "retrievalLatencyMs": 78,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7780158492147935
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_02",
+        "query": "Compare CSS Box Model border-box sizing with CSS Grid repeat(auto-fit, minmax()) for preventing layout overflow.",
+        "retrievalLatencyMs": 195,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7780158492147935
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_03",
+        "query": "Why does an HTML5 <header> or <nav> container commonly use justify-content: space-between in Flexbox?",
+        "retrievalLatencyMs": 82,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.4,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_04",
+        "query": "What is the structural difference between 1-dimensional Flexbox layout and 2-dimensional CSS Grid layout in HTML5 pages?",
+        "retrievalLatencyMs": 169,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7780158492147935
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_05",
+        "query": "How does JavaScript object immutability and the spread operator relate to React useState state update rules?",
+        "retrievalLatencyMs": 134,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.5,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_06",
+        "query": "How do JavaScript closures retain lexical scope variables and how does that cause stale state in React useEffect?",
+        "retrievalLatencyMs": 86,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.4,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_07",
+        "query": "Compare JavaScript arrow function lexical this binding with React custom hook logic extraction.",
+        "retrievalLatencyMs": 142,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.6,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.983465033848664
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_08",
+        "query": "How does the JavaScript Temporal Dead Zone (TDZ) for let and const differ from the React Rules of Hooks top-level execution rule?",
+        "retrievalLatencyMs": 177,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.6,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_09",
+        "query": "What is the difference between middleware in Express and custom hooks in React when sharing reusable logic across an application?",
+        "retrievalLatencyMs": 167,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 3,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.6,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.3333333333333333
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_10",
+        "query": "Explain JWT token authentication in an Express backend vs client-side session storage with React useContext.",
+        "retrievalLatencyMs": 171,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.6,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_11",
+        "query": "How does handling an asynchronous HTTP 401 Unauthorized error in an Express API differ from handling state updates in React useEffect cleanup?",
+        "retrievalLatencyMs": 88,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.4,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_12",
+        "query": "Compare CORS middleware configuration in Express with React component re-rendering triggered by useState.",
+        "retrievalLatencyMs": 214,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.2,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_13",
+        "query": "How does the ACID Atomicity property in PostgreSQL transactions correspond to error-handling middleware calling next(err) in Express?",
+        "retrievalLatencyMs": 86,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.5,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_14",
+        "query": "How does a PostgreSQL B-tree index optimize API response latency when an Express route performs a SELECT query with a WHERE clause?",
+        "retrievalLatencyMs": 80,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.3333333333333333,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.983465033848664
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_15",
+        "query": "Explain how a composite primary key in a PostgreSQL junction table supports a RESTful Express route like POST /api/courses/:id/enroll.",
+        "retrievalLatencyMs": 80,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.6,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_16",
+        "query": "Compare database connection pooling in Node.js with the ACID Durability WAL mechanism in PostgreSQL.",
+        "retrievalLatencyMs": 166,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.5,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_17",
+        "query": "In PostgreSQL database normalization, how does 3NF eliminate redundancy compared to JavaScript object immutability preventing mutation?",
+        "retrievalLatencyMs": 83,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.4,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.983465033848664
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_18",
+        "query": "How does JavaScript Promise async/await microtask queuing contrast with PostgreSQL ACID Isolation transaction levels?",
+        "retrievalLatencyMs": 91,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_19",
+        "query": "Explain the complete full-stack flow: a React form submission using useState, handled by an Express POST route with express.json(), inserting into a PostgreSQL 3NF table.",
+        "retrievalLatencyMs": 144,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.3333333333333333,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_20",
+        "query": "How do React useEffect cleanup functions, Express error middleware (err, req, res, next), and PostgreSQL ROLLBACK collaborate to handle a failed payment transaction?",
+        "retrievalLatencyMs": 84,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.4,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_21",
+        "query": "Compare how JavaScript const scoping, Node.js environment variables, and PostgreSQL unique constraints each prevent duplicate entity creation.",
+        "retrievalLatencyMs": 194,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 0,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.4,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_22",
+        "query": "Trace how an HTML5 <main> dashboard displays data fetched from an Express REST API backed by a PostgreSQL B-tree indexed table.",
+        "retrievalLatencyMs": 114,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.4,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      }
+    ]
+  },
+  "overall": {
+    "totalQueries": 97,
+    "retrieval": {
+      "hitRate1": 1,
+      "hitRate3": 1,
+      "hitRate5": 1,
+      "mrr": 1,
+      "keywordRecall": 0.7537,
+      "ndcg5": 0.8126,
+      "latencyMs": {
+        "avg": 116,
+        "p50": 103,
+        "p95": 206
+      }
+    },
+    "crossModule": {
+      "evaluatedCount": 18,
+      "coverage3": 0.9444,
+      "coverage5": 1
+    },
+    "generation": {
+      "evaluatedCount": 0,
+      "answerableEvaluated": 0,
+      "unanswerableEvaluated": 0,
+      "claimSupportAvg": 0,
+      "citationPrecision": 0,
+      "citationCompleteness": 0,
+      "abstentionAccuracy": 0,
+      "hallucinationRate": 0,
+      "latencyMs": {
+        "avg": 0,
+        "p50": 0,
+        "p95": 0,
+        "ttft_avg": 0,
+        "ttft_p50": 0,
+        "ttft_p95": 0
+      }
+    }
+  }
+}

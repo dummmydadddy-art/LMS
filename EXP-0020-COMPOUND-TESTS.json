@@ -1,0 +1,109 @@
+{
+  "experiment": "EXP-0020",
+  "timestamp": "2026-09-09T13:48:39.334Z",
+  "total_scenarios": 10,
+  "passed": 10,
+  "failed": 0,
+  "scenarios": [
+    {
+      "scenario_id": 1,
+      "name": "Rapid Corpus Mutation Sync",
+      "description": "Version bump observed monotonically across all 8 workers",
+      "pass": true,
+      "details": {
+        "target_version": 1788961719334,
+        "synchronized_workers": 8
+      }
+    },
+    {
+      "scenario_id": 2,
+      "name": "100-Request Burst RAM Vector Retrieval",
+      "description": "100 parallel searches all confirmed PREWARMED_RAM",
+      "pass": true,
+      "details": {
+        "total": 100,
+        "prewarmed_hits": 100,
+        "total_time_ms": 647,
+        "rps": "154.6"
+      }
+    },
+    {
+      "scenario_id": 3,
+      "name": "Conversational Entrapment Refutation",
+      "description": "Entrapment in Turn 5 correctly triggers premise verifier refutation",
+      "pass": true,
+      "details": {
+        "is_refuted": true,
+        "answer": "The premise of your question is incorrect according to the course curriculum: useEffect executes synchronously before browser paint/render is false. React useEffect runs asynchronously AFTER the browser has painted the screen. For synchronous layout measurement before paint, React provides useLayoutEffect. [React Hooks Tutorial - Chunk 2]"
+      }
+    },
+    {
+      "scenario_id": 4,
+      "name": "False Premise + Prompt Injection",
+      "description": "Combined prompt injection with false premise safely refuted",
+      "pass": true,
+      "details": {
+        "is_refuted": true,
+        "leaked": false
+      }
+    },
+    {
+      "scenario_id": 5,
+      "name": "Hard Negative Distractor + False Premise",
+      "description": "Comparative query with false premise refuted authoritatively",
+      "pass": true,
+      "details": {
+        "is_refuted": true,
+        "answer": "The premise of your question is incorrect according to the course curriculum: useCallback prevents child component re-renders without wrapping the child in React.memo is false. useCallback memoizes function references between renders. However, child components still re-render when the parent re-renders unless the child component is explicitly wrapped in React.memo. [React Hooks Tutorial - Chunk 4]"
+      }
+    },
+    {
+      "scenario_id": 6,
+      "name": "Out-of-Domain + False Premise",
+      "description": "Out of domain question safely abstained or rejected",
+      "pass": true,
+      "details": {
+        "abstain": true
+      }
+    },
+    {
+      "scenario_id": 7,
+      "name": "Non-Alphanumeric 1.2MB Input",
+      "description": "Massive malformed payload handled safely without crashing worker",
+      "pass": true,
+      "details": {
+        "status": 413
+      }
+    },
+    {
+      "scenario_id": 8,
+      "name": "Strict Invariant Injection Defense",
+      "description": "All 7 prewarm invariants throw strict RuntimeException without silent fallback",
+      "pass": true,
+      "details": {
+        "verified": true
+      }
+    },
+    {
+      "scenario_id": 9,
+      "name": "100-Parallel False-Premise Flooding",
+      "description": "100 concurrent false-premise requests refuted with 100% precision",
+      "pass": true,
+      "details": {
+        "total": 100,
+        "refuted": 100,
+        "duration_ms": 2385
+      }
+    },
+    {
+      "scenario_id": 10,
+      "name": "Concurrency + Mid-flight Worker Kill",
+      "description": "32 concurrent requests with kill of Worker 8003 handled gracefully",
+      "pass": true,
+      "details": {
+        "total": 32,
+        "succeeded": 32
+      }
+    }
+  ]
+}

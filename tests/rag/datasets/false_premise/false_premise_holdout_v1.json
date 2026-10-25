@@ -1,0 +1,142 @@
+[
+  {
+    "id": "fp_01",
+    "category": "incorrect_technical_premise",
+    "query": "Why does CSS Grid require display: inline-flex to enable 2-dimensional grid columns and rows?",
+    "false_premise": "CSS Grid requires display: inline-flex",
+    "truth_in_corpus": "CSS Grid uses display: grid. Flexbox is 1-dimensional, whereas Grid is 2-dimensional.",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "refutation_keywords": [
+      "display: grid",
+      "not inline-flex",
+      "grid container",
+      "2-dimensional"
+    ]
+  },
+  {
+    "id": "fp_02",
+    "category": "fabricated_api_feature",
+    "query": "How do you call useEffect.cancel() in React when you want to abort an asynchronous data fetch?",
+    "false_premise": "useEffect has a .cancel() method",
+    "truth_in_corpus": "useEffect has no .cancel() method. Cleanup is achieved by returning a cleanup function from the effect callback.",
+    "expected_doc": "React Hooks Tutorial",
+    "refutation_keywords": [
+      "no cancel",
+      "cleanup function",
+      "return",
+      "does not have"
+    ]
+  },
+  {
+    "id": "fp_03",
+    "category": "impossible_syntax_claim",
+    "query": "Why does JavaScript const allow reassignment of primitive string values but throw TypeError on objects?",
+    "false_premise": "const allows reassignment of primitive strings",
+    "truth_in_corpus": "const prevents reassignment of any variable identifier. Object properties can be mutated, but the variable binding cannot be reassigned.",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "refutation_keywords": [
+      "cannot be reassigned",
+      "reassignment",
+      "prohibits",
+      "typeerror"
+    ]
+  },
+  {
+    "id": "fp_04",
+    "category": "misleading_comparison",
+    "query": "Since arrow functions bind their own this to the global window object, why can't they be used as constructors?",
+    "false_premise": "Arrow functions bind their own this to window",
+    "truth_in_corpus": "Arrow functions do NOT bind their own this. They inherit this lexically from the enclosing scope and lack [[Construct]] / prototype.",
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "refutation_keywords": [
+      "do not bind",
+      "lexical this",
+      "enclosing scope",
+      "no prototype"
+    ]
+  },
+  {
+    "id": "fp_05",
+    "category": "incorrect_normalization_premise",
+    "query": "In Third Normal Form (3NF), why must transitive dependencies be stored in the same table as the composite primary key?",
+    "false_premise": "3NF requires transitive dependencies stored in the same table",
+    "truth_in_corpus": "3NF strictly eliminates transitive dependencies by moving non-key attributes depending on other non-key attributes into separate tables.",
+    "expected_doc": "PostgreSQL Database Design",
+    "refutation_keywords": [
+      "eliminate",
+      "separate table",
+      "not in the same table",
+      "transitive dependency"
+    ]
+  },
+  {
+    "id": "fp_06",
+    "category": "fabricated_middleware_signature",
+    "query": "In Express.js error-handling middleware, why must the next callback be passed as the first parameter before (err, req, res)?",
+    "false_premise": "next is the first parameter in error middleware",
+    "truth_in_corpus": "Express error-handling middleware requires exactly 4 parameters in order: (err, req, res, next).",
+    "expected_doc": "Node.js & Express REST API Notes",
+    "refutation_keywords": [
+      "err, req, res, next",
+      "first parameter is err",
+      "four parameters",
+      "order"
+    ]
+  },
+  {
+    "id": "fp_07",
+    "category": "contradictory_premise",
+    "query": "Why does * { box-sizing: content-box; } prevent padding from expanding an element's total declared width in modern CSS?",
+    "false_premise": "box-sizing: content-box prevents padding expansion",
+    "truth_in_corpus": "border-box includes padding and border in declared width. content-box adds padding onto width, causing expansion.",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "refutation_keywords": [
+      "border-box",
+      "content-box adds",
+      "not content-box",
+      "padding and border"
+    ]
+  },
+  {
+    "id": "fp_08",
+    "category": "near_domain_falsehood",
+    "query": "How does PostgreSQL's B-tree index execute full table scans faster than sequential disk reads?",
+    "false_premise": "B-tree index executes full table scans faster",
+    "truth_in_corpus": "B-tree indexes provide logarithmic lookups to avoid full table scans. Sequential scan reads the entire table.",
+    "expected_doc": "PostgreSQL Database Design",
+    "refutation_keywords": [
+      "avoids full table scans",
+      "sequential scan",
+      "logarithmic",
+      "not for full table"
+    ]
+  },
+  {
+    "id": "fp_09",
+    "category": "incorrect_assumption",
+    "query": "Since useRef causes a component re-render whenever .current changes, how do we use it to store mutable timer IDs?",
+    "false_premise": "useRef causes re-render on .current change",
+    "truth_in_corpus": "useRef does NOT trigger a re-render when .current is modified. It persists values without re-rendering.",
+    "expected_doc": "React Hooks Tutorial",
+    "refutation_keywords": [
+      "does not trigger",
+      "without re-render",
+      "no re-render",
+      "persists"
+    ]
+  },
+  {
+    "id": "fp_10",
+    "category": "impossible_semantic_rule",
+    "query": "According to HTML5 semantic rules, why must every web page have at least three <main> tags for header, body, and footer content?",
+    "false_premise": "Every web page must have at least three <main> tags",
+    "truth_in_corpus": "There must not be more than one <main> element in a document. <header> and <footer> are separate tags.",
+    "expected_doc": "HTML & CSS Fundamentals",
+    "refutation_keywords": [
+      "not more than one",
+      "only one",
+      "unique content",
+      "header and footer"
+    ]
+  }
+]

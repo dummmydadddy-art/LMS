@@ -1,0 +1,804 @@
+{
+    "experiment": "EXP-0039",
+    "timestamp": "2026-09-17T10:23:10+00:00",
+    "dataset_hash": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+    "conditions": {
+        "C0": {
+            "condition": "C0",
+            "description": "Control C0 (Legacy Regex Chunker, 23 chunks)",
+            "sample_size": 400,
+            "accuracy": 92,
+            "macro_f1": 92.77,
+            "far": 2.4,
+            "frr": 16,
+            "supported_recall": 84,
+            "refutation_recall": 95.33,
+            "not_established_recall": 99,
+            "false_acceptances": 6,
+            "false_abstentions": 0,
+            "category_accuracy": {
+                "SUPPORTED_CURRICULUM": {
+                    "total": 100,
+                    "correct": 82,
+                    "accuracy": 82
+                },
+                "NOVEL_FALSE_PREMISE": {
+                    "total": 100,
+                    "correct": 96,
+                    "accuracy": 96
+                },
+                "OUT_OF_CURRICULUM_UNKNOWN": {
+                    "total": 100,
+                    "correct": 99,
+                    "accuracy": 99
+                },
+                "LEGITIMATE_NEGATION": {
+                    "total": 50,
+                    "correct": 44,
+                    "accuracy": 88
+                },
+                "MIXED_COMPOUND_PREMISE": {
+                    "total": 50,
+                    "correct": 47,
+                    "accuracy": 94
+                }
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 126,
+                    "REFUTED": 24,
+                    "NOT_ESTABLISHED": 0
+                },
+                "REFUTED": {
+                    "SUPPORTED": 6,
+                    "REFUTED": 143,
+                    "NOT_ESTABLISHED": 1
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 1,
+                    "NOT_ESTABLISHED": 99
+                }
+            },
+            "latency_ms": {
+                "mean": 15,
+                "p50": 16.6,
+                "p95": 37.4
+            }
+        },
+        "C1": {
+            "condition": "C1",
+            "description": "Intervention C1 (Chonkie RecursiveChunker, 10 chunks)",
+            "sample_size": 400,
+            "accuracy": 91,
+            "macro_f1": 91.67,
+            "far": 2.4,
+            "frr": 16.67,
+            "supported_recall": 82,
+            "refutation_recall": 94.67,
+            "not_established_recall": 99,
+            "false_acceptances": 6,
+            "false_abstentions": 2,
+            "category_accuracy": {
+                "SUPPORTED_CURRICULUM": {
+                    "total": 100,
+                    "correct": 78,
+                    "accuracy": 78
+                },
+                "NOVEL_FALSE_PREMISE": {
+                    "total": 100,
+                    "correct": 95,
+                    "accuracy": 95
+                },
+                "OUT_OF_CURRICULUM_UNKNOWN": {
+                    "total": 100,
+                    "correct": 99,
+                    "accuracy": 99
+                },
+                "LEGITIMATE_NEGATION": {
+                    "total": 50,
+                    "correct": 45,
+                    "accuracy": 90
+                },
+                "MIXED_COMPOUND_PREMISE": {
+                    "total": 50,
+                    "correct": 47,
+                    "accuracy": 94
+                }
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 123,
+                    "REFUTED": 25,
+                    "NOT_ESTABLISHED": 2
+                },
+                "REFUTED": {
+                    "SUPPORTED": 6,
+                    "REFUTED": 142,
+                    "NOT_ESTABLISHED": 2
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 1,
+                    "NOT_ESTABLISHED": 99
+                }
+            },
+            "latency_ms": {
+                "mean": 73.6,
+                "p50": 44,
+                "p95": 145.4
+            }
+        },
+        "C2_075": {
+            "condition": "C2_075",
+            "description": "Intervention C2 (Chonkie SemanticChunker 0.75, 69 chunks)",
+            "sample_size": 400,
+            "accuracy": 93.75,
+            "macro_f1": 94.27,
+            "far": 2.8,
+            "frr": 10.67,
+            "supported_recall": 89.33,
+            "refutation_recall": 94.67,
+            "not_established_recall": 99,
+            "false_acceptances": 7,
+            "false_abstentions": 0,
+            "category_accuracy": {
+                "SUPPORTED_CURRICULUM": {
+                    "total": 100,
+                    "correct": 86,
+                    "accuracy": 86
+                },
+                "NOVEL_FALSE_PREMISE": {
+                    "total": 100,
+                    "correct": 95,
+                    "accuracy": 95
+                },
+                "OUT_OF_CURRICULUM_UNKNOWN": {
+                    "total": 100,
+                    "correct": 99,
+                    "accuracy": 99
+                },
+                "LEGITIMATE_NEGATION": {
+                    "total": 50,
+                    "correct": 48,
+                    "accuracy": 96
+                },
+                "MIXED_COMPOUND_PREMISE": {
+                    "total": 50,
+                    "correct": 47,
+                    "accuracy": 94
+                }
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 134,
+                    "REFUTED": 16,
+                    "NOT_ESTABLISHED": 0
+                },
+                "REFUTED": {
+                    "SUPPORTED": 6,
+                    "REFUTED": 142,
+                    "NOT_ESTABLISHED": 2
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 1,
+                    "REFUTED": 0,
+                    "NOT_ESTABLISHED": 99
+                }
+            },
+            "latency_ms": {
+                "mean": 123.1,
+                "p50": 13.4,
+                "p95": 639
+            }
+        },
+        "C2_080": {
+            "condition": "C2_080",
+            "description": "Intervention C2 (Chonkie SemanticChunker 0.80, 71 chunks)",
+            "sample_size": 400,
+            "accuracy": 93.5,
+            "macro_f1": 94.05,
+            "far": 2.8,
+            "frr": 11.33,
+            "supported_recall": 88.67,
+            "refutation_recall": 94.67,
+            "not_established_recall": 99,
+            "false_acceptances": 7,
+            "false_abstentions": 0,
+            "category_accuracy": {
+                "SUPPORTED_CURRICULUM": {
+                    "total": 100,
+                    "correct": 86,
+                    "accuracy": 86
+                },
+                "NOVEL_FALSE_PREMISE": {
+                    "total": 100,
+                    "correct": 95,
+                    "accuracy": 95
+                },
+                "OUT_OF_CURRICULUM_UNKNOWN": {
+                    "total": 100,
+                    "correct": 99,
+                    "accuracy": 99
+                },
+                "LEGITIMATE_NEGATION": {
+                    "total": 50,
+                    "correct": 47,
+                    "accuracy": 94
+                },
+                "MIXED_COMPOUND_PREMISE": {
+                    "total": 50,
+                    "correct": 47,
+                    "accuracy": 94
+                }
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 133,
+                    "REFUTED": 17,
+                    "NOT_ESTABLISHED": 0
+                },
+                "REFUTED": {
+                    "SUPPORTED": 6,
+                    "REFUTED": 142,
+                    "NOT_ESTABLISHED": 2
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 1,
+                    "REFUTED": 0,
+                    "NOT_ESTABLISHED": 99
+                }
+            },
+            "latency_ms": {
+                "mean": 10.4,
+                "p50": 8.9,
+                "p95": 22.3
+            }
+        },
+        "C2_085": {
+            "condition": "C2_085",
+            "description": "Intervention C2 (Chonkie SemanticChunker 0.85, 76 chunks)",
+            "sample_size": 400,
+            "accuracy": 93.75,
+            "macro_f1": 94.33,
+            "far": 2.8,
+            "frr": 11.33,
+            "supported_recall": 88.67,
+            "refutation_recall": 95.33,
+            "not_established_recall": 99,
+            "false_acceptances": 7,
+            "false_abstentions": 0,
+            "category_accuracy": {
+                "SUPPORTED_CURRICULUM": {
+                    "total": 100,
+                    "correct": 86,
+                    "accuracy": 86
+                },
+                "NOVEL_FALSE_PREMISE": {
+                    "total": 100,
+                    "correct": 96,
+                    "accuracy": 96
+                },
+                "OUT_OF_CURRICULUM_UNKNOWN": {
+                    "total": 100,
+                    "correct": 99,
+                    "accuracy": 99
+                },
+                "LEGITIMATE_NEGATION": {
+                    "total": 50,
+                    "correct": 47,
+                    "accuracy": 94
+                },
+                "MIXED_COMPOUND_PREMISE": {
+                    "total": 50,
+                    "correct": 47,
+                    "accuracy": 94
+                }
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 133,
+                    "REFUTED": 17,
+                    "NOT_ESTABLISHED": 0
+                },
+                "REFUTED": {
+                    "SUPPORTED": 6,
+                    "REFUTED": 143,
+                    "NOT_ESTABLISHED": 1
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 1,
+                    "REFUTED": 0,
+                    "NOT_ESTABLISHED": 99
+                }
+            },
+            "latency_ms": {
+                "mean": 19.8,
+                "p50": 9,
+                "p95": 22.1
+            }
+        }
+    },
+    "paired_comparisons": {
+        "C1": {
+            "candidate": "C1",
+            "control": "C0",
+            "n11": 362,
+            "n00": 30,
+            "n01_c0_only": 6,
+            "n10_cand_only": 2,
+            "total_discordant": 8,
+            "mcnemar_chi2_cc": 1.125,
+            "mcnemar_chi2_raw": 2,
+            "exact_binomial_p": 0.28906,
+            "delta_accuracy_pp": -1,
+            "se_paired_pp": 0.705,
+            "one_sided_95_lcb_pp": -2.16,
+            "non_inferiority_margin_pp": -3,
+            "non_inferiority_established": true,
+            "superiority_established": false,
+            "changed_cases_count": 8,
+            "changed_cases": [
+                {
+                    "id": "DEV-SUP-046",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "SUPPORTED",
+                    "cand_pred": "REFUTED",
+                    "query": "Why must Express error-handling middleware declare four arguments (err, req, res, next)?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-SUP-050",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "SUPPORTED",
+                    "cand_pred": "NOT_ESTABLISHED",
+                    "query": "Why should plural nouns be used for resource-oriented RESTful API URLs?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-SUP-082",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "SUPPORTED",
+                    "cand_pred": "NOT_ESTABLISHED",
+                    "query": "Why should React Hooks never be called inside loops, conditions, or nested functions?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-SUP-095",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "SUPPORTED",
+                    "cand_pred": "REFUTED",
+                    "query": "How does useRef persist mutable values across renders without causing re-renders?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-FLS-015",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "REFUTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "NOT_ESTABLISHED",
+                    "query": "Why does repeat(3, 1fr) create rows of unequal fractional heights?",
+                    "category": "NOVEL_FALSE_PREMISE"
+                },
+                {
+                    "id": "DEV-FLS-095",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "REFUTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Why does useLayoutEffect execute asynchronously after the browser paints the screen?",
+                    "category": "NOVEL_FALSE_PREMISE"
+                },
+                {
+                    "id": "DEV-FLS-098",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "REFUTED",
+                    "c0_pred": "SUPPORTED",
+                    "cand_pred": "REFUTED",
+                    "query": "Why does shallow comparison (Object.is) detect mutations made directly to array contents?",
+                    "category": "NOVEL_FALSE_PREMISE"
+                },
+                {
+                    "id": "DEV-NEG-010",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Why doesn't Flexbox provide 2-dimensional grid layouts?",
+                    "category": "LEGITIMATE_NEGATION"
+                }
+            ]
+        },
+        "C2_075": {
+            "candidate": "C2_075",
+            "control": "C0",
+            "n11": 365,
+            "n00": 22,
+            "n01_c0_only": 3,
+            "n10_cand_only": 10,
+            "total_discordant": 13,
+            "mcnemar_chi2_cc": 2.7692,
+            "mcnemar_chi2_raw": 3.7692,
+            "exact_binomial_p": 0.09229,
+            "delta_accuracy_pp": 1.75,
+            "se_paired_pp": 0.897,
+            "one_sided_95_lcb_pp": 0.27,
+            "non_inferiority_margin_pp": -3,
+            "non_inferiority_established": true,
+            "superiority_established": false,
+            "changed_cases_count": 13,
+            "changed_cases": [
+                {
+                    "id": "DEV-SUP-023",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How does const require initialization upon declaration?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-SUP-026",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How do rest parameters (...args) condense arguments into a true Array?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-SUP-041",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How does Libuv provide a worker thread pool for asynchronous I\/O in Node.js?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-SUP-080",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How does COMMIT persist transaction changes permanently?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-FLS-040",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "REFUTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "NOT_ESTABLISHED",
+                    "query": "Why does JSON.stringify serialize circular object references without throwing?",
+                    "category": "NOVEL_FALSE_PREMISE"
+                },
+                {
+                    "id": "DEV-UNK-010",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "NOT_ESTABLISHED",
+                    "c0_pred": "NOT_ESTABLISHED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How does Alembic auto-generate database migration scripts from SQLAlchemy metadata?",
+                    "category": "OUT_OF_CURRICULUM_UNKNOWN"
+                },
+                {
+                    "id": "DEV-UNK-014",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "NOT_ESTABLISHED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "NOT_ESTABLISHED",
+                    "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+                    "category": "OUT_OF_CURRICULUM_UNKNOWN"
+                },
+                {
+                    "id": "DEV-NEG-010",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Why doesn't Flexbox provide 2-dimensional grid layouts?",
+                    "category": "LEGITIMATE_NEGATION"
+                },
+                {
+                    "id": "DEV-NEG-026",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?",
+                    "category": "LEGITIMATE_NEGATION"
+                },
+                {
+                    "id": "DEV-NEG-040",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Why doesn't content-box absorb border and padding within element width?",
+                    "category": "LEGITIMATE_NEGATION"
+                },
+                {
+                    "id": "DEV-NEG-050",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+                    "category": "LEGITIMATE_NEGATION"
+                },
+                {
+                    "id": "DEV-MIX-021",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "REFUTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Since useMemo memoizes calculations, why does it execute asynchronous API calls by default?",
+                    "category": "MIXED_COMPOUND_PREMISE"
+                },
+                {
+                    "id": "DEV-MIX-031",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "REFUTED",
+                    "c0_pred": "SUPPORTED",
+                    "cand_pred": "REFUTED",
+                    "query": "Since JWT contains a signature, why can the payload be modified by clients without invalidating the token?",
+                    "category": "MIXED_COMPOUND_PREMISE"
+                }
+            ]
+        },
+        "C2_080": {
+            "candidate": "C2_080",
+            "control": "C0",
+            "n11": 365,
+            "n00": 23,
+            "n01_c0_only": 3,
+            "n10_cand_only": 9,
+            "total_discordant": 12,
+            "mcnemar_chi2_cc": 2.0833,
+            "mcnemar_chi2_raw": 3,
+            "exact_binomial_p": 0.146,
+            "delta_accuracy_pp": 1.5,
+            "se_paired_pp": 0.863,
+            "one_sided_95_lcb_pp": 0.08,
+            "non_inferiority_margin_pp": -3,
+            "non_inferiority_established": true,
+            "superiority_established": false,
+            "changed_cases_count": 12,
+            "changed_cases": [
+                {
+                    "id": "DEV-SUP-023",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How does const require initialization upon declaration?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-SUP-026",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How do rest parameters (...args) condense arguments into a true Array?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-SUP-041",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How does Libuv provide a worker thread pool for asynchronous I\/O in Node.js?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-SUP-080",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How does COMMIT persist transaction changes permanently?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-FLS-040",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "REFUTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "NOT_ESTABLISHED",
+                    "query": "Why does JSON.stringify serialize circular object references without throwing?",
+                    "category": "NOVEL_FALSE_PREMISE"
+                },
+                {
+                    "id": "DEV-UNK-010",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "NOT_ESTABLISHED",
+                    "c0_pred": "NOT_ESTABLISHED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How does Alembic auto-generate database migration scripts from SQLAlchemy metadata?",
+                    "category": "OUT_OF_CURRICULUM_UNKNOWN"
+                },
+                {
+                    "id": "DEV-UNK-014",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "NOT_ESTABLISHED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "NOT_ESTABLISHED",
+                    "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+                    "category": "OUT_OF_CURRICULUM_UNKNOWN"
+                },
+                {
+                    "id": "DEV-NEG-026",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?",
+                    "category": "LEGITIMATE_NEGATION"
+                },
+                {
+                    "id": "DEV-NEG-040",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Why doesn't content-box absorb border and padding within element width?",
+                    "category": "LEGITIMATE_NEGATION"
+                },
+                {
+                    "id": "DEV-NEG-050",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+                    "category": "LEGITIMATE_NEGATION"
+                },
+                {
+                    "id": "DEV-MIX-021",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "REFUTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Since useMemo memoizes calculations, why does it execute asynchronous API calls by default?",
+                    "category": "MIXED_COMPOUND_PREMISE"
+                },
+                {
+                    "id": "DEV-MIX-031",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "REFUTED",
+                    "c0_pred": "SUPPORTED",
+                    "cand_pred": "REFUTED",
+                    "query": "Since JWT contains a signature, why can the payload be modified by clients without invalidating the token?",
+                    "category": "MIXED_COMPOUND_PREMISE"
+                }
+            ]
+        },
+        "C2_085": {
+            "candidate": "C2_085",
+            "control": "C0",
+            "n11": 366,
+            "n00": 23,
+            "n01_c0_only": 2,
+            "n10_cand_only": 9,
+            "total_discordant": 11,
+            "mcnemar_chi2_cc": 3.2727,
+            "mcnemar_chi2_raw": 4.4545,
+            "exact_binomial_p": 0.06543,
+            "delta_accuracy_pp": 1.75,
+            "se_paired_pp": 0.825,
+            "one_sided_95_lcb_pp": 0.39,
+            "non_inferiority_margin_pp": -3,
+            "non_inferiority_established": true,
+            "superiority_established": false,
+            "changed_cases_count": 11,
+            "changed_cases": [
+                {
+                    "id": "DEV-SUP-023",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How does const require initialization upon declaration?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-SUP-026",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How do rest parameters (...args) condense arguments into a true Array?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-SUP-041",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How does Libuv provide a worker thread pool for asynchronous I\/O in Node.js?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-SUP-080",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How does COMMIT persist transaction changes permanently?",
+                    "category": "SUPPORTED_CURRICULUM"
+                },
+                {
+                    "id": "DEV-UNK-010",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "NOT_ESTABLISHED",
+                    "c0_pred": "NOT_ESTABLISHED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "How does Alembic auto-generate database migration scripts from SQLAlchemy metadata?",
+                    "category": "OUT_OF_CURRICULUM_UNKNOWN"
+                },
+                {
+                    "id": "DEV-UNK-014",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "NOT_ESTABLISHED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "NOT_ESTABLISHED",
+                    "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+                    "category": "OUT_OF_CURRICULUM_UNKNOWN"
+                },
+                {
+                    "id": "DEV-NEG-026",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?",
+                    "category": "LEGITIMATE_NEGATION"
+                },
+                {
+                    "id": "DEV-NEG-040",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Why doesn't content-box absorb border and padding within element width?",
+                    "category": "LEGITIMATE_NEGATION"
+                },
+                {
+                    "id": "DEV-NEG-050",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "SUPPORTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+                    "category": "LEGITIMATE_NEGATION"
+                },
+                {
+                    "id": "DEV-MIX-021",
+                    "direction": "C0_CORRECT_CAND_WRONG",
+                    "expected": "REFUTED",
+                    "c0_pred": "REFUTED",
+                    "cand_pred": "SUPPORTED",
+                    "query": "Since useMemo memoizes calculations, why does it execute asynchronous API calls by default?",
+                    "category": "MIXED_COMPOUND_PREMISE"
+                },
+                {
+                    "id": "DEV-MIX-031",
+                    "direction": "CAND_CORRECT_C0_WRONG",
+                    "expected": "REFUTED",
+                    "c0_pred": "SUPPORTED",
+                    "cand_pred": "REFUTED",
+                    "query": "Since JWT contains a signature, why can the payload be modified by clients without invalidating the token?",
+                    "category": "MIXED_COMPOUND_PREMISE"
+                }
+            ]
+        }
+    }
+}

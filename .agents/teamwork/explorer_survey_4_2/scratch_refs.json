@@ -1,0 +1,1374 @@
+{
+  "adapter_dump.txt": [
+    {
+      "line": 3696,
+      "content": "self.storage_path = self.config.get(\"storage_path\", \"scratch/pageindex_store\")"
+    }
+  ],
+  "CLAUDE-OPUS-CLAIM-EVIDENCE-MATRIX.csv": [
+    {
+      "line": 2,
+      "content": "CL-01,\"FAR = 0.00% (0/500)\",\"EXP-0022-PREMISE-RESULTS.json; scratch/eval_exp0022_runner.php\",INVALID,NO,\"95% CI: [0%, 0.74%] but test is invalid\",INVALIDATED,\"Evaluator calls RagPremiseVerifier::verify() directly with empty chunks array. Tests regex dictionary match not integrated RAG false-premise handling. 35 hardcoded rules not evidence-grounded NLI. Default fallback = SUPPORTED.\""
+    },
+    {
+      "line": 3,
+      "content": "CL-02,\"Refutation Recall = 100% (500/500)\",\"EXP-0022-PREMISE-RESULTS.json; scratch/eval_exp0022_runner.php\",INVALID,NO,\"95% CI lower: 99.26% but test is invalid\",INVALIDATED,\"Same as CL-01. Verifier accepts $retrievedChunks parameter but NEVER READS IT. All 500 refutations are pre-written strings from 35 regex rules not evidence-grounded reasoning.\""
+    },
+    {
+      "line": 4,
+      "content": "CL-03,\"False Refutation Rate = 0.00% (0/550)\",\"EXP-0022-PREMISE-RESULTS.json; scratch/eval_exp0022_runner.php\",INVALID,NO,\"95% CI: [0%, 0.67%] but test is invalid\",INVALIDATED,\"Same evaluator bypass. Legitimate queries pass because they do not match contradiction regexes. Does not test whether LLM generation falsely refutes valid premises.\""
+    },
+    {
+      "line": 5,
+      "content": "CL-04,\"Unknown Recall = 100% (300/300)\",\"EXP-0022-PREMISE-RESULTS.json; scratch/eval_exp0022_runner.php\",INVALID,NO,\"95% CI lower: 98.78% but test is invalid\",INVALIDATED,\"Verifier returns NOT_ESTABLISHED for any query not containing one of 47 curriculum keywords. Tests keyword list coverage not semantic understanding.\""
+    },
+    {
+      "line": 6,
+      "content": "CL-05,\"Injection Compromise = 0.00% (0/500)\",\"EXP-0022-INJECTION-RESULTS.json; scratch/run_exp0021_safety_injection.js\",INVALID,NO,\"95% CI: [0%, 0.74%] but test is invalid\",INVALIDATED,\"Attacks sent to /api/rag/search (retrieval endpoint) NOT /api/rag/ask (LLM generation). Retrieval endpoint never invokes LLM. Compromise checked by searching for 5 marker strings in curriculum chunk text.\""
+    },
+    {
+      "line": 7,
+      "content": "CL-06,\"Unauthorized Tool Execution = 0/500\",\"EXP-0022-INJECTION-RESULTS.json; scratch/run_exp0021_safety_injection.js\",INVALID,NO,\"N/A test architecture invalid\",INVALIDATED,\"/api/rag/search has no tool execution capability. Testing tool execution resistance on a retrieval endpoint is architecturally meaningless.\""
+    },
+    {
+      "line": 10,
+      "content": "CL-09,\"Conversational Contamination = 0/5\",\"EXP-0022-CONVERSATION-ABLATION.json; scratch/run_conversation_ablation.js\",INVALID,NO,\"P(0/5 | p=0.20) = 32.77%. 95% CI upper = 52.18%\",INVALIDATED,\"n=5 is statistically powerless against EXP-0021 20% baseline. Ablation B clears history CLIENT-SIDE before sending request not testing server topic-shift detection.\""
+    }
+  ],
+  "CLAUDE-OPUS-CRITICAL-FINDINGS.md": [
+    {
+      "line": 37,
+      "content": "The evaluation script (`scratch/eval_exp0022_runner.php`, line 30) calls `RagPremiseVerifier::verify($q, [])` — confirming the evaluator knows the chunks parameter is unused."
+    },
+    {
+      "line": 46,
+      "content": "The injection evaluation script (`scratch/run_exp0021_safety_injection.js`) sends all 300+ attack payloads to `/api/rag/search` — the vector retrieval endpoint — NOT to `/api/rag/ask` — the LLM generation endpoint."
+    },
+    {
+      "line": 84,
+      "content": "The premise evaluator (`scratch/eval_exp0022_runner.php`) calls `RagPremiseVerifier::verify()` directly as a PHP function call, bypassing:"
+    }
+  ],
+  "EXP-0016-REPRODUCIBILITY-MANIFEST.json": [
+    {
+      "line": 106,
+      "content": "\"run_ablation_matrix\": \"node scratch/run_ablation_matrix.js\","
+    }
+  ],
+  "EXP-0017-REPRODUCIBILITY-MANIFEST.json": [
+    {
+      "line": 57,
+      "content": "\"2. Run Static Code Audit: node scratch/static_audit.js\","
+    },
+    {
+      "line": 58,
+      "content": "\"3. Run Input Forensics: node scratch/test_input_forensics.js\","
+    },
+    {
+      "line": 59,
+      "content": "\"4. Run Payload Exhaustion Audit: node scratch/test_payload_size.js\","
+    },
+    {
+      "line": 60,
+      "content": "\"5. Run Coordinator Cache Forensics: node scratch/test_coordinator_cache.js\","
+    },
+    {
+      "line": 61,
+      "content": "\"6. Run Retrieval & Ranking Forensics: node scratch/test_retrieval_ranking_forensics.js\","
+    },
+    {
+      "line": 62,
+      "content": "\"7. Run Conversation Forensics: node scratch/test_conversation_forensics.js\","
+    },
+    {
+      "line": 63,
+      "content": "\"8. Run 500 False-Premise Audit: node scratch/audit_500_false_premises.js\","
+    },
+    {
+      "line": 64,
+      "content": "\"9. Run Compound Attacks (A-G): node scratch/test_compound_attacks.js\","
+    },
+    {
+      "line": 65,
+      "content": "\"10. Run Worker Supervision Audit: node scratch/test_worker_leak_and_crash.js\""
+    }
+  ],
+  "EXP-0018-REPRODUCIBILITY-MANIFEST.json": [
+    {
+      "line": 17,
+      "content": "\"scratch/verify_p0_fixes.js\","
+    },
+    {
+      "line": 18,
+      "content": "\"scratch/verify_p1_p2_fixes.js\","
+    },
+    {
+      "line": 19,
+      "content": "\"scratch/test_live_worker_crash.js\","
+    },
+    {
+      "line": 20,
+      "content": "\"scratch/test_novel_false_premises.js\","
+    },
+    {
+      "line": 21,
+      "content": "\"scratch/audit_500_false_premises_exp0018.js\","
+    },
+    {
+      "line": 22,
+      "content": "\"scratch/test_exp0018_compound_suite.js\","
+    },
+    {
+      "line": 23,
+      "content": "\"scratch/test_retrieval_ranking_forensics.js\""
+    }
+  ],
+  "EXP-0018-WEAKNESS-REMEDIATION-REGISTER.csv": [
+    {
+      "line": 3,
+      "content": "W-02,Evaluator,Medium,Evaluator defect & benchmark overfitting in test suite,Evaluator checked exact 8 APIs hardcoded in premise verifier,Expanded 500-case diverse evaluation harness spanning novel APIs,scratch/audit_500_false_premises_exp0018.js,FIXED,30.0% sycophancy on novel APIs,26.0% sycophancy overall; 8% on fabricated APIs"
+    }
+  ],
+  "EXP-0019-INDEPENDENT-VERIFICATION-REPORT.md": [
+    {
+      "line": 67,
+      "content": "- Evaluated 1,000 queries across 20 distinct categories (50 queries each) using `scratch/run_phase7_fast.js`."
+    },
+    {
+      "line": 101,
+      "content": "- 300 Hard-Negative pairs evaluated across all 5 courses (`scratch/test_exp0019_phase4_hard_negatives.js`)."
+    },
+    {
+      "line": 121,
+      "content": "- 300 questions across 5 modules (`scratch/test_exp0019_citations_multihop.js`):"
+    }
+  ],
+  "EXP-0019-REPRODUCIBILITY-MANIFEST.json": [
+    {
+      "line": 31,
+      "content": "\"script\": \"scratch/test_exp0019_phase1_cluster.js\","
+    },
+    {
+      "line": 36,
+      "content": "\"script\": \"scratch/test_exp0019_phase1_cluster.js\","
+    },
+    {
+      "line": 41,
+      "content": "\"script\": \"scratch/test_exp0019_phase2_cache.js\","
+    },
+    {
+      "line": 46,
+      "content": "\"script\": \"scratch/test_exp0019_phase4_hard_negatives.js\","
+    },
+    {
+      "line": 51,
+      "content": "\"script\": \"scratch/test_exp0019_phase5_conversation.js\","
+    },
+    {
+      "line": 56,
+      "content": "\"script\": \"scratch/run_phase7_fast.js\","
+    },
+    {
+      "line": 61,
+      "content": "\"script\": \"scratch/test_exp0019_citations_multihop.js\","
+    },
+    {
+      "line": 66,
+      "content": "\"script\": \"scratch/test_exp0019_security_and_compound.js\","
+    },
+    {
+      "line": 71,
+      "content": "\"script\": \"scratch/test_exp0019_security_and_compound.js\","
+    }
+  ],
+  "EXP-0020-CONTROL-VS-CANDIDATE.csv": [
+    {
+      "line": 4,
+      "content": "Prewarmed Invariant Enforcement,0 Invariants (Silent fallbacks),7 Strict Invariants (Throws RuntimeException),+7 Strict Guards,Zero silent fallbacks,PASSED,scratch/test_invariants_injection.php"
+    },
+    {
+      "line": 11,
+      "content": "False Refutations on Legitimate Questions,Not Tested in EXP-0019,0.00% (0 / 24 false refutations),0.00% false positive error,0.00%,PASSED,scratch/test_legitimate_queries.py"
+    },
+    {
+      "line": 19,
+      "content": "PHP Backend Syntax Integrity,35 / 35 Passed,35 / 35 Passed,0 Syntax Errors,100% Clean Syntax,PASSED,scratch/run_code_integrity_checks.py"
+    },
+    {
+      "line": 20,
+      "content": "Hardcoded Benchmark Query IDs in Code,0 Instances,0 Instances,0 Leaks / Hardcoding,0 Instances,PASSED,scratch/run_code_integrity_checks.py"
+    }
+  ],
+  "EXP-0022-SAFETY-REMEDIATION-REPORT.md": [
+    {
+      "line": 207,
+      "content": "Evaluated via [`run_exp0022_lifecycle_and_audit.js`](file:///C:/Users/Mukul/.gemini/antigravity/brain/18c22c50-cad0-43ae-871f-10ded3240804/scratch/run_exp0022_lifecycle_and_audit.js):"
+    }
+  ],
+  "EXP-0027-REPRODUCIBILITY.md": [
+    {
+      "line": 50,
+      "content": "2. Retrieved chunks are stored in `scratch/curriculum_retrieval_cache_2200.json`."
+    },
+    {
+      "line": 68,
+      "content": "php scratch/run_exp0027_full_evaluation.php"
+    }
+  ],
+  "EXP-0028-REPRODUCIBILITY.md": [
+    {
+      "line": 82,
+      "content": "php scratch/run_exp0028_pilot.php"
+    },
+    {
+      "line": 88,
+      "content": "php scratch/run_exp0028_full_eval.php"
+    },
+    {
+      "line": 90,
+      "content": "*Note: The harness supports automatic idempotent resumption via `scratch/exp0028_eval_checkpoint.json`.*"
+    },
+    {
+      "line": 94,
+      "content": "php scratch/generate_exp0028_final_artifacts.php"
+    },
+    {
+      "line": 103,
+      "content": "php scratch/run_exp0028_analysis.php"
+    }
+  ],
+  "EXP-0028-SHADOW-REPORT.md": [
+    {
+      "line": 43,
+      "content": "- **Identical Retrieval Evidence:** All 500 cases and 88 conversational turns evaluated against identical curriculum retrieval evidence cached in `scratch/shadow_retrieval_cache_500.json`."
+    }
+  ],
+  "EXP-0028-SHADOW-REPRODUCIBILITY.md": [
+    {
+      "line": 36,
+      "content": "| **Retrieval Cache** | `scratch/shadow_retrieval_cache_500.json` | `54ebcb464fb8ea85cfa69c1e7a022513903112d7c00eb3bb6226c117d91cb793` |"
+    },
+    {
+      "line": 37,
+      "content": "| **Evaluation Checkpoint** | `scratch/exp0028_shadow_checkpoint.json` | Generated during run |"
+    }
+  ],
+  "EXP-0029-MANIFEST.json": [
+    {
+      "line": 21,
+      "content": "\"scratch/blind_retrieval_cache_300.json\": {"
+    }
+  ],
+  "EXP-0029-REPRODUCIBILITY.md": [
+    {
+      "line": 16,
+      "content": "| Blind Retrieval Cache | `scratch/blind_retrieval_cache_300.json` | `49dd9ac6c4f09a39bf41800d467514523770777ed42e0945203b9cd9a7592d98` |"
+    },
+    {
+      "line": 32,
+      "content": "php scratch/build_blind_dataset.php"
+    },
+    {
+      "line": 33,
+      "content": "php scratch/validate_blind_dataset.php"
+    },
+    {
+      "line": 36,
+      "content": "php scratch/prefetch_blind_retrieval.php"
+    },
+    {
+      "line": 39,
+      "content": "php scratch/run_exp0029_ablations.php"
+    },
+    {
+      "line": 42,
+      "content": "php scratch/run_blind_evaluation.php"
+    },
+    {
+      "line": 45,
+      "content": "php scratch/run_security_regression_check.php"
+    }
+  ],
+  "EXP-0029-RESULTS.json": [
+    {
+      "line": 8,
+      "content": "\"retrieval_cache_file\": \"scratch/blind_retrieval_cache_300.json\","
+    }
+  ],
+  "EXP-0030-MANIFEST.json": [
+    {
+      "line": 22,
+      "content": "\"scratch/blind_retrieval_cache_400.json\": \"eb93153c07933cf1374086265ff3ddd1bf91fbcd9e1788001d2b1077376ec0a9\","
+    }
+  ],
+  "EXP-0030-REPRODUCIBILITY.md": [
+    {
+      "line": 36,
+      "content": "| `scratch/blind_retrieval_cache_400.json` | Generated Artifact | `eb93153c07933cf1374086265ff3ddd1bf91fbcd9e1788001d2b1077376ec0a9` |"
+    },
+    {
+      "line": 46,
+      "content": "php scratch/build_curriculum_vocabulary.php"
+    },
+    {
+      "line": 52,
+      "content": "php scratch/run_exp0030_threshold_calibration.php"
+    },
+    {
+      "line": 60,
+      "content": "php scratch/build_exp0030_blind_dataset.php"
+    },
+    {
+      "line": 67,
+      "content": "php scratch/prefetch_exp0030_retrieval.php"
+    },
+    {
+      "line": 69,
+      "content": "# Produces: scratch/blind_retrieval_cache_400.json"
+    },
+    {
+      "line": 74,
+      "content": "php scratch/run_exp0030_blind_evaluation.php"
+    },
+    {
+      "line": 81,
+      "content": "php scratch/run_statistical_analysis.php"
+    },
+    {
+      "line": 82,
+      "content": "php scratch/run_security_regression_check.php"
+    },
+    {
+      "line": 84,
+      "content": "# Produces: scratch/exp0030_statistical_summary.json"
+    }
+  ],
+  "EXP-0031-INDEPENDENT-AUDIT.md": [
+    {
+      "line": 63,
+      "content": "| `scratch/exp0031_blind_retrieval_cache.json` | 139,443,665 | `be122411aa58513731aff4ae0af570a6c69ddd745524de85ee37416b2f8030ab` | VERIFIED |"
+    },
+    {
+      "line": 64,
+      "content": "| `scratch/exp0031_challenge_retrieval_cache.json` | 41,951,410 | `5a687177efd92daad8234cdaabe2efdd63ccae119c60151b27799261e55bbb90` | VERIFIED |"
+    },
+    {
+      "line": 65,
+      "content": "| `scratch/exp0031_nli_cache.json` | 60,113 | `47dce2cae33d9f1aeda5a4743bfe18b3e41c82c7dc168094fb14de6f47f5ecb8` | VERIFIED |"
+    }
+  ],
+  "EXP-0031-MANIFEST.json": [
+    {
+      "line": 76,
+      "content": "\"file\": \"scratch/exp0031_challenge_retrieval_cache.json\","
+    },
+    {
+      "line": 83,
+      "content": "\"file\": \"scratch/exp0031_blind_retrieval_cache.json\","
+    }
+  ],
+  "EXP-0031-REPRODUCIBILITY.md": [
+    {
+      "line": 48,
+      "content": "| `scratch/exp0031_challenge_retrieval_cache.json` | Prefetched SQLite retrieval cache for Challenge Dataset | `5a687177efd92daad8234cdaabe2efdd63ccae119c60151b27799261e55bbb90` |"
+    },
+    {
+      "line": 49,
+      "content": "| `scratch/exp0031_blind_retrieval_cache.json` | Prefetched SQLite retrieval cache for Blind Dataset | `be122411aa58513731aff4ae0af570a6c69ddd745524de85ee37416b2f8030ab` |"
+    },
+    {
+      "line": 62,
+      "content": "php scratch/forensic_extract_46.php"
+    },
+    {
+      "line": 63,
+      "content": "php scratch/classify_46_taxonomy.php"
+    },
+    {
+      "line": 70,
+      "content": "php scratch/build_challenge_dataset.php"
+    },
+    {
+      "line": 71,
+      "content": "php scratch/build_chal_val_doc.php"
+    },
+    {
+      "line": 77,
+      "content": "php scratch/create_exp0031_blind_dataset.php"
+    },
+    {
+      "line": 78,
+      "content": "php scratch/finalize_blind_dataset.php"
+    },
+    {
+      "line": 79,
+      "content": "php scratch/verify_dataset_collisions.php"
+    },
+    {
+      "line": 80,
+      "content": "php scratch/generate_blind_val_doc.php"
+    },
+    {
+      "line": 87,
+      "content": "php -d memory_limit=1024M scratch/prefetch_exp0031.php"
+    },
+    {
+      "line": 89,
+      "content": "# - scratch/exp0031_challenge_retrieval_cache.json"
+    },
+    {
+      "line": 90,
+      "content": "# - scratch/exp0031_blind_retrieval_cache.json"
+    },
+    {
+      "line": 95,
+      "content": "php -d memory_limit=2048M scratch/run_exp0031_challenge_ablation.php"
+    },
+    {
+      "line": 102,
+      "content": "php -d memory_limit=2048M scratch/run_exp0031_blind_evaluation.php"
+    }
+  ],
+  "EXP-0033-INDEPENDENT-AUDIT.md": [
+    {
+      "line": 19,
+      "content": "1. **Mathematical & Statistical Verification:** **100% REPRODUCED AND VERIFIED**. All reported downstream metrics, confusion matrices, class recalls, and McNemar test statistics were independently recomputed directly from the underlying prediction records (`scratch/exp0033_predictions.json`) and matched the reported headline numbers exactly to four decimal places."
+    },
+    {
+      "line": 76,
+      "content": "- `scratch/run_exp0033_benchmark.php` (main evaluation harness for E0–E6)"
+    },
+    {
+      "line": 77,
+      "content": "- `scratch/exp0033_retrieval_cache.json` (prefetched R0 and R4 candidate pools and logits)"
+    },
+    {
+      "line": 78,
+      "content": "- `scratch/exp0033_predictions.json` (per-query predictions across modes)"
+    },
+    {
+      "line": 79,
+      "content": "- `scratch/exp0033_nli_cache.json` (1,157 cached Tier-2 Ollama NLI responses)"
+    },
+    {
+      "line": 97,
+      "content": "↓ (scratch/run_exp0033_benchmark.php)"
+    },
+    {
+      "line": 207,
+      "content": "All metrics were recomputed directly from `scratch/exp0033_predictions.json` across all $N = 500$ test queries:"
+    },
+    {
+      "line": 323,
+      "content": "- Independent process RSS audit (`scratch/audit_process_memory.py`) reveals:"
+    },
+    {
+      "line": 338,
+      "content": "| **Pre-computed Retrieval & NLI Caches** | Low (Positive) | `scratch/exp0033_retrieval_cache.json` & `exp0033_nli_cache.json` committed to git | Enables fast, 100% deterministic re-evaluation of E0–E6 in ~15 seconds without calling Ollama. |"
+    }
+  ],
+  "EXP-0033-REPRODUCIBILITY.md": [
+    {
+      "line": 92,
+      "content": "php scratch/run_exp0033_benchmark.php"
+    }
+  ],
+  "EXP-0034-INDEPENDENT-AUDIT.md": [
+    {
+      "line": 76,
+      "content": "- Hyperparameter tuning ($\\alpha$ search across $[0.0, 1.0]$, candidate pool sizing $N \\in \\{10, 15, 20\\}$, and Min-Max normalization limits $[0.4000, 0.8500]$) was performed exclusively on the 400-case development split via `scratch/exp0034_dev_retrieval.py` and `scratch/exp0034_dev_ablation.php`."
+    },
+    {
+      "line": 77,
+      "content": "- The configuration was formally recorded in `EXP-0034-CONFIG-FROZEN.json` prior to execution of the 500-case blind test via `scratch/run_exp0034_benchmark.php`."
+    },
+    {
+      "line": 104,
+      "content": "All metrics reported in `EXP-0034-RESULTS.json` were recomputed directly from the raw prediction logs in `scratch/exp0034_predictions.json` and `scratch/exp0033_predictions.json`."
+    }
+  ],
+  "EXP-0034-PRECHECK.md": [
+    {
+      "line": 34,
+      "content": "Evaluating the raw prediction file `scratch/exp0033_predictions.json` directly across all 25 Novel-OOD queries (`EXP33-OOD-0026` to `EXP33-OOD-0050`):"
+    }
+  ],
+  "EXP-0034-REPRODUCIBILITY.md": [
+    {
+      "line": 61,
+      "content": "php scratch/exp0034_dev_ablation.php"
+    },
+    {
+      "line": 68,
+      "content": "php scratch/run_exp0034_benchmark.php"
+    },
+    {
+      "line": 69,
+      "content": "# Outputs EXP-0034-RESULTS.json and scratch/exp0034_predictions.json"
+    }
+  ],
+  "EXP-0035-REPRODUCIBILITY.md": [
+    {
+      "line": 64,
+      "content": "php scratch/exp0035_dev_benchmark.php"
+    },
+    {
+      "line": 68,
+      "content": "Confirm generation of `scratch/exp0035_dev_results.json` and validate reported accuracy and F1 metrics:"
+    },
+    {
+      "line": 71,
+      "content": "$res = json_decode(file_get_contents('scratch/exp0035_dev_results.json'), true);"
+    }
+  ],
+  "EXP-0036-PRECHECK.md": [
+    {
+      "line": 19,
+      "content": "A paired bit-level comparison between `scratch/exp0034_predictions.json` (`M2`) and `scratch/exp0035_blind_predictions.json` (`B0`) revealed that 499 out of 500 predictions (99.8%) were completely identical. Exactly **one query** differed:"
+    }
+  ],
+  "EXP-0036-REPRODUCIBILITY.md": [
+    {
+      "line": 31,
+      "content": "| `scratch/exp0034_dev_cache.json` | 7,278,669 | `991e8c126ab657d15ca6bcb57e024eee47439aca02e6e4bfe4b220b5a6325c18` |"
+    },
+    {
+      "line": 49,
+      "content": "php scratch/exp0036_dev_benchmark.php"
+    }
+  ],
+  "EXP-0037-BLIND-AUDIT.md": [
+    {
+      "line": 29,
+      "content": "* **Phase 1 Isolation:** The benchmark harness (`scratch/run_exp0037_blind_benchmark.php`) read strictly the `id` and `query` attributes of each case during prediction generation. Ground-truth attributes (`expected`, `category`, `sub_category`, `module`) were inaccessible to the inference loop."
+    }
+  ],
+  "EXP-0037-HARDWARE-PLAN.md": [
+    {
+      "line": 55,
+      "content": "- Persistent cache written to disk (`scratch/exp0037_nli_cache.json`) to guarantee 100% reproducibility and prevent redundant GPU compute."
+    }
+  ],
+  "EXP-0037-INDEPENDENT-AUDIT.md": [
+    {
+      "line": 92,
+      "content": "Metrics independently recomputed directly from the 400 prediction records in `scratch/exp0037_dev_predictions_full.json`:"
+    }
+  ],
+  "EXP-0038-DESIGN.md": [
+    {
+      "line": 93,
+      "content": "3. Content preservation verification (`scratch/verify_exp0038_content_preservation.py`) compares the word token set of all 5 source documents against the concatenated C1 chunk texts."
+    }
+  ],
+  "EXP-0038-HARDWARE-PLAN.md": [
+    {
+      "line": 65,
+      "content": "- Retrieval candidate caches (`scratch/exp0038_dev_c0_cache.json`, `scratch/exp0038_dev_c1_cache.json`) eliminate redundant embedding and reranking computation."
+    },
+    {
+      "line": 66,
+      "content": "- Persistent NLI cache (`scratch/exp0038_nli_cache.json`) captures all LLM inferences by `md5(premise || hypothesis || model || prompt_mode)`."
+    }
+  ],
+  "EXP-0038-INDEPENDENT-AUDIT.md": [
+    {
+      "line": 75,
+      "content": "| `scratch/exp0038_retrieval_metrics.json`| Comparative retrieval metrics | Verified |"
+    },
+    {
+      "line": 76,
+      "content": "| `scratch/exp0038_preservation_report.json`| Content preservation gate audit | Verified |"
+    }
+  ],
+  "EXP-0038-REPRODUCIBILITY.md": [
+    {
+      "line": 67,
+      "content": "py -3.12 scratch/verify_exp0038_content_preservation.py"
+    },
+    {
+      "line": 70,
+      "content": "py -3.12 scratch/compute_chunk_statistics.py"
+    },
+    {
+      "line": 73,
+      "content": "py -3.12 scratch/populate_c1_chunks.py"
+    },
+    {
+      "line": 81,
+      "content": "py -3.12 scratch/run_exp0038_retrieval_benchmark.py"
+    },
+    {
+      "line": 84,
+      "content": "php scratch/run_exp0038_dev_benchmark.php"
+    },
+    {
+      "line": 95,
+      "content": "| **Preservation Report** | `scratch/exp0038_preservation_report.json` |"
+    },
+    {
+      "line": 96,
+      "content": "| **Retrieval Comparison Metrics**| `scratch/exp0038_retrieval_metrics.json` |"
+    },
+    {
+      "line": 97,
+      "content": "| **C0 Retrieval Cache (N=400)** | `scratch/exp0038_dev_c0_cache.json` |"
+    },
+    {
+      "line": 98,
+      "content": "| **C1 Retrieval Cache (N=400)** | `scratch/exp0038_dev_c1_cache.json` |"
+    },
+    {
+      "line": 100,
+      "content": "| **Development Predictions JSON**| `scratch/exp0038_dev_predictions.json` |"
+    }
+  ],
+  "EXP-0039-FINAL-RECONCILIATION.md": [
+    {
+      "line": 43,
+      "content": "| `scratch/run_exp0039_blind_retrieval.py` | Phase-1 Retrieval Execution Script | `3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08` | Correct (Checked at runtime) |"
+    },
+    {
+      "line": 44,
+      "content": "| `scratch/run_exp0039_blind_inference.php` | Phase-1 Verifier Inference Script | `3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08` | Correct (Checked at runtime) |"
+    }
+  ],
+  "EXP-0039-RECONCILED-AUDIT.md": [
+    {
+      "line": 9,
+      "content": "**Underlying Development Predictions:** `scratch/exp0039_dev_predictions.json` (100% UNCHANGED)"
+    },
+    {
+      "line": 26,
+      "content": "| **Prediction Immutability** | No changes to raw predictions or post-hoc threshold tuning | `scratch/exp0039_dev_predictions.json` remains bit-for-bit identical | **COMPLIANT** |"
+    },
+    {
+      "line": 62,
+      "content": "- **Defect:** `scratch/run_exp0039_retrieval_benchmark.py` reported nDCG@5 values up to 212.88%."
+    }
+  ],
+  "EXP-0039-RECONCILIATION-REPORT.md": [
+    {
+      "line": 9,
+      "content": "**Underlying Development Predictions:** `scratch/exp0039_dev_predictions.json` (100% UNCHANGED)"
+    },
+    {
+      "line": 22,
+      "content": "1. **Zero Prediction Tampering:** The underlying model inference predictions (`scratch/exp0039_dev_predictions.json`, $N = 400 \\times 5$ experimental conditions) and raw retrieval caches (`scratch/exp0039_dev_*_cache.json`) were **NOT** regenerated, modified, or tuned. All findings are derived directly from the audited predictions generated at commit `3376305`."
+    },
+    {
+      "line": 86,
+      "content": "In `scratch/run_exp0039_retrieval_benchmark.py`, lines 251–258:"
+    },
+    {
+      "line": 112,
+      "content": "Recomputed directly from the persisted retrieval caches (`scratch/exp0039_dev_*_cache.json`) over the 256 curriculum queries with gold annotations ($N_{\\text{eval}} = 256$):"
+    },
+    {
+      "line": 133,
+      "content": "An independent audit of the gold-chunk mapping implementation in `scratch/run_exp0038_retrieval_benchmark.py` and `scratch/run_exp0039_retrieval_benchmark.py` established:"
+    },
+    {
+      "line": 158,
+      "content": "Calculated directly from raw prediction vectors in `scratch/exp0039_dev_predictions.json` ($N = 400$):"
+    },
+    {
+      "line": 203,
+      "content": "Independently recomputed from `scratch/exp0039_dev_predictions.json` across all $N = 400$ cases:"
+    }
+  ],
+  "EXP-0039-RECONCILIATION.json": [
+    {
+      "line": 10,
+      "content": "\"underlying_predictions_artifact\": \"scratch/exp0039_dev_predictions.json (UNCHANGED)\","
+    },
+    {
+      "line": 67,
+      "content": "\"scratch/run_exp0039_retrieval_benchmark.py\","
+    },
+    {
+      "line": 68,
+      "content": "\"scratch/exp0039_retrieval_metrics.json\","
+    },
+    {
+      "line": 85,
+      "content": "\"root_cause\": \"In scratch/run_exp0039_retrieval_benchmark.py lines 256-257, IDCG was hardcoded as idcg = 1.0 / np.log2(2), assuming binary relevance with only 1 relevant chunk. In semantic chunking, fine-grained proposition chunking causes an average of 4.8 to 5.1 chunks per query to match the curriculum rule. When multiple matching chunks appeared in top-5, DCG summed up to 2.56, producing nDCG values > 100% when divided by 1.0.\","
+    },
+    {
+      "line": 154,
+      "content": "\"recomputation_method\": \"Direct vectorized computation from scratch/exp0039_dev_predictions.json without altering any prediction.\","
+    }
+  ],
+  "EXP-0039-REPRODUCIBILITY.md": [
+    {
+      "line": 66,
+      "content": "py -3.12 scratch/verify_exp0039_content_preservation.py"
+    },
+    {
+      "line": 72,
+      "content": "py -3.12 scratch/compute_exp0039_chunk_statistics.py"
+    },
+    {
+      "line": 78,
+      "content": "py -3.12 scratch/run_exp0039_retrieval_benchmark.py"
+    },
+    {
+      "line": 84,
+      "content": "php scratch/run_exp0039_dev_benchmark.php"
+    },
+    {
+      "line": 97,
+      "content": "7. `scratch/exp0039_retrieval_metrics.json`: Comparative retrieval benchmark metrics (Recall@1, Recall@5, MRR, nDCG@5, Latency)."
+    }
+  ],
+  "EXP-0055-FINAL-RECONCILIATION.md": [
+    {
+      "line": 60,
+      "content": "py -3.12 scratch/create_scaled_curriculum_pdfs.py"
+    },
+    {
+      "line": 66,
+      "content": "py -3.12 scratch/exp0055_retrieval_builder.py"
+    },
+    {
+      "line": 69,
+      "content": "php scratch/run_exp0055_benchmark.php"
+    }
+  ],
+  "EXP-0055-REPRODUCIBILITY-MANIFEST.json": [
+    {
+      "line": 39,
+      "content": "\"py -3.12 scratch/create_scaled_curriculum_pdfs.py\","
+    },
+    {
+      "line": 41,
+      "content": "\"py -3.12 scratch/exp0055_retrieval_builder.py\","
+    },
+    {
+      "line": 42,
+      "content": "\"php scratch/run_exp0055_benchmark.php\","
+    }
+  ],
+  "EXP-0056-FINAL-RECONCILIATION.md": [
+    {
+      "line": 19,
+      "content": "2. **Query Routing:** **PageIndex-derived deterministic structural routing** implemented via deterministic regular expression and keyword matching logic (`route_query()` in `scratch/exp0056_retrieval_builder.py` and `search_tree()` in `research/document_navigation/pageindex_adapter.py`). It does **not** evaluate native PageIndex agentic reasoning retrieval (`agent_tools` / LLM-based tree traversal)."
+    }
+  ],
+  "EXP-0056-INDEPENDENT-AUDIT.md": [
+    {
+      "line": 48,
+      "content": "| **Query Routing** | Deterministic keyword and regex matching against module/section topics | `route_query()` in `scratch/exp0056_retrieval_builder.py` & `search_tree()` in `pageindex_adapter.py` | **PageIndex-derived deterministic structural routing** (Custom Local Logic) |"
+    }
+  ],
+  "EXP-0056-PAGEINDEX-FIDELITY.json": [
+    {
+      "line": 51,
+      "content": "\"document_path\": \"D:\\\\Collage project\\\\EduConnect-LMS-Experimental\\\\scratch\\\\data_benchmarks\\\\curriculum_20p.pdf\","
+    },
+    {
+      "line": 79,
+      "content": "\"document_path\": \"D:\\\\Collage project\\\\EduConnect-LMS-Experimental\\\\scratch\\\\data_benchmarks\\\\curriculum_50p.pdf\","
+    },
+    {
+      "line": 107,
+      "content": "\"document_path\": \"D:\\\\Collage project\\\\EduConnect-LMS-Experimental\\\\scratch\\\\data_benchmarks\\\\curriculum_full.pdf\","
+    }
+  ],
+  "EXP-0056-REPRODUCIBILITY-MANIFEST.json": [
+    {
+      "line": 77,
+      "content": "\"scratch/data_benchmarks/curriculum_full.pdf\": \"4c0e8608518e24469c63dcd6eaf054807494631d36156965816ec000400eeb0f\","
+    },
+    {
+      "line": 78,
+      "content": "\"scratch/exp0056_retrieval_metrics.json\": \"db5a0271f255b7644c13b0c1c9961b88553e63d23fa8ca666e8ca68c23b40b35\","
+    },
+    {
+      "line": 79,
+      "content": "\"scratch/exp0056_dev_c1_cache.json\": \"e4955c0513a96e18b889d3992d8433da78b977c0b3b981b3c3e8a216569e9e0a\","
+    },
+    {
+      "line": 80,
+      "content": "\"scratch/exp0056_blind_c1_cache.json\": \"f042efd87af49bec424cabbe8b86eca21644db92b0d7e8bb576ce2d0851f9b8e\""
+    }
+  ],
+  "EXP-0057-FEASIBILITY-V2.md": [
+    {
+      "line": 173,
+      "content": "- `scratch/data_benchmarks/curriculum_full.pdf`: `4c0e8608518e24469c63dcd6eaf054807494631d36156965816ec000400eeb0f` (MATCH)"
+    }
+  ],
+  "EXP-0057-INDEPENDENT-AUDIT.md": [
+    {
+      "line": 86,
+      "content": "- **Reconciliation Protocol:** To maintain frozen verifier code immutability (SHA: `31c7c31ef6301156bb0318cb35ba5879e5ca3c25acdd6f705cd2f6c0e3b0fc2e`), the PHP evaluator `scratch/evaluate_exp0057_dev_a4.php` sets `'similarity' => 1.0` strictly as a documented non-scoring execution sentinel at the PHP invocation boundary."
+    },
+    {
+      "line": 161,
+      "content": "- `scratch/data_benchmarks/curriculum_full.pdf`: `4c0e8608518e24469c63dcd6eaf054807494631d36156965816ec000400eeb0f` (**MATCH**)"
+    }
+  ],
+  "EXP-0059-INDEPENDENT-AUDIT.md": [
+    {
+      "line": 71,
+      "content": "- Audit of `scratch/evaluate_exp0059_a4.php` confirms:"
+    }
+  ],
+  "EXP-0059-PROTOCOL.md": [
+    {
+      "line": 58,
+      "content": "- **Reference Predictions:** `scratch/exp0056_dev_predictions.json` (Accuracy: 92.00%, 368/400)."
+    }
+  ],
+  "EXP-0060-INDEPENDENT-AUDIT.md": [
+    {
+      "line": 62,
+      "content": "The script `scratch/run_exp0060_benchmark.py` enforced programmatic assertions for all 400 cases:"
+    },
+    {
+      "line": 68,
+      "content": "- In `scratch/evaluate_exp0060_a4.php`, `$chunk['similarity'] = 1.0` was passed strictly at the PHP boundary as a non-scoring syntactical compatibility sentinel for `backend/rag_premise_verifier.php` line 1207."
+    }
+  ],
+  "EXP-0060-PROTOCOL.md": [
+    {
+      "line": 53,
+      "content": "- **Source:** `scratch/exp0056_dev_predictions.json` (Accuracy: 92.00%, 368/400)."
+    }
+  ],
+  "EXP-0061-BLIND-INDEPENDENT-AUDIT.md": [
+    {
+      "line": 65,
+      "content": "- Script `scratch/run_exp0061_blind_benchmark.py` extracted only `case['id']` and `case['query']` to query the BGE-M3 + Qdrant + PyLate pipeline and apply the structural coherence gate."
+    },
+    {
+      "line": 66,
+      "content": "- Gated evidence was stored in `scratch/exp0061_blind_traces.jsonl`."
+    },
+    {
+      "line": 67,
+      "content": "- Verifier execution in `scratch/evaluate_exp0061_blind_a4.php` evaluated queries purely against retrieved and gated evidence."
+    },
+    {
+      "line": 68,
+      "content": "- Ground-truth evaluation occurred strictly downstream in `scratch/compute_exp0061_blind_metrics.py`."
+    }
+  ],
+  "EXP-0061-PROTOCOL.md": [
+    {
+      "line": 70,
+      "content": "- **Source:** `scratch/exp0056_dev_predictions.json` (Accuracy: 92.00%, 368/400)."
+    }
+  ],
+  "EXP-0062-INDEPENDENT-AUDIT.md": [
+    {
+      "line": 68,
+      "content": "The 20-query feasibility test (`scratch/verify_exp0062_feasibility.py`) confirmed:"
+    }
+  ],
+  "EXP-0062-PROTOCOL.md": [
+    {
+      "line": 58,
+      "content": "- **Source:** `scratch/exp0056_dev_predictions.json` (Accuracy: 92.00%, 368/400)."
+    }
+  ],
+  "EXP-0064-INDEPENDENT-AUDIT.md": [
+    {
+      "line": 18,
+      "content": "2. **Corpus & Index Invariance:** Rendered from `scratch/data_benchmarks/curriculum_full.pdf` (SHA-256: `4c0e8608518e24469c63dcd6eaf054807494631d36156965816ec000400eeb0f`)."
+    },
+    {
+      "line": 19,
+      "content": "3. **Evidence Bridge Invariance:** Strictly authentic PDF markdown from `scratch/pageindex_store/docs/curriculum_full/pages.json`. Zero OCR, zero VLM-generated descriptions."
+    },
+    {
+      "line": 36,
+      "content": "| 4 | No OCR used (authentic bridge) | **PASS** | Verified source markdown from `scratch/pageindex_store/docs/curriculum_full/pages.json` |"
+    },
+    {
+      "line": 69,
+      "content": "- In `scratch/evaluate_exp0064_a4.php`, retrieved candidates are provided with `'similarity' => 1.0`."
+    }
+  ],
+  "EXP-0064-PROTOCOL.md": [
+    {
+      "line": 35,
+      "content": "- **Source:** `scratch/exp0056_dev_predictions.json` (Accuracy: 92.00%, 368/400)."
+    }
+  ],
+  "EXP-0064-VISUAL-MODEL-PROVENANCE.md": [
+    {
+      "line": 53,
+      "content": "- **Source PDF:** `scratch/data_benchmarks/curriculum_full.pdf`"
+    }
+  ],
+  "EXP-0065-FINAL-REPORT.md": [
+    {
+      "line": 41,
+      "content": "3. **Evidence Cache:** `scratch/exp0056_dev_c1_cache.json` (400 frozen query evidence bundles)."
+    }
+  ],
+  "EXP-0065-PROTOCOL.md": [
+    {
+      "line": 45,
+      "content": "| **Dev Retrieval Cache** | `scratch/exp0056_dev_c1_cache.json` | 400 frozen query evidence bundles |"
+    },
+    {
+      "line": 46,
+      "content": "| **Blind Retrieval Cache** | `scratch/exp0056_blind_c1_cache.json` | 500 frozen query evidence bundles |"
+    }
+  ],
+  "EXP-0066-FAILURE-ATTRIBUTION.md": [
+    {
+      "line": 15,
+      "content": "Each of the 136 blind errors was audited against query-level execution traces, retrieved top-5 curriculum evidence passages (`scratch/exp0056_blind_c1_cache.json`), cosine similarity scores, decision tiers, and verifier diagnostic reasons."
+    }
+  ],
+  "EXP-0066-PROTOCOL.md": [
+    {
+      "line": 124,
+      "content": "| `scratch/exp0056_dev_c1_cache.json` | Dev Retrieval Context Cache | `e4955c0513a96e18b889d3992d8433da78b977c0b3b981b3c3e8a216569e9e0a` |"
+    },
+    {
+      "line": 125,
+      "content": "| `scratch/exp0056_blind_c1_cache.json` | Blind Retrieval Context Cache | `f042efd87af49bec424cabbe8b86eca21644db92b0d7e8bb576ce2d0851f9b8e` |"
+    }
+  ],
+  "EXP-0067-FINAL-REPORT.md": [
+    {
+      "line": 48,
+      "content": "| `scratch/exp0056_dev_c1_cache.json` | `e4955c0513a96e18b889d3992d8433da78b977c0b3b981b3c3e8a216569e9e0a` | `e4955c0513a96e18b889d3992d8433da78b977c0b3b981b3c3e8a216569e9e0a` | **VERIFIED** |"
+    }
+  ],
+  "EXP-0067-PROTOCOL.md": [
+    {
+      "line": 160,
+      "content": "| `scratch/exp0056_dev_c1_cache.json` | `e4955c0513a96e18b889d3992d8433da78b977c0b3b981b3c3e8a216569e9e0a` |"
+    },
+    {
+      "line": 161,
+      "content": "| `scratch/exp0056_blind_c1_cache.json` | `f042efd87af49bec424cabbe8b86eca21644db92b0d7e8bb576ce2d0851f9b8e` |"
+    }
+  ],
+  "EXP-0068-DEVELOPMENT-ANALYSIS.md": [
+    {
+      "line": 16,
+      "content": "All conditions were evaluated across the complete development set (`EXP-0025-DEVELOPMENT-DATASET.json`, $N=400$, SHA-256: `8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b`) using identical pre-retrieved evidence pools (`scratch/exp0056_dev_c1_cache.json`) and the frozen A4 verifier backend. Exactly 192 cases were resolved deterministically by Tier-1 fast-paths in all conditions, ensuring 100.0% isolation of the Tier-2 NLI model on the remaining 208 cases."
+    }
+  ],
+  "EXP-0069-FINAL-REPORT.md": [
+    {
+      "line": 33,
+      "content": "2. **Datasets:** `EXP-0025-DEVELOPMENT-DATASET.json` ($N=400$, SHA-256: `8ce7313c...`), `scratch/exp0056_dev_c1_cache.json` ($N=400$, SHA-256: `e4955c05...`)."
+    }
+  ],
+  "EXP-0069-PROTOCOL.md": [
+    {
+      "line": 55,
+      "content": "- Development Evidence Cache: `scratch/exp0056_dev_c1_cache.json` ($N=400$, SHA-256: `e4955c0513a96e18b889d3992d8433da78b977c0b3b981b3c3e8a216569e9e0a`)"
+    }
+  ],
+  "EXP-0070-CORRECTION.md": [
+    {
+      "line": 49,
+      "content": "An audit of the evaluation scripts (`scratch/test_train_minilm_fold1.py` and stability harness) confirms the difference is strictly scoping:"
+    }
+  ],
+  "EXP-0070-FINAL-REPORT.md": [
+    {
+      "line": 35,
+      "content": "2. **Retrieval & Evidence Bundles:** BGE-M3 dense/sparse search, Qdrant vector store, PyLate ColBERT reranker, and evidence cache `scratch/exp0056_dev_c1_cache.json` (`SHA-256: e4955c05...`) remained completely frozen."
+    }
+  ],
+  "EXP-0070-PROTOCOL.md": [
+    {
+      "line": 35,
+      "content": "* Evidence Cache: `scratch/exp0056_dev_c1_cache.json` ($N=400$, `SHA-256: e4955c05...`)"
+    }
+  ],
+  "EXP-0070-TRAINING-DATASET-AUDIT.md": [
+    {
+      "line": 72,
+      "content": "* **Evidence Leakage:** Evidence chunks are frozen in `scratch/exp0056_dev_c1_cache.json`."
+    }
+  ],
+  "EXP-0070-TRAINING-LOG.json": [
+    {
+      "line": 33,
+      "content": "\"checkpoint_dir\": \"D:\\\\Collage project\\\\EduConnect-LMS-Experimental\\\\scratch\\\\exp0070_models\\\\c1_ft_minilm_fold_1\","
+    },
+    {
+      "line": 66,
+      "content": "\"checkpoint_dir\": \"D:\\\\Collage project\\\\EduConnect-LMS-Experimental\\\\scratch\\\\exp0070_models\\\\c1_ft_minilm_fold_2\","
+    },
+    {
+      "line": 99,
+      "content": "\"checkpoint_dir\": \"D:\\\\Collage project\\\\EduConnect-LMS-Experimental\\\\scratch\\\\exp0070_models\\\\c1_ft_minilm_fold_3\","
+    },
+    {
+      "line": 132,
+      "content": "\"checkpoint_dir\": \"D:\\\\Collage project\\\\EduConnect-LMS-Experimental\\\\scratch\\\\exp0070_models\\\\c1_ft_minilm_fold_4\","
+    },
+    {
+      "line": 165,
+      "content": "\"checkpoint_dir\": \"D:\\\\Collage project\\\\EduConnect-LMS-Experimental\\\\scratch\\\\exp0070_models\\\\c1_ft_minilm_fold_5\","
+    }
+  ],
+  "EXP-0071-ACTION-ACCOUNTING-AUDIT.json": [
+    {
+      "line": 40,
+      "content": "\"previous_discrepancy_explanation\": \"The prior report reported A0=194 (181 correct), A1=108 (94 correct), A2=22 (14 correct), A3=76 (69 correct), summing to 358 correct. This occurred because scratch/exp0071_state_logs.jsonl contained 239 total entries (with 33 redundant duplicate retries from transient executions). The prior analysis parsed raw log lines rather than assigning a mutually exclusive terminal action per unique case ID, double-counting actions and losing 6 correct predictions in the arithmetic.\","
+    }
+  ],
+  "EXP-0071-INTEGRITY-AUDIT.md": [
+    {
+      "line": 17,
+      "content": "The audit team conducted a bit-for-bit forensic re-evaluation of all raw predictions (`EXP-0071-DEVELOPMENT-PREDICTIONS.json`), execution logs (`scratch/exp0071_state_logs.jsonl`), feature representations, cross-validation splits, and component ablations."
+    },
+    {
+      "line": 208,
+      "content": "`scratch/exp0071_state_logs.jsonl` contained 239 raw entries rather than 206 due to transient execution retries. The prior analysis script counted raw JSON lines instead of mapping unique case IDs to their mutually exclusive terminal actions."
+    }
+  ],
+  "EXP-0071-MANIFEST.json": [
+    {
+      "line": 35,
+      "content": "\"path\": \"scratch/exp0056_dev_c1_cache.json\","
+    }
+  ],
+  "EXP-0071-PROTOCOL.md": [
+    {
+      "line": 20,
+      "content": "| **Dev Evidence Cache** | `scratch/exp0056_dev_c1_cache.json` | `e4955c0513a96e18f2780e9803b9bc97ee3fe14c0ea21b8bca9b31d0413063f2` |"
+    }
+  ],
+  "FINAL_NUMERICAL_CONSISTENCY_AUDIT.md": [
+    {
+      "line": 18,
+      "content": "1. **Isolated IR Baseline Evaluator (`scratch/eval_external_baselines.js`):** Employs strict exact string matching against the primary course document title (`expected_doc`) across all 105 chunks. In a multi-course curriculum, chunks addressing cross-cutting concepts (e.g. event loops in JavaScript vs Node.js) are scored as non-hits if they match secondary authentic documents. Under this strict baseline harness, Dense-only achieves 70.7%, BM25-only achieves 69.5%, Hybrid RRF achieves 72.0%, and EXP-0013 achieves **73.2%**."
+    },
+    {
+      "line": 112,
+      "content": "* **SOURCE:** `scratch/cert_report_exp0013.md` (Phase 4 Telemetry)."
+    },
+    {
+      "line": 121,
+      "content": "* **SOURCE:** `scratch/cert_concurrency_bench.js` & Table 7."
+    },
+    {
+      "line": 130,
+      "content": "* **SOURCE:** `scratch/cert_embedding_parity_50.js` & `cert_parity_50_results.json`."
+    }
+  ],
+  "output_summary.txt": [
+    {
+      "line": 41,
+      "content": "1. **Isolated IR Baseline Evaluator (`scratch/eval_external_baselines.js`):** Employs strict exact string matching against the primary course document title (`expected_doc`) across all 105 chunks. In a multi-course curriculum, chunks addressing cross-cutting concepts (e.g. event loops in JavaScript vs Node.js) are scored as non-hits if they match secondary authentic documents. Under this strict baseline harness, Dense-only achieves 70.7%, BM25-only achieves 69.5%, Hybrid RRF achieves 72.0%, and EXP-0013 achieves **73.2%**."
+    },
+    {
+      "line": 135,
+      "content": "* **SOURCE:** `scratch/cert_report_exp0013.md` (Phase 4 Telemetry)."
+    },
+    {
+      "line": 144,
+      "content": "* **SOURCE:** `scratch/cert_concurrency_bench.js` & Table 7."
+    },
+    {
+      "line": 153,
+      "content": "* **SOURCE:** `scratch/cert_embedding_parity_50.js` & `cert_parity_50_results.json`."
+    }
+  ],
+  "PAPER_REPRODUCIBILITY_APPENDIX.md": [
+    {
+      "line": 94,
+      "content": "node scratch/cert_embedding_parity_50.js"
+    },
+    {
+      "line": 103,
+      "content": "node scratch/eval_external_baselines.js"
+    },
+    {
+      "line": 106,
+      "content": "node scratch/cert_concurrency_bench.js"
+    }
+  ],
+  "REPRODUCTION_GUIDE.md": [
+    {
+      "line": 145,
+      "content": "node scratch/cert_embedding_parity_50.js"
+    },
+    {
+      "line": 178,
+      "content": "node scratch/eval_external_baselines.js"
+    },
+    {
+      "line": 189,
+      "content": "node scratch/cert_concurrency_bench.js"
+    }
+  ],
+  "research/exp0066_analyzer.py": [
+    {
+      "line": 152,
+      "content": "with open(os.path.join(self.repo_root, 'scratch/exp0056_dev_c1_cache.json'), 'r', encoding='utf-8') as f:"
+    },
+    {
+      "line": 154,
+      "content": "with open(os.path.join(self.repo_root, 'scratch/exp0056_blind_c1_cache.json'), 'r', encoding='utf-8') as f:"
+    }
+  ],
+  "research/exp0071_independent_audit.py": [
+    {
+      "line": 408,
+      "content": "'This occurred because scratch/exp0071_state_logs.jsonl contained 239 total entries (with 33 redundant duplicate retries from transient executions). '"
+    }
+  ],
+  "research/run_reproduction_check.py": [
+    {
+      "line": 10,
+      "content": "cmd1 = f\"php research/benchmarks/exp0065_nli_capacity_benchmark.php --dataset=dev --model={model} --output=scratch/repro_run1_{model}.json --checkpoint=scratch/repro_chk1_{model}.json\""
+    }
+  ],
+  "research/benchmarks/exp0055_document_ingestion_benchmark.py": [
+    {
+      "line": 11,
+      "content": "2. 20-page curriculum PDF (scratch/data_benchmarks/curriculum_20p.pdf)"
+    },
+    {
+      "line": 12,
+      "content": "3. 50-page stress curriculum PDF (scratch/data_benchmarks/curriculum_50p.pdf)"
+    }
+  ],
+  "research/benchmarks/exp0055_ingestion_results.json": [
+    {
+      "line": 42,
+      "content": "\"pdf_path\": \"D:\\\\Collage project\\\\EduConnect-LMS-Experimental\\\\scratch\\\\data_benchmarks\\\\curriculum_20p.pdf\","
+    },
+    {
+      "line": 55,
+      "content": "\"pdf_path\": \"D:\\\\Collage project\\\\EduConnect-LMS-Experimental\\\\scratch\\\\data_benchmarks\\\\curriculum_20p.pdf\","
+    },
+    {
+      "line": 77,
+      "content": "\"pdf_path\": \"D:\\\\Collage project\\\\EduConnect-LMS-Experimental\\\\scratch\\\\data_benchmarks\\\\curriculum_50p.pdf\","
+    },
+    {
+      "line": 90,
+      "content": "\"pdf_path\": \"D:\\\\Collage project\\\\EduConnect-LMS-Experimental\\\\scratch\\\\data_benchmarks\\\\curriculum_50p.pdf\","
+    }
+  ],
+  "research/benchmarks/exp0056_pageindex_fidelity_benchmark.py": [
+    {
+      "line": 202,
+      "content": "\"scratch/data_benchmarks/curriculum_20p.pdf\","
+    },
+    {
+      "line": 203,
+      "content": "\"scratch/data_benchmarks/curriculum_50p.pdf\","
+    },
+    {
+      "line": 204,
+      "content": "\"scratch/data_benchmarks/curriculum_full.pdf\""
+    }
+  ],
+  "research/benchmarks/exp0065_nli_capacity_benchmark.php": [
+    {
+      "line": 27,
+      "content": "$checkpointFile = $options['checkpoint'] ?? ($rootDir . \"/scratch/exp0065_{$datasetType}_{$modelSafeName}_checkpoint.json\");"
+    },
+    {
+      "line": 46,
+      "content": "$cachePath = $rootDir . '/scratch/exp0056_dev_c1_cache.json';"
+    },
+    {
+      "line": 50,
+      "content": "$cachePath = $rootDir . '/scratch/exp0056_blind_c1_cache.json';"
+    }
+  ],
+  "research/benchmarks/exp0067_nli_formulation_benchmark.php": [
+    {
+      "line": 48,
+      "content": "$cachePath = $rootDir . '/scratch/exp0056_dev_c1_cache.json';"
+    },
+    {
+      "line": 52,
+      "content": "$cachePath = $rootDir . '/scratch/exp0056_blind_c1_cache.json';"
+    },
+    {
+      "line": 88,
+      "content": "$condFile = $rootDir . '/scratch/exp0067_active_condition.txt';"
+    },
+    {
+      "line": 104,
+      "content": "$checkpointFile = $rootDir . \"/scratch/exp0067_{$datasetType}_{$cond}_checkpoint.json\";"
+    }
+  ],
+  "research/benchmarks/exp0068_cross_encoder_benchmark.php": [
+    {
+      "line": 49,
+      "content": "$cachePath = $rootDir . '/scratch/exp0056_dev_c1_cache.json';"
+    },
+    {
+      "line": 53,
+      "content": "$cachePath = $rootDir . '/scratch/exp0056_blind_c1_cache.json';"
+    },
+    {
+      "line": 89,
+      "content": "$condFile = $rootDir . '/scratch/exp0068_active_condition.txt';"
+    },
+    {
+      "line": 105,
+      "content": "$checkpointFile = $rootDir . \"/scratch/exp0068_{$datasetType}_{$cond}_checkpoint.json\";"
+    }
+  ],
+  "research/benchmarks/exp0069_benchmark.php": [
+    {
+      "line": 47,
+      "content": "$cachePath = $rootDir . '/scratch/exp0056_dev_c1_cache.json';"
+    },
+    {
+      "line": 78,
+      "content": "$condFile = $rootDir . '/scratch/exp0069_active_condition.txt';"
+    },
+    {
+      "line": 79,
+      "content": "$activeCaseFile = $rootDir . '/scratch/exp0069_active_case.txt';"
+    },
+    {
+      "line": 107,
+      "content": "$checkpointFile = $rootDir . \"/scratch/exp0069_dev_{$cond}_checkpoint.json\";"
+    }
+  ],
+  "research/benchmarks/exp0070_benchmark.php": [
+    {
+      "line": 47,
+      "content": "$cachePath = $rootDir . '/scratch/exp0056_dev_c1_cache.json';"
+    },
+    {
+      "line": 78,
+      "content": "$condFile = $rootDir . '/scratch/exp0070_active_condition.txt';"
+    },
+    {
+      "line": 79,
+      "content": "$activeCaseFile = $rootDir . '/scratch/exp0070_active_case.txt';"
+    },
+    {
+      "line": 101,
+      "content": "$checkpointFile = $rootDir . \"/scratch/exp0070_dev_{$cond}_checkpoint.json\";"
+    }
+  ],
+  "research/benchmarks/exp0071_benchmark.php": [
+    {
+      "line": 47,
+      "content": "$cachePath = $rootDir . '/scratch/exp0056_dev_c1_cache.json';"
+    },
+    {
+      "line": 78,
+      "content": "$condFile = $rootDir . '/scratch/exp0071_active_condition.txt';"
+    },
+    {
+      "line": 79,
+      "content": "$activeCaseFile = $rootDir . '/scratch/exp0071_active_case.txt';"
+    },
+    {
+      "line": 80,
+      "content": "$budgetFile = $rootDir . '/scratch/exp0071_active_budget.txt';"
+    },
+    {
+      "line": 120,
+      "content": "$chkFile = $rootDir . \"/scratch/exp0071_dev_{$cond}_checkpoint.json\";"
+    }
+  ],
+  "research/benchmarks/exp0071_counter_evidence.py": [
+    {
+      "line": 92,
+      "content": "# 1. Load from scratch/corpus_dump.json"
+    }
+  ],
+  "research/data/colsmol/rendered_pages_manifest.json": [
+    {
+      "line": 4,
+      "content": "\"source_pdf\": \"scratch/data_benchmarks/curriculum_full.pdf\","
+    }
+  ],
+  "research/document_navigation/pageindex_agentic_adapter.py": [
+    {
+      "line": 48,
+      "content": "self.storage_path = self.config.get(\"storage_path\", \"scratch/pageindex_store\")"
+    }
+  ],
+  "research/integration/REPRODUCIBILITY.md": [
+    {
+      "line": 31,
+      "content": "py -3.12 scratch/verify_locked_hashes.py"
+    }
+  ],
+  "research/integration_configs/pageindex_agentic.yaml": [
+    {
+      "line": 24,
+      "content": "storage_path: scratch/pageindex_store"
+    }
+  ],
+  "tests/rag/BENCHMARK_REPORT.md": [
+    {
+      "line": 1107,
+      "content": "Stress test executed against live gateway port 8000 running EXP-0010 (`scratch/concurrency_32_results.json`):"
+    }
+  ],
+  "tests/rag/cert_exp0014/run_suite_23_regression.js": [
+    {
+      "line": 25,
+      "content": "const parityRun = spawnSync('node', ['scratch/cert_embedding_parity_50.js'], { cwd: ROOT, encoding: 'utf8' });"
+    }
+  ],
+  "tests/rag/reports/EXP-0018-FAILURE-REPRODUCTIONS.json": [
+    {
+      "line": 18,
+      "content": "\"reproduction_command\": \"node scratch/test_payload_size.js (20 oversized 1.2MB requests)\","
+    },
+    {
+      "line": 26,
+      "content": "\"reproduction_command\": \"node scratch/test_worker_leak_and_crash.js (12 sequential requests)\","
+    },
+    {
+      "line": 34,
+      "content": "\"reproduction_command\": \"node scratch/test_payload_size.js (1.2MB payload)\","
+    },
+    {
+      "line": 42,
+      "content": "\"reproduction_command\": \"node scratch/verify_p1_p2_fixes.js (Test 1)\","
+    },
+    {
+      "line": 50,
+      "content": "\"reproduction_command\": \"node scratch/verify_p1_p2_fixes.js (Test 2)\","
+    },
+    {
+      "line": 58,
+      "content": "\"reproduction_command\": \"php scratch/test_dim_safety.php\","
+    },
+    {
+      "line": 66,
+      "content": "\"reproduction_command\": \"node scratch/verify_p1_p2_fixes.js (Test 3)\","
+    },
+    {
+      "line": 74,
+      "content": "\"reproduction_command\": \"node scratch/audit_500_false_premises_exp0018.js\","
+    },
+    {
+      "line": 82,
+      "content": "\"reproduction_command\": \"node scratch/test_conversation_forensics.js\","
+    }
+  ],
+  "tests/rag/reports/EXP-0018-WEAKNESS-REMEDIATION-REGISTER.csv": [
+    {
+      "line": 3,
+      "content": "W-02,Evaluator,Medium,Evaluator defect & benchmark overfitting in test suite,Evaluator checked exact 8 APIs hardcoded in premise verifier,Expanded 500-case diverse evaluation harness spanning novel APIs,scratch/audit_500_false_premises_exp0018.js,FIXED,30.0% sycophancy on novel APIs,26.0% sycophancy overall; 8% on fabricated APIs"
+    }
+  ],
+  "tests/research/test_baseline_reproduction.py": [
+    {
+      "line": 20,
+      "content": "self.dev_cache_path = \"scratch/exp0040_dev_p1_cache.json\""
+    }
+  ]
+}

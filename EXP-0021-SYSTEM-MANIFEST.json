@@ -1,0 +1,67 @@
+{
+  "experiment_tag": "EXP-0021-CERTIFICATION-2026-09-09",
+  "candidate_under_test": "EXP-0020-CHAMPION-2026-09-09",
+  "git_commit": "176883227602671b545e061dacf228aedc3271a5",
+  "timestamp": "2026-09-09T13:59:06.205Z",
+  "environment": {
+    "node_version": "v24.11.0",
+    "php_version": "8.3.32",
+    "os_platform": "win32",
+    "os_arch": "x64",
+    "ollama_version": "0.33.3",
+    "embedding_model": "nomic-embed-text:latest (0a109f422b47)",
+    "generation_model": "llama3.2:latest (a80c4f17acd5)",
+    "worker_count": 8,
+    "worker_ports": [
+      8001,
+      8002,
+      8003,
+      8004,
+      8005,
+      8006,
+      8007,
+      8008
+    ],
+    "gateway_port": 8000,
+    "two_tier_distribution": {
+      "fast_search_workers": [
+        8001,
+        8002,
+        8003,
+        8004,
+        8005,
+        8006
+      ],
+      "gen_llm_workers": [
+        8007,
+        8008
+      ]
+    }
+  },
+  "corpus_version": "1788961720792",
+  "source_hashes": {
+    "php": {
+      "backend/rag_service.php": "99fb4a2bae3e25a267f2131dbde88c518b0035ab40cceb8b53a49c4795b954ed",
+      "backend/rag_premise_verifier.php": "31be3339bf1fe08b8c4a84eaff20d6421a293769a71018ab96e31e1c16560bf2",
+      "backend/rag_query_orchestrator.php": "644f466c88c1107ff5605e0dc60f0dc11b238b0842b6901ba571d955a21e82cc",
+      "backend/rag_safety_boundary.php": "805d501efb9a339dea21ed8d158522398c8f4dadaccc6beb9c4c81450e5121a2",
+      "backend/rag_semantic_mapper.php": "a1314dc897e5c1dc9ccb0eadf24f3d78060627a3cf9063aa5fb96d4cd353318c",
+      "backend/rag_query_condenser.php": "6b400fc1d093712c385c42450af543708034781ca9ecbbbf02f676ae80b3cfb1",
+      "backend/rag_flags.php": "aa8d3051873ea28cb6e8c7f7fa2ea4f47499614e7e6c63403390dd5d6829ed84",
+      "backend/index.php": "c469adb1fd5fdd6553506db5f33b01736ee4559146d3d95e195917a786faf04a",
+      "backend/config.php": "ec39826c30bc37869cba73ce758587a7016b7382aaea8971e9394d6e1ae6cda7",
+      "backend/auth_middleware.php": "2ed46f4da390f1a0e7046e368b032029566ec224a14a16a06844e49f49e727f9"
+    },
+    "node": {
+      "backend/gateway.js": "3c0308560a9a2bef75b2fed32a539a86a6378c73f642c1819c05b817a43a93c4",
+      "backend/embedding_coordinator.js": "221d86ede96ebe2938d6bd9a39b56ed718bee9586af0b5dcc70ba40f39854859"
+    },
+    "data_and_config": {
+      "database/rag_materials.sqlite3": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "database/lms.db": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "database/rag_corpus_version.txt": "02b3559d19c5a5b8193fe87d4b5dd079a45a9354273af2b22a73ce12b6567fe0",
+      "backend/rag_flags.json": "c814568feadfda105e84730d943fbe700ef55d61532a4067594e354b7c18f423",
+      "workflow_fixed.json": "1cae6f72f25c5dfaef1ee2caddf9226535160e3e3b2637d9ebe211d9279bc25e"
+    }
+  }
+}

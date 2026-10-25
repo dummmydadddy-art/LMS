@@ -1,0 +1,4140 @@
+{
+  "experimentId": "EXP-0001",
+  "description": "Baseline Dense Vector Search",
+  "hypothesis": "Baseline nomic-embed-text dense retrieval with cosine similarity and SQLite vector table",
+  "timestamp": "2026-09-12T07:50:46.175Z",
+  "suites": {
+    "Golden (40)": [
+      {
+        "id": "gold_01",
+        "query": "What is the purpose of the <main> HTML5 semantic element and how many can exist in a document?",
+        "retrievalLatencyMs": 70,
+        "generationLatencyMs": 4126,
+        "ttftMs": 3053,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7780158492147935
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 1,
+          "supportedClaims": 1,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 1,
+          "claimDetails": [
+            {
+              "claim": "The `<main>` HTML5 semantic element specifies the main, unique content of a document, and there can be only one `<main>` element in a document ().",
+              "status": "SUPPORTED",
+              "confidence": 0.8438,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 1)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.8402
+        }
+      },
+      {
+        "id": "gold_02",
+        "query": "Explain the four layers of the CSS Box Model from inside out.",
+        "retrievalLatencyMs": 32,
+        "generationLatencyMs": 3211,
+        "ttftMs": 375,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 1,
+          "supportedClaims": 5,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 5,
+          "claimDetails": [
+            {
+              "claim": "The four layers of the CSS Box Model, from inside out, are:",
+              "status": "SUPPORTED",
+              "confidence": 1,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            },
+            {
+              "claim": "Content: The actual text, image, or media content of the box, controlled via width and height.",
+              "status": "SUPPORTED",
+              "confidence": 1,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            },
+            {
+              "claim": "Padding: A transparent area clearing space around the content inside the border.",
+              "status": "SUPPORTED",
+              "confidence": 1,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            },
+            {
+              "claim": "Border: The visible border around the box, which is added to the content width when box-sizing is content-box.",
+              "status": "SUPPORTED",
+              "confidence": 0.7955,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            },
+            {
+              "claim": "Margin: The outermost space around the box, which is not affected by box-sizing.",
+              "status": "SUPPORTED",
+              "confidence": 0.6875,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.8495
+        }
+      },
+      {
+        "id": "gold_03",
+        "query": "Why is * { box-sizing: border-box; } recommended over content-box in CSS?",
+        "retrievalLatencyMs": 31,
+        "generationLatencyMs": 2651,
+        "ttftMs": 303,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.75,
+          "supportedClaims": 2,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 4,
+          "claimDetails": [
+            {
+              "claim": "According to , box-sizing is recommended over content-box because it simplifies the calculation of the width and height of an element.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.525,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            },
+            {
+              "claim": "When box-sizing is set to border-box, the padding and border are included in the width and height of the element",
+              "status": "SUPPORTED",
+              "confidence": 0.775,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            },
+            {
+              "claim": "with content-box, they are added separately.",
+              "status": "SUPPORTED",
+              "confidence": 0.6875,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            },
+            {
+              "claim": "This makes it easier to maintain consistent spacing and layout across different elements.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.3889,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.5,
+          "citationCompleteness": 1,
+          "confidence": 0.8601
+        }
+      },
+      {
+        "id": "gold_04",
+        "query": "In CSS Flexbox, what is the difference between justify-content and align-items?",
+        "retrievalLatencyMs": 92,
+        "generationLatencyMs": 101,
+        "ttftMs": 96,
+        "retrievedCount": 4,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.75
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 0,
+          "citationRecall": 0,
+          "citationCompleteness": 0,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "gold_05",
+        "query": "What are the core child flex properties that make up the flex shorthand in CSS?",
+        "retrievalLatencyMs": 35,
+        "generationLatencyMs": 3749,
+        "ttftMs": 449,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 1,
+          "supportedClaims": 5,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 5,
+          "claimDetails": [
+            {
+              "claim": "The core child flex properties that make up the flex shorthand in CSS are flex-grow, flex-shrink, and flex-basis.",
+              "status": "SUPPORTED",
+              "confidence": 0.8864,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "According to , the flex shorthand is defined as `flex: 1 1 auto`, where:",
+              "status": "SUPPORTED",
+              "confidence": 0.6429,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "`flex-grow` defines the ability for a flex item to grow if necessary (default 0).",
+              "status": "SUPPORTED",
+              "confidence": 1,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "`flex-shrink` defines the ability for a flex item to shrink if necessary (default 1).",
+              "status": "SUPPORTED",
+              "confidence": 1,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "`flex-basis` is the default size of an element before the remaining space is distributed (e.g., `flex-basis: 250px`).",
+              "status": "SUPPORTED",
+              "confidence": 0.9773,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.8287
+        }
+      },
+      {
+        "id": "gold_06",
+        "query": "What is CSS Grid and how does it differ in dimensionality from Flexbox?",
+        "retrievalLatencyMs": 46,
+        "generationLatencyMs": 5613,
+        "ttftMs": 342,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.75,
+          "supportedClaims": 4,
+          "unsupportedClaims": 1,
+          "contradictedClaims": 0,
+          "totalClaims": 6,
+          "claimDetails": [
+            {
+              "claim": "CSS Grid is a 2-dimensional layout system",
+              "status": "SUPPORTED",
+              "confidence": 1,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 4)"
+            },
+            {
+              "claim": "Flexbox is a 1-dimensional layout model.",
+              "status": "SUPPORTED",
+              "confidence": 0.9375,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "CSS Grid allows for both columns and rows to be defined simultaneously, using properties such as `grid-template-columns` and `grid-template-rows`.",
+              "status": "SUPPORTED",
+              "confidence": 0.7083,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 4)"
+            },
+            {
+              "claim": "In contrast, Flexbox is designed for distributing space along a single axis, either horizontally (Main Axis) or vertically (Cross Axis), using properties such as `justify-content` and `align-items`.",
+              "status": "SUPPORTED",
+              "confidence": 0.6974,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "This fundamental difference in dimensionality allows CSS Grid to create complex, multi-axis layouts",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.425,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 4)"
+            },
+            {
+              "claim": "Flexbox is better suited for simpler, one-axis layouts.",
+              "status": "UNSUPPORTED",
+              "confidence": 0.2917,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            }
+          ],
+          "hallucinationScore": 0.1667,
+          "citationPrecision": 1,
+          "citationRecall": 0.75,
+          "citationCompleteness": 1,
+          "confidence": 0.6735
+        }
+      },
+      {
+        "id": "gold_07",
+        "query": "What are the benefits of using HTML5 semantic elements instead of generic div tags?",
+        "retrievalLatencyMs": 37,
+        "generationLatencyMs": 4393,
+        "ttftMs": 307,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7780158492147935
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 1,
+          "supportedClaims": 4,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 4,
+          "claimDetails": [
+            {
+              "claim": "Using HTML5 semantic elements instead of generic div tags provides several benefits, including improved SEO, screen-reader accessibility (A11y), and code maintainability.",
+              "status": "SUPPORTED",
+              "confidence": 0.6974,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 1)"
+            },
+            {
+              "claim": "Semantic elements clearly describe their meaning to both the browser and the developer, making the code more readable and maintainable.",
+              "status": "SUPPORTED",
+              "confidence": 0.8077,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 1)"
+            },
+            {
+              "claim": "For example, using `<section>` instead of `<div>` helps to structure content and improve accessibility.",
+              "status": "SUPPORTED",
+              "confidence": 0.6944,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 1)"
+            },
+            {
+              "claim": "According to , using semantic tags improves these aspects over generic `<div>` tags.",
+              "status": "SUPPORTED",
+              "confidence": 0.7,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 1)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.8666
+        }
+      },
+      {
+        "id": "gold_08",
+        "query": "How does the gap property in CSS Flexbox simplify spacing between items?",
+        "retrievalLatencyMs": 48,
+        "generationLatencyMs": 2490,
+        "ttftMs": 394,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.8333,
+          "supportedClaims": 2,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 3,
+          "claimDetails": [
+            {
+              "claim": "The gap property in CSS Flexbox simplifies spacing between items by defining the space between flex items without using margins.",
+              "status": "SUPPORTED",
+              "confidence": 0.875,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "According to the CSS Flexbox Layout Guide, \" Defines spacing between flex items without using margins (e.g., gap: 1rem)\" ().",
+              "status": "SUPPORTED",
+              "confidence": 0.8594,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "This allows for more precise control over spacing and eliminates the need for margin properties.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.4722,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 0.5,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.7332
+        }
+      },
+      {
+        "id": "gold_09",
+        "query": "How do var, let, and const differ in terms of scoping, hoisting, and Temporal Dead Zone?",
+        "retrievalLatencyMs": 59,
+        "generationLatencyMs": 7586,
+        "ttftMs": 435,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.875,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.9375,
+          "supportedClaims": 7,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 8,
+          "claimDetails": [
+            {
+              "claim": "Here's a concise explanation of the differences between `var`, `let`, and `const` in terms of scoping, hoisting, and Temporal Dead Zone (TDZ), backed by the provided excerpts:",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.5147,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "`var` is function-scoped, hoisted with an initial value of `undefined`, and allows re-declaration, which often causes subtle bugs ().",
+              "status": "SUPPORTED",
+              "confidence": 0.8846,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "`let` and `const` are block-scoped, with `let` being hoisted into the TDZ where accessing it before declaration throws a `ReferenceError`, and allows re-assignment but not re-declaration in the same scope ().",
+              "status": "SUPPORTED",
+              "confidence": 0.881,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "`const` is also block-scoped, with the same TDZ hoisting behavior, and must be initialized upon declaration, cannot be reassigned",
+              "status": "SUPPORTED",
+              "confidence": 0.875,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "objects and arrays declared with `const` remain mutable in their properties and elements ().",
+              "status": "SUPPORTED",
+              "confidence": 0.8611,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "Additionally, `const` can be used with object destructuring, array destructuring, spread operator, and rest parameters",
+              "status": "SUPPORTED",
+              "confidence": 1,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 3)"
+            },
+            {
+              "claim": "not as a constructor ().",
+              "status": "SUPPORTED",
+              "confidence": 0.5833,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "It's also worth noting that when updating state with React Hooks, the functional updater pattern should be used, such as `setCount(prev => prev + 1)",
+              "status": "SUPPORTED",
+              "confidence": 0.8269,
+              "supportingChunk": "React Hooks Tutorial (Section 2)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8373
+        }
+      },
+      {
+        "id": "gold_10",
+        "query": "Can you mutate object properties or array elements declared with const in JavaScript?",
+        "retrievalLatencyMs": 39,
+        "generationLatencyMs": 1739,
+        "ttftMs": 421,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.75,
+          "supportedClaims": 1,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 2,
+          "claimDetails": [
+            {
+              "claim": "According to , objects and arrays declared with `const` remain mutable in their properties and elements.",
+              "status": "SUPPORTED",
+              "confidence": 0.8889,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "This means that even though `const` cannot be reassigned, its properties and elements can still be mutated.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.525,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.8131
+        }
+      },
+      {
+        "id": "gold_11",
+        "query": "How do arrow functions handle this differently from traditional function declarations?",
+        "retrievalLatencyMs": 33,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7780158492147935
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_12",
+        "query": "What happens if you invoke an arrow function using the new keyword?",
+        "retrievalLatencyMs": 33,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_13",
+        "query": "What is the difference between the spread operator and rest parameters in JavaScript ES6?",
+        "retrievalLatencyMs": 90,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 3,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.6666666666666666
+          },
+          "ndcg5": 0.8972754076830647
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_14",
+        "query": "What are the three possible states of a JavaScript Promise?",
+        "retrievalLatencyMs": 30,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.8972754076830647
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_15",
+        "query": "How does async/await interact with JavaScript Promises and error handling?",
+        "retrievalLatencyMs": 31,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8333333333333334,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.9895471976490702
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_16",
+        "query": "What is the Temporal Dead Zone (TDZ) in JavaScript let and const declarations?",
+        "retrievalLatencyMs": 85,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_17",
+        "query": "What are the two fundamental Rules of Hooks in React?",
+        "retrievalLatencyMs": 30,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 1
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_18",
+        "query": "Why must state updates in useState be immutable when updating objects or arrays?",
+        "retrievalLatencyMs": 63,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.4,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_19",
+        "query": "How does the dependency array in useEffect determine when the effect runs?",
+        "retrievalLatencyMs": 30,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_20",
+        "query": "What is the purpose of the cleanup function returned by a useEffect hook?",
+        "retrievalLatencyMs": 34,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.6666666666666666,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_21",
+        "query": "What is the difference between useMemo and useCallback in React?",
+        "retrievalLatencyMs": 82,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 3,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.4,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 1
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_22",
+        "query": "How does useRef differ from useState in triggering component re-renders?",
+        "retrievalLatencyMs": 82,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 1
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_23",
+        "query": "How do createContext and useContext work together to eliminate prop drilling?",
+        "retrievalLatencyMs": 62,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.7780158492147935
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_24",
+        "query": "What is the functional update form of useState and when should it be used?",
+        "retrievalLatencyMs": 73,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_25",
+        "query": "What is the Node.js architecture and how does the Event Loop handle asynchronous operations?",
+        "retrievalLatencyMs": 40,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8333333333333334,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.8329762261778096
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_26",
+        "query": "What are the four parameters required in Express error-handling middleware?",
+        "retrievalLatencyMs": 35,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_27",
+        "query": "What does the next() function do in an Express middleware chain?",
+        "retrievalLatencyMs": 46,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.25,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_28",
+        "query": "What are the three parts of a JSON Web Token (JWT) and how are they separated?",
+        "retrievalLatencyMs": 33,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 0.8807404415317287
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_29",
+        "query": "What are the key differences between HTTP 401 Unauthorized and 403 Forbidden status codes?",
+        "retrievalLatencyMs": 33,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.5,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.6
+          },
+          "ndcg5": 0.983465033848664
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_30",
+        "query": "What are the RESTful naming conventions for API endpoint URIs?",
+        "retrievalLatencyMs": 32,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.875,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_31",
+        "query": "What built-in Express middleware is used to parse incoming JSON request bodies?",
+        "retrievalLatencyMs": 33,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.6666666666666666,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 1
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_32",
+        "query": "Why should CPU-intensive tasks not be executed directly on the Node.js main thread?",
+        "retrievalLatencyMs": 32,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.5,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_33",
+        "query": "How is a Many-to-Many relationship implemented between tables in a relational database?",
+        "retrievalLatencyMs": 31,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.6,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_34",
+        "query": "What are the requirements for a database table to satisfy First Normal Form (1NF)?",
+        "retrievalLatencyMs": 35,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_35",
+        "query": "What constitutes Second Normal Form (2NF) and how does it prevent partial dependency?",
+        "retrievalLatencyMs": 32,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_36",
+        "query": "What is Third Normal Form (3NF) and how does it eliminate transitive dependencies?",
+        "retrievalLatencyMs": 31,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.4770382338730848
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_37",
+        "query": "What are the four ACID properties in database transactions and what do they guarantee?",
+        "retrievalLatencyMs": 32,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_38",
+        "query": "What is a B-tree index in PostgreSQL and what types of queries does it optimize?",
+        "retrievalLatencyMs": 30,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8333333333333334,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_39",
+        "query": "What is the trade-off or downside of having too many indexes on a database table?",
+        "retrievalLatencyMs": 33,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.6666666666666666,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "gold_40",
+        "query": "What is the purpose of a composite primary key in database junction tables?",
+        "retrievalLatencyMs": 32,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.5,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      }
+    ],
+    "Adversarial (20)": [
+      {
+        "id": "adv_01",
+        "query": "how dos useEfect clenaup prevent memry leeks in recat",
+        "retrievalLatencyMs": 74,
+        "generationLatencyMs": 8061,
+        "ttftMs": 888,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.75,
+          "supportedClaims": 3,
+          "unsupportedClaims": 1,
+          "contradictedClaims": 0,
+          "totalClaims": 4,
+          "claimDetails": [
+            {
+              "claim": "To prevent memory leaks in React, use the `useEffect` hook with a cleanup function.",
+              "status": "SUPPORTED",
+              "confidence": 0.6111,
+              "supportingChunk": "React Hooks Tutorial (Section 3)"
+            },
+            {
+              "claim": "When the component unmounts, the cleanup function executes to clear subscriptions, abort network controllers, or remove event listeners.",
+              "status": "SUPPORTED",
+              "confidence": 1,
+              "supportingChunk": "React Hooks Tutorial (Section 3)"
+            },
+            {
+              "claim": "This is achieved by returning a function from the `useEffect` callback that will be executed before the component unmounts.",
+              "status": "SUPPORTED",
+              "confidence": 0.6944,
+              "supportingChunk": "React Hooks Tutorial (Section 3)"
+            },
+            {
+              "claim": "In this example,",
+              "status": "UNSUPPORTED",
+              "confidence": 0,
+              "supportingChunk": null
+            }
+          ],
+          "hallucinationScore": 0.25,
+          "citationPrecision": 0.5,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.7457
+        }
+      },
+      {
+        "id": "adv_02",
+        "query": "postgre b-tre indexx vs full table scan performence",
+        "retrievalLatencyMs": 123,
+        "generationLatencyMs": 7357,
+        "ttftMs": 488,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.8333,
+          "supportedClaims": 6,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 9,
+          "claimDetails": [
+            {
+              "claim": "To compare the performance of a B-tree index versus a full table scan, consider the following:",
+              "status": "SUPPORTED",
+              "confidence": 0.675,
+              "supportingChunk": "PostgreSQL Database Design (Section 3)"
+            },
+            {
+              "claim": "A B-tree index can significantly speed up equality and range queries, as well as sorting queries, due to its efficient data structure.",
+              "status": "SUPPORTED",
+              "confidence": 0.6964,
+              "supportingChunk": "PostgreSQL Database Design (Section 3)"
+            },
+            {
+              "claim": "However, it can slow down INSERT, UPDATE, and DELETE operations, as it requires additional disk space and overhead.",
+              "status": "SUPPORTED",
+              "confidence": 0.6042,
+              "supportingChunk": "PostgreSQL Database Design (Section 3)"
+            },
+            {
+              "claim": "In contrast, a full table scan involves scanning every row in the table, which can be slow for large tables.",
+              "status": "SUPPORTED",
+              "confidence": 0.625,
+              "supportingChunk": "PostgreSQL Database Design (Section 3)"
+            },
+            {
+              "claim": "According to , \"An index is a separate data structure (typically a B-tree in PostgreSQL) that allows fast lookups without scanning every row in a table.\"",
+              "status": "SUPPORTED",
+              "confidence": 0.9375,
+              "supportingChunk": "PostgreSQL Database Design (Section 3)"
+            },
+            {
+              "claim": "To illustrate the performance difference, consider a query that uses an equality condition, such as `SELECT * FROM students WHERE course_id = 123`.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.4231,
+              "supportingChunk": "PostgreSQL Database Design (Section 3)"
+            },
+            {
+              "claim": "In this case, a B-tree index on the `course_id` column can speed up the query significantly, as it allows the database to quickly locate the relevant rows without scanning the entire table.",
+              "status": "SUPPORTED",
+              "confidence": 0.6389,
+              "supportingChunk": "PostgreSQL Database Design (Section 3)"
+            },
+            {
+              "claim": "On the other hand, a full table scan would require the database to scan every row in the `students` table, which can be slow for large tables.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.5,
+              "supportingChunk": "PostgreSQL Database Design (Section 3)"
+            },
+            {
+              "claim": "Therefore, using a B-tree index can significantly improve the performance of queries that use equality or range conditions, making it a good choice for columns that are frequently used in WHERE clauses.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.4875,
+              "supportingChunk": "PostgreSQL Database Design (Section 3)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.3333,
+          "citationCompleteness": 1,
+          "confidence": 0.7605
+        }
+      },
+      {
+        "id": "adv_03",
+        "query": "js const muttable propeties reassinment diference",
+        "retrievalLatencyMs": 41,
+        "generationLatencyMs": 17,
+        "ttftMs": 15,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 0,
+          "citationRecall": 0,
+          "citationCompleteness": 0,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "adv_04",
+        "query": "cs flexboks main axiss vs crss axis justfy contnt",
+        "retrievalLatencyMs": 82,
+        "generationLatencyMs": 7211,
+        "ttftMs": 357,
+        "retrievedCount": 4,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 1
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.9167,
+          "supportedClaims": 5,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 6,
+          "claimDetails": [
+            {
+              "claim": "According to the CSS Flexbox Layout Guide in , the main axis of a flexbox layout is the axis along which the space is distributed.",
+              "status": "SUPPORTED",
+              "confidence": 0.9038,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "The main axis can be either horizontal (row) or vertical (column).",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.3929,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "On the other hand, the cross axis is the axis perpendicular to the main axis, along which the items are aligned.",
+              "status": "SUPPORTED",
+              "confidence": 0.7045,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "The cross axis is controlled by the `align-items` property, which can take values such as `stretch`, `center`, `flex-start`, `flex-end`, or `baseline`.",
+              "status": "SUPPORTED",
+              "confidence": 0.7708,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "In contrast, the CSS box model in  describes the content, padding, border, and margin as separate layers, with the content being the innermost layer.",
+              "status": "SUPPORTED",
+              "confidence": 0.75,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            },
+            {
+              "claim": "The box-sizing property determines how the padding and border are applied to the content, with `box-sizing: border-box` being the recommended default value.",
+              "status": "SUPPORTED",
+              "confidence": 0.5962,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.6754
+        }
+      },
+      {
+        "id": "adv_05",
+        "query": "exprss middlware 4 paramters err req res nxt syntax",
+        "retrievalLatencyMs": 47,
+        "generationLatencyMs": 7888,
+        "ttftMs": 425,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.9,
+          "supportedClaims": 4,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 5,
+          "claimDetails": [
+            {
+              "claim": "To express middleware for parameters, error handling, request, response, and next, you must declare four parameters in the middleware function: `app.use((err, req, res, next) => { ...",
+              "status": "SUPPORTED",
+              "confidence": 0.9,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 3)"
+            },
+            {
+              "claim": "This is a requirement for error-handling middleware as stated in [Node.js & Express REST API Notes, Section 3].",
+              "status": "SUPPORTED",
+              "confidence": 0.775,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 3)"
+            },
+            {
+              "claim": "In the context of JWT authentication, the client stores the token and sends it in the Authorization header, and the auth middleware verifies the token signature on protected endpoints, as shown in [Node.js & Express REST API Notes, Section 5].",
+              "status": "SUPPORTED",
+              "confidence": 0.8587,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 5)"
+            },
+            {
+              "claim": "When designing RESTful APIs, it's essential to follow principles such as using resource-oriented URLs, specifying HTTP methods, and handling responses accordingly, as outlined in [Node.js & Express REST API Notes, Section 4].",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.5435,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 4)"
+            },
+            {
+              "claim": "Regarding syntax, the spread operator (`...`) is used to expand an iterable into individual elements, and rest parameters (`...args`) condense multiple function arguments into a true Array object, as explained in .",
+              "status": "SUPPORTED",
+              "confidence": 0.8214,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 3)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.6341
+        }
+      },
+      {
+        "id": "adv_06",
+        "query": "3nf databaes normalizaton transitve dependancy",
+        "retrievalLatencyMs": 46,
+        "generationLatencyMs": 2939,
+        "ttftMs": 279,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 1,
+          "supportedClaims": 4,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 4,
+          "claimDetails": [
+            {
+              "claim": "In the context of database normalization, Third Normal Form (3NF) eliminates transitive dependencies, ensuring that non-key attributes depend directly on the primary key, not on another non-key attribute.",
+              "status": "SUPPORTED",
+              "confidence": 0.9405,
+              "supportingChunk": "PostgreSQL Database Design (Section 2)"
+            },
+            {
+              "claim": "This is crucial for preventing data redundancy and anomalies.",
+              "status": "SUPPORTED",
+              "confidence": 0.75,
+              "supportingChunk": "PostgreSQL Database Design (Section 2)"
+            },
+            {
+              "claim": "According to , normalization eliminates data redundancy and prevents insertion, update, and deletion anomalies.",
+              "status": "SUPPORTED",
+              "confidence": 0.9,
+              "supportingChunk": "PostgreSQL Database Design (Section 2)"
+            },
+            {
+              "claim": "In 3NF, no transitive dependencies exist, as non-key attributes must depend directly on the primary key, not on another non-key attribute.",
+              "status": "SUPPORTED",
+              "confidence": 0.8667,
+              "supportingChunk": "PostgreSQL Database Design (Section 2)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.6638
+        }
+      },
+      {
+        "id": "adv_07",
+        "query": "tempral ded zon tdz referenserror in javascrip",
+        "retrievalLatencyMs": 61,
+        "generationLatencyMs": 4906,
+        "ttftMs": 369,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.5,
+          "supportedClaims": 2,
+          "unsupportedClaims": 2,
+          "contradictedClaims": 0,
+          "totalClaims": 4,
+          "claimDetails": [
+            {
+              "claim": "The term \"Temporal Dead Zone\" (TDZ) refers to the area in a JavaScript scope where variables declared with `let` or `const` are hoisted",
+              "status": "SUPPORTED",
+              "confidence": 0.8167,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "not yet defined.",
+              "status": "UNSUPPORTED",
+              "confidence": 0.3333,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "Accessing a variable in the TDZ before its declaration throws a ReferenceError.",
+              "status": "SUPPORTED",
+              "confidence": 1,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "This is a block-scoped concept, as stated in .",
+              "status": "UNSUPPORTED",
+              "confidence": 0.3333,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            }
+          ],
+          "hallucinationScore": 0.5,
+          "citationPrecision": 1,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.7395
+        }
+      },
+      {
+        "id": "adv_08",
+        "query": "that box sizing hack everyone puts at the top of their css to stop padding making things huge",
+        "retrievalLatencyMs": 84,
+        "generationLatencyMs": 2520,
+        "ttftMs": 493,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.75,
+          "supportedClaims": 1,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 2,
+          "claimDetails": [
+            {
+              "claim": "The box sizing hack often used at the top of CSS files is actually a recommendation from HTML & CSS Fundamentals, Section 2, stating that box-sizing should be set to border-box by default.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.4868,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            },
+            {
+              "claim": "This ensures that padding and borders are included within the element's total declared width and height, rather than adding them to the specified width.",
+              "status": "SUPPORTED",
+              "confidence": 0.7833,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.7965
+        }
+      },
+      {
+        "id": "adv_09",
+        "query": "how to freeze a callback in react so child components don't keep lagging and rerendering",
+        "retrievalLatencyMs": 68,
+        "generationLatencyMs": 4499,
+        "ttftMs": 328,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.875,
+          "supportedClaims": 3,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 4,
+          "claimDetails": [
+            {
+              "claim": "To freeze a callback in React and prevent child components from lagging and rerendering, use `useCallback`.",
+              "status": "SUPPORTED",
+              "confidence": 0.65,
+              "supportingChunk": "React Hooks Tutorial (Section 5)"
+            },
+            {
+              "claim": "This hook memoizes a callback function definition between renders, preventing unnecessary child re-renders when passing callbacks to `React.memo` components.",
+              "status": "SUPPORTED",
+              "confidence": 0.9667,
+              "supportingChunk": "React Hooks Tutorial (Section 5)"
+            },
+            {
+              "claim": "According to the React Hooks Tutorial, `useCallback` is used to memoize a callback function definition between renders, as shown in .",
+              "status": "SUPPORTED",
+              "confidence": 0.7292,
+              "supportingChunk": "React Hooks Tutorial (Section 5)"
+            },
+            {
+              "claim": "By using `useCallback`, you can ensure that the callback function is not recreated on every render, which can help prevent lagging and rerendering issues in child components.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.3676,
+              "supportingChunk": "React Hooks Tutorial (Section 5)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.6543
+        }
+      },
+      {
+        "id": "adv_10",
+        "query": "the secret sauce in node that lets it do disk and network stuff without freezing the main loop",
+        "retrievalLatencyMs": 176,
+        "generationLatencyMs": 3484,
+        "ttftMs": 333,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.6275270415439392
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.6429,
+          "supportedClaims": 2,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 7,
+          "claimDetails": [
+            {
+              "claim": "The secret sauce in Node.js that allows it to perform disk and network operations without freezing the main loop lies in its event-driven architecture and the use of callbacks and promises.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.3889,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 1)"
+            },
+            {
+              "claim": "According to [Node.js & Express REST API Notes, Section 1], Node.js uses an event-driven, single-threaded model with a continuous event loop that checks various phases, including I/O operations.",
+              "status": "SUPPORTED",
+              "confidence": 0.6625,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 1)"
+            },
+            {
+              "claim": "This allows Node.js to perform disk and network operations without blocking the main thread.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.475,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 1)"
+            },
+            {
+              "claim": "In JavaScript, the event loop is single-threaded and uses a Call Stack, Web APIs, Task Queue, and Microtask Queue to manage tasks.",
+              "status": "SUPPORTED",
+              "confidence": 0.9167,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 4)"
+            },
+            {
+              "claim": "Microtasks, such as those created by promises, take priority over macrotasks, ensuring that disk and network operations are handled efficiently without blocking the main thread.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.4206,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 4)"
+            },
+            {
+              "claim": "By utilizing callbacks and promises, Node.js can perform disk and network operations in the background, allowing the main thread to continue executing without interruption.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.4063,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 1)"
+            },
+            {
+              "claim": "This is achieved through the use of asynchronous functions, such as `async/await`, which allow for more readable and efficient code.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.5,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 4)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.7471
+        }
+      },
+      {
+        "id": "adv_11",
+        "query": "magic variable container in react that holds stuff without refreshing the screen",
+        "retrievalLatencyMs": 63,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.6666666666666666,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_12",
+        "query": "how to connect two tables when multiple things can have multiple other things",
+        "retrievalLatencyMs": 64,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.6666666666666666,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_13",
+        "query": "the dot dot dot thing in js functions that sucks all arguments into a real array",
+        "retrievalLatencyMs": 58,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_14",
+        "query": "What is the difference between middleware in Express and Hooks in React for managing state and side-effects?",
+        "retrievalLatencyMs": 105,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8333333333333334,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_15",
+        "query": "Compare CSS Grid 2D layout with HTML semantic article tags for content organization",
+        "retrievalLatencyMs": 120,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_16",
+        "query": "In PostgreSQL database normalization, how does 1NF atomicity compare to JavaScript object destructuring?",
+        "retrievalLatencyMs": 31,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_17",
+        "query": "Explain JWT token authentication in Express versus React Context for user sessions",
+        "retrievalLatencyMs": 103,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_18",
+        "query": "How does the ACID Isolation property in SQL compare to JavaScript single-threaded asynchronous execution?",
+        "retrievalLatencyMs": 30,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.75,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.6275270415439392
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_19",
+        "query": "Why does invoking arrow functions with new fail, and how does this relate to object modeling in databases?",
+        "retrievalLatencyMs": 29,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 0.5962977923413559
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "adv_20",
+        "query": "Difference between flex-basis in Flexbox and column width in CSS Grid",
+        "retrievalLatencyMs": 92,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 3,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 1
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      }
+    ],
+    "Unanswerable (15)": [
+      {
+        "id": "unans_01",
+        "query": "What is quantum entanglement and how does the Einstein-Podolsky-Rosen paradox describe it?",
+        "retrievalLatencyMs": 29,
+        "generationLatencyMs": 48,
+        "ttftMs": 45,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_02",
+        "query": "How do you prepare authentic French Beef Bourguignon with red wine and pearl onions?",
+        "retrievalLatencyMs": 36,
+        "generationLatencyMs": 18,
+        "ttftMs": 15,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_03",
+        "query": "How do you configure Kubernetes PodDisruptionBudgets and StatefulSets for MongoDB replication?",
+        "retrievalLatencyMs": 44,
+        "generationLatencyMs": 14,
+        "ttftMs": 12,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_04",
+        "query": "Explain the biochemical pathway of glycolysis and Krebs cycle in cellular respiration.",
+        "retrievalLatencyMs": 29,
+        "generationLatencyMs": 17,
+        "ttftMs": 14,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_05",
+        "query": "How does Python Django ORM implement select_related vs prefetch_related for foreign keys?",
+        "retrievalLatencyMs": 91,
+        "generationLatencyMs": 46,
+        "ttftMs": 44,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_06",
+        "query": "What are the rules of Texas Hold'em poker and how does the pot-odds ratio work?",
+        "retrievalLatencyMs": 28,
+        "generationLatencyMs": 24,
+        "ttftMs": 21,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_07",
+        "query": "What is the aerodynamic difference between a cambered airfoil and a symmetrical airfoil?",
+        "retrievalLatencyMs": 90,
+        "generationLatencyMs": 64,
+        "ttftMs": 63,
+        "retrievedCount": 4,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_08",
+        "query": "How do you tune the carburetor on a 1968 Chevrolet Camaro V8 engine?",
+        "retrievalLatencyMs": 28,
+        "generationLatencyMs": 17,
+        "ttftMs": 15,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_09",
+        "query": "What were the geopolitical consequences of the Treaty of Westphalia in 1648?",
+        "retrievalLatencyMs": 31,
+        "generationLatencyMs": 20,
+        "ttftMs": 17,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_10",
+        "query": "How do you calculate the Black-Scholes formula for pricing European call options in financial derivatives?",
+        "retrievalLatencyMs": 32,
+        "generationLatencyMs": 17,
+        "ttftMs": 15,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_11",
+        "query": "What is the CRISPR-Cas9 mechanism for targeted gene editing in mammalian zygotes?",
+        "retrievalLatencyMs": 28,
+        "generationLatencyMs": 17,
+        "ttftMs": 15,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_12",
+        "query": "How do you write smart contracts in Solidity using the ERC-721 non-fungible token standard?",
+        "retrievalLatencyMs": 37,
+        "generationLatencyMs": 14,
+        "ttftMs": 11,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_13",
+        "query": "What is the difference between supervised gradient boosting and unsupervised t-SNE dimensionality reduction?",
+        "retrievalLatencyMs": 103,
+        "generationLatencyMs": 73,
+        "ttftMs": 71,
+        "retrievedCount": 4,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_14",
+        "query": "How do you tune guitar strings to Open D tuning (D-A-D-F#-A-D)?",
+        "retrievalLatencyMs": 29,
+        "generationLatencyMs": 19,
+        "ttftMs": 17,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      },
+      {
+        "id": "unans_15",
+        "query": "What are the dental requirements for tooth extraction under general anesthesia?",
+        "retrievalLatencyMs": 30,
+        "generationLatencyMs": 24,
+        "ttftMs": 21,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 0,
+            "hit@3": 0,
+            "hit@5": 0
+          },
+          "moduleCoverage": {},
+          "mrr": 0,
+          "keywordRecall": 0,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0,
+            "p@5": 0
+          },
+          "ndcg5": 0
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0,
+          "supportedClaims": 0,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 0,
+          "claimDetails": [],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8
+        }
+      }
+    ],
+    "Cross-Module (22)": [
+      {
+        "id": "cm_01",
+        "query": "How does the HTML5 <main> semantic element interact with CSS Flexbox when building responsive application layouts?",
+        "retrievalLatencyMs": 28,
+        "generationLatencyMs": 3087,
+        "ttftMs": 422,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.8
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.9167,
+          "supportedClaims": 5,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 6,
+          "claimDetails": [
+            {
+              "claim": "When building responsive application layouts, the HTML5 <main> semantic element interacts with CSS Flexbox by allowing the main content to be the primary axis of the flexbox layout.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.5132,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "According to , the <main> element specifies the main, unique content of the document.",
+              "status": "SUPPORTED",
+              "confidence": 0.875,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 1)"
+            },
+            {
+              "claim": "In a flexbox layout, the main axis is controlled by the `justify-content` property, which aligns items along this axis.",
+              "status": "SUPPORTED",
+              "confidence": 0.9091,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "The <main> element can be used as the main axis, allowing for more efficient distribution of space along this axis.",
+              "status": "SUPPORTED",
+              "confidence": 0.6042,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "For example, `justify-content: center` can center the main content along the main axis.",
+              "status": "SUPPORTED",
+              "confidence": 0.9375,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "Additionally, the CSS Flexbox Layout Guide states that the `align-items` property controls alignment along the cross-axis, which can be used to align the <main> element with other elements along the cross-axis.",
+              "status": "SUPPORTED",
+              "confidence": 0.7237,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.5,
+          "citationCompleteness": 1,
+          "confidence": 0.6635
+        }
+      },
+      {
+        "id": "cm_02",
+        "query": "Compare CSS Box Model border-box sizing with CSS Grid repeat(auto-fit, minmax()) for preventing layout overflow.",
+        "retrievalLatencyMs": 88,
+        "generationLatencyMs": 2965,
+        "ttftMs": 319,
+        "retrievedCount": 3,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 1
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.9167,
+          "supportedClaims": 5,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 6,
+          "claimDetails": [
+            {
+              "claim": "To prevent layout overflow, CSS Grid's `repeat(auto-fit, minmax())` can be used to create responsive columns that adapt to the content's size.",
+              "status": "SUPPORTED",
+              "confidence": 0.6429,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 4)"
+            },
+            {
+              "claim": "This is in contrast to CSS Box Model's `border-box` sizing, which adds padding and border to the specified width.",
+              "status": "SUPPORTED",
+              "confidence": 0.7955,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            },
+            {
+              "claim": "According to , `repeat(auto-fit, minmax(280px, 1fr))` creates responsive fluid columns without media queries.",
+              "status": "SUPPORTED",
+              "confidence": 0.8864,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 4)"
+            },
+            {
+              "claim": "This allows the columns to automatically adjust their size based on the content's size, preventing layout overflow.",
+              "status": "SUPPORTED",
+              "confidence": 0.6364,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "In contrast, CSS Box Model's `border-box` sizing adds padding and border to the specified width, which can lead to layout overflow if the content exceeds the specified width.",
+              "status": "SUPPORTED",
+              "confidence": 0.6528,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 2)"
+            },
+            {
+              "claim": "Therefore, using `repeat(auto-fit, minmax())` in CSS Grid can be a more effective way to prevent layout overflow compared to using `border-box` sizing in CSS Box Model.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.3553,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.3333,
+          "citationCompleteness": 1,
+          "confidence": 0.8608
+        }
+      },
+      {
+        "id": "cm_03",
+        "query": "Why does an HTML5 <header> or <nav> container commonly use justify-content: space-between in Flexbox?",
+        "retrievalLatencyMs": 31,
+        "generationLatencyMs": 1113,
+        "ttftMs": 248,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 0.8,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.75,
+          "supportedClaims": 1,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 2,
+          "claimDetails": [
+            {
+              "claim": "According to the CSS Flexbox Layout Guide, justify-content: space-between is used to distribute space evenly between items along the Main Axis.",
+              "status": "SUPPORTED",
+              "confidence": 0.7667,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "This is commonly applied to HTML5 <header> or <nav> containers to create a balanced layout.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.4167,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 1)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 0,
+          "citationRecall": 0,
+          "citationCompleteness": 0,
+          "confidence": 0.5846
+        }
+      },
+      {
+        "id": "cm_04",
+        "query": "What is the structural difference between 1-dimensional Flexbox layout and 2-dimensional CSS Grid layout in HTML5 pages?",
+        "retrievalLatencyMs": 86,
+        "generationLatencyMs": 2283,
+        "ttftMs": 269,
+        "retrievedCount": 4,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {},
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 1,
+            "p@5": 1
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 1,
+          "supportedClaims": 5,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 5,
+          "claimDetails": [
+            {
+              "claim": "According to , the primary difference between 1-dimensional Flexbox layout and 2-dimensional CSS Grid layout is the axis along which space is distributed.",
+              "status": "SUPPORTED",
+              "confidence": 0.625,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "Flexbox is designed for distributing space along a single axis (row or column)",
+              "status": "SUPPORTED",
+              "confidence": 0.9722,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            },
+            {
+              "claim": "CSS Grid is designed for both columns and rows simultaneously.",
+              "status": "SUPPORTED",
+              "confidence": 1,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 4)"
+            },
+            {
+              "claim": "In contrast, CSS Grid uses the following properties to define its layout: `grid-template-columns` and `grid-template-rows`, which define track sizes for columns and rows, respectively.",
+              "status": "SUPPORTED",
+              "confidence": 0.75,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 4)"
+            },
+            {
+              "claim": "In contrast, Flexbox uses `justify-content` and `align-items` to control alignment along the Main Axis and Cross Axis, respectively.",
+              "status": "SUPPORTED",
+              "confidence": 0.8077,
+              "supportingChunk": "HTML & CSS Fundamentals (Section 3)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 1,
+          "citationCompleteness": 1,
+          "confidence": 0.8155
+        }
+      },
+      {
+        "id": "cm_05",
+        "query": "How does JavaScript object immutability and the spread operator relate to React useState state update rules?",
+        "retrievalLatencyMs": 70,
+        "generationLatencyMs": 3636,
+        "ttftMs": 369,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.8333333333333334,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.9167,
+          "supportedClaims": 5,
+          "unsupportedClaims": 0,
+          "contradictedClaims": 0,
+          "totalClaims": 6,
+          "claimDetails": [
+            {
+              "claim": "The spread operator (`...`) is used to create a new copy of an array or object when updating state in React, as stated in : \"React state is immutable: always pass a new copy of arrays or objects (`setItems([...items, newItem])`)\".",
+              "status": "SUPPORTED",
+              "confidence": 0.8365,
+              "supportingChunk": "React Hooks Tutorial (Section 2)"
+            },
+            {
+              "claim": "This is related to the use of the spread operator in functional updaters, as seen in : \"When updating state based on previous state, always use the functional updater pattern: `setCount(prev => prev + 1);`\".",
+              "status": "SUPPORTED",
+              "confidence": 0.7875,
+              "supportingChunk": "React Hooks Tutorial (Section 2)"
+            },
+            {
+              "claim": "The spread operator is used to create a new copy of the previous state, ensuring immutability.",
+              "status": "SUPPORTED",
+              "confidence": 0.55,
+              "supportingChunk": "React Hooks Tutorial (Section 2)"
+            },
+            {
+              "claim": "In JavaScript ES6+ Deep Dive, Section 3, the spread operator is described as: \"Expands an iterable into individual elements.",
+              "status": "SUPPORTED",
+              "confidence": 0.8333,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 3)"
+            },
+            {
+              "claim": "Used for shallow copying (`const copy = { ...original };`) and merging (`const merged = [...arr1, ...arr2];`)\".",
+              "status": "SUPPORTED",
+              "confidence": 1,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 3)"
+            },
+            {
+              "claim": "This highlights the role of the spread operator in creating a new copy of an array or object, which is essential for maintaining immutability in React state updates.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.4667,
+              "supportingChunk": "React Hooks Tutorial (Section 2)"
+            }
+          ],
+          "hallucinationScore": 0,
+          "citationPrecision": 1,
+          "citationRecall": 0.3333,
+          "citationCompleteness": 1,
+          "confidence": 0.8797
+        }
+      },
+      {
+        "id": "cm_06",
+        "query": "How do JavaScript closures retain lexical scope variables and how does that cause stale state in React useEffect?",
+        "retrievalLatencyMs": 31,
+        "generationLatencyMs": 4422,
+        "ttftMs": 413,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.4,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.4,
+          "supportedClaims": 2,
+          "unsupportedClaims": 4,
+          "contradictedClaims": 0,
+          "totalClaims": 10,
+          "claimDetails": [
+            {
+              "claim": "A JavaScript closure is a function that has access to its own scope and the scope of its outer functions, even when the outer functions have returned.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.425,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 2)"
+            },
+            {
+              "claim": "This is achieved through the use of lexical scope variables, which are variables that are defined within a function and are accessible only within that function.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.5179,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "In the context of React's `useEffect` hook, a closure is created when the effect function is defined.",
+              "status": "SUPPORTED",
+              "confidence": 0.675,
+              "supportingChunk": "React Hooks Tutorial (Section 3)"
+            },
+            {
+              "claim": "The effect function has access to the component's props and state, as well as any dependencies specified in the dependency array.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.5192,
+              "supportingChunk": "React Hooks Tutorial (Section 3)"
+            },
+            {
+              "claim": "However, when the component re-renders, the effect function is recreated with the new props and state, which can cause stale state issues.",
+              "status": "UNSUPPORTED",
+              "confidence": 0.3393,
+              "supportingChunk": "React Hooks Tutorial (Section 2)"
+            },
+            {
+              "claim": "This is because the effect function is not re-executed with the new props and state",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.375,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 2)"
+            },
+            {
+              "claim": "rather with the previous values.",
+              "status": "UNSUPPORTED",
+              "confidence": 0.3333,
+              "supportingChunk": "React Hooks Tutorial (Section 2)"
+            },
+            {
+              "claim": "This can lead to unexpected behavior, such as updating the DOM with stale data.",
+              "status": "UNSUPPORTED",
+              "confidence": 0.1429,
+              "supportingChunk": "React Hooks Tutorial (Section 2)"
+            },
+            {
+              "claim": "For example, consider the following code:",
+              "status": "SUPPORTED",
+              "confidence": 0.5833,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 4)"
+            },
+            {
+              "claim": "In this example, the `",
+              "status": "UNSUPPORTED",
+              "confidence": 0,
+              "supportingChunk": null
+            }
+          ],
+          "hallucinationScore": 0.4,
+          "citationPrecision": 0,
+          "citationRecall": 0,
+          "citationCompleteness": 0,
+          "confidence": 0.4389
+        }
+      },
+      {
+        "id": "cm_07",
+        "query": "Compare JavaScript arrow function lexical this binding with React custom hook logic extraction.",
+        "retrievalLatencyMs": 95,
+        "generationLatencyMs": 3244,
+        "ttftMs": 365,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.6,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.5714,
+          "supportedClaims": 2,
+          "unsupportedClaims": 1,
+          "contradictedClaims": 0,
+          "totalClaims": 7,
+          "claimDetails": [
+            {
+              "claim": "Lexical `this` binding in arrow functions and React custom hook logic extraction share similarities in their handling of scope and execution context.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.3833,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 2)"
+            },
+            {
+              "claim": "In arrow functions, the lexical `this` is inherited from the enclosing execution context, eliminating the need for `.bind(this)` or `const self = this` in callbacks ().",
+              "status": "SUPPORTED",
+              "confidence": 0.8571,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 2)"
+            },
+            {
+              "claim": "This is analogous to how React custom hooks handle their execution context.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.5,
+              "supportingChunk": "React Hooks Tutorial (Section 3)"
+            },
+            {
+              "claim": "When using `useEffect` or other hooks, the component's execution context is preserved, allowing for the use of `this` within the hook's logic.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.5179,
+              "supportingChunk": "React Hooks Tutorial (Section 3)"
+            },
+            {
+              "claim": "However, there is a key difference in how these concepts handle scope and re-declaration.",
+              "status": "UNSUPPORTED",
+              "confidence": 0.3056,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "Arrow functions cannot be used as constructors, and re-declaration is not allowed ().",
+              "status": "SUPPORTED",
+              "confidence": 0.6667,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 2)"
+            },
+            {
+              "claim": "In contrast, React custom hooks can be re-declared within the same scope, as long as they are defined within a React function component or custom hook ().",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.5,
+              "supportingChunk": "React Hooks Tutorial (Section 1)"
+            }
+          ],
+          "hallucinationScore": 0.1429,
+          "citationPrecision": 1,
+          "citationRecall": 0.75,
+          "citationCompleteness": 1,
+          "confidence": 0.8044
+        }
+      },
+      {
+        "id": "cm_08",
+        "query": "How does the JavaScript Temporal Dead Zone (TDZ) for let and const differ from the React Rules of Hooks top-level execution rule?",
+        "retrievalLatencyMs": 60,
+        "generationLatencyMs": 3191,
+        "ttftMs": 326,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.6,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.6111,
+          "supportedClaims": 4,
+          "unsupportedClaims": 2,
+          "contradictedClaims": 0,
+          "totalClaims": 9,
+          "claimDetails": [
+            {
+              "claim": "The JavaScript Temporal Dead Zone (TDZ) for `let` and `const` differs from the React Rules of Hooks top-level execution rule in that the TDZ is a concept related to variable hoisting",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.5132,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "the React rule is about the scope of execution.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.35,
+              "supportingChunk": "React Hooks Tutorial (Section 1)"
+            },
+            {
+              "claim": "According to , `let` and `const` are block-scoped, and their declarations are hoisted into the TDZ, where accessing them before declaration throws a ReferenceError.",
+              "status": "SUPPORTED",
+              "confidence": 0.8571,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "This is a language feature, not a React-specific rule.",
+              "status": "SUPPORTED",
+              "confidence": 0.65,
+              "supportingChunk": "React Hooks Tutorial (Section 1)"
+            },
+            {
+              "claim": "In contrast, the React Rule of Hooks states that only call Hooks at the top level of your component, as stated in .",
+              "status": "SUPPORTED",
+              "confidence": 0.8462,
+              "supportingChunk": "React Hooks Tutorial (Section 1)"
+            },
+            {
+              "claim": "This rule is about the scope of execution for React Hooks, not about variable hoisting.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.375,
+              "supportingChunk": "React Hooks Tutorial (Section 1)"
+            },
+            {
+              "claim": "While both concepts deal with the scope of execution, they are distinct and unrelated.",
+              "status": "UNSUPPORTED",
+              "confidence": 0.3056,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 2)"
+            },
+            {
+              "claim": "The TDZ is a language feature",
+              "status": "UNSUPPORTED",
+              "confidence": 0.3333,
+              "supportingChunk": "JavaScript ES6+ Deep Dive (Section 1)"
+            },
+            {
+              "claim": "the React rule is a specific guideline for writing React components.",
+              "status": "SUPPORTED",
+              "confidence": 0.6786,
+              "supportingChunk": "React Hooks Tutorial (Section 1)"
+            }
+          ],
+          "hallucinationScore": 0.2222,
+          "citationPrecision": 1,
+          "citationRecall": 0.3333,
+          "citationCompleteness": 1,
+          "confidence": 0.6569
+        }
+      },
+      {
+        "id": "cm_09",
+        "query": "What is the difference between middleware in Express and custom hooks in React when sharing reusable logic across an application?",
+        "retrievalLatencyMs": 85,
+        "generationLatencyMs": 3834,
+        "ttftMs": 341,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.6,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.4444,
+          "supportedClaims": 2,
+          "unsupportedClaims": 3,
+          "contradictedClaims": 0,
+          "totalClaims": 9,
+          "claimDetails": [
+            {
+              "claim": "Middleware in Express and custom hooks in React serve different purposes when it comes to sharing reusable logic across an application.",
+              "status": "UNSUPPORTED",
+              "confidence": 0.2,
+              "supportingChunk": "React Hooks Tutorial (Section 1)"
+            },
+            {
+              "claim": "Middleware in Express is designed to handle specific tasks, such as parsing incoming JSON bodies or performing error handling, as shown in [Node.js & Express REST API Notes, Section 2].",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.5375,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 2)"
+            },
+            {
+              "claim": "It is executed in a specific order and allows for easy extension and customization of the application's behavior.",
+              "status": "UNSUPPORTED",
+              "confidence": 0.1667,
+              "supportingChunk": "React Hooks Tutorial (Section 1)"
+            },
+            {
+              "claim": "In contrast, custom hooks in React are designed to perform side effects, such as data fetching or DOM mutations, in a controlled and predictable manner, as demonstrated in .",
+              "status": "SUPPORTED",
+              "confidence": 0.5781,
+              "supportingChunk": "React Hooks Tutorial (Section 3)"
+            },
+            {
+              "claim": "Custom hooks are reusable functions that can be used throughout an application",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.3929,
+              "supportingChunk": "React Hooks Tutorial (Section 1)"
+            },
+            {
+              "claim": "they are not meant to be used as a replacement for middleware in Express.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.3571,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 3)"
+            },
+            {
+              "claim": "While both can be used to share reusable logic, middleware in Express is typically used for tasks that are specific to the request-response cycle",
+              "status": "UNSUPPORTED",
+              "confidence": 0.2857,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 3)"
+            },
+            {
+              "claim": "custom hooks in React are used for tasks that require state or side effects.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.4444,
+              "supportingChunk": "React Hooks Tutorial (Section 1)"
+            },
+            {
+              "claim": "[Node.js & Express REST API Notes, Section 3] highlights the importance of middleware in Express, stating that \"Middleware functions are functions that have access to the request object (`req`), response object (`res`), and the next middleware function (`next`).\"",
+              "status": "SUPPORTED",
+              "confidence": 0.8462,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 3)"
+            }
+          ],
+          "hallucinationScore": 0.3333,
+          "citationPrecision": 1,
+          "citationRecall": 0.25,
+          "citationCompleteness": 1,
+          "confidence": 0.7472
+        }
+      },
+      {
+        "id": "cm_10",
+        "query": "Explain JWT token authentication in an Express backend vs client-side session storage with React useContext.",
+        "retrievalLatencyMs": 84,
+        "generationLatencyMs": 3451,
+        "ttftMs": 306,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.2,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": {
+          "abstentionAccuracy": 1,
+          "declaredAbstention": false,
+          "claimSupportScore": 0.625,
+          "supportedClaims": 5,
+          "unsupportedClaims": 2,
+          "contradictedClaims": 0,
+          "totalClaims": 12,
+          "claimDetails": [
+            {
+              "claim": "JWT token authentication in an Express backend and client-side session storage with React useContext differ in approach and security.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.4231,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 5)"
+            },
+            {
+              "claim": "In Express, JWT authentication involves server-side validation and token signing (Node.js & Express REST API Notes, Section 5).",
+              "status": "SUPPORTED",
+              "confidence": 0.6833,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 5)"
+            },
+            {
+              "claim": "The server verifies credentials, signs a token with a private secret, and sends it to the client.",
+              "status": "SUPPORTED",
+              "confidence": 0.9722,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 5)"
+            },
+            {
+              "claim": "The client stores the token and sends it in the Authorization header.",
+              "status": "SUPPORTED",
+              "confidence": 0.9583,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 5)"
+            },
+            {
+              "claim": "The auth middleware verifies the token signature on protected endpoints.",
+              "status": "SUPPORTED",
+              "confidence": 1,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 5)"
+            },
+            {
+              "claim": "In contrast, React useContext uses state storage, which is batched and immutable (React Hooks Tutorial, Section 2).",
+              "status": "SUPPORTED",
+              "confidence": 0.5769,
+              "supportingChunk": "React Hooks Tutorial (Section 2)"
+            },
+            {
+              "claim": "State updates are not signed or verified like JWT tokens.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.5,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 5)"
+            },
+            {
+              "claim": "Instead, React stores state in a centralized store, and components access and update state using the useContext hook.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.4038,
+              "supportingChunk": "React Hooks Tutorial (Section 2)"
+            },
+            {
+              "claim": "While React state is not signed or verified, it provides a more straightforward and efficient way to manage state in client-side applications.",
+              "status": "UNSUPPORTED",
+              "confidence": 0.2667,
+              "supportingChunk": "React Hooks Tutorial (Section 1)"
+            },
+            {
+              "claim": "However, it lacks the security benefits of server-side JWT authentication, which verifies credentials and ensures token integrity.",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.4792,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 5)"
+            },
+            {
+              "claim": "In summary, JWT token authentication provides a more secure approach to authentication",
+              "status": "PARTIALLY_SUPPORTED",
+              "confidence": 0.4444,
+              "supportingChunk": "Node.js & Express REST API Notes (Section 5)"
+            },
+            {
+              "claim": "React useContext offers a more efficient way to manage state in client-side applications.",
+              "status": "UNSUPPORTED",
+              "confidence": 0.275,
+              "supportingChunk": "React Hooks Tutorial (Section 2)"
+            }
+          ],
+          "hallucinationScore": 0.1667,
+          "citationPrecision": 0.8,
+          "citationRecall": 0.7,
+          "citationCompleteness": 0.75,
+          "confidence": 0.783
+        }
+      },
+      {
+        "id": "cm_11",
+        "query": "How does handling an asynchronous HTTP 401 Unauthorized error in an Express API differ from handling state updates in React useEffect cleanup?",
+        "retrievalLatencyMs": 29,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_12",
+        "query": "Compare CORS middleware configuration in Express with React component re-rendering triggered by useState.",
+        "retrievalLatencyMs": 81,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.2,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_13",
+        "query": "How does the ACID Atomicity property in PostgreSQL transactions correspond to error-handling middleware calling next(err) in Express?",
+        "retrievalLatencyMs": 32,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.8333333333333334,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_14",
+        "query": "How does a PostgreSQL B-tree index optimize API response latency when an Express route performs a SELECT query with a WHERE clause?",
+        "retrievalLatencyMs": 43,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.3333333333333333,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_15",
+        "query": "Explain how a composite primary key in a PostgreSQL junction table supports a RESTful Express route like POST /api/courses/:id/enroll.",
+        "retrievalLatencyMs": 33,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.6,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_16",
+        "query": "Compare database connection pooling in Node.js with the ACID Durability WAL mechanism in PostgreSQL.",
+        "retrievalLatencyMs": 93,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.5,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_17",
+        "query": "In PostgreSQL database normalization, how does 3NF eliminate redundancy compared to JavaScript object immutability preventing mutation?",
+        "retrievalLatencyMs": 30,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.4,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.6666666666666666,
+            "p@5": 0.6
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_18",
+        "query": "How does JavaScript Promise async/await microtask queuing contrast with PostgreSQL ACID Isolation transaction levels?",
+        "retrievalLatencyMs": 29,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_19",
+        "query": "Explain the complete full-stack flow: a React form submission using useState, handled by an Express POST route with express.json(), inserting into a PostgreSQL 3NF table.",
+        "retrievalLatencyMs": 83,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.6666666666666666,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_20",
+        "query": "How do React useEffect cleanup functions, Express error middleware (err, req, res, next), and PostgreSQL ROLLBACK collaborate to handle a failed payment transaction?",
+        "retrievalLatencyMs": 31,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 1,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_21",
+        "query": "Compare how JavaScript const scoping, Node.js environment variables, and PostgreSQL unique constraints each prevent duplicate entity creation.",
+        "retrievalLatencyMs": 101,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 5,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.4,
+          "precision": {
+            "p@1": 1,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.4
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      },
+      {
+        "id": "cm_22",
+        "query": "Trace how an HTML5 <main> dashboard displays data fetched from an Express REST API backed by a PostgreSQL B-tree indexed table.",
+        "retrievalLatencyMs": 58,
+        "generationLatencyMs": 0,
+        "ttftMs": null,
+        "retrievedCount": 6,
+        "irMetrics": {
+          "hitRate": {
+            "hit@1": 1,
+            "hit@3": 1,
+            "hit@5": 1
+          },
+          "moduleCoverage": {
+            "coverage@1": 0,
+            "coverage@3": 1,
+            "coverage@5": 1
+          },
+          "mrr": 1,
+          "keywordRecall": 0.6,
+          "precision": {
+            "p@1": 0,
+            "p@3": 0.3333333333333333,
+            "p@5": 0.2
+          },
+          "ndcg5": 1
+        },
+        "generationMetrics": null
+      }
+    ]
+  },
+  "overall": {
+    "totalQueries": 97,
+    "retrieval": {
+      "hitRate1": 1,
+      "hitRate3": 1,
+      "hitRate5": 1,
+      "mrr": 1,
+      "keywordRecall": 0.7821,
+      "ndcg5": 0.9561,
+      "latencyMs": {
+        "avg": 54,
+        "p50": 39,
+        "p95": 103
+      }
+    },
+    "crossModule": {
+      "evaluatedCount": 18,
+      "coverage3": 1,
+      "coverage5": 1
+    },
+    "generation": {
+      "evaluatedCount": 45,
+      "answerableEvaluated": 30,
+      "unanswerableEvaluated": 15,
+      "claimSupportAvg": 0.7447,
+      "citationPrecision": 0.8267,
+      "citationCompleteness": 0.8583,
+      "abstentionAccuracy": 1,
+      "hallucinationRate": 0.0485,
+      "latencyMs": {
+        "avg": 2582,
+        "p50": 2651,
+        "p95": 7586,
+        "ttft_avg": 309,
+        "ttft_p50": 307,
+        "ttft_p95": 493
+      }
+    }
+  }
+}

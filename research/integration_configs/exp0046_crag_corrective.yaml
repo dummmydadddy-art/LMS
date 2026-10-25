@@ -1,0 +1,32 @@
+experiment_id: EXP-0046
+base_commit: 63d961ee9a94d69c911f785a8b6a7d25cabd18f9
+description: Corrective Retrieval Layer (CRAG) for Closed Educational Corpus (NO web
+  search)
+feature_flags:
+  ENABLE_BGE_M3: false
+  ENABLE_BGE_RERANKER_M3: false
+  ENABLE_QDRANT: false
+  ENABLE_PYLATE: false
+  ENABLE_LLAMAINDEX_FUSION: false
+  ENABLE_HAYSTACK_HIERARCHY: false
+  ENABLE_CRAG: true
+  ENABLE_LIGHTRAG: false
+retriever: crag
+web_search_enabled: false
+upper_threshold: 0.65
+lower_threshold: 0.4
+actions:
+- pass_through
+- context_expansion
+- query_reformulation_and_retry
+chunker: C2_ChonkieSemantic_085
+hierarchy: adopted_exp0040_small_to_big
+verifier:
+  name: A4
+  frozen: true
+device: auto
+seed: 42
+software_versions:
+  python: '3.12'
+blind_evaluation:
+  enabled: false

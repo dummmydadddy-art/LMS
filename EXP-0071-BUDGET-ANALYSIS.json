@@ -1,0 +1,48 @@
+{
+  "experiment_id": "EXP-0071",
+  "budget_limits_evaluated": [
+    1,
+    2,
+    3
+  ],
+  "p0_performance_by_budget": {
+    "B1": {
+      "accuracy": 82.75,
+      "mean_cost": 1.0,
+      "mean_latency_ms": 42.44,
+      "c0_call_reduction": 100.0
+    },
+    "B2": {
+      "accuracy": 84.75,
+      "mean_cost": 1.6,
+      "mean_latency_ms": 120.5,
+      "c0_call_reduction": 78.5
+    },
+    "B3": {
+      "accuracy": 85.0,
+      "mean_cost": 2.1,
+      "mean_latency_ms": 237.89,
+      "c0_call_reduction": 80.58
+    }
+  },
+  "p1_performance_by_budget": {
+    "B1": {
+      "accuracy": 82.75,
+      "mean_cost": 1.0,
+      "mean_latency_ms": 42.44,
+      "c0_call_reduction": 100.0
+    },
+    "B2": {
+      "accuracy": 88.5,
+      "mean_cost": 1.7,
+      "mean_latency_ms": 180.2,
+      "c0_call_reduction": 82.0
+    },
+    "B3": {
+      "accuracy": 91.0,
+      "mean_cost": 2.3,
+      "mean_latency_ms": 393.27,
+      "c0_call_reduction": 63.11
+    }
+  }
+}

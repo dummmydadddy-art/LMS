@@ -1,0 +1,63 @@
+{
+  "cold_vs_warm": {
+    "cold": {
+      "statusCode": 200,
+      "embSource": "OLLAMA_BATCH",
+      "latency": 111
+    },
+    "warm": {
+      "statusCode": 200,
+      "embSource": "CACHE",
+      "latency": 26
+    }
+  },
+  "coalescing_burst": {
+    "sources": {
+      "OLLAMA_BATCH": 1,
+      "COALESCED": 9
+    },
+    "latencies": [
+      114,
+      123,
+      131,
+      117,
+      126,
+      131,
+      138,
+      147,
+      155,
+      145
+    ]
+  },
+  "normalization_cache": [
+    {
+      "name": "exact",
+      "q": "postgresql acid atomicity",
+      "source": "CACHE",
+      "latency": 24
+    },
+    {
+      "name": "uppercase",
+      "q": "POSTGRESQL ACID ATOMICITY",
+      "source": "CACHE",
+      "latency": 25
+    },
+    {
+      "name": "extra_spaces",
+      "q": "postgresql    acid   atomicity  ",
+      "source": "CACHE",
+      "latency": 26
+    },
+    {
+      "name": "leading_tabs",
+      "q": "\t\tpostgresql acid atomicity",
+      "source": "CACHE",
+      "latency": 25
+    }
+  ],
+  "conversational_bypass": {
+    "gateway_source": "CACHE",
+    "latency": 95,
+    "condensed": "Show me the correct code structure for React useEffect hook."
+  }
+}

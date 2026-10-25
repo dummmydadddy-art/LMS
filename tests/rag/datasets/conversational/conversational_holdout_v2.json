@@ -1,0 +1,550 @@
+[
+  {
+    "session_id": "conv2_01",
+    "topic": "React Hooks & Effects",
+    "category": "PRONOUN_FOLLOWUP",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What is the primary purpose of useEffect in React functional components?",
+        "entity": "useEffect",
+        "expected_doc": "React Hooks Tutorial"
+      },
+      {
+        "turn": 2,
+        "query": "Why does it run after every render if I omit the second argument?",
+        "entity": "useEffect dependency array",
+        "expected_doc": "React Hooks Tutorial"
+      },
+      {
+        "turn": 3,
+        "query": "What happens if I pass an empty array to it instead?",
+        "entity": "useEffect mount execution",
+        "expected_doc": "React Hooks Tutorial"
+      },
+      {
+        "turn": 4,
+        "query": "Does returning a function from it clean up event listeners?",
+        "entity": "useEffect cleanup function",
+        "expected_doc": "React Hooks Tutorial"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_02",
+    "topic": "JavaScript Variables & TDZ",
+    "category": "OMITTED_SUBJECT",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "Explain what the Temporal Dead Zone is in ES6 JavaScript.",
+        "entity": "Temporal Dead Zone",
+        "expected_doc": "JavaScript ES6+ Deep Dive"
+      },
+      {
+        "turn": 2,
+        "query": "Does it apply to var declarations too?",
+        "entity": "Temporal Dead Zone var hoisting",
+        "expected_doc": "JavaScript ES6+ Deep Dive"
+      },
+      {
+        "turn": 3,
+        "query": "What about const bindings?",
+        "entity": "const TDZ hoisting",
+        "expected_doc": "JavaScript ES6+ Deep Dive"
+      },
+      {
+        "turn": 4,
+        "query": "Can their properties be mutated even though reassignment is banned?",
+        "entity": "const object property mutation",
+        "expected_doc": "JavaScript ES6+ Deep Dive"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_03",
+    "topic": "CSS Box Model & Sizing",
+    "category": "PRONOUN_FOLLOWUP",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What are the four layers of the CSS box model from inside out?",
+        "entity": "CSS box model",
+        "expected_doc": "HTML & CSS Fundamentals"
+      },
+      {
+        "turn": 2,
+        "query": "Which layer creates transparent space outside the border separating elements?",
+        "entity": "margin box model",
+        "expected_doc": "HTML & CSS Fundamentals"
+      },
+      {
+        "turn": 3,
+        "query": "Why does box-sizing: border-box make calculating element widths much simpler?",
+        "entity": "box-sizing: border-box",
+        "expected_doc": "HTML & CSS Fundamentals"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_04",
+    "topic": "Express Middleware Architecture",
+    "category": "OMITTED_SUBJECT",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What is middleware in Express and what arguments does a standard handler receive?",
+        "entity": "Express middleware req res next",
+        "expected_doc": "Node.js & Express REST API Notes"
+      },
+      {
+        "turn": 2,
+        "query": "How does it pass control to the next middleware in the pipeline?",
+        "entity": "next() function call",
+        "expected_doc": "Node.js & Express REST API Notes"
+      },
+      {
+        "turn": 3,
+        "query": "How many parameters are required if it is designed to catch application errors?",
+        "entity": "Express 4-parameter error handler",
+        "expected_doc": "Node.js & Express REST API Notes"
+      },
+      {
+        "turn": 4,
+        "query": "What order must they be in?",
+        "entity": "err req res next order",
+        "expected_doc": "Node.js & Express REST API Notes"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_05",
+    "topic": "PostgreSQL Normalization",
+    "category": "TOPIC_CONTINUATION",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What is the primary goal of database normalization in relational systems?",
+        "entity": "database normalization",
+        "expected_doc": "PostgreSQL Database Design"
+      },
+      {
+        "turn": 2,
+        "query": "What are the specific requirements to satisfy First Normal Form (1NF)?",
+        "entity": "1NF atomic values primary key",
+        "expected_doc": "PostgreSQL Database Design"
+      },
+      {
+        "turn": 3,
+        "query": "How does 2NF eliminate partial functional dependencies in composite keys?",
+        "entity": "2NF full functional dependency",
+        "expected_doc": "PostgreSQL Database Design"
+      },
+      {
+        "turn": 4,
+        "query": "How does 3NF eliminate transitive dependencies between non-key attributes?",
+        "entity": "3NF transitive dependency removal",
+        "expected_doc": "PostgreSQL Database Design"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_06",
+    "topic": "CSS Flexbox Layout",
+    "category": "FOLLOWUP_COMPARISON",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "How does display: flex format elements along the main axis?",
+        "entity": "display: flex main axis",
+        "expected_doc": "HTML & CSS Fundamentals"
+      },
+      {
+        "turn": 2,
+        "query": "What property controls alignment along the cross axis instead?",
+        "entity": "align-items cross axis",
+        "expected_doc": "HTML & CSS Fundamentals"
+      },
+      {
+        "turn": 3,
+        "query": "Can an individual flex item override that cross-axis alignment?",
+        "entity": "align-self flex item override",
+        "expected_doc": "HTML & CSS Fundamentals"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_07",
+    "topic": "JWT Authentication",
+    "category": "PRONOUN_FOLLOWUP",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What are the three dot-separated components of a JSON Web Token?",
+        "entity": "JWT Header.Payload.Signature",
+        "expected_doc": "Node.js & Express REST API Notes"
+      },
+      {
+        "turn": 2,
+        "query": "Where should the client send it when accessing protected endpoints?",
+        "entity": "Authorization header Bearer token",
+        "expected_doc": "Node.js & Express REST API Notes"
+      },
+      {
+        "turn": 3,
+        "query": "What HTTP status code should the server return if it is missing or invalid?",
+        "entity": "HTTP 401 Unauthorized",
+        "expected_doc": "Node.js & Express REST API Notes"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_08",
+    "topic": "React State vs Ref",
+    "category": "FOLLOWUP_COMPARISON",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "How does useState handle state updates in React function components?",
+        "entity": "useState immutability",
+        "expected_doc": "React Hooks Tutorial"
+      },
+      {
+        "turn": 2,
+        "query": "Why should I use the functional updater form setCount(prev => prev + 1)?",
+        "entity": "useState functional updater",
+        "expected_doc": "React Hooks Tutorial"
+      },
+      {
+        "turn": 3,
+        "query": "What hook should I use if I want to persist a mutable value without triggering a re-render?",
+        "entity": "useRef mutable ref",
+        "expected_doc": "React Hooks Tutorial"
+      },
+      {
+        "turn": 4,
+        "query": "Does mutating its .current property cause a component update?",
+        "entity": "useRef .current no re-render",
+        "expected_doc": "React Hooks Tutorial"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_09",
+    "topic": "PostgreSQL Indexing",
+    "category": "OMITTED_SUBJECT",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What is the default index type in PostgreSQL and what queries does it accelerate?",
+        "entity": "B-tree index equality range queries",
+        "expected_doc": "PostgreSQL Database Design"
+      },
+      {
+        "turn": 2,
+        "query": "How does the leftmost prefix rule affect composite indexes on (course_id, date)?",
+        "entity": "Composite index leftmost prefix rule",
+        "expected_doc": "PostgreSQL Database Design"
+      },
+      {
+        "turn": 3,
+        "query": "What are the drawbacks of adding too many of them to a high-write table?",
+        "entity": "Index overhead INSERT UPDATE DELETE storage",
+        "expected_doc": "PostgreSQL Database Design"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_10",
+    "topic": "JavaScript Event Loop & Promises",
+    "category": "PRONOUN_FOLLOWUP",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What are the three possible states of a JavaScript Promise?",
+        "entity": "Promise pending fulfilled rejected",
+        "expected_doc": "JavaScript ES6+ Deep Dive"
+      },
+      {
+        "turn": 2,
+        "query": "Does its .then() callback run in the microtask queue or macrotask queue?",
+        "entity": "Promise microtask queue priority",
+        "expected_doc": "JavaScript ES6+ Deep Dive"
+      },
+      {
+        "turn": 3,
+        "query": "Why does that queue take priority over setTimeout callbacks?",
+        "entity": "Microtask queue priority over macrotasks",
+        "expected_doc": "JavaScript ES6+ Deep Dive"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_11",
+    "topic": "CSS Grid System",
+    "category": "PRONOUN_FOLLOWUP",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "How does CSS Grid differ from Flexbox regarding dimensions?",
+        "entity": "CSS Grid 2D vs Flexbox 1D",
+        "expected_doc": "HTML & CSS Fundamentals"
+      },
+      {
+        "turn": 2,
+        "query": "What CSS property defines the track sizes for columns inside it?",
+        "entity": "grid-template-columns",
+        "expected_doc": "HTML & CSS Fundamentals"
+      },
+      {
+        "turn": 3,
+        "query": "How do you make an item span across two columns inside that layout?",
+        "entity": "grid-column: span 2",
+        "expected_doc": "HTML & CSS Fundamentals"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_12",
+    "topic": "React Context",
+    "category": "OMITTED_SUBJECT",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What problem does React useContext solve compared to prop drilling?",
+        "entity": "useContext global state prop drilling",
+        "expected_doc": "React Hooks Tutorial"
+      },
+      {
+        "turn": 2,
+        "query": "What component must wrap the component tree to supply the value?",
+        "entity": "Context.Provider wrapper",
+        "expected_doc": "React Hooks Tutorial"
+      },
+      {
+        "turn": 3,
+        "query": "What happens to consuming components when that value changes?",
+        "entity": "Context consumer re-render",
+        "expected_doc": "React Hooks Tutorial"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_13",
+    "topic": "Database ACID Properties",
+    "category": "TOPIC_CONTINUATION",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What does Atomicity guarantee during a database transaction?",
+        "entity": "ACID Atomicity all or nothing",
+        "expected_doc": "PostgreSQL Database Design"
+      },
+      {
+        "turn": 2,
+        "query": "What SQL commands start and finalize that unit of work?",
+        "entity": "BEGIN COMMIT ROLLBACK",
+        "expected_doc": "PostgreSQL Database Design"
+      },
+      {
+        "turn": 3,
+        "query": "What property ensures committed data survives server crashes via write-ahead logging?",
+        "entity": "ACID Durability WAL",
+        "expected_doc": "PostgreSQL Database Design"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_14",
+    "topic": "JavaScript Functions",
+    "category": "FOLLOWUP_COMPARISON",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What is lexical this in JavaScript arrow functions?",
+        "entity": "Arrow functions lexical this",
+        "expected_doc": "JavaScript ES6+ Deep Dive"
+      },
+      {
+        "turn": 2,
+        "query": "Can they be called as constructors with the new keyword?",
+        "entity": "Arrow functions cannot be constructors TypeError",
+        "expected_doc": "JavaScript ES6+ Deep Dive"
+      },
+      {
+        "turn": 3,
+        "query": "Do they have their own arguments object?",
+        "entity": "No arguments object use rest parameters",
+        "expected_doc": "JavaScript ES6+ Deep Dive"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_15",
+    "topic": "HTML5 Semantic Structure",
+    "category": "OMITTED_SUBJECT",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What is the purpose of the <main> element in HTML5?",
+        "entity": "HTML5 <main> unique primary content",
+        "expected_doc": "HTML & CSS Fundamentals"
+      },
+      {
+        "turn": 2,
+        "query": "How many of them are legally permitted in a single document?",
+        "entity": "Only one <main> element allowed",
+        "expected_doc": "HTML & CSS Fundamentals"
+      },
+      {
+        "turn": 3,
+        "query": "What tag should be used for navigational links instead?",
+        "entity": "<nav> navigation links",
+        "expected_doc": "HTML & CSS Fundamentals"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_16",
+    "topic": "Topic Switch: JS to CSS",
+    "category": "TOPIC_SWITCH",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "Why does accessing let before its declaration cause a ReferenceError in JavaScript?",
+        "entity": "Temporal Dead Zone let ReferenceError",
+        "expected_doc": "JavaScript ES6+ Deep Dive"
+      },
+      {
+        "turn": 2,
+        "query": "Does var behave the same way or is it initialized to undefined?",
+        "entity": "var hoisted initialized undefined",
+        "expected_doc": "JavaScript ES6+ Deep Dive"
+      },
+      {
+        "turn": 3,
+        "query": "Now switching gears to CSS: what does justify-content: space-between do in flexbox?",
+        "entity": "justify-content: space-between flexbox",
+        "expected_doc": "HTML & CSS Fundamentals"
+      },
+      {
+        "turn": 4,
+        "query": "How does that differ from space-around?",
+        "entity": "space-between vs space-around flexbox",
+        "expected_doc": "HTML & CSS Fundamentals"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_17",
+    "topic": "Topic Switch: Express to Postgres",
+    "category": "TOPIC_SWITCH",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What is the difference between HTTP 401 Unauthorized and HTTP 403 Forbidden in Express APIs?",
+        "entity": "HTTP 401 vs 403 Express",
+        "expected_doc": "Node.js & Express REST API Notes"
+      },
+      {
+        "turn": 2,
+        "query": "Which HTTP method should be used for partially updating resource fields?",
+        "entity": "PATCH partial update REST",
+        "expected_doc": "Node.js & Express REST API Notes"
+      },
+      {
+        "turn": 3,
+        "query": "Let's move to PostgreSQL: how do you model a Many-to-Many relationship between students and courses?",
+        "entity": "Many-to-Many junction table PostgreSQL",
+        "expected_doc": "PostgreSQL Database Design"
+      },
+      {
+        "turn": 4,
+        "query": "What keys does that junction table store?",
+        "entity": "Junction table composite foreign keys",
+        "expected_doc": "PostgreSQL Database Design"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_18",
+    "topic": "React Debugging",
+    "category": "FOLLOWUP_DEBUGGING",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "Why does my setInterval inside useEffect always log the initial state count instead of the updated count?",
+        "entity": "stale closure useEffect setInterval",
+        "expected_doc": "React Hooks Tutorial"
+      },
+      {
+        "turn": 2,
+        "query": "How does using the functional updater setCount(prev => prev + 1) resolve that bug?",
+        "entity": "functional updater resolves stale closure",
+        "expected_doc": "React Hooks Tutorial"
+      },
+      {
+        "turn": 3,
+        "query": "Can I also use useRef to hold the latest state without re-rendering?",
+        "entity": "useRef stores latest state without re-render",
+        "expected_doc": "React Hooks Tutorial"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_19",
+    "topic": "Express Async Debugging",
+    "category": "FOLLOWUP_DEBUGGING",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "Why does an unhandled promise rejection inside an Express route crash the Node process in modern versions?",
+        "entity": "unhandled promise rejection Express crash",
+        "expected_doc": "Node.js & Express REST API Notes"
+      },
+      {
+        "turn": 2,
+        "query": "How should I wrap the await call with try/catch to pass errors to next(error)?",
+        "entity": "async/await try catch next(error)",
+        "expected_doc": "Node.js & Express REST API Notes"
+      },
+      {
+        "turn": 3,
+        "query": "Where in the middleware stack must that 4-parameter error handler be registered?",
+        "entity": "Error handler registered at the end of middleware stack",
+        "expected_doc": "Node.js & Express REST API Notes"
+      }
+    ]
+  },
+  {
+    "session_id": "conv2_20",
+    "topic": "Full-Stack Integration",
+    "category": "TOPIC_CONTINUATION",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "How does React useContext distribute an authentication JWT token across frontend components?",
+        "entity": "useContext distributes auth JWT token",
+        "expected_doc": "React Hooks Tutorial"
+      },
+      {
+        "turn": 2,
+        "query": "When the frontend calls fetch(), how is that token attached to HTTP headers?",
+        "entity": "Authorization: Bearer <token> HTTP header",
+        "expected_doc": "Node.js & Express REST API Notes"
+      },
+      {
+        "turn": 3,
+        "query": "How does the Express server verify that token signature before querying PostgreSQL?",
+        "entity": "Express auth middleware verifies JWT signature",
+        "expected_doc": "Node.js & Express REST API Notes"
+      },
+      {
+        "turn": 4,
+        "query": "If the query updates a balance, how does PostgreSQL ensure atomicity with a transaction?",
+        "entity": "PostgreSQL transaction BEGIN COMMIT atomicity",
+        "expected_doc": "PostgreSQL Database Design"
+      }
+    ]
+  }
+]

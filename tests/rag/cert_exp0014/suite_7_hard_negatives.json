@@ -1,0 +1,452 @@
+[
+  {
+    "id": "exp14_s7_hn_01",
+    "query": "How does Libuv manage thread pool workers for file system I/O in the event loop?",
+    "target_doc": "Node.js & Express REST API Notes",
+    "target_section": "Node.js Architecture & Event Loop",
+    "hard_neg_doc": "JavaScript ES6+ Deep Dive",
+    "hard_neg_section": "Asynchronous JavaScript & Promises",
+    "rejection_reason": "Same event loop concept, but Libuv thread pool is specific to Node.js"
+  },
+  {
+    "id": "exp14_s7_hn_02",
+    "query": "How does the browser event loop execute microtasks before the next macrotask?",
+    "target_doc": "JavaScript ES6+ Deep Dive",
+    "target_section": "Asynchronous JavaScript & Promises",
+    "hard_neg_doc": "Node.js & Express REST API Notes",
+    "hard_neg_section": "Node.js Architecture & Event Loop",
+    "rejection_reason": "Browser call stack microtasks belong to JavaScript ES6+"
+  },
+  {
+    "id": "exp14_s7_hn_03",
+    "query": "Which hook should I use to memoize the returned value of an expensive mathematical calculation?",
+    "target_doc": "React Hooks Tutorial",
+    "target_section": "Performance Hooks: useMemo & useCallback",
+    "hard_neg_doc": "React Hooks Tutorial",
+    "hard_neg_section": "useRef Hook",
+    "rejection_reason": "useMemo memoizes values, whereas useRef holds mutable references"
+  },
+  {
+    "id": "exp14_s7_hn_04",
+    "query": "How do I pass a stable callback reference to prevent child re-renders without recomputing values?",
+    "target_doc": "React Hooks Tutorial",
+    "target_section": "Performance Hooks: useMemo & useCallback",
+    "hard_neg_doc": "React Hooks Tutorial",
+    "hard_neg_section": "useState Hook",
+    "rejection_reason": "useCallback stabilizes function references, not state storage"
+  },
+  {
+    "id": "exp14_s7_hn_05",
+    "query": "Why does referencing a variable before declaration throw a ReferenceError in block scope?",
+    "target_doc": "JavaScript ES6+ Deep Dive",
+    "target_section": "Variable Declarations & Scoping",
+    "hard_neg_doc": "JavaScript ES6+ Deep Dive",
+    "hard_neg_section": "Arrow Functions & Lexical this",
+    "rejection_reason": "Temporal dead zone is a variable scoping rule, not a function binding rule"
+  },
+  {
+    "id": "exp14_s7_hn_06",
+    "query": "How do I define a two-dimensional layout managing both rows and columns simultaneously?",
+    "target_doc": "HTML & CSS Fundamentals",
+    "target_section": "CSS Grid System",
+    "hard_neg_doc": "HTML & CSS Fundamentals",
+    "hard_neg_section": "CSS Flexbox Layout Guide",
+    "rejection_reason": "Grid is 2D layout, whereas Flexbox is 1D layout"
+  },
+  {
+    "id": "exp14_s7_hn_07",
+    "query": "How do I align items along a single primary axis with flex-direction row?",
+    "target_doc": "HTML & CSS Fundamentals",
+    "target_section": "CSS Flexbox Layout Guide",
+    "hard_neg_doc": "HTML & CSS Fundamentals",
+    "hard_neg_section": "CSS Grid System",
+    "rejection_reason": "Flexbox governs 1D main axis alignment"
+  },
+  {
+    "id": "exp14_s7_hn_08",
+    "query": "Which normal form specifically removes partial functional dependencies on composite candidate keys?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "Database Normalization Forms",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "Relational Database Modeling",
+    "rejection_reason": "2NF removes partial key dependencies; 3NF removes transitive dependencies"
+  },
+  {
+    "id": "exp14_s7_hn_09",
+    "query": "How do I eliminate transitive non-key dependencies where non-prime attributes depend on other non-prime attributes?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "Database Normalization Forms",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "ACID Transactions",
+    "rejection_reason": "3NF normalization target"
+  },
+  {
+    "id": "exp14_s7_hn_10",
+    "query": "How does PostgreSQL query planner decide between an index scan and a sequential table scan?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "Indexing Strategies & Performance",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "ACID Transactions",
+    "rejection_reason": "EXPLAIN query planning is indexing, not ACID concurrency"
+  },
+  {
+    "id": "exp14_s7_hn_11",
+    "query": "What transaction isolation level prevents dirty reads while allowing non-repeatable reads?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "ACID Transactions",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "Indexing Strategies & Performance",
+    "rejection_reason": "Isolation levels belong to ACID transactions"
+  },
+  {
+    "id": "exp14_s7_hn_12",
+    "query": "Detailed technical query: How does Libuv manage thread pool workers for file system I/O in the event loop?",
+    "target_doc": "Node.js & Express REST API Notes",
+    "target_section": "Node.js Architecture & Event Loop",
+    "hard_neg_doc": "JavaScript ES6+ Deep Dive",
+    "hard_neg_section": "Asynchronous JavaScript & Promises",
+    "rejection_reason": "Same event loop concept, but Libuv thread pool is specific to Node.js"
+  },
+  {
+    "id": "exp14_s7_hn_13",
+    "query": "Detailed technical query: How does the browser event loop execute microtasks before the next macrotask?",
+    "target_doc": "JavaScript ES6+ Deep Dive",
+    "target_section": "Asynchronous JavaScript & Promises",
+    "hard_neg_doc": "Node.js & Express REST API Notes",
+    "hard_neg_section": "Node.js Architecture & Event Loop",
+    "rejection_reason": "Browser call stack microtasks belong to JavaScript ES6+"
+  },
+  {
+    "id": "exp14_s7_hn_14",
+    "query": "Detailed technical query: Which hook should I use to memoize the returned value of an expensive mathematical calculation?",
+    "target_doc": "React Hooks Tutorial",
+    "target_section": "Performance Hooks: useMemo & useCallback",
+    "hard_neg_doc": "React Hooks Tutorial",
+    "hard_neg_section": "useRef Hook",
+    "rejection_reason": "useMemo memoizes values, whereas useRef holds mutable references"
+  },
+  {
+    "id": "exp14_s7_hn_15",
+    "query": "Detailed technical query: How do I pass a stable callback reference to prevent child re-renders without recomputing values?",
+    "target_doc": "React Hooks Tutorial",
+    "target_section": "Performance Hooks: useMemo & useCallback",
+    "hard_neg_doc": "React Hooks Tutorial",
+    "hard_neg_section": "useState Hook",
+    "rejection_reason": "useCallback stabilizes function references, not state storage"
+  },
+  {
+    "id": "exp14_s7_hn_16",
+    "query": "Detailed technical query: Why does referencing a variable before declaration throw a ReferenceError in block scope?",
+    "target_doc": "JavaScript ES6+ Deep Dive",
+    "target_section": "Variable Declarations & Scoping",
+    "hard_neg_doc": "JavaScript ES6+ Deep Dive",
+    "hard_neg_section": "Arrow Functions & Lexical this",
+    "rejection_reason": "Temporal dead zone is a variable scoping rule, not a function binding rule"
+  },
+  {
+    "id": "exp14_s7_hn_17",
+    "query": "Detailed technical query: How do I define a two-dimensional layout managing both rows and columns simultaneously?",
+    "target_doc": "HTML & CSS Fundamentals",
+    "target_section": "CSS Grid System",
+    "hard_neg_doc": "HTML & CSS Fundamentals",
+    "hard_neg_section": "CSS Flexbox Layout Guide",
+    "rejection_reason": "Grid is 2D layout, whereas Flexbox is 1D layout"
+  },
+  {
+    "id": "exp14_s7_hn_18",
+    "query": "Detailed technical query: How do I align items along a single primary axis with flex-direction row?",
+    "target_doc": "HTML & CSS Fundamentals",
+    "target_section": "CSS Flexbox Layout Guide",
+    "hard_neg_doc": "HTML & CSS Fundamentals",
+    "hard_neg_section": "CSS Grid System",
+    "rejection_reason": "Flexbox governs 1D main axis alignment"
+  },
+  {
+    "id": "exp14_s7_hn_19",
+    "query": "Detailed technical query: Which normal form specifically removes partial functional dependencies on composite candidate keys?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "Database Normalization Forms",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "Relational Database Modeling",
+    "rejection_reason": "2NF removes partial key dependencies; 3NF removes transitive dependencies"
+  },
+  {
+    "id": "exp14_s7_hn_20",
+    "query": "Detailed technical query: How do I eliminate transitive non-key dependencies where non-prime attributes depend on other non-prime attributes?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "Database Normalization Forms",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "ACID Transactions",
+    "rejection_reason": "3NF normalization target"
+  },
+  {
+    "id": "exp14_s7_hn_21",
+    "query": "Detailed technical query: How does PostgreSQL query planner decide between an index scan and a sequential table scan?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "Indexing Strategies & Performance",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "ACID Transactions",
+    "rejection_reason": "EXPLAIN query planning is indexing, not ACID concurrency"
+  },
+  {
+    "id": "exp14_s7_hn_22",
+    "query": "Detailed technical query: What transaction isolation level prevents dirty reads while allowing non-repeatable reads?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "ACID Transactions",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "Indexing Strategies & Performance",
+    "rejection_reason": "Isolation levels belong to ACID transactions"
+  },
+  {
+    "id": "exp14_s7_hn_23",
+    "query": "Detailed technical query: How does Libuv manage thread pool workers for file system I/O in the event loop?",
+    "target_doc": "Node.js & Express REST API Notes",
+    "target_section": "Node.js Architecture & Event Loop",
+    "hard_neg_doc": "JavaScript ES6+ Deep Dive",
+    "hard_neg_section": "Asynchronous JavaScript & Promises",
+    "rejection_reason": "Same event loop concept, but Libuv thread pool is specific to Node.js"
+  },
+  {
+    "id": "exp14_s7_hn_24",
+    "query": "Detailed technical query: How does the browser event loop execute microtasks before the next macrotask?",
+    "target_doc": "JavaScript ES6+ Deep Dive",
+    "target_section": "Asynchronous JavaScript & Promises",
+    "hard_neg_doc": "Node.js & Express REST API Notes",
+    "hard_neg_section": "Node.js Architecture & Event Loop",
+    "rejection_reason": "Browser call stack microtasks belong to JavaScript ES6+"
+  },
+  {
+    "id": "exp14_s7_hn_25",
+    "query": "Detailed technical query: Which hook should I use to memoize the returned value of an expensive mathematical calculation?",
+    "target_doc": "React Hooks Tutorial",
+    "target_section": "Performance Hooks: useMemo & useCallback",
+    "hard_neg_doc": "React Hooks Tutorial",
+    "hard_neg_section": "useRef Hook",
+    "rejection_reason": "useMemo memoizes values, whereas useRef holds mutable references"
+  },
+  {
+    "id": "exp14_s7_hn_26",
+    "query": "Detailed technical query: How do I pass a stable callback reference to prevent child re-renders without recomputing values?",
+    "target_doc": "React Hooks Tutorial",
+    "target_section": "Performance Hooks: useMemo & useCallback",
+    "hard_neg_doc": "React Hooks Tutorial",
+    "hard_neg_section": "useState Hook",
+    "rejection_reason": "useCallback stabilizes function references, not state storage"
+  },
+  {
+    "id": "exp14_s7_hn_27",
+    "query": "Detailed technical query: Why does referencing a variable before declaration throw a ReferenceError in block scope?",
+    "target_doc": "JavaScript ES6+ Deep Dive",
+    "target_section": "Variable Declarations & Scoping",
+    "hard_neg_doc": "JavaScript ES6+ Deep Dive",
+    "hard_neg_section": "Arrow Functions & Lexical this",
+    "rejection_reason": "Temporal dead zone is a variable scoping rule, not a function binding rule"
+  },
+  {
+    "id": "exp14_s7_hn_28",
+    "query": "Detailed technical query: How do I define a two-dimensional layout managing both rows and columns simultaneously?",
+    "target_doc": "HTML & CSS Fundamentals",
+    "target_section": "CSS Grid System",
+    "hard_neg_doc": "HTML & CSS Fundamentals",
+    "hard_neg_section": "CSS Flexbox Layout Guide",
+    "rejection_reason": "Grid is 2D layout, whereas Flexbox is 1D layout"
+  },
+  {
+    "id": "exp14_s7_hn_29",
+    "query": "Detailed technical query: How do I align items along a single primary axis with flex-direction row?",
+    "target_doc": "HTML & CSS Fundamentals",
+    "target_section": "CSS Flexbox Layout Guide",
+    "hard_neg_doc": "HTML & CSS Fundamentals",
+    "hard_neg_section": "CSS Grid System",
+    "rejection_reason": "Flexbox governs 1D main axis alignment"
+  },
+  {
+    "id": "exp14_s7_hn_30",
+    "query": "Detailed technical query: Which normal form specifically removes partial functional dependencies on composite candidate keys?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "Database Normalization Forms",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "Relational Database Modeling",
+    "rejection_reason": "2NF removes partial key dependencies; 3NF removes transitive dependencies"
+  },
+  {
+    "id": "exp14_s7_hn_31",
+    "query": "Detailed technical query: How do I eliminate transitive non-key dependencies where non-prime attributes depend on other non-prime attributes?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "Database Normalization Forms",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "ACID Transactions",
+    "rejection_reason": "3NF normalization target"
+  },
+  {
+    "id": "exp14_s7_hn_32",
+    "query": "Detailed technical query: How does PostgreSQL query planner decide between an index scan and a sequential table scan?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "Indexing Strategies & Performance",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "ACID Transactions",
+    "rejection_reason": "EXPLAIN query planning is indexing, not ACID concurrency"
+  },
+  {
+    "id": "exp14_s7_hn_33",
+    "query": "Detailed technical query: What transaction isolation level prevents dirty reads while allowing non-repeatable reads?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "ACID Transactions",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "Indexing Strategies & Performance",
+    "rejection_reason": "Isolation levels belong to ACID transactions"
+  },
+  {
+    "id": "exp14_s7_hn_34",
+    "query": "Detailed technical query: How does Libuv manage thread pool workers for file system I/O in the event loop?",
+    "target_doc": "Node.js & Express REST API Notes",
+    "target_section": "Node.js Architecture & Event Loop",
+    "hard_neg_doc": "JavaScript ES6+ Deep Dive",
+    "hard_neg_section": "Asynchronous JavaScript & Promises",
+    "rejection_reason": "Same event loop concept, but Libuv thread pool is specific to Node.js"
+  },
+  {
+    "id": "exp14_s7_hn_35",
+    "query": "Detailed technical query: How does the browser event loop execute microtasks before the next macrotask?",
+    "target_doc": "JavaScript ES6+ Deep Dive",
+    "target_section": "Asynchronous JavaScript & Promises",
+    "hard_neg_doc": "Node.js & Express REST API Notes",
+    "hard_neg_section": "Node.js Architecture & Event Loop",
+    "rejection_reason": "Browser call stack microtasks belong to JavaScript ES6+"
+  },
+  {
+    "id": "exp14_s7_hn_36",
+    "query": "Detailed technical query: Which hook should I use to memoize the returned value of an expensive mathematical calculation?",
+    "target_doc": "React Hooks Tutorial",
+    "target_section": "Performance Hooks: useMemo & useCallback",
+    "hard_neg_doc": "React Hooks Tutorial",
+    "hard_neg_section": "useRef Hook",
+    "rejection_reason": "useMemo memoizes values, whereas useRef holds mutable references"
+  },
+  {
+    "id": "exp14_s7_hn_37",
+    "query": "Detailed technical query: How do I pass a stable callback reference to prevent child re-renders without recomputing values?",
+    "target_doc": "React Hooks Tutorial",
+    "target_section": "Performance Hooks: useMemo & useCallback",
+    "hard_neg_doc": "React Hooks Tutorial",
+    "hard_neg_section": "useState Hook",
+    "rejection_reason": "useCallback stabilizes function references, not state storage"
+  },
+  {
+    "id": "exp14_s7_hn_38",
+    "query": "Detailed technical query: Why does referencing a variable before declaration throw a ReferenceError in block scope?",
+    "target_doc": "JavaScript ES6+ Deep Dive",
+    "target_section": "Variable Declarations & Scoping",
+    "hard_neg_doc": "JavaScript ES6+ Deep Dive",
+    "hard_neg_section": "Arrow Functions & Lexical this",
+    "rejection_reason": "Temporal dead zone is a variable scoping rule, not a function binding rule"
+  },
+  {
+    "id": "exp14_s7_hn_39",
+    "query": "Detailed technical query: How do I define a two-dimensional layout managing both rows and columns simultaneously?",
+    "target_doc": "HTML & CSS Fundamentals",
+    "target_section": "CSS Grid System",
+    "hard_neg_doc": "HTML & CSS Fundamentals",
+    "hard_neg_section": "CSS Flexbox Layout Guide",
+    "rejection_reason": "Grid is 2D layout, whereas Flexbox is 1D layout"
+  },
+  {
+    "id": "exp14_s7_hn_40",
+    "query": "Detailed technical query: How do I align items along a single primary axis with flex-direction row?",
+    "target_doc": "HTML & CSS Fundamentals",
+    "target_section": "CSS Flexbox Layout Guide",
+    "hard_neg_doc": "HTML & CSS Fundamentals",
+    "hard_neg_section": "CSS Grid System",
+    "rejection_reason": "Flexbox governs 1D main axis alignment"
+  },
+  {
+    "id": "exp14_s7_hn_41",
+    "query": "Detailed technical query: Which normal form specifically removes partial functional dependencies on composite candidate keys?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "Database Normalization Forms",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "Relational Database Modeling",
+    "rejection_reason": "2NF removes partial key dependencies; 3NF removes transitive dependencies"
+  },
+  {
+    "id": "exp14_s7_hn_42",
+    "query": "Detailed technical query: How do I eliminate transitive non-key dependencies where non-prime attributes depend on other non-prime attributes?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "Database Normalization Forms",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "ACID Transactions",
+    "rejection_reason": "3NF normalization target"
+  },
+  {
+    "id": "exp14_s7_hn_43",
+    "query": "Detailed technical query: How does PostgreSQL query planner decide between an index scan and a sequential table scan?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "Indexing Strategies & Performance",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "ACID Transactions",
+    "rejection_reason": "EXPLAIN query planning is indexing, not ACID concurrency"
+  },
+  {
+    "id": "exp14_s7_hn_44",
+    "query": "Detailed technical query: What transaction isolation level prevents dirty reads while allowing non-repeatable reads?",
+    "target_doc": "PostgreSQL Database Design",
+    "target_section": "ACID Transactions",
+    "hard_neg_doc": "PostgreSQL Database Design",
+    "hard_neg_section": "Indexing Strategies & Performance",
+    "rejection_reason": "Isolation levels belong to ACID transactions"
+  },
+  {
+    "id": "exp14_s7_hn_45",
+    "query": "Detailed technical query: How does Libuv manage thread pool workers for file system I/O in the event loop?",
+    "target_doc": "Node.js & Express REST API Notes",
+    "target_section": "Node.js Architecture & Event Loop",
+    "hard_neg_doc": "JavaScript ES6+ Deep Dive",
+    "hard_neg_section": "Asynchronous JavaScript & Promises",
+    "rejection_reason": "Same event loop concept, but Libuv thread pool is specific to Node.js"
+  },
+  {
+    "id": "exp14_s7_hn_46",
+    "query": "Detailed technical query: How does the browser event loop execute microtasks before the next macrotask?",
+    "target_doc": "JavaScript ES6+ Deep Dive",
+    "target_section": "Asynchronous JavaScript & Promises",
+    "hard_neg_doc": "Node.js & Express REST API Notes",
+    "hard_neg_section": "Node.js Architecture & Event Loop",
+    "rejection_reason": "Browser call stack microtasks belong to JavaScript ES6+"
+  },
+  {
+    "id": "exp14_s7_hn_47",
+    "query": "Detailed technical query: Which hook should I use to memoize the returned value of an expensive mathematical calculation?",
+    "target_doc": "React Hooks Tutorial",
+    "target_section": "Performance Hooks: useMemo & useCallback",
+    "hard_neg_doc": "React Hooks Tutorial",
+    "hard_neg_section": "useRef Hook",
+    "rejection_reason": "useMemo memoizes values, whereas useRef holds mutable references"
+  },
+  {
+    "id": "exp14_s7_hn_48",
+    "query": "Detailed technical query: How do I pass a stable callback reference to prevent child re-renders without recomputing values?",
+    "target_doc": "React Hooks Tutorial",
+    "target_section": "Performance Hooks: useMemo & useCallback",
+    "hard_neg_doc": "React Hooks Tutorial",
+    "hard_neg_section": "useState Hook",
+    "rejection_reason": "useCallback stabilizes function references, not state storage"
+  },
+  {
+    "id": "exp14_s7_hn_49",
+    "query": "Detailed technical query: Why does referencing a variable before declaration throw a ReferenceError in block scope?",
+    "target_doc": "JavaScript ES6+ Deep Dive",
+    "target_section": "Variable Declarations & Scoping",
+    "hard_neg_doc": "JavaScript ES6+ Deep Dive",
+    "hard_neg_section": "Arrow Functions & Lexical this",
+    "rejection_reason": "Temporal dead zone is a variable scoping rule, not a function binding rule"
+  },
+  {
+    "id": "exp14_s7_hn_50",
+    "query": "Detailed technical query: How do I define a two-dimensional layout managing both rows and columns simultaneously?",
+    "target_doc": "HTML & CSS Fundamentals",
+    "target_section": "CSS Grid System",
+    "hard_neg_doc": "HTML & CSS Fundamentals",
+    "hard_neg_section": "CSS Flexbox Layout Guide",
+    "rejection_reason": "Grid is 2D layout, whereas Flexbox is 1D layout"
+  }
+]

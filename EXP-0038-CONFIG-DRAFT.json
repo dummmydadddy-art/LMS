@@ -1,0 +1,95 @@
+{
+  "experiment_id": "EXP-0038",
+  "created_at": "2026-09-17T14:28:00+05:30",
+  "status": "DEVELOPMENT_EVALUATION",
+  "lineage": {
+    "parent_commit": "4372d43",
+    "target_milestone": "Structure-Aware Evidence Chunking with Docling HybridChunker",
+    "branch": "exp-0038"
+  },
+  "chunking_architectures": {
+    "C0_control": {
+      "identifier": "C0",
+      "name": "Legacy Heuristic Regex Chunker",
+      "source_table": "material_chunks_exp0032",
+      "chunk_count": 23,
+      "chunk_size_chars": 650,
+      "chunk_overlap_chars": 100,
+      "overlap_rate_pct": 15.38,
+      "mean_tokens": 163.61,
+      "max_tokens": 342.0,
+      "contextual_headings": false
+    },
+    "C1_intervention": {
+      "identifier": "C1",
+      "name": "Docling Native HybridChunker",
+      "source_table": "material_chunks_exp0038_c1",
+      "chunk_count": 21,
+      "max_tokens": 512,
+      "tokenizer": "BAAI/bge-small-en-v1.5 (BertTokenizer)",
+      "overlap_rate_pct": 0.0,
+      "mean_tokens": 177.57,
+      "max_tokens": 331.0,
+      "mean_contextual_tokens": 189.05,
+      "contextual_headings": true,
+      "evidence_purity": "Strict separation between raw_text and embedding_text"
+    }
+  },
+  "content_preservation": {
+    "gate_status": "PASS",
+    "source_character_count": 14350,
+    "source_word_count": 1320,
+    "c1_word_token_coverage_pct": 100.0,
+    "missing_technical_terms_count": 0
+  },
+  "retrieval_pipeline": {
+    "dense_bi_encoder": "BAAI/bge-small-en-v1.5",
+    "embedding_dimension": 384,
+    "cross_encoder_reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "reranking_pool_size": 20,
+    "platt_scaling_parameters": {
+      "a": 0.6236,
+      "b": 3.2801
+    },
+    "dense_normalization": {
+      "min_bound": 0.40,
+      "max_bound": 0.85
+    },
+    "score_fusion": {
+      "alpha": 0.50,
+      "formula": "0.50 * norm(dense) + 0.50 * platt(cross)"
+    },
+    "fused_candidate_pool": 15,
+    "selected_evidence_k": 5
+  },
+  "downstream_verifier": {
+    "frozen_candidate": "A4",
+    "module_path": "backend/rag_ambiguity_guard_verifier.php",
+    "ambiguity_routing_guard": "ENABLED",
+    "standard_prompt_id": "P4",
+    "guarded_prompt_id": "P4_neutral",
+    "confidence_thresholds": {
+      "standard_entailment": 0.70,
+      "standard_contradiction": 0.70,
+      "guarded_entailment": 0.85,
+      "guarded_contradiction": 0.80
+    },
+    "nli_model": "llama3.2:latest",
+    "nli_endpoint": "http://127.0.0.1:11434/api/generate",
+    "nli_temperature": 0.0,
+    "nli_max_tokens": 25
+  },
+  "datasets": {
+    "development_dataset": {
+      "path": "EXP-0025-DEVELOPMENT-DATASET.json",
+      "sample_size": 400,
+      "sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b"
+    },
+    "blind_dataset": {
+      "path": "EXP-0033-BLIND-DATASET.json",
+      "sample_size": 500,
+      "sha256": "3b4fd6c72e2cf59196b0ee1b65e940f58caab4ea6c9d2f21ea8dc7537b0ddb05",
+      "access_status": "PROTECTED_UNINSPECTED"
+    }
+  }
+}

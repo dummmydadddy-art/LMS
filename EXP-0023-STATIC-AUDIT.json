@@ -1,0 +1,286 @@
+{
+  "experiment_tag": "EXP-0023-STATIC-AUDIT-2026-09-12",
+  "timestamp": "2026-09-12T08:31:54.825Z",
+  "audit_categories": {
+    "literal_hardcoding": [
+      {
+        "file": "backend/rag_safety_boundary.php",
+        "line": 292,
+        "snippet": "$pattern = '/\\b(access_granted|bypass_successful|pwned|lms_master_key|password_hash|run_command|manage_task|call_tool|tool_call|exec_sql|system_exec)\\b/i';",
+        "finding": "Hardcoded benchmark evaluation canary tokens in production sanitization filter."
+      },
+      {
+        "file": "backend/rag_safety_boundary.php",
+        "line": 322,
+        "snippet": "if (preg_match('/\\b(ignore|system\\s+prompt|override|password|secret|pwned)\\b/i', $decoded)) {",
+        "finding": "Hardcoded benchmark evaluation canary tokens in production sanitization filter."
+      }
+    ],
+    "semantic_hardcoding": [
+      {
+        "file": "backend/rag_service.php",
+        "line": 74,
+        "snippet": "private static array $spellingMap = [",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 75,
+        "snippet": "'useefect' => 'useEffect',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 76,
+        "snippet": "'useffect' => 'useEffect',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 77,
+        "snippet": "'clenaup' => 'cleanup',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 78,
+        "snippet": "'memry' => 'memory',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 79,
+        "snippet": "'leeks' => 'leaks',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 80,
+        "snippet": "'recat' => 'React',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 81,
+        "snippet": "'postgre' => 'PostgreSQL',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 82,
+        "snippet": "'postgres' => 'PostgreSQL',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 83,
+        "snippet": "'indexx' => 'index',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 84,
+        "snippet": "'performence' => 'performance',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 85,
+        "snippet": "'muttable' => 'mutable',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 86,
+        "snippet": "'propeties' => 'properties',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 87,
+        "snippet": "'reassinment' => 'reassignment',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 88,
+        "snippet": "'diference' => 'difference',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 89,
+        "snippet": "'flexboks' => 'flexbox',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 90,
+        "snippet": "'axiss' => 'axis',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 91,
+        "snippet": "'crss' => 'cross',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 92,
+        "snippet": "'justfy' => 'justify',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 93,
+        "snippet": "'contnt' => 'content',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 94,
+        "snippet": "'exprss' => 'Express',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 95,
+        "snippet": "'middlware' => 'middleware',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 96,
+        "snippet": "'paramters' => 'parameters',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 97,
+        "snippet": "'nxt' => 'next',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 98,
+        "snippet": "'databaes' => 'database',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 99,
+        "snippet": "'normalizaton' => 'normalization',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 100,
+        "snippet": "'transitve' => 'transitive',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 101,
+        "snippet": "'dependancy' => 'dependency',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 102,
+        "snippet": "'tempral' => 'temporal',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 103,
+        "snippet": "'ded' => 'dead',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 104,
+        "snippet": "'zon' => 'zone',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 105,
+        "snippet": "'referenserror' => 'ReferenceError',",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 106,
+        "snippet": "'javascrip' => 'JavaScript'",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      },
+      {
+        "file": "backend/rag_service.php",
+        "line": 107,
+        "snippet": "];",
+        "finding": "Curriculum-specific spelling correction dictionary."
+      }
+    ],
+    "benchmark_coupling": [
+      {
+        "file": "backend/rag_query_condenser.php",
+        "line": 40,
+        "snippet": "'cues' => ['shallow', 'deep freeze', 'nested object', 'mutation']",
+        "finding": "Direct leakage of questions from blind_false_premise_v2.json into premise verifier rules."
+      }
+    ],
+    "test_bypasses": [
+      {
+        "file": "backend/rag_flags.php",
+        "line": 39,
+        "snippet": "$header = $_SERVER['HTTP_X_RAG_FLAGS'] ?? null;",
+        "finding": "Client HTTP header X-RAG-FLAGS allows unauthenticated runtime override of safety-critical feature flags."
+      },
+      {
+        "file": "backend/gateway.js",
+        "line": 62,
+        "snippet": "const header = req?.headers?.['x-rag-flags'];",
+        "finding": "Client HTTP header X-RAG-FLAGS allows unauthenticated runtime override of safety-critical feature flags."
+      }
+    ],
+    "domain_configuration": [],
+    "legitimate_safety_logic": [
+      {
+        "file": "backend/rag_safety_boundary.php",
+        "line": 150,
+        "snippet": "public static function detectAdministrativeQuery(string $query): ?string {",
+        "finding": "Legitimate administrative and injection boundary detection routines."
+      },
+      {
+        "file": "backend/rag_safety_boundary.php",
+        "line": 216,
+        "snippet": "if ($injMatch = self::detectInjectionPayload($q)) {",
+        "finding": "Legitimate administrative and injection boundary detection routines."
+      },
+      {
+        "file": "backend/rag_safety_boundary.php",
+        "line": 228,
+        "snippet": "if ($adminMatch = self::detectAdministrativeQuery($q)) {",
+        "finding": "Legitimate administrative and injection boundary detection routines."
+      },
+      {
+        "file": "backend/rag_safety_boundary.php",
+        "line": 299,
+        "snippet": "public static function detectInjectionPayload(string $query): ?array {",
+        "finding": "Legitimate administrative and injection boundary detection routines."
+      }
+    ]
+  },
+  "summary": {
+    "total_findings": 43,
+    "literal_hardcoding_count": 2,
+    "benchmark_coupling_count": 1,
+    "test_bypasses_count": 2,
+    "severity_evaluation": {
+      "canary_token_hardcoding": "CRITICAL_CIRCULARITY",
+      "blind_benchmark_leakage": "CRITICAL_BENCHMARK_CONTAMINATION",
+      "http_flag_bypass": "HIGH_SECURITY_RISK"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+experiment_id: EXP-0056
+base_commit: fc7e5021a40566f040fbbdaea4d5f04e770a6b40
+description: PageIndex Structural Navigation over Long Curriculum Documents
+feature_flags:
+  ENABLE_DOCLING_RS: false
+  ENABLE_PAGEINDEX: true
+  ENABLE_LLAMA_CPP: false
+  ENABLE_LLMLINGUA: false
+  ENABLE_SURYA: false
+  ENABLE_GEMMA3N: false
+  ENABLE_BITNET: false
+  ENABLE_MARKER: false
+document_navigation: pageindex
+execution_mode: local_only
+hierarchy_levels:
+- root
+- chapter
+- section
+- subsection
+retriever: exp0040
+verifier:
+  name: A4
+  frozen: true
+device: cpu
+seed: 42

@@ -1,0 +1,3 @@
+- Frontend: TypeScript, React 19, Vite, Tailwind CSS, React Router DOM, Lucide icons, Supabase JS.
+- Backend: PHP 8.x with a built-in PHP server for local development.
+- Frontend package scripts live in `frontend/package.json`.

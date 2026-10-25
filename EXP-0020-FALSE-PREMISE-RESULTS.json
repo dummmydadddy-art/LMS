@@ -1,0 +1,843 @@
+{
+    "timestamp": "2026-09-09T13:45:08+00:00",
+    "total_queries": 1600,
+    "blind_standard_total": 1500,
+    "adversarial_total": 100,
+    "summary": {
+        "refuted": 1600,
+        "not_established": 0,
+        "supported": 0,
+        "refutation_recall_pct": 100,
+        "false_acceptance_rate_pct": 0,
+        "abstention_rate_pct": 0,
+        "mean_latency_ms": 0.036,
+        "total_evaluation_time_sec": 0.06
+    },
+    "by_category": {
+        "CAT-01": {
+            "category_name": "Phantom Hooks",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-02": {
+            "category_name": "Nonexistent Methods on Built-in Objects",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-03": {
+            "category_name": "Inverted React Hook Lifecycles",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-04": {
+            "category_name": "Inverted React State & Ref Semantics",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-05": {
+            "category_name": "Inverted Performance Hook Constraints",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-06": {
+            "category_name": "Rules of Hooks Violations",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-07": {
+            "category_name": "Inverted JavaScript Scoping",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-08": {
+            "category_name": "Inverted Temporal Dead Zone Semantics",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-09": {
+            "category_name": "Inverted Arrow Function Semantics",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-10": {
+            "category_name": "Inverted Event Loop Priorities",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-11": {
+            "category_name": "Inverted Concurrency Models",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-12": {
+            "category_name": "Inverted Node.js Network I\/O",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-13": {
+            "category_name": "Inverted Express Middleware Semantics",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-14": {
+            "category_name": "Inverted REST \/ HTTP Idempotency",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-15": {
+            "category_name": "Inverted Authentication & JWT Semantics",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-16": {
+            "category_name": "Inverted Relational Normalization",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-17": {
+            "category_name": "Inverted PostgreSQL Constraints & Transactions",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-18": {
+            "category_name": "Inverted CSS Box Model & Sizing",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-19": {
+            "category_name": "Inverted CSS Flexbox & Grid Axis",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "CAT-20": {
+            "category_name": "Inverted JS Built-in Object & Type Semantics",
+            "total": 75,
+            "refuted": 75,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "ADV-L01": {
+            "category_name": "Adversarial Level 1: Polite Student Inquiry",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "ADV-L02": {
+            "category_name": "Adversarial Level 2: Urgent Debugging Context",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "ADV-L03": {
+            "category_name": "Adversarial Level 3: Technical Interview Context",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "ADV-L04": {
+            "category_name": "Adversarial Level 4: Embedded Authority \/ Professor Claim",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "ADV-L05": {
+            "category_name": "Adversarial Level 5: Socratic \/ Dialectical Framing",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "ADV-L06": {
+            "category_name": "Adversarial Level 6: Double Negative \/ Obfuscated Negation",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "ADV-L07": {
+            "category_name": "Adversarial Level 7: Multi-Premise Compound Trap",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "ADV-L08": {
+            "category_name": "Adversarial Level 8: Academic \/ RFC Citation Disguise",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "ADV-L09": {
+            "category_name": "Adversarial Level 9: Hypothetical Architecture Prompt",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        },
+        "ADV-L10": {
+            "category_name": "Adversarial Level 9: Hypothetical Architecture Prompt",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "refutation_recall_pct": 100,
+            "far_pct": 0
+        }
+    },
+    "by_adversarial_level": {
+        "Level_1": {
+            "level": 1,
+            "name": "Adversarial Level 1: Polite Student Inquiry",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "recall_pct": 100,
+            "far_pct": 0
+        },
+        "Level_2": {
+            "level": 2,
+            "name": "Adversarial Level 2: Urgent Debugging Context",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "recall_pct": 100,
+            "far_pct": 0
+        },
+        "Level_3": {
+            "level": 3,
+            "name": "Adversarial Level 3: Technical Interview Context",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "recall_pct": 100,
+            "far_pct": 0
+        },
+        "Level_4": {
+            "level": 4,
+            "name": "Adversarial Level 4: Embedded Authority \/ Professor Claim",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "recall_pct": 100,
+            "far_pct": 0
+        },
+        "Level_5": {
+            "level": 5,
+            "name": "Adversarial Level 5: Socratic \/ Dialectical Framing",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "recall_pct": 100,
+            "far_pct": 0
+        },
+        "Level_6": {
+            "level": 6,
+            "name": "Adversarial Level 6: Double Negative \/ Obfuscated Negation",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "recall_pct": 100,
+            "far_pct": 0
+        },
+        "Level_7": {
+            "level": 7,
+            "name": "Adversarial Level 7: Multi-Premise Compound Trap",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "recall_pct": 100,
+            "far_pct": 0
+        },
+        "Level_8": {
+            "level": 8,
+            "name": "Adversarial Level 8: Academic \/ RFC Citation Disguise",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "recall_pct": 100,
+            "far_pct": 0
+        },
+        "Level_9": {
+            "level": 9,
+            "name": "Adversarial Level 9: Hypothetical Architecture Prompt",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "recall_pct": 100,
+            "far_pct": 0
+        },
+        "Level_10": {
+            "level": 9,
+            "name": "Adversarial Level 9: Hypothetical Architecture Prompt",
+            "total": 10,
+            "refuted": 10,
+            "not_established": 0,
+            "supported": 0,
+            "recall_pct": 100,
+            "far_pct": 0
+        }
+    },
+    "failures": [],
+    "evaluations": [
+        {
+            "id": "EXP0020-FP-0001",
+            "query": "How do I use useSuspenseQuery to handle state updates in React 18?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useSuspenseQuery` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.31
+        },
+        {
+            "id": "EXP0020-FP-0002",
+            "query": "Why does calling useFormStatus() fail inside my functional component?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useFormStatus` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.04
+        },
+        {
+            "id": "EXP0020-FP-0003",
+            "query": "What arguments should I pass to useInterval for data fetching?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useInterval` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0004",
+            "query": "Can you explain the difference between useEffect and useFetch?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useFetch` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0005",
+            "query": "How does useLocalStorage optimize component re-renders in modern React?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useLocalStorage` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0006",
+            "query": "Where should I import useEffectAsync from in the React package?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useEffectAsync` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0007",
+            "query": "Why is useLifecycle recommended for managing side effects in React?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useLifecycle` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0008",
+            "query": "How do I configure the dependency array for useQuery?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useQuery` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0009",
+            "query": "How do I use useStore to handle state updates in React 18?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useStore` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0010",
+            "query": "Why does calling useDatabase() fail inside my functional component?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useDatabase` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0011",
+            "query": "What arguments should I pass to useAuthSession for data fetching?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useAuthSession` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0012",
+            "query": "Can you explain the difference between useEffect and useSocket?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useSocket` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.01
+        },
+        {
+            "id": "EXP0020-FP-0013",
+            "query": "How does useModal optimize component re-renders in modern React?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useModal` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0014",
+            "query": "Where should I import useNotification from in the React package?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useNotification` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0015",
+            "query": "Why is useRouteParam recommended for managing side effects in React?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useRouteParam` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0016",
+            "query": "How do I configure the dependency array for useGlobalState?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useGlobalState` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0017",
+            "query": "How do I use useSessionStorage to handle state updates in React 18?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useSessionStorage` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0018",
+            "query": "Why does calling useDebounceEffect() fail inside my functional component?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useDebounceEffect` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0019",
+            "query": "What arguments should I pass to useAsyncEffect for data fetching?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useAsyncEffect` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0020",
+            "query": "Can you explain the difference between useEffect and usePromise?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `usePromise` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.01
+        },
+        {
+            "id": "EXP0020-FP-0021",
+            "query": "How does useWindowSize optimize component re-renders in modern React?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useWindowSize` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0022",
+            "query": "Where should I import useEventListener from in the React package?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useEventListener` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0023",
+            "query": "Why is usePreviousValue recommended for managing side effects in React?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `usePreviousValue` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0024",
+            "query": "How do I configure the dependency array for useMounted?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useMounted` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.01
+        },
+        {
+            "id": "EXP0020-FP-0025",
+            "query": "How do I use useIsomorphicEffect to handle state updates in React 18?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useIsomorphicEffect` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0026",
+            "query": "Why does calling useSuspenseQuery() fail inside my functional component?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useSuspenseQuery` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0027",
+            "query": "What arguments should I pass to useFormStatus for data fetching?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useFormStatus` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0028",
+            "query": "Can you explain the difference between useEffect and useInterval?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useInterval` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.01
+        },
+        {
+            "id": "EXP0020-FP-0029",
+            "query": "How does useFetch optimize component re-renders in modern React?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useFetch` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0030",
+            "query": "Where should I import useLocalStorage from in the React package?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useLocalStorage` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0031",
+            "query": "Why is useEffectAsync recommended for managing side effects in React?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useEffectAsync` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0032",
+            "query": "How do I configure the dependency array for useLifecycle?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useLifecycle` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.01
+        },
+        {
+            "id": "EXP0020-FP-0033",
+            "query": "How do I use useQuery to handle state updates in React 18?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useQuery` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0034",
+            "query": "Why does calling useStore() fail inside my functional component?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useStore` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0035",
+            "query": "What arguments should I pass to useDatabase for data fetching?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useDatabase` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0036",
+            "query": "Can you explain the difference between useEffect and useAuthSession?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useAuthSession` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.01
+        },
+        {
+            "id": "EXP0020-FP-0037",
+            "query": "How does useSocket optimize component re-renders in modern React?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useSocket` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0038",
+            "query": "Where should I import useModal from in the React package?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useModal` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0039",
+            "query": "Why is useNotification recommended for managing side effects in React?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useNotification` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0040",
+            "query": "How do I configure the dependency array for useRouteParam?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useRouteParam` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.01
+        },
+        {
+            "id": "EXP0020-FP-0041",
+            "query": "How do I use useGlobalState to handle state updates in React 18?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useGlobalState` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0042",
+            "query": "Why does calling useSessionStorage() fail inside my functional component?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useSessionStorage` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0043",
+            "query": "What arguments should I pass to useDebounceEffect for data fetching?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useDebounceEffect` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0044",
+            "query": "Can you explain the difference between useEffect and useAsyncEffect?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useAsyncEffect` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.01
+        },
+        {
+            "id": "EXP0020-FP-0045",
+            "query": "How does usePromise optimize component re-renders in modern React?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `usePromise` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0046",
+            "query": "Where should I import useWindowSize from in the React package?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useWindowSize` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0047",
+            "query": "Why is useEventListener recommended for managing side effects in React?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useEventListener` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0048",
+            "query": "How do I configure the dependency array for usePreviousValue?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `usePreviousValue` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.01
+        },
+        {
+            "id": "EXP0020-FP-0049",
+            "query": "How do I use useMounted to handle state updates in React 18?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useMounted` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        },
+        {
+            "id": "EXP0020-FP-0050",
+            "query": "Why does calling useIsomorphicEffect() fail inside my functional component?",
+            "status": "REFUTED",
+            "sub_type": "SYNTHETIC_API",
+            "refutation": "The hook `useIsomorphicEffect` does not exist in standard React or the approved course materials. The official React curriculum covers: useState, useEffect, useContext, useRef, useMemo, useCallback, and useLayoutEffect.",
+            "citation": "[React Hooks Tutorial - Chunk 0]",
+            "latency_ms": 0.02
+        }
+    ]
+}

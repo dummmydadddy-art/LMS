@@ -1,0 +1,3743 @@
+{
+  "experiment_id": "EXP-0059",
+  "benchmark": "DEVELOPMENT",
+  "dataset": {
+    "name": "EXP-0025-DEVELOPMENT-DATASET.json",
+    "sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+    "N": 400
+  },
+  "conditions": {
+    "c0_control": {
+      "name": "EXP-0056 Deterministic Structural Retrieval",
+      "retrieval": {
+        "eval_queries_count": 256,
+        "recall_at_1": 85.55,
+        "recall_at_3": 98.05,
+        "recall_at_5": 99.61,
+        "recall_at_10": 99.61,
+        "ndcg_at_5": 80.91,
+        "ndcg_at_10": 84.04,
+        "mean_first_hit_rank": 1.24,
+        "mean_recovered_gold_count": 4.36,
+        "section_level_recovery_pct": 99.61,
+        "latency_ms": {
+          "mean": 15.4,
+          "median": 15.4,
+          "p95": 15.4
+        },
+        "hybrid_latency_ms": null,
+        "pylate_latency_ms": null,
+        "mean_context_tokens": 538.5
+      },
+      "downstream_a4": {
+        "total": 400,
+        "correct": 368,
+        "accuracy": 92.0,
+        "accuracy_ci_95": [
+          88.92,
+          94.28
+        ],
+        "macro_f1": 92.67,
+        "far": 3.6,
+        "far_ci_95": [
+          1.91,
+          6.7
+        ],
+        "frr": 13.33,
+        "frr_ci_95": [
+          8.8,
+          19.7
+        ],
+        "supported_recall": 86.67,
+        "refutation_recall": 93.33,
+        "not_established_recall": 98.0,
+        "ood_recall": 98.0,
+        "confusion_matrix": {
+          "SUPPORTED": {
+            "SUPPORTED": 130,
+            "REFUTED": 20,
+            "NOT_ESTABLISHED": 0
+          },
+          "REFUTED": {
+            "SUPPORTED": 8,
+            "REFUTED": 140,
+            "NOT_ESTABLISHED": 2
+          },
+          "NOT_ESTABLISHED": {
+            "SUPPORTED": 1,
+            "REFUTED": 1,
+            "NOT_ESTABLISHED": 98
+          }
+        },
+        "category_breakdown": {
+          "SUPPORTED_CURRICULUM": {
+            "correct": 84,
+            "total": 100,
+            "accuracy": 84.0
+          },
+          "NOVEL_FALSE_PREMISE": {
+            "correct": 94,
+            "total": 100,
+            "accuracy": 94.0
+          },
+          "OUT_OF_CURRICULUM_UNKNOWN": {
+            "correct": 98,
+            "total": 100,
+            "accuracy": 98.0
+          },
+          "LEGITIMATE_NEGATION": {
+            "correct": 46,
+            "total": 50,
+            "accuracy": 92.0
+          },
+          "MIXED_COMPOUND_PREMISE": {
+            "correct": 46,
+            "total": 50,
+            "accuracy": 92.0
+          }
+        }
+      }
+    },
+    "c1_bge_m3_dense": {
+      "name": "BGE-M3 Dense Retrieval (k=20)",
+      "retrieval": {
+        "eval_queries_count": 256,
+        "recall_at_1": 91.41,
+        "recall_at_3": 98.44,
+        "recall_at_5": 100.0,
+        "recall_at_10": 100.0,
+        "ndcg_at_5": 80.98,
+        "ndcg_at_10": 80.23,
+        "mean_first_hit_rank": 1.13,
+        "mean_recovered_gold_count": 4.22,
+        "section_level_recovery_pct": 100.0,
+        "latency_ms": {
+          "mean": 224.92,
+          "median": 202.73,
+          "p95": 239.74
+        },
+        "hybrid_latency_ms": null,
+        "pylate_latency_ms": null,
+        "mean_context_tokens": 1263.6
+      },
+      "downstream_a4": {
+        "total": 400,
+        "correct": 319,
+        "accuracy": 79.75,
+        "accuracy_ci_95": [
+          75.54,
+          83.4
+        ],
+        "macro_f1": 77.15,
+        "far": 4.0,
+        "far_ci_95": [
+          2.19,
+          7.21
+        ],
+        "frr": 12.0,
+        "frr_ci_95": [
+          7.73,
+          18.17
+        ],
+        "supported_recall": 87.33,
+        "refutation_recall": 94.0,
+        "not_established_recall": 47.0,
+        "ood_recall": 47.0,
+        "confusion_matrix": {
+          "SUPPORTED": {
+            "SUPPORTED": 131,
+            "REFUTED": 18,
+            "NOT_ESTABLISHED": 1
+          },
+          "REFUTED": {
+            "SUPPORTED": 8,
+            "REFUTED": 141,
+            "NOT_ESTABLISHED": 1
+          },
+          "NOT_ESTABLISHED": {
+            "SUPPORTED": 2,
+            "REFUTED": 51,
+            "NOT_ESTABLISHED": 47
+          }
+        },
+        "category_breakdown": {
+          "SUPPORTED_CURRICULUM": {
+            "correct": 85,
+            "total": 100,
+            "accuracy": 85.0
+          },
+          "NOVEL_FALSE_PREMISE": {
+            "correct": 95,
+            "total": 100,
+            "accuracy": 95.0
+          },
+          "OUT_OF_CURRICULUM_UNKNOWN": {
+            "correct": 47,
+            "total": 100,
+            "accuracy": 47.0
+          },
+          "LEGITIMATE_NEGATION": {
+            "correct": 46,
+            "total": 50,
+            "accuracy": 92.0
+          },
+          "MIXED_COMPOUND_PREMISE": {
+            "correct": 46,
+            "total": 50,
+            "accuracy": 92.0
+          }
+        }
+      }
+    },
+    "c2_bge_m3_sparse": {
+      "name": "BGE-M3 Sparse Lexical Retrieval (k=20)",
+      "retrieval": {
+        "eval_queries_count": 256,
+        "recall_at_1": 94.92,
+        "recall_at_3": 100.0,
+        "recall_at_5": 100.0,
+        "recall_at_10": 100.0,
+        "ndcg_at_5": 77.94,
+        "ndcg_at_10": 76.3,
+        "mean_first_hit_rank": 1.05,
+        "mean_recovered_gold_count": 3.8,
+        "section_level_recovery_pct": 100.0,
+        "latency_ms": {
+          "mean": 200.83,
+          "median": 197.33,
+          "p95": 231.14
+        },
+        "hybrid_latency_ms": null,
+        "pylate_latency_ms": null,
+        "mean_context_tokens": 1247.7
+      },
+      "downstream_a4": {
+        "total": 400,
+        "correct": 349,
+        "accuracy": 87.25,
+        "accuracy_ci_95": [
+          83.62,
+          90.17
+        ],
+        "macro_f1": 87.18,
+        "far": 3.6,
+        "far_ci_95": [
+          1.91,
+          6.7
+        ],
+        "frr": 12.0,
+        "frr_ci_95": [
+          7.73,
+          18.17
+        ],
+        "supported_recall": 88.0,
+        "refutation_recall": 94.0,
+        "not_established_recall": 76.0,
+        "ood_recall": 76.0,
+        "confusion_matrix": {
+          "SUPPORTED": {
+            "SUPPORTED": 132,
+            "REFUTED": 18,
+            "NOT_ESTABLISHED": 0
+          },
+          "REFUTED": {
+            "SUPPORTED": 8,
+            "REFUTED": 141,
+            "NOT_ESTABLISHED": 1
+          },
+          "NOT_ESTABLISHED": {
+            "SUPPORTED": 1,
+            "REFUTED": 23,
+            "NOT_ESTABLISHED": 76
+          }
+        },
+        "category_breakdown": {
+          "SUPPORTED_CURRICULUM": {
+            "correct": 85,
+            "total": 100,
+            "accuracy": 85.0
+          },
+          "NOVEL_FALSE_PREMISE": {
+            "correct": 96,
+            "total": 100,
+            "accuracy": 96.0
+          },
+          "OUT_OF_CURRICULUM_UNKNOWN": {
+            "correct": 76,
+            "total": 100,
+            "accuracy": 76.0
+          },
+          "LEGITIMATE_NEGATION": {
+            "correct": 47,
+            "total": 50,
+            "accuracy": 94.0
+          },
+          "MIXED_COMPOUND_PREMISE": {
+            "correct": 45,
+            "total": 50,
+            "accuracy": 90.0
+          }
+        }
+      }
+    },
+    "c3_bge_m3_hybrid": {
+      "name": "BGE-M3 Hybrid Dense+Sparse RRF (k=20, rrf_k=60)",
+      "retrieval": {
+        "eval_queries_count": 256,
+        "recall_at_1": 93.75,
+        "recall_at_3": 99.61,
+        "recall_at_5": 100.0,
+        "recall_at_10": 100.0,
+        "ndcg_at_5": 80.14,
+        "ndcg_at_10": 79.41,
+        "mean_first_hit_rank": 1.08,
+        "mean_recovered_gold_count": 4.22,
+        "section_level_recovery_pct": 100.0,
+        "latency_ms": {
+          "mean": 203.21,
+          "median": 199.94,
+          "p95": 233.55
+        },
+        "hybrid_latency_ms": null,
+        "pylate_latency_ms": null,
+        "mean_context_tokens": 1295.6
+      },
+      "downstream_a4": {
+        "total": 400,
+        "correct": 318,
+        "accuracy": 79.5,
+        "accuracy_ci_95": [
+          75.27,
+          83.17
+        ],
+        "macro_f1": 76.95,
+        "far": 4.0,
+        "far_ci_95": [
+          2.19,
+          7.21
+        ],
+        "frr": 12.67,
+        "frr_ci_95": [
+          8.26,
+          18.94
+        ],
+        "supported_recall": 86.67,
+        "refutation_recall": 94.0,
+        "not_established_recall": 47.0,
+        "ood_recall": 47.0,
+        "confusion_matrix": {
+          "SUPPORTED": {
+            "SUPPORTED": 130,
+            "REFUTED": 19,
+            "NOT_ESTABLISHED": 1
+          },
+          "REFUTED": {
+            "SUPPORTED": 8,
+            "REFUTED": 141,
+            "NOT_ESTABLISHED": 1
+          },
+          "NOT_ESTABLISHED": {
+            "SUPPORTED": 2,
+            "REFUTED": 51,
+            "NOT_ESTABLISHED": 47
+          }
+        },
+        "category_breakdown": {
+          "SUPPORTED_CURRICULUM": {
+            "correct": 84,
+            "total": 100,
+            "accuracy": 84.0
+          },
+          "NOVEL_FALSE_PREMISE": {
+            "correct": 95,
+            "total": 100,
+            "accuracy": 95.0
+          },
+          "OUT_OF_CURRICULUM_UNKNOWN": {
+            "correct": 47,
+            "total": 100,
+            "accuracy": 47.0
+          },
+          "LEGITIMATE_NEGATION": {
+            "correct": 46,
+            "total": 50,
+            "accuracy": 92.0
+          },
+          "MIXED_COMPOUND_PREMISE": {
+            "correct": 46,
+            "total": 50,
+            "accuracy": 92.0
+          }
+        }
+      }
+    },
+    "c4_bge_m3_hybrid_pylate": {
+      "name": "BGE-M3 Hybrid + PyLate ColBERT Reranking (hybrid_k=20, late_k=20)",
+      "retrieval": {
+        "eval_queries_count": 256,
+        "recall_at_1": 96.88,
+        "recall_at_3": 99.61,
+        "recall_at_5": 99.61,
+        "recall_at_10": 100.0,
+        "ndcg_at_5": 86.92,
+        "ndcg_at_10": 86.13,
+        "mean_first_hit_rank": 1.05,
+        "mean_recovered_gold_count": 4.22,
+        "section_level_recovery_pct": 99.61,
+        "latency_ms": {
+          "mean": 2221.65,
+          "median": 2228.28,
+          "p95": 2446.89
+        },
+        "hybrid_latency_ms": {
+          "mean": 202.49,
+          "p95": 236.03
+        },
+        "pylate_latency_ms": {
+          "mean": 2019.0,
+          "p95": 2220.14
+        },
+        "mean_context_tokens": 1295.6
+      },
+      "downstream_a4": {
+        "total": 400,
+        "correct": 346,
+        "accuracy": 86.5,
+        "accuracy_ci_95": [
+          82.8,
+          89.5
+        ],
+        "macro_f1": 86.37,
+        "far": 3.6,
+        "far_ci_95": [
+          1.91,
+          6.7
+        ],
+        "frr": 12.67,
+        "frr_ci_95": [
+          8.26,
+          18.94
+        ],
+        "supported_recall": 87.33,
+        "refutation_recall": 94.0,
+        "not_established_recall": 74.0,
+        "ood_recall": 74.0,
+        "confusion_matrix": {
+          "SUPPORTED": {
+            "SUPPORTED": 131,
+            "REFUTED": 19,
+            "NOT_ESTABLISHED": 0
+          },
+          "REFUTED": {
+            "SUPPORTED": 8,
+            "REFUTED": 141,
+            "NOT_ESTABLISHED": 1
+          },
+          "NOT_ESTABLISHED": {
+            "SUPPORTED": 1,
+            "REFUTED": 25,
+            "NOT_ESTABLISHED": 74
+          }
+        },
+        "category_breakdown": {
+          "SUPPORTED_CURRICULUM": {
+            "correct": 84,
+            "total": 100,
+            "accuracy": 84.0
+          },
+          "NOVEL_FALSE_PREMISE": {
+            "correct": 95,
+            "total": 100,
+            "accuracy": 95.0
+          },
+          "OUT_OF_CURRICULUM_UNKNOWN": {
+            "correct": 74,
+            "total": 100,
+            "accuracy": 74.0
+          },
+          "LEGITIMATE_NEGATION": {
+            "correct": 47,
+            "total": 50,
+            "accuracy": 94.0
+          },
+          "MIXED_COMPOUND_PREMISE": {
+            "correct": 46,
+            "total": 50,
+            "accuracy": 92.0
+          }
+        }
+      }
+    },
+    "c5_bge_m3_native_multivector": {
+      "name": "BGE-M3 Native Multi-Vector Retrieval",
+      "status": "NOT_EXECUTED",
+      "reason": "Token-level multi-vector indexing in Qdrant not configured; C4 serves as the verified primary late-interaction condition."
+    }
+  },
+  "paired_comparisons": {
+    "c4_vs_c0": {
+      "comparator": "C4 vs C0",
+      "n11": 337,
+      "n00": 23,
+      "n10": 9,
+      "n01": 31,
+      "discordant_pairs": 40,
+      "mcnemar_exact_p": 0.00068,
+      "accuracy_delta_pp": -5.5,
+      "accuracy_delta_ci_95": [
+        -8.55,
+        -2.45
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-026",
+          "query": "How do rest parameters (...args) condense arguments into a true Array?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-041",
+          "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-042",
+          "query": "How does the single main thread execute JavaScript sequentially in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-077",
+          "query": "What index type is used for full-text search and JSONB containment in PostgreSQL?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-038",
+          "query": "Why does rest parameter syntax require parameters to be placed at the start of the list?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-046",
+          "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-061",
+          "query": "Why does Atomicity allow partial changes to remain committed when a transaction fails?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-077",
+          "query": "Why does COMMIT roll back changes made by preceding SQL statements in a transaction?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-098",
+          "query": "Why does shallow comparison (Object.is) detect mutations made directly to array contents?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-014",
+          "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-025",
+          "query": "How does Jetpack Compose handle state hoisting in Android applications?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-029",
+          "query": "How does Android handle lifecycle events in ViewModel during configuration changes?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-048",
+          "query": "What is the purpose of the Raft consensus algorithm in distributed systems?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-051",
+          "query": "How does external technology framework 51 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-052",
+          "query": "How does external technology framework 52 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-060",
+          "query": "How does external technology framework 60 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-065",
+          "query": "How does external technology framework 65 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-066",
+          "query": "How does external technology framework 66 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-070",
+          "query": "How does external technology framework 70 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-072",
+          "query": "How does external technology framework 72 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-078",
+          "query": "How does external technology framework 78 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-080",
+          "query": "How does external technology framework 80 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-082",
+          "query": "How does external technology framework 82 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-083",
+          "query": "How does external technology framework 83 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-084",
+          "query": "How does external technology framework 84 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-085",
+          "query": "How does external technology framework 85 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-086",
+          "query": "How does external technology framework 86 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-088",
+          "query": "How does external technology framework 88 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-090",
+          "query": "How does external technology framework 90 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-093",
+          "query": "How does external technology framework 93 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-094",
+          "query": "How does external technology framework 94 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-095",
+          "query": "How does external technology framework 95 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-097",
+          "query": "How does external technology framework 97 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-098",
+          "query": "How does external technology framework 98 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-100",
+          "query": "How does external technology framework 100 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-010",
+          "query": "Why doesn't Flexbox provide 2-dimensional grid layouts?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-NEG-026",
+          "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-050",
+          "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-021",
+          "query": "Since useMemo memoizes calculations, why does it execute asynchronous API calls by default?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-027",
+          "query": "Since var is hoisted with undefined, why does let also hoist with initial value of undefined?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4_WRONG_C0_CORRECT"
+        }
+      ]
+    },
+    "c1_vs_c0": {
+      "comparator": "C1 vs C0",
+      "n11": 310,
+      "n00": 23,
+      "n10": 9,
+      "n01": 58,
+      "discordant_pairs": 67,
+      "mcnemar_exact_p": 0.0,
+      "accuracy_delta_pp": -12.25,
+      "accuracy_delta_ci_95": [
+        -16.08,
+        -8.42
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-026",
+          "query": "How do rest parameters (...args) condense arguments into a true Array?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-041",
+          "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-042",
+          "query": "How does the single main thread execute JavaScript sequentially in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-077",
+          "query": "What index type is used for full-text search and JSONB containment in PostgreSQL?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-079",
+          "query": "How does ROLLBACK undo all uncommitted changes in a transaction?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-038",
+          "query": "Why does rest parameter syntax require parameters to be placed at the start of the list?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-046",
+          "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-061",
+          "query": "Why does Atomicity allow partial changes to remain committed when a transaction fails?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-077",
+          "query": "Why does COMMIT roll back changes made by preceding SQL statements in a transaction?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-098",
+          "query": "Why does shallow comparison (Object.is) detect mutations made directly to array contents?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-014",
+          "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-020",
+          "query": "How does ActiveModel handle data validation outside ActiveRecord models?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-029",
+          "query": "How does Android handle lifecycle events in ViewModel during configuration changes?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-037",
+          "query": "How does Prometheus scrape time-series metrics from application HTTP endpoints?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-050",
+          "query": "How does WebGPU provide low-level compute pipeline access in modern browsers?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-051",
+          "query": "How does external technology framework 51 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-052",
+          "query": "How does external technology framework 52 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-053",
+          "query": "How does external technology framework 53 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-054",
+          "query": "How does external technology framework 54 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-055",
+          "query": "How does external technology framework 55 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-056",
+          "query": "How does external technology framework 56 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-057",
+          "query": "How does external technology framework 57 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-058",
+          "query": "How does external technology framework 58 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-059",
+          "query": "How does external technology framework 59 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-060",
+          "query": "How does external technology framework 60 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-062",
+          "query": "How does external technology framework 62 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-064",
+          "query": "How does external technology framework 64 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-065",
+          "query": "How does external technology framework 65 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-066",
+          "query": "How does external technology framework 66 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-067",
+          "query": "How does external technology framework 67 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-068",
+          "query": "How does external technology framework 68 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-069",
+          "query": "How does external technology framework 69 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-070",
+          "query": "How does external technology framework 70 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-071",
+          "query": "How does external technology framework 71 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-072",
+          "query": "How does external technology framework 72 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-073",
+          "query": "How does external technology framework 73 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-074",
+          "query": "How does external technology framework 74 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-075",
+          "query": "How does external technology framework 75 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-076",
+          "query": "How does external technology framework 76 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-077",
+          "query": "How does external technology framework 77 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-078",
+          "query": "How does external technology framework 78 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-079",
+          "query": "How does external technology framework 79 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-080",
+          "query": "How does external technology framework 80 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-081",
+          "query": "How does external technology framework 81 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-082",
+          "query": "How does external technology framework 82 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-083",
+          "query": "How does external technology framework 83 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-084",
+          "query": "How does external technology framework 84 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-085",
+          "query": "How does external technology framework 85 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-086",
+          "query": "How does external technology framework 86 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-087",
+          "query": "How does external technology framework 87 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-088",
+          "query": "How does external technology framework 88 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-089",
+          "query": "How does external technology framework 89 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-090",
+          "query": "How does external technology framework 90 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-091",
+          "query": "How does external technology framework 91 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-092",
+          "query": "How does external technology framework 92 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-093",
+          "query": "How does external technology framework 93 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-094",
+          "query": "How does external technology framework 94 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-095",
+          "query": "How does external technology framework 95 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-096",
+          "query": "How does external technology framework 96 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-097",
+          "query": "How does external technology framework 97 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-098",
+          "query": "How does external technology framework 98 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-099",
+          "query": "How does external technology framework 99 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-100",
+          "query": "How does external technology framework 100 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-029",
+          "query": "Why doesn't Object.freeze allow modifications to top-level frozen properties?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "C1_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-050",
+          "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-021",
+          "query": "Since useMemo memoizes calculations, why does it execute asynchronous API calls by default?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C1_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-027",
+          "query": "Since var is hoisted with undefined, why does let also hoist with initial value of undefined?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C1_WRONG_C0_CORRECT"
+        }
+      ]
+    },
+    "c2_vs_c0": {
+      "comparator": "C2 vs C0",
+      "n11": 339,
+      "n00": 22,
+      "n10": 10,
+      "n01": 29,
+      "discordant_pairs": 39,
+      "mcnemar_exact_p": 0.003378,
+      "accuracy_delta_pp": -4.75,
+      "accuracy_delta_ci_95": [
+        -7.77,
+        -1.73
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-011",
+          "query": "What is the difference between content-box and border-box in the CSS Box Model?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-026",
+          "query": "How do rest parameters (...args) condense arguments into a true Array?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-031",
+          "query": "How does async/await allow asynchronous code to be written sequentially?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-041",
+          "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-042",
+          "query": "How does the single main thread execute JavaScript sequentially in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-077",
+          "query": "What index type is used for full-text search and JSONB containment in PostgreSQL?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-080",
+          "query": "How does COMMIT persist transaction changes permanently?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-038",
+          "query": "Why does rest parameter syntax require parameters to be placed at the start of the list?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-046",
+          "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-077",
+          "query": "Why does COMMIT roll back changes made by preceding SQL statements in a transaction?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-098",
+          "query": "Why does shallow comparison (Object.is) detect mutations made directly to array contents?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-014",
+          "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-050",
+          "query": "How does WebGPU provide low-level compute pipeline access in modern browsers?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-051",
+          "query": "How does external technology framework 51 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-052",
+          "query": "How does external technology framework 52 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-060",
+          "query": "How does external technology framework 60 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-065",
+          "query": "How does external technology framework 65 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-066",
+          "query": "How does external technology framework 66 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-070",
+          "query": "How does external technology framework 70 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-072",
+          "query": "How does external technology framework 72 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-078",
+          "query": "How does external technology framework 78 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-080",
+          "query": "How does external technology framework 80 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-082",
+          "query": "How does external technology framework 82 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-083",
+          "query": "How does external technology framework 83 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-084",
+          "query": "How does external technology framework 84 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-085",
+          "query": "How does external technology framework 85 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-086",
+          "query": "How does external technology framework 86 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-088",
+          "query": "How does external technology framework 88 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-090",
+          "query": "How does external technology framework 90 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-093",
+          "query": "How does external technology framework 93 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-094",
+          "query": "How does external technology framework 94 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-095",
+          "query": "How does external technology framework 95 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-097",
+          "query": "How does external technology framework 97 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-098",
+          "query": "How does external technology framework 98 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-100",
+          "query": "How does external technology framework 100 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-026",
+          "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-035",
+          "query": "Why doesn't ROLLBACK persist uncommitted transaction modifications?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-NEG-050",
+          "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-027",
+          "query": "Since var is hoisted with undefined, why does let also hoist with initial value of undefined?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C2_WRONG_C0_CORRECT"
+        }
+      ]
+    },
+    "c3_vs_c0": {
+      "comparator": "C3 vs C0",
+      "n11": 310,
+      "n00": 24,
+      "n10": 8,
+      "n01": 58,
+      "discordant_pairs": 66,
+      "mcnemar_exact_p": 0.0,
+      "accuracy_delta_pp": -12.5,
+      "accuracy_delta_ci_95": [
+        -16.29,
+        -8.71
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-026",
+          "query": "How do rest parameters (...args) condense arguments into a true Array?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-041",
+          "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-042",
+          "query": "How does the single main thread execute JavaScript sequentially in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-077",
+          "query": "What index type is used for full-text search and JSONB containment in PostgreSQL?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-038",
+          "query": "Why does rest parameter syntax require parameters to be placed at the start of the list?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-046",
+          "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-061",
+          "query": "Why does Atomicity allow partial changes to remain committed when a transaction fails?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-077",
+          "query": "Why does COMMIT roll back changes made by preceding SQL statements in a transaction?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-098",
+          "query": "Why does shallow comparison (Object.is) detect mutations made directly to array contents?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-014",
+          "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-029",
+          "query": "How does Android handle lifecycle events in ViewModel during configuration changes?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-037",
+          "query": "How does Prometheus scrape time-series metrics from application HTTP endpoints?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-048",
+          "query": "What is the purpose of the Raft consensus algorithm in distributed systems?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-050",
+          "query": "How does WebGPU provide low-level compute pipeline access in modern browsers?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-051",
+          "query": "How does external technology framework 51 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-052",
+          "query": "How does external technology framework 52 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-053",
+          "query": "How does external technology framework 53 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-054",
+          "query": "How does external technology framework 54 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-055",
+          "query": "How does external technology framework 55 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-056",
+          "query": "How does external technology framework 56 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-057",
+          "query": "How does external technology framework 57 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-058",
+          "query": "How does external technology framework 58 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-059",
+          "query": "How does external technology framework 59 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-060",
+          "query": "How does external technology framework 60 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-062",
+          "query": "How does external technology framework 62 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-064",
+          "query": "How does external technology framework 64 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-065",
+          "query": "How does external technology framework 65 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-066",
+          "query": "How does external technology framework 66 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-067",
+          "query": "How does external technology framework 67 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-068",
+          "query": "How does external technology framework 68 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-069",
+          "query": "How does external technology framework 69 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-070",
+          "query": "How does external technology framework 70 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-071",
+          "query": "How does external technology framework 71 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-072",
+          "query": "How does external technology framework 72 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-073",
+          "query": "How does external technology framework 73 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-074",
+          "query": "How does external technology framework 74 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-075",
+          "query": "How does external technology framework 75 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-076",
+          "query": "How does external technology framework 76 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-077",
+          "query": "How does external technology framework 77 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-078",
+          "query": "How does external technology framework 78 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-079",
+          "query": "How does external technology framework 79 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-080",
+          "query": "How does external technology framework 80 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-081",
+          "query": "How does external technology framework 81 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-082",
+          "query": "How does external technology framework 82 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-083",
+          "query": "How does external technology framework 83 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-084",
+          "query": "How does external technology framework 84 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-085",
+          "query": "How does external technology framework 85 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-086",
+          "query": "How does external technology framework 86 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-087",
+          "query": "How does external technology framework 87 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-088",
+          "query": "How does external technology framework 88 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-089",
+          "query": "How does external technology framework 89 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-090",
+          "query": "How does external technology framework 90 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-091",
+          "query": "How does external technology framework 91 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-092",
+          "query": "How does external technology framework 92 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-093",
+          "query": "How does external technology framework 93 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-094",
+          "query": "How does external technology framework 94 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-095",
+          "query": "How does external technology framework 95 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-096",
+          "query": "How does external technology framework 96 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-097",
+          "query": "How does external technology framework 97 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-098",
+          "query": "How does external technology framework 98 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-099",
+          "query": "How does external technology framework 99 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-100",
+          "query": "How does external technology framework 100 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-029",
+          "query": "Why doesn't Object.freeze allow modifications to top-level frozen properties?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-050",
+          "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-021",
+          "query": "Since useMemo memoizes calculations, why does it execute asynchronous API calls by default?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C3_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-027",
+          "query": "Since var is hoisted with undefined, why does let also hoist with initial value of undefined?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C3_WRONG_C0_CORRECT"
+        }
+      ]
+    },
+    "c4_vs_c3": {
+      "comparator": "C4 vs C3",
+      "n11": 316,
+      "n00": 52,
+      "n10": 30,
+      "n01": 2,
+      "discordant_pairs": 32,
+      "mcnemar_exact_p": 0.0,
+      "accuracy_delta_pp": 7.0,
+      "accuracy_delta_ci_95": [
+        4.31,
+        9.69
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-UNK-025",
+          "query": "How does Jetpack Compose handle state hoisting in Android applications?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_WRONG_C3_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-037",
+          "query": "How does Prometheus scrape time-series metrics from application HTTP endpoints?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "SUPPORTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-050",
+          "query": "How does WebGPU provide low-level compute pipeline access in modern browsers?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-053",
+          "query": "How does external technology framework 53 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-054",
+          "query": "How does external technology framework 54 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-055",
+          "query": "How does external technology framework 55 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-056",
+          "query": "How does external technology framework 56 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-057",
+          "query": "How does external technology framework 57 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-058",
+          "query": "How does external technology framework 58 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-059",
+          "query": "How does external technology framework 59 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-062",
+          "query": "How does external technology framework 62 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-064",
+          "query": "How does external technology framework 64 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-067",
+          "query": "How does external technology framework 67 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-068",
+          "query": "How does external technology framework 68 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-069",
+          "query": "How does external technology framework 69 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-071",
+          "query": "How does external technology framework 71 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-073",
+          "query": "How does external technology framework 73 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-074",
+          "query": "How does external technology framework 74 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-075",
+          "query": "How does external technology framework 75 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-076",
+          "query": "How does external technology framework 76 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-077",
+          "query": "How does external technology framework 77 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-079",
+          "query": "How does external technology framework 79 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-081",
+          "query": "How does external technology framework 81 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-087",
+          "query": "How does external technology framework 87 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-089",
+          "query": "How does external technology framework 89 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-091",
+          "query": "How does external technology framework 91 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-092",
+          "query": "How does external technology framework 92 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-096",
+          "query": "How does external technology framework 96 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-099",
+          "query": "How does external technology framework 99 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-NEG-010",
+          "query": "Why doesn't Flexbox provide 2-dimensional grid layouts?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4_CORRECT_C3_WRONG"
+        },
+        {
+          "query_id": "DEV-NEG-026",
+          "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4_WRONG_C3_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-029",
+          "query": "Why doesn't Object.freeze allow modifications to top-level frozen properties?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4_CORRECT_C3_WRONG"
+        }
+      ]
+    }
+  },
+  "forensics": {
+    "failure_family_counts": {
+      "wrong_section_selection": 0,
+      "adjacent_broad_section_selection": 1,
+      "missing_clause_evidence": 3,
+      "compound_premise_retrieval": 2,
+      "ood_keyword_collision": 26,
+      "novel_false_premise": 5,
+      "legitimate_negation": 3,
+      "cross_topic_retrieval": 0
+    },
+    "top_retrieval_failure": "ood_keyword_collision",
+    "top_retrieval_improvement": "fine_grained_colbert_alignment",
+    "classified_cases": [
+      {
+        "query_id": "DEV-SUP-026",
+        "query": "How do rest parameters (...args) condense arguments into a true Array?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "pred_a": "REFUTED",
+        "pred_b": "SUPPORTED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "adjacent_broad_section_selection",
+        "dense_found": true,
+        "sparse_found": true,
+        "hybrid_found": true,
+        "pylate_recovered": true,
+        "gold_chunks": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_10",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_12",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_14",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_15",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_16",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_6",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_8"
+        ],
+        "top_c4_chunks": [
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_10",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_5",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_7",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_9",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_8"
+        ]
+      },
+      {
+        "query_id": "DEV-SUP-041",
+        "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "pred_a": "SUPPORTED",
+        "pred_b": "REFUTED",
+        "type": "C4_CORRECT_C0_WRONG",
+        "failure_family": "missing_clause_evidence",
+        "dense_found": true,
+        "sparse_found": true,
+        "hybrid_found": true,
+        "pylate_recovered": true,
+        "gold_chunks": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_0",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_1",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_2",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3"
+        ],
+        "top_c4_chunks": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_1",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_0",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_2",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_10",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_12"
+        ]
+      },
+      {
+        "query_id": "DEV-SUP-042",
+        "query": "How does the single main thread execute JavaScript sequentially in Node.js?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "pred_a": "REFUTED",
+        "pred_b": "SUPPORTED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "missing_clause_evidence",
+        "dense_found": true,
+        "sparse_found": true,
+        "hybrid_found": true,
+        "pylate_recovered": true,
+        "gold_chunks": [
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_0",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_1",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_12",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_2",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_3",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_0",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_1",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_2",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3"
+        ],
+        "top_c4_chunks": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_0",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_2",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_10",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_1",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_12"
+        ]
+      },
+      {
+        "query_id": "DEV-SUP-077",
+        "query": "What index type is used for full-text search and JSONB containment in PostgreSQL?",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "pred_a": "SUPPORTED",
+        "pred_b": "REFUTED",
+        "type": "C4_CORRECT_C0_WRONG",
+        "failure_family": "missing_clause_evidence",
+        "dense_found": true,
+        "sparse_found": true,
+        "hybrid_found": true,
+        "pylate_recovered": true,
+        "gold_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_10",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_6",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_8",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_9"
+        ],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_9",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_6",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_10",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_7",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_8"
+        ]
+      },
+      {
+        "query_id": "DEV-FLS-038",
+        "query": "Why does rest parameter syntax require parameters to be placed at the start of the list?",
+        "category": "NOVEL_FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_a": "REFUTED",
+        "pred_b": "SUPPORTED",
+        "type": "C4_CORRECT_C0_WRONG",
+        "failure_family": "novel_false_premise",
+        "dense_found": true,
+        "sparse_found": true,
+        "hybrid_found": true,
+        "pylate_recovered": true,
+        "gold_chunks": [
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_10",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_7",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_8",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_9",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_10",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_12",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_14",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_15",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_16",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_6",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_8"
+        ],
+        "top_c4_chunks": [
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_10",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_5",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_6",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_7"
+        ]
+      },
+      {
+        "query_id": "DEV-FLS-046",
+        "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+        "category": "NOVEL_FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_a": "REFUTED",
+        "pred_b": "SUPPORTED",
+        "type": "C4_CORRECT_C0_WRONG",
+        "failure_family": "novel_false_premise",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_8",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_10",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_10",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13"
+        ]
+      },
+      {
+        "query_id": "DEV-FLS-061",
+        "query": "Why does Atomicity allow partial changes to remain committed when a transaction fails?",
+        "category": "NOVEL_FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_a": "SUPPORTED",
+        "pred_b": "REFUTED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "novel_false_premise",
+        "dense_found": true,
+        "sparse_found": true,
+        "hybrid_found": true,
+        "pylate_recovered": true,
+        "gold_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_10",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_11",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_12",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_14",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_2"
+        ],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_14",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_11",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_12",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_4"
+        ]
+      },
+      {
+        "query_id": "DEV-FLS-077",
+        "query": "Why does COMMIT roll back changes made by preceding SQL statements in a transaction?",
+        "category": "NOVEL_FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_a": "SUPPORTED",
+        "pred_b": "REFUTED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "novel_false_premise",
+        "dense_found": true,
+        "sparse_found": true,
+        "hybrid_found": true,
+        "pylate_recovered": true,
+        "gold_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_10",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_11",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_12",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_14",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_2"
+        ],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_11",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_12",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_14",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_10"
+        ]
+      },
+      {
+        "query_id": "DEV-FLS-098",
+        "query": "Why does shallow comparison (Object.is) detect mutations made directly to array contents?",
+        "category": "NOVEL_FALSE_PREMISE",
+        "expected": "REFUTED",
+        "pred_a": "REFUTED",
+        "pred_b": "SUPPORTED",
+        "type": "C4_CORRECT_C0_WRONG",
+        "failure_family": "novel_false_premise",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_5",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_4",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_9",
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_3",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_10"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-014",
+        "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "NOT_ESTABLISHED",
+        "pred_b": "REFUTED",
+        "type": "C4_CORRECT_C0_WRONG",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_1",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_12",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_0",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_10"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-025",
+        "query": "How does Jetpack Compose handle state hoisting in Android applications?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_1",
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_8",
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_2",
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_3",
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_0"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-029",
+        "query": "How does Android handle lifecycle events in ViewModel during configuration changes?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_9",
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_0",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_12",
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_6",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-048",
+        "query": "What is the purpose of the Raft consensus algorithm in distributed systems?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_15",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_1",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_10"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-051",
+        "query": "How does external technology framework 51 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_0",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-052",
+        "query": "How does external technology framework 52 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-060",
+        "query": "How does external technology framework 60 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-065",
+        "query": "How does external technology framework 65 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_0",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-066",
+        "query": "How does external technology framework 66 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_3",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-070",
+        "query": "How does external technology framework 70 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_12",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-072",
+        "query": "How does external technology framework 72 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_12",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-078",
+        "query": "How does external technology framework 78 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_12"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-080",
+        "query": "How does external technology framework 80 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-082",
+        "query": "How does external technology framework 82 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_12",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-083",
+        "query": "How does external technology framework 83 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_3"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-084",
+        "query": "How does external technology framework 84 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-085",
+        "query": "How does external technology framework 85 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_0",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-086",
+        "query": "How does external technology framework 86 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-088",
+        "query": "How does external technology framework 88 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_14"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-090",
+        "query": "How does external technology framework 90 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-093",
+        "query": "How does external technology framework 93 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_3"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-094",
+        "query": "How does external technology framework 94 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-095",
+        "query": "How does external technology framework 95 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_0",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_12",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-097",
+        "query": "How does external technology framework 97 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_9",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-098",
+        "query": "How does external technology framework 98 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_0",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_12",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3"
+        ]
+      },
+      {
+        "query_id": "DEV-UNK-100",
+        "query": "How does external technology framework 100 manage distributed cluster coordination?",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "ood_keyword_collision",
+        "dense_found": false,
+        "sparse_found": false,
+        "hybrid_found": false,
+        "pylate_recovered": false,
+        "gold_chunks": [],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_0",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_11",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_3",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_12"
+        ]
+      },
+      {
+        "query_id": "DEV-NEG-010",
+        "query": "Why doesn't Flexbox provide 2-dimensional grid layouts?",
+        "category": "LEGITIMATE_NEGATION",
+        "expected": "SUPPORTED",
+        "pred_a": "SUPPORTED",
+        "pred_b": "REFUTED",
+        "type": "C4_CORRECT_C0_WRONG",
+        "failure_family": "legitimate_negation",
+        "dense_found": true,
+        "sparse_found": true,
+        "hybrid_found": true,
+        "pylate_recovered": true,
+        "gold_chunks": [
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_10",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_11",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_12",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_13",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_14",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_15",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_17",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_16"
+        ],
+        "top_c4_chunks": [
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_15",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_10",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_13",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_12",
+          "ea1f3b17-0657-4ee2-b155-c56b775dd25e_c2_sem085_11"
+        ]
+      },
+      {
+        "query_id": "DEV-NEG-026",
+        "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?",
+        "category": "LEGITIMATE_NEGATION",
+        "expected": "SUPPORTED",
+        "pred_a": "REFUTED",
+        "pred_b": "SUPPORTED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "legitimate_negation",
+        "dense_found": true,
+        "sparse_found": true,
+        "hybrid_found": true,
+        "pylate_recovered": true,
+        "gold_chunks": [
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_10",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_12",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_14"
+        ],
+        "top_c4_chunks": [
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_10",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_11",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_1",
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_6",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_2"
+        ]
+      },
+      {
+        "query_id": "DEV-NEG-050",
+        "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+        "category": "LEGITIMATE_NEGATION",
+        "expected": "SUPPORTED",
+        "pred_a": "SUPPORTED",
+        "pred_b": "REFUTED",
+        "type": "C4_CORRECT_C0_WRONG",
+        "failure_family": "legitimate_negation",
+        "dense_found": true,
+        "sparse_found": true,
+        "hybrid_found": true,
+        "pylate_recovered": true,
+        "gold_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_0",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_10",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_11",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_12",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_14",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_2"
+        ],
+        "top_c4_chunks": [
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_13",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_14",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_11",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_1",
+          "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_c2_sem085_10"
+        ]
+      },
+      {
+        "query_id": "DEV-MIX-021",
+        "query": "Since useMemo memoizes calculations, why does it execute asynchronous API calls by default?",
+        "category": "MIXED_COMPOUND_PREMISE",
+        "expected": "REFUTED",
+        "pred_a": "REFUTED",
+        "pred_b": "NOT_ESTABLISHED",
+        "type": "C4_CORRECT_C0_WRONG",
+        "failure_family": "compound_premise_retrieval",
+        "dense_found": true,
+        "sparse_found": true,
+        "hybrid_found": true,
+        "pylate_recovered": true,
+        "gold_chunks": [
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_8",
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_9"
+        ],
+        "top_c4_chunks": [
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_8",
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_9",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_10",
+          "5d1923d4-d240-4348-8ee3-29c512a8e752_c2_sem085_1",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_12"
+        ]
+      },
+      {
+        "query_id": "DEV-MIX-027",
+        "query": "Since var is hoisted with undefined, why does let also hoist with initial value of undefined?",
+        "category": "MIXED_COMPOUND_PREMISE",
+        "expected": "REFUTED",
+        "pred_a": "SUPPORTED",
+        "pred_b": "REFUTED",
+        "type": "C4_WRONG_C0_CORRECT",
+        "failure_family": "compound_premise_retrieval",
+        "dense_found": true,
+        "sparse_found": true,
+        "hybrid_found": true,
+        "pylate_recovered": true,
+        "gold_chunks": [
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_0",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_12",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_14",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_2",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_4",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_5",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_7",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_9"
+        ],
+        "top_c4_chunks": [
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_0",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_2",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_3",
+          "c254cc49-47b8-455f-bc9e-bc834c0276fe_c2_sem085_4",
+          "abc6db98-3d75-40ea-b988-f1e8a7497bba_c2_sem085_5"
+        ]
+      }
+    ]
+  }
+}

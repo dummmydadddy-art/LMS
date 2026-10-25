@@ -1,0 +1,35 @@
+{
+  "test_a_worker_crash": {
+    "pass": true,
+    "in_flight_success": 10,
+    "post_crash_status": 200
+  },
+  "test_b_abort_leak": {
+    "pass": true,
+    "active_before": 0,
+    "active_after": 0,
+    "counter_leak": false
+  },
+  "test_c_corpus_mutation": {
+    "pass": true,
+    "initial_version": 1788956566759,
+    "bumped_version": 1788956760705,
+    "concurrent_reads_success": true
+  },
+  "test_d_keyword_stuffing": {
+    "pass": true,
+    "top_title": "React Hooks Tutorial",
+    "top_chunk": 2,
+    "displaced": false
+  },
+  "test_e_conversational_shift": {
+    "pass": true,
+    "react_backref_resolved": true,
+    "postgres_backref_resolved": true
+  },
+  "test_f_unicode_sanitization": {
+    "pass": true,
+    "status_code": 200,
+    "result_count": 4
+  }
+}

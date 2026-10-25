@@ -1,0 +1,124 @@
+{
+    "experiment_id": "EXP-0037",
+    "candidate": "A4",
+    "timestamp": "2026-09-17T08:13:30+00:00",
+    "accuracy": 71.6,
+    "macro_f1": 71.81,
+    "standard_far": 15.33,
+    "frr": 30.99,
+    "supported_recall": 69.01,
+    "refutation_recall": 70.37,
+    "not_established_recall": 77.6,
+    "ood_recall": 94,
+    "novel_ood_recall": 92,
+    "false_abstentions": 19,
+    "false_acceptances": 44,
+    "class_metrics": {
+        "SUPPORTED": {
+            "precision": 76.96,
+            "recall": 69.01,
+            "f1": 72.77,
+            "tp": 147,
+            "pred_total": 191,
+            "true_total": 213
+        },
+        "REFUTED": {
+            "precision": 64.77,
+            "recall": 70.37,
+            "f1": 67.46,
+            "tp": 114,
+            "pred_total": 176,
+            "true_total": 162
+        },
+        "NOT_ESTABLISHED": {
+            "precision": 72.93,
+            "recall": 77.6,
+            "f1": 75.19,
+            "tp": 97,
+            "pred_total": 133,
+            "true_total": 125
+        }
+    },
+    "category_accuracies": {
+        "SUPPORTED": {
+            "total": 125,
+            "correct": 85,
+            "accuracy": 68
+        },
+        "FALSE_PREMISE": {
+            "total": 125,
+            "correct": 88,
+            "accuracy": 70.4
+        },
+        "AMBIGUOUS": {
+            "total": 75,
+            "correct": 50,
+            "accuracy": 66.67
+        },
+        "OOD": {
+            "total": 50,
+            "correct": 47,
+            "accuracy": 94
+        },
+        "PARAPHRASE": {
+            "total": 50,
+            "correct": 37,
+            "accuracy": 74
+        },
+        "ADVERSARIAL": {
+            "total": 75,
+            "correct": 51,
+            "accuracy": 68
+        }
+    },
+    "module_accuracies": {
+        "HTML_CSS": {
+            "total": 75,
+            "correct": 51,
+            "accuracy": 68
+        },
+        "JAVASCRIPT": {
+            "total": 78,
+            "correct": 51,
+            "accuracy": 65.38
+        },
+        "REACT": {
+            "total": 79,
+            "correct": 56,
+            "accuracy": 70.89
+        },
+        "NODEJS": {
+            "total": 74,
+            "correct": 43,
+            "accuracy": 58.11
+        },
+        "REST_API": {
+            "total": 72,
+            "correct": 57,
+            "accuracy": 79.17
+        },
+        "DATABASE": {
+            "total": 72,
+            "correct": 53,
+            "accuracy": 73.61
+        },
+        "BACKEND_EXTERNAL": {
+            "total": 36,
+            "correct": 34,
+            "accuracy": 94.44
+        },
+        "FRONTEND_EXTERNAL": {
+            "total": 8,
+            "correct": 7,
+            "accuracy": 87.5
+        },
+        "DATABASE_EXTERNAL": {
+            "total": 6,
+            "correct": 6,
+            "accuracy": 100
+        }
+    },
+    "latency_p50_ms": 640.42,
+    "latency_p95_ms": 1158.57,
+    "final_decision": "ADOPT"
+}

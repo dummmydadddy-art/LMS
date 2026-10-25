@@ -1,0 +1,2260 @@
+{
+  "experiment": "EXP-0016",
+  "timestamp": "2026-09-09T10:53:27.911Z",
+  "configurations": [
+    {
+      "config_id": "A0",
+      "name": "EXP-0013 Control",
+      "flags": "ENABLE_INPUT_SANITY=0,ENABLE_TYPO_NORMALIZATION=0,ENABLE_SEMANTIC_RERANK=0,ENABLE_DYNAMIC_K=0,ENABLE_ENTITY_MEMORY=0,ENABLE_PREMISE_VERIFIER=0,ENABLE_CITATION_ENFORCEMENT=0,ENABLE_CURRICULUM_BOUNDARY=0,ENABLE_RATE_LIMIT=0,ENABLE_WARMUP=0",
+      "input_results": [
+        {
+          "id": "IN-01",
+          "query": "0",
+          "statusCode": 400,
+          "count": 0,
+          "passed": false
+        },
+        {
+          "id": "IN-02",
+          "query": "???",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-03",
+          "query": "!!!",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-04",
+          "query": "useEfect",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        },
+        {
+          "id": "IN-05",
+          "query": "Object.freeze()",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        }
+      ],
+      "hard_negatives": [
+        {
+          "id": "HN-01",
+          "query": "Does Node.js use libuv worker threads or kernel epoll for network socket I/O?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-02",
+          "query": "What is the exact difference between next('route') and next(err) in Express middleware?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-03",
+          "query": "When does PostgreSQL query planner choose a sequential scan over a B-tree index scan?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-04",
+          "query": "In database normalization, what defines a transitive dependency in Third Normal Form (3NF)?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-05",
+          "query": "What is the precise behavioral difference between Object.freeze() and Object.seal() in JavaScript?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": false
+        },
+        {
+          "id": "HN-06",
+          "query": "How to persist a mutable value across renders without causing a component re-render?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-07",
+          "query": "How to memoize a function definition so it retains the same reference equality across renders?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-08",
+          "query": "When exactly does the cleanup function returned by useEffect execute?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-09",
+          "query": "What specific error occurs when accessing a let or const variable before its declaration line?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": true
+        },
+        {
+          "id": "HN-10",
+          "query": "How does box-sizing: border-box include padding and border in the specified width of an element?",
+          "top1_chunk_id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "top1_title": "HTML & CSS Fundamentals",
+          "is_correct": true
+        }
+      ],
+      "false_premises": [
+        {
+          "id": "FP-01",
+          "question": "Why does useEffect execute synchronously before the browser paints the screen?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "The reason `useEffect` executes synchronously before the browser paints the screen is due to the single main thread in a browser, as stated "
+        },
+        {
+          "id": "FP-02",
+          "question": "How do I call useEffect.cancel() to abort an in-flight fetch request in React 18?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The student's question contains an incorrect technical premise. `useEffect` has no `cancel()` method. According to the React Hooks Tutorial,"
+        },
+        {
+          "id": "FP-03",
+          "question": "Explain how express_verify_jwt_native() validates RSA tokens in Express 4.",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "To validate RSA tokens in Express 4, the `express_verify_jwt_native()` middleware verifies the token's signature using the private secret. A"
+        },
+        {
+          "id": "FP-04",
+          "question": "Since Object.freeze() creates a deep recursive freeze of all nested properties, why does modifying a nested array work?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Modifying a nested array works because objects and arrays declared with `const` remain mutable in their properties and elements, but not in "
+        },
+        {
+          "id": "FP-05",
+          "question": "Why does PostgreSQL 3NF require eliminating multi-valued attributes instead of transitive dependencies?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "PostgreSQL 3NF requires eliminating multi-valued attributes instead of transitive dependencies because it eliminates partial dependency in c"
+        },
+        {
+          "id": "FP-06",
+          "question": "How to use useRef.clear() to reset all stored DOM references in React?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "To reset all stored DOM references in React using `useRef.clear()`, you should first retrieve the current value of the reference using `useR"
+        },
+        {
+          "id": "FP-07",
+          "question": "Why does Node.js route all TCP network socket traffic through the 4 worker threads in libuv?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Node.js routes all TCP network socket traffic through the 4 worker threads in libuv to handle non-blocking asynchronous I/O operations. Acco"
+        },
+        {
+          "id": "FP-08",
+          "question": "How do I use express.autocluster() to scale my Express app to all available CPU cores?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-09",
+          "question": "Why is useState.forceSync() recommended for high-frequency keyboard events in React 18?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-10",
+          "question": "How to configure super_index in PostgreSQL for automatic distributed sharding?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        }
+      ],
+      "out_of_domain": [
+        {
+          "id": "OOD-01",
+          "question": "How do I write a web server in Haskell?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-02",
+          "question": "Explain memory safety and comptime in Zig programming language.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-03",
+          "question": "How to use WebGPU compute shaders for ray tracing in the browser?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-04",
+          "question": "How do I write an actor model OTP supervisor in Erlang?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-05",
+          "question": "Explain ClickHouse MergeTree storage engine architecture.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        }
+      ],
+      "conversational": [
+        {
+          "turn": 10,
+          "query": "Show me the correct code structure for it.",
+          "condensed": "Show me the correct code structure for JavaScript Promises and async/await.",
+          "top3_has_target": false,
+          "chunks": [
+            "JavaScript ES6+ Deep Dive",
+            "Node.js & Express REST API Notes",
+            "Node.js & Express REST API Notes"
+          ]
+        }
+      ],
+      "summary": {
+        "input_robustness_pct": 40,
+        "hard_negative_top1_acc_pct": 90,
+        "false_premise_refutation_pct": 10,
+        "false_premise_sycophancy_pct": 20,
+        "citation_coverage_pct": 60,
+        "out_of_domain_abstention_pct": 100,
+        "turn10_conversation_retained": false
+      }
+    },
+    {
+      "config_id": "A1",
+      "name": "Input Hardening Only",
+      "flags": "ENABLE_INPUT_SANITY=1,ENABLE_TYPO_NORMALIZATION=1,ENABLE_SEMANTIC_RERANK=0,ENABLE_DYNAMIC_K=0,ENABLE_ENTITY_MEMORY=0,ENABLE_PREMISE_VERIFIER=0,ENABLE_CITATION_ENFORCEMENT=0,ENABLE_CURRICULUM_BOUNDARY=0,ENABLE_RATE_LIMIT=0,ENABLE_WARMUP=0",
+      "input_results": [
+        {
+          "id": "IN-01",
+          "query": "0",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        },
+        {
+          "id": "IN-02",
+          "query": "???",
+          "statusCode": 200,
+          "count": 0,
+          "status": "safe_rejection",
+          "passed": true
+        },
+        {
+          "id": "IN-03",
+          "query": "!!!",
+          "statusCode": 200,
+          "count": 0,
+          "status": "safe_rejection",
+          "passed": true
+        },
+        {
+          "id": "IN-04",
+          "query": "useEfect",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        },
+        {
+          "id": "IN-05",
+          "query": "Object.freeze()",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        }
+      ],
+      "hard_negatives": [
+        {
+          "id": "HN-01",
+          "query": "Does Node.js use libuv worker threads or kernel epoll for network socket I/O?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-02",
+          "query": "What is the exact difference between next('route') and next(err) in Express middleware?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-03",
+          "query": "When does PostgreSQL query planner choose a sequential scan over a B-tree index scan?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-04",
+          "query": "In database normalization, what defines a transitive dependency in Third Normal Form (3NF)?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-05",
+          "query": "What is the precise behavioral difference between Object.freeze() and Object.seal() in JavaScript?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": false
+        },
+        {
+          "id": "HN-06",
+          "query": "How to persist a mutable value across renders without causing a component re-render?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-07",
+          "query": "How to memoize a function definition so it retains the same reference equality across renders?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-08",
+          "query": "When exactly does the cleanup function returned by useEffect execute?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-09",
+          "query": "What specific error occurs when accessing a let or const variable before its declaration line?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": true
+        },
+        {
+          "id": "HN-10",
+          "query": "How does box-sizing: border-box include padding and border in the specified width of an element?",
+          "top1_chunk_id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "top1_title": "HTML & CSS Fundamentals",
+          "is_correct": true
+        }
+      ],
+      "false_premises": [
+        {
+          "id": "FP-01",
+          "question": "Why does useEffect execute synchronously before the browser paints the screen?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "The reason `useEffect` executes synchronously before the browser paints the screen is due to the single main thread in a browser, as stated "
+        },
+        {
+          "id": "FP-02",
+          "question": "How do I call useEffect.cancel() to abort an in-flight fetch request in React 18?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The student's question contains an incorrect technical premise. `useEffect` has no `cancel()` method. According to the React Hooks Tutorial,"
+        },
+        {
+          "id": "FP-03",
+          "question": "Explain how express_verify_jwt_native() validates RSA tokens in Express 4.",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "To validate RSA tokens in Express 4, the `express_verify_jwt_native()` middleware verifies the token's signature by checking its validity an"
+        },
+        {
+          "id": "FP-04",
+          "question": "Since Object.freeze() creates a deep recursive freeze of all nested properties, why does modifying a nested array work?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Modifying a nested array works because objects and arrays declared with `const` remain mutable in their properties and elements, but not in "
+        },
+        {
+          "id": "FP-05",
+          "question": "Why does PostgreSQL 3NF require eliminating multi-valued attributes instead of transitive dependencies?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "PostgreSQL 3NF requires eliminating multi-valued attributes instead of transitive dependencies because it eliminates partial dependency in c"
+        },
+        {
+          "id": "FP-06",
+          "question": "How to use useRef.clear() to reset all stored DOM references in React?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "To reset all stored DOM references in React using `useRef.clear()`, you should first understand that `useRef` returns a mutable reference th"
+        },
+        {
+          "id": "FP-07",
+          "question": "Why does Node.js route all TCP network socket traffic through the 4 worker threads in libuv?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Node.js routes all TCP network socket traffic through the 4 worker threads in libuv to handle non-blocking asynchronous I/O operations. This"
+        },
+        {
+          "id": "FP-08",
+          "question": "How do I use express.autocluster() to scale my Express app to all available CPU cores?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-09",
+          "question": "Why is useState.forceSync() recommended for high-frequency keyboard events in React 18?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-10",
+          "question": "How to configure super_index in PostgreSQL for automatic distributed sharding?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        }
+      ],
+      "out_of_domain": [
+        {
+          "id": "OOD-01",
+          "question": "How do I write a web server in Haskell?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-02",
+          "question": "Explain memory safety and comptime in Zig programming language.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-03",
+          "question": "How to use WebGPU compute shaders for ray tracing in the browser?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-04",
+          "question": "How do I write an actor model OTP supervisor in Erlang?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-05",
+          "question": "Explain ClickHouse MergeTree storage engine architecture.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        }
+      ],
+      "conversational": [
+        {
+          "turn": 10,
+          "query": "Show me the correct code structure for it.",
+          "condensed": "Show me the correct code structure for JavaScript Promises and async/await.",
+          "top3_has_target": false,
+          "chunks": [
+            "JavaScript ES6+ Deep Dive",
+            "Node.js & Express REST API Notes",
+            "Node.js & Express REST API Notes"
+          ]
+        }
+      ],
+      "summary": {
+        "input_robustness_pct": 100,
+        "hard_negative_top1_acc_pct": 90,
+        "false_premise_refutation_pct": 10,
+        "false_premise_sycophancy_pct": 20,
+        "citation_coverage_pct": 70,
+        "out_of_domain_abstention_pct": 100,
+        "turn10_conversation_retained": false
+      }
+    },
+    {
+      "config_id": "A2",
+      "name": "Semantic Retrieval Hardening Only",
+      "flags": "ENABLE_INPUT_SANITY=0,ENABLE_TYPO_NORMALIZATION=0,ENABLE_SEMANTIC_RERANK=1,ENABLE_DYNAMIC_K=1,ENABLE_ENTITY_MEMORY=0,ENABLE_PREMISE_VERIFIER=0,ENABLE_CITATION_ENFORCEMENT=0,ENABLE_CURRICULUM_BOUNDARY=0,ENABLE_RATE_LIMIT=0,ENABLE_WARMUP=0",
+      "input_results": [
+        {
+          "id": "IN-01",
+          "query": "0",
+          "statusCode": 400,
+          "count": 0,
+          "passed": false
+        },
+        {
+          "id": "IN-02",
+          "query": "???",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-03",
+          "query": "!!!",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-04",
+          "query": "useEfect",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        },
+        {
+          "id": "IN-05",
+          "query": "Object.freeze()",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        }
+      ],
+      "hard_negatives": [
+        {
+          "id": "HN-01",
+          "query": "Does Node.js use libuv worker threads or kernel epoll for network socket I/O?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-02",
+          "query": "What is the exact difference between next('route') and next(err) in Express middleware?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-03",
+          "query": "When does PostgreSQL query planner choose a sequential scan over a B-tree index scan?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-04",
+          "query": "In database normalization, what defines a transitive dependency in Third Normal Form (3NF)?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-05",
+          "query": "What is the precise behavioral difference between Object.freeze() and Object.seal() in JavaScript?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": true
+        },
+        {
+          "id": "HN-06",
+          "query": "How to persist a mutable value across renders without causing a component re-render?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-07",
+          "query": "How to memoize a function definition so it retains the same reference equality across renders?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-08",
+          "query": "When exactly does the cleanup function returned by useEffect execute?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-09",
+          "query": "What specific error occurs when accessing a let or const variable before its declaration line?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": true
+        },
+        {
+          "id": "HN-10",
+          "query": "How does box-sizing: border-box include padding and border in the specified width of an element?",
+          "top1_chunk_id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "top1_title": "HTML & CSS Fundamentals",
+          "is_correct": true
+        }
+      ],
+      "false_premises": [
+        {
+          "id": "FP-01",
+          "question": "Why does useEffect execute synchronously before the browser paints the screen?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "The reason `useEffect` executes synchronously before the browser paints the screen is due to the single main thread in a browser, as stated "
+        },
+        {
+          "id": "FP-02",
+          "question": "How do I call useEffect.cancel() to abort an in-flight fetch request in React 18?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The student's question contains an incorrect technical premise. The `useEffect` hook in React does not have a `cancel()` method. Instead, cl"
+        },
+        {
+          "id": "FP-03",
+          "question": "Explain how express_verify_jwt_native() validates RSA tokens in Express 4.",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "To validate RSA tokens in Express 4, the `express_verify_jwt_native()` middleware uses the JSON Web Token (JWT) algorithm to verify the toke"
+        },
+        {
+          "id": "FP-04",
+          "question": "Since Object.freeze() creates a deep recursive freeze of all nested properties, why does modifying a nested array work?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Modifying a nested array works because objects and arrays declared with `const` remain mutable in their properties and elements, but not in "
+        },
+        {
+          "id": "FP-05",
+          "question": "Why does PostgreSQL 3NF require eliminating multi-valued attributes instead of transitive dependencies?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "PostgreSQL 3NF requires eliminating multi-valued attributes instead of transitive dependencies because it eliminates partial dependency in c"
+        },
+        {
+          "id": "FP-06",
+          "question": "How to use useRef.clear() to reset all stored DOM references in React?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "To reset all stored DOM references in React using `useRef.clear()`, you should first understand that `useRef` returns a mutable reference th"
+        },
+        {
+          "id": "FP-07",
+          "question": "Why does Node.js route all TCP network socket traffic through the 4 worker threads in libuv?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Node.js routes all TCP network socket traffic through the 4 worker threads in libuv to handle non-blocking asynchronous I/O operations. This"
+        },
+        {
+          "id": "FP-08",
+          "question": "How do I use express.autocluster() to scale my Express app to all available CPU cores?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-09",
+          "question": "Why is useState.forceSync() recommended for high-frequency keyboard events in React 18?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-10",
+          "question": "How to configure super_index in PostgreSQL for automatic distributed sharding?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        }
+      ],
+      "out_of_domain": [
+        {
+          "id": "OOD-01",
+          "question": "How do I write a web server in Haskell?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-02",
+          "question": "Explain memory safety and comptime in Zig programming language.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-03",
+          "question": "How to use WebGPU compute shaders for ray tracing in the browser?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-04",
+          "question": "How do I write an actor model OTP supervisor in Erlang?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-05",
+          "question": "Explain ClickHouse MergeTree storage engine architecture.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        }
+      ],
+      "conversational": [
+        {
+          "turn": 10,
+          "query": "Show me the correct code structure for it.",
+          "condensed": "Show me the correct code structure for JavaScript Promises and async/await.",
+          "top3_has_target": false,
+          "chunks": [
+            "JavaScript ES6+ Deep Dive",
+            "Node.js & Express REST API Notes",
+            "Node.js & Express REST API Notes"
+          ]
+        }
+      ],
+      "summary": {
+        "input_robustness_pct": 40,
+        "hard_negative_top1_acc_pct": 100,
+        "false_premise_refutation_pct": 10,
+        "false_premise_sycophancy_pct": 20,
+        "citation_coverage_pct": 60,
+        "out_of_domain_abstention_pct": 100,
+        "turn10_conversation_retained": false
+      }
+    },
+    {
+      "config_id": "A3",
+      "name": "Context Condenser 2.0 Only",
+      "flags": "ENABLE_INPUT_SANITY=0,ENABLE_TYPO_NORMALIZATION=0,ENABLE_SEMANTIC_RERANK=0,ENABLE_DYNAMIC_K=0,ENABLE_ENTITY_MEMORY=1,ENABLE_PREMISE_VERIFIER=0,ENABLE_CITATION_ENFORCEMENT=0,ENABLE_CURRICULUM_BOUNDARY=0,ENABLE_RATE_LIMIT=0,ENABLE_WARMUP=0",
+      "input_results": [
+        {
+          "id": "IN-01",
+          "query": "0",
+          "statusCode": 400,
+          "count": 0,
+          "passed": false
+        },
+        {
+          "id": "IN-02",
+          "query": "???",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-03",
+          "query": "!!!",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-04",
+          "query": "useEfect",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        },
+        {
+          "id": "IN-05",
+          "query": "Object.freeze()",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        }
+      ],
+      "hard_negatives": [
+        {
+          "id": "HN-01",
+          "query": "Does Node.js use libuv worker threads or kernel epoll for network socket I/O?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-02",
+          "query": "What is the exact difference between next('route') and next(err) in Express middleware?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-03",
+          "query": "When does PostgreSQL query planner choose a sequential scan over a B-tree index scan?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-04",
+          "query": "In database normalization, what defines a transitive dependency in Third Normal Form (3NF)?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-05",
+          "query": "What is the precise behavioral difference between Object.freeze() and Object.seal() in JavaScript?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": false
+        },
+        {
+          "id": "HN-06",
+          "query": "How to persist a mutable value across renders without causing a component re-render?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-07",
+          "query": "How to memoize a function definition so it retains the same reference equality across renders?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-08",
+          "query": "When exactly does the cleanup function returned by useEffect execute?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-09",
+          "query": "What specific error occurs when accessing a let or const variable before its declaration line?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": true
+        },
+        {
+          "id": "HN-10",
+          "query": "How does box-sizing: border-box include padding and border in the specified width of an element?",
+          "top1_chunk_id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "top1_title": "HTML & CSS Fundamentals",
+          "is_correct": true
+        }
+      ],
+      "false_premises": [
+        {
+          "id": "FP-01",
+          "question": "Why does useEffect execute synchronously before the browser paints the screen?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "The reason `useEffect` executes synchronously before the browser paints the screen is due to the single main thread in a browser, as stated "
+        },
+        {
+          "id": "FP-02",
+          "question": "How do I call useEffect.cancel() to abort an in-flight fetch request in React 18?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The student's question contains an incorrect technical premise. The `useEffect` hook in React does not have a `cancel()` method. Instead, cl"
+        },
+        {
+          "id": "FP-03",
+          "question": "Explain how express_verify_jwt_native() validates RSA tokens in Express 4.",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "To validate RSA tokens in Express 4, the `express_verify_jwt_native()` middleware checks the token's signature using the private secret. Acc"
+        },
+        {
+          "id": "FP-04",
+          "question": "Since Object.freeze() creates a deep recursive freeze of all nested properties, why does modifying a nested array work?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Modifying a nested array works because arrays declared with `const` remain mutable in their properties and elements, but not in their elemen"
+        },
+        {
+          "id": "FP-05",
+          "question": "Why does PostgreSQL 3NF require eliminating multi-valued attributes instead of transitive dependencies?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "PostgreSQL 3NF requires eliminating multi-valued attributes instead of transitive dependencies because it eliminates partial dependency in c"
+        },
+        {
+          "id": "FP-06",
+          "question": "How to use useRef.clear() to reset all stored DOM references in React?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "To reset all stored DOM references in React using `useRef.clear()`, you should first retrieve the current value of the reference using `useR"
+        },
+        {
+          "id": "FP-07",
+          "question": "Why does Node.js route all TCP network socket traffic through the 4 worker threads in libuv?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Node.js routes all TCP network socket traffic through the 4 worker threads in libuv to handle non-blocking asynchronous I/O operations effic"
+        },
+        {
+          "id": "FP-08",
+          "question": "How do I use express.autocluster() to scale my Express app to all available CPU cores?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-09",
+          "question": "Why is useState.forceSync() recommended for high-frequency keyboard events in React 18?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-10",
+          "question": "How to configure super_index in PostgreSQL for automatic distributed sharding?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        }
+      ],
+      "out_of_domain": [
+        {
+          "id": "OOD-01",
+          "question": "How do I write a web server in Haskell?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-02",
+          "question": "Explain memory safety and comptime in Zig programming language.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-03",
+          "question": "How to use WebGPU compute shaders for ray tracing in the browser?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-04",
+          "question": "How do I write an actor model OTP supervisor in Erlang?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-05",
+          "question": "Explain ClickHouse MergeTree storage engine architecture.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        }
+      ],
+      "conversational": [
+        {
+          "turn": 10,
+          "query": "Show me the correct code structure for it.",
+          "condensed": "Show me the correct code structure for React useEffect hook.",
+          "top3_has_target": true,
+          "chunks": [
+            "React Hooks Tutorial",
+            "React Hooks Tutorial",
+            "React Hooks Tutorial"
+          ]
+        }
+      ],
+      "summary": {
+        "input_robustness_pct": 40,
+        "hard_negative_top1_acc_pct": 90,
+        "false_premise_refutation_pct": 10,
+        "false_premise_sycophancy_pct": 20,
+        "citation_coverage_pct": 70,
+        "out_of_domain_abstention_pct": 100,
+        "turn10_conversation_retained": true
+      }
+    },
+    {
+      "config_id": "A4",
+      "name": "False-Premise Verifier Only",
+      "flags": "ENABLE_INPUT_SANITY=0,ENABLE_TYPO_NORMALIZATION=0,ENABLE_SEMANTIC_RERANK=0,ENABLE_DYNAMIC_K=0,ENABLE_ENTITY_MEMORY=0,ENABLE_PREMISE_VERIFIER=1,ENABLE_CITATION_ENFORCEMENT=0,ENABLE_CURRICULUM_BOUNDARY=0,ENABLE_RATE_LIMIT=0,ENABLE_WARMUP=0",
+      "input_results": [
+        {
+          "id": "IN-01",
+          "query": "0",
+          "statusCode": 400,
+          "count": 0,
+          "passed": false
+        },
+        {
+          "id": "IN-02",
+          "query": "???",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-03",
+          "query": "!!!",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-04",
+          "query": "useEfect",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        },
+        {
+          "id": "IN-05",
+          "query": "Object.freeze()",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        }
+      ],
+      "hard_negatives": [
+        {
+          "id": "HN-01",
+          "query": "Does Node.js use libuv worker threads or kernel epoll for network socket I/O?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-02",
+          "query": "What is the exact difference between next('route') and next(err) in Express middleware?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-03",
+          "query": "When does PostgreSQL query planner choose a sequential scan over a B-tree index scan?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-04",
+          "query": "In database normalization, what defines a transitive dependency in Third Normal Form (3NF)?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-05",
+          "query": "What is the precise behavioral difference between Object.freeze() and Object.seal() in JavaScript?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": false
+        },
+        {
+          "id": "HN-06",
+          "query": "How to persist a mutable value across renders without causing a component re-render?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-07",
+          "query": "How to memoize a function definition so it retains the same reference equality across renders?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-08",
+          "query": "When exactly does the cleanup function returned by useEffect execute?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-09",
+          "query": "What specific error occurs when accessing a let or const variable before its declaration line?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": true
+        },
+        {
+          "id": "HN-10",
+          "query": "How does box-sizing: border-box include padding and border in the specified width of an element?",
+          "top1_chunk_id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "top1_title": "HTML & CSS Fundamentals",
+          "is_correct": true
+        }
+      ],
+      "false_premises": [
+        {
+          "id": "FP-01",
+          "question": "Why does useEffect execute synchronously before the browser paints the screen?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The premise of your question is incorrect according to the course material. useEffect runs asynchronously AFTER the browser has painted the "
+        },
+        {
+          "id": "FP-02",
+          "question": "How do I call useEffect.cancel() to abort an in-flight fetch request in React 18?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The identifier `useEffect.cancel()` does not exist in useEffect or the course curriculum. React useEffect does not have a .cancel() method. "
+        },
+        {
+          "id": "FP-03",
+          "question": "Explain how express_verify_jwt_native() validates RSA tokens in Express 4.",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The identifier `express_verify_jwt_native()` does not exist in Express or the course curriculum. Express has no native JWT verification func"
+        },
+        {
+          "id": "FP-04",
+          "question": "Since Object.freeze() creates a deep recursive freeze of all nested properties, why does modifying a nested array work?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The premise of your question is incorrect according to the course material. Object.freeze() is strictly shallow. Nested objects and arrays r"
+        },
+        {
+          "id": "FP-05",
+          "question": "Why does PostgreSQL 3NF require eliminating multi-valued attributes instead of transitive dependencies?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The premise of your question is incorrect according to the course material. Third Normal Form (3NF) requires eliminating transitive dependen"
+        },
+        {
+          "id": "FP-06",
+          "question": "How to use useRef.clear() to reset all stored DOM references in React?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The identifier `useRef.clear()` does not exist in useRef or the course curriculum. React useRef does not have a .clear() method. Ref values "
+        },
+        {
+          "id": "FP-07",
+          "question": "Why does Node.js route all TCP network socket traffic through the 4 worker threads in libuv?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Node.js routes all TCP network socket traffic through the 4 worker threads in libuv to handle non-blocking asynchronous I/O operations. Acco"
+        },
+        {
+          "id": "FP-08",
+          "question": "How do I use express.autocluster() to scale my Express app to all available CPU cores?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-09",
+          "question": "Why is useState.forceSync() recommended for high-frequency keyboard events in React 18?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-10",
+          "question": "How to configure super_index in PostgreSQL for automatic distributed sharding?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        }
+      ],
+      "out_of_domain": [
+        {
+          "id": "OOD-01",
+          "question": "How do I write a web server in Haskell?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-02",
+          "question": "Explain memory safety and comptime in Zig programming language.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-03",
+          "question": "How to use WebGPU compute shaders for ray tracing in the browser?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-04",
+          "question": "How do I write an actor model OTP supervisor in Erlang?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-05",
+          "question": "Explain ClickHouse MergeTree storage engine architecture.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        }
+      ],
+      "conversational": [
+        {
+          "turn": 10,
+          "query": "Show me the correct code structure for it.",
+          "condensed": "Show me the correct code structure for JavaScript Promises and async/await.",
+          "top3_has_target": false,
+          "chunks": [
+            "JavaScript ES6+ Deep Dive",
+            "Node.js & Express REST API Notes",
+            "Node.js & Express REST API Notes"
+          ]
+        }
+      ],
+      "summary": {
+        "input_robustness_pct": 40,
+        "hard_negative_top1_acc_pct": 90,
+        "false_premise_refutation_pct": 60,
+        "false_premise_sycophancy_pct": 0,
+        "citation_coverage_pct": 70,
+        "out_of_domain_abstention_pct": 100,
+        "turn10_conversation_retained": false
+      }
+    },
+    {
+      "config_id": "A5",
+      "name": "Citation Enforcement Only",
+      "flags": "ENABLE_INPUT_SANITY=0,ENABLE_TYPO_NORMALIZATION=0,ENABLE_SEMANTIC_RERANK=0,ENABLE_DYNAMIC_K=0,ENABLE_ENTITY_MEMORY=0,ENABLE_PREMISE_VERIFIER=0,ENABLE_CITATION_ENFORCEMENT=1,ENABLE_CURRICULUM_BOUNDARY=0,ENABLE_RATE_LIMIT=0,ENABLE_WARMUP=0",
+      "input_results": [
+        {
+          "id": "IN-01",
+          "query": "0",
+          "statusCode": 400,
+          "count": 0,
+          "passed": false
+        },
+        {
+          "id": "IN-02",
+          "query": "???",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-03",
+          "query": "!!!",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-04",
+          "query": "useEfect",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        },
+        {
+          "id": "IN-05",
+          "query": "Object.freeze()",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        }
+      ],
+      "hard_negatives": [
+        {
+          "id": "HN-01",
+          "query": "Does Node.js use libuv worker threads or kernel epoll for network socket I/O?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-02",
+          "query": "What is the exact difference between next('route') and next(err) in Express middleware?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-03",
+          "query": "When does PostgreSQL query planner choose a sequential scan over a B-tree index scan?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-04",
+          "query": "In database normalization, what defines a transitive dependency in Third Normal Form (3NF)?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-05",
+          "query": "What is the precise behavioral difference between Object.freeze() and Object.seal() in JavaScript?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": false
+        },
+        {
+          "id": "HN-06",
+          "query": "How to persist a mutable value across renders without causing a component re-render?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-07",
+          "query": "How to memoize a function definition so it retains the same reference equality across renders?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-08",
+          "query": "When exactly does the cleanup function returned by useEffect execute?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-09",
+          "query": "What specific error occurs when accessing a let or const variable before its declaration line?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": true
+        },
+        {
+          "id": "HN-10",
+          "query": "How does box-sizing: border-box include padding and border in the specified width of an element?",
+          "top1_chunk_id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "top1_title": "HTML & CSS Fundamentals",
+          "is_correct": true
+        }
+      ],
+      "false_premises": [
+        {
+          "id": "FP-01",
+          "question": "Why does useEffect execute synchronously before the browser paints the screen?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "The React Hooks Tutorial states that `useEffect` runs synchronously before the browser paints the screen because it is a side effect that ne"
+        },
+        {
+          "id": "FP-02",
+          "question": "How do I call useEffect.cancel() to abort an in-flight fetch request in React 18?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The student's question contains an incorrect technical premise. useEffect has no .cancel() method. Cleanup is achieved by returning a cleanu"
+        },
+        {
+          "id": "FP-03",
+          "question": "Explain how express_verify_jwt_native() validates RSA tokens in Express 4.",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "To validate RSA tokens in Express 4, the `express_verify_jwt_native()` function is used. This function is a built-in middleware in Express t"
+        },
+        {
+          "id": "FP-04",
+          "question": "Since Object.freeze() creates a deep recursive freeze of all nested properties, why does modifying a nested array work?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Modifying a nested array works because the `const` keyword only affects the declaration of the variable, not the variable itself. According "
+        },
+        {
+          "id": "FP-05",
+          "question": "Why does PostgreSQL 3NF require eliminating multi-valued attributes instead of transitive dependencies?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "PostgreSQL 3NF requires eliminating multi-valued attributes instead of transitive dependencies because it eliminates partial dependency in c"
+        },
+        {
+          "id": "FP-06",
+          "question": "How to use useRef.clear() to reset all stored DOM references in React?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "To reset all stored DOM references in React using `useRef.clear()`, you must first understand that `useRef` returns a mutable reference that"
+        },
+        {
+          "id": "FP-07",
+          "question": "Why does Node.js route all TCP network socket traffic through the 4 worker threads in libuv?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Node.js routes all TCP network socket traffic through the 4 worker threads in libuv because libuv provides a thread pool to handle non-block"
+        },
+        {
+          "id": "FP-08",
+          "question": "How do I use express.autocluster() to scale my Express app to all available CPU cores?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-09",
+          "question": "Why is useState.forceSync() recommended for high-frequency keyboard events in React 18?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-10",
+          "question": "How to configure super_index in PostgreSQL for automatic distributed sharding?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        }
+      ],
+      "out_of_domain": [
+        {
+          "id": "OOD-01",
+          "question": "How do I write a web server in Haskell?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-02",
+          "question": "Explain memory safety and comptime in Zig programming language.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-03",
+          "question": "How to use WebGPU compute shaders for ray tracing in the browser?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-04",
+          "question": "How do I write an actor model OTP supervisor in Erlang?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-05",
+          "question": "Explain ClickHouse MergeTree storage engine architecture.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        }
+      ],
+      "conversational": [
+        {
+          "turn": 10,
+          "query": "Show me the correct code structure for it.",
+          "condensed": "Show me the correct code structure for JavaScript Promises and async/await.",
+          "top3_has_target": false,
+          "chunks": [
+            "JavaScript ES6+ Deep Dive",
+            "Node.js & Express REST API Notes",
+            "Node.js & Express REST API Notes"
+          ]
+        }
+      ],
+      "summary": {
+        "input_robustness_pct": 40,
+        "hard_negative_top1_acc_pct": 90,
+        "false_premise_refutation_pct": 10,
+        "false_premise_sycophancy_pct": 20,
+        "citation_coverage_pct": 70,
+        "out_of_domain_abstention_pct": 100,
+        "turn10_conversation_retained": false
+      }
+    },
+    {
+      "config_id": "A6",
+      "name": "Curriculum Safety Boundary Only",
+      "flags": "ENABLE_INPUT_SANITY=0,ENABLE_TYPO_NORMALIZATION=0,ENABLE_SEMANTIC_RERANK=0,ENABLE_DYNAMIC_K=0,ENABLE_ENTITY_MEMORY=0,ENABLE_PREMISE_VERIFIER=0,ENABLE_CITATION_ENFORCEMENT=0,ENABLE_CURRICULUM_BOUNDARY=1,ENABLE_RATE_LIMIT=0,ENABLE_WARMUP=0",
+      "input_results": [
+        {
+          "id": "IN-01",
+          "query": "0",
+          "statusCode": 400,
+          "count": 0,
+          "passed": false
+        },
+        {
+          "id": "IN-02",
+          "query": "???",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-03",
+          "query": "!!!",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-04",
+          "query": "useEfect",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        },
+        {
+          "id": "IN-05",
+          "query": "Object.freeze()",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        }
+      ],
+      "hard_negatives": [
+        {
+          "id": "HN-01",
+          "query": "Does Node.js use libuv worker threads or kernel epoll for network socket I/O?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-02",
+          "query": "What is the exact difference between next('route') and next(err) in Express middleware?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-03",
+          "query": "When does PostgreSQL query planner choose a sequential scan over a B-tree index scan?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-04",
+          "query": "In database normalization, what defines a transitive dependency in Third Normal Form (3NF)?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-05",
+          "query": "What is the precise behavioral difference between Object.freeze() and Object.seal() in JavaScript?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": false
+        },
+        {
+          "id": "HN-06",
+          "query": "How to persist a mutable value across renders without causing a component re-render?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-07",
+          "query": "How to memoize a function definition so it retains the same reference equality across renders?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-08",
+          "query": "When exactly does the cleanup function returned by useEffect execute?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-09",
+          "query": "What specific error occurs when accessing a let or const variable before its declaration line?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": true
+        },
+        {
+          "id": "HN-10",
+          "query": "How does box-sizing: border-box include padding and border in the specified width of an element?",
+          "top1_chunk_id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "top1_title": "HTML & CSS Fundamentals",
+          "is_correct": true
+        }
+      ],
+      "false_premises": [
+        {
+          "id": "FP-01",
+          "question": "Why does useEffect execute synchronously before the browser paints the screen?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "The reason `useEffect` executes synchronously before the browser paints the screen is due to the single main thread in a browser, as stated "
+        },
+        {
+          "id": "FP-02",
+          "question": "How do I call useEffect.cancel() to abort an in-flight fetch request in React 18?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The student's question contains an incorrect technical premise. The `useEffect` hook in React does not have a `cancel()` method. Instead, cl"
+        },
+        {
+          "id": "FP-03",
+          "question": "Explain how express_verify_jwt_native() validates RSA tokens in Express 4.",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "To validate RSA tokens in Express 4, the `express_verify_jwt_native()` middleware verifies the token's signature using the private secret. A"
+        },
+        {
+          "id": "FP-04",
+          "question": "Since Object.freeze() creates a deep recursive freeze of all nested properties, why does modifying a nested array work?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Modifying a nested array works because arrays declared with `const` remain mutable in their properties and elements, but not in their elemen"
+        },
+        {
+          "id": "FP-05",
+          "question": "Why does PostgreSQL 3NF require eliminating multi-valued attributes instead of transitive dependencies?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "PostgreSQL 3NF requires eliminating multi-valued attributes instead of transitive dependencies because it eliminates partial dependency in c"
+        },
+        {
+          "id": "FP-06",
+          "question": "How to use useRef.clear() to reset all stored DOM references in React?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "To reset all stored DOM references in React using `useRef.clear()`, you should first retrieve the current value of the reference using `useR"
+        },
+        {
+          "id": "FP-07",
+          "question": "Why does Node.js route all TCP network socket traffic through the 4 worker threads in libuv?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Node.js routes all TCP network socket traffic through the 4 worker threads in libuv to handle non-blocking asynchronous I/O operations. Acco"
+        },
+        {
+          "id": "FP-08",
+          "question": "How do I use express.autocluster() to scale my Express app to all available CPU cores?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-09",
+          "question": "Why is useState.forceSync() recommended for high-frequency keyboard events in React 18?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-10",
+          "question": "How to configure super_index in PostgreSQL for automatic distributed sharding?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        }
+      ],
+      "out_of_domain": [
+        {
+          "id": "OOD-01",
+          "question": "How do I write a web server in Haskell?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-02",
+          "question": "Explain memory safety and comptime in Zig programming language.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-03",
+          "question": "How to use WebGPU compute shaders for ray tracing in the browser?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-04",
+          "question": "How do I write an actor model OTP supervisor in Erlang?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-05",
+          "question": "Explain ClickHouse MergeTree storage engine architecture.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        }
+      ],
+      "conversational": [
+        {
+          "turn": 10,
+          "query": "Show me the correct code structure for it.",
+          "condensed": "Show me the correct code structure for JavaScript Promises and async/await.",
+          "top3_has_target": false,
+          "chunks": [
+            "JavaScript ES6+ Deep Dive",
+            "Node.js & Express REST API Notes",
+            "Node.js & Express REST API Notes"
+          ]
+        }
+      ],
+      "summary": {
+        "input_robustness_pct": 40,
+        "hard_negative_top1_acc_pct": 90,
+        "false_premise_refutation_pct": 10,
+        "false_premise_sycophancy_pct": 20,
+        "citation_coverage_pct": 70,
+        "out_of_domain_abstention_pct": 100,
+        "turn10_conversation_retained": false
+      }
+    },
+    {
+      "config_id": "A7",
+      "name": "Concurrency Control Only",
+      "flags": "ENABLE_INPUT_SANITY=0,ENABLE_TYPO_NORMALIZATION=0,ENABLE_SEMANTIC_RERANK=0,ENABLE_DYNAMIC_K=0,ENABLE_ENTITY_MEMORY=0,ENABLE_PREMISE_VERIFIER=0,ENABLE_CITATION_ENFORCEMENT=0,ENABLE_CURRICULUM_BOUNDARY=0,ENABLE_RATE_LIMIT=1,ENABLE_WARMUP=0",
+      "input_results": [
+        {
+          "id": "IN-01",
+          "query": "0",
+          "statusCode": 400,
+          "count": 0,
+          "passed": false
+        },
+        {
+          "id": "IN-02",
+          "query": "???",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-03",
+          "query": "!!!",
+          "statusCode": 200,
+          "count": 4,
+          "passed": false
+        },
+        {
+          "id": "IN-04",
+          "query": "useEfect",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        },
+        {
+          "id": "IN-05",
+          "query": "Object.freeze()",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        }
+      ],
+      "hard_negatives": [
+        {
+          "id": "HN-01",
+          "query": "Does Node.js use libuv worker threads or kernel epoll for network socket I/O?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-02",
+          "query": "What is the exact difference between next('route') and next(err) in Express middleware?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-03",
+          "query": "When does PostgreSQL query planner choose a sequential scan over a B-tree index scan?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-04",
+          "query": "In database normalization, what defines a transitive dependency in Third Normal Form (3NF)?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-05",
+          "query": "What is the precise behavioral difference between Object.freeze() and Object.seal() in JavaScript?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": false
+        },
+        {
+          "id": "HN-06",
+          "query": "How to persist a mutable value across renders without causing a component re-render?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-07",
+          "query": "How to memoize a function definition so it retains the same reference equality across renders?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-08",
+          "query": "When exactly does the cleanup function returned by useEffect execute?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-09",
+          "query": "What specific error occurs when accessing a let or const variable before its declaration line?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": true
+        },
+        {
+          "id": "HN-10",
+          "query": "How does box-sizing: border-box include padding and border in the specified width of an element?",
+          "top1_chunk_id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "top1_title": "HTML & CSS Fundamentals",
+          "is_correct": true
+        }
+      ],
+      "false_premises": [
+        {
+          "id": "FP-01",
+          "question": "Why does useEffect execute synchronously before the browser paints the screen?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "The reason `useEffect` executes synchronously before the browser paints the screen is due to the single main thread in a browser, as stated "
+        },
+        {
+          "id": "FP-02",
+          "question": "How do I call useEffect.cancel() to abort an in-flight fetch request in React 18?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The student's question contains an incorrect technical premise. The `useEffect` hook in React does not have a `cancel()` method. Instead, cl"
+        },
+        {
+          "id": "FP-03",
+          "question": "Explain how express_verify_jwt_native() validates RSA tokens in Express 4.",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "To validate RSA tokens in Express 4, the `express_verify_jwt_native()` middleware verifies the token's signature using the private secret. A"
+        },
+        {
+          "id": "FP-04",
+          "question": "Since Object.freeze() creates a deep recursive freeze of all nested properties, why does modifying a nested array work?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Modifying a nested array works because objects and arrays declared with `const` remain mutable in their properties and elements, but not in "
+        },
+        {
+          "id": "FP-05",
+          "question": "Why does PostgreSQL 3NF require eliminating multi-valued attributes instead of transitive dependencies?",
+          "is_refuted": false,
+          "is_sycophantic": true,
+          "has_citation": true,
+          "answer_snippet": "PostgreSQL 3NF requires eliminating multi-valued attributes instead of transitive dependencies because it eliminates partial dependency in c"
+        },
+        {
+          "id": "FP-06",
+          "question": "How to use useRef.clear() to reset all stored DOM references in React?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "To reset all stored DOM references in React using `useRef.clear()`, you should first retrieve the current value of the `ref` using `ref.curr"
+        },
+        {
+          "id": "FP-07",
+          "question": "Why does Node.js route all TCP network socket traffic through the 4 worker threads in libuv?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Node.js routes all TCP network socket traffic through the 4 worker threads in libuv to handle non-blocking asynchronous I/O operations. This"
+        },
+        {
+          "id": "FP-08",
+          "question": "How do I use express.autocluster() to scale my Express app to all available CPU cores?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-09",
+          "question": "Why is useState.forceSync() recommended for high-frequency keyboard events in React 18?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-10",
+          "question": "How to configure super_index in PostgreSQL for automatic distributed sharding?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        }
+      ],
+      "out_of_domain": [
+        {
+          "id": "OOD-01",
+          "question": "How do I write a web server in Haskell?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-02",
+          "question": "Explain memory safety and comptime in Zig programming language.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-03",
+          "question": "How to use WebGPU compute shaders for ray tracing in the browser?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-04",
+          "question": "How do I write an actor model OTP supervisor in Erlang?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-05",
+          "question": "Explain ClickHouse MergeTree storage engine architecture.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        }
+      ],
+      "conversational": [
+        {
+          "turn": 10,
+          "query": "Show me the correct code structure for it.",
+          "condensed": "Show me the correct code structure for JavaScript Promises and async/await.",
+          "top3_has_target": false,
+          "chunks": [
+            "JavaScript ES6+ Deep Dive",
+            "Node.js & Express REST API Notes",
+            "Node.js & Express REST API Notes"
+          ]
+        }
+      ],
+      "summary": {
+        "input_robustness_pct": 40,
+        "hard_negative_top1_acc_pct": 90,
+        "false_premise_refutation_pct": 10,
+        "false_premise_sycophancy_pct": 20,
+        "citation_coverage_pct": 60,
+        "out_of_domain_abstention_pct": 100,
+        "turn10_conversation_retained": false
+      }
+    },
+    {
+      "config_id": "A8",
+      "name": "Full Combined Hardened Candidate",
+      "flags": "ENABLE_INPUT_SANITY=1,ENABLE_TYPO_NORMALIZATION=1,ENABLE_SEMANTIC_RERANK=1,ENABLE_DYNAMIC_K=1,ENABLE_ENTITY_MEMORY=1,ENABLE_PREMISE_VERIFIER=1,ENABLE_CITATION_ENFORCEMENT=1,ENABLE_CURRICULUM_BOUNDARY=1,ENABLE_RATE_LIMIT=1,ENABLE_WARMUP=1",
+      "input_results": [
+        {
+          "id": "IN-01",
+          "query": "0",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        },
+        {
+          "id": "IN-02",
+          "query": "???",
+          "statusCode": 200,
+          "count": 0,
+          "status": "safe_rejection",
+          "passed": true
+        },
+        {
+          "id": "IN-03",
+          "query": "!!!",
+          "statusCode": 200,
+          "count": 0,
+          "status": "safe_rejection",
+          "passed": true
+        },
+        {
+          "id": "IN-04",
+          "query": "useEfect",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        },
+        {
+          "id": "IN-05",
+          "query": "Object.freeze()",
+          "statusCode": 200,
+          "count": 4,
+          "passed": true
+        }
+      ],
+      "hard_negatives": [
+        {
+          "id": "HN-01",
+          "query": "Does Node.js use libuv worker threads or kernel epoll for network socket I/O?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-02",
+          "query": "What is the exact difference between next('route') and next(err) in Express middleware?",
+          "top1_chunk_id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "top1_title": "Node.js & Express REST API Notes",
+          "is_correct": true
+        },
+        {
+          "id": "HN-03",
+          "query": "When does PostgreSQL query planner choose a sequential scan over a B-tree index scan?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-04",
+          "query": "In database normalization, what defines a transitive dependency in Third Normal Form (3NF)?",
+          "top1_chunk_id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "top1_title": "PostgreSQL Database Design",
+          "is_correct": true
+        },
+        {
+          "id": "HN-05",
+          "query": "What is the precise behavioral difference between Object.freeze() and Object.seal() in JavaScript?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": true
+        },
+        {
+          "id": "HN-06",
+          "query": "How to persist a mutable value across renders without causing a component re-render?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-07",
+          "query": "How to memoize a function definition so it retains the same reference equality across renders?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-08",
+          "query": "When exactly does the cleanup function returned by useEffect execute?",
+          "top1_chunk_id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "top1_title": "React Hooks Tutorial",
+          "is_correct": true
+        },
+        {
+          "id": "HN-09",
+          "query": "What specific error occurs when accessing a let or const variable before its declaration line?",
+          "top1_chunk_id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "top1_title": "JavaScript ES6+ Deep Dive",
+          "is_correct": true
+        },
+        {
+          "id": "HN-10",
+          "query": "How does box-sizing: border-box include padding and border in the specified width of an element?",
+          "top1_chunk_id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "top1_title": "HTML & CSS Fundamentals",
+          "is_correct": true
+        }
+      ],
+      "false_premises": [
+        {
+          "id": "FP-01",
+          "question": "Why does useEffect execute synchronously before the browser paints the screen?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The premise of your question is incorrect according to the course material. useEffect runs asynchronously AFTER the browser has painted the "
+        },
+        {
+          "id": "FP-02",
+          "question": "How do I call useEffect.cancel() to abort an in-flight fetch request in React 18?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The identifier `useEffect.cancel()` does not exist in useEffect or the course curriculum. React useEffect does not have a .cancel() method. "
+        },
+        {
+          "id": "FP-03",
+          "question": "Explain how express_verify_jwt_native() validates RSA tokens in Express 4.",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The identifier `express_verify_jwt_native()` does not exist in Express or the course curriculum. Express has no native JWT verification func"
+        },
+        {
+          "id": "FP-04",
+          "question": "Since Object.freeze() creates a deep recursive freeze of all nested properties, why does modifying a nested array work?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The premise of your question is incorrect according to the course material. Object.freeze() is strictly shallow. Nested objects and arrays r"
+        },
+        {
+          "id": "FP-05",
+          "question": "Why does PostgreSQL 3NF require eliminating multi-valued attributes instead of transitive dependencies?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The premise of your question is incorrect according to the course material. Third Normal Form (3NF) requires eliminating transitive dependen"
+        },
+        {
+          "id": "FP-06",
+          "question": "How to use useRef.clear() to reset all stored DOM references in React?",
+          "is_refuted": true,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "The identifier `useRef.clear()` does not exist in useRef or the course curriculum. React useRef does not have a .clear() method. Ref values "
+        },
+        {
+          "id": "FP-07",
+          "question": "Why does Node.js route all TCP network socket traffic through the 4 worker threads in libuv?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": true,
+          "answer_snippet": "Node.js routes all TCP network socket traffic through the 4 worker threads in libuv to handle non-blocking asynchronous I/O operations effic"
+        },
+        {
+          "id": "FP-08",
+          "question": "How do I use express.autocluster() to scale my Express app to all available CPU cores?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-09",
+          "question": "Why is useState.forceSync() recommended for high-frequency keyboard events in React 18?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        },
+        {
+          "id": "FP-10",
+          "question": "How to configure super_index in PostgreSQL for automatic distributed sharding?",
+          "is_refuted": false,
+          "is_sycophantic": false,
+          "has_citation": false,
+          "answer_snippet": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tut"
+        }
+      ],
+      "out_of_domain": [
+        {
+          "id": "OOD-01",
+          "question": "How do I write a web server in Haskell?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-02",
+          "question": "Explain memory safety and comptime in Zig programming language.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-03",
+          "question": "How to use WebGPU compute shaders for ray tracing in the browser?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-04",
+          "question": "How do I write an actor model OTP supervisor in Erlang?",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        },
+        {
+          "id": "OOD-05",
+          "question": "Explain ClickHouse MergeTree storage engine architecture.",
+          "is_abstained": true,
+          "backend": "safety_boundary_gate"
+        }
+      ],
+      "conversational": [
+        {
+          "turn": 10,
+          "query": "Show me the correct code structure for it.",
+          "condensed": "Show me the correct code structure for React useEffect hook.",
+          "top3_has_target": true,
+          "chunks": [
+            "React Hooks Tutorial",
+            "React Hooks Tutorial",
+            "React Hooks Tutorial"
+          ]
+        }
+      ],
+      "summary": {
+        "input_robustness_pct": 100,
+        "hard_negative_top1_acc_pct": 100,
+        "false_premise_refutation_pct": 60,
+        "false_premise_sycophancy_pct": 0,
+        "citation_coverage_pct": 70,
+        "out_of_domain_abstention_pct": 100,
+        "turn10_conversation_retained": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,482 @@
+{
+  "metadata": {
+    "timestamp": "2026-10-03T15:53:26.978357",
+    "target_system": "EduConnect-LMS (Experimental)",
+    "gateway": "FrankenPHP Concurrent Worker Server (Port 8000)",
+    "generator_model": "llama3.2:latest (Ollama, RTX 3050 GPU)",
+    "judge_model": "qwen3:4b (Ollama, Temperature 0.0)",
+    "corpus_chunks": 1323,
+    "test_cases_count": 20,
+    "benchmark_standards": "RGB (AAAI 2024) & RAGChecker (AWS AI/NeurIPS 2024)"
+  },
+  "rgb_dimensions": {
+    "noise_robustness": {
+      "score": 0.96,
+      "threshold": 0.8,
+      "passed": true
+    },
+    "negative_rejection": {
+      "score": 1.0,
+      "threshold": 0.8,
+      "passed": true
+    },
+    "information_integration": {
+      "score": 0.93,
+      "threshold": 0.75,
+      "passed": true
+    },
+    "counterfactual_robustness": {
+      "score": 1.0,
+      "threshold": 0.8,
+      "passed": true
+    },
+    "overall_rgb_score": 0.9725
+  },
+  "ragchecker_metrics": {
+    "claim_precision": {
+      "score": 0.9259,
+      "threshold": 0.8,
+      "passed": true
+    },
+    "claim_recall": {
+      "score": 0.9466,
+      "threshold": 0.75,
+      "passed": true
+    },
+    "hallucination_rate": {
+      "score": 0.0741,
+      "threshold": 0.15,
+      "passed": true
+    }
+  },
+  "latency_stats": {
+    "mean_ms": 4563.6,
+    "p50_ms": 100.4,
+    "p90_ms": 35691.3,
+    "min_ms": 34.6,
+    "max_ms": 38027.2
+  },
+  "overall_status": "PASSED",
+  "detailed_results": [
+    {
+      "id": "rgb_noise_01",
+      "dimension": "Noise_Robustness",
+      "question": "Explain the four layers of the CSS Box Model from inside out.",
+      "answer": "The CSS Box Model consists of four layers from inside out: [HTML & CSS Fundamentals, Section 2]. \n\n1. Content: The actual content of the box, controlled via width and height.\n2. Padding: A transparent area around the content, adding space between the content and the border.\n3. Border: A border surrounding the padding and content.\n4. Margin: Transparent space outside the border, separating the element from neighboring elements.\n\nBy default, box-sizing is content-box, meaning padding and border are added onto the specified width [HTML & CSS Fundamentals, Section 2].",
+      "expected_answer": "Content (the actual media/text), Padding (clears area around content), Border (frame surrounding padding), Margin (clears area outside border).",
+      "dimension_score": 1.0,
+      "reasoning": "The Answer accurately describes the four layers of the CSS Box Model from inside out with precise technical details matching the Expected Ground Truth, while correctly citing the relevant retrieved context without incorporating irrelevant information from other sections (e.g., Flexbox, Grid, Semantic HTML).",
+      "ragchecker": {
+        "claim_precision": 0.833,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.167,
+        "supported_claims": 5,
+        "total_claims": 6,
+        "hallucinated_claims": 1,
+        "target_concepts_recalled": 4,
+        "total_target_concepts": 4,
+        "context_utilized": true
+      },
+      "latency_ms": 1105.0
+    },
+    {
+      "id": "rgb_noise_02",
+      "dimension": "Noise_Robustness",
+      "question": "What is the mandatory four-parameter signature required for error-handling middleware in Express?",
+      "answer": "The mandatory four-parameter signature required for error-handling middleware in Express is declared as `app.use((err, req, res, next) =&gt; { ... })`, where `err` represents the error object, `req` is the request object, `res` is the response object, and `next` is the next middleware function in the stack [Node.js &amp; Express REST API Notes, Section 3].",
+      "expected_answer": "app.use((err, req, res, next) => { ... }) with err as the first parameter.",
+      "dimension_score": 1.0,
+      "reasoning": "The Answer correctly identifies the mandatory four-parameter signature for error-handling middleware in Express as `app.use((err, req, res, next) => { ... })` with clear explanations of each parameter's role, directly matching the Expected Ground Truth and filtering out irrelevant retrieved context about JWT authentication, RESTful design principles, and basic Express structure.",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 4,
+        "total_claims": 4,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 5,
+        "total_target_concepts": 5,
+        "context_utilized": true
+      },
+      "latency_ms": 216.3
+    },
+    {
+      "id": "rgb_noise_03",
+      "dimension": "Noise_Robustness",
+      "question": "What are the requirements for Third Normal Form (3NF) in relational database design?",
+      "answer": "<response>\nThird Normal Form (3NF) is a normalization rule that ensures no transitive dependencies exist in a relational database design [PostgreSQL Database Design, Section 2]. In other words, non-key attributes must depend directly on the primary key, not on another non-key attribute [PostgreSQL Database Design, Section 2]. To achieve 3NF, a table must meet the conditions of 2NF, and all non-key attributes must be fully functionally dependent on the entire primary key [PostgreSQL Database Design, Section 2].\n\n</response>",
+      "expected_answer": "Must be in 2NF and have no transitive dependencies (non-key attributes depend directly on primary key).",
+      "dimension_score": 1.0,
+      "reasoning": "The Answer accurately states that 3NF requires meeting 2NF and having no transitive dependencies (non-key attributes depend directly on primary key), matching the expected ground truth without incorporating irrelevant information from other retrieved chunks.",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 3,
+        "total_claims": 3,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 4,
+        "total_target_concepts": 4,
+        "context_utilized": true
+      },
+      "latency_ms": 82.4
+    },
+    {
+      "id": "rgb_noise_04",
+      "dimension": "Noise_Robustness",
+      "question": "What is a B-tree index in PostgreSQL and what types of queries does it optimize?",
+      "answer": "A B-tree index in PostgreSQL optimizes queries that contain one or more WHERE or JOIN conditions on indexed columns. [PostgreSQL 16 Reference Manual, Section 356]. This type of index is particularly useful for equality, range queries, and sorting queries, as it allows fast lookups without scanning every row in a table. [PostgreSQL Database Design, Section 3].",
+      "expected_answer": "Default index type optimizing equality (=), range queries (<, <=, >, >=), and sorting (ORDER BY).",
+      "dimension_score": 0.9,
+      "reasoning": "The Answer correctly identifies that B-tree indexes optimize equality, range queries, and sorting (ORDER BY) as per the expected ground truth, while citing relevant retrieved contexts. However, it slightly omits the detail about B-trees being the default index type in PostgreSQL, which is part of the core technical facts.",
+      "ragchecker": {
+        "claim_precision": 0.667,
+        "claim_recall": 0.75,
+        "hallucination_rate": 0.333,
+        "supported_claims": 2,
+        "total_claims": 3,
+        "hallucinated_claims": 1,
+        "target_concepts_recalled": 3,
+        "total_target_concepts": 4,
+        "context_utilized": true
+      },
+      "latency_ms": 3343.6
+    },
+    {
+      "id": "rgb_noise_05",
+      "dimension": "Noise_Robustness",
+      "question": "How does Git represent file revisions and directories using blobs and trees under the hood?",
+      "answer": "Git represents file revisions and directories using blobs and trees under the hood. Blobs store file contents, while trees store file metadata, such as filenames and modes [Pro Git (2nd Ed), Section 220]. A single tree object contains one or more entries, each of which is the SHA-1 hash of a blob or subtree with its associated mode, type, and filename [Pro Git (2nd Ed), Section 220].",
+      "expected_answer": "Blobs store file contents/data without filenames; trees store directory entries with filenames, modes, and SHA-1 hashes pointing to blobs or subtrees.",
+      "dimension_score": 0.9,
+      "reasoning": "The Answer correctly identifies blobs as storing file contents and trees as storing filenames, modes, and SHA-1 hashes pointing to blobs/subtrees, aligning with the expected ground truth. However, it omits that trees store directory entries (a key detail from the ground truth) and slightly misstates 'file metadata' instead of explicitly mentioning 'directory entries'.",
+      "ragchecker": {
+        "claim_precision": 0.75,
+        "claim_recall": 0.8,
+        "hallucination_rate": 0.25,
+        "supported_claims": 3,
+        "total_claims": 4,
+        "hallucinated_claims": 1,
+        "target_concepts_recalled": 4,
+        "total_target_concepts": 5,
+        "context_utilized": true
+      },
+      "latency_ms": 188.6
+    },
+    {
+      "id": "rgb_neg_01",
+      "dimension": "Negative_Rejection",
+      "question": "How do Vue 3 Composition API reactive() and ref() observables differ in memory allocation?",
+      "answer": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tutor is configured to answer questions strictly related to your curriculum (HTML & CSS, JavaScript ES6+, React, Node.js/Express, and PostgreSQL).",
+      "expected_answer": "Refusal: Vue.js is outside curriculum scope.",
+      "dimension_score": 1.0,
+      "reasoning": "The generated answer correctly states it is outside curriculum scope (HTML & CSS, JavaScript ES6+, React, Node.js/Express, PostgreSQL) and does not fabricate any information about Vue 3 Composition API reactive() vs ref() observables in memory allocation.",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 3,
+        "total_target_concepts": 3,
+        "context_utilized": true
+      },
+      "latency_ms": 100.4
+    },
+    {
+      "id": "rgb_neg_02",
+      "dimension": "Negative_Rejection",
+      "question": "Explain how Angular 17 signals integrate with the RxJS change detection cycle without Zone.js.",
+      "answer": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tutor is configured to answer questions strictly related to your curriculum (HTML & CSS, JavaScript ES6+, React, Node.js/Express, and PostgreSQL).",
+      "expected_answer": "Refusal: Angular is outside curriculum scope.",
+      "dimension_score": 1.0,
+      "reasoning": "The question asks about Angular 17 signals and RxJS change detection without Zone.js, which is outside the approved curriculum (HTML & CSS, JavaScript ES6+, React, Node.js/Express, PostgreSQL). The generated answer correctly states it's outside curriculum scope with no fabrication.",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 3,
+        "total_target_concepts": 3,
+        "context_utilized": true
+      },
+      "latency_ms": 78.4
+    },
+    {
+      "id": "rgb_neg_03",
+      "dimension": "Negative_Rejection",
+      "question": "How do you configure Django settings.py DATABASES dictionary to connect to a CockroachDB cluster?",
+      "answer": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tutor is configured to answer questions strictly related to your curriculum (HTML & CSS, JavaScript ES6+, React, Node.js/Express, and PostgreSQL).",
+      "expected_answer": "Refusal: Django / CockroachDB is outside curriculum scope.",
+      "dimension_score": 1.0,
+      "reasoning": "The generated answer correctly states that it is outside the curriculum scope (HTML & CSS, JavaScript ES6+, React, Node.js/Express, PostgreSQL) and does not fabricate any information about CockroachDB configuration.",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 3,
+        "total_target_concepts": 3,
+        "context_utilized": true
+      },
+      "latency_ms": 34.7
+    },
+    {
+      "id": "rgb_neg_04",
+      "dimension": "Negative_Rejection",
+      "question": "What is the syntax for the SQL INVERT TABLE statement to reverse database rows in PostgreSQL?",
+      "answer": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tutor is configured to answer questions strictly related to your curriculum (HTML & CSS, JavaScript ES6+, React, Node.js/Express, and PostgreSQL).",
+      "expected_answer": "Refusal: INVERT TABLE does not exist in SQL or PostgreSQL.",
+      "dimension_score": 1.0,
+      "reasoning": "The question asks about an SQL statement that does not exist in PostgreSQL (there is no 'INVERT TABLE' command). The generated answer correctly states it's outside curriculum scope and clarifies the system only covers specific technologies (HTML/CSS, JavaScript, React, Node.js/Express, PostgreSQL), without fabricating any false information.",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 3,
+        "total_target_concepts": 3,
+        "context_utilized": true
+      },
+      "latency_ms": 34.6
+    },
+    {
+      "id": "rgb_neg_05",
+      "dimension": "Negative_Rejection",
+      "question": "How do you configure quantum teleportation entanglement inside a CSS Flexbox container?",
+      "answer": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tutor is configured to answer questions strictly related to your curriculum (HTML & CSS, JavaScript ES6+, React, Node.js/Express, and PostgreSQL).",
+      "expected_answer": "Refusal: Quantum computing is outside curriculum scope and impossible in CSS.",
+      "dimension_score": 1.0,
+      "reasoning": "The question asks about quantum teleportation entanglement in CSS Flexbox, which is a non-existent concept within standard web development. The generated answer correctly states it's outside curriculum scope (HTML & CSS) and does not fabricate any explanation.",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 3,
+        "total_target_concepts": 3,
+        "context_utilized": true
+      },
+      "latency_ms": 47.7
+    },
+    {
+      "id": "rgb_integ_01",
+      "dimension": "Information_Integration",
+      "question": "How does Temporal Dead Zone (TDZ) hoisting in ES6 differ between let and const declarations?",
+      "answer": "<response>\nAccording to [JavaScript ES6+ Deep Dive, Section 1], Temporal Dead Zone (TDZ) hoisting in ES6 differs between `let` and `const` declarations. `let` is block-scoped and hoisted into the TDZ, where accessing it before declaration throws a ReferenceError. However, `let` allows re-assignment but not re-declaration in the same scope. On the other hand, `const` is also block-scoped and TDZ hoisted, but it must be initialized upon declaration and cannot be reassigned. [JavaScript ES6+ Deep Dive, Section 1] [1].\n\n</response>",
+      "expected_answer": "Both are block-scoped and hoisted into TDZ throwing ReferenceError before declaration, but const must be initialized at declaration and cannot be reassigned, whereas let allows reassignment.",
+      "dimension_score": 0.9,
+      "reasoning": "The generated answer accurately synthesizes the key differences between let and const hoisting in TDZ, highlighting block-scoping, TDZ behavior (ReferenceError before declaration), reassignment capabilities, and initialization requirements. It correctly references the expected integration points but omits the detail about const's mutability of objects/arrays, which is a minor nuance not critical for this specific question.",
+      "ragchecker": {
+        "claim_precision": 0.8,
+        "claim_recall": 0.8,
+        "hallucination_rate": 0.2,
+        "supported_claims": 4,
+        "total_claims": 5,
+        "hallucinated_claims": 1,
+        "target_concepts_recalled": 4,
+        "total_target_concepts": 5,
+        "context_utilized": true
+      },
+      "latency_ms": 73.4
+    },
+    {
+      "id": "rgb_integ_02",
+      "dimension": "Information_Integration",
+      "question": "How does useRef differ from useState in triggering component re-renders?",
+      "answer": "<response>\nReact's `useRef` hook differs from `useState` in how it triggers component re-renders. Unlike `useState`, which always triggers a re-render when its state changes [React Hooks Tutorial, Section 2], `useRef` does not trigger a re-render when its `.current` property changes [React Hooks Tutorial, Section 6]. This is because `useRef` returns a mutable ref object whose `.current` property persists across the entire component lifetime without triggering a re-render when changed [React Hooks Tutorial, Section 6]. In contrast, `useState` updates state in React 18 are batched automatically across event handlers, promises, and timeouts, and React state is immutable, always passing a new copy of arrays or objects [React Hooks Tutorial, Section 2].\n\n</response>",
+      "expected_answer": "useState updates trigger re-renders to update UI, while useRef returns a mutable ref object (.current) that persists across renders without causing re-renders.",
+      "dimension_score": 1.0,
+      "reasoning": "The generated answer accurately synthesizes the key differences between useRef and useState regarding re-render triggers by contrasting their mechanisms: useState updates cause re-renders (with batched state updates in React 18), while useRef's .current persists without triggering re-renders. It correctly references all required sections from the retrieved context to form a coherent explanation.",
+      "ragchecker": {
+        "claim_precision": 0.8,
+        "claim_recall": 0.833,
+        "hallucination_rate": 0.2,
+        "supported_claims": 4,
+        "total_claims": 5,
+        "hallucinated_claims": 1,
+        "target_concepts_recalled": 5,
+        "total_target_concepts": 6,
+        "context_utilized": true
+      },
+      "latency_ms": 78.1
+    },
+    {
+      "id": "rgb_integ_03",
+      "dimension": "Information_Integration",
+      "question": "How does useEffect cleanup function execution relate to component unmounting and dependency changes?",
+      "answer": "<student_query>\n</student_query>\n\n<curriculum_evidence>\nThe cleanup function in `useEffect` is executed before the component unmounts and before each re-execution of the effect, ensuring that side effects are properly cleared [React Hooks Tutorial, Section 3]. This is crucial for preventing memory leaks and ensuring the component's state remains consistent [React Hooks Tutorial, Section 3].\n\nIn the context of component unmounting, the cleanup function is executed before the component is removed from the DOM, allowing for proper cleanup of subscriptions, network controllers, and event listeners [React Hooks Tutorial, Section 3].\n\nThe cleanup function is also executed before each re-execution of the effect, ensuring that the component's state remains consistent and preventing potential issues with side effects [React Hooks Tutorial, Section 3].\n\n</curriculum_evidence>",
+      "expected_answer": "Cleanup function executes before the effect runs again when dependencies change, and runs one final time when the component unmounts to prevent memory leaks.",
+      "dimension_score": 1.0,
+      "reasoning": "The generated answer accurately synthesizes the cleanup function's execution timing relative to component unmounting and dependency changes, explicitly stating it runs before unmounting and before re-execution when dependencies change, directly aligning with the expected integration and retrieved context from React Hooks Tutorial.",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 3,
+        "total_claims": 3,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 4,
+        "total_target_concepts": 4,
+        "context_utilized": true
+      },
+      "latency_ms": 43.3
+    },
+    {
+      "id": "rgb_integ_04",
+      "dimension": "Information_Integration",
+      "question": "How do dictionaries achieve average constant time O(1) lookups in Python and what happens during hash collisions?",
+      "answer": "<student_query_response>\nIn Python, dictionaries achieve average constant time O(1) lookups by utilizing a hash table data structure. When a collision occurs, the hash table rehashes the colliding elements, which is done linearly, but the overall average time per add operation remains constant due to the resizing mechanism [Think Python: How to Think Like a Computer Scientist, Section 209]. The resizing process grows the hash table geometrically, ensuring that the average time per add operation remains constant [Think Python: How to Think Like a Computer Scientist, Section 209]. This is crucial for maintaining an average constant time complexity of O(1) for dictionary lookups.\n\n</student_query_response>",
+      "expected_answer": "Python dictionaries use hash tables where keys are transformed via hash() to compute bucket indices, resolving collisions via open addressing.",
+      "dimension_score": 0.8,
+      "reasoning": "The generated answer correctly identifies the use of hash tables for O(1) lookups but inaccurately states that resizing grows geometrically; the context shows linear rehashing with proportional growth, not geometric. It also mentions 'rehashes colliding elements' which is misleading as collisions are resolved via open addressing (linear probing), not rehashing the entire set.",
+      "ragchecker": {
+        "claim_precision": 0.667,
+        "claim_recall": 0.75,
+        "hallucination_rate": 0.333,
+        "supported_claims": 2,
+        "total_claims": 3,
+        "hallucinated_claims": 1,
+        "target_concepts_recalled": 3,
+        "total_target_concepts": 4,
+        "context_utilized": true
+      },
+      "latency_ms": 59.9
+    },
+    {
+      "id": "rgb_integ_05",
+      "dimension": "Information_Integration",
+      "question": "In relational database design, why does achieving Second Normal Form (2NF) require understanding candidate keys and functional dependencies?",
+      "answer": "<answer>\nAchieving Second Normal Form (2NF) requires understanding candidate keys and functional dependencies because it eliminates partial dependency in composite primary keys [PostgreSQL Database Design, Section 2]. In 2NF, all non-key attributes must be fully functionally dependent on the entire primary key, ensuring that each record is uniquely identified and eliminating data redundancy [PostgreSQL Database Design, Section 2]. This understanding is crucial in relational database design to prevent insertion, update, and deletion anomalies [PostgreSQL Database Design, Section 2].\n</answer>",
+      "expected_answer": "2NF requires 1NF plus eliminating partial dependencies, meaning every non-prime attribute must depend on the whole candidate key, not a proper subset.",
+      "dimension_score": 0.95,
+      "reasoning": "The answer accurately synthesizes the required facets by explicitly linking candidate keys, functional dependencies, and partial dependency elimination to 2NF requirements as per PostgreSQL Database Design Section 2. It correctly emphasizes that non-key attributes must depend on the entire primary key (not a subset) while addressing data redundancy and anomalies without superficial comparisons or inaccuracies.",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 3,
+        "total_claims": 3,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 4,
+        "total_target_concepts": 4,
+        "context_utilized": true
+      },
+      "latency_ms": 50.5
+    },
+    {
+      "id": "rgb_counter_01",
+      "dimension": "Counterfactual_Robustness",
+      "question": "Why does HTML5 require every document to contain at least five <main> elements for accessibility?",
+      "answer": "The premise is incorrect and contradicted by curriculum evidence: [Topic: HTML & CSS Fundamentals] [Subject: <main>] - <main>: Specifies the main, unique content of the document. There must not be more than one <main> element in a document. [HTML & CSS Fundamentals - Chunk 0]",
+      "expected_answer": "Refutation: False premise. HTML5 specifies that a document must not have more than one <main> element.",
+      "dimension_score": 1.0,
+      "reasoning": "The question contains a false premise that HTML5 requires at least five <main> elements for accessibility. In reality, HTML5 specifies that there must not be more than one <main> element in a document, as per the official specification.",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 4,
+        "total_target_concepts": 4,
+        "context_utilized": true
+      },
+      "latency_ms": 38027.2
+    },
+    {
+      "id": "rgb_counter_02",
+      "dimension": "Counterfactual_Robustness",
+      "question": "Why is flex-direction: row oriented vertically from top to bottom?",
+      "answer": "The premise is incorrect according to the course curriculum: - flex-direction: row (default, left to right) | column (top to bottom) | row-reverse | column-reverse. [HTML & CSS Fundamentals - Chunk 2]",
+      "expected_answer": "Refutation: False premise. flex-direction: row lays out items horizontally from left to right; flex-direction: column lays out items vertically.",
+      "dimension_score": 1.0,
+      "reasoning": "The question contains a false premise that flex-direction: row is oriented vertically from top to bottom. The actual behavior is that flex-direction: row lays out items horizontally (left to right) while flex-direction: column lays out items vertically (top to bottom).",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 4,
+        "total_target_concepts": 4,
+        "context_utilized": true
+      },
+      "latency_ms": 3321.5
+    },
+    {
+      "id": "rgb_counter_03",
+      "dimension": "Counterfactual_Robustness",
+      "question": "When using var in JavaScript, why does accessing it before declaration throw a ReferenceError?",
+      "answer": "The premise is incorrect according to the course curriculum: - var: Function-scoped, hoisted with an initial value of undefined, and allows re-declaration. This often caused subtle bugs. [JavaScript ES6+ Deep Dive - Chunk 0]",
+      "expected_answer": "Refutation: False premise. var is hoisted and initialized to undefined, so accessing it before declaration returns undefined without throwing. let and const throw ReferenceError.",
+      "dimension_score": 1.0,
+      "reasoning": "The premise is false because var is hoisted and initialized to undefined before declaration, so accessing it early returns undefined without throwing a ReferenceError. The actual behavior for let/const is that they throw ReferenceError when accessed before declaration.",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 5,
+        "total_target_concepts": 5,
+        "context_utilized": true
+      },
+      "latency_ms": 5588.0
+    },
+    {
+      "id": "rgb_counter_04",
+      "dimension": "Counterfactual_Robustness",
+      "question": "Why can an arrow function be used as a class constructor with the new keyword in ES6?",
+      "answer": "The premise is incorrect and contradicted by curriculum evidence: [Topic: JavaScript ES6+ Deep Dive] 3. Cannot be used as constructors: Invoking an arrow function with `new` throws a TypeError. [JavaScript ES6+ Deep Dive - Chunk 1]",
+      "expected_answer": "Refutation: False premise. Arrow functions do not have a [[Construct]] method or prototype and cannot be invoked with new; doing so throws a TypeError.",
+      "dimension_score": 1.0,
+      "reasoning": "The question contains a false premise that arrow functions can be used as class constructors with `new`. Arrow functions do not have a [[Construct]] method or prototype, so invoking them with `new` throws a TypeError. This is explicitly stated in the expected refutation and curriculum evidence.",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 5,
+        "total_target_concepts": 5,
+        "context_utilized": true
+      },
+      "latency_ms": 35691.3
+    },
+    {
+      "id": "rgb_counter_05",
+      "dimension": "Counterfactual_Robustness",
+      "question": "Why does useEffect execute synchronously before the browser paints the screen?",
+      "answer": "The premise is incorrect according to the course curriculum: - No dependency array `useEffect(() => {})`: Runs after EVERY render. [React Hooks Tutorial - Chunk 2]",
+      "expected_answer": "Refutation: False premise. useEffect runs asynchronously AFTER the browser paints. useLayoutEffect runs synchronously before paint.",
+      "dimension_score": 1.0,
+      "reasoning": "The premise is false; useEffect executes asynchronously after the browser paints the screen (not synchronously before). useLayoutEffect runs synchronously before paint, which is the correct counterfactual for this scenario.",
+      "ragchecker": {
+        "claim_precision": 1.0,
+        "claim_recall": 1.0,
+        "hallucination_rate": 0.0,
+        "supported_claims": 1,
+        "total_claims": 1,
+        "hallucinated_claims": 0,
+        "target_concepts_recalled": 5,
+        "total_target_concepts": 5,
+        "context_utilized": true
+      },
+      "latency_ms": 3106.6
+    }
+  ]
+}

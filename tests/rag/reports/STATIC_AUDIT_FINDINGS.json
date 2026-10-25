@@ -1,0 +1,142 @@
+[
+  {
+    "file": "backend/gateway.js",
+    "line": 316,
+    "category": "EXCEPTION_HANDLING",
+    "type": "EMPTY_CATCH_BLOCK",
+    "snippet": "try { process.kill(workers[port].pid); } catch (e) {}"
+  },
+  {
+    "file": "backend/gateway.js",
+    "line": 323,
+    "category": "EXCEPTION_HANDLING",
+    "type": "EMPTY_CATCH_BLOCK",
+    "snippet": "try { process.kill(workers[port].pid); } catch (e) {}"
+  },
+  {
+    "file": "backend/gateway.js",
+    "line": 338,
+    "category": "EXCEPTION_HANDLING",
+    "type": "EMPTY_CATCH_BLOCK",
+    "snippet": "} catch (e) {}"
+  },
+  {
+    "file": "backend/rag_service.php",
+    "line": 27,
+    "category": "CONFIGURATION",
+    "type": "HARDCODED_NETWORK_ENDPOINT",
+    "snippet": "private static string $ollamaBaseUrl = 'http://localhost:11434';"
+  },
+  {
+    "file": "backend/rag_service.php",
+    "line": 416,
+    "category": "MAGIC_NUMBER",
+    "type": "HARDCODED_THRESHOLD",
+    "snippet": "float $wDense = 0.60,"
+  },
+  {
+    "file": "backend/rag_service.php",
+    "line": 417,
+    "category": "MAGIC_NUMBER",
+    "type": "HARDCODED_THRESHOLD",
+    "snippet": "float $wBm25 = 0.40,"
+  },
+  {
+    "file": "backend/rag_service.php",
+    "line": 459,
+    "category": "MAGIC_NUMBER",
+    "type": "HARDCODED_THRESHOLD",
+    "snippet": "public static function rerankMMR(array $candidates, int $limit = 4, float $lambda = 0.75): array {"
+  },
+  {
+    "file": "backend/rag_service.php",
+    "line": 803,
+    "category": "EXCEPTION_HANDLING",
+    "type": "EMPTY_CATCH_BLOCK",
+    "snippet": "} catch (Throwable $e) {}"
+  },
+  {
+    "file": "backend/rag_service.php",
+    "line": 825,
+    "category": "EXCEPTION_HANDLING",
+    "type": "EMPTY_CATCH_BLOCK",
+    "snippet": "} catch (\\Throwable $e) {}"
+  },
+  {
+    "file": "backend/rag_service.php",
+    "line": 843,
+    "category": "MAGIC_NUMBER",
+    "type": "HARDCODED_THRESHOLD",
+    "snippet": "float $threshold = 0.20,"
+  },
+  {
+    "file": "backend/rag_service.php",
+    "line": 977,
+    "category": "MAGIC_NUMBER",
+    "type": "HARDCODED_THRESHOLD",
+    "snippet": "float $threshold = 0.20"
+  },
+  {
+    "file": "backend/rag_service.php",
+    "line": 1143,
+    "category": "MAGIC_NUMBER",
+    "type": "HARDCODED_THRESHOLD",
+    "snippet": "float $threshold = 0.20,"
+  },
+  {
+    "file": "backend/rag_semantic_mapper.php",
+    "line": 175,
+    "category": "CODE_SMELL",
+    "type": "TODO_OR_FIXME",
+    "snippet": "'/\\bbox\\s+sizing\\s+hack\\s+everyone\\s+puts\\s+at\\s+the\\s+top\\b/i',"
+  },
+  {
+    "file": "backend/rag_safety_boundary.php",
+    "line": 31,
+    "category": "ERROR_SUPPRESSION",
+    "type": "SILENT_OPERATOR",
+    "snippet": "'spring_boot' => ['/\\bspring(\\s*boot)?(\\s*3)?\\b/i', '/\\b@restcontroller\\b/i', '/\\b@pathvariable\\b/i', '/\\bvirtual\\s+threads?\\b/i'],"
+  },
+  {
+    "file": "backend/rag_safety_boundary.php",
+    "line": 84,
+    "category": "CODE_SMELL",
+    "type": "TODO_OR_FIXME",
+    "snippet": "'/\\b(change\\s+my\\s+grade|hack\\s+the\\s+portal|exam\\s+schedule|office\\s+hours)\\b/i'"
+  },
+  {
+    "file": "backend/index.php",
+    "line": 191,
+    "category": "ERROR_SUPPRESSION",
+    "type": "SILENT_OPERATOR",
+    "snippet": "$headers = \"From: noreply@lms.com\\r\\nReply-To: noreply@lms.com\\r\\n\";"
+  },
+  {
+    "file": "backend/index.php",
+    "line": 193,
+    "category": "ERROR_SUPPRESSION",
+    "type": "SILENT_OPERATOR",
+    "snippet": "$mailSent = @mail($email, $subject, $message, $headers, \"-f noreply@lms.com\");"
+  },
+  {
+    "file": "backend/index.php",
+    "line": 2043,
+    "category": "CONFIGURATION",
+    "type": "HARDCODED_NETWORK_ENDPOINT",
+    "snippet": "if ($host === 'localhost:8000' || $host === '127.0.0.1:8000') {"
+  },
+  {
+    "file": "backend/index.php",
+    "line": 2044,
+    "category": "CONFIGURATION",
+    "type": "HARDCODED_NETWORK_ENDPOINT",
+    "snippet": "$host = 'localhost:5173';"
+  },
+  {
+    "file": "backend/auth_middleware.php",
+    "line": 181,
+    "category": "ERROR_SUPPRESSION",
+    "type": "SILENT_OPERATOR",
+    "snippet": "'email' => 'service@lms.internal',"
+  }
+]

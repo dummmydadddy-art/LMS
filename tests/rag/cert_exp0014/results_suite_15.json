@@ -1,0 +1,49 @@
+{
+  "total_operations": 6,
+  "successful_operations": 6,
+  "deletion_compliance": "100.0% (Zero stale chunk residue)",
+  "cache_invalidation_verified": true,
+  "index_consistency": "100.0% MATCH",
+  "operations": [
+    {
+      "op": "ADD",
+      "entity": "TypeScript Generics Chunk",
+      "status": "VERIFIED",
+      "query_affected": "how do typescript generics work",
+      "rank_after_add": 1
+    },
+    {
+      "op": "QUERY_UNAFFECTED",
+      "entity": "React Hooks",
+      "status": "VERIFIED",
+      "query_unaffected": "what is useState hook",
+      "rank_preserved": 1
+    },
+    {
+      "op": "UPDATE",
+      "entity": "Updated with zod-validation-keyword",
+      "status": "VERIFIED",
+      "query_updated": "zod validation in typescript",
+      "rank_after_update": 1
+    },
+    {
+      "op": "DELETE",
+      "entity": "Removed TypeScript Generics Chunk",
+      "status": "VERIFIED",
+      "query_deleted": "how do typescript generics work",
+      "found_after_delete": 0
+    },
+    {
+      "op": "DUPLICATE",
+      "entity": "Duplicate Insertion Check",
+      "status": "VERIFIED",
+      "deduplicated": 1
+    },
+    {
+      "op": "REINDEX",
+      "entity": "In-Memory Corpus Reload",
+      "status": "VERIFIED",
+      "consistency_hash": "MATCH"
+    }
+  ]
+}

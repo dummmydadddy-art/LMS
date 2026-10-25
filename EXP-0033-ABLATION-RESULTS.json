@@ -1,0 +1,787 @@
+{
+    "experiment_id": "EXP-0033",
+    "modes": {
+        "E0": {
+            "mode": "E0",
+            "name": "E0: Baseline R0 + E4",
+            "N": 500,
+            "accuracy": 69.6,
+            "macro_f1": 68.58,
+            "macro_precision": 68.63,
+            "macro_recall": 69.13,
+            "supported_recall": 77,
+            "refutation_recall": 56.79,
+            "not_established_recall": 73.6,
+            "far": 23,
+            "frr": 14.55,
+            "false_abstentions_count": 18,
+            "false_refutations_count": 31,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 164,
+                    "REFUTED": 31,
+                    "NOT_ESTABLISHED": 18
+                },
+                "REFUTED": {
+                    "SUPPORTED": 34,
+                    "REFUTED": 92,
+                    "NOT_ESTABLISHED": 36
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 20,
+                    "REFUTED": 13,
+                    "NOT_ESTABLISHED": 92
+                }
+            },
+            "per_class": {
+                "SUPPORTED": {
+                    "tp": 164,
+                    "fp": 54,
+                    "fn": 49,
+                    "precision": 75.23,
+                    "recall": 77,
+                    "f1": 76.1
+                },
+                "REFUTED": {
+                    "tp": 92,
+                    "fp": 44,
+                    "fn": 70,
+                    "precision": 67.65,
+                    "recall": 56.79,
+                    "f1": 61.74
+                },
+                "NOT_ESTABLISHED": {
+                    "tp": 92,
+                    "fp": 54,
+                    "fn": 33,
+                    "precision": 63.01,
+                    "recall": 73.6,
+                    "f1": 67.9
+                }
+            },
+            "category_accuracy": {
+                "SUPPORTED": {
+                    "total": 125,
+                    "correct": 91,
+                    "accuracy": 72.8
+                },
+                "FALSE_PREMISE": {
+                    "total": 125,
+                    "correct": 69,
+                    "accuracy": 55.2
+                },
+                "AMBIGUOUS": {
+                    "total": 75,
+                    "correct": 46,
+                    "accuracy": 61.33
+                },
+                "OOD": {
+                    "total": 50,
+                    "correct": 46,
+                    "accuracy": 92
+                },
+                "KNOWN_OOD": {
+                    "total": 25,
+                    "correct": 24,
+                    "accuracy": 96
+                },
+                "NOVEL_OOD": {
+                    "total": 25,
+                    "correct": 22,
+                    "accuracy": 88
+                },
+                "PARAPHRASE": {
+                    "total": 50,
+                    "correct": 42,
+                    "accuracy": 84
+                },
+                "ADVERSARIAL": {
+                    "total": 75,
+                    "correct": 54,
+                    "accuracy": 72
+                }
+            },
+            "execution_time_seconds": 604.17
+        },
+        "E1": {
+            "mode": "E1",
+            "name": "E1: Raw MiniLM Score + E4",
+            "N": 500,
+            "accuracy": 48.2,
+            "macro_f1": 46.45,
+            "macro_precision": 61,
+            "macro_recall": 53.02,
+            "supported_recall": 37.56,
+            "refutation_recall": 24.69,
+            "not_established_recall": 96.8,
+            "far": 62.44,
+            "frr": 10.33,
+            "false_abstentions_count": 111,
+            "false_refutations_count": 22,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 80,
+                    "REFUTED": 22,
+                    "NOT_ESTABLISHED": 111
+                },
+                "REFUTED": {
+                    "SUPPORTED": 12,
+                    "REFUTED": 40,
+                    "NOT_ESTABLISHED": 110
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 2,
+                    "REFUTED": 2,
+                    "NOT_ESTABLISHED": 121
+                }
+            },
+            "per_class": {
+                "SUPPORTED": {
+                    "tp": 80,
+                    "fp": 14,
+                    "fn": 133,
+                    "precision": 85.11,
+                    "recall": 37.56,
+                    "f1": 52.12
+                },
+                "REFUTED": {
+                    "tp": 40,
+                    "fp": 24,
+                    "fn": 122,
+                    "precision": 62.5,
+                    "recall": 24.69,
+                    "f1": 35.4
+                },
+                "NOT_ESTABLISHED": {
+                    "tp": 121,
+                    "fp": 221,
+                    "fn": 4,
+                    "precision": 35.38,
+                    "recall": 96.8,
+                    "f1": 51.82
+                }
+            },
+            "category_accuracy": {
+                "SUPPORTED": {
+                    "total": 125,
+                    "correct": 47,
+                    "accuracy": 37.6
+                },
+                "FALSE_PREMISE": {
+                    "total": 125,
+                    "correct": 29,
+                    "accuracy": 23.2
+                },
+                "AMBIGUOUS": {
+                    "total": 75,
+                    "correct": 72,
+                    "accuracy": 96
+                },
+                "OOD": {
+                    "total": 50,
+                    "correct": 49,
+                    "accuracy": 98
+                },
+                "KNOWN_OOD": {
+                    "total": 25,
+                    "correct": 24,
+                    "accuracy": 96
+                },
+                "NOVEL_OOD": {
+                    "total": 25,
+                    "correct": 25,
+                    "accuracy": 100
+                },
+                "PARAPHRASE": {
+                    "total": 50,
+                    "correct": 20,
+                    "accuracy": 40
+                },
+                "ADVERSARIAL": {
+                    "total": 75,
+                    "correct": 24,
+                    "accuracy": 32
+                }
+            },
+            "execution_time_seconds": 5.72
+        },
+        "E2": {
+            "mode": "E2",
+            "name": "E2: Min-Max Calibrated + E4",
+            "N": 500,
+            "accuracy": 60.8,
+            "macro_f1": 60.07,
+            "macro_precision": 63.99,
+            "macro_recall": 62.97,
+            "supported_recall": 58.69,
+            "refutation_recall": 43.83,
+            "not_established_recall": 86.4,
+            "far": 41.31,
+            "frr": 13.15,
+            "false_abstentions_count": 60,
+            "false_refutations_count": 28,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 125,
+                    "REFUTED": 28,
+                    "NOT_ESTABLISHED": 60
+                },
+                "REFUTED": {
+                    "SUPPORTED": 22,
+                    "REFUTED": 71,
+                    "NOT_ESTABLISHED": 69
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 8,
+                    "REFUTED": 9,
+                    "NOT_ESTABLISHED": 108
+                }
+            },
+            "per_class": {
+                "SUPPORTED": {
+                    "tp": 125,
+                    "fp": 30,
+                    "fn": 88,
+                    "precision": 80.65,
+                    "recall": 58.69,
+                    "f1": 67.93
+                },
+                "REFUTED": {
+                    "tp": 71,
+                    "fp": 37,
+                    "fn": 91,
+                    "precision": 65.74,
+                    "recall": 43.83,
+                    "f1": 52.59
+                },
+                "NOT_ESTABLISHED": {
+                    "tp": 108,
+                    "fp": 129,
+                    "fn": 17,
+                    "precision": 45.57,
+                    "recall": 86.4,
+                    "f1": 59.67
+                }
+            },
+            "category_accuracy": {
+                "SUPPORTED": {
+                    "total": 125,
+                    "correct": 69,
+                    "accuracy": 55.2
+                },
+                "FALSE_PREMISE": {
+                    "total": 125,
+                    "correct": 54,
+                    "accuracy": 43.2
+                },
+                "AMBIGUOUS": {
+                    "total": 75,
+                    "correct": 59,
+                    "accuracy": 78.67
+                },
+                "OOD": {
+                    "total": 50,
+                    "correct": 49,
+                    "accuracy": 98
+                },
+                "KNOWN_OOD": {
+                    "total": 25,
+                    "correct": 24,
+                    "accuracy": 96
+                },
+                "NOVEL_OOD": {
+                    "total": 25,
+                    "correct": 25,
+                    "accuracy": 100
+                },
+                "PARAPHRASE": {
+                    "total": 50,
+                    "correct": 34,
+                    "accuracy": 68
+                },
+                "ADVERSARIAL": {
+                    "total": 75,
+                    "correct": 39,
+                    "accuracy": 52
+                }
+            },
+            "execution_time_seconds": 29.75
+        },
+        "E3": {
+            "mode": "E3",
+            "name": "E3: Standard Sigmoid (EXP-0032 R4) + E4",
+            "N": 500,
+            "accuracy": 51.8,
+            "macro_f1": 50.73,
+            "macro_precision": 62.2,
+            "macro_recall": 56,
+            "supported_recall": 42.72,
+            "refutation_recall": 30.86,
+            "not_established_recall": 94.4,
+            "far": 57.28,
+            "frr": 11.27,
+            "false_abstentions_count": 98,
+            "false_refutations_count": 24,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 91,
+                    "REFUTED": 24,
+                    "NOT_ESTABLISHED": 98
+                },
+                "REFUTED": {
+                    "SUPPORTED": 13,
+                    "REFUTED": 50,
+                    "NOT_ESTABLISHED": 99
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 2,
+                    "REFUTED": 5,
+                    "NOT_ESTABLISHED": 118
+                }
+            },
+            "per_class": {
+                "SUPPORTED": {
+                    "tp": 91,
+                    "fp": 15,
+                    "fn": 122,
+                    "precision": 85.85,
+                    "recall": 42.72,
+                    "f1": 57.05
+                },
+                "REFUTED": {
+                    "tp": 50,
+                    "fp": 29,
+                    "fn": 112,
+                    "precision": 63.29,
+                    "recall": 30.86,
+                    "f1": 41.49
+                },
+                "NOT_ESTABLISHED": {
+                    "tp": 118,
+                    "fp": 197,
+                    "fn": 7,
+                    "precision": 37.46,
+                    "recall": 94.4,
+                    "f1": 53.64
+                }
+            },
+            "category_accuracy": {
+                "SUPPORTED": {
+                    "total": 125,
+                    "correct": 48,
+                    "accuracy": 38.4
+                },
+                "FALSE_PREMISE": {
+                    "total": 125,
+                    "correct": 36,
+                    "accuracy": 28.8
+                },
+                "AMBIGUOUS": {
+                    "total": 75,
+                    "correct": 69,
+                    "accuracy": 92
+                },
+                "OOD": {
+                    "total": 50,
+                    "correct": 49,
+                    "accuracy": 98
+                },
+                "KNOWN_OOD": {
+                    "total": 25,
+                    "correct": 24,
+                    "accuracy": 96
+                },
+                "NOVEL_OOD": {
+                    "total": 25,
+                    "correct": 25,
+                    "accuracy": 100
+                },
+                "PARAPHRASE": {
+                    "total": 50,
+                    "correct": 26,
+                    "accuracy": 52
+                },
+                "ADVERSARIAL": {
+                    "total": 75,
+                    "correct": 31,
+                    "accuracy": 41.33
+                }
+            },
+            "execution_time_seconds": 3.95
+        },
+        "E4": {
+            "mode": "E4",
+            "name": "E4: Temperature Scaling (T=2.6559) + E4",
+            "N": 500,
+            "accuracy": 56,
+            "macro_f1": 55.16,
+            "macro_precision": 63.45,
+            "macro_recall": 59.62,
+            "supported_recall": 48.83,
+            "refutation_recall": 36.42,
+            "not_established_recall": 93.6,
+            "far": 51.17,
+            "frr": 12.21,
+            "false_abstentions_count": 83,
+            "false_refutations_count": 26,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 104,
+                    "REFUTED": 26,
+                    "NOT_ESTABLISHED": 83
+                },
+                "REFUTED": {
+                    "SUPPORTED": 17,
+                    "REFUTED": 59,
+                    "NOT_ESTABLISHED": 86
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 3,
+                    "REFUTED": 5,
+                    "NOT_ESTABLISHED": 117
+                }
+            },
+            "per_class": {
+                "SUPPORTED": {
+                    "tp": 104,
+                    "fp": 20,
+                    "fn": 109,
+                    "precision": 83.87,
+                    "recall": 48.83,
+                    "f1": 61.72
+                },
+                "REFUTED": {
+                    "tp": 59,
+                    "fp": 31,
+                    "fn": 103,
+                    "precision": 65.56,
+                    "recall": 36.42,
+                    "f1": 46.83
+                },
+                "NOT_ESTABLISHED": {
+                    "tp": 117,
+                    "fp": 169,
+                    "fn": 8,
+                    "precision": 40.91,
+                    "recall": 93.6,
+                    "f1": 56.93
+                }
+            },
+            "category_accuracy": {
+                "SUPPORTED": {
+                    "total": 125,
+                    "correct": 56,
+                    "accuracy": 44.8
+                },
+                "FALSE_PREMISE": {
+                    "total": 125,
+                    "correct": 44,
+                    "accuracy": 35.2
+                },
+                "AMBIGUOUS": {
+                    "total": 75,
+                    "correct": 68,
+                    "accuracy": 90.67
+                },
+                "OOD": {
+                    "total": 50,
+                    "correct": 49,
+                    "accuracy": 98
+                },
+                "KNOWN_OOD": {
+                    "total": 25,
+                    "correct": 24,
+                    "accuracy": 96
+                },
+                "NOVEL_OOD": {
+                    "total": 25,
+                    "correct": 25,
+                    "accuracy": 100
+                },
+                "PARAPHRASE": {
+                    "total": 50,
+                    "correct": 29,
+                    "accuracy": 58
+                },
+                "ADVERSARIAL": {
+                    "total": 75,
+                    "correct": 34,
+                    "accuracy": 45.33
+                }
+            },
+            "execution_time_seconds": 4.57
+        },
+        "E5": {
+            "mode": "E5",
+            "name": "E5: Platt Scaling (a=0.6236, b=3.2801) + E4",
+            "N": 500,
+            "accuracy": 62,
+            "macro_f1": 61.38,
+            "macro_precision": 63.94,
+            "macro_recall": 63.59,
+            "supported_recall": 61.03,
+            "refutation_recall": 48.15,
+            "not_established_recall": 81.6,
+            "far": 38.97,
+            "frr": 13.15,
+            "false_abstentions_count": 55,
+            "false_refutations_count": 28,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 130,
+                    "REFUTED": 28,
+                    "NOT_ESTABLISHED": 55
+                },
+                "REFUTED": {
+                    "SUPPORTED": 24,
+                    "REFUTED": 78,
+                    "NOT_ESTABLISHED": 60
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 10,
+                    "REFUTED": 13,
+                    "NOT_ESTABLISHED": 102
+                }
+            },
+            "per_class": {
+                "SUPPORTED": {
+                    "tp": 130,
+                    "fp": 34,
+                    "fn": 83,
+                    "precision": 79.27,
+                    "recall": 61.03,
+                    "f1": 68.97
+                },
+                "REFUTED": {
+                    "tp": 78,
+                    "fp": 41,
+                    "fn": 84,
+                    "precision": 65.55,
+                    "recall": 48.15,
+                    "f1": 55.52
+                },
+                "NOT_ESTABLISHED": {
+                    "tp": 102,
+                    "fp": 115,
+                    "fn": 23,
+                    "precision": 47,
+                    "recall": 81.6,
+                    "f1": 59.65
+                }
+            },
+            "category_accuracy": {
+                "SUPPORTED": {
+                    "total": 125,
+                    "correct": 71,
+                    "accuracy": 56.8
+                },
+                "FALSE_PREMISE": {
+                    "total": 125,
+                    "correct": 59,
+                    "accuracy": 47.2
+                },
+                "AMBIGUOUS": {
+                    "total": 75,
+                    "correct": 55,
+                    "accuracy": 73.33
+                },
+                "OOD": {
+                    "total": 50,
+                    "correct": 47,
+                    "accuracy": 94
+                },
+                "KNOWN_OOD": {
+                    "total": 25,
+                    "correct": 24,
+                    "accuracy": 96
+                },
+                "NOVEL_OOD": {
+                    "total": 25,
+                    "correct": 23,
+                    "accuracy": 92
+                },
+                "PARAPHRASE": {
+                    "total": 50,
+                    "correct": 34,
+                    "accuracy": 68
+                },
+                "ADVERSARIAL": {
+                    "total": 75,
+                    "correct": 44,
+                    "accuracy": 58.67
+                }
+            },
+            "execution_time_seconds": 15.11
+        },
+        "E6": {
+            "mode": "E6",
+            "name": "E6: Platt Scaling + Tuned Evidence Gate (0.35) + E4",
+            "N": 500,
+            "accuracy": 62,
+            "macro_f1": 61.47,
+            "macro_precision": 64.61,
+            "macro_recall": 64.03,
+            "supported_recall": 59.15,
+            "refutation_recall": 48.15,
+            "not_established_recall": 84.8,
+            "far": 40.85,
+            "frr": 13.15,
+            "false_abstentions_count": 59,
+            "false_refutations_count": 28,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 126,
+                    "REFUTED": 28,
+                    "NOT_ESTABLISHED": 59
+                },
+                "REFUTED": {
+                    "SUPPORTED": 23,
+                    "REFUTED": 78,
+                    "NOT_ESTABLISHED": 61
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 8,
+                    "REFUTED": 11,
+                    "NOT_ESTABLISHED": 106
+                }
+            },
+            "per_class": {
+                "SUPPORTED": {
+                    "tp": 126,
+                    "fp": 31,
+                    "fn": 87,
+                    "precision": 80.25,
+                    "recall": 59.15,
+                    "f1": 68.11
+                },
+                "REFUTED": {
+                    "tp": 78,
+                    "fp": 39,
+                    "fn": 84,
+                    "precision": 66.67,
+                    "recall": 48.15,
+                    "f1": 55.91
+                },
+                "NOT_ESTABLISHED": {
+                    "tp": 106,
+                    "fp": 120,
+                    "fn": 19,
+                    "precision": 46.9,
+                    "recall": 84.8,
+                    "f1": 60.4
+                }
+            },
+            "category_accuracy": {
+                "SUPPORTED": {
+                    "total": 125,
+                    "correct": 69,
+                    "accuracy": 55.2
+                },
+                "FALSE_PREMISE": {
+                    "total": 125,
+                    "correct": 59,
+                    "accuracy": 47.2
+                },
+                "AMBIGUOUS": {
+                    "total": 75,
+                    "correct": 59,
+                    "accuracy": 78.67
+                },
+                "OOD": {
+                    "total": 50,
+                    "correct": 47,
+                    "accuracy": 94
+                },
+                "KNOWN_OOD": {
+                    "total": 25,
+                    "correct": 24,
+                    "accuracy": 96
+                },
+                "NOVEL_OOD": {
+                    "total": 25,
+                    "correct": 23,
+                    "accuracy": 92
+                },
+                "PARAPHRASE": {
+                    "total": 50,
+                    "correct": 34,
+                    "accuracy": 68
+                },
+                "ADVERSARIAL": {
+                    "total": 75,
+                    "correct": 42,
+                    "accuracy": 56
+                }
+            },
+            "execution_time_seconds": 6.16
+        }
+    },
+    "statistical_significance": {
+        "E0_vs_E5": {
+            "comparison": "Baseline R0 vs Platt Calibrated R4",
+            "mode_A": "E0",
+            "mode_B": "E5",
+            "n01": 13,
+            "n10": 51,
+            "n11": 297,
+            "n00": 139,
+            "chi2": 21.3906,
+            "p_value": 2.0e-6
+        },
+        "E0_vs_E6": {
+            "comparison": "Baseline R0 vs Platt Calibrated R4 + Tuned Gate (0.35)",
+            "mode_A": "E0",
+            "mode_B": "E6",
+            "n01": 16,
+            "n10": 54,
+            "n11": 294,
+            "n00": 136,
+            "chi2": 19.5571,
+            "p_value": 5.0e-6
+        },
+        "E3_vs_E5": {
+            "comparison": "Raw Sigmoid R4 vs Platt Calibrated R4",
+            "mode_A": "E3",
+            "mode_B": "E5",
+            "n01": 67,
+            "n10": 16,
+            "n11": 243,
+            "n00": 174,
+            "chi2": 30.1205,
+            "p_value": 0
+        },
+        "E3_vs_E6": {
+            "comparison": "Raw Sigmoid R4 vs Platt Calibrated R4 + Tuned Gate",
+            "mode_A": "E3",
+            "mode_B": "E6",
+            "n01": 63,
+            "n10": 12,
+            "n11": 247,
+            "n00": 178,
+            "chi2": 33.3333,
+            "p_value": 0
+        },
+        "E1_vs_E5": {
+            "comparison": "Raw Logit R4 vs Platt Calibrated R4",
+            "mode_A": "E1",
+            "mode_B": "E5",
+            "n01": 88,
+            "n10": 19,
+            "n11": 222,
+            "n00": 171,
+            "chi2": 43.215,
+            "p_value": 0
+        },
+        "E4_vs_E5": {
+            "comparison": "Temperature Scaled R4 vs Platt Calibrated R4",
+            "mode_A": "E4",
+            "mode_B": "E5",
+            "n01": 45,
+            "n10": 15,
+            "n11": 265,
+            "n00": 175,
+            "chi2": 14.0167,
+            "p_value": 9.1e-5
+        }
+    }
+}

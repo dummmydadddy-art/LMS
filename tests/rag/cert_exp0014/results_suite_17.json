@@ -1,0 +1,39 @@
+{
+  "total_failure_scenarios_tested": 5,
+  "unhandled_exceptions": 0,
+  "gateway_downtime_seconds": 0,
+  "request_drop_rate": "0.0%",
+  "mean_worker_restart_time_ms": 1000,
+  "scenarios": [
+    {
+      "scenario": "Fast Worker Crash Emulation",
+      "description": "Worker process exit triggers restart handler within 1000ms",
+      "result": "AUTO_RESTART_CONFIRMED",
+      "error_rate": 0
+    },
+    {
+      "scenario": "Gen Worker Crash Emulation",
+      "description": "Gen worker on 8007 restarts gracefully",
+      "result": "AUTO_RESTART_CONFIRMED",
+      "error_rate": 0
+    },
+    {
+      "scenario": "Embedding Timeout Handling",
+      "description": "Network timeout to Ollama falls back gracefully without gateway crash",
+      "result": "GRACEFUL_DEGRADATION",
+      "error_rate": 0
+    },
+    {
+      "scenario": "Malformed JSON Payload",
+      "description": "Client sends broken JSON bytes",
+      "result": "HTTP_400_RETURNED_CLEANLY",
+      "error_rate": 0
+    },
+    {
+      "scenario": "Unregistered API Route",
+      "description": "Request to /invalid/path returns clean 404 without socket hang",
+      "result": "HTTP_404_RETURNED_CLEANLY",
+      "error_rate": 0
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+[
+  {
+    "title": "HTML & CSS Fundamentals",
+    "chunk_index": 0,
+    "content": "HTML5 SEMANTIC ELEMENTS:\nSemantic HTML elements clearly describe their meaning to both the browser and the developer. Key structural elements include:\n- <header>: Represents introductory content or a set of navigational links.\n- <nav>: Defines a set of major navigation links.\n- <main>: Specifies the main, unique content of the document. There must not be more than one <main> element in a document.\n- <article>: Represents a self-contained composition (e.g., blog post, forum post, product card) that is independently distributable.\n- <section>: Represents a standalone section of functionality or thematic grouping of content.\n- <footer>: Contains author information, copyright, or footer links.\nUsing semantic tags improves SEO, screen-reader accessibility (A11y), and code maintainability over generic <div> tags."
+  },
+  {
+    "title": "HTML & CSS Fundamentals",
+    "chunk_index": 1,
+    "content": "CSS BOX MODEL:\nEvery HTML element in a document tree is formatted as a rectangular box. The CSS box model consists of four distinct layers from inside out:\n1. Content: The actual text, image, or media content of the box. Controlled via width and height.\n2. Padding: Transparent area clearing space around the content inside the border.\n3. Border: A border surrounding the padding and content (e.g., border: 1px solid #ccc).\n4. Margin: Transparent space outside the border separating the element from neighboring elements.\nBy default, box-sizing is content-box, meaning padding and border are added onto the specified width. Modern web development universally recommends:\n* { box-sizing: border-box; }\nThis ensures padding and borders are included within the element's total declared width and height."
+  },
+  {
+    "title": "HTML & CSS Fundamentals",
+    "chunk_index": 2,
+    "content": "CSS FLEXBOX LAYOUT GUIDE:\nFlexbox (Flexible Box Layout) is a 1-dimensional layout model designed for distributing space along a single axis (row or column).\nCore container properties:\n- display: flex (initiates the flex formatting context).\n- flex-direction: row (default, left to right) | column (top to bottom) | row-reverse | column-reverse.\n- justify-content: Controls alignment along the Main Axis: flex-start, flex-end, center, space-between (equal space between items), space-around, space-evenly.\n- align-items: Controls alignment along the Cross Axis: stretch (default), center, flex-start, flex-end, baseline.\n- flex-wrap: nowrap (default) | wrap | wrap-reverse. Allows items to break into multiple lines.\n- gap: Defines spacing between flex items without using margins (e.g., gap: 1rem).\nCore child properties:\n- flex-grow: Defines the ability for a flex item to grow if necessary (default 0).\n- flex-shrink: Defines the ability for a flex item to shrink if necessary (default 1).\n- flex-basis: The default size of an element before the remaining space is distributed (e.g., flex-basis: 250px). Shorthand: flex: 1 1 auto."
+  },
+  {
+    "title": "HTML & CSS Fundamentals",
+    "chunk_index": 3,
+    "content": "CSS GRID SYSTEM:\nCSS Grid is a 2-dimensional layout system designed for both columns and rows simultaneously.\n- display: grid: Activates grid container.\n- grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).\n- grid-template-rows: Defines track sizes for rows.\n- gap: Sets spacing between grid cells (e.g., gap: 24px).\n- grid-column / grid-row: Specifies an item's start and end line positions (e.g., grid-column: span 2 spans across two columns)."
+  },
+  {
+    "title": "JavaScript ES6+ Deep Dive",
+    "chunk_index": 0,
+    "content": "VARIABLE DECLARATIONS & SCOPING:\nES6 introduced `let` and `const` to replace `var`:\n- var: Function-scoped, hoisted with an initial value of undefined, and allows re-declaration. This often caused subtle bugs.\n- let: Block-scoped (confined within { }), hoisted into the Temporal Dead Zone (TDZ) where accessing it before declaration throws a ReferenceError. Allows re-assignment but not re-declaration in the same scope.\n- const: Block-scoped, also TDZ hoisted. Must be initialized upon declaration and cannot be reassigned. However, objects and arrays declared with const remain mutable in their properties and elements."
+  },
+  {
+    "title": "JavaScript ES6+ Deep Dive",
+    "chunk_index": 1,
+    "content": "ARROW FUNCTIONS & LEXICAL THIS:\nArrow functions provide concise syntax: `const add = (a, b) => a + b;`\nKey differences from regular functions:\n1. Lexical `this`: Arrow functions do not bind their own `this`; they inherit `this` from the enclosing lexical execution context. This eliminates the need for `.bind(this)` or `const self = this` in callbacks.\n2. No `arguments` object: Use rest parameters `(...args)` instead.\n3. Cannot be used as constructors: Invoking an arrow function with `new` throws a TypeError."
+  },
+  {
+    "title": "JavaScript ES6+ Deep Dive",
+    "chunk_index": 2,
+    "content": "DESTRUCTURING, SPREAD & REST OPERATORS:\n- Object Destructuring: `const { name, age, role = 'student' } = user;` extracts properties into local variables with optional defaults.\n- Array Destructuring: `const [first, second, ...rest] = items;`\n- Spread Operator (`...`): Expands an iterable into individual elements. Used for shallow copying (`const copy = { ...original };`) and merging (`const merged = [...arr1, ...arr2];`).\n- Rest Parameters (`...args`): Condenses multiple function arguments into a true Array object inside the function body."
+  },
+  {
+    "title": "JavaScript ES6+ Deep Dive",
+    "chunk_index": 3,
+    "content": "ASYNCHRONOUS JAVASCRIPT & PROMISES:\nJavaScript is single-threaded and uses an event loop with a Call Stack, Web APIs, Task Queue (Macrotasks: setTimeout, setInterval), and Microtask Queue (Promises, queueMicrotask). Microtasks always take priority over macrotasks.\nA Promise represents an asynchronous operation with three states: pending, fulfilled, or rejected.\nExample promise creation:\n```javascript\nconst fetchData = () => new Promise((resolve, reject) => {\n  setTimeout(() => resolve({ id: 1, name: \"Arjun\" }), 500);\n});\n```\nAsync/Await Syntax:\nBuilt on top of Promises, `async/await` allows asynchronous code to be written sequentially:\n```javascript\nasync function loadStudent() {\n  try {\n    const student = await fetchData();\n    console.log(\"Loaded:\", student.name);\n  } catch (error) {\n    console.error(\"Fetch failed:\", error.message);\n  }\n}\n```\nPromise Utilities:\n- Promise.all([p1, p2]): Fails fast if any promise rejects; returns array of results when all resolve.\n- Promise.allSettled([p1, p2]): Waits for all promises to settle regardless of outcome.\n- Promise.race([p1, p2]): Resolves or rejects as soon as the first promise settles."
+  },
+  {
+    "title": "Node.js & Express REST API Notes",
+    "chunk_index": 0,
+    "content": "NODE.JS ARCHITECTURE & EVENT LOOP:\nNode.js is an asynchronous, event-driven JavaScript runtime built on Chrome's V8 engine and Libuv.\nKey components:\n- Single Main Thread executes JavaScript code sequentially.\n- Libuv provides a thread pool (default 4 worker threads) to handle non-blocking asynchronous I/O operations like file system reads, DNS lookups, and crypto hashing.\n- The Event Loop continuously checks phases: Timers (setTimeout) -> Pending Callbacks -> Idle/Prepare -> Poll (I/O) -> Check (setImmediate) -> Close Callbacks.\nAvoid CPU-intensive operations (heavy loops, synchronous encryption) on the main thread to prevent blocking event handling."
+  },
+  {
+    "title": "Node.js & Express REST API Notes",
+    "chunk_index": 1,
+    "content": "EXPRESS.JS CORE CONCEPTS:\nExpress is a fast, unopinionated minimalist web framework for Node.js.\nBasic structure:\n```javascript\nconst express = require('express');\nconst app = express();\napp.use(express.json()); // Built-in middleware to parse incoming JSON bodies\n```"
+  },
+  {
+    "title": "Node.js & Express REST API Notes",
+    "chunk_index": 2,
+    "content": "MIDDLEWARE IN EXPRESS:\nMiddleware functions are functions that have access to the request object (`req`), response object (`res`), and the next middleware function (`next`).\nCapabilities:\n1. Execute arbitrary code (logging, rate limiting).\n2. Make changes to the request and response objects (`req.user = decodedToken`).\n3. End the request-response cycle (`res.status(401).json({ error: 'Unauthorized' })`).\n4. Call the next middleware in the stack (`next()`).\nError-handling middleware must declare four parameters: `app.use((err, req, res, next) => { ... })`."
+  },
+  {
+    "title": "Node.js & Express REST API Notes",
+    "chunk_index": 3,
+    "content": "RESTFUL API DESIGN PRINCIPLES:\n- Resource-oriented URLs using plural nouns: `/api/students`, `/api/courses`, `/api/materials`.\n- HTTP Verbs indicate actions:\n  - GET: Retrieve resource(s). Must be idempotent and safe.\n  - POST: Create a new resource.\n  - PUT: Replace resource completely.\n  - PATCH: Partially update resource fields.\n  - DELETE: Remove resource.\n- Standard HTTP Status Codes:\n  - 200 OK: Successful request.\n  - 201 Created: Resource successfully created.\n  - 400 Bad Request: Invalid input or missing parameters.\n  - 401 Unauthorized: Missing or invalid authentication token.\n  - 403 Forbidden: Authenticated user lacks permission for this action.\n  - 404 Not Found: Requested resource does not exist.\n  - 500 Internal Server Error: Unhandled server failure."
+  },
+  {
+    "title": "Node.js & Express REST API Notes",
+    "chunk_index": 4,
+    "content": "JWT (JSON WEB TOKEN) AUTHENTICATION:\nA compact, URL-safe means of representing claims between parties.\nStructure: Header.Payload.Signature (Base64Url-encoded).\nAuthentication flow:\n1. Student submits credentials (email/password).\n2. Server validates credentials and signs token with private secret:\n   `const token = jwt.sign({ id: student.id, role: 'STUDENT' }, SECRET, { expiresIn: '7d' });`\n3. Client stores token and sends it in the Authorization header: `Bearer <token>`.\n4. Auth middleware verifies token signature on protected endpoints."
+  },
+  {
+    "title": "PostgreSQL Database Design",
+    "chunk_index": 0,
+    "content": "RELATIONAL DATABASE MODELING:\nA relational database organizes data into tables (relations) with rows (tuples) and columns (attributes).\nRelationship types:\n- One-to-One (1:1): e.g., Student to StudentProfile. Stored by placing a UNIQUE foreign key in one of the tables.\n- One-to-Many (1:N): e.g., Course to Batches. Foreign key is placed in the child table (batches table has course_id references courses(id)).\n- Many-to-Many (M:N): e.g., Students to Batches. Requires a junction (associative) table with composite primary key or foreign keys (student_batches table with student_id and batch_id)."
+  },
+  {
+    "title": "PostgreSQL Database Design",
+    "chunk_index": 1,
+    "content": "DATABASE NORMALIZATION FORMS:\nNormalization eliminates data redundancy and prevents insertion, update, and deletion anomalies.\n1. First Normal Form (1NF):\n   - Each column contains atomic (indivisible) values.\n   - Each record is uniquely identified by a primary key.\n   - No repeating groups of columns.\n2. Second Normal Form (2NF):\n   - Meets 1NF.\n   - All non-key attributes must be fully functionally dependent on the entire primary key (eliminates partial dependency in composite primary keys).\n3. Third Normal Form (3NF):\n   - Meets 2NF.\n   - No transitive dependencies: non-key attributes must depend directly on the primary key, not on another non-key attribute."
+  },
+  {
+    "title": "PostgreSQL Database Design",
+    "chunk_index": 2,
+    "content": "INDEXING STRATEGIES & PERFORMANCE:\nAn index is a separate data structure (typically a B-tree in PostgreSQL) that allows fast lookups without scanning every row in a table.\nTypes of indexes:\n- B-Tree Index: Default index. Excellent for equality (`=`), range queries (`<`, `<=`, `>`, `>=`), and sorting (`ORDER BY`).\n- Unique Index: Enforces uniqueness constraint while indexing (`CREATE UNIQUE INDEX ...`).\n- Composite Index: Indexes multiple columns together. Column order matters (Leftmost prefix rule: an index on (course_id, date) supports queries on course_id alone, but not date alone).\n- Inverted/GIN Index: Used for JSONB, full-text search, and array containment.\n- Vector Index (IVFFlat/HNSW): Used in pgvector for high-dimensional approximate nearest neighbor searches using cosine or L2 distance.\nIndex tradeoffs: Indexes speed up SELECT queries but add overhead to INSERT, UPDATE, and DELETE operations, and consume disk space."
+  },
+  {
+    "title": "PostgreSQL Database Design",
+    "chunk_index": 3,
+    "content": "ACID TRANSACTIONS:\nA transaction is a sequence of SQL statements executed as a single unit of work.\n- Atomicity: All operations succeed, or all are rolled back. No partial changes (`COMMIT` or `ROLLBACK`).\n- Consistency: Data transitions from one valid state to another, respecting all constraints, foreign keys, and triggers.\n- Isolation: Concurrent transactions do not interfere with each other. Isolation levels: Read Uncommitted, Read Committed (Postgres default), Repeatable Read, Serializable.\n- Durability: Once a transaction commits, its changes survive crashes and power failures (persisted via Write-Ahead Logging / WAL)."
+  },
+  {
+    "title": "React Hooks Tutorial",
+    "chunk_index": 0,
+    "content": "REACT HOOKS OVERVIEW & RULES:\nHooks allow functional components to utilize state and lifecycle features without writing class components.\nRules of Hooks:\n1. Only call Hooks at the top level of your component. Do not call Hooks inside loops, conditions, or nested functions.\n2. Only call Hooks from React function components or custom Hooks."
+  },
+  {
+    "title": "React Hooks Tutorial",
+    "chunk_index": 1,
+    "content": "USESTATE HOOK:\n`const [state, setState] = useState(initialValue);`\n- When updating state based on previous state, always use the functional updater pattern:\n  `setCount(prev => prev + 1);`\n- State updates in React 18 are batched automatically across event handlers, promises, and timeouts.\n- React state is immutable: always pass a new copy of arrays or objects (`setItems([...items, newItem])`)."
+  },
+  {
+    "title": "React Hooks Tutorial",
+    "chunk_index": 2,
+    "content": "USEEFFECT HOOK:\nPerforms side effects (data fetching, DOM mutations, subscriptions) in function components.\n`useEffect(() => { ... return () => cleanup(); }, [dependencies]);`\n- No dependency array `useEffect(() => {})`: Runs after EVERY render.\n- Empty array `useEffect(() => {}, [])`: Runs ONCE after initial mount.\n- With dependencies `useEffect(() => {}, [userId])`: Runs after mount and when any dependency value changes by shallow comparison (Object.is).\n- Cleanup function: Returned function executes before the component unmounts and before each re-execution of the effect to clear subscriptions, abort network controllers, or remove event listeners."
+  },
+  {
+    "title": "React Hooks Tutorial",
+    "chunk_index": 3,
+    "content": "USECONTEXT & STATE PROPAGATION:\nEnables sharing global state (user profile, theme, auth token) across components without manual prop drilling.\n1. Create context: `const AuthContext = createContext(null);`\n2. Provide context: `<AuthContext.Provider value={{ user, login, logout }}>{children}</AuthContext.Provider>`\n3. Consume context: `const { user } = useContext(AuthContext);`"
+  },
+  {
+    "title": "React Hooks Tutorial",
+    "chunk_index": 4,
+    "content": "PERFORMANCE HOOKS: USEMEMO & USECALLBACK:\n- useMemo: Memoizes the result of an expensive calculation:\n  `const filteredList = useMemo(() => items.filter(heavyCheck), [items]);`\n- useCallback: Memoizes a callback function definition between renders, preventing unnecessary child re-renders when passing callbacks to React.memo components:\n  `const handleClick = useCallback(() => { doSomething(id); }, [id]);`"
+  },
+  {
+    "title": "React Hooks Tutorial",
+    "chunk_index": 5,
+    "content": "USEREF HOOK:\nReturns a mutable ref object whose `.current` property persists across the entire component lifetime without triggering a re-render when changed:\n1. Referencing DOM elements: `<input ref={inputRef} />` -> `inputRef.current.focus();`\n2. Storing mutable values: Timer IDs, previous state values, render counts."
+  }
+]

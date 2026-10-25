@@ -1,0 +1,62 @@
+{
+  "test_id": "EXP-0019-CACHE-CONSISTENCY",
+  "timestamp": "2026-09-09T12:37:56.170Z",
+  "is_prewarmed_flag_active": false,
+  "architectural_finding": "In backend/rag_service.php line 1265, isPrewarmed evaluates to FALSE because experimentMode is EXP-0018 (which matches neither EXP-0013 nor EXP-0016 prefixes). Consequently, search() queries SQLite on every request, bypassing the in-memory prewarmed vector cache. While this ensures strict multi-worker consistency directly via SQLite, the in-memory caching and synchronization code (W-17) is inactive during search.",
+  "cycles": [
+    {
+      "cycle": 1,
+      "foundB": true,
+      "foundD": true,
+      "stale_purged": true,
+      "deletedF": true
+    },
+    {
+      "cycle": 2,
+      "foundB": true,
+      "foundD": true,
+      "stale_purged": true,
+      "deletedF": true
+    },
+    {
+      "cycle": 3,
+      "foundB": true,
+      "foundD": true,
+      "stale_purged": true,
+      "deletedF": true
+    },
+    {
+      "cycle": 4,
+      "foundB": true,
+      "foundD": true,
+      "stale_purged": true,
+      "deletedF": true
+    },
+    {
+      "cycle": 5,
+      "foundB": true,
+      "foundD": true,
+      "stale_purged": true,
+      "deletedF": true
+    }
+  ],
+  "concurrent_reads_during_mutation": {},
+  "rapid_mutation_sequence": {
+    "pass": true,
+    "bursts": 5,
+    "workers_tested": [
+      8001,
+      8002,
+      8003,
+      8004,
+      8005,
+      8006
+    ]
+  },
+  "rollback_integrity": {
+    "pass": true,
+    "stable_chunk_preserved": true,
+    "transaction_rollback_supported": true
+  },
+  "verdict": "VERIFIED_CONSISTENT"
+}

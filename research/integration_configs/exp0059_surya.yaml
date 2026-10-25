@@ -1,0 +1,21 @@
+experiment_id: EXP-0059
+base_commit: fc7e5021a40566f040fbbdaea4d5f04e770a6b40
+description: Selective Surya OCR and Layout Processing for Difficult Pages
+feature_flags:
+  ENABLE_DOCLING_RS: false
+  ENABLE_PAGEINDEX: false
+  ENABLE_LLAMA_CPP: false
+  ENABLE_LLMLINGUA: false
+  ENABLE_SURYA: true
+  ENABLE_GEMMA3N: false
+  ENABLE_BITNET: false
+  ENABLE_MARKER: false
+document_processor: surya
+ocr_batch_size: 2
+selective_vision: true
+retriever: exp0040
+verifier:
+  name: A4
+  frozen: true
+device: cpu
+seed: 42

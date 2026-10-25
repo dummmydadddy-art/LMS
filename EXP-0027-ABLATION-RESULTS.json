@@ -1,0 +1,212 @@
+{
+    "experiment": "EXP-0027",
+    "timestamp": "2026-09-13T10:04:40+00:00",
+    "dataset": "EXP-0025-DEVELOPMENT-DATASET.json",
+    "total_cases": 400,
+    "ablation_results": {
+        "A0": {
+            "mode": "A0",
+            "accuracy_pct": 89.25,
+            "macro_f1_pct": 89.38,
+            "far_pct": 6.67,
+            "refutation_recall_pct": 86,
+            "legitimate_negation_frr_pct": 0,
+            "unknown_recall_pct": 100,
+            "supported_recall_pct": 85.33,
+            "evidence_used_invariant_pct": 100,
+            "tier1_usage_pct": 100,
+            "tier2_usage_pct": 0,
+            "tier2_latency_avg_ms": 0,
+            "tier2_latency_p50_ms": 0,
+            "tier2_latency_p95_ms": 0,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 128,
+                    "REFUTED": 13,
+                    "NOT_ESTABLISHED": 9
+                },
+                "REFUTED": {
+                    "SUPPORTED": 10,
+                    "REFUTED": 129,
+                    "NOT_ESTABLISHED": 11
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 0,
+                    "NOT_ESTABLISHED": 100
+                }
+            },
+            "elapsed_seconds": 4.79
+        },
+        "A1": {
+            "mode": "A1",
+            "accuracy_pct": 73.25,
+            "macro_f1_pct": 72.46,
+            "far_pct": 39.33,
+            "refutation_recall_pct": 44.67,
+            "legitimate_negation_frr_pct": 0,
+            "unknown_recall_pct": 86,
+            "supported_recall_pct": 93.33,
+            "evidence_used_invariant_pct": 100,
+            "tier1_usage_pct": 5.25,
+            "tier2_usage_pct": 94.75,
+            "tier2_latency_avg_ms": 1021.2,
+            "tier2_latency_p50_ms": 989.7,
+            "tier2_latency_p95_ms": 1231.9,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 140,
+                    "REFUTED": 5,
+                    "NOT_ESTABLISHED": 5
+                },
+                "REFUTED": {
+                    "SUPPORTED": 59,
+                    "REFUTED": 67,
+                    "NOT_ESTABLISHED": 24
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 12,
+                    "REFUTED": 2,
+                    "NOT_ESTABLISHED": 86
+                }
+            },
+            "elapsed_seconds": 438.45
+        },
+        "A2": {
+            "mode": "A2",
+            "accuracy_pct": 88.25,
+            "macro_f1_pct": 88.41,
+            "far_pct": 6.67,
+            "refutation_recall_pct": 91.33,
+            "legitimate_negation_frr_pct": 0,
+            "unknown_recall_pct": 86,
+            "supported_recall_pct": 86.67,
+            "evidence_used_invariant_pct": 100,
+            "tier1_usage_pct": 39.25,
+            "tier2_usage_pct": 60.75,
+            "tier2_latency_avg_ms": 0.5,
+            "tier2_latency_p50_ms": 0.5,
+            "tier2_latency_p95_ms": 0.5,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 130,
+                    "REFUTED": 17,
+                    "NOT_ESTABLISHED": 3
+                },
+                "REFUTED": {
+                    "SUPPORTED": 10,
+                    "REFUTED": 137,
+                    "NOT_ESTABLISHED": 3
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 12,
+                    "REFUTED": 2,
+                    "NOT_ESTABLISHED": 86
+                }
+            },
+            "elapsed_seconds": 4.77
+        },
+        "A3": {
+            "mode": "A3",
+            "accuracy_pct": 88.25,
+            "macro_f1_pct": 88.41,
+            "far_pct": 6.67,
+            "refutation_recall_pct": 91.33,
+            "legitimate_negation_frr_pct": 0,
+            "unknown_recall_pct": 86,
+            "supported_recall_pct": 86.67,
+            "evidence_used_invariant_pct": 100,
+            "tier1_usage_pct": 39.25,
+            "tier2_usage_pct": 60.75,
+            "tier2_latency_avg_ms": 0.5,
+            "tier2_latency_p50_ms": 0.5,
+            "tier2_latency_p95_ms": 0.5,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 130,
+                    "REFUTED": 17,
+                    "NOT_ESTABLISHED": 3
+                },
+                "REFUTED": {
+                    "SUPPORTED": 10,
+                    "REFUTED": 137,
+                    "NOT_ESTABLISHED": 3
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 12,
+                    "REFUTED": 2,
+                    "NOT_ESTABLISHED": 86
+                }
+            },
+            "elapsed_seconds": 4.66
+        },
+        "A4": {
+            "mode": "A4",
+            "accuracy_pct": 73.25,
+            "macro_f1_pct": 72.46,
+            "far_pct": 39.33,
+            "refutation_recall_pct": 44.67,
+            "legitimate_negation_frr_pct": 0,
+            "unknown_recall_pct": 86,
+            "supported_recall_pct": 93.33,
+            "evidence_used_invariant_pct": 100,
+            "tier1_usage_pct": 5.25,
+            "tier2_usage_pct": 94.75,
+            "tier2_latency_avg_ms": 0.5,
+            "tier2_latency_p50_ms": 0.5,
+            "tier2_latency_p95_ms": 0.5,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 140,
+                    "REFUTED": 5,
+                    "NOT_ESTABLISHED": 5
+                },
+                "REFUTED": {
+                    "SUPPORTED": 59,
+                    "REFUTED": 67,
+                    "NOT_ESTABLISHED": 24
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 12,
+                    "REFUTED": 2,
+                    "NOT_ESTABLISHED": 86
+                }
+            },
+            "elapsed_seconds": 0.16
+        },
+        "A5": {
+            "mode": "A5",
+            "accuracy_pct": 88.25,
+            "macro_f1_pct": 88.41,
+            "far_pct": 6.67,
+            "refutation_recall_pct": 91.33,
+            "legitimate_negation_frr_pct": 0,
+            "unknown_recall_pct": 86,
+            "supported_recall_pct": 86.67,
+            "evidence_used_invariant_pct": 100,
+            "tier1_usage_pct": 39.25,
+            "tier2_usage_pct": 60.75,
+            "tier2_latency_avg_ms": 0.5,
+            "tier2_latency_p50_ms": 0.5,
+            "tier2_latency_p95_ms": 0.5,
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 130,
+                    "REFUTED": 17,
+                    "NOT_ESTABLISHED": 3
+                },
+                "REFUTED": {
+                    "SUPPORTED": 10,
+                    "REFUTED": 137,
+                    "NOT_ESTABLISHED": 3
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 12,
+                    "REFUTED": 2,
+                    "NOT_ESTABLISHED": 86
+                }
+            },
+            "elapsed_seconds": 4.74
+        }
+    }
+}

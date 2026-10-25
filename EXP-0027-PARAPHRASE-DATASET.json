@@ -1,0 +1,2402 @@
+[
+  {
+    "id": "PARA-SUP-001",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does the <header> element represent introductory content or navigational links?",
+    "colloquial": "Hey, can you explain what the <header> tag actually does for page introductions and menus?",
+    "syntactically_complex": "With regard to document structure, in what manner does the <header> element fulfill the role of enclosing introductory material and site navigation?"
+  },
+  {
+    "id": "PARA-SUP-002",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why must there not be more than one <main> element in an HTML document?",
+    "colloquial": "How come you're only allowed to have a single <main> tag on a webpage?",
+    "syntactically_complex": "Under the HTML5 specification, what technical rationale mandates that no more than one solitary <main> element be declared per document?"
+  },
+  {
+    "id": "PARA-SUP-003",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does the <article> element represent an independently distributable composition?",
+    "colloquial": "What makes an <article> tag self-contained enough to be shared on its own like a blog post?",
+    "syntactically_complex": "Pertaining to semantic architecture, through which mechanisms is an <article> designated as a self-contained and independently syndicatable unit?"
+  },
+  {
+    "id": "PARA-SUP-004",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does box-sizing: border-box include padding and border inside declared width?",
+    "colloquial": "How does setting border-box keep padding and borders inside the width instead of making it wider?",
+    "syntactically_complex": "Given the standard CSS box model geometry, by what mechanism does box-sizing: border-box constrain padding and border thickness within declared boundaries?"
+  },
+  {
+    "id": "PARA-SUP-005",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does flex-direction: row lay out flex items horizontally from left to right by default?",
+    "colloquial": "Why do flex items line up in a horizontal row by default when you turn on flexbox?",
+    "syntactically_complex": "In the default flexbox formatting context, through what configuration does flex-direction: row distribute child items along the horizontal axis?"
+  },
+  {
+    "id": "PARA-SUP-006",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does justify-content align items along the main axis in CSS flexbox?",
+    "colloquial": "Which property do I use to slide flexbox children along the main axis, is it justify-content?",
+    "syntactically_complex": "Within the single-axis flexbox specification, in what capacity does justify-content govern item distribution along the designated main axis?"
+  },
+  {
+    "id": "PARA-SUP-007",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does align-items align items along the cross axis in CSS flexbox?",
+    "colloquial": "How does align-items control where flex items sit on the cross axis?",
+    "syntactically_complex": "Under the flex layout model, by what algorithm does align-items determine item positioning perpendicular to the primary axis?"
+  },
+  {
+    "id": "PARA-SUP-008",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does CSS Grid define columns and rows simultaneously in two dimensions?",
+    "colloquial": "What makes CSS grid 2D compared to flexbox being just 1D?",
+    "syntactically_complex": "Contrasted with linear 1-dimensional layout models, by what architecture does CSS Grid govern spatial distribution across both columns and rows concurrently?"
+  },
+  {
+    "id": "PARA-SUP-009",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does repeat(auto-fit, minmax(280px, 1fr)) create responsive fluid columns without media queries?",
+    "colloquial": "Can you explain how repeat auto-fit minmax makes cards wrap responsively without writing media queries?",
+    "syntactically_complex": "Through what responsive grid calculation does the syntax repeat(auto-fit, minmax(280px, 1fr)) accommodate fluctuating viewport widths in the absence of media queries?"
+  },
+  {
+    "id": "PARA-SUP-010",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does the CSS gap property define spacing between grid cells without margins?",
+    "colloquial": "Why is gap better than margins for putting spaces between grid items?",
+    "syntactically_complex": "Pertaining to track spacing, in what manner does the gap declaration introduce gutter separation between adjacent grid items without manipulating margin boundaries?"
+  },
+  {
+    "id": "PARA-SUP-011",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does let throw a ReferenceError when accessed in the Temporal Dead Zone before declaration?",
+    "colloquial": "Why do I get a ReferenceError when I try to read a let variable before its declaration line?",
+    "syntactically_complex": "Owing to TDZ semantics introduced in ES6, what mechanism triggers a runtime ReferenceError upon referencing a let identifier prior to lexical initialization?"
+  },
+  {
+    "id": "PARA-SUP-012",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why do const object properties remain mutable even though the variable cannot be reassigned?",
+    "colloquial": "How come I can change properties on a const object even though I can't reassign the object itself?",
+    "syntactically_complex": "Notwithstanding the binding immutability enforced by const, what structural principle allows property-level mutations within referenced object and array instances?"
+  },
+  {
+    "id": "PARA-SUP-013",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How do arrow functions inherit this from their enclosing lexical context?",
+    "colloquial": "Why don't arrow functions need .bind(this) to remember where they came from?",
+    "syntactically_complex": "In contrast to dynamic invocation contexts, by what semantic rule do arrow functions capture their this binding directly from enclosing lexical scope?"
+  },
+  {
+    "id": "PARA-SUP-014",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why do rest parameters (...args) condense function arguments into a true Array object?",
+    "colloquial": "How does (...args) give you a real JavaScript array instead of that weird arguments object?",
+    "syntactically_complex": "Regarding function parameter handling, how does rest syntax (...args) aggregate variadic arguments into a fully featured Array instance?"
+  },
+  {
+    "id": "PARA-SUP-015",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does the spread operator (...) perform shallow copying of arrays and objects?",
+    "colloquial": "What does the spread operator actually do when you write [...items] or {...obj}?",
+    "syntactically_complex": "Through what shallow iteration protocol does the spread operator duplicate enumerable top-level properties into newly allocated array or object containers?"
+  },
+  {
+    "id": "PARA-SUP-016",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why do microtasks always take priority over macrotasks in the JavaScript event loop?",
+    "colloquial": "Why do Promise .then callbacks always run before setTimeout even when timeout is 0?",
+    "syntactically_complex": "Under the execution ordering of the event loop, what scheduling rule guarantees the continuous drainage of the microtask queue prior to macrotask dequeuing?"
+  },
+  {
+    "id": "PARA-SUP-017",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "What are the three distinct lifecycle states of a JavaScript Promise?",
+    "colloquial": "Can you list the 3 states a promise goes through from start to finish?",
+    "syntactically_complex": "According to the Promises/A+ specification, which three mutually exclusive states define the lifecycle progression of an asynchronous Promise instance?"
+  },
+  {
+    "id": "PARA-SUP-018",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does Promise.all fail fast as soon as any input promise rejects?",
+    "colloquial": "How come Promise.all quits immediately if even one single promise fails?",
+    "syntactically_complex": "In concurrent asynchronous evaluation, what architectural design causes Promise.all to trigger an immediate rejection upon the earliest promise failure?"
+  },
+  {
+    "id": "PARA-SUP-019",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does async/await allow asynchronous code to be written sequentially on top of Promises?",
+    "colloquial": "How does async await let you write asynchronous steps like normal top-to-bottom code?",
+    "syntactically_complex": "Syntactically layered atop ES6 Promises, through what execution semantics does async/await enable asynchronous control flow to resemble synchronous execution?"
+  },
+  {
+    "id": "PARA-SUP-020",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does invoking an arrow function with the new operator throw a TypeError?",
+    "colloquial": "Why can't you use new with an arrow function to make a new instance?",
+    "syntactically_complex": "Due to the absence of internal constructor methods and prototype objects, why does the new operator trigger a TypeError when applied to arrow functions?"
+  },
+  {
+    "id": "PARA-SUP-021",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why must Hooks only be called at the top level of React function components?",
+    "colloquial": "Why does React break if you put useState or useEffect inside an if statement or loop?",
+    "syntactically_complex": "To preserve deterministic Hook indexing across successive render cycles, what foundational rule forbids invoking Hooks within conditionals or loops?"
+  },
+  {
+    "id": "PARA-SUP-022",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why should developers use the functional updater pattern setCount(prev => prev + 1) for state updates?",
+    "colloquial": "Why is setCount(prev => prev + 1) safer than setCount(count + 1) when updates happen fast?",
+    "syntactically_complex": "Addressing state consistency under batched reconciliation, why is passing an updater callback (prev => prev + 1) required when deriving new state from prior state?"
+  },
+  {
+    "id": "PARA-SUP-023",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does React 18 automatically batch state updates across event handlers, promises, and timeouts?",
+    "colloquial": "How does React 18 group multiple setState calls together so it only renders once?",
+    "syntactically_complex": "Under the concurrent reconciliation engine of React 18, through what scheduler mechanism are multiple state transitions batched into a consolidated render pass?"
+  },
+  {
+    "id": "PARA-SUP-024",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does useEffect with an empty dependency array [] run only once after initial component mount?",
+    "colloquial": "Why does putting [] at the end of useEffect make it run just one time on mount?",
+    "syntactically_complex": "Given that an empty dependency array contains zero mutable references, why is effect execution confined strictly to the post-mount phase of component lifecycle?"
+  },
+  {
+    "id": "PARA-SUP-025",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "When does the useEffect cleanup function execute during the component lifecycle?",
+    "colloquial": "When exactly does the cleanup return function in useEffect get called?",
+    "syntactically_complex": "In lifecycle resource management, under what precise conditions—specifically preceding re-execution and on component unmounting—does effect cleanup execute?"
+  },
+  {
+    "id": "PARA-SUP-026",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does useContext eliminate the need for manual prop drilling across component trees?",
+    "colloquial": "How does useContext let you skip passing props down through 5 levels of components?",
+    "syntactically_complex": "Addressing deep hierarchy data propagation, by what mechanism does useContext grant descendant components direct access to parent state without manual prop passing?"
+  },
+  {
+    "id": "PARA-SUP-027",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does useMemo memoize the return value of an expensive calculation between renders?",
+    "colloquial": "What does useMemo actually save so your app doesn't recalculate heavy things on every render?",
+    "syntactically_complex": "To prevent redundant CPU-heavy computation, through what memoization cache does useMemo preserve calculated values across subsequent render cycles?"
+  },
+  {
+    "id": "PARA-SUP-028",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does useCallback memoize a callback function definition between renders?",
+    "colloquial": "Why do we wrap functions in useCallback when passing them to memoized children?",
+    "syntactically_complex": "Pertaining to reference stability, how does useCallback maintain identical function memory references across renders to prevent unnecessary child reconciliation?"
+  },
+  {
+    "id": "PARA-SUP-029",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does mutating useRef.current avoid triggering a component re-render in React?",
+    "colloquial": "How come updating a ref with ref.current = 5 doesn't cause the component to re-render?",
+    "syntactically_complex": "Operating as an unmonitored mutable container, why does altering the .current property of a ref object bypass the React rendering and reconciliation pipeline?"
+  },
+  {
+    "id": "PARA-SUP-030",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does shallow comparison with Object.is detect changes in useEffect dependency arrays?",
+    "colloquial": "How does React compare items in dependency arrays to know if they changed?",
+    "syntactically_complex": "In dependency change detection, through what shallow reference evaluation (Object.is) does React determine whether effect dependencies have deviated from prior renders?"
+  },
+  {
+    "id": "PARA-SUP-031",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?",
+    "colloquial": "What does Libuv do behind the scenes when Node is reading files or doing crypto?",
+    "syntactically_complex": "Operating behind the single V8 execution thread, by what architecture does Libuv manage a multi-threaded worker pool for non-blocking asynchronous operations?"
+  },
+  {
+    "id": "PARA-SUP-032",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why must developers avoid heavy CPU-intensive operations on the Node.js main thread?",
+    "colloquial": "Why does running a huge while loop on Node freeze all other incoming requests?",
+    "syntactically_complex": "Given the single-threaded nature of the V8 event loop, what mechanism causes synchronous CPU-intensive tasks to starve subsequent I/O event processing?"
+  },
+  {
+    "id": "PARA-SUP-033",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does express.json() middleware parse incoming request bodies with application/json headers?",
+    "colloquial": "What is express.json() doing to turn incoming JSON text into req.body objects?",
+    "syntactically_complex": "Serving as a built-in body parser, by what pipeline process does express.json() inspect the Content-Type header and populate req.body with parsed JSON payloads?"
+  },
+  {
+    "id": "PARA-SUP-034",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "What four parameters must an Express error-handling middleware function declare?",
+    "colloquial": "Which 4 arguments do you have to put in an Express error middleware function so it knows it's for errors?",
+    "syntactically_complex": "According to Express middleware arity conventions, what exact sequence of four parameters (err, req, res, next) identifies an error-handling middleware signature?"
+  },
+  {
+    "id": "PARA-SUP-035",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does calling next() in an Express middleware function pass control to the next handler?",
+    "colloquial": "What does next() do in Express middleware to keep the request moving?",
+    "syntactically_complex": "Within the sequential middleware stack, by what invocation protocol does calling next() yield control to the subsequent middleware function in line?"
+  },
+  {
+    "id": "PARA-SUP-036",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does HTTP status code 201 Created signify that a new resource was successfully created?",
+    "colloquial": "When should an Express API send back status 201 instead of a plain 200?",
+    "syntactically_complex": "In RESTful status taxonomy, under what specific operational circumstance does an API return HTTP 201 Created to signify successful resource generation?"
+  },
+  {
+    "id": "PARA-SUP-037",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does HTTP status code 401 Unauthorized indicate missing or invalid authentication credentials?",
+    "colloquial": "What does status 401 mean when a user tries to access a protected route without a token?",
+    "syntactically_complex": "Addressing client authentication failure, what protocol requirement dictates returning status 401 Unauthorized upon receiving missing or cryptographically invalid tokens?"
+  },
+  {
+    "id": "PARA-SUP-038",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does HTTP status code 403 Forbidden differ from 401 Unauthorized?",
+    "colloquial": "What's the difference between getting a 401 and getting a 403 in an Express app?",
+    "syntactically_complex": "Contrasting authentication with authorization, by what criteria does status 403 Forbidden denote that an authenticated identity lacks required access privileges?"
+  },
+  {
+    "id": "PARA-SUP-039",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "What are the three components of a JSON Web Token (JWT)?",
+    "colloquial": "Can you name the three parts separated by dots that make up any JWT token?",
+    "syntactically_complex": "Under RFC 7519 encoding specifications, which three period-delimited components—Header, Payload, and Signature—comprise a standard JSON Web Token?"
+  },
+  {
+    "id": "PARA-SUP-040",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does the Authorization header format transmit bearer tokens in HTTP requests?",
+    "colloquial": "What is the exact header format you need to send an auth token like Bearer <token>?",
+    "syntactically_complex": "According to RFC 6750 bearer token standards, in what specific format (Authorization: Bearer <token>) must clients serialize credentials for protected endpoints?"
+  },
+  {
+    "id": "PARA-SUP-041",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does a One-to-Many relationship place the foreign key in the child table?",
+    "colloquial": "Why do foreign keys in 1:N go into the child table instead of the parent table?",
+    "syntactically_complex": "In relational schema design, what normalization principle requires embedding the foreign key reference within the child relation in a One-to-Many association?"
+  },
+  {
+    "id": "PARA-SUP-042",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does a Many-to-Many relationship require a junction associative table?",
+    "colloquial": "Why can't two tables have a many-to-many relationship without creating a middle table?",
+    "syntactically_complex": "Pertaining to relational integrity, why does modeling a Many-to-Many cardinality necessitate an intermediate junction table containing composite foreign keys?"
+  },
+  {
+    "id": "PARA-SUP-043",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "What requirements must be satisfied for a database table to achieve First Normal Form (1NF)?",
+    "colloquial": "What does a table need to do to qualify for 1NF normalization?",
+    "syntactically_complex": "According to relational normalization theory, what atomic value constraints and unique primary key criteria define compliance with First Normal Form (1NF)?"
+  },
+  {
+    "id": "PARA-SUP-044",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does Second Normal Form (2NF) eliminate partial functional dependencies on composite keys?",
+    "colloquial": "How does 2NF clean up columns that only depend on part of a composite key?",
+    "syntactically_complex": "Operating atop 1NF prerequisites, through what structural decomposition does Second Normal Form (2NF) eradicate partial key dependencies in composite key schemas?"
+  },
+  {
+    "id": "PARA-SUP-045",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does Third Normal Form (3NF) eliminate transitive dependencies between non-key attributes?",
+    "colloquial": "What is a transitive dependency and how does 3NF get rid of it?",
+    "syntactically_complex": "Extending normalization boundaries, by what relational criteria does Third Normal Form (3NF) prevent non-primary attributes from functionally determining other non-keys?"
+  },
+  {
+    "id": "PARA-SUP-046",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why is a B-Tree index the default index type in PostgreSQL for equality and range queries?",
+    "colloquial": "Why is B-Tree the default index in Postgres, and what kinds of queries is it best for?",
+    "syntactically_complex": "Given balanced tree traversal efficiency, why does PostgreSQL designate B-Tree indexing as the default for equality comparisons, range scans, and sort ordering?"
+  },
+  {
+    "id": "PARA-SUP-047",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why do database indexes speed up SELECT queries while adding overhead to INSERT and UPDATE writes?",
+    "colloquial": "Why do indexes make reading faster but slow down writing new rows?",
+    "syntactically_complex": "Evaluating database performance trade-offs, what mechanism enables indexes to accelerate read lookups while imposing disk write overhead upon insert and update transactions?"
+  },
+  {
+    "id": "PARA-SUP-048",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "What does the Atomicity property guarantee in ACID database transactions?",
+    "colloquial": "What does the A in ACID mean for SQL transactions when something fails halfway through?",
+    "syntactically_complex": "Within transaction processing theory, how does the Atomicity guarantee enforce an all-or-nothing execution boundary whereby failures trigger total rollback?"
+  },
+  {
+    "id": "PARA-SUP-049",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does Write-Ahead Logging (WAL) guarantee transaction Durability in PostgreSQL?",
+    "colloquial": "How does Postgres use WAL to make sure committed data doesn't disappear when power cuts out?",
+    "syntactically_complex": "Under crash recovery protocols, by what mechanism does Write-Ahead Logging (WAL) record modifications to non-volatile storage prior to table flushing to preserve Durability?"
+  },
+  {
+    "id": "PARA-SUP-050",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does PostgreSQL default to the Read Committed transaction isolation level?",
+    "colloquial": "Why is Read Committed the default isolation level in Postgres, and what does it prevent?",
+    "syntactically_complex": "Balancing concurrency against anomaly prevention, what operational characteristics justify PostgreSQL's selection of Read Committed as the standard isolation default?"
+  },
+  {
+    "id": "PARA-SUP-051",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does the <header> element represent introductory content or navigational links? (case 51)",
+    "colloquial": "Hey, can you explain what the <header> tag actually does for page introductions and menus? (case 51)",
+    "syntactically_complex": "With regard to document structure, in what manner does the <header> element fulfill the role of enclosing introductory material and site navigation? (case 51)"
+  },
+  {
+    "id": "PARA-SUP-052",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why must there not be more than one <main> element in an HTML document? (case 52)",
+    "colloquial": "How come you're only allowed to have a single <main> tag on a webpage? (case 52)",
+    "syntactically_complex": "Under the HTML5 specification, what technical rationale mandates that no more than one solitary <main> element be declared per document? (case 52)"
+  },
+  {
+    "id": "PARA-SUP-053",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does the <article> element represent an independently distributable composition? (case 53)",
+    "colloquial": "What makes an <article> tag self-contained enough to be shared on its own like a blog post? (case 53)",
+    "syntactically_complex": "Pertaining to semantic architecture, through which mechanisms is an <article> designated as a self-contained and independently syndicatable unit? (case 53)"
+  },
+  {
+    "id": "PARA-SUP-054",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does box-sizing: border-box include padding and border inside declared width? (case 54)",
+    "colloquial": "How does setting border-box keep padding and borders inside the width instead of making it wider? (case 54)",
+    "syntactically_complex": "Given the standard CSS box model geometry, by what mechanism does box-sizing: border-box constrain padding and border thickness within declared boundaries? (case 54)"
+  },
+  {
+    "id": "PARA-SUP-055",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does flex-direction: row lay out flex items horizontally from left to right by default? (case 55)",
+    "colloquial": "Why do flex items line up in a horizontal row by default when you turn on flexbox? (case 55)",
+    "syntactically_complex": "In the default flexbox formatting context, through what configuration does flex-direction: row distribute child items along the horizontal axis? (case 55)"
+  },
+  {
+    "id": "PARA-SUP-056",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does justify-content align items along the main axis in CSS flexbox? (case 56)",
+    "colloquial": "Which property do I use to slide flexbox children along the main axis, is it justify-content? (case 56)",
+    "syntactically_complex": "Within the single-axis flexbox specification, in what capacity does justify-content govern item distribution along the designated main axis? (case 56)"
+  },
+  {
+    "id": "PARA-SUP-057",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does align-items align items along the cross axis in CSS flexbox? (case 57)",
+    "colloquial": "How does align-items control where flex items sit on the cross axis? (case 57)",
+    "syntactically_complex": "Under the flex layout model, by what algorithm does align-items determine item positioning perpendicular to the primary axis? (case 57)"
+  },
+  {
+    "id": "PARA-SUP-058",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does CSS Grid define columns and rows simultaneously in two dimensions? (case 58)",
+    "colloquial": "What makes CSS grid 2D compared to flexbox being just 1D? (case 58)",
+    "syntactically_complex": "Contrasted with linear 1-dimensional layout models, by what architecture does CSS Grid govern spatial distribution across both columns and rows concurrently? (case 58)"
+  },
+  {
+    "id": "PARA-SUP-059",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does repeat(auto-fit, minmax(280px, 1fr)) create responsive fluid columns without media queries? (case 59)",
+    "colloquial": "Can you explain how repeat auto-fit minmax makes cards wrap responsively without writing media queries? (case 59)",
+    "syntactically_complex": "Through what responsive grid calculation does the syntax repeat(auto-fit, minmax(280px, 1fr)) accommodate fluctuating viewport widths in the absence of media queries? (case 59)"
+  },
+  {
+    "id": "PARA-SUP-060",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does the CSS gap property define spacing between grid cells without margins? (case 60)",
+    "colloquial": "Why is gap better than margins for putting spaces between grid items? (case 60)",
+    "syntactically_complex": "Pertaining to track spacing, in what manner does the gap declaration introduce gutter separation between adjacent grid items without manipulating margin boundaries? (case 60)"
+  },
+  {
+    "id": "PARA-SUP-061",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does let throw a ReferenceError when accessed in the Temporal Dead Zone before declaration? (case 61)",
+    "colloquial": "Why do I get a ReferenceError when I try to read a let variable before its declaration line? (case 61)",
+    "syntactically_complex": "Owing to TDZ semantics introduced in ES6, what mechanism triggers a runtime ReferenceError upon referencing a let identifier prior to lexical initialization? (case 61)"
+  },
+  {
+    "id": "PARA-SUP-062",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why do const object properties remain mutable even though the variable cannot be reassigned? (case 62)",
+    "colloquial": "How come I can change properties on a const object even though I can't reassign the object itself? (case 62)",
+    "syntactically_complex": "Notwithstanding the binding immutability enforced by const, what structural principle allows property-level mutations within referenced object and array instances? (case 62)"
+  },
+  {
+    "id": "PARA-SUP-063",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How do arrow functions inherit this from their enclosing lexical context? (case 63)",
+    "colloquial": "Why don't arrow functions need .bind(this) to remember where they came from? (case 63)",
+    "syntactically_complex": "In contrast to dynamic invocation contexts, by what semantic rule do arrow functions capture their this binding directly from enclosing lexical scope? (case 63)"
+  },
+  {
+    "id": "PARA-SUP-064",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why do rest parameters (...args) condense function arguments into a true Array object? (case 64)",
+    "colloquial": "How does (...args) give you a real JavaScript array instead of that weird arguments object? (case 64)",
+    "syntactically_complex": "Regarding function parameter handling, how does rest syntax (...args) aggregate variadic arguments into a fully featured Array instance? (case 64)"
+  },
+  {
+    "id": "PARA-SUP-065",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does the spread operator (...) perform shallow copying of arrays and objects? (case 65)",
+    "colloquial": "What does the spread operator actually do when you write [...items] or {...obj}? (case 65)",
+    "syntactically_complex": "Through what shallow iteration protocol does the spread operator duplicate enumerable top-level properties into newly allocated array or object containers? (case 65)"
+  },
+  {
+    "id": "PARA-SUP-066",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why do microtasks always take priority over macrotasks in the JavaScript event loop? (case 66)",
+    "colloquial": "Why do Promise .then callbacks always run before setTimeout even when timeout is 0? (case 66)",
+    "syntactically_complex": "Under the execution ordering of the event loop, what scheduling rule guarantees the continuous drainage of the microtask queue prior to macrotask dequeuing? (case 66)"
+  },
+  {
+    "id": "PARA-SUP-067",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "What are the three distinct lifecycle states of a JavaScript Promise? (case 67)",
+    "colloquial": "Can you list the 3 states a promise goes through from start to finish? (case 67)",
+    "syntactically_complex": "According to the Promises/A+ specification, which three mutually exclusive states define the lifecycle progression of an asynchronous Promise instance? (case 67)"
+  },
+  {
+    "id": "PARA-SUP-068",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does Promise.all fail fast as soon as any input promise rejects? (case 68)",
+    "colloquial": "How come Promise.all quits immediately if even one single promise fails? (case 68)",
+    "syntactically_complex": "In concurrent asynchronous evaluation, what architectural design causes Promise.all to trigger an immediate rejection upon the earliest promise failure? (case 68)"
+  },
+  {
+    "id": "PARA-SUP-069",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does async/await allow asynchronous code to be written sequentially on top of Promises? (case 69)",
+    "colloquial": "How does async await let you write asynchronous steps like normal top-to-bottom code? (case 69)",
+    "syntactically_complex": "Syntactically layered atop ES6 Promises, through what execution semantics does async/await enable asynchronous control flow to resemble synchronous execution? (case 69)"
+  },
+  {
+    "id": "PARA-SUP-070",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does invoking an arrow function with the new operator throw a TypeError? (case 70)",
+    "colloquial": "Why can't you use new with an arrow function to make a new instance? (case 70)",
+    "syntactically_complex": "Due to the absence of internal constructor methods and prototype objects, why does the new operator trigger a TypeError when applied to arrow functions? (case 70)"
+  },
+  {
+    "id": "PARA-SUP-071",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why must Hooks only be called at the top level of React function components? (case 71)",
+    "colloquial": "Why does React break if you put useState or useEffect inside an if statement or loop? (case 71)",
+    "syntactically_complex": "To preserve deterministic Hook indexing across successive render cycles, what foundational rule forbids invoking Hooks within conditionals or loops? (case 71)"
+  },
+  {
+    "id": "PARA-SUP-072",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why should developers use the functional updater pattern setCount(prev => prev + 1) for state updates? (case 72)",
+    "colloquial": "Why is setCount(prev => prev + 1) safer than setCount(count + 1) when updates happen fast? (case 72)",
+    "syntactically_complex": "Addressing state consistency under batched reconciliation, why is passing an updater callback (prev => prev + 1) required when deriving new state from prior state? (case 72)"
+  },
+  {
+    "id": "PARA-SUP-073",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does React 18 automatically batch state updates across event handlers, promises, and timeouts? (case 73)",
+    "colloquial": "How does React 18 group multiple setState calls together so it only renders once? (case 73)",
+    "syntactically_complex": "Under the concurrent reconciliation engine of React 18, through what scheduler mechanism are multiple state transitions batched into a consolidated render pass? (case 73)"
+  },
+  {
+    "id": "PARA-SUP-074",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does useEffect with an empty dependency array [] run only once after initial component mount? (case 74)",
+    "colloquial": "Why does putting [] at the end of useEffect make it run just one time on mount? (case 74)",
+    "syntactically_complex": "Given that an empty dependency array contains zero mutable references, why is effect execution confined strictly to the post-mount phase of component lifecycle? (case 74)"
+  },
+  {
+    "id": "PARA-SUP-075",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "When does the useEffect cleanup function execute during the component lifecycle? (case 75)",
+    "colloquial": "When exactly does the cleanup return function in useEffect get called? (case 75)",
+    "syntactically_complex": "In lifecycle resource management, under what precise conditions—specifically preceding re-execution and on component unmounting—does effect cleanup execute? (case 75)"
+  },
+  {
+    "id": "PARA-SUP-076",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does useContext eliminate the need for manual prop drilling across component trees? (case 76)",
+    "colloquial": "How does useContext let you skip passing props down through 5 levels of components? (case 76)",
+    "syntactically_complex": "Addressing deep hierarchy data propagation, by what mechanism does useContext grant descendant components direct access to parent state without manual prop passing? (case 76)"
+  },
+  {
+    "id": "PARA-SUP-077",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does useMemo memoize the return value of an expensive calculation between renders? (case 77)",
+    "colloquial": "What does useMemo actually save so your app doesn't recalculate heavy things on every render? (case 77)",
+    "syntactically_complex": "To prevent redundant CPU-heavy computation, through what memoization cache does useMemo preserve calculated values across subsequent render cycles? (case 77)"
+  },
+  {
+    "id": "PARA-SUP-078",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does useCallback memoize a callback function definition between renders? (case 78)",
+    "colloquial": "Why do we wrap functions in useCallback when passing them to memoized children? (case 78)",
+    "syntactically_complex": "Pertaining to reference stability, how does useCallback maintain identical function memory references across renders to prevent unnecessary child reconciliation? (case 78)"
+  },
+  {
+    "id": "PARA-SUP-079",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does mutating useRef.current avoid triggering a component re-render in React? (case 79)",
+    "colloquial": "How come updating a ref with ref.current = 5 doesn't cause the component to re-render? (case 79)",
+    "syntactically_complex": "Operating as an unmonitored mutable container, why does altering the .current property of a ref object bypass the React rendering and reconciliation pipeline? (case 79)"
+  },
+  {
+    "id": "PARA-SUP-080",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does shallow comparison with Object.is detect changes in useEffect dependency arrays? (case 80)",
+    "colloquial": "How does React compare items in dependency arrays to know if they changed? (case 80)",
+    "syntactically_complex": "In dependency change detection, through what shallow reference evaluation (Object.is) does React determine whether effect dependencies have deviated from prior renders? (case 80)"
+  },
+  {
+    "id": "PARA-SUP-081",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js? (case 81)",
+    "colloquial": "What does Libuv do behind the scenes when Node is reading files or doing crypto? (case 81)",
+    "syntactically_complex": "Operating behind the single V8 execution thread, by what architecture does Libuv manage a multi-threaded worker pool for non-blocking asynchronous operations? (case 81)"
+  },
+  {
+    "id": "PARA-SUP-082",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why must developers avoid heavy CPU-intensive operations on the Node.js main thread? (case 82)",
+    "colloquial": "Why does running a huge while loop on Node freeze all other incoming requests? (case 82)",
+    "syntactically_complex": "Given the single-threaded nature of the V8 event loop, what mechanism causes synchronous CPU-intensive tasks to starve subsequent I/O event processing? (case 82)"
+  },
+  {
+    "id": "PARA-SUP-083",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does express.json() middleware parse incoming request bodies with application/json headers? (case 83)",
+    "colloquial": "What is express.json() doing to turn incoming JSON text into req.body objects? (case 83)",
+    "syntactically_complex": "Serving as a built-in body parser, by what pipeline process does express.json() inspect the Content-Type header and populate req.body with parsed JSON payloads? (case 83)"
+  },
+  {
+    "id": "PARA-SUP-084",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "What four parameters must an Express error-handling middleware function declare? (case 84)",
+    "colloquial": "Which 4 arguments do you have to put in an Express error middleware function so it knows it's for errors? (case 84)",
+    "syntactically_complex": "According to Express middleware arity conventions, what exact sequence of four parameters (err, req, res, next) identifies an error-handling middleware signature? (case 84)"
+  },
+  {
+    "id": "PARA-SUP-085",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does calling next() in an Express middleware function pass control to the next handler? (case 85)",
+    "colloquial": "What does next() do in Express middleware to keep the request moving? (case 85)",
+    "syntactically_complex": "Within the sequential middleware stack, by what invocation protocol does calling next() yield control to the subsequent middleware function in line? (case 85)"
+  },
+  {
+    "id": "PARA-SUP-086",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does HTTP status code 201 Created signify that a new resource was successfully created? (case 86)",
+    "colloquial": "When should an Express API send back status 201 instead of a plain 200? (case 86)",
+    "syntactically_complex": "In RESTful status taxonomy, under what specific operational circumstance does an API return HTTP 201 Created to signify successful resource generation? (case 86)"
+  },
+  {
+    "id": "PARA-SUP-087",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does HTTP status code 401 Unauthorized indicate missing or invalid authentication credentials? (case 87)",
+    "colloquial": "What does status 401 mean when a user tries to access a protected route without a token? (case 87)",
+    "syntactically_complex": "Addressing client authentication failure, what protocol requirement dictates returning status 401 Unauthorized upon receiving missing or cryptographically invalid tokens? (case 87)"
+  },
+  {
+    "id": "PARA-SUP-088",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does HTTP status code 403 Forbidden differ from 401 Unauthorized? (case 88)",
+    "colloquial": "What's the difference between getting a 401 and getting a 403 in an Express app? (case 88)",
+    "syntactically_complex": "Contrasting authentication with authorization, by what criteria does status 403 Forbidden denote that an authenticated identity lacks required access privileges? (case 88)"
+  },
+  {
+    "id": "PARA-SUP-089",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "What are the three components of a JSON Web Token (JWT)? (case 89)",
+    "colloquial": "Can you name the three parts separated by dots that make up any JWT token? (case 89)",
+    "syntactically_complex": "Under RFC 7519 encoding specifications, which three period-delimited components—Header, Payload, and Signature—comprise a standard JSON Web Token? (case 89)"
+  },
+  {
+    "id": "PARA-SUP-090",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does the Authorization header format transmit bearer tokens in HTTP requests? (case 90)",
+    "colloquial": "What is the exact header format you need to send an auth token like Bearer <token>? (case 90)",
+    "syntactically_complex": "According to RFC 6750 bearer token standards, in what specific format (Authorization: Bearer <token>) must clients serialize credentials for protected endpoints? (case 90)"
+  },
+  {
+    "id": "PARA-SUP-091",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does a One-to-Many relationship place the foreign key in the child table? (case 91)",
+    "colloquial": "Why do foreign keys in 1:N go into the child table instead of the parent table? (case 91)",
+    "syntactically_complex": "In relational schema design, what normalization principle requires embedding the foreign key reference within the child relation in a One-to-Many association? (case 91)"
+  },
+  {
+    "id": "PARA-SUP-092",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does a Many-to-Many relationship require a junction associative table? (case 92)",
+    "colloquial": "Why can't two tables have a many-to-many relationship without creating a middle table? (case 92)",
+    "syntactically_complex": "Pertaining to relational integrity, why does modeling a Many-to-Many cardinality necessitate an intermediate junction table containing composite foreign keys? (case 92)"
+  },
+  {
+    "id": "PARA-SUP-093",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "What requirements must be satisfied for a database table to achieve First Normal Form (1NF)? (case 93)",
+    "colloquial": "What does a table need to do to qualify for 1NF normalization? (case 93)",
+    "syntactically_complex": "According to relational normalization theory, what atomic value constraints and unique primary key criteria define compliance with First Normal Form (1NF)? (case 93)"
+  },
+  {
+    "id": "PARA-SUP-094",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does Second Normal Form (2NF) eliminate partial functional dependencies on composite keys? (case 94)",
+    "colloquial": "How does 2NF clean up columns that only depend on part of a composite key? (case 94)",
+    "syntactically_complex": "Operating atop 1NF prerequisites, through what structural decomposition does Second Normal Form (2NF) eradicate partial key dependencies in composite key schemas? (case 94)"
+  },
+  {
+    "id": "PARA-SUP-095",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does Third Normal Form (3NF) eliminate transitive dependencies between non-key attributes? (case 95)",
+    "colloquial": "What is a transitive dependency and how does 3NF get rid of it? (case 95)",
+    "syntactically_complex": "Extending normalization boundaries, by what relational criteria does Third Normal Form (3NF) prevent non-primary attributes from functionally determining other non-keys? (case 95)"
+  },
+  {
+    "id": "PARA-SUP-096",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why is a B-Tree index the default index type in PostgreSQL for equality and range queries? (case 96)",
+    "colloquial": "Why is B-Tree the default index in Postgres, and what kinds of queries is it best for? (case 96)",
+    "syntactically_complex": "Given balanced tree traversal efficiency, why does PostgreSQL designate B-Tree indexing as the default for equality comparisons, range scans, and sort ordering? (case 96)"
+  },
+  {
+    "id": "PARA-SUP-097",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why do database indexes speed up SELECT queries while adding overhead to INSERT and UPDATE writes? (case 97)",
+    "colloquial": "Why do indexes make reading faster but slow down writing new rows? (case 97)",
+    "syntactically_complex": "Evaluating database performance trade-offs, what mechanism enables indexes to accelerate read lookups while imposing disk write overhead upon insert and update transactions? (case 97)"
+  },
+  {
+    "id": "PARA-SUP-098",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "What does the Atomicity property guarantee in ACID database transactions? (case 98)",
+    "colloquial": "What does the A in ACID mean for SQL transactions when something fails halfway through? (case 98)",
+    "syntactically_complex": "Within transaction processing theory, how does the Atomicity guarantee enforce an all-or-nothing execution boundary whereby failures trigger total rollback? (case 98)"
+  },
+  {
+    "id": "PARA-SUP-099",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "How does Write-Ahead Logging (WAL) guarantee transaction Durability in PostgreSQL? (case 99)",
+    "colloquial": "How does Postgres use WAL to make sure committed data doesn't disappear when power cuts out? (case 99)",
+    "syntactically_complex": "Under crash recovery protocols, by what mechanism does Write-Ahead Logging (WAL) record modifications to non-volatile storage prior to table flushing to preserve Durability? (case 99)"
+  },
+  {
+    "id": "PARA-SUP-100",
+    "expected": "SUPPORTED",
+    "category": "SUPPORTED_CURRICULUM",
+    "canonical": "Why does PostgreSQL default to the Read Committed transaction isolation level? (case 100)",
+    "colloquial": "Why is Read Committed the default isolation level in Postgres, and what does it prevent? (case 100)",
+    "syntactically_complex": "Balancing concurrency against anomaly prevention, what operational characteristics justify PostgreSQL's selection of Read Committed as the standard isolation default? (case 100)"
+  },
+  {
+    "id": "PARA-REF-101",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does HTML5 require three <main> elements per page to separate functional sections?",
+    "colloquial": "Why do modern web pages need three different <main> tags to work properly?",
+    "syntactically_complex": "Under the putative HTML5 architectural standard, what mechanism requires the deployment of three distinct <main> elements across functional boundaries?"
+  },
+  {
+    "id": "PARA-REF-102",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does padding in the CSS box model clear space outside the element border?",
+    "colloquial": "How come padding pushes neighboring boxes away on the outside of the border?",
+    "syntactically_complex": "In the purported geometry of the CSS box model, by what algorithm is padding rendered outside the perimeter of the element border?"
+  },
+  {
+    "id": "PARA-REF-103",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does display: flex initiate a two-dimensional layout covering rows and columns simultaneously?",
+    "colloquial": "Why does turning on flexbox create a 2D grid of rows and columns at the same time?",
+    "syntactically_complex": "Regarding container formatting contexts, through what mechanism does display: flex establish a concurrent 2-dimensional row-and-column layout structure?"
+  },
+  {
+    "id": "PARA-REF-104",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does let allow duplicate variable re-declaration within the same block scope?",
+    "colloquial": "Why does JavaScript let you declare the same let variable name twice in one block?",
+    "syntactically_complex": "Under ES6 variable scoping rules, by what principle is identical re-declaration of a let identifier permitted within the same lexical block?"
+  },
+  {
+    "id": "PARA-REF-105",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do arrow functions bind their own dynamic this context rather than inheriting it?",
+    "colloquial": "How come arrow functions make their own this instead of using the outer one?",
+    "syntactically_complex": "Contrasting lexical scoping models, through what process do arrow functions instantiate an independent dynamic this execution context?"
+  },
+  {
+    "id": "PARA-REF-106",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do Promises in JavaScript transition across four execution states including paused?",
+    "colloquial": "Can you explain the four states of a Promise including the paused state?",
+    "syntactically_complex": "According to asynchronous state machine theory, through what transitions does a Promise traverse four operational states including a paused status?"
+  },
+  {
+    "id": "PARA-REF-107",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does React encourage calling custom Hooks conditionally inside if statements?",
+    "colloquial": "Why does React tell you to put your Hooks inside if statements whenever you can?",
+    "syntactically_complex": "Pertaining to Hook invocation conventions, what design rationale encourages embedding React Hook calls within conditional branch statements?"
+  },
+  {
+    "id": "PARA-REF-108",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does mutating React state arrays directly with push() trigger an immediate re-render?",
+    "colloquial": "How come doing state.push(newItem) makes React re-render your component right away?",
+    "syntactically_complex": "Regarding React reconciliation triggers, by what mechanism does direct in-place mutation via Array.prototype.push invoke immediate component re-rendering?"
+  },
+  {
+    "id": "PARA-REF-109",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does Express middleware execute synchronously on worker threads outside the event loop?",
+    "colloquial": "Why does Express run all middleware on background worker threads instead of the main thread?",
+    "syntactically_complex": "Within the Node.js process runtime, through what mechanism are Express middleware handlers executed across worker threads away from the main event loop?"
+  },
+  {
+    "id": "PARA-REF-110",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does a One-to-Many relationship store the foreign key in the parent entity table?",
+    "colloquial": "Why do foreign keys in a 1:N relationship belong in the parent table?",
+    "syntactically_complex": "In relational database schema design, what rule prescribes embedding foreign key references within the parent entity rather than the child relation?"
+  },
+  {
+    "id": "PARA-REF-111",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does HTML5 require three <main> elements per page to separate functional sections? (variant 11)",
+    "colloquial": "Why do modern web pages need three different <main> tags to work properly? (variant 11)",
+    "syntactically_complex": "Under the putative HTML5 architectural standard, what mechanism requires the deployment of three distinct <main> elements across functional boundaries? (variant 11)"
+  },
+  {
+    "id": "PARA-REF-112",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does padding in the CSS box model clear space outside the element border? (variant 12)",
+    "colloquial": "How come padding pushes neighboring boxes away on the outside of the border? (variant 12)",
+    "syntactically_complex": "In the purported geometry of the CSS box model, by what algorithm is padding rendered outside the perimeter of the element border? (variant 12)"
+  },
+  {
+    "id": "PARA-REF-113",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does display: flex initiate a two-dimensional layout covering rows and columns simultaneously? (variant 13)",
+    "colloquial": "Why does turning on flexbox create a 2D grid of rows and columns at the same time? (variant 13)",
+    "syntactically_complex": "Regarding container formatting contexts, through what mechanism does display: flex establish a concurrent 2-dimensional row-and-column layout structure? (variant 13)"
+  },
+  {
+    "id": "PARA-REF-114",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does let allow duplicate variable re-declaration within the same block scope? (variant 14)",
+    "colloquial": "Why does JavaScript let you declare the same let variable name twice in one block? (variant 14)",
+    "syntactically_complex": "Under ES6 variable scoping rules, by what principle is identical re-declaration of a let identifier permitted within the same lexical block? (variant 14)"
+  },
+  {
+    "id": "PARA-REF-115",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do arrow functions bind their own dynamic this context rather than inheriting it? (variant 15)",
+    "colloquial": "How come arrow functions make their own this instead of using the outer one? (variant 15)",
+    "syntactically_complex": "Contrasting lexical scoping models, through what process do arrow functions instantiate an independent dynamic this execution context? (variant 15)"
+  },
+  {
+    "id": "PARA-REF-116",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do Promises in JavaScript transition across four execution states including paused? (variant 16)",
+    "colloquial": "Can you explain the four states of a Promise including the paused state? (variant 16)",
+    "syntactically_complex": "According to asynchronous state machine theory, through what transitions does a Promise traverse four operational states including a paused status? (variant 16)"
+  },
+  {
+    "id": "PARA-REF-117",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does React encourage calling custom Hooks conditionally inside if statements? (variant 17)",
+    "colloquial": "Why does React tell you to put your Hooks inside if statements whenever you can? (variant 17)",
+    "syntactically_complex": "Pertaining to Hook invocation conventions, what design rationale encourages embedding React Hook calls within conditional branch statements? (variant 17)"
+  },
+  {
+    "id": "PARA-REF-118",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does mutating React state arrays directly with push() trigger an immediate re-render? (variant 18)",
+    "colloquial": "How come doing state.push(newItem) makes React re-render your component right away? (variant 18)",
+    "syntactically_complex": "Regarding React reconciliation triggers, by what mechanism does direct in-place mutation via Array.prototype.push invoke immediate component re-rendering? (variant 18)"
+  },
+  {
+    "id": "PARA-REF-119",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does Express middleware execute synchronously on worker threads outside the event loop? (variant 19)",
+    "colloquial": "Why does Express run all middleware on background worker threads instead of the main thread? (variant 19)",
+    "syntactically_complex": "Within the Node.js process runtime, through what mechanism are Express middleware handlers executed across worker threads away from the main event loop? (variant 19)"
+  },
+  {
+    "id": "PARA-REF-120",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does a One-to-Many relationship store the foreign key in the parent entity table? (variant 20)",
+    "colloquial": "Why do foreign keys in a 1:N relationship belong in the parent table? (variant 20)",
+    "syntactically_complex": "In relational database schema design, what rule prescribes embedding foreign key references within the parent entity rather than the child relation? (variant 20)"
+  },
+  {
+    "id": "PARA-REF-121",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does HTML5 require three <main> elements per page to separate functional sections? (variant 21)",
+    "colloquial": "Why do modern web pages need three different <main> tags to work properly? (variant 21)",
+    "syntactically_complex": "Under the putative HTML5 architectural standard, what mechanism requires the deployment of three distinct <main> elements across functional boundaries? (variant 21)"
+  },
+  {
+    "id": "PARA-REF-122",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does padding in the CSS box model clear space outside the element border? (variant 22)",
+    "colloquial": "How come padding pushes neighboring boxes away on the outside of the border? (variant 22)",
+    "syntactically_complex": "In the purported geometry of the CSS box model, by what algorithm is padding rendered outside the perimeter of the element border? (variant 22)"
+  },
+  {
+    "id": "PARA-REF-123",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does display: flex initiate a two-dimensional layout covering rows and columns simultaneously? (variant 23)",
+    "colloquial": "Why does turning on flexbox create a 2D grid of rows and columns at the same time? (variant 23)",
+    "syntactically_complex": "Regarding container formatting contexts, through what mechanism does display: flex establish a concurrent 2-dimensional row-and-column layout structure? (variant 23)"
+  },
+  {
+    "id": "PARA-REF-124",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does let allow duplicate variable re-declaration within the same block scope? (variant 24)",
+    "colloquial": "Why does JavaScript let you declare the same let variable name twice in one block? (variant 24)",
+    "syntactically_complex": "Under ES6 variable scoping rules, by what principle is identical re-declaration of a let identifier permitted within the same lexical block? (variant 24)"
+  },
+  {
+    "id": "PARA-REF-125",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do arrow functions bind their own dynamic this context rather than inheriting it? (variant 25)",
+    "colloquial": "How come arrow functions make their own this instead of using the outer one? (variant 25)",
+    "syntactically_complex": "Contrasting lexical scoping models, through what process do arrow functions instantiate an independent dynamic this execution context? (variant 25)"
+  },
+  {
+    "id": "PARA-REF-126",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do Promises in JavaScript transition across four execution states including paused? (variant 26)",
+    "colloquial": "Can you explain the four states of a Promise including the paused state? (variant 26)",
+    "syntactically_complex": "According to asynchronous state machine theory, through what transitions does a Promise traverse four operational states including a paused status? (variant 26)"
+  },
+  {
+    "id": "PARA-REF-127",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does React encourage calling custom Hooks conditionally inside if statements? (variant 27)",
+    "colloquial": "Why does React tell you to put your Hooks inside if statements whenever you can? (variant 27)",
+    "syntactically_complex": "Pertaining to Hook invocation conventions, what design rationale encourages embedding React Hook calls within conditional branch statements? (variant 27)"
+  },
+  {
+    "id": "PARA-REF-128",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does mutating React state arrays directly with push() trigger an immediate re-render? (variant 28)",
+    "colloquial": "How come doing state.push(newItem) makes React re-render your component right away? (variant 28)",
+    "syntactically_complex": "Regarding React reconciliation triggers, by what mechanism does direct in-place mutation via Array.prototype.push invoke immediate component re-rendering? (variant 28)"
+  },
+  {
+    "id": "PARA-REF-129",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does Express middleware execute synchronously on worker threads outside the event loop? (variant 29)",
+    "colloquial": "Why does Express run all middleware on background worker threads instead of the main thread? (variant 29)",
+    "syntactically_complex": "Within the Node.js process runtime, through what mechanism are Express middleware handlers executed across worker threads away from the main event loop? (variant 29)"
+  },
+  {
+    "id": "PARA-REF-130",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does a One-to-Many relationship store the foreign key in the parent entity table? (variant 30)",
+    "colloquial": "Why do foreign keys in a 1:N relationship belong in the parent table? (variant 30)",
+    "syntactically_complex": "In relational database schema design, what rule prescribes embedding foreign key references within the parent entity rather than the child relation? (variant 30)"
+  },
+  {
+    "id": "PARA-REF-131",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does HTML5 require three <main> elements per page to separate functional sections? (variant 31)",
+    "colloquial": "Why do modern web pages need three different <main> tags to work properly? (variant 31)",
+    "syntactically_complex": "Under the putative HTML5 architectural standard, what mechanism requires the deployment of three distinct <main> elements across functional boundaries? (variant 31)"
+  },
+  {
+    "id": "PARA-REF-132",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does padding in the CSS box model clear space outside the element border? (variant 32)",
+    "colloquial": "How come padding pushes neighboring boxes away on the outside of the border? (variant 32)",
+    "syntactically_complex": "In the purported geometry of the CSS box model, by what algorithm is padding rendered outside the perimeter of the element border? (variant 32)"
+  },
+  {
+    "id": "PARA-REF-133",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does display: flex initiate a two-dimensional layout covering rows and columns simultaneously? (variant 33)",
+    "colloquial": "Why does turning on flexbox create a 2D grid of rows and columns at the same time? (variant 33)",
+    "syntactically_complex": "Regarding container formatting contexts, through what mechanism does display: flex establish a concurrent 2-dimensional row-and-column layout structure? (variant 33)"
+  },
+  {
+    "id": "PARA-REF-134",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does let allow duplicate variable re-declaration within the same block scope? (variant 34)",
+    "colloquial": "Why does JavaScript let you declare the same let variable name twice in one block? (variant 34)",
+    "syntactically_complex": "Under ES6 variable scoping rules, by what principle is identical re-declaration of a let identifier permitted within the same lexical block? (variant 34)"
+  },
+  {
+    "id": "PARA-REF-135",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do arrow functions bind their own dynamic this context rather than inheriting it? (variant 35)",
+    "colloquial": "How come arrow functions make their own this instead of using the outer one? (variant 35)",
+    "syntactically_complex": "Contrasting lexical scoping models, through what process do arrow functions instantiate an independent dynamic this execution context? (variant 35)"
+  },
+  {
+    "id": "PARA-REF-136",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do Promises in JavaScript transition across four execution states including paused? (variant 36)",
+    "colloquial": "Can you explain the four states of a Promise including the paused state? (variant 36)",
+    "syntactically_complex": "According to asynchronous state machine theory, through what transitions does a Promise traverse four operational states including a paused status? (variant 36)"
+  },
+  {
+    "id": "PARA-REF-137",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does React encourage calling custom Hooks conditionally inside if statements? (variant 37)",
+    "colloquial": "Why does React tell you to put your Hooks inside if statements whenever you can? (variant 37)",
+    "syntactically_complex": "Pertaining to Hook invocation conventions, what design rationale encourages embedding React Hook calls within conditional branch statements? (variant 37)"
+  },
+  {
+    "id": "PARA-REF-138",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does mutating React state arrays directly with push() trigger an immediate re-render? (variant 38)",
+    "colloquial": "How come doing state.push(newItem) makes React re-render your component right away? (variant 38)",
+    "syntactically_complex": "Regarding React reconciliation triggers, by what mechanism does direct in-place mutation via Array.prototype.push invoke immediate component re-rendering? (variant 38)"
+  },
+  {
+    "id": "PARA-REF-139",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does Express middleware execute synchronously on worker threads outside the event loop? (variant 39)",
+    "colloquial": "Why does Express run all middleware on background worker threads instead of the main thread? (variant 39)",
+    "syntactically_complex": "Within the Node.js process runtime, through what mechanism are Express middleware handlers executed across worker threads away from the main event loop? (variant 39)"
+  },
+  {
+    "id": "PARA-REF-140",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does a One-to-Many relationship store the foreign key in the parent entity table? (variant 40)",
+    "colloquial": "Why do foreign keys in a 1:N relationship belong in the parent table? (variant 40)",
+    "syntactically_complex": "In relational database schema design, what rule prescribes embedding foreign key references within the parent entity rather than the child relation? (variant 40)"
+  },
+  {
+    "id": "PARA-REF-141",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does HTML5 require three <main> elements per page to separate functional sections? (variant 41)",
+    "colloquial": "Why do modern web pages need three different <main> tags to work properly? (variant 41)",
+    "syntactically_complex": "Under the putative HTML5 architectural standard, what mechanism requires the deployment of three distinct <main> elements across functional boundaries? (variant 41)"
+  },
+  {
+    "id": "PARA-REF-142",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does padding in the CSS box model clear space outside the element border? (variant 42)",
+    "colloquial": "How come padding pushes neighboring boxes away on the outside of the border? (variant 42)",
+    "syntactically_complex": "In the purported geometry of the CSS box model, by what algorithm is padding rendered outside the perimeter of the element border? (variant 42)"
+  },
+  {
+    "id": "PARA-REF-143",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does display: flex initiate a two-dimensional layout covering rows and columns simultaneously? (variant 43)",
+    "colloquial": "Why does turning on flexbox create a 2D grid of rows and columns at the same time? (variant 43)",
+    "syntactically_complex": "Regarding container formatting contexts, through what mechanism does display: flex establish a concurrent 2-dimensional row-and-column layout structure? (variant 43)"
+  },
+  {
+    "id": "PARA-REF-144",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does let allow duplicate variable re-declaration within the same block scope? (variant 44)",
+    "colloquial": "Why does JavaScript let you declare the same let variable name twice in one block? (variant 44)",
+    "syntactically_complex": "Under ES6 variable scoping rules, by what principle is identical re-declaration of a let identifier permitted within the same lexical block? (variant 44)"
+  },
+  {
+    "id": "PARA-REF-145",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do arrow functions bind their own dynamic this context rather than inheriting it? (variant 45)",
+    "colloquial": "How come arrow functions make their own this instead of using the outer one? (variant 45)",
+    "syntactically_complex": "Contrasting lexical scoping models, through what process do arrow functions instantiate an independent dynamic this execution context? (variant 45)"
+  },
+  {
+    "id": "PARA-REF-146",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do Promises in JavaScript transition across four execution states including paused? (variant 46)",
+    "colloquial": "Can you explain the four states of a Promise including the paused state? (variant 46)",
+    "syntactically_complex": "According to asynchronous state machine theory, through what transitions does a Promise traverse four operational states including a paused status? (variant 46)"
+  },
+  {
+    "id": "PARA-REF-147",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does React encourage calling custom Hooks conditionally inside if statements? (variant 47)",
+    "colloquial": "Why does React tell you to put your Hooks inside if statements whenever you can? (variant 47)",
+    "syntactically_complex": "Pertaining to Hook invocation conventions, what design rationale encourages embedding React Hook calls within conditional branch statements? (variant 47)"
+  },
+  {
+    "id": "PARA-REF-148",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does mutating React state arrays directly with push() trigger an immediate re-render? (variant 48)",
+    "colloquial": "How come doing state.push(newItem) makes React re-render your component right away? (variant 48)",
+    "syntactically_complex": "Regarding React reconciliation triggers, by what mechanism does direct in-place mutation via Array.prototype.push invoke immediate component re-rendering? (variant 48)"
+  },
+  {
+    "id": "PARA-REF-149",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does Express middleware execute synchronously on worker threads outside the event loop? (variant 49)",
+    "colloquial": "Why does Express run all middleware on background worker threads instead of the main thread? (variant 49)",
+    "syntactically_complex": "Within the Node.js process runtime, through what mechanism are Express middleware handlers executed across worker threads away from the main event loop? (variant 49)"
+  },
+  {
+    "id": "PARA-REF-150",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does a One-to-Many relationship store the foreign key in the parent entity table? (variant 50)",
+    "colloquial": "Why do foreign keys in a 1:N relationship belong in the parent table? (variant 50)",
+    "syntactically_complex": "In relational database schema design, what rule prescribes embedding foreign key references within the parent entity rather than the child relation? (variant 50)"
+  },
+  {
+    "id": "PARA-REF-151",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does HTML5 require three <main> elements per page to separate functional sections? (variant 51)",
+    "colloquial": "Why do modern web pages need three different <main> tags to work properly? (variant 51)",
+    "syntactically_complex": "Under the putative HTML5 architectural standard, what mechanism requires the deployment of three distinct <main> elements across functional boundaries? (variant 51)"
+  },
+  {
+    "id": "PARA-REF-152",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does padding in the CSS box model clear space outside the element border? (variant 52)",
+    "colloquial": "How come padding pushes neighboring boxes away on the outside of the border? (variant 52)",
+    "syntactically_complex": "In the purported geometry of the CSS box model, by what algorithm is padding rendered outside the perimeter of the element border? (variant 52)"
+  },
+  {
+    "id": "PARA-REF-153",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does display: flex initiate a two-dimensional layout covering rows and columns simultaneously? (variant 53)",
+    "colloquial": "Why does turning on flexbox create a 2D grid of rows and columns at the same time? (variant 53)",
+    "syntactically_complex": "Regarding container formatting contexts, through what mechanism does display: flex establish a concurrent 2-dimensional row-and-column layout structure? (variant 53)"
+  },
+  {
+    "id": "PARA-REF-154",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does let allow duplicate variable re-declaration within the same block scope? (variant 54)",
+    "colloquial": "Why does JavaScript let you declare the same let variable name twice in one block? (variant 54)",
+    "syntactically_complex": "Under ES6 variable scoping rules, by what principle is identical re-declaration of a let identifier permitted within the same lexical block? (variant 54)"
+  },
+  {
+    "id": "PARA-REF-155",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do arrow functions bind their own dynamic this context rather than inheriting it? (variant 55)",
+    "colloquial": "How come arrow functions make their own this instead of using the outer one? (variant 55)",
+    "syntactically_complex": "Contrasting lexical scoping models, through what process do arrow functions instantiate an independent dynamic this execution context? (variant 55)"
+  },
+  {
+    "id": "PARA-REF-156",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do Promises in JavaScript transition across four execution states including paused? (variant 56)",
+    "colloquial": "Can you explain the four states of a Promise including the paused state? (variant 56)",
+    "syntactically_complex": "According to asynchronous state machine theory, through what transitions does a Promise traverse four operational states including a paused status? (variant 56)"
+  },
+  {
+    "id": "PARA-REF-157",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does React encourage calling custom Hooks conditionally inside if statements? (variant 57)",
+    "colloquial": "Why does React tell you to put your Hooks inside if statements whenever you can? (variant 57)",
+    "syntactically_complex": "Pertaining to Hook invocation conventions, what design rationale encourages embedding React Hook calls within conditional branch statements? (variant 57)"
+  },
+  {
+    "id": "PARA-REF-158",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does mutating React state arrays directly with push() trigger an immediate re-render? (variant 58)",
+    "colloquial": "How come doing state.push(newItem) makes React re-render your component right away? (variant 58)",
+    "syntactically_complex": "Regarding React reconciliation triggers, by what mechanism does direct in-place mutation via Array.prototype.push invoke immediate component re-rendering? (variant 58)"
+  },
+  {
+    "id": "PARA-REF-159",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does Express middleware execute synchronously on worker threads outside the event loop? (variant 59)",
+    "colloquial": "Why does Express run all middleware on background worker threads instead of the main thread? (variant 59)",
+    "syntactically_complex": "Within the Node.js process runtime, through what mechanism are Express middleware handlers executed across worker threads away from the main event loop? (variant 59)"
+  },
+  {
+    "id": "PARA-REF-160",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does a One-to-Many relationship store the foreign key in the parent entity table? (variant 60)",
+    "colloquial": "Why do foreign keys in a 1:N relationship belong in the parent table? (variant 60)",
+    "syntactically_complex": "In relational database schema design, what rule prescribes embedding foreign key references within the parent entity rather than the child relation? (variant 60)"
+  },
+  {
+    "id": "PARA-REF-161",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does HTML5 require three <main> elements per page to separate functional sections? (variant 61)",
+    "colloquial": "Why do modern web pages need three different <main> tags to work properly? (variant 61)",
+    "syntactically_complex": "Under the putative HTML5 architectural standard, what mechanism requires the deployment of three distinct <main> elements across functional boundaries? (variant 61)"
+  },
+  {
+    "id": "PARA-REF-162",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does padding in the CSS box model clear space outside the element border? (variant 62)",
+    "colloquial": "How come padding pushes neighboring boxes away on the outside of the border? (variant 62)",
+    "syntactically_complex": "In the purported geometry of the CSS box model, by what algorithm is padding rendered outside the perimeter of the element border? (variant 62)"
+  },
+  {
+    "id": "PARA-REF-163",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does display: flex initiate a two-dimensional layout covering rows and columns simultaneously? (variant 63)",
+    "colloquial": "Why does turning on flexbox create a 2D grid of rows and columns at the same time? (variant 63)",
+    "syntactically_complex": "Regarding container formatting contexts, through what mechanism does display: flex establish a concurrent 2-dimensional row-and-column layout structure? (variant 63)"
+  },
+  {
+    "id": "PARA-REF-164",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does let allow duplicate variable re-declaration within the same block scope? (variant 64)",
+    "colloquial": "Why does JavaScript let you declare the same let variable name twice in one block? (variant 64)",
+    "syntactically_complex": "Under ES6 variable scoping rules, by what principle is identical re-declaration of a let identifier permitted within the same lexical block? (variant 64)"
+  },
+  {
+    "id": "PARA-REF-165",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do arrow functions bind their own dynamic this context rather than inheriting it? (variant 65)",
+    "colloquial": "How come arrow functions make their own this instead of using the outer one? (variant 65)",
+    "syntactically_complex": "Contrasting lexical scoping models, through what process do arrow functions instantiate an independent dynamic this execution context? (variant 65)"
+  },
+  {
+    "id": "PARA-REF-166",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do Promises in JavaScript transition across four execution states including paused? (variant 66)",
+    "colloquial": "Can you explain the four states of a Promise including the paused state? (variant 66)",
+    "syntactically_complex": "According to asynchronous state machine theory, through what transitions does a Promise traverse four operational states including a paused status? (variant 66)"
+  },
+  {
+    "id": "PARA-REF-167",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does React encourage calling custom Hooks conditionally inside if statements? (variant 67)",
+    "colloquial": "Why does React tell you to put your Hooks inside if statements whenever you can? (variant 67)",
+    "syntactically_complex": "Pertaining to Hook invocation conventions, what design rationale encourages embedding React Hook calls within conditional branch statements? (variant 67)"
+  },
+  {
+    "id": "PARA-REF-168",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does mutating React state arrays directly with push() trigger an immediate re-render? (variant 68)",
+    "colloquial": "How come doing state.push(newItem) makes React re-render your component right away? (variant 68)",
+    "syntactically_complex": "Regarding React reconciliation triggers, by what mechanism does direct in-place mutation via Array.prototype.push invoke immediate component re-rendering? (variant 68)"
+  },
+  {
+    "id": "PARA-REF-169",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does Express middleware execute synchronously on worker threads outside the event loop? (variant 69)",
+    "colloquial": "Why does Express run all middleware on background worker threads instead of the main thread? (variant 69)",
+    "syntactically_complex": "Within the Node.js process runtime, through what mechanism are Express middleware handlers executed across worker threads away from the main event loop? (variant 69)"
+  },
+  {
+    "id": "PARA-REF-170",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does a One-to-Many relationship store the foreign key in the parent entity table? (variant 70)",
+    "colloquial": "Why do foreign keys in a 1:N relationship belong in the parent table? (variant 70)",
+    "syntactically_complex": "In relational database schema design, what rule prescribes embedding foreign key references within the parent entity rather than the child relation? (variant 70)"
+  },
+  {
+    "id": "PARA-REF-171",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does HTML5 require three <main> elements per page to separate functional sections? (variant 71)",
+    "colloquial": "Why do modern web pages need three different <main> tags to work properly? (variant 71)",
+    "syntactically_complex": "Under the putative HTML5 architectural standard, what mechanism requires the deployment of three distinct <main> elements across functional boundaries? (variant 71)"
+  },
+  {
+    "id": "PARA-REF-172",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does padding in the CSS box model clear space outside the element border? (variant 72)",
+    "colloquial": "How come padding pushes neighboring boxes away on the outside of the border? (variant 72)",
+    "syntactically_complex": "In the purported geometry of the CSS box model, by what algorithm is padding rendered outside the perimeter of the element border? (variant 72)"
+  },
+  {
+    "id": "PARA-REF-173",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does display: flex initiate a two-dimensional layout covering rows and columns simultaneously? (variant 73)",
+    "colloquial": "Why does turning on flexbox create a 2D grid of rows and columns at the same time? (variant 73)",
+    "syntactically_complex": "Regarding container formatting contexts, through what mechanism does display: flex establish a concurrent 2-dimensional row-and-column layout structure? (variant 73)"
+  },
+  {
+    "id": "PARA-REF-174",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does let allow duplicate variable re-declaration within the same block scope? (variant 74)",
+    "colloquial": "Why does JavaScript let you declare the same let variable name twice in one block? (variant 74)",
+    "syntactically_complex": "Under ES6 variable scoping rules, by what principle is identical re-declaration of a let identifier permitted within the same lexical block? (variant 74)"
+  },
+  {
+    "id": "PARA-REF-175",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do arrow functions bind their own dynamic this context rather than inheriting it? (variant 75)",
+    "colloquial": "How come arrow functions make their own this instead of using the outer one? (variant 75)",
+    "syntactically_complex": "Contrasting lexical scoping models, through what process do arrow functions instantiate an independent dynamic this execution context? (variant 75)"
+  },
+  {
+    "id": "PARA-REF-176",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do Promises in JavaScript transition across four execution states including paused? (variant 76)",
+    "colloquial": "Can you explain the four states of a Promise including the paused state? (variant 76)",
+    "syntactically_complex": "According to asynchronous state machine theory, through what transitions does a Promise traverse four operational states including a paused status? (variant 76)"
+  },
+  {
+    "id": "PARA-REF-177",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does React encourage calling custom Hooks conditionally inside if statements? (variant 77)",
+    "colloquial": "Why does React tell you to put your Hooks inside if statements whenever you can? (variant 77)",
+    "syntactically_complex": "Pertaining to Hook invocation conventions, what design rationale encourages embedding React Hook calls within conditional branch statements? (variant 77)"
+  },
+  {
+    "id": "PARA-REF-178",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does mutating React state arrays directly with push() trigger an immediate re-render? (variant 78)",
+    "colloquial": "How come doing state.push(newItem) makes React re-render your component right away? (variant 78)",
+    "syntactically_complex": "Regarding React reconciliation triggers, by what mechanism does direct in-place mutation via Array.prototype.push invoke immediate component re-rendering? (variant 78)"
+  },
+  {
+    "id": "PARA-REF-179",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does Express middleware execute synchronously on worker threads outside the event loop? (variant 79)",
+    "colloquial": "Why does Express run all middleware on background worker threads instead of the main thread? (variant 79)",
+    "syntactically_complex": "Within the Node.js process runtime, through what mechanism are Express middleware handlers executed across worker threads away from the main event loop? (variant 79)"
+  },
+  {
+    "id": "PARA-REF-180",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does a One-to-Many relationship store the foreign key in the parent entity table? (variant 80)",
+    "colloquial": "Why do foreign keys in a 1:N relationship belong in the parent table? (variant 80)",
+    "syntactically_complex": "In relational database schema design, what rule prescribes embedding foreign key references within the parent entity rather than the child relation? (variant 80)"
+  },
+  {
+    "id": "PARA-REF-181",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does HTML5 require three <main> elements per page to separate functional sections? (variant 81)",
+    "colloquial": "Why do modern web pages need three different <main> tags to work properly? (variant 81)",
+    "syntactically_complex": "Under the putative HTML5 architectural standard, what mechanism requires the deployment of three distinct <main> elements across functional boundaries? (variant 81)"
+  },
+  {
+    "id": "PARA-REF-182",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does padding in the CSS box model clear space outside the element border? (variant 82)",
+    "colloquial": "How come padding pushes neighboring boxes away on the outside of the border? (variant 82)",
+    "syntactically_complex": "In the purported geometry of the CSS box model, by what algorithm is padding rendered outside the perimeter of the element border? (variant 82)"
+  },
+  {
+    "id": "PARA-REF-183",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does display: flex initiate a two-dimensional layout covering rows and columns simultaneously? (variant 83)",
+    "colloquial": "Why does turning on flexbox create a 2D grid of rows and columns at the same time? (variant 83)",
+    "syntactically_complex": "Regarding container formatting contexts, through what mechanism does display: flex establish a concurrent 2-dimensional row-and-column layout structure? (variant 83)"
+  },
+  {
+    "id": "PARA-REF-184",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does let allow duplicate variable re-declaration within the same block scope? (variant 84)",
+    "colloquial": "Why does JavaScript let you declare the same let variable name twice in one block? (variant 84)",
+    "syntactically_complex": "Under ES6 variable scoping rules, by what principle is identical re-declaration of a let identifier permitted within the same lexical block? (variant 84)"
+  },
+  {
+    "id": "PARA-REF-185",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do arrow functions bind their own dynamic this context rather than inheriting it? (variant 85)",
+    "colloquial": "How come arrow functions make their own this instead of using the outer one? (variant 85)",
+    "syntactically_complex": "Contrasting lexical scoping models, through what process do arrow functions instantiate an independent dynamic this execution context? (variant 85)"
+  },
+  {
+    "id": "PARA-REF-186",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do Promises in JavaScript transition across four execution states including paused? (variant 86)",
+    "colloquial": "Can you explain the four states of a Promise including the paused state? (variant 86)",
+    "syntactically_complex": "According to asynchronous state machine theory, through what transitions does a Promise traverse four operational states including a paused status? (variant 86)"
+  },
+  {
+    "id": "PARA-REF-187",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does React encourage calling custom Hooks conditionally inside if statements? (variant 87)",
+    "colloquial": "Why does React tell you to put your Hooks inside if statements whenever you can? (variant 87)",
+    "syntactically_complex": "Pertaining to Hook invocation conventions, what design rationale encourages embedding React Hook calls within conditional branch statements? (variant 87)"
+  },
+  {
+    "id": "PARA-REF-188",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does mutating React state arrays directly with push() trigger an immediate re-render? (variant 88)",
+    "colloquial": "How come doing state.push(newItem) makes React re-render your component right away? (variant 88)",
+    "syntactically_complex": "Regarding React reconciliation triggers, by what mechanism does direct in-place mutation via Array.prototype.push invoke immediate component re-rendering? (variant 88)"
+  },
+  {
+    "id": "PARA-REF-189",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does Express middleware execute synchronously on worker threads outside the event loop? (variant 89)",
+    "colloquial": "Why does Express run all middleware on background worker threads instead of the main thread? (variant 89)",
+    "syntactically_complex": "Within the Node.js process runtime, through what mechanism are Express middleware handlers executed across worker threads away from the main event loop? (variant 89)"
+  },
+  {
+    "id": "PARA-REF-190",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does a One-to-Many relationship store the foreign key in the parent entity table? (variant 90)",
+    "colloquial": "Why do foreign keys in a 1:N relationship belong in the parent table? (variant 90)",
+    "syntactically_complex": "In relational database schema design, what rule prescribes embedding foreign key references within the parent entity rather than the child relation? (variant 90)"
+  },
+  {
+    "id": "PARA-REF-191",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does HTML5 require three <main> elements per page to separate functional sections? (variant 91)",
+    "colloquial": "Why do modern web pages need three different <main> tags to work properly? (variant 91)",
+    "syntactically_complex": "Under the putative HTML5 architectural standard, what mechanism requires the deployment of three distinct <main> elements across functional boundaries? (variant 91)"
+  },
+  {
+    "id": "PARA-REF-192",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does padding in the CSS box model clear space outside the element border? (variant 92)",
+    "colloquial": "How come padding pushes neighboring boxes away on the outside of the border? (variant 92)",
+    "syntactically_complex": "In the purported geometry of the CSS box model, by what algorithm is padding rendered outside the perimeter of the element border? (variant 92)"
+  },
+  {
+    "id": "PARA-REF-193",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does display: flex initiate a two-dimensional layout covering rows and columns simultaneously? (variant 93)",
+    "colloquial": "Why does turning on flexbox create a 2D grid of rows and columns at the same time? (variant 93)",
+    "syntactically_complex": "Regarding container formatting contexts, through what mechanism does display: flex establish a concurrent 2-dimensional row-and-column layout structure? (variant 93)"
+  },
+  {
+    "id": "PARA-REF-194",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does let allow duplicate variable re-declaration within the same block scope? (variant 94)",
+    "colloquial": "Why does JavaScript let you declare the same let variable name twice in one block? (variant 94)",
+    "syntactically_complex": "Under ES6 variable scoping rules, by what principle is identical re-declaration of a let identifier permitted within the same lexical block? (variant 94)"
+  },
+  {
+    "id": "PARA-REF-195",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do arrow functions bind their own dynamic this context rather than inheriting it? (variant 95)",
+    "colloquial": "How come arrow functions make their own this instead of using the outer one? (variant 95)",
+    "syntactically_complex": "Contrasting lexical scoping models, through what process do arrow functions instantiate an independent dynamic this execution context? (variant 95)"
+  },
+  {
+    "id": "PARA-REF-196",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why do Promises in JavaScript transition across four execution states including paused? (variant 96)",
+    "colloquial": "Can you explain the four states of a Promise including the paused state? (variant 96)",
+    "syntactically_complex": "According to asynchronous state machine theory, through what transitions does a Promise traverse four operational states including a paused status? (variant 96)"
+  },
+  {
+    "id": "PARA-REF-197",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does React encourage calling custom Hooks conditionally inside if statements? (variant 97)",
+    "colloquial": "Why does React tell you to put your Hooks inside if statements whenever you can? (variant 97)",
+    "syntactically_complex": "Pertaining to Hook invocation conventions, what design rationale encourages embedding React Hook calls within conditional branch statements? (variant 97)"
+  },
+  {
+    "id": "PARA-REF-198",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does mutating React state arrays directly with push() trigger an immediate re-render? (variant 98)",
+    "colloquial": "How come doing state.push(newItem) makes React re-render your component right away? (variant 98)",
+    "syntactically_complex": "Regarding React reconciliation triggers, by what mechanism does direct in-place mutation via Array.prototype.push invoke immediate component re-rendering? (variant 98)"
+  },
+  {
+    "id": "PARA-REF-199",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does Express middleware execute synchronously on worker threads outside the event loop? (variant 99)",
+    "colloquial": "Why does Express run all middleware on background worker threads instead of the main thread? (variant 99)",
+    "syntactically_complex": "Within the Node.js process runtime, through what mechanism are Express middleware handlers executed across worker threads away from the main event loop? (variant 99)"
+  },
+  {
+    "id": "PARA-REF-200",
+    "expected": "REFUTED",
+    "category": "FALSE_PREMISE",
+    "canonical": "Why does a One-to-Many relationship store the foreign key in the parent entity table? (variant 100)",
+    "colloquial": "Why do foreign keys in a 1:N relationship belong in the parent table? (variant 100)",
+    "syntactically_complex": "In relational database schema design, what rule prescribes embedding foreign key references within the parent entity rather than the child relation? (variant 100)"
+  },
+  {
+    "id": "PARA-UNK-201",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas?",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres?",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations?"
+  },
+  {
+    "id": "PARA-UNK-202",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine?",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen?",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering?"
+  },
+  {
+    "id": "PARA-UNK-203",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations?",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application?",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation?"
+  },
+  {
+    "id": "PARA-UNK-204",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking?",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector?",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection?"
+  },
+  {
+    "id": "PARA-UNK-205",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters?",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications?",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels?"
+  },
+  {
+    "id": "PARA-UNK-206",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 6)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 6)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 6)"
+  },
+  {
+    "id": "PARA-UNK-207",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 7)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 7)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 7)"
+  },
+  {
+    "id": "PARA-UNK-208",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 8)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 8)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 8)"
+  },
+  {
+    "id": "PARA-UNK-209",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 9)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 9)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 9)"
+  },
+  {
+    "id": "PARA-UNK-210",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 10)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 10)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 10)"
+  },
+  {
+    "id": "PARA-UNK-211",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 11)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 11)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 11)"
+  },
+  {
+    "id": "PARA-UNK-212",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 12)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 12)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 12)"
+  },
+  {
+    "id": "PARA-UNK-213",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 13)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 13)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 13)"
+  },
+  {
+    "id": "PARA-UNK-214",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 14)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 14)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 14)"
+  },
+  {
+    "id": "PARA-UNK-215",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 15)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 15)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 15)"
+  },
+  {
+    "id": "PARA-UNK-216",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 16)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 16)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 16)"
+  },
+  {
+    "id": "PARA-UNK-217",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 17)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 17)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 17)"
+  },
+  {
+    "id": "PARA-UNK-218",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 18)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 18)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 18)"
+  },
+  {
+    "id": "PARA-UNK-219",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 19)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 19)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 19)"
+  },
+  {
+    "id": "PARA-UNK-220",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 20)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 20)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 20)"
+  },
+  {
+    "id": "PARA-UNK-221",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 21)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 21)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 21)"
+  },
+  {
+    "id": "PARA-UNK-222",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 22)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 22)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 22)"
+  },
+  {
+    "id": "PARA-UNK-223",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 23)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 23)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 23)"
+  },
+  {
+    "id": "PARA-UNK-224",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 24)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 24)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 24)"
+  },
+  {
+    "id": "PARA-UNK-225",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 25)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 25)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 25)"
+  },
+  {
+    "id": "PARA-UNK-226",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 26)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 26)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 26)"
+  },
+  {
+    "id": "PARA-UNK-227",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 27)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 27)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 27)"
+  },
+  {
+    "id": "PARA-UNK-228",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 28)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 28)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 28)"
+  },
+  {
+    "id": "PARA-UNK-229",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 29)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 29)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 29)"
+  },
+  {
+    "id": "PARA-UNK-230",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 30)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 30)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 30)"
+  },
+  {
+    "id": "PARA-UNK-231",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 31)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 31)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 31)"
+  },
+  {
+    "id": "PARA-UNK-232",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 32)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 32)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 32)"
+  },
+  {
+    "id": "PARA-UNK-233",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 33)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 33)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 33)"
+  },
+  {
+    "id": "PARA-UNK-234",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 34)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 34)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 34)"
+  },
+  {
+    "id": "PARA-UNK-235",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 35)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 35)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 35)"
+  },
+  {
+    "id": "PARA-UNK-236",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 36)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 36)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 36)"
+  },
+  {
+    "id": "PARA-UNK-237",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 37)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 37)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 37)"
+  },
+  {
+    "id": "PARA-UNK-238",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 38)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 38)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 38)"
+  },
+  {
+    "id": "PARA-UNK-239",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 39)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 39)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 39)"
+  },
+  {
+    "id": "PARA-UNK-240",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 40)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 40)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 40)"
+  },
+  {
+    "id": "PARA-UNK-241",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 41)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 41)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 41)"
+  },
+  {
+    "id": "PARA-UNK-242",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 42)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 42)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 42)"
+  },
+  {
+    "id": "PARA-UNK-243",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 43)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 43)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 43)"
+  },
+  {
+    "id": "PARA-UNK-244",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 44)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 44)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 44)"
+  },
+  {
+    "id": "PARA-UNK-245",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 45)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 45)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 45)"
+  },
+  {
+    "id": "PARA-UNK-246",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 46)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 46)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 46)"
+  },
+  {
+    "id": "PARA-UNK-247",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 47)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 47)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 47)"
+  },
+  {
+    "id": "PARA-UNK-248",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 48)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 48)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 48)"
+  },
+  {
+    "id": "PARA-UNK-249",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 49)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 49)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 49)"
+  },
+  {
+    "id": "PARA-UNK-250",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 50)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 50)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 50)"
+  },
+  {
+    "id": "PARA-UNK-251",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 51)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 51)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 51)"
+  },
+  {
+    "id": "PARA-UNK-252",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 52)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 52)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 52)"
+  },
+  {
+    "id": "PARA-UNK-253",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 53)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 53)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 53)"
+  },
+  {
+    "id": "PARA-UNK-254",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 54)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 54)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 54)"
+  },
+  {
+    "id": "PARA-UNK-255",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 55)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 55)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 55)"
+  },
+  {
+    "id": "PARA-UNK-256",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 56)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 56)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 56)"
+  },
+  {
+    "id": "PARA-UNK-257",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 57)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 57)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 57)"
+  },
+  {
+    "id": "PARA-UNK-258",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 58)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 58)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 58)"
+  },
+  {
+    "id": "PARA-UNK-259",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 59)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 59)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 59)"
+  },
+  {
+    "id": "PARA-UNK-260",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 60)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 60)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 60)"
+  },
+  {
+    "id": "PARA-UNK-261",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 61)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 61)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 61)"
+  },
+  {
+    "id": "PARA-UNK-262",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 62)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 62)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 62)"
+  },
+  {
+    "id": "PARA-UNK-263",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 63)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 63)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 63)"
+  },
+  {
+    "id": "PARA-UNK-264",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 64)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 64)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 64)"
+  },
+  {
+    "id": "PARA-UNK-265",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 65)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 65)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 65)"
+  },
+  {
+    "id": "PARA-UNK-266",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 66)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 66)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 66)"
+  },
+  {
+    "id": "PARA-UNK-267",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 67)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 67)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 67)"
+  },
+  {
+    "id": "PARA-UNK-268",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 68)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 68)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 68)"
+  },
+  {
+    "id": "PARA-UNK-269",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 69)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 69)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 69)"
+  },
+  {
+    "id": "PARA-UNK-270",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 70)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 70)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 70)"
+  },
+  {
+    "id": "PARA-UNK-271",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 71)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 71)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 71)"
+  },
+  {
+    "id": "PARA-UNK-272",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 72)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 72)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 72)"
+  },
+  {
+    "id": "PARA-UNK-273",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 73)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 73)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 73)"
+  },
+  {
+    "id": "PARA-UNK-274",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 74)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 74)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 74)"
+  },
+  {
+    "id": "PARA-UNK-275",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 75)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 75)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 75)"
+  },
+  {
+    "id": "PARA-UNK-276",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 76)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 76)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 76)"
+  },
+  {
+    "id": "PARA-UNK-277",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 77)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 77)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 77)"
+  },
+  {
+    "id": "PARA-UNK-278",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 78)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 78)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 78)"
+  },
+  {
+    "id": "PARA-UNK-279",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 79)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 79)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 79)"
+  },
+  {
+    "id": "PARA-UNK-280",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 80)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 80)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 80)"
+  },
+  {
+    "id": "PARA-UNK-281",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 81)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 81)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 81)"
+  },
+  {
+    "id": "PARA-UNK-282",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 82)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 82)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 82)"
+  },
+  {
+    "id": "PARA-UNK-283",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 83)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 83)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 83)"
+  },
+  {
+    "id": "PARA-UNK-284",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 84)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 84)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 84)"
+  },
+  {
+    "id": "PARA-UNK-285",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 85)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 85)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 85)"
+  },
+  {
+    "id": "PARA-UNK-286",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 86)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 86)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 86)"
+  },
+  {
+    "id": "PARA-UNK-287",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 87)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 87)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 87)"
+  },
+  {
+    "id": "PARA-UNK-288",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 88)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 88)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 88)"
+  },
+  {
+    "id": "PARA-UNK-289",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 89)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 89)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 89)"
+  },
+  {
+    "id": "PARA-UNK-290",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 90)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 90)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 90)"
+  },
+  {
+    "id": "PARA-UNK-291",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 91)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 91)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 91)"
+  },
+  {
+    "id": "PARA-UNK-292",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 92)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 92)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 92)"
+  },
+  {
+    "id": "PARA-UNK-293",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 93)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 93)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 93)"
+  },
+  {
+    "id": "PARA-UNK-294",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 94)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 94)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 94)"
+  },
+  {
+    "id": "PARA-UNK-295",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 95)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 95)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 95)"
+  },
+  {
+    "id": "PARA-UNK-296",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Django ORM manage database migrations compared to PostgreSQL schemas? (variation 96)",
+    "colloquial": "Can you show me how Django migrations work when setting up Postgres? (variation 96)",
+    "syntactically_complex": "Regarding external Python web frameworks, through what automated mechanisms does the Django ORM generate database schema migrations? (variation 96)"
+  },
+  {
+    "id": "PARA-UNK-297",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Flutter render UI widgets using the Skia graphics engine? (variation 97)",
+    "colloquial": "How does Flutter use Skia to draw widgets on the mobile screen? (variation 97)",
+    "syntactically_complex": "Pertaining to cross-platform mobile architecture, in what manner does the Flutter engine employ Skia for pixel-level widget rendering? (variation 97)"
+  },
+  {
+    "id": "PARA-UNK-298",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Spring Boot configure dependency injection via @Autowired annotations? (variation 98)",
+    "colloquial": "What does the @Autowired annotation do in a Spring Boot application? (variation 98)",
+    "syntactically_complex": "Under enterprise Java enterprise patterns, how does Spring Boot resolve bean dependencies marked with the @Autowired annotation? (variation 98)"
+  },
+  {
+    "id": "PARA-UNK-299",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Rust guarantee memory safety through ownership and borrow checking? (variation 99)",
+    "colloquial": "How does Rust stop memory bugs without having a garbage collector? (variation 99)",
+    "syntactically_complex": "Addressing compile-time memory safety, by what structural rules does the Rust borrow checker prevent data races without runtime garbage collection? (variation 99)"
+  },
+  {
+    "id": "PARA-UNK-300",
+    "expected": "NOT_ESTABLISHED",
+    "category": "OUT_OF_CURRICULUM",
+    "canonical": "How does Redis implement in-memory pub/sub message brokering across clusters? (variation 100)",
+    "colloquial": "How do you set up pub sub messaging in Redis for real-time notifications? (variation 100)",
+    "syntactically_complex": "Within distributed caching architectures, through what protocol does Redis broadcast messages across clustered subscriber channels? (variation 100)"
+  }
+]

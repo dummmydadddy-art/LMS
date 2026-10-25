@@ -1,0 +1,427 @@
+{
+  "metadata": {
+    "experiment_id": "EXP-0066",
+    "phase": "Dev-Blind Generalization Diagnostic Study",
+    "development_dataset": {
+      "filename": "EXP-0025-DEVELOPMENT-DATASET.json",
+      "sample_size": 400,
+      "sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b"
+    },
+    "blind_dataset": {
+      "filename": "EXP-0033-BLIND-DATASET.json",
+      "sample_size": 500,
+      "sha256": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08"
+    }
+  },
+  "label_distribution": {
+    "development": {
+      "SUPPORTED": 150,
+      "REFUTED": 150,
+      "NOT_ESTABLISHED": 100
+    },
+    "blind": {
+      "SUPPORTED": 213,
+      "REFUTED": 162,
+      "NOT_ESTABLISHED": 125
+    }
+  },
+  "category_distribution": {
+    "development": {
+      "SUPPORTED_CURRICULUM": 100,
+      "NOVEL_FALSE_PREMISE": 100,
+      "OUT_OF_CURRICULUM_UNKNOWN": 100,
+      "LEGITIMATE_NEGATION": 50,
+      "MIXED_COMPOUND_PREMISE": 50
+    },
+    "blind": {
+      "SUPPORTED": 125,
+      "FALSE_PREMISE": 125,
+      "AMBIGUOUS": 75,
+      "OOD": 50,
+      "PARAPHRASE": 50,
+      "ADVERSARIAL": 75
+    }
+  },
+  "template_regularity": {
+    "dev_top5_prefix_concentration_pct": 32.75,
+    "blind_top5_prefix_concentration_pct": 11.6,
+    "dev_top_prefixes": [
+      [
+        "how does external",
+        50
+      ],
+      [
+        "why doesn t",
+        35
+      ],
+      [
+        "what is the",
+        28
+      ],
+      [
+        "why can t",
+        11
+      ],
+      [
+        "why does http",
+        7
+      ]
+    ],
+    "blind_top_prefixes": [
+      [
+        "why does http",
+        14
+      ],
+      [
+        "why does a",
+        13
+      ],
+      [
+        "what is the",
+        11
+      ],
+      [
+        "does http status",
+        10
+      ],
+      [
+        "why does the",
+        10
+      ]
+    ]
+  },
+  "continuous_features": {
+    "chars": {
+      "development": {
+        "mean": 78.7725,
+        "median": 80.0,
+        "p95": 106,
+        "std": 13.3406,
+        "min": 46,
+        "max": 123
+      },
+      "blind": {
+        "mean": 91.024,
+        "median": 90.0,
+        "p95": 115,
+        "std": 12.7564,
+        "min": 54,
+        "max": 132
+      },
+      "mann_whitney_u": 49169.0,
+      "z_score": -13.1172,
+      "cliffs_delta": -0.5083,
+      "raw_p_value": 0.0,
+      "fdr_adjusted_p_value": 0.0,
+      "significant_fdr_05": true
+    },
+    "words": {
+      "development": {
+        "mean": 12.0575,
+        "median": 12.0,
+        "p95": 17,
+        "std": 2.4267,
+        "min": 7,
+        "max": 22
+      },
+      "blind": {
+        "mean": 14.06,
+        "median": 14.0,
+        "p95": 18,
+        "std": 2.4,
+        "min": 8,
+        "max": 21
+      },
+      "mann_whitney_u": 53942.0,
+      "z_score": -11.8855,
+      "cliffs_delta": -0.4606,
+      "raw_p_value": 0.0,
+      "fdr_adjusted_p_value": 0.0,
+      "significant_fdr_05": true
+    },
+    "unique_ratio": {
+      "development": {
+        "mean": 0.9734,
+        "median": 1.0,
+        "p95": 1.0,
+        "std": 0.0555,
+        "min": 0.6111,
+        "max": 1.0
+      },
+      "blind": {
+        "mean": 0.9683,
+        "median": 1.0,
+        "p95": 1.0,
+        "std": 0.0493,
+        "min": 0.7368,
+        "max": 1.0
+      },
+      "mann_whitney_u": 108650.5,
+      "z_score": 2.2323,
+      "cliffs_delta": 0.0865,
+      "raw_p_value": 0.025594503339597674,
+      "fdr_adjusted_p_value": 0.034901595463087735,
+      "significant_fdr_05": true
+    },
+    "jaccard": {
+      "development": {
+        "mean": 0.0338,
+        "median": 0.0368,
+        "p95": 0.0638,
+        "std": 0.0204,
+        "min": 0.0,
+        "max": 0.1013
+      },
+      "blind": {
+        "mean": 0.0356,
+        "median": 0.0342,
+        "p95": 0.0682,
+        "std": 0.0186,
+        "min": 0.0,
+        "max": 0.1008
+      },
+      "mann_whitney_u": 96597.5,
+      "z_score": -0.878,
+      "cliffs_delta": -0.034,
+      "raw_p_value": 0.37992523468451966,
+      "fdr_adjusted_p_value": 0.43837527078983035,
+      "significant_fdr_05": false
+    },
+    "overlap_ratio": {
+      "development": {
+        "mean": 0.4879,
+        "median": 0.5477,
+        "p95": 0.8,
+        "std": 0.247,
+        "min": 0.0,
+        "max": 0.9286
+      },
+      "blind": {
+        "mean": 0.4509,
+        "median": 0.4444,
+        "p95": 0.7778,
+        "std": 0.1933,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "mann_whitney_u": 114575.0,
+      "z_score": 3.7612,
+      "cliffs_delta": 0.1458,
+      "raw_p_value": 0.00016912728941509414,
+      "fdr_adjusted_p_value": 0.0003624156201752017,
+      "significant_fdr_05": true
+    },
+    "clauses": {
+      "development": {
+        "mean": 1.37,
+        "median": 1.0,
+        "p95": 3,
+        "std": 0.758,
+        "min": 1,
+        "max": 5
+      },
+      "blind": {
+        "mean": 1.19,
+        "median": 1.0,
+        "p95": 2,
+        "std": 0.5044,
+        "min": 1,
+        "max": 5
+      },
+      "mann_whitney_u": 107838.0,
+      "z_score": 2.0226,
+      "cliffs_delta": 0.0784,
+      "raw_p_value": 0.04311032643970747,
+      "fdr_adjusted_p_value": 0.05388790804963434,
+      "significant_fdr_05": false
+    },
+    "ev_tokens": {
+      "development": {
+        "mean": 564.04,
+        "median": 580.0,
+        "p95": 761,
+        "std": 109.4208,
+        "min": 138,
+        "max": 781
+      },
+      "blind": {
+        "mean": 538.232,
+        "median": 555.5,
+        "p95": 664,
+        "std": 94.7211,
+        "min": 138,
+        "max": 800
+      },
+      "mann_whitney_u": 116469.0,
+      "z_score": 4.2499,
+      "cliffs_delta": 0.1647,
+      "raw_p_value": 2.1384964151938135e-05,
+      "fdr_adjusted_p_value": 5.346241037984534e-05,
+      "significant_fdr_05": true
+    },
+    "top_sim": {
+      "development": {
+        "mean": 0.7309,
+        "median": 0.8881,
+        "p95": 0.9994,
+        "std": 0.2916,
+        "min": 0.2082,
+        "max": 0.9999
+      },
+      "blind": {
+        "mean": 0.6489,
+        "median": 0.6992,
+        "p95": 0.9773,
+        "std": 0.2594,
+        "min": 0.1705,
+        "max": 0.9999
+      },
+      "mann_whitney_u": 120174.5,
+      "z_score": 5.2061,
+      "cliffs_delta": 0.2017,
+      "raw_p_value": 1.9280712226787955e-07,
+      "fdr_adjusted_p_value": 7.230267085045483e-07,
+      "significant_fdr_05": true
+    }
+  },
+  "binary_linguistic_features": {
+    "negation": {
+      "development_count": 18,
+      "development_pct": 4.5,
+      "blind_count": 50,
+      "blind_pct": 10.0,
+      "chi2_stat": 9.6242,
+      "raw_p_value": 0.0019202774816422519,
+      "fdr_adjusted_p_value": 0.003200462469403753,
+      "significant_fdr_05": true
+    },
+    "antonym_match": {
+      "development_count": 213,
+      "development_pct": 53.25,
+      "blind_count": 171,
+      "blind_pct": 34.2,
+      "chi2_stat": 32.9672,
+      "raw_p_value": 9.372877585178685e-09,
+      "fdr_adjusted_p_value": 4.6864387925893425e-08,
+      "significant_fdr_05": true
+    },
+    "comparative": {
+      "development_count": 137,
+      "development_pct": 34.25,
+      "blind_count": 181,
+      "blind_pct": 36.2,
+      "chi2_stat": 0.3698,
+      "raw_p_value": 0.5431018292862089,
+      "fdr_adjusted_p_value": 0.5469750278714531,
+      "significant_fdr_05": false
+    },
+    "universal": {
+      "development_count": 36,
+      "development_pct": 9.0,
+      "blind_count": 88,
+      "blind_pct": 17.6,
+      "chi2_stat": 13.8352,
+      "raw_p_value": 0.0001995604470497181,
+      "fdr_adjusted_p_value": 0.0003741758382182214,
+      "significant_fdr_05": true
+    },
+    "normative": {
+      "development_count": 4,
+      "development_pct": 1.0,
+      "blind_count": 42,
+      "blind_pct": 8.4,
+      "chi2_stat": 25.0911,
+      "raw_p_value": 5.468378181383571e-07,
+      "fdr_adjusted_p_value": 1.6405134544150712e-06,
+      "significant_fdr_05": true
+    },
+    "conditional": {
+      "development_count": 24,
+      "development_pct": 6.0,
+      "blind_count": 35,
+      "blind_pct": 7.0,
+      "chi2_stat": 0.3628,
+      "raw_p_value": 0.5469750278714531,
+      "fdr_adjusted_p_value": 0.5469750278714531,
+      "significant_fdr_05": false
+    },
+    "causal": {
+      "development_count": 0,
+      "development_pct": 0.0,
+      "blind_count": 7,
+      "blind_pct": 1.4,
+      "chi2_stat": 5.6439,
+      "raw_p_value": 0.017516231771871116,
+      "fdr_adjusted_p_value": 0.026274347657806674,
+      "significant_fdr_05": true
+    }
+  },
+  "question_type_distribution": {
+    "are": {
+      "development_count": 0,
+      "development_pct": 0.0,
+      "blind_count": 1,
+      "blind_pct": 0.2
+    },
+    "can": {
+      "development_count": 0,
+      "development_pct": 0.0,
+      "blind_count": 20,
+      "blind_pct": 4.0
+    },
+    "do": {
+      "development_count": 0,
+      "development_pct": 0.0,
+      "blind_count": 2,
+      "blind_pct": 0.4
+    },
+    "does": {
+      "development_count": 0,
+      "development_pct": 0.0,
+      "blind_count": 147,
+      "blind_pct": 29.4
+    },
+    "how": {
+      "development_count": 140,
+      "development_pct": 35.0,
+      "blind_count": 110,
+      "blind_pct": 22.0
+    },
+    "is": {
+      "development_count": 0,
+      "development_pct": 0.0,
+      "blind_count": 42,
+      "blind_pct": 8.4
+    },
+    "other": {
+      "development_count": 51,
+      "development_pct": 12.75,
+      "blind_count": 5,
+      "blind_pct": 1.0
+    },
+    "should": {
+      "development_count": 0,
+      "development_pct": 0.0,
+      "blind_count": 19,
+      "blind_pct": 3.8
+    },
+    "what": {
+      "development_count": 39,
+      "development_pct": 9.75,
+      "blind_count": 12,
+      "blind_pct": 2.4
+    },
+    "which": {
+      "development_count": 0,
+      "development_pct": 0.0,
+      "blind_count": 2,
+      "blind_pct": 0.4
+    },
+    "why": {
+      "development_count": 170,
+      "development_pct": 42.5,
+      "blind_count": 140,
+      "blind_pct": 28.0
+    }
+  }
+}

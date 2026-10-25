@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "EXP-0071",
+  "description": "State feature schema for Adaptive Verification Controller (AVC)",
+  "state_dimensions": 22,
+  "discrete_evidence_states": [
+    "E0_AMBIGUOUS",
+    "E1_TIER1_MATCH",
+    "E2_HIGH_CONF_CHEAP",
+    "E3_LOW_MARGIN_CHEAP",
+    "E4_CONFLICTING_EVIDENCE",
+    "E5_INSUFFICIENT_OOD"
+  ],
+  "actions": [
+    { "id": "A0", "name": "FAST_PATH_DECISION", "cost": 0, "description": "Immediate deterministic Tier-1 or ambiguity-guard verdict" },
+    { "id": "A1", "name": "CHEAP_VERIFICATION", "cost": 1, "description": "Execute fine-tuned MiniLM NLI cross-encoder on retrieved evidence" },
+    { "id": "A2", "name": "COUNTER_EVIDENCE_RETRIEVAL", "cost": 1, "description": "Formulate targeted counter-query and retrieve falsifying context" },
+    { "id": "A3", "name": "EXPENSIVE_LLM_ESCALATION", "cost": 2, "description": "Escalate to frozen C0 llama3.2 zero-shot generative NLI verifier" },
+    { "id": "A4", "name": "EPISTEMIC_ABSTENTION", "cost": 0, "description": "Abstain with NOT_ESTABLISHED for out-of-domain or ungroundable claims" },
+    { "id": "A5", "name": "MULTI_EVIDENCE_CONSENSUS", "cost": 1, "description": "Arbitrate between primary and counter-evidence using cheap NLI and heuristics" }
+  ],
+  "budget_limits": [1, 2, 3],
+  "features": {
+    "query": [
+      { "name": "query_token_count", "type": "int", "description": "Number of whitespace-delimited tokens in query" },
+      { "name": "query_is_question", "type": "float", "description": "1.0 if query ends with ? or starts with interrogative, else 0.0" },
+      { "name": "query_has_universal_quantifier", "type": "float", "description": "1.0 if query contains universal quantifiers (all, every, always, never, none), else 0.0" },
+      { "name": "query_clause_count", "type": "int", "description": "Count of punctuation and coordinating conjunction clauses" }
+    ],
+    "retrieval": [
+      { "name": "retrieval_top_score", "type": "float", "description": "Similarity score of the top-ranked retrieved evidence chunk" },
+      { "name": "retrieval_margin_top2", "type": "float", "description": "Difference between top chunk score and second chunk score" },
+      { "name": "retrieval_chunk_count", "type": "int", "description": "Number of retrieved chunks in context window" },
+      { "name": "retrieval_avg_chunk_length", "type": "float", "description": "Average character length of retrieved chunks" },
+      { "name": "retrieval_distinct_sources", "type": "int", "description": "Number of unique document source files in retrieved context" }
+    ],
+    "evidence_sufficiency": [
+      { "name": "evidence_entity_overlap", "type": "float", "description": "Jaccard lexical overlap between content tokens in query and evidence" },
+      { "name": "evidence_negation_count", "type": "int", "description": "Count of negation keywords in evidence text" },
+      { "name": "evidence_epistemic_coherence", "type": "float", "description": "Degree of overlap between query predicates and evidence assertion sentences" },
+      { "name": "evidence_contradiction_signal", "type": "float", "description": "Presence of conflicting polarity lexemes between claim and evidence" }
+    ],
+    "cheap_verifier": [
+      { "name": "cheap_nli_invoked", "type": "float", "description": "1.0 if cheap verifier executed, else 0.0" },
+      { "name": "cheap_nli_p_contradiction", "type": "float", "description": "Softmax probability of CONTRADICTION from fine-tuned MiniLM" },
+      { "name": "cheap_nli_p_entailment", "type": "float", "description": "Softmax probability of ENTAILMENT from fine-tuned MiniLM" },
+      { "name": "cheap_nli_p_neutral", "type": "float", "description": "Softmax probability of NEUTRAL from fine-tuned MiniLM" },
+      { "name": "cheap_nli_winning_conf", "type": "float", "description": "Highest class probability from cheap verifier" },
+      { "name": "cheap_nli_margin_top2", "type": "float", "description": "Difference between highest and second highest class probability" },
+      { "name": "cheap_nli_entropy", "type": "float", "description": "Normalized Shannon entropy of probability distribution" },
+      { "name": "cheap_nli_pred_code", "type": "float", "description": "Numeric code: 0=CONTRADICTION, 1=ENTAILMENT, 2=NEUTRAL, -1=NOT_INVOKED" }
+    ],
+    "discrete_state": [
+      { "name": "state_code", "type": "int", "description": "Categorical evidence state index (0 to 5 for E0..E5)" }
+    ]
+  }
+}

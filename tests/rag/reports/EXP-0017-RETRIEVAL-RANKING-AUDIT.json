@@ -1,0 +1,151 @@
+{
+  "threshold_cliff": [
+    {
+      "threshold": 0.18,
+      "count": 4,
+      "topSim": 0.5977,
+      "lowestSim": 0.5931
+    },
+    {
+      "threshold": 0.19,
+      "count": 4,
+      "topSim": 0.5977,
+      "lowestSim": 0.5931
+    },
+    {
+      "threshold": 0.199,
+      "count": 4,
+      "topSim": 0.5977,
+      "lowestSim": 0.5931
+    },
+    {
+      "threshold": 0.2,
+      "count": 4,
+      "topSim": 0.5977,
+      "lowestSim": 0.5931
+    },
+    {
+      "threshold": 0.201,
+      "count": 4,
+      "topSim": 0.5977,
+      "lowestSim": 0.5931
+    },
+    {
+      "threshold": 0.21,
+      "count": 4,
+      "topSim": 0.5977,
+      "lowestSim": 0.5931
+    },
+    {
+      "threshold": 0.25,
+      "count": 4,
+      "topSim": 0.5977,
+      "lowestSim": 0.5931
+    },
+    {
+      "threshold": 0.3,
+      "count": 4,
+      "topSim": 0.5977,
+      "lowestSim": 0.5931
+    },
+    {
+      "threshold": 0.4,
+      "count": 4,
+      "topSim": 0.5977,
+      "lowestSim": 0.5931
+    },
+    {
+      "threshold": 0.5,
+      "count": 4,
+      "topSim": 0.5977,
+      "lowestSim": 0.5931
+    }
+  ],
+  "keyword_stuffing": {
+    "natural_top1": "React Hooks Tutorial",
+    "stuffed_top1": "React Hooks Tutorial",
+    "displaced": false,
+    "natural_results": [
+      {
+        "title": "React Hooks Tutorial",
+        "chunk": 2,
+        "rrf": 0.023393000000000004
+      },
+      {
+        "title": "React Hooks Tutorial",
+        "chunk": 5,
+        "rrf": 0.015152
+      },
+      {
+        "title": "Node.js & Express REST API Notes",
+        "chunk": 2,
+        "rrf": 0.015
+      },
+      {
+        "title": "JavaScript ES6+ Deep Dive",
+        "chunk": 2,
+        "rrf": 0.014849
+      },
+      {
+        "title": "React Hooks Tutorial",
+        "chunk": 1,
+        "rrf": 0.014197
+      }
+    ],
+    "stuffed_results": [
+      {
+        "title": "React Hooks Tutorial",
+        "chunk": 2,
+        "rrf": 0.023301000000000002
+      },
+      {
+        "title": "PostgreSQL Database Design",
+        "chunk": 2,
+        "rrf": 0.016222
+      },
+      {
+        "title": "React Hooks Tutorial",
+        "chunk": 4,
+        "rrf": 0.015541
+      },
+      {
+        "title": "PostgreSQL Database Design",
+        "chunk": 3,
+        "rrf": 0.014567
+      },
+      {
+        "title": "React Hooks Tutorial",
+        "chunk": 0,
+        "rrf": 0.015152
+      },
+      {
+        "title": "React Hooks Tutorial",
+        "chunk": 1,
+        "rrf": 0.015072
+      }
+    ]
+  },
+  "contrast_disagreement": [
+    {
+      "name": "Libuv worker threads vs OS epoll",
+      "top_title": "Node.js & Express REST API Notes",
+      "top_chunk": 0,
+      "rrf_score": 0.028393,
+      "similarity": 0.6918
+    },
+    {
+      "name": "B-tree index vs Sequential scan",
+      "top_title": "PostgreSQL Database Design",
+      "top_chunk": 2,
+      "rrf_score": 0.028393,
+      "similarity": 0.707
+    },
+    {
+      "name": "3NF Transitive Dependency",
+      "top_title": "PostgreSQL Database Design",
+      "top_chunk": 1,
+      "rrf_score": 0.027393,
+      "similarity": 0.7533
+    }
+  ]
+}

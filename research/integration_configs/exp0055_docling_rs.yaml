@@ -1,0 +1,22 @@
+experiment_id: EXP-0055
+base_commit: fc7e5021a40566f040fbbdaea4d5f04e770a6b40
+description: Docling.rs Low-Memory Streaming and Windowed Document Ingestion
+feature_flags:
+  ENABLE_DOCLING_RS: true
+  ENABLE_PAGEINDEX: false
+  ENABLE_LLAMA_CPP: false
+  ENABLE_LLMLINGUA: false
+  ENABLE_SURYA: false
+  ENABLE_GEMMA3N: false
+  ENABLE_BITNET: false
+  ENABLE_MARKER: false
+document_processor: docling_rs
+streaming_mode: true
+default_page_window: 5
+max_page_budget: 10
+retriever: exp0040
+verifier:
+  name: A4
+  frozen: true
+device: cpu
+seed: 42

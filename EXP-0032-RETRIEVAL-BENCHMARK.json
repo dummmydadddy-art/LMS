@@ -1,0 +1,3271 @@
+[
+  {
+    "case_id": "EXP31-SUP-0001",
+    "query": "Does flexbox allow items to shrink along the main axis when flex-shrink is set to 1?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0002",
+    "query": "Can flex items wrap onto multiple lines without overflowing the container when flex-wrap is set to wrap?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0003",
+    "query": "Does display: grid establish an independent formatting context for its direct child elements?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0004",
+    "query": "Does the gap property specify gutters between grid tracks without applying margin to outer container edges?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0005",
+    "query": "Does box-sizing: border-box ensure that adding padding will not alter the calculated box width?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0006",
+    "query": "Can justify-content: space-between distribute extra space evenly between flex children?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0007",
+    "query": "Does the cross axis run perpendicular to the main axis established by the flex-direction property?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0008",
+    "query": "Does the semantic <main> tag represent the dominant content of the document <body>?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0009",
+    "query": "Does an <article> element represent a complete, self-contained composition intended for independent distribution?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0010",
+    "query": "Can the <nav> element enclose major navigational link groups across a website?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0011",
+    "query": "Does setting flex-direction to column cause the main axis to run vertically from top to bottom?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0012",
+    "query": "Does flex-grow: 0 prevent a flex item from absorbing surplus space along the main axis?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0013",
+    "query": "Does the <footer> element typically contain copyright notices, author information, and related legal links?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0014",
+    "query": "Can CSS Grid place grid items across specific column lines using grid-column-start and grid-column-end?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0015",
+    "query": "Does content-box calculate the total rendered element width by adding padding and borders onto the specified width?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0016",
+    "query": "Does align-items: stretch expand flex items along the cross axis to fill container height by default?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0017",
+    "query": "Can an HTML5 document include multiple <section> elements to represent distinct thematic groupings?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0018",
+    "query": "Does flex-basis define the default size of an item before remaining space is distributed?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0019",
+    "query": "Does grid-template-columns: repeat(3, 1fr) create three equally proportioned columns across the grid container?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0020",
+    "query": "Does semantic HTML improve accessibility for screen readers without altering default CSS styling?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0021",
+    "query": "Can justify-content: center position flex items along the center of the main axis?",
+    "category": "SUPPORTED",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0022",
+    "query": "Does declaring a variable with const create an immutable identifier binding that cannot be reassigned?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0023",
+    "query": "Does the temporal dead zone exist from block start until variable declaration for let and const bindings?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0024",
+    "query": "Do arrow functions lack their own arguments binding, requiring the use of rest parameters instead?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0025",
+    "query": "Does the spread operator expand elements of an iterable into function argument positions?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0026",
+    "query": "Does destructuring assignment extract values from arrays or properties from objects into distinct variables?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0027",
+    "query": "Does an async function return a Promise that resolves with the value returned by the function body?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0028",
+    "query": "Does the JavaScript runtime drain the entire microtask queue before dispatching the next macrotask?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0029",
+    "query": "Do Promise resolution handlers (.then) execute as microtasks in the ECMAScript job queue?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0031",
+    "query": "Does Object.freeze prevent mutating existing properties and adding new properties to an object?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0032",
+    "query": "Does the rest parameter syntax collect multiple trailing arguments into an array instance?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0034",
+    "query": "Can variables declared with var be hoisted to the top of their enclosing function scope?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0035",
+    "query": "Does Promise.all reject immediately without waiting for other promises if any input promise rejects?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0036",
+    "query": "Does setTimeout schedule a callback function to run as a macrotask after a minimum delay?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0037",
+    "query": "Does the call stack track current function invocation frames in a last-in, first-out order?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0038",
+    "query": "Does strict mode prevent assigning values to undeclared variables by throwing a ReferenceError?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0039",
+    "query": "Does let scoping prevent variable leakage outside the enclosing curly brace block?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0040",
+    "query": "Can async/await handle rejected promises using standard try/catch statement blocks?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0041",
+    "query": "Does Promise.race settle as soon as the first promise in the iterable settles?",
+    "category": "SUPPORTED",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0043",
+    "query": "Does useState return an array containing the current state value and an updater function?",
+    "category": "SUPPORTED",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0044",
+    "query": "In the standard curriculum, does updating a ref object current property avoid triggering a component re-render?",
+    "category": "SUPPORTED",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0045",
+    "query": "Does useCallback return a memoized version of the callback that only changes when its dependencies change?",
+    "category": "SUPPORTED",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0046",
+    "query": "Does useMemo recompute the memoized value only when one of its specified dependencies has changed?",
+    "category": "SUPPORTED",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0047",
+    "query": "Does useEffect run after render and paint to avoid blocking browser screen updates?",
+    "category": "SUPPORTED",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0048",
+    "query": "Can useEffect return a cleanup function to cancel subscriptions before the component unmounts?",
+    "category": "SUPPORTED",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0049",
+    "query": "Does useContext retrieve the current context value specified by the nearest matching Context.Provider?",
+    "category": "SUPPORTED",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0052",
+    "query": "Can useRef persist arbitrary mutable values across re-renders without causing component updates?",
+    "category": "SUPPORTED",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0054",
+    "query": "Does the dependency array in useEffect control when the effect callback is scheduled for execution?",
+    "category": "SUPPORTED",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0055",
+    "query": "Does passing an empty dependency array to useEffect ensure the effect runs only once after initial mount?",
+    "category": "SUPPORTED",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0059",
+    "query": "Does React strict mode intentionally invoke component functions twice in development to uncover side effects?",
+    "category": "SUPPORTED",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0061",
+    "query": "Can a ref be attached to a native DOM element to directly access the underlying DOM node?",
+    "category": "SUPPORTED",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0063",
+    "query": "Does useMemo avoid executing expensive calculations on re-renders when inputs remain identical?",
+    "category": "SUPPORTED",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0064",
+    "query": "Does Node.js use the single-threaded V8 engine to execute JavaScript source code?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0065",
+    "query": "Does the libuv library provide an event loop and worker thread pool for asynchronous I/O operations?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0066",
+    "query": "Can Express middleware access both the request object and the response object?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0067",
+    "query": "Does calling next() without arguments pass execution control to the next registered middleware handler?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0068",
+    "query": "Does app.use(express.json()) parse incoming request bodies encoded with Content-Type application/json?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0070",
+    "query": "Does an Express error-handling middleware function declare exactly four parameters (err, req, res, next)?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0071",
+    "query": "Does the non-blocking I/O model allow Node.js to handle high concurrency with low memory footprint?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0072",
+    "query": "Does process.nextTick schedule callbacks to run before the event loop continues to the next phase?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0073",
+    "query": "Can Node.js execute file system operations asynchronously using fs.promises API methods?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0075",
+    "query": "Does calling res.json() serialize a JavaScript object to a JSON string and send an application/json header?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0077",
+    "query": "Does the event loop poll phase retrieve new I/O events and execute their associated callbacks?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0078",
+    "query": "Does calling res.status(201) set the HTTP response status code to Created before sending data?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0079",
+    "query": "Does passing an argument to next(err) bypass regular route handlers and trigger error-handling middleware?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0080",
+    "query": "Can Express middleware terminate the request-response cycle by sending a response directly?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0081",
+    "query": "Does Node.js support CommonJS modules using require() and ES modules using import statements?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0082",
+    "query": "Does the setImmediate callback schedule execution in the check phase of the current event loop iteration?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0084",
+    "query": "Does Node.js buffer incoming TCP network stream chunks before assembling the full request payload?",
+    "category": "SUPPORTED",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0085",
+    "query": "Is HTTP GET an idempotent method because multiple identical requests produce the same server state?",
+    "category": "SUPPORTED",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0087",
+    "query": "Is HTTP PUT idempotent because multiple identical PUT requests leave the target resource in the same state?",
+    "category": "SUPPORTED",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0089",
+    "query": "Does status code 200 OK indicate that the request has succeeded and the payload is returned?",
+    "category": "SUPPORTED",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0090",
+    "query": "Does status code 201 Created indicate that the request has led to the creation of a new resource?",
+    "category": "SUPPORTED",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0091",
+    "query": "Does status code 204 No Content indicate that the server successfully fulfilled the request with no body?",
+    "category": "SUPPORTED",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-SUP-0092",
+    "query": "Does status code 400 Bad Request indicate that the server cannot process the request due to client error?",
+    "category": "SUPPORTED",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0001",
+    "query": "Does flex-direction default to column in standard CSS flexbox containers?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0002",
+    "query": "Does align-items align flex items along the main axis rather than the cross axis?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0003",
+    "query": "Does justify-content default to space-around in initial flex container formatting?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0004",
+    "query": "Does flex-grow: 0 cause flex items to expand to consume all unused space in the parent?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0005",
+    "query": "Does box-sizing default to border-box in standard browser root stylesheets?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0006",
+    "query": "Does content-box include padding and border widths inside the declared width property?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0007",
+    "query": "Does CSS Grid only support single-dimensional horizontal layout pipelines?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0008",
+    "query": "Does display: flex convert child elements into inline spans by default?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0009",
+    "query": "Does setting gap: 20px in flexbox apply 20px padding to the exterior outer container borders?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0010",
+    "query": "Does the <nav> element represent the primary unique content of the central web page?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0011",
+    "query": "Does the <main> tag allow multiple visible instances inside the same document body?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0012",
+    "query": "Does the <article> tag indicate that an element is purely decorative and lacks standalone meaning?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0013",
+    "query": "Does flex-shrink default to 0, preventing flex items from shrinking when space is constrained?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0014",
+    "query": "Does align-items: center stretch flex items to occupy 100% of the cross axis height?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0015",
+    "query": "Does flex-wrap default to wrap, automatically splitting items onto new rows on mobile?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0016",
+    "query": "Does grid-template-rows define horizontal flex axes inside a flexbox container?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0017",
+    "query": "Does the <footer> tag declare the top-level masthead and main header banner of a page?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0018",
+    "query": "Does box-sizing: border-box subtract margin from the computed interior element width?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0019",
+    "query": "Does flex-direction: row-reverse align items starting from the top-left downward?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0020",
+    "query": "Does CSS Grid require all grid columns to share identical fractional widths?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0021",
+    "query": "Does setting display: inline-flex prevent child items from using flexbox alignment rules?",
+    "category": "FALSE_PREMISE",
+    "module": "HTML_CSS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0022",
+    "query": "Can variables declared with const have their identifier binding reassigned to a new primitive value?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0023",
+    "query": "Are variables declared with var strictly scoped to the block where they are defined?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0024",
+    "query": "Can let variables be accessed before their declaration line without triggering a ReferenceError?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0026",
+    "query": "Do arrow functions provide an implicit arguments object referencing all passed parameters?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0027",
+    "query": "Does the JavaScript engine process macrotasks before clearing out pending microtasks in the event loop?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0028",
+    "query": "Do setTimeout timer callbacks execute inside the microtask queue alongside resolved promises?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0029",
+    "query": "Does Object.freeze create a deep recursive freeze of all nested object properties automatically?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0030",
+    "query": "Does the spread operator perform a deep clone of nested objects and inner arrays?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0033",
+    "query": "Does declaring a variable without var, let, or const create a local block-scoped binding in strict mode?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0034",
+    "query": "Does Promise.all resolve successfully if one of the promises in the input array rejects?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0036",
+    "query": "Does the call stack store asynchronous Web API timer handlers directly while they count down?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0038",
+    "query": "Does let hoisting initialize the variable with undefined at the beginning of the block scope?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0039",
+    "query": "Does strict mode permit deleting plain variable identifiers declared with let or const?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0040",
+    "query": "Does Promise.race wait for all promises to settle before resolving with the fastest result?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0041",
+    "query": "Does destructuring an object mutate the original object by removing the extracted keys?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0042",
+    "query": "Can arrow functions be used as constructors by invoking them with the new keyword?",
+    "category": "FALSE_PREMISE",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0044",
+    "query": "Does updating the current property of a ref object trigger an immediate component re-render?",
+    "category": "FALSE_PREMISE",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0045",
+    "query": "Does useState setter update the state variable synchronously during the current function line?",
+    "category": "FALSE_PREMISE",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0047",
+    "query": "Does useEffect run synchronously before the browser updates the DOM and paints the screen?",
+    "category": "FALSE_PREMISE",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0049",
+    "query": "Does useMemo re-evaluate its calculation function on every render regardless of dependency changes?",
+    "category": "FALSE_PREMISE",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0050",
+    "query": "Does useCallback execute the memoized function immediately during the render phase?",
+    "category": "FALSE_PREMISE",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0052",
+    "query": "Does useContext require passing props down through every intermediate component in the tree?",
+    "category": "FALSE_PREMISE",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0053",
+    "query": "Does useRef reset its current value to the initial argument on every component re-render?",
+    "category": "FALSE_PREMISE",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0054",
+    "query": "Does passing an empty dependency array to useEffect cause it to run after every single render?",
+    "category": "FALSE_PREMISE",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0056",
+    "query": "Does useEffect cleanup run only after the entire application is completely shut down?",
+    "category": "FALSE_PREMISE",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0061",
+    "query": "Does React strict mode suppress component re-renders during development to speed up compilation?",
+    "category": "FALSE_PREMISE",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0062",
+    "query": "Does useState setter function change its identity reference on every component render?",
+    "category": "FALSE_PREMISE",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0063",
+    "query": "Does useMemo return a setter function allowing manual invalidation of the cached result?",
+    "category": "FALSE_PREMISE",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0064",
+    "query": "Does Node.js execute user JavaScript code concurrently on multiple parallel V8 threads by default?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0065",
+    "query": "Does libuv block the main JavaScript thread whenever an asynchronous file read is performed?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0066",
+    "query": "Does express.json() automatically parse incoming multipart/form-data file upload streams?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0067",
+    "query": "Does Express middleware require defining five parameters to handle incoming GET requests?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0068",
+    "query": "Does calling next() with an error object continue normal routing without hitting error middleware?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0069",
+    "query": "Does app.use() restrict middleware execution to matching only exact static file routes?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0071",
+    "query": "Does Node.js process CPU-intensive synchronous encryption loops without affecting concurrent I/O throughput?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0073",
+    "query": "Does process.nextTick schedule callbacks to run after all pending setTimeout timers finish?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0075",
+    "query": "Does the event loop check phase execute setImmediate callbacks before processing the call stack?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0077",
+    "query": "Does Node.js use synchronous blocking system calls for all network socket operations by design?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0079",
+    "query": "Does Express automatically convert uncaught asynchronous promise rejections into 404 responses?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0080",
+    "query": "Does Node.js rely on the Python runtime to execute background thread pool tasks in libuv?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0081",
+    "query": "Does express.json() parse incoming URL-encoded form data into req.body automatically?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0082",
+    "query": "Does the event loop close callbacks phase run immediately prior to the timers phase?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0083",
+    "query": "Does Node.js fs.readFileSync operate asynchronously by delegating to libuv thread pool workers?",
+    "category": "FALSE_PREMISE",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0085",
+    "query": "Is HTTP POST guaranteed to be idempotent because repeated calls create only a single resource?",
+    "category": "FALSE_PREMISE",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0088",
+    "query": "Does status code 201 Created indicate that the server encountered a syntax error in the request?",
+    "category": "FALSE_PREMISE",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0089",
+    "query": "Does status code 204 No Content indicate that the requested resource could not be found on the server?",
+    "category": "FALSE_PREMISE",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0090",
+    "query": "Does status code 401 Unauthorized indicate that an authenticated user lacks permission for the action?",
+    "category": "FALSE_PREMISE",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0091",
+    "query": "Does status code 403 Forbidden indicate that the client request lacked authentication credentials entirely?",
+    "category": "FALSE_PREMISE",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0092",
+    "query": "Does status code 404 Not Found indicate that the server successfully processed the request with no content?",
+    "category": "FALSE_PREMISE",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0093",
+    "query": "Does status code 500 Internal Server Error indicate a client-side authentication failure?",
+    "category": "FALSE_PREMISE",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0094",
+    "query": "Is the signature segment of a JWT placed at the beginning before the header and payload?",
+    "category": "FALSE_PREMISE",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0095",
+    "query": "Does a JSON Web Token encrypt its payload so that client browsers cannot decode the Base64 claims?",
+    "category": "FALSE_PREMISE",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0096",
+    "query": "Does RESTful architecture require the server to store conversational client state across requests?",
+    "category": "FALSE_PREMISE",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-FP-0097",
+    "query": "Is HTTP DELETE considered a non-idempotent method because calling it repeatedly causes syntax errors?",
+    "category": "FALSE_PREMISE",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0001",
+    "query": "Is flexbox significantly easier to learn and master than traditional CSS float layouts?",
+    "category": "AMBIGUOUS",
+    "module": "HTML_CSS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0002",
+    "query": "Is CSS Grid universally superior to flexbox for constructing modern website components?",
+    "category": "AMBIGUOUS",
+    "module": "HTML_CSS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0003",
+    "query": "Should developers always use border-box instead of content-box across every project?",
+    "category": "AMBIGUOUS",
+    "module": "HTML_CSS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0004",
+    "query": "Are semantic HTML elements always more aesthetically appealing than generic div elements?",
+    "category": "AMBIGUOUS",
+    "module": "HTML_CSS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0005",
+    "query": "Does flex-direction column produce a better mobile user experience than flex-direction row?",
+    "category": "AMBIGUOUS",
+    "module": "HTML_CSS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0006",
+    "query": "Is a gap of 16px the optimal spacing standard for grid and flexbox card containers?",
+    "category": "AMBIGUOUS",
+    "module": "HTML_CSS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0007",
+    "query": "Are HTML5 section tags strictly necessary for achieving high search engine ranking scores?",
+    "category": "AMBIGUOUS",
+    "module": "HTML_CSS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0009",
+    "query": "Is flex-wrap: wrap faster for browser rendering engines to compute than overflow scrolling?",
+    "category": "AMBIGUOUS",
+    "module": "HTML_CSS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0010",
+    "query": "Should navigation links always be placed inside an unordered list within the nav element?",
+    "category": "AMBIGUOUS",
+    "module": "HTML_CSS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0011",
+    "query": "Is CSS Grid column spanning more intuitive than flexbox nested container wrapping?",
+    "category": "AMBIGUOUS",
+    "module": "HTML_CSS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0012",
+    "query": "Does align-items: baseline look more modern than align-items: center on mobile forms?",
+    "category": "AMBIGUOUS",
+    "module": "HTML_CSS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0013",
+    "query": "Is it considered bad practice to use article tags inside a section tag in semantic HTML?",
+    "category": "AMBIGUOUS",
+    "module": "HTML_CSS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0014",
+    "query": "Is declaring variables with const always better than declaring variables with let?",
+    "category": "AMBIGUOUS",
+    "module": "JAVASCRIPT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0016",
+    "query": "Is async/await cleaner and more readable than standard Promise chaining syntax?",
+    "category": "AMBIGUOUS",
+    "module": "JAVASCRIPT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0017",
+    "query": "Should developers avoid using var in all legacy and modern JavaScript development?",
+    "category": "AMBIGUOUS",
+    "module": "JAVASCRIPT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0018",
+    "query": "Does the temporal dead zone cause more developer confusion than variable hoisting?",
+    "category": "AMBIGUOUS",
+    "module": "JAVASCRIPT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0019",
+    "query": "Is microtask scheduling inherently more efficient than macrotask scheduling in browsers?",
+    "category": "AMBIGUOUS",
+    "module": "JAVASCRIPT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0020",
+    "query": "Are rest parameters much more elegant than accessing the legacy arguments object?",
+    "category": "AMBIGUOUS",
+    "module": "JAVASCRIPT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1",
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0021",
+    "query": "Does strict mode improve code quality enough to justify its minor syntax constraints?",
+    "category": "AMBIGUOUS",
+    "module": "JAVASCRIPT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0023",
+    "query": "Should Object.freeze be applied to every configuration object across an enterprise codebase?",
+    "category": "AMBIGUOUS",
+    "module": "JAVASCRIPT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0024",
+    "query": "Is destructuring assignment faster for V8 to execute than explicit property access?",
+    "category": "AMBIGUOUS",
+    "module": "JAVASCRIPT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0025",
+    "query": "Does Promise.allSettled provide a better developer experience than standard Promise.all?",
+    "category": "AMBIGUOUS",
+    "module": "JAVASCRIPT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0027",
+    "query": "Is useMemo worth using on every single array computation inside React components?",
+    "category": "AMBIGUOUS",
+    "module": "REACT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0028",
+    "query": "Is useCallback necessary for all inline callback functions passed as props to children?",
+    "category": "AMBIGUOUS",
+    "module": "REACT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0031",
+    "query": "Is useRef more convenient for storing mutable instance variables than external module variables?",
+    "category": "AMBIGUOUS",
+    "module": "REACT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0035",
+    "query": "Is custom hook extraction the most effective way to share business logic across components?",
+    "category": "AMBIGUOUS",
+    "module": "REACT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0038",
+    "query": "Does React strict mode produce too many unnecessary console warning logs in development?",
+    "category": "AMBIGUOUS",
+    "module": "REACT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0039",
+    "query": "Are uncontrolled form inputs with refs better than controlled inputs with useState?",
+    "category": "AMBIGUOUS",
+    "module": "REACT",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0040",
+    "query": "Is Express the best Node.js framework for developing enterprise web applications?",
+    "category": "AMBIGUOUS",
+    "module": "NODEJS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0041",
+    "query": "Should Node.js developers always prefer asynchronous fs methods over synchronous ones?",
+    "category": "AMBIGUOUS",
+    "module": "NODEJS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0042",
+    "query": "Is the libuv thread pool size of 4 threads sufficient for most production workloads?",
+    "category": "AMBIGUOUS",
+    "module": "NODEJS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0043",
+    "query": "Does express.Router() offer the cleanest architectural structure for modular REST APIs?",
+    "category": "AMBIGUOUS",
+    "module": "NODEJS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0044",
+    "query": "Is process.nextTick too dangerous to use in everyday application middleware development?",
+    "category": "AMBIGUOUS",
+    "module": "NODEJS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0045",
+    "query": "Are worker threads in Node.js easier to manage than multi-process cluster architectures?",
+    "category": "AMBIGUOUS",
+    "module": "NODEJS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0047",
+    "query": "Is Node.js non-blocking I/O model superior to multi-threaded web server architectures?",
+    "category": "AMBIGUOUS",
+    "module": "NODEJS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0048",
+    "query": "Does app.use() middleware ordering cause more software defects than database query errors?",
+    "category": "AMBIGUOUS",
+    "module": "NODEJS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0050",
+    "query": "Should production Node.js applications always run behind a reverse proxy like Nginx?",
+    "category": "AMBIGUOUS",
+    "module": "NODEJS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0051",
+    "query": "Is setImmediate cleaner for deferring callback execution than setTimeout with zero delay?",
+    "category": "AMBIGUOUS",
+    "module": "NODEJS",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0053",
+    "query": "Is REST inherently superior to GraphQL for modern client-server communication?",
+    "category": "AMBIGUOUS",
+    "module": "REST_API",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0054",
+    "query": "Should status code 204 No Content be returned instead of 200 OK for all update operations?",
+    "category": "AMBIGUOUS",
+    "module": "REST_API",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0058",
+    "query": "Is URL path versioning cleaner than Accept header versioning for RESTful APIs?",
+    "category": "AMBIGUOUS",
+    "module": "REST_API",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0059",
+    "query": "Does status code 403 Forbidden cause more client confusion than returning status 404 Not Found?",
+    "category": "AMBIGUOUS",
+    "module": "REST_API",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0060",
+    "query": "Is bearer token authentication via Authorization headers the cleanest security standard?",
+    "category": "AMBIGUOUS",
+    "module": "REST_API",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0061",
+    "query": "Should developers always treat HTTP DELETE as idempotent even if secondary records change?",
+    "category": "AMBIGUOUS",
+    "module": "REST_API",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-AMB-0063",
+    "query": "Is statelessness in REST more difficult to implement than stateful session management?",
+    "category": "AMBIGUOUS",
+    "module": "REST_API",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-OOD-0001",
+    "query": "Does Go use goroutines and channels to coordinate concurrent thread communication?",
+    "category": "OOD",
+    "module": "BACKEND_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0002",
+    "query": "Does Golang compile directly to native machine code without requiring an external runtime VM?",
+    "category": "OOD",
+    "module": "BACKEND_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0003",
+    "query": "Does MongoDB store documents in binary JSON format known as BSON?",
+    "category": "OOD",
+    "module": "DATABASE_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0004",
+    "query": "Does MongoDB support unsharded collections with secondary indexes on nested fields?",
+    "category": "OOD",
+    "module": "DATABASE_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0005",
+    "query": "Does Cassandra use a distributed ring architecture coordinated by the Murmur3Partitioner?",
+    "category": "OOD",
+    "module": "DATABASE_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0006",
+    "query": "Does Apache Cassandra distribute table partitions across nodes using partition keys?",
+    "category": "OOD",
+    "module": "DATABASE_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0007",
+    "query": "Does Svelte compile component templates into efficient imperative DOM updates at build time?",
+    "category": "OOD",
+    "module": "FRONTEND_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0008",
+    "query": "Does SolidJS use fine-grained reactive signals to update the DOM without a Virtual DOM?",
+    "category": "OOD",
+    "module": "FRONTEND_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0009",
+    "query": "Does Alpine.js provide lightweight declarative reactivity using x-data and x-model attributes?",
+    "category": "OOD",
+    "module": "FRONTEND_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0010",
+    "query": "Does Vue.js provide a reactive Composition API using ref and reactive primitives?",
+    "category": "OOD",
+    "module": "FRONTEND_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0011",
+    "query": "Does Angular use TypeScript decorators like @Component to declare component metadata?",
+    "category": "OOD",
+    "module": "FRONTEND_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0012",
+    "query": "Does Tailwind CSS generate utility classes on-demand using an internal PostCSS engine?",
+    "category": "OOD",
+    "module": "CSS_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0013",
+    "query": "Does Webpack construct an internal dependency graph to bundle static assets for the web?",
+    "category": "OOD",
+    "module": "TOOLING_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0014",
+    "query": "Does Rollup specialize in ES module bundling and tree-shaking dead code elimination?",
+    "category": "OOD",
+    "module": "TOOLING_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0015",
+    "query": "Does Vite use native browser ES modules during development for instant hot module reloading?",
+    "category": "OOD",
+    "module": "TOOLING_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0016",
+    "query": "Does Babel compile modern ECMAScript syntax down to backwards-compatible ES5 code?",
+    "category": "OOD",
+    "module": "TOOLING_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0017",
+    "query": "Does Cypress execute end-to-end browser tests in the same run loop as the application?",
+    "category": "OOD",
+    "module": "TESTING_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0018",
+    "query": "Does RxJS handle asynchronous event streams using Observables and pipeable operators?",
+    "category": "OOD",
+    "module": "ASYNC_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0019",
+    "query": "Does Redux Saga manage complex application side effects using ES6 generator functions?",
+    "category": "OOD",
+    "module": "FRONTEND_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0020",
+    "query": "Does ESLint parse JavaScript code into an Abstract Syntax Tree to identify pattern errors?",
+    "category": "OOD",
+    "module": "LINTING_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0021",
+    "query": "Does Prettier format code by parsing source text into AST tokens and re-printing them?",
+    "category": "OOD",
+    "module": "TOOLING_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0022",
+    "query": "Does GraphQL allow clients to query exactly the fields they need using a schema definition?",
+    "category": "OOD",
+    "module": "API_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0023",
+    "query": "Does WebSocket provide persistent, full-duplex communication channels over a single TCP socket?",
+    "category": "OOD",
+    "module": "NETWORK_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0024",
+    "query": "Does OAuth 2.0 use PKCE code challenges to secure public client authorization flows?",
+    "category": "OOD",
+    "module": "AUTH_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0025",
+    "query": "Does SOAP encode remote procedure calls in structured XML envelopes over HTTP protocols?",
+    "category": "OOD",
+    "module": "API_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0026",
+    "query": "Does Deno enforce secure-by-default execution requiring explicit permissions for disk access?",
+    "category": "OOD",
+    "module": "BACKEND_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0027",
+    "query": "Does Bun use the JavaScriptCore engine from WebKit instead of Google V8?",
+    "category": "OOD",
+    "module": "BACKEND_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0028",
+    "query": "Does Htmx allow web applications to trigger AJAX requests directly from HTML attributes?",
+    "category": "OOD",
+    "module": "FRONTEND_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0029",
+    "query": "Does Lit provide lightweight reactive web components using standard browser custom elements?",
+    "category": "OOD",
+    "module": "FRONTEND_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-OOD-0030",
+    "query": "Does Elixir execute on the Erlang BEAM virtual machine with actor-based concurrency?",
+    "category": "OOD",
+    "module": "BACKEND_EXTERNAL",
+    "expected": "NOT_ESTABLISHED",
+    "gold_chunk_ids": [],
+    "is_ood": true
+  },
+  {
+    "case_id": "EXP31-PAR-0002",
+    "query": "In the standard curriculum, does the align-items rule govern positioning along the transverse axis orthogonal to the main direction?",
+    "category": "PARAPHRASE",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0003",
+    "query": "Does CSS Grid establish a two-dimensional coordinate system with row and column tracks?",
+    "category": "PARAPHRASE",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0004",
+    "query": "Does border-box sizing include interior padding within the specified element boundary?",
+    "category": "PARAPHRASE",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0005",
+    "query": "Can justify-content distribute unused container space between flex children?",
+    "category": "PARAPHRASE",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0006",
+    "query": "Does the main element contain the central topical substance of a document?",
+    "category": "PARAPHRASE",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0007",
+    "query": "Can an article element exist as an independent, syndicatable piece of content?",
+    "category": "PARAPHRASE",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0008",
+    "query": "Does setting flex-direction to column orient the primary layout axis vertically?",
+    "category": "PARAPHRASE",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0009",
+    "query": "In the standard curriculum, in modern ECMAScript, is variable binding reassignment prevented when using the const keyword?",
+    "category": "PARAPHRASE",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0010",
+    "query": "Does the temporal dead zone prohibit accessing let variables prior to their lexical initialization?",
+    "category": "PARAPHRASE",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0012",
+    "query": "In the standard curriculum, does the runtime event scheduler exhaust all pending microtasks before executing the subsequent timer macrotask?",
+    "category": "PARAPHRASE",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0014",
+    "query": "Does destructuring unpack object properties directly into local variable identifiers?",
+    "category": "PARAPHRASE",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0015",
+    "query": "Does an async function always return an instance of Promise upon completion?",
+    "category": "PARAPHRASE",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0016",
+    "query": "Does Object.freeze make an object immutable against property additions and deletions?",
+    "category": "PARAPHRASE",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0017",
+    "query": "Do arrow functions lack their own arguments object in their local activation record?",
+    "category": "PARAPHRASE",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0020",
+    "query": "Does useCallback retain a cached function reference across consecutive renders?",
+    "category": "PARAPHRASE",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0021",
+    "query": "Does useMemo avoid recalculating an expensive operation when input dependencies remain static?",
+    "category": "PARAPHRASE",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0022",
+    "query": "Does useEffect execute side-effect logic following the browser screen refresh?",
+    "category": "PARAPHRASE",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0023",
+    "query": "Can useEffect provide a cleanup routine that fires before the effect re-runs or unmounts?",
+    "category": "PARAPHRASE",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0024",
+    "query": "Does useContext retrieve data from the nearest ancestor Context Provider element?",
+    "category": "PARAPHRASE",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0027",
+    "query": "Does the Node.js server environment rely on the V8 engine to execute JavaScript?",
+    "category": "PARAPHRASE",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0028",
+    "query": "Does libuv coordinate the asynchronous event loop and background thread pool in Node.js?",
+    "category": "PARAPHRASE",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0029",
+    "query": "Can Express middleware inspect and modify incoming request and outgoing response structures?",
+    "category": "PARAPHRASE",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0030",
+    "query": "Does invoking next() without arguments transfer execution to the subsequent middleware layer?",
+    "category": "PARAPHRASE",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0031",
+    "query": "Does express.json() decode incoming JSON payloads into JavaScript objects on req.body?",
+    "category": "PARAPHRASE",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0034",
+    "query": "Does non-blocking I/O allow Node.js to manage numerous client connections simultaneously?",
+    "category": "PARAPHRASE",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0035",
+    "query": "Is HTTP GET an idempotent verb because multiple requests do not alter server data?",
+    "category": "PARAPHRASE",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0039",
+    "query": "In the standard curriculum, does response status code 201 confirm that a requested entity has been successfully instantiated on the server?",
+    "category": "PARAPHRASE",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0040",
+    "query": "Does status code 204 signify that an action succeeded while conveying an empty message body?",
+    "category": "PARAPHRASE",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0041",
+    "query": "Does status code 401 Unauthorized signal that proper authentication credentials were not provided?",
+    "category": "PARAPHRASE",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-PAR-0042",
+    "query": "Does status code 403 indicate that the server denies access despite recognizing the user?",
+    "category": "PARAPHRASE",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0002",
+    "query": "Can a block-scoped let variable exist in the temporal dead zone without throwing an error before it is referenced?",
+    "category": "ADVERSARIAL",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0003",
+    "query": "Can a script declare a variable with const without making properties of an assigned object immutable?",
+    "category": "ADVERSARIAL",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0004",
+    "query": "Can the spread operator expand an array into arguments without mutating the source array contents?",
+    "category": "ADVERSARIAL",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0005",
+    "query": "Does Promise.all reject with the first error without waiting for pending promises to settle?",
+    "category": "ADVERSARIAL",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0006",
+    "query": "Can async functions be coordinated sequentially with await without blocking the browser event loop?",
+    "category": "ADVERSARIAL",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0011",
+    "query": "Does useEffect cleanup run before re-running the effect without requiring the entire component to unmount?",
+    "category": "ADVERSARIAL",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0012",
+    "query": "Can useContext provide global state access without requiring prop drilling through intermediate components?",
+    "category": "ADVERSARIAL",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0013",
+    "query": "Does useMemo avoid executing expensive calculations when its dependency array values remain identical?",
+    "category": "ADVERSARIAL",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0014",
+    "query": "In the standard curriculum, can Node.js process asynchronous file reads via libuv background threads without blocking the single JavaScript main thread?",
+    "category": "ADVERSARIAL",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0015",
+    "query": "In the standard curriculum, does express.json() parse the incoming body stream without executing subsequent route handlers before parsing completes?",
+    "category": "ADVERSARIAL",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0016",
+    "query": "Can an Express middleware terminate a request cycle without invoking next() to pass control onward?",
+    "category": "ADVERSARIAL",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0017",
+    "query": "Does passing an error to next(err) invoke error-handling middleware without executing standard route handlers?",
+    "category": "ADVERSARIAL",
+    "module": "NODEJS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0019",
+    "query": "In the standard curriculum, why is HTTP PUT considered idempotent even if the server updates an internal last-modified timestamp on the record?",
+    "category": "ADVERSARIAL",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0020",
+    "query": "Can a REST API client send a GET request with query parameters without altering any server-side database state?",
+    "category": "ADVERSARIAL",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0022",
+    "query": "Does status code 204 No Content represent a successful transaction without transmitting a response message body?",
+    "category": "ADVERSARIAL",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3",
+      "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0023",
+    "query": "Does a valid JWT allow verifying token authenticity without requiring a database lookup on each verification?",
+    "category": "ADVERSARIAL",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0024",
+    "query": "In the standard curriculum, can a table satisfy Second Normal Form without satisfying Third Normal Form if transitive dependencies still exist?",
+    "category": "ADVERSARIAL",
+    "module": "DATABASE",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0025",
+    "query": "Does transaction atomicity guarantee that an aborted transaction leaves no partially committed records in storage?",
+    "category": "ADVERSARIAL",
+    "module": "DATABASE",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0027",
+    "query": "Does a B-tree index accelerate equality searches without requiring a full sequential table scan?",
+    "category": "ADVERSARIAL",
+    "module": "DATABASE",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0028",
+    "query": "Does issuing a ROLLBACK command discard all uncommitted changes without modifying previously committed transactions?",
+    "category": "ADVERSARIAL",
+    "module": "DATABASE",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0030",
+    "query": "Does box-sizing: border-box preserve the declared element width without enlarging the box when padding is applied?",
+    "category": "ADVERSARIAL",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0031",
+    "query": "Can CSS Grid arrange items in two dimensions without requiring nested flexbox wrapper containers?",
+    "category": "ADVERSARIAL",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0032",
+    "query": "Does align-items align items along the cross axis without altering layout along the main axis?",
+    "category": "ADVERSARIAL",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0033",
+    "query": "Can an HTML document contain multiple section tags without requiring each to act as a standalone syndicatable article?",
+    "category": "ADVERSARIAL",
+    "module": "HTML_CSS",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0034",
+    "query": "Can an object declared with const have its keys modified without altering its variable identifier reference?",
+    "category": "ADVERSARIAL",
+    "module": "JAVASCRIPT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0035",
+    "query": "Can a component use multiple useState hooks without conflicts because React tracks call order across renders?",
+    "category": "ADVERSARIAL",
+    "module": "REACT",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0037",
+    "query": "Can safe HTTP methods be cached by intermediate proxies without violating REST architecture principles?",
+    "category": "ADVERSARIAL",
+    "module": "REST_API",
+    "expected": "SUPPORTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0039",
+    "query": "Can a variable declared with const have its primitive identifier value reassigned without throwing a TypeError in strict mode?",
+    "category": "ADVERSARIAL",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0040",
+    "query": "Can a function-scoped var declaration avoid variable hoisting if placed inside a nested conditional if block?",
+    "category": "ADVERSARIAL",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0042",
+    "query": "Does the JavaScript runtime prioritize executing macrotask timer callbacks before clearing out pending microtask promises?",
+    "category": "ADVERSARIAL",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0043",
+    "query": "Does Object.freeze automatically prevent modifying properties on nested child objects without a recursive freeze implementation?",
+    "category": "ADVERSARIAL",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0044",
+    "query": "Does Promise.all wait for all promises to resolve even if a rejected promise is encountered during execution?",
+    "category": "ADVERSARIAL",
+    "module": "JAVASCRIPT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0045",
+    "query": "Can functional React components invoke useState conditionally inside an if block without breaking hook call order?",
+    "category": "ADVERSARIAL",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0047",
+    "query": "Does updating a ref object current property cause React to re-render the component and its children immediately?",
+    "category": "ADVERSARIAL",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0048",
+    "query": "Does useMemo execute its calculation function asynchronously on a background thread to prevent blocking render?",
+    "category": "ADVERSARIAL",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0049",
+    "query": "Does useEffect run synchronously prior to DOM mutation and paint to prevent visual layout shifts?",
+    "category": "ADVERSARIAL",
+    "module": "REACT",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0050",
+    "query": "Does Node.js execute user JavaScript functions on multiple parallel V8 worker threads by default?",
+    "category": "ADVERSARIAL",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0051",
+    "query": "Can express.json() parse multipart/form-data file uploads without requiring specialized middleware like multer?",
+    "category": "ADVERSARIAL",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0053",
+    "query": "Does Node.js perform synchronous file system reads without blocking the single main event loop thread?",
+    "category": "ADVERSARIAL",
+    "module": "NODEJS",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+      "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0054",
+    "query": "Is HTTP POST considered an idempotent operation because sending identical requests creates only one database record?",
+    "category": "ADVERSARIAL",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0055",
+    "query": "Does HTTP status code 401 Unauthorized indicate that an authenticated user lacks permission for the requested resource?",
+    "category": "ADVERSARIAL",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0056",
+    "query": "Does HTTP status code 403 Forbidden indicate that authentication credentials were missing entirely from the request?",
+    "category": "ADVERSARIAL",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0058",
+    "query": "Does a JSON Web Token encrypt its payload so that client browsers cannot decode the Base64 claims string?",
+    "category": "ADVERSARIAL",
+    "module": "REST_API",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0059",
+    "query": "Does First Normal Form (1NF) permit table columns to store comma-separated values if all items share the same type?",
+    "category": "ADVERSARIAL",
+    "module": "DATABASE",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1"
+    ],
+    "is_ood": false
+  },
+  {
+    "case_id": "EXP31-ADV-0060",
+    "query": "Does Second Normal Form (2NF) allow partial functional dependencies on composite primary key attributes?",
+    "category": "ADVERSARIAL",
+    "module": "DATABASE",
+    "expected": "REFUTED",
+    "gold_chunk_ids": [
+      "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1"
+    ],
+    "is_ood": false
+  }
+]

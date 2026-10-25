@@ -1,0 +1,123 @@
+{
+  "experiment_tag": "EXP-0021-CERTIFICATION-2026-09-09",
+  "timestamp": "2026-09-09T14:04:47.338Z",
+  "multi_hop_certification": {
+    "2_module": {
+      "target_modules": 2,
+      "queries_evaluated": 50,
+      "k3_coverage_rate": "100.0% (50/50)",
+      "k5_coverage_rate": "100.0% (50/50)",
+      "dynamic_k_coverage_rate": "100.0% (50/50)",
+      "k5_irrelevant_intrusion_rate": "40.0% (20/50)",
+      "dynamic_k_irrelevant_intrusion_rate": "0.0% (0/50)",
+      "dynamic_k_selected_average": 3
+    },
+    "3_module": {
+      "target_modules": 3,
+      "queries_evaluated": 50,
+      "k3_coverage_rate": "80.0% (40/50)",
+      "k5_coverage_rate": "80.0% (40/50)",
+      "dynamic_k_coverage_rate": "80.0% (40/50)",
+      "k5_irrelevant_intrusion_rate": "10.0% (5/50)",
+      "dynamic_k_irrelevant_intrusion_rate": "0.0% (0/50)",
+      "dynamic_k_selected_average": 4
+    },
+    "4_module": {
+      "target_modules": 4,
+      "queries_evaluated": 50,
+      "k3_coverage_rate": "100.0% (50/50)",
+      "k5_coverage_rate": "60.0% (30/50)",
+      "dynamic_k_coverage_rate": "60.0% (30/50)",
+      "k5_irrelevant_intrusion_rate": "0.0% (0/50)",
+      "dynamic_k_irrelevant_intrusion_rate": "0.0% (0/50)",
+      "dynamic_k_selected_average": 5
+    },
+    "5_module": {
+      "target_modules": 5,
+      "queries_evaluated": 50,
+      "k3_coverage_rate": "100.0% (50/50)",
+      "k5_coverage_rate": "40.0% (20/50)",
+      "dynamic_k_coverage_rate": "40.0% (20/50)",
+      "k5_irrelevant_intrusion_rate": "0.0% (0/50)",
+      "dynamic_k_irrelevant_intrusion_rate": "0.0% (0/50)",
+      "dynamic_k_selected_average": 5
+    }
+  },
+  "distractor_robustness": {
+    "sweep_data": {
+      "noise_0pct": {
+        "noise_percent": 0,
+        "gold_docs_count": 10,
+        "distractors_injected": 0,
+        "top1_retention": "100.0%",
+        "top3_retention": "100.0%",
+        "distractor_intrusion_top3": "0.0%",
+        "answer_contamination_risk": "NONE"
+      },
+      "noise_10pct": {
+        "noise_percent": 10,
+        "gold_docs_count": 9,
+        "distractors_injected": 1,
+        "top1_retention": "100.0%",
+        "top3_retention": "100.0%",
+        "distractor_intrusion_top3": "0.0%",
+        "answer_contamination_risk": "NONE"
+      },
+      "noise_20pct": {
+        "noise_percent": 20,
+        "gold_docs_count": 8,
+        "distractors_injected": 2,
+        "top1_retention": "100.0%",
+        "top3_retention": "100.0%",
+        "distractor_intrusion_top3": "0.0%",
+        "answer_contamination_risk": "NONE"
+      },
+      "noise_30pct": {
+        "noise_percent": 30,
+        "gold_docs_count": 7,
+        "distractors_injected": 3,
+        "top1_retention": "100.0%",
+        "top3_retention": "100.0%",
+        "distractor_intrusion_top3": "0.0%",
+        "answer_contamination_risk": "NONE"
+      },
+      "noise_40pct": {
+        "noise_percent": 40,
+        "gold_docs_count": 6,
+        "distractors_injected": 4,
+        "top1_retention": "100.0%",
+        "top3_retention": "100.0%",
+        "distractor_intrusion_top3": "0.0%",
+        "answer_contamination_risk": "NONE"
+      },
+      "noise_50pct": {
+        "noise_percent": 50,
+        "gold_docs_count": 5,
+        "distractors_injected": 5,
+        "top1_retention": "100.0%",
+        "top3_retention": "100.0%",
+        "distractor_intrusion_top3": "0.0%",
+        "answer_contamination_risk": "NONE"
+      },
+      "noise_60pct": {
+        "noise_percent": 60,
+        "gold_docs_count": 4,
+        "distractors_injected": 6,
+        "top1_retention": "100.0%",
+        "top3_retention": "100.0%",
+        "distractor_intrusion_top3": "0.0%",
+        "answer_contamination_risk": "NONE"
+      },
+      "noise_70pct": {
+        "noise_percent": 70,
+        "gold_docs_count": 3,
+        "distractors_injected": 7,
+        "top1_retention": "100.0%",
+        "top3_retention": "100.0%",
+        "distractor_intrusion_top3": "0.0%",
+        "answer_contamination_risk": "NONE"
+      }
+    },
+    "exact_breakdown_threshold": "> 70% Noise"
+  }
+}

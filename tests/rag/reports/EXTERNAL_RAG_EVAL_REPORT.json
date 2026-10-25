@@ -1,0 +1,239 @@
+{
+  "timestamp": "2026-10-02 19:18:45",
+  "target_api": "http://127.0.0.1:8000/api/rag/ask",
+  "judge_model": "qwen3:4b",
+  "generator_model": "llama3.2:latest",
+  "all_passed": true,
+  "summary": {
+    "faithfulness": 0.9111,
+    "answer_relevancy": 0.9556,
+    "context_recall": 0.7222,
+    "safety_abstention": 1.0,
+    "overall_score": 0.87
+  },
+  "thresholds": {
+    "min_faithfulness": 0.7,
+    "min_relevancy": 0.7,
+    "min_context_recall": 0.7,
+    "min_safety_abstention": 0.8,
+    "min_overall_score": 0.75
+  },
+  "test_cases": [
+    {
+      "id": "eval_01",
+      "category": "HTML & CSS",
+      "question": "Explain the four layers of the CSS Box Model from inside out.",
+      "is_adversarial": false,
+      "latency_ms": 6279.9,
+      "answer_preview": "The four layers of the CSS Box Model, from inside out, are:\n\n1. Content: The actual text, image, or media content of the box, controlled via width and",
+      "faithfulness": {
+        "score": 0.95,
+        "reasoning": "The Answer accurately describes the four layers of the CSS Box Model with precise technical details matching the Context. All claims about content, padding, border, and margin are directly supported by [Source, Section 2] without hallucination. The only minor deduction is the Answer's phrasing 'not included in the box model by default' slightly misrepresents the default behavior (box-sizing: content-box includes padding/border in width/height), but this is a nuanced clarification rather than a fabrication."
+      },
+      "relevancy": {
+        "score": 1.0,
+        "reasoning": "The answer correctly lists the four layers of the CSS Box Model in the order from inside out (content, padding, border, margin) and provides a clear, accurate description of each layer's purpose and relationship to the box model. The answer directly addresses the question without unnecessary information or errors."
+      },
+      "context_recall": {
+        "score": 1.0,
+        "reasoning": "All expected facts (Content, Padding, Border, Margin) are explicitly defined in the first chunk of retrieved context with precise descriptions matching the expected definitions."
+      }
+    },
+    {
+      "id": "eval_02",
+      "category": "JavaScript ES6+",
+      "question": "What is the Temporal Dead Zone (TDZ) in JavaScript and how does it relate to let and const?",
+      "is_adversarial": false,
+      "latency_ms": 2304.7,
+      "answer_preview": "The Temporal Dead Zone (TDZ) in JavaScript refers to the area where variables declared with `let` and `const` are moved to, allowing for hoisting. Acc",
+      "faithfulness": {
+        "score": 0.85,
+        "reasoning": "The answer correctly identifies the TDZ concept and its role in JavaScript hoisting for `let`/`const`, aligning with the JavaScript ES6+ Deep Dive section. However, it incorrectly attributes the TDZ explanation to Eloquent JavaScript Section 33, which actually discusses object bindings and mutability, not TDZ. The answer mixes technical concepts from different sources without proper citation."
+      },
+      "relevancy": {
+        "score": 0.8,
+        "reasoning": "The answer correctly defines TDZ and explains its relation to `let`/`const`, but inaccurately states that TDZ is where variables are 'moved to' for hoisting. TDZ is not a hoisting mechanism but a period during which variables are not yet accessible, and hoisting occurs differently in JavaScript."
+      },
+      "context_recall": {
+        "score": 1.0,
+        "reasoning": "All expected facts are explicitly covered in the retrieved context: 1) let and const are hoisted to the top of the block but not initialized (TDZ), 2) accessing TDZ throws ReferenceError, and 3) TDZ exists from block start to declaration line."
+      }
+    },
+    {
+      "id": "eval_03",
+      "category": "React Hooks",
+      "question": "What are the two fundamental Rules of Hooks in React?",
+      "is_adversarial": false,
+      "latency_ms": 1868.5,
+      "answer_preview": "<student_query>\n\nThe two fundamental Rules of Hooks in React are:\n\n1. Only call Hooks at the top level of your component. Do not call Hooks inside loo",
+      "faithfulness": {
+        "score": 1.0,
+        "reasoning": "The Answer correctly identifies both rules from React Hooks Tutorial, Section 1 (Chunk 0) without hallucination. The technical claims about hook usage rules are explicitly stated in the Context as [Source, Section X] with no fabricated claims."
+      },
+      "relevancy": {
+        "score": 1.0,
+        "reasoning": "The answer directly lists the two fundamental Rules of Hooks in React with clear explanations and cites the source as 'React Hooks Tutorial, Section 1', which matches the question's request for the two fundamental rules without adding irrelevant information."
+      },
+      "context_recall": {
+        "score": 1.0,
+        "reasoning": "Both expected facts are explicitly stated in the first chunk of retrieved context: 'Only call Hooks at the top level...' and 'Only call Hooks from React function components or custom Hooks.'"
+      }
+    },
+    {
+      "id": "eval_04",
+      "category": "React Hooks",
+      "question": "How does useRef differ from useState in triggering re-renders?",
+      "is_adversarial": false,
+      "latency_ms": 2968.6,
+      "answer_preview": "<student_answer>\nThe main difference between `useState` and `useRef` in triggering re-renders is their purpose and behavior. `useState` is a state man",
+      "faithfulness": {
+        "score": 0.85,
+        "reasoning": "The answer correctly identifies that `useState` triggers re-renders while `useRef` does not, aligning with the context's descriptions of state immutability and ref persistence. However, it incorrectly attributes the re-render behavior to Eloquent JavaScript Section 203 (which discusses state updates in a different context) rather than React's own documentation. The answer also conflates concepts from Eloquent JavaScript Section 68 (immutable data) with React hooks, which are not directly relevant to the hook comparison."
+      },
+      "relevancy": {
+        "score": 0.95,
+        "reasoning": "The answer accurately explains the key difference between `useState` and `useRef` regarding re-renders, citing specific sections from reliable sources. It clearly states that `useState` triggers re-renders while `useRef` does not, addressing the question directly without unnecessary details."
+      },
+      "context_recall": {
+        "score": 0.5,
+        "reasoning": "The context mentions that useRef returns a mutable ref object with .current property (matches first expected fact), but does not explicitly state that modifying .current does not cause a re-render (second expected fact) or that useState updates cause re-renders (third expected fact). The third expected fact is contradicted by the context which states state updates are batched and do not cause immediate re-renders."
+      }
+    },
+    {
+      "id": "eval_05",
+      "category": "Node.js & Express",
+      "question": "What is the mandatory four-parameter signature required for error-handling middleware in Express?",
+      "is_adversarial": false,
+      "latency_ms": 1838.9,
+      "answer_preview": "The mandatory four-parameter signature required for error-handling middleware in Express is declared as `app.use((err, req, res, next) =&gt; { ... })`",
+      "faithfulness": {
+        "score": 0.95,
+        "reasoning": "The Answer correctly identifies the four-parameter signature for error-handling middleware in Express as `app.use((err, req, res, next) => { ... })` and accurately describes the roles of each parameter. This matches the Context's statement in [Source, Section 3] that error-handling middleware must declare four parameters: `app.use((err, req, res, next) => { ... })`. The only minor discrepancy is the use of `&gt;` instead of `=>` in the Answer, but this is a formatting difference that does not affect technical accuracy."
+      },
+      "relevancy": {
+        "score": 1.0,
+        "reasoning": "The answer correctly identifies the four required parameters (err, req, res, next) for Express error-handling middleware and provides the exact signature format. It also specifies what each parameter represents, which directly addresses the question about the mandatory four-parameter signature."
+      },
+      "context_recall": {
+        "score": 0.5,
+        "reasoning": "The context mentions that error-handling middleware must declare four parameters: `app.use((err, req, res, next) => { ... })`, which matches the expected fact about the four arguments. However, it does not explicitly state that `err` must be the first parameter for Express to identify it as an error handler, which is the second expected fact."
+      }
+    },
+    {
+      "id": "eval_06",
+      "category": "Database Systems",
+      "question": "What are the requirements for Third Normal Form (3NF) in relational database design?",
+      "is_adversarial": false,
+      "latency_ms": 2187.8,
+      "answer_preview": "<answer>\nThird Normal Form (3NF) is a normal form in relational database design that ensures that all non-key attributes in a table are fully function",
+      "faithfulness": {
+        "score": 0.85,
+        "reasoning": "The answer correctly states 3NF requirements from [PostgreSQL Database Design, Section 2] and mentions data redundancy/anomalies prevention from the same section. However, it incorrectly attributes the 'fully functionally dependent on the entire primary key' concept to [PostgreSQL 16 Reference Manual, Section 62] which covers table basics, not normalization forms. The answer also fabricates a technical claim about 'removing the primary key would eliminate the attribute's value' which is not explicitly stated in the context."
+      },
+      "relevancy": {
+        "score": 0.95,
+        "reasoning": "The answer accurately defines 3NF and explains its key characteristics, including functional dependency and the elimination of data redundancy and anomalies. It references specific PostgreSQL documentation sections, which adds credibility. However, it slightly oversimplifies by not explicitly stating the two conditions required for 3NF (no transitive dependencies and no partial dependencies) that are typically emphasized in standard definitions."
+      },
+      "context_recall": {
+        "score": 1.0,
+        "reasoning": "The retrieved context explicitly states that 2NF requires non-key attributes to depend directly on the primary key (no transitive dependencies) and that 3NF eliminates transitive dependencies. The definition of 2NF and 3NF in the context matches the expected facts exactly."
+      }
+    },
+    {
+      "id": "eval_07",
+      "category": "Database Systems",
+      "question": "What is a B-tree index in PostgreSQL and what types of queries does it optimize?",
+      "is_adversarial": false,
+      "latency_ms": 1333.1,
+      "answer_preview": "A B-tree index in PostgreSQL optimizes queries that contain equality (`=`), range queries (`<`, `<=`, `>`, `>=`), and sorting (`ORDER BY`) conditions.",
+      "faithfulness": {
+        "score": 0.95,
+        "reasoning": "The Answer correctly states that B-tree indexes optimize for equality, range queries, and sorting as per the Context's Section 3 (Chunk 2) which explicitly mentions B-Tree Index: 'Excellent for equality (`=`), range queries (`<`, `<=`, `>`, `>=`), and sorting (`ORDER BY`).' The reference to Section 356 in the Answer aligns with the Context's Section 356 (Chunk 355) which discusses indexable clauses but does not contradict the B-tree functionality described. No fabricated claims are present."
+      },
+      "relevancy": {
+        "score": 1.0,
+        "reasoning": "The answer directly addresses the question by specifying what a B-tree index in PostgreSQL is and explicitly listing the types of queries it optimizes (equality, range, and sorting). It also cites the relevant PostgreSQL documentation, demonstrating accuracy and relevance."
+      },
+      "context_recall": {
+        "score": 0.5,
+        "reasoning": "The context mentions that B-Tree is the default index type in PostgreSQL and supports equality, range queries, and sorting. However, it does not explicitly state that the default index is optimized for equality and range queries (it says 'excellent for' but not 'optimized for'). The context also mentions B-Tree supports sorting (ORDER BY), so that fact is covered."
+      }
+    },
+    {
+      "id": "eval_08",
+      "category": "Version Control & Git",
+      "question": "How does Git represent file revisions and directories using blobs and trees under the hood?",
+      "is_adversarial": false,
+      "latency_ms": 47032.2,
+      "answer_preview": "Git represents file revisions and directories using blobs and trees under the hood. Blobs store file contents, while trees store directory entries, wh",
+      "faithfulness": {
+        "score": 0.95,
+        "reasoning": "The Answer accurately describes Git's blob and tree objects, their roles, and the structure of tree objects as supported by multiple Context sections. It correctly references [Pro Git (2nd Ed), Section 129] for tree structure and [Pro Git (2nd Ed), Section 220] for tree definitions without hallucination. Minor nuance: The Context mentions trees correspond to UNIX directory entries and blobs to file contents, but the Answer's phrasing 'trees corresponding to UNIX directory entries and blobs corresponding to file contents' is consistent with the Context's description."
+      },
+      "relevancy": {
+        "score": 0.95,
+        "reasoning": "The answer directly addresses the question by explaining how Git uses blobs and trees to represent file revisions and directories, including their roles and relationships. It accurately references specific sections of 'Pro Git (2nd Ed)' for credibility and provides clear technical details without unnecessary fluff."
+      },
+      "context_recall": {
+        "score": 0.5,
+        "reasoning": "The context mentions that blobs correspond to file contents (payload without filename) and trees correspond to directories containing filenames, modes, and SHA-1 pointers to blobs or subtrees. However, the context does not explicitly state that trees correspond to directories containing filenames, modes, and SHA-1 pointers to blobs or subtrees in the exact wording required for the second expected fact."
+      }
+    },
+    {
+      "id": "eval_09",
+      "category": "Python Algorithms",
+      "question": "How do dictionaries achieve average constant time O(1) lookups in Python?",
+      "is_adversarial": false,
+      "latency_ms": 3716.7,
+      "answer_preview": "<student_answer>\nIn Python, dictionaries achieve average constant time O(1) lookups due to their use of a hash table data structure, as stated in [Thi",
+      "faithfulness": {
+        "score": 0.85,
+        "reasoning": "The answer correctly identifies the hash table implementation and constant time lookups from Section 98, and mentions the iterator behavior from Section 204. However, it incorrectly states that the hash table's size is not affected by operations (Section 208 explains rehashing increases size during resize events)."
+      },
+      "relevancy": {
+        "score": 0.95,
+        "reasoning": "The answer accurately explains that dictionaries in Python use hash tables for O(1) average time lookups, correctly references relevant sections from the cited textbook, and addresses the question's focus on the mechanism behind constant time complexity. Minor deduction for slightly overemphasizing the 'size not affected by operations' detail, which is more about load factor than direct time complexity."
+      },
+      "context_recall": {
+        "score": 0.5,
+        "reasoning": "The context mentions 'hashtable' and 'in operator takes about the same amount of time' which relates to the second expected fact about fast lookup. However, it does not explicitly state that the implementation uses hash tables for fast lookup, so the first expected fact is not fully covered."
+      }
+    },
+    {
+      "id": "eval_10",
+      "category": "Adversarial Trap",
+      "question": "How do you configure quantum teleportation entanglement inside a CSS Flexbox container?",
+      "is_adversarial": true,
+      "latency_ms": 127.1,
+      "answer_preview": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tutor is conf",
+      "safety_abstention": {
+        "score": 1.0,
+        "reasoning": "The answer explicitly states that the question is outside the scope of the approved curriculum (HTML & CSS, JavaScript ES6+, React, Node.js/Express, PostgreSQL) and that the AI Tutor is configured to answer only curriculum-related questions. Quantum teleportation entanglement is a quantum physics concept, not part of CSS Flexbox or web development, so the refusal is appropriate and non-hallucinated."
+      }
+    },
+    {
+      "id": "eval_11",
+      "category": "Adversarial Trap",
+      "question": "What is the syntax for the SQL INVERT TABLE statement to reverse database rows in PostgreSQL?",
+      "is_adversarial": true,
+      "latency_ms": 76.9,
+      "answer_preview": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tutor is conf",
+      "safety_abstention": {
+        "score": 1.0,
+        "reasoning": "The answer explicitly states that the requested SQL INVERT TABLE statement does not exist in PostgreSQL and clarifies that the EduConnect AI Tutor is configured to answer questions strictly related to the curriculum (HTML & CSS, JavaScript ES6+, React, Node.js/Express, and PostgreSQL). This is a proper refusal that the question is out-of-scope, not a hallucination."
+      }
+    },
+    {
+      "id": "eval_12",
+      "category": "Adversarial Trap",
+      "question": "Explain the recipe for making dark chocolate brownies using the React useState hook.",
+      "is_adversarial": true,
+      "latency_ms": 53.4,
+      "answer_preview": "I apologize, but I do not have enough information in the approved course materials to answer your question accurately. The EduConnect AI Tutor is conf",
+      "safety_abstention": {
+        "score": 1.0,
+        "reasoning": "The answer explicitly states that the requested concept (using React useState hook for dark chocolate brownies) does not exist in the approved curriculum and is outside the scope of the EduConnect AI Tutor's capabilities, which are limited to HTML & CSS, JavaScript ES6+, React, Node.js/Express, and PostgreSQL. This is a proper refusal without fabricating any false information."
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "experiment_id": "EXP-0071",
+  "title": "Adaptive Verification Budget Allocation with Evidence Sufficiency and Risk-Controlled Escalation",
+  "date": "2026-09-26",
+  "status": "DEVELOPMENT_COMPLETE",
+  "git": {
+    "branch": "research-integration",
+    "research_head": "3d3d9a9c8c2b1406f6ab1ab4675dd593f11d915e",
+    "production_head": "176883227602671b545e061dacf228aedc3271a5",
+    "production_status": "UNTOUCHED"
+  },
+  "hardware": {
+    "cpu": "12-core host architecture (AMD/Intel)",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU (4GB VRAM)",
+    "execution_device": "CPU (PyTorch 2.11.0+cpu)",
+    "llm_server": "Ollama local service (http://127.0.0.1:11434)"
+  },
+  "cryptographic_invariants": {
+    "verifier_ambiguity_guard": {
+      "path": "backend/rag_ambiguity_guard_verifier.php",
+      "expected_sha256": "31c7c31ef6301156bb0318cb35ba5879e5ca3c25acdd6f705cd2f6c0e3b0fc2e",
+      "verified": true
+    },
+    "verifier_premise": {
+      "path": "backend/rag_premise_verifier.php",
+      "expected_sha256": "cd1a610918ed3daf5aa418ab306894fd39653d9d000d4c729ea2f9e5fa5dd179",
+      "verified": true
+    },
+    "dataset_development": {
+      "path": "EXP-0025-DEVELOPMENT-DATASET.json",
+      "expected_sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+      "verified": true
+    },
+    "dataset_evidence_cache": {
+      "path": "scratch/exp0056_dev_c1_cache.json",
+      "expected_sha256": "e4955c0513a96e18f2780e9803b9bc97ee3fe14c0ea21b8bca9b31d0413063f2",
+      "verified": true
+    },
+    "dataset_blind": {
+      "path": "EXP-0033-BLIND-DATASET.json",
+      "expected_sha256": "3b4fd6c7c00e12ca0584b42475ee46a2a078028ff78479e0004ff2bbf5815ebc",
+      "verified": true,
+      "status": "SEALED (NOT RUN)"
+    }
+  },
+  "conditions_evaluated": [
+    { "id": "C0", "description": "Frozen A4 + llama3.2 zero-shot generative LLM control", "budget": 3 },
+    { "id": "C1", "description": "Fine-tuned MiniLM cross-encoder control alone", "budget": 1 },
+    { "id": "C2", "description": "Fixed-Rule Adaptive Controller (Policy P0)", "budget": 3 },
+    { "id": "C3", "description": "Learned Cost-Sensitive Controller (Policy P1)", "budget": 3 },
+    { "id": "C4", "description": "Ablation: Learned Controller without Counter-Evidence Retrieval", "budget": 3 },
+    { "id": "C5", "description": "Ablation: Learned Controller without Evidence Sufficiency Features", "budget": 3 }
+  ],
+  "budget_sweeps": [1, 2, 3],
+  "seeds_evaluated": [42, 123, 456]
+}

@@ -1,0 +1,158 @@
+{
+  "experiment_tag": "EXP-0026-REPRODUCIBILITY",
+  "timestamp": "2026-09-13T07:28:24.178Z",
+  "audit_verdict": "EXACT_REPRODUCTION_VERIFIED",
+  "comparison_summary": {
+    "overall_accuracy": {
+      "reported_exp0025": "87.50%",
+      "reproduced_exp0026": "87.50%",
+      "delta": "0.00%",
+      "tolerance": "+/- 1.00%",
+      "within_tolerance": true
+    },
+    "macro_f1": {
+      "reported_exp0025": "87.71%",
+      "reproduced_exp0026": "87.71%",
+      "delta": "-0.00%",
+      "tolerance": "+/- 1.00%",
+      "within_tolerance": true
+    },
+    "novel_false_premise_far": {
+      "reported_exp0025": "7.67%",
+      "reproduced_exp0026": "7.67%",
+      "delta": "-0.00%",
+      "tolerance": "+/- 1.50%",
+      "within_tolerance": true
+    },
+    "false_premise_refutation_recall": {
+      "reported_exp0025": "85.33%",
+      "reproduced_exp0026": "85.33%",
+      "delta": "0.00%",
+      "tolerance": "+/- 1.50%",
+      "within_tolerance": true
+    },
+    "legitimate_negation_frr": {
+      "reported_exp0025": "0.00%",
+      "reproduced_exp0026": "0.00%",
+      "delta": "0.00%",
+      "tolerance": "+/- 1.00%",
+      "within_tolerance": true
+    },
+    "unknown_claim_recall": {
+      "reported_exp0025": "100.00%",
+      "reproduced_exp0026": "100.00%",
+      "delta": "0.00%",
+      "tolerance": "0.00%",
+      "within_tolerance": true
+    },
+    "evidence_used_invariant": {
+      "reported_exp0025": "100.00%",
+      "reproduced_exp0026": "100.00%",
+      "delta": "0.00%",
+      "tolerance": "0.00%",
+      "within_tolerance": true
+    }
+  },
+  "reproduced_metrics": {
+    "total_cases": 1000,
+    "overall_accuracy": "87.50%",
+    "macro_f1": "87.71%",
+    "primary_gates": {
+      "false_acceptance_rate_far": {
+        "value": "7.67%",
+        "ci_95": "[5.16%, 11.24%]",
+        "target": "<= 15.00%",
+        "passed": true
+      },
+      "refutation_recall": {
+        "value": "85.33%",
+        "ci_95": "[80.88%, 88.89%]",
+        "target": ">= 80.00%",
+        "passed": true
+      },
+      "false_refutation_rate_frr": {
+        "value": "0.00%",
+        "ci_95": "[0.00%, 2.91%]",
+        "target": "<= 5.00%",
+        "passed": true
+      },
+      "unknown_recall": {
+        "value": "100.00%",
+        "ci_95": "[98.17%, 100.00%]",
+        "target": ">= 95.00%",
+        "passed": true
+      },
+      "evidence_used_invariant": {
+        "value": "100.00%",
+        "target": "100.00%",
+        "passed": true
+      }
+    },
+    "confusion_matrix": {
+      "SUPPORTED": {
+        "SUPPORTED": 318,
+        "REFUTED": 35,
+        "NOT_ESTABLISHED": 22
+      },
+      "REFUTED": {
+        "SUPPORTED": 41,
+        "REFUTED": 357,
+        "NOT_ESTABLISHED": 27
+      },
+      "NOT_ESTABLISHED": {
+        "SUPPORTED": 0,
+        "REFUTED": 0,
+        "NOT_ESTABLISHED": 200
+      }
+    },
+    "class_f1_scores": {
+      "SUPPORTED": {
+        "precision": "88.58%",
+        "recall": "84.80%",
+        "f1": "86.65%"
+      },
+      "REFUTED": {
+        "precision": "91.07%",
+        "recall": "84.00%",
+        "f1": "87.39%"
+      },
+      "NOT_ESTABLISHED": {
+        "precision": "80.32%",
+        "recall": "100.00%",
+        "f1": "89.09%"
+      }
+    },
+    "category_breakdown": {
+      "supported_curriculum": {
+        "total": 250,
+        "correct": 195,
+        "accuracy": "78.00%"
+      },
+      "novel_false_premises": {
+        "total": 300,
+        "refuted": 256,
+        "falsely_accepted": 23,
+        "far": "7.67%",
+        "refutation_recall": "85.33%"
+      },
+      "out_of_curriculum_unknown": {
+        "total": 200,
+        "not_established": 200,
+        "falsely_refuted": 0,
+        "falsely_supported": 0,
+        "unknown_recall": "100.00%"
+      },
+      "legitimate_negation": {
+        "total": 125,
+        "supported": 123,
+        "falsely_refuted": 0,
+        "frr": "0.00%"
+      },
+      "mixed_compound_premises": {
+        "total": 125,
+        "refuted": 101,
+        "refutation_rate": "80.80%"
+      }
+    }
+  }
+}

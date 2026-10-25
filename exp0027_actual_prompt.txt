@@ -1,0 +1,769 @@
+<USER_REQUEST>
+# EXP-0027 — Hybrid Evidence-Grounded NLI Verifier
+
+You are continuing the forensic evolution of `EduConnect-LMS-Experimental`.
+
+## STATUS OF PRIOR EXPERIMENTS
+
+Do not alter `EduConnect-LMS-Production`.
+
+The authoritative experimental history is:
+
+* EXP-0023 exposed major false-premise, prompt-injection, and feature-flag weaknesses.
+* EXP-0024 introduced an evidence-grounded verifier and fixed the unauthenticated safety-flag boundary, but failed the FAR/refutation gates.
+* EXP-0025 improved the reported holdout results substantially:
+
+  * FAR = 7.67%
+  * Refutation Recall = 85.33%
+  * Legitimate Negation FRR = 0%
+  * Unknown Recall = 100%
+* EXP-0026 independently reproduced EXP-0025 but demonstrated severe rule dependency:
+
+  * removing the 138 semantic-opposite dictionary reduced refutation recall from 92% to 9%;
+  * concept-generalization recall on uncovered concepts fell to 10%;
+  * cross-rule adversarial refutation recall = 0%;
+  * fresh blind dataset: Accuracy = 57.90%, FAR = 23.33%, Refutation Recall = 30%;
+  * historical 2,000-case regression: Accuracy = 60.75%, FAR = 27.17%, Refutation Recall = 37%.
+
+Therefore:
+
+**EXP-0025 is NOT a generalizable NLI verifier.**
+
+It is frozen as a curriculum-scoped heuristic baseline.
+
+EXP-0027 must test whether a genuinely semantic evidence-comparison layer can remove this dependency.
+
+---
+
+# 1. RESEARCH QUESTION
+
+Investigate:
+
+"Can a hybrid verifier combining a fast deterministic curriculum path with a generic semantic entailment/contradiction model generalize to previously uncovered propositions while preserving safety, legitimate-negation handling, and the closed-domain evidence boundary?"
+
+Do not optimize directly against the old benchmark.
+
+Do not reproduce the 138-pair dictionary at a larger scale.
+
+Do not replace one benchmark-specific rule catalogue with another.
+
+---
+
+# 2. EXP-0027 EXPERIMENTAL ARCHITECTURE
+
+Implement a two-tier verifier.
+
+## Tier 1 — Deterministic Fast Path
+
+Retain EXP-0025's existing deterministic mechanisms only where they are demonstrably useful:
+
+* known high-confidence curriculum misconception mappings;
+* basic syntactic normalization;
+* safe structural parsing;
+* explicit legitimate-negation handling;
+* clearly validated safety rules.
+
+Do NOT add new benchmark-specific semantic mappings.
+
+Do NOT expand the semantic-opposite dictionary.
+
+Treat the existing 138-pair dictionary as a frozen Tier-1 baseline, not as the future reasoning engine.
+
+Record whether a case was resolved by Tier 1.
+
+## Tier 2 — Generic Evidence-Grounded Semantic Verification
+
+Cases not confidently resolved by Tier 1 must be evaluated using a semantic entailment/contradiction model over retrieved evidence.
+
+The design should conceptually evaluate:
+
+`QUERY PROPOSITION`
+against
+`RETRIEVED EVIDENCE`
+
+and produce:
+
+* ENTAILMENT
+* CONTRADICTION
+* UNKNOWN / INSUFFICIENT EVIDENCE
+
+Then map those states to:
+
+* SUPPORTED
+* REFUTED
+* NOT_ESTABLISHED
+
+The semantic model must NOT be given the ground-truth label.
+
+It must consume real retrieved curriculum evidence.
+
+---
+
+# 3. MODEL INVESTIGATION
+
+First inspect the local environment.
+
+Determine whether a suitable NLI / cross-encoder / reranker model is already available locally.
+
+Check:
+
+* Ollama models
+* locally cached Hugging Face models
+* Python environment
+* ONNX runtimes
+* Torch availability
+* GPU memory
+* CPU feasibility
+
+Do NOT download arbitrary large models without measuring resource impact.
+
+Because the target workstation has limited VRAM, prefer a lightweight model appropriate for CPU/GPU inference.
+
+Candidate classes may include:
+
+* MiniLM-family NLI models
+* compact DeBERTa-family NLI models
+* compact BGE/reranker-style cross-encoders capable of entailment/contradiction scoring
+
+Do not assume a particular model is available.
+
+Measure actual latency and memory.
+
+If no suitable NLI model is available locally, build a clearly isolated prototype adapter and document the limitation rather than fabricating results.
+
+---
+
+# 4. CRITICAL SEMANTIC CONTRACT
+
+For every Tier-2 decision, persist diagnostics containing:
+
+* original query
+* extracted proposition
+* retrieved evidence chunk IDs
+* evidence sentence(s)
+* entailment score
+* contradiction score
+* unknown score or residual uncertainty
+* model identifier
+* threshold/calibration version
+* final epistemic status
+* decision tier
+
+Do not return only a single opaque label.
+
+The final verifier must remain evidence-grounded.
+
+---
+
+# 5. RETRIEVAL BOUNDARY
+
+Premise verification must not search external knowledge.
+
+Only retrieved curriculum evidence may establish:
+
+SUPPORTED
+or
+REFUTED.
+
+If evidence is missing or ambiguous:
+
+return `NOT_ESTABLISHED`.
+
+Never infer:
+
+"not found in evidence"
+
+=> "false".
+
+This invariant is mandatory.
+
+---
+
+# 6. PROPOSITION EXTRACTION
+
+Use a generic proposition extraction mechanism.
+
+Separate:
+
+* assertion content
+* question framing
+* negation
+* contrastive clauses
+* conditionals
+* modifiers
+* quantities
+* temporal constraints
+* causal relationships
+
+The key requirement is that:
+
+"Why does X not allow Y?"
+
+must not be interpreted as:
+
+"X allows Y."
+
+Likewise:
+
+"Why does ROLLBACK permanently commit changes?"
+
+contains a proposition about ROLLBACK behavior that must be compared with evidence rather than treated as a keyword collision.
+
+Do not rely solely on regex for proposition semantics.
+
+---
+
+# 7. EVIDENCE SENTENCE SELECTION
+
+From retrieved chunks:
+
+1. split into evidence units/sentences;
+2. calculate semantic relevance to the proposition;
+3. evaluate only the highest-quality evidence units;
+4. preserve evidence provenance.
+
+Do not pass large duplicated contexts blindly to the model.
+
+For each proposition record the selected evidence.
+
+---
+
+# 8. CONTRADICTION LOGIC
+
+Contradiction must require semantic incompatibility.
+
+Examples of incompatible relationships include:
+
+* opposite state
+* opposite capability
+* incompatible operation
+* contradictory numeric value
+* contradictory scope
+* contradictory temporal statement
+* contradictory causal relationship
+
+Simple lexical overlap MUST NOT constitute contradiction.
+
+The system must be able to recognize contradiction even where vocabulary differs substantially.
+
+This is the central research objective.
+
+---
+
+# 9. UNKNOWN / ABSTENTION LOGIC
+
+The semantic model may produce uncertainty.
+
+Do not force binary decisions.
+
+Use a conservative decision layer:
+
+High-confidence entailment -> SUPPORTED
+
+High-confidence contradiction -> REFUTED
+
+Otherwise -> NOT_ESTABLISHED
+
+Calibrate thresholds on development data only.
+
+Do not tune thresholds on any blind holdout.
+
+---
+
+# 10. TIER-1 / TIER-2 ROUTING
+
+Measure the traffic distribution.
+
+For every evaluated query report:
+
+* Tier 1 resolved
+* Tier 2 invoked
+* Tier 2 rejected as insufficient evidence
+* final status
+
+This allows us to determine whether Tier 2 is genuinely generalizing or whether Tier 1 remains responsible for most successful results.
+
+---
+
+# 11. REQUIRED ABLATION MATRIX
+
+Evaluate:
+
+### A0
+
+EXP-0025 frozen baseline.
+
+### A1
+
+Tier-2 NLI only, no Tier-1 semantic-opposite dictionary.
+
+### A2
+
+Tier-1 frozen + Tier-2 NLI.
+
+### A3
+
+Tier-1 frozen + Tier-2 NLI + calibrated thresholds.
+
+### A4
+
+Tier-1 structural safety/negation mechanisms + Tier-2 NLI, with semantic-opposite dictionary removed.
+
+### A5
+
+Final EXP-0027 candidate.
+
+The most important comparisons are:
+
+A0 vs A1
+A0 vs A2
+A2 vs A4
+
+These determine whether the semantic model genuinely replaces dictionary dependence.
+
+---
+
+# 12. DEVELOPMENT SET
+
+Use a development dataset separate from all blind data.
+
+Evaluate:
+
+* Accuracy
+* Macro F1
+* FAR
+* Refutation Recall
+* Legitimate Negation FRR
+* Unknown Recall
+* Supported Recall
+* Tier-1 usage %
+* Tier-2 usage %
+* average Tier-2 latency
+* p95 Tier-2 latency
+
+Do not perform blind-data tuning.
+
+---
+
+# 13. LEAVE-OUT-DICTIONARY TEST
+
+This is mandatory.
+
+Construct a dataset specifically containing propositions where:
+
+* neither proposition is present in the 138-pair dictionary;
+* no new manual semantic mapping is added;
+* the curriculum evidence clearly supports or contradicts the proposition.
+
+Minimum:
+
+300 cases.
+
+Targets:
+
+* Refutation Recall >= 75%
+* FAR <= 20%
+
+A stronger result should be reported honestly.
+
+The purpose is not to make the experiment pass artificially.
+
+The purpose is to prove that semantic verification can work without the dictionary.
+
+---
+
+# 14. CROSS-DOMAIN CURRICULUM TEST
+
+Evaluate unseen combinations across the five existing curriculum modules.
+
+Examples:
+
+* HTML/CSS + JavaScript
+* JavaScript + React
+* React + Node
+* Node + PostgreSQL
+* PostgreSQL + JavaScript
+
+Use propositions whose contradiction is not explicitly encoded in Tier 1.
+
+Minimum:
+
+200 cases.
+
+Measure:
+
+* contradiction recall
+* entailment recall
+* unknown recall
+* FAR
+* false-refutation rate
+
+---
+
+# 15. FRESH BLIND DATASET
+
+Construct an entirely fresh blind set.
+
+No reuse from:
+
+* EXP-0023
+* EXP-0024
+* EXP-0025
+* EXP-0026
+* development data
+
+Minimum:
+
+1,000 cases.
+
+Ground truth must be independently established from curriculum evidence.
+
+Recommended distribution:
+
+* 300 SUPPORTED
+* 300 REFUTED
+* 200 NOT_ESTABLISHED
+* 100 legitimate negative/contrastive inquiries
+* 100 compound / multi-clause propositions
+
+Run strictly through:
+
+`POST /api/rag/ask`
+
+Do not call the verifier directly.
+
+Create:
+
+`EXP-0027-BLIND-DATASET.json`
+`EXP-0027-BLIND-RESULTS.json`
+
+---
+
+# 16. FRESH UNSEEN-CONCEPT TEST
+
+Construct at least 300 cases using concepts and relationships deliberately absent from:
+
+* the 138 semantic-opposite dictionary
+* targeted predicate lists
+* previous benchmark-specific mappings
+
+This is the most important generalization test.
+
+Report separately:
+
+* FAR
+* refutation recall
+* supported recall
+* unknown recall
+* macro F1
+* confusion matrix
+
+---
+
+# 17. PARAPHRASE TEST
+
+For 300 propositions, create semantically equivalent paraphrases.
+
+Use:
+
+* different syntax
+* synonyms
+* active/passive voice
+* clause reordering
+* punctuation changes
+* concise phrasing
+* explanatory phrasing
+* mild colloquial wording
+
+Measure:
+
+`classification consistency`
+
+Target:
+
+> = 90%
+
+Also compare Tier-1 and Tier-2 consistency.
+
+---
+
+# 18. NEGATION / POLARITY TEST
+
+Minimum 200 cases covering:
+
+* positive assertions
+* negative assertions
+* negative inquiries
+* prohibition explanations
+* contrastive questions
+* "why not" questions
+* "does not" constructions
+* conditional negatives
+
+Required:
+
+* Legitimate Negation FRR <= 5%
+* no systematic polarity inversion
+* no regression in Unknown Recall
+
+---
+
+# 19. SECURITY
+
+Retain EXP-0024/EXP-0025 security boundaries.
+
+Re-test:
+
+* `X-RAG-FLAGS`
+* duplicate headers
+* malicious headers
+* service-key abuse
+* prompt injection through `/api/rag/ask`
+* attempts to disable premise verification
+* attempts to make the NLI model follow retrieved malicious instructions
+
+The NLI model must treat retrieved curriculum text as evidence, not instructions.
+
+Require:
+
+0 unauthorized feature-flag overrides.
+
+Require:
+
+0 successful prompt-injection behavior changes.
+
+---
+
+# 20. RETRIEVAL REGRESSION
+
+Do not modify retrieval unless the experiment proves that it is necessary.
+
+Compare:
+
+* Hit@1
+* Hit@3
+* Hit@5
+* MRR
+* nDCG
+* keyword recall
+
+against the frozen EXP-0025 baseline.
+
+Any change must be explicitly documented.
+
+---
+
+# 21. PERFORMANCE
+
+Measure:
+
+* Tier-1 p50/p95
+* Tier-2 p50/p95
+* complete verifier p50/p95
+* GPU VRAM
+* RAM
+* throughput
+* 16-client
+* 32-client
+* 64-client behavior
+
+Do not sacrifice system stability for semantic accuracy.
+
+If the NLI layer is too expensive, quantify the tradeoff rather than hiding it.
+
+---
+
+# 22. MODEL-CARD-STYLE DISCLOSURE
+
+For every NLI model tested document:
+
+* model name
+* version/hash where available
+* parameter count
+* architecture
+* training objective
+* language scope
+* local inference runtime
+* CPU/GPU execution
+* latency
+* memory
+* known limitations
+
+Do not claim a model was trained or fine-tuned if it was not.
+
+---
+
+# 23. ANTI-OVERFITTING AUDIT
+
+Perform static inspection for:
+
+* benchmark queries
+* benchmark IDs
+* answer fragments
+* semantic mappings added specifically for test cases
+* hidden canary handling
+* dataset-specific branches
+* hardcoded expected labels
+
+Also perform behavioral tests with paraphrased and concept-swapped cases.
+
+The verifier must depend on semantic evidence rather than string memorization.
+
+---
+
+# 24. REQUIRED FAILURE TAXONOMY
+
+For every fresh-blind error categorize:
+
+* retrieval miss
+* evidence-selection miss
+* proposition extraction miss
+* semantic entailment miss
+* semantic contradiction miss
+* polarity miss
+* threshold/calibration miss
+* Tier-1 routing error
+* Tier-2 model error
+* insufficient evidence correctly abstained
+* other
+
+Generate:
+
+`EXP-0027-FAILURE-TAXONOMY.csv`
+
+---
+
+# 25. REQUIRED ARTIFACTS
+
+Generate:
+
+* `EXP-0027-BASELINE-MANIFEST.json`
+* `EXP-0027-MODEL-CARD.json`
+* `EXP-0027-ABLATION-RESULTS.json`
+* `EXP-0027-LEAVEOUT-DICTIONARY-RESULTS.json`
+* `EXP-0027-CROSS-DOMAIN-RESULTS.json`
+* `EXP-0027-PARAPHRASE-RESULTS.json`
+* `EXP-0027-POLARITY-RESULTS.json`
+* `EXP-0027-BLIND-DATASET.json`
+* `EXP-0027-BLIND-RESULTS.json`
+* `EXP-0027-FAILURE-TAXONOMY.csv`
+* `EXP-0027-SECURITY-RESULTS.json`
+* `EXP-0027-RETRIEVAL-REGRESSION.json`
+* `EXP-0027-PERFORMANCE.json`
+* `EXP-0027-STATIC-AUDIT.json`
+* `EXP-0027-FINAL-REPORT.md`
+
+---
+
+# 26. PROMOTION GATES
+
+Do not promote merely because EXP-0027 beats EXP-0025.
+
+For formal promotion as research champion, require:
+
+### Primary
+
+* Fresh blind FAR <= 15%
+* Fresh blind refutation recall >= 80%
+* Legitimate-negation FRR <= 5%
+* Unknown Recall >= 95%
+* Evidence-used invariant = 100%
+
+### Generalization
+
+* Dictionary-uncovered contradiction recall >= 75%
+* Cross-rule blind FAR <= 20%
+* Paraphrase consistency >= 90%
+
+### Integrity
+
+* 0 benchmark leakage
+* 0 unauthorized safety-flag overrides
+* 0 successful prompt-injection behavior changes
+* reproducible results
+* historical regression documented
+
+### Architecture
+
+The majority of success on genuinely unseen contradiction cases MUST NOT depend on manually added curriculum-specific semantic mappings.
+
+If this condition is not met, classify the system as a heuristic rather than a general semantic verifier.
+
+---
+
+# 27. IMPORTANT RESEARCH RULE
+
+Do NOT attempt to make every benchmark case pass.
+
+The goal is to determine whether the hybrid architecture is scientifically defensible.
+
+A lower but genuinely generalizable score is preferable to a high score caused by manual benchmark-specific rules.
+
+If the NLI layer fails, report the failure and identify why.
+
+Do not replace it with another large rule table.
+
+---
+
+# 28. FINAL VERDICT CATEGORIES
+
+Use exactly one:
+
+`CERTIFIED`
+
+`CONDITIONALLY CERTIFIED`
+
+`NOT CERTIFIED`
+
+Use `CERTIFIED` only when the evidence satisfies the stated gates.
+
+Do not use "general-purpose NLI" unless the fresh unseen-concept evidence supports that claim.
+
+Do not use "hallucination eliminated".
+
+Do not use "fully solved".
+
+---
+
+# 29. EXPERIMENTAL ISOLATION
+
+Do not modify:
+
+* `EduConnect-LMS-Production`
+* corpus
+* embeddings
+* generation model
+* retrieval ranker
+
+unless a measured dependency is demonstrated.
+
+Separate verifier experiments from unrelated infrastructure optimization.
+
+Record every changed file.
+
+Commit the frozen baseline before changes.
+
+---
+
+# 30. FINAL RESEARCH QUESTION
+
+The final report must answer:
+
+"Does EXP-0027 demonstrate that evidence-grounded semantic contradiction/entailment can replace the brittle curriculum-specific semantic dictionary used by EXP-0025?"
+
+The answer must be evidence-based.
+
+If yes, quantify the gain specifically on dictionary-uncovered concepts.
+
+If no, explain exactly where semantic generalization fails.
+
+Proceed autonomously.
+
+Do not ask for confirmation.
+
+Do not declare success before all blind, generalization, security, and regression tests are complete.
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-09-13T13:19:48+05:30.
+</ADDITIONAL_METADATA>

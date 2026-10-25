@@ -1,0 +1,155 @@
+{
+  "experiment_tag": "EXP-0022-SAFETY-REMEDIATION-2026-09-09",
+  "timestamp": "2026-09-12T07:55:01.113Z",
+  "total_findings": 229,
+  "findings_by_category": {
+    "1_legitimate_application_configuration": 8,
+    "2_domain_knowledge": 0,
+    "3_benchmark_contamination_risk": 229,
+    "4_safety_rule": 4,
+    "5_accidental_hardcoding": 0
+  },
+  "zero_hardcoding_verified": true,
+  "findings": [
+    {
+      "file": "rag_flags.php",
+      "line": 2,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EduConnect LMS - Dynamic Feature Flags (EXP-0016)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_premise_verifier.exp0016_candidate.php",
+      "line": 2,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EduConnect LMS - Two-Pass False-Premise & Fabricated API Verifier (EXP-0016)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_query_condenser.exp0013_champion.php",
+      "line": 2,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EduConnect LMS - Deterministic Conversational Query Condenser (EXP-0009)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_query_condenser.exp0016_candidate.php",
+      "line": 2,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EduConnect LMS - Deterministic Conversational Query Condenser (EXP-0009)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_query_condenser.exp0016_candidate.php",
+      "line": 203,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EXP-0013 Control: Scan reverse-chronological up to 4 turns",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_query_orchestrator.exp0011_champion.php",
+      "line": 2,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EduConnect LMS - Dynamic Multi-Hop K Expansion & Multi-Module Query Orchestrator (EXP-0011)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_query_orchestrator.exp0013_champion.php",
+      "line": 2,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EduConnect LMS - Dynamic Multi-Hop K Expansion & Multi-Module Query Orchestrator (EXP-0011)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_query_orchestrator.php",
+      "line": 2,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EduConnect LMS - Dynamic Multi-Hop K Expansion & Multi-Module Query Orchestrator (EXP-0011)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_safety_boundary.exp0013_champion.php",
+      "line": 2,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EduConnect LMS - Safety Boundary Hardening & Partial Answer Decomposition (EXP-0009)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_safety_boundary.exp0016_candidate.php",
+      "line": 2,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EduConnect LMS - Safety Boundary Hardening & Partial Answer Decomposition (EXP-0009)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_safety_boundary.php",
+      "line": 2,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EduConnect LMS - Safety Boundary Hardening & Partial Answer Decomposition (EXP-0009)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_semantic_mapper.exp0010_champion.php",
+      "line": 2,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EduConnect LMS - Semantic Concept Mapping & Colloquial Query Understanding (EXP-0010)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_semantic_mapper.exp0013_champion.php",
+      "line": 2,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EduConnect LMS - Semantic Concept Mapping & Colloquial Query Understanding (EXP-0010)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_semantic_mapper.php",
+      "line": 2,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// EduConnect LMS - Semantic Concept Mapping & Colloquial Query Understanding (EXP-0010)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_service.exp0006_champion.php",
+      "line": 660,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// 5. Query Classification & Cross-Module Coverage-Aware Fusion (EXP-0006)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_service.exp0006_champion.php",
+      "line": 718,
+      "category": "3_benchmark_contamination_risk",
+      "match": "// Step 4: Salient Evidence Compression & Code Preservation (EXP-0005)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_service.exp0006_champion.php",
+      "line": 799,
+      "category": "3_benchmark_contamination_risk",
+      "match": "* Salient Evidence Compression with Strict Code Preservation & Premise Audit (EXP-0005)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_service.exp0006_champion.php",
+      "line": 899,
+      "category": "3_benchmark_contamination_risk",
+      "match": "* Classify Query Intent (EXP-0006)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_service.exp0006_champion.php",
+      "line": 965,
+      "category": "3_benchmark_contamination_risk",
+      "match": "* Coverage-Aware Fusion: Guarantees module representation in top results (EXP-0006)",
+      "rationale": "Historical experiment tag in comment or variable"
+    },
+    {
+      "file": "rag_service.exp0006_champion.php",
+      "line": 1016,
+      "category": "3_benchmark_contamination_risk",
+      "match": "* Streaming Grounded RAG with Server-Sent Events (EXP-0006)",
+      "rationale": "Historical experiment tag in comment or variable"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "test_id": "EXP-0019-COMPOUND-ATTACKS",
+  "timestamp": "2026-09-09T12:51:36.257Z",
+  "total_scenarios": 10,
+  "passed": 10,
+  "failed": 0,
+  "scenarios": [
+    {
+      "combination_id": 1,
+      "name": "Concurrency + Worker Crash + In-flight",
+      "description": "32 concurrent requests with mid-flight kill of Port 8002",
+      "pass": true,
+      "details": {
+        "total": 32,
+        "ok": 32
+      }
+    },
+    {
+      "combination_id": 2,
+      "name": "Rapid Mutations + Multi-Worker Reads",
+      "description": "Rapid ingest/delete with simultaneous reads across 4 workers",
+      "pass": true,
+      "details": {
+        "pass": true
+      }
+    },
+    {
+      "combination_id": 3,
+      "name": "50-Turn Conversation + Return + Poisoning",
+      "description": "Long conversational history with injected adversarial turn before return query",
+      "pass": true,
+      "details": {
+        "top_course": "PostgreSQL Database Design"
+      }
+    },
+    {
+      "combination_id": 4,
+      "name": "False Premise + Authoritative + Injection",
+      "description": "Tri-part attack combining authoritative false assertion with prompt injection",
+      "pass": true,
+      "details": {
+        "is_refuted": true
+      }
+    },
+    {
+      "combination_id": 5,
+      "name": "Multi-Hop + 100x Keyword Stuffing",
+      "description": "Cross-module query inundated with 100x CSS distractor tokens",
+      "pass": true,
+      "details": {
+        "count": 5,
+        "top": "React Hooks Tutorial"
+      }
+    },
+    {
+      "combination_id": 6,
+      "name": "Non-Alphanumeric + 1.2MB Payload",
+      "description": "1.2MB pure punctuation attack string sent during normal operations",
+      "pass": true,
+      "details": {
+        "status": 413,
+        "rejected": false
+      }
+    },
+    {
+      "combination_id": 7,
+      "name": "Hard-Negative + Comparative Decomposition",
+      "description": "Comparative query with close semantic twins under full search pipeline",
+      "pass": true,
+      "details": {
+        "top_course": "React Hooks Tutorial"
+      }
+    },
+    {
+      "combination_id": 8,
+      "name": "High Load + Aborted Connections",
+      "description": "20 aggressively aborted requests followed by probe request",
+      "pass": true,
+      "details": {
+        "probe_status": 200
+      }
+    },
+    {
+      "combination_id": 9,
+      "name": "Corpus Mutation + Immediate Read",
+      "description": "Immediate read of newly indexed chunk under version invalidation",
+      "pass": true,
+      "details": {
+        "found": true
+      }
+    },
+    {
+      "combination_id": 10,
+      "name": "Maximum Compound Stress",
+      "description": "16 concurrent queries + worker kill + prompt injection + false premise",
+      "pass": true,
+      "details": {
+        "ok_count": 16
+      }
+    }
+  ]
+}

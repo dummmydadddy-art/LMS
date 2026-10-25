@@ -1,0 +1,1842 @@
+{
+    "experiment_tag": "EXP-0027-LEAVEOUT-DICTIONARY-RESULTS",
+    "timestamp": "2026-09-13T10:32:40+00:00",
+    "dataset": "EXP-0027-LEAVEOUT-DATASET.json",
+    "total_cases": 300,
+    "leaveout_targets": {
+        "refutation_recall_target": ">= 75.0%",
+        "far_target": "<= 20.0%"
+    },
+    "comparison_summary": {
+        "baseline_exp0025_refutation_recall": "22.33%",
+        "baseline_exp0025_far": "43.67%",
+        "candidate_exp0027_refutation_recall": "52.33%",
+        "candidate_exp0027_far": "28.67%",
+        "refutation_recall_delta": "30%",
+        "far_delta": "-15%",
+        "verdict": "LEAVEOUT_DICTIONARY_FAILED"
+    },
+    "modes": {
+        "A0": {
+            "mode": "A0",
+            "description": "EXP-0025 Frozen Baseline (Tier-1 deterministic rules only)",
+            "total_cases": 300,
+            "refutation_recall_pct": 22.33,
+            "far_pct": 43.67,
+            "not_established_pct": 34,
+            "tier1_usage_pct": 100,
+            "tier2_usage_pct": 0,
+            "tier2_latency_p50_ms": 0,
+            "tier2_latency_p95_ms": 0,
+            "evidence_used_invariant_pct": 100,
+            "elapsed_seconds": 4.27
+        },
+        "A5": {
+            "mode": "A5",
+            "description": "EXP-0027 Candidate (Two-tier hybrid with Tier-2 NLI)",
+            "total_cases": 300,
+            "refutation_recall_pct": 52.33,
+            "far_pct": 28.67,
+            "not_established_pct": 19,
+            "tier1_usage_pct": 16.33,
+            "tier2_usage_pct": 83.67,
+            "tier2_latency_p50_ms": 993.8,
+            "tier2_latency_p95_ms": 1218.4,
+            "evidence_used_invariant_pct": 100,
+            "elapsed_seconds": 363.45
+        }
+    },
+    "detailed_evaluations_sample": [
+        {
+            "id": "LEAVEOUT-HTML_CSS-001",
+            "module": "HTML_CSS",
+            "query": "Why does HTML5 require three <main> elements in a single document to separate functional sections?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does HTML5 require three <main> elements in a single document to separate functional sections?",
+                    "extracted_proposition": "HTML5 require three <main> elements in a single document to separate functional sections",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <main>: Specifies the main, unique content of the document. There must not be more than one <main> element in a document.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 39706.3
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-002",
+            "module": "HTML_CSS",
+            "query": "Since the <article> tag is designed only for generic inline icons, why is it invalid for standalone blog posts?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since the <article> tag is designed only for generic inline icons, why is it invalid for standalone blog posts?",
+                    "extracted_proposition": "the <article> tag is designed only for generic inline icons",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <article>: Represents a self-contained composition (e.g., blog post, forum post, product card) that is independently distributable.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1093.9
+                },
+                {
+                    "original_query": "Since the <article> tag is designed only for generic inline icons, why is it invalid for standalone blog posts?",
+                    "extracted_proposition": "it invalid for standalone blog posts",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <article>: Represents a self-contained composition (e.g., blog post, forum post, product card) that is independently distributable.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.8,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 956.1
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-003",
+            "module": "HTML_CSS",
+            "query": "How does the <nav> element specify author copyright information at the bottom of the page?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does the <nav> element specify author copyright information at the bottom of the page?",
+                    "extracted_proposition": "the <nav> element specify author copyright information at the bottom of the page",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <nav>: Defines a set of major navigation links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.8,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 981
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-004",
+            "module": "HTML_CSS",
+            "query": "Why must a <footer> element be placed exclusively inside the document <header> tag?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why must a <footer> element be placed exclusively inside the document <header> tag?",
+                    "extracted_proposition": "Why must a <footer> element be placed exclusively inside the document <header> tag",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <header>: Represents introductory content or a set of navigational links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 977.8
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-005",
+            "module": "HTML_CSS",
+            "query": "Since <header> elements are prohibited from containing navigational links, how should site menus be structured?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since <header> elements are prohibited from containing navigational links, how should site menus be structured?",
+                    "extracted_proposition": "<header> elements are prohibited from containing navigational links",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <header>: Represents introductory content or a set of navigational links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1022.2
+                },
+                {
+                    "original_query": "Since <header> elements are prohibited from containing navigational links, how should site menus be structured?",
+                    "extracted_proposition": "how should site menus be structured",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: Semantic HTML elements clearly describe their meaning to both the browser and the developer. Key structural elements include:",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 984.5
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-006",
+            "module": "HTML_CSS",
+            "query": "Why does the browser screen-reader ignore <section> elements unless wrapped inside generic <div> containers?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: Using semantic tags improves SEO, screen-reader accessibility (A11y), and code maintainability over generic <div> tags.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does the browser screen-reader ignore <section> elements unless wrapped inside generic <div> containers?",
+                    "extracted_proposition": "the browser screen-reader ignore <section> elements unless wrapped inside generic <div> containers",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: Using semantic tags improves SEO, screen-reader accessibility (A11y), and code maintainability over generic <div> tags.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1072.4
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-007",
+            "module": "HTML_CSS",
+            "query": "How does using generic <div> tags improve screen-reader accessibility compared to semantic HTML5 tags?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: Using semantic tags improves SEO, screen-reader accessibility (A11y), and code maintainability over generic <div> tags.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does using generic <div> tags improve screen-reader accessibility compared to semantic HTML5 tags?",
+                    "extracted_proposition": "using generic <div> tags improve screen-reader accessibility compared to semantic HTML5 tags",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: Using semantic tags improves SEO, screen-reader accessibility (A11y), and code maintainability over generic <div> tags.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1042.8
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-008",
+            "module": "HTML_CSS",
+            "query": "Since HTML5 documents permit multiple distinct <main> elements per page, how does the browser resolve them?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is incorrect according to the course curriculum: - <main>: Specifies the main, unique content of the document. There must not be more than one <main> element in a document.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "HTML5 documents permit multiple distinct <main> elements per page",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                },
+                {
+                    "original_query": "Since HTML5 documents permit multiple distinct <main> elements per page, how does the browser resolve them?",
+                    "extracted_proposition": "the browser resolve them",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: Semantic HTML elements clearly describe their meaning to both the browser and the developer. Key structural elements include:",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 960.8
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-009",
+            "module": "HTML_CSS",
+            "query": "Why does the <main> tag represent navigational breadcrumbs rather than the unique central content?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does the <main> tag represent navigational breadcrumbs rather than the unique central content?",
+                    "extracted_proposition": "the <main> tag represent navigational breadcrumbs",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <main>: Specifies the main, unique content of the document. There must not be more than one <main> element in a document.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1040.8
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-010",
+            "module": "HTML_CSS",
+            "query": "How does the <footer> tag represent introductory header content and page titles?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - <header>: Represents introductory content or a set of navigational links.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does the <footer> tag represent introductory header content and page titles?",
+                    "extracted_proposition": "the <footer> tag represent introductory header content and page titles",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <header>: Represents introductory content or a set of navigational links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1103.8
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-011",
+            "module": "HTML_CSS",
+            "query": "Since padding clears transparent space outside the element border, how does it separate adjacent elements?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: 2. Padding: Transparent area clearing space around the content inside the border.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since padding clears transparent space outside the element border, how does it separate adjacent elements?",
+                    "extracted_proposition": "padding clears transparent space outside the element border",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: 2. Padding: Transparent area clearing space around the content inside the border.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1017.9
+                },
+                {
+                    "original_query": "Since padding clears transparent space outside the element border, how does it separate adjacent elements?",
+                    "extracted_proposition": "it separate adjacent elements",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: 4. Margin: Transparent space outside the border separating the element from neighboring elements.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1010.2
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-012",
+            "module": "HTML_CSS",
+            "query": "Why is margin positioned inside the border layer directly touching the inner content?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": "The premise is incorrect according to the course curriculum: 4. Margin: Transparent space outside the border separating the element from neighboring elements.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why is margin positioned inside the border layer directly touching the inner content?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-013",
+            "module": "HTML_CSS",
+            "query": "How does the border layer sit inside the padding area in the standard CSS box model?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: Every HTML element in a document tree is formatted as a rectangular box. The CSS box model consists of four distinct layers from inside out:",
+            "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does the border layer sit inside the padding area in the standard CSS box model?",
+                    "extracted_proposition": "the border layer sit inside the padding area in the standard CSS box model",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: Every HTML element in a document tree is formatted as a rectangular box. The CSS box model consists of four distinct layers from inside out:",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1022.4
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-014",
+            "module": "HTML_CSS",
+            "query": "Since margin is controlled via the width property, why does increasing margin expand the element content box?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: 1. Content: The actual text, image, or media content of the box. Controlled via width and height.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since margin is controlled via the width property, why does increasing margin expand the element content box?",
+                    "extracted_proposition": "margin is controlled via the width property",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: 1. Content: The actual text, image, or media content of the box. Controlled via width and height.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1062.7
+                },
+                {
+                    "original_query": "Since margin is controlled via the width property, why does increasing margin expand the element content box?",
+                    "extracted_proposition": "increasing margin expand the element content box",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: Every HTML element in a document tree is formatted as a rectangular box. The CSS box model consists of four distinct layers from inside out:",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 975.5
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-015",
+            "module": "HTML_CSS",
+            "query": "Why does the default content-box model include borders within the declared width value?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": "The premise is incorrect according to the course curriculum: * { box-sizing: border-box; }",
+            "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why does the default content-box model include borders within the declared width value?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-016",
+            "module": "HTML_CSS",
+            "query": "How does declaring box-sizing: content-box automatically include padding inside the specified width?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": "The premise is incorrect according to the course curriculum: * { box-sizing: border-box; }",
+            "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "How does declaring box-sizing: content-box automatically include padding inside the specified width?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-017",
+            "module": "HTML_CSS",
+            "query": "Since the CSS box model consists of five nested layers including outline, why are margins rendered innermost?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: Every HTML element in a document tree is formatted as a rectangular box. The CSS box model consists of four distinct layers from inside out:",
+            "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since the CSS box model consists of five nested layers including outline, why are margins rendered innermost?",
+                    "extracted_proposition": "the CSS box model consists of five nested layers including outline",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: Every HTML element in a document tree is formatted as a rectangular box. The CSS box model consists of four distinct layers from inside out:",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 975.9
+                },
+                {
+                    "original_query": "Since the CSS box model consists of five nested layers including outline, why are margins rendered innermost?",
+                    "extracted_proposition": "margins rendered innermost",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: 4. Margin: Transparent space outside the border separating the element from neighboring elements.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1007.6
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-018",
+            "module": "HTML_CSS",
+            "query": "Why does padding clear space between neighboring external elements rather than around inner content?",
+            "expected": "REFUTED",
+            "predicted": "SUPPORTED",
+            "match": false,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does padding clear space between neighboring external elements rather than around inner content?",
+                    "extracted_proposition": "padding clear space between neighboring external elements",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: 2. Padding: Transparent area clearing space around the content inside the border.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 942.6
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-019",
+            "module": "HTML_CSS",
+            "query": "How does margin define the border thickness around an HTML element?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: 4. Margin: Transparent space outside the border separating the element from neighboring elements.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does margin define the border thickness around an HTML element?",
+                    "extracted_proposition": "margin define the border thickness around an HTML element",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: 4. Margin: Transparent space outside the border separating the element from neighboring elements.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1011.2
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-020",
+            "module": "HTML_CSS",
+            "query": "Why does flex-wrap: nowrap allow flex items to wrap across multiple lines when overflowing?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - flex-wrap: nowrap (default) | wrap | wrap-reverse. Allows items to break into multiple lines.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does flex-wrap: nowrap allow flex items to wrap across multiple lines when overflowing?",
+                    "extracted_proposition": "flex-wrap: nowrap allow flex items to wrap across multiple lines when overflowing",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-wrap: nowrap (default) | wrap | wrap-reverse. Allows items to break into multiple lines.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1096.8
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-021",
+            "module": "HTML_CSS",
+            "query": "How does flex-shrink: 0 force a flex item to shrink when container space becomes constrained?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - flex-shrink: Defines the ability for a flex item to shrink if necessary (default 1).",
+            "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does flex-shrink: 0 force a flex item to shrink when container space becomes constrained?",
+                    "extracted_proposition": "flex-shrink: 0 force a flex item to shrink when container space becomes constrained",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-shrink: Defines the ability for a flex item to shrink if necessary (default 1).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1158
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-022",
+            "module": "HTML_CSS",
+            "query": "Since flex-grow: 1 prevents flex items from expanding into available space, how is growth enabled?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since flex-grow: 1 prevents flex items from expanding into available space, how is growth enabled?",
+                    "extracted_proposition": "flex-grow: 1 prevents flex items from expanding into available space",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-grow: Defines the ability for a flex item to grow if necessary (default 0).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 934.8
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-023",
+            "module": "HTML_CSS",
+            "query": "How does flex-basis: 250px set the maximum border thickness of a container?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does flex-basis: 250px set the maximum border thickness of a container?",
+                    "extracted_proposition": "flex-basis: 250px set the maximum border thickness of a container",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-basis: The default size of an element before the remaining space is distributed (e.g., flex-basis: 250px). Shorthand: flex: 1 1 auto.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 999.7
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-024",
+            "module": "HTML_CSS",
+            "query": "Since gap requires child items to define explicit margin properties, why does flexbox omit margin?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since gap requires child items to define explicit margin properties, why does flexbox omit margin?",
+                    "extracted_proposition": "gap requires child items to define explicit margin properties",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - gap: Defines spacing between flex items without using margins (e.g., gap: 1rem).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 966.7
+                },
+                {
+                    "original_query": "Since gap requires child items to define explicit margin properties, why does flexbox omit margin?",
+                    "extracted_proposition": "flexbox omit margin",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: CSS FLEXBOX LAYOUT GUIDE:",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 960.6
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-025",
+            "module": "HTML_CSS",
+            "query": "Why does display: flex initiate a 3-dimensional spatial layout context?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - display: flex (initiates the flex formatting context).",
+            "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does display: flex initiate a 3-dimensional spatial layout context?",
+                    "extracted_proposition": "display: flex initiate a 3-dimensional spatial layout context",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - display: flex (initiates the flex formatting context).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1002.7
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-026",
+            "module": "HTML_CSS",
+            "query": "Why does flex-wrap: wrap force all items to remain strictly on a single continuous line?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - flex-wrap: nowrap (default) | wrap | wrap-reverse. Allows items to break into multiple lines.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does flex-wrap: wrap force all items to remain strictly on a single continuous line?",
+                    "extracted_proposition": "flex-wrap: wrap force all items to remain strictly on a single continuous line",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-wrap: nowrap (default) | wrap | wrap-reverse. Allows items to break into multiple lines.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1040.6
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-027",
+            "module": "HTML_CSS",
+            "query": "How does flex: 1 1 auto prevent elements from both growing and shrinking?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - flex-grow: Defines the ability for a flex item to grow if necessary (default 0).",
+            "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does flex: 1 1 auto prevent elements from both growing and shrinking?",
+                    "extracted_proposition": "flex: 1 1 auto prevent elements from both growing and shrinking",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-grow: Defines the ability for a flex item to grow if necessary (default 0).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1000.2
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-028",
+            "module": "HTML_CSS",
+            "query": "Since flex-shrink: 1 prevents child elements from reducing in dimension, why do flex items compress?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since flex-shrink: 1 prevents child elements from reducing in dimension, why do flex items compress?",
+                    "extracted_proposition": "flex-shrink: 1 prevents child elements from reducing in dimension",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-shrink: Defines the ability for a flex item to shrink if necessary (default 1).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 959.3
+                },
+                {
+                    "original_query": "Since flex-shrink: 1 prevents child elements from reducing in dimension, why do flex items compress?",
+                    "extracted_proposition": "flex items compress",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - justify-content: Controls alignment along the Main Axis: flex-start, flex-end, center, space-between (equal space between items), space-around, space-evenly.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 972
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-029",
+            "module": "HTML_CSS",
+            "query": "Why does display: grid activate a single-axis linear flexbox context?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does display: grid activate a single-axis linear flexbox context?",
+                    "extracted_proposition": "display: grid activate a single-axis linear flexbox context",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: Flexbox (Flexible Box Layout) is a 1-dimensional layout model designed for distributing space along a single axis (row or column).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 970.7
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-030",
+            "module": "HTML_CSS",
+            "query": "How does grid-template-columns define row heights rather than column track widths?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does grid-template-columns define row heights rather than column track widths?",
+                    "extracted_proposition": "grid-template-columns define row heights",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1058.6
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-031",
+            "module": "HTML_CSS",
+            "query": "Since repeat(auto-fit, minmax(280px, 1fr)) requires hardcoded media queries to achieve responsiveness, how does grid adapt?",
+            "expected": "REFUTED",
+            "predicted": "SUPPORTED",
+            "match": false,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since repeat(auto-fit, minmax(280px, 1fr)) requires hardcoded media queries to achieve responsiveness, how does grid adapt?",
+                    "extracted_proposition": "repeat(auto-fit, minmax(280px, 1fr)) requires hardcoded media queries to achieve responsiveness",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 962.8
+                },
+                {
+                    "original_query": "Since repeat(auto-fit, minmax(280px, 1fr)) requires hardcoded media queries to achieve responsiveness, how does grid adapt?",
+                    "extracted_proposition": "grid adapt",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 975
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-032",
+            "module": "HTML_CSS",
+            "query": "Why does the gap property in CSS grid apply exclusively to external margins outside the container?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - gap: Sets spacing between grid cells (e.g., gap: 24px).",
+            "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does the gap property in CSS grid apply exclusively to external margins outside the container?",
+                    "extracted_proposition": "the gap property in CSS grid apply exclusively to external margins outside the container",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - gap: Sets spacing between grid cells (e.g., gap: 24px).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1003.5
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-033",
+            "module": "HTML_CSS",
+            "query": "How does grid-column: span 2 delete neighboring track items from the grid layout?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does grid-column: span 2 delete neighboring track items from the grid layout?",
+                    "extracted_proposition": "grid-column: span 2 delete neighboring track items from the grid layout",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 982
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-034",
+            "module": "HTML_CSS",
+            "query": "Why does display: grid require all child elements to have identical pixel dimensions?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does display: grid require all child elements to have identical pixel dimensions?",
+                    "extracted_proposition": "display: grid require all child elements to have identical pixel dimensions",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 977.7
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-035",
+            "module": "HTML_CSS",
+            "query": "How does grid-template-rows specify horizontal column track boundaries in CSS grid?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+            "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does grid-template-rows specify horizontal column track boundaries in CSS grid?",
+                    "extracted_proposition": "grid-template-rows specify horizontal column track boundaries in CSS grid",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 993.7
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-036",
+            "module": "HTML_CSS",
+            "query": "Since semantic HTML reduces SEO visibility and screen-reader parsing, why do developers avoid semantic tags?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: Using semantic tags improves SEO, screen-reader accessibility (A11y), and code maintainability over generic <div> tags.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since semantic HTML reduces SEO visibility and screen-reader parsing, why do developers avoid semantic tags?",
+                    "extracted_proposition": "semantic HTML reduces SEO visibility and screen-reader parsing",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: Using semantic tags improves SEO, screen-reader accessibility (A11y), and code maintainability over generic <div> tags.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1034.2
+                },
+                {
+                    "original_query": "Since semantic HTML reduces SEO visibility and screen-reader parsing, why do developers avoid semantic tags?",
+                    "extracted_proposition": "developers avoid semantic tags",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: Semantic HTML elements clearly describe their meaning to both the browser and the developer. Key structural elements include:",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1024.9
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-037",
+            "module": "HTML_CSS",
+            "query": "Why does the browser require <section> tags to contain exactly five nested <article> tags?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does the browser require <section> tags to contain exactly five nested <article> tags?",
+                    "extracted_proposition": "the browser require <section> tags to contain exactly five nested <article> tags",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <article>: Represents a self-contained composition (e.g., blog post, forum post, product card) that is independently distributable.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.8,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 998.9
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-038",
+            "module": "HTML_CSS",
+            "query": "How does the <nav> element represent video playback controls inside a media player?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does the <nav> element represent video playback controls inside a media player?",
+                    "extracted_proposition": "the <nav> element represent video playback controls inside a media player",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <nav>: Defines a set of major navigation links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1032.7
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-039",
+            "module": "HTML_CSS",
+            "query": "Since <header> contains solely author legal information, why is copyright omitted from <footer>?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since <header> contains solely author legal information, why is copyright omitted from <footer>?",
+                    "extracted_proposition": "<header> contains solely author legal information",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <header>: Represents introductory content or a set of navigational links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1163.5
+                },
+                {
+                    "original_query": "Since <header> contains solely author legal information, why is copyright omitted from <footer>?",
+                    "extracted_proposition": "copyright omitted from <footer>",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <footer>: Contains author information, copyright, or footer links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 930.3
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-040",
+            "module": "HTML_CSS",
+            "query": "Why does padding in the CSS box model render behind the background image while margin renders in front?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: Every HTML element in a document tree is formatted as a rectangular box. The CSS box model consists of four distinct layers from inside out:",
+            "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does padding in the CSS box model render behind the background image while margin renders in front?",
+                    "extracted_proposition": "padding in the CSS box model render behind the background image while margin renders in front",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: Every HTML element in a document tree is formatted as a rectangular box. The CSS box model consists of four distinct layers from inside out:",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1156.8
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-041",
+            "module": "HTML_CSS",
+            "query": "How does declaring width on an element override and erase all padding definitions in CSS?",
+            "expected": "REFUTED",
+            "predicted": "SUPPORTED",
+            "match": false,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does declaring width on an element override and erase all padding definitions in CSS?",
+                    "extracted_proposition": "declaring width on an element override and erase all padding definitions in CSS",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: This ensures padding and borders are included within the element's total declared width and height.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 949.3
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-042",
+            "module": "HTML_CSS",
+            "query": "Why does the CSS box model calculate total height without considering top and bottom borders?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: This ensures padding and borders are included within the element's total declared width and height.",
+            "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does the CSS box model calculate total height without considering top and bottom borders?",
+                    "extracted_proposition": "the CSS box model calculate total height without considering top and bottom borders",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: This ensures padding and borders are included within the element's total declared width and height.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1015.8
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-043",
+            "module": "HTML_CSS",
+            "query": "Why does the <header> element require an explicit rel='author' attribute to be valid?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does the <header> element require an explicit rel='author' attribute to be valid?",
+                    "extracted_proposition": "the <header> element require an explicit rel='author' attribute to be valid",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <header>: Represents introductory content or a set of navigational links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 984.6
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-044",
+            "module": "HTML_CSS",
+            "query": "How does setting border: 1px solid red remove all padding from the box model?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does setting border: 1px solid red remove all padding from the box model?",
+                    "extracted_proposition": "setting border: 1px solid red remove all padding from the box model",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: 3. Border: A border surrounding the padding and content (e.g., border: 1px solid #ccc).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 956.6
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-045",
+            "module": "HTML_CSS",
+            "query": "Since CSS Grid forbids the use of fraction units (1fr), how are responsive columns declared?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+            "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since CSS Grid forbids the use of fraction units (1fr), how are responsive columns declared?",
+                    "extracted_proposition": "CSS Grid forbids the use of fraction units (1fr)",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1044.2
+                },
+                {
+                    "original_query": "Since CSS Grid forbids the use of fraction units (1fr), how are responsive columns declared?",
+                    "extracted_proposition": "how are responsive columns declared",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 942.2
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-046",
+            "module": "HTML_CSS",
+            "query": "Why does flex-wrap: nowrap divide child elements across three automatic columns?",
+            "expected": "REFUTED",
+            "predicted": "SUPPORTED",
+            "match": false,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does flex-wrap: nowrap divide child elements across three automatic columns?",
+                    "extracted_proposition": "flex-wrap: nowrap divide child elements across three automatic columns",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-wrap: nowrap (default) | wrap | wrap-reverse. Allows items to break into multiple lines.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 938.2
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-047",
+            "module": "HTML_CSS",
+            "query": "How does declaring width: 100% on a flex container turn off the flex formatting context?",
+            "expected": "REFUTED",
+            "predicted": "REFUTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": "The premise is contradicted by curriculum evidence: HTML & CSS Fundamentals: - display: flex (initiates the flex formatting context).",
+            "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does declaring width: 100% on a flex container turn off the flex formatting context?",
+                    "extracted_proposition": "declaring width: 100% on a flex container turn off the flex formatting context",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - display: flex (initiates the flex formatting context).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1010.5
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-048",
+            "module": "HTML_CSS",
+            "query": "Why does flex-wrap: wrap-reverse prohibit items from breaking onto subsequent layout rows?",
+            "expected": "REFUTED",
+            "predicted": "SUPPORTED",
+            "match": false,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why does flex-wrap: wrap-reverse prohibit items from breaking onto subsequent layout rows?",
+                    "extracted_proposition": "flex-wrap: wrap-reverse prohibit items from breaking onto subsequent layout rows",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-wrap: nowrap (default) | wrap | wrap-reverse. Allows items to break into multiple lines.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 936.9
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-049",
+            "module": "HTML_CSS",
+            "query": "How does flex-grow: 0 cause an element to expand aggressively to fill remaining space?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "How does flex-grow: 0 cause an element to expand aggressively to fill remaining space?",
+                    "extracted_proposition": "flex-grow: 0 cause an element to expand aggressively to fill remaining space",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-grow: Defines the ability for a flex item to grow if necessary (default 0).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 972.2
+                }
+            ]
+        },
+        {
+            "id": "LEAVEOUT-HTML_CSS-050",
+            "module": "HTML_CSS",
+            "query": "Since flex-shrink specifies child margin spacing, why does flex-basis define font sizes?",
+            "expected": "REFUTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Since flex-shrink specifies child margin spacing, why does flex-basis define font sizes?",
+                    "extracted_proposition": "flex-shrink specifies child margin spacing",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-shrink: Defines the ability for a flex item to shrink if necessary (default 1).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 941.8
+                },
+                {
+                    "original_query": "Since flex-shrink specifies child margin spacing, why does flex-basis define font sizes?",
+                    "extracted_proposition": "flex-basis define font sizes",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-basis: The default size of an element before the remaining space is distributed (e.g., flex-basis: 250px). Shorthand: flex: 1 1 auto.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 967.7
+                }
+            ]
+        }
+    ]
+}

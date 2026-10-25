@@ -1,0 +1,888 @@
+{
+  "experiment_id": "EXP-0060",
+  "benchmark": "DEVELOPMENT",
+  "dataset": {
+    "name": "EXP-0025-DEVELOPMENT-DATASET.json",
+    "sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+    "N": 400
+  },
+  "retrieval_metrics_shared": {
+    "eval_queries_count": 256,
+    "recall_at_1": 96.88,
+    "recall_at_3": 99.61,
+    "recall_at_5": 99.61,
+    "recall_at_10": 100.0,
+    "ndcg_at_5": 86.92,
+    "ndcg_at_10": 86.13,
+    "rank_distribution": {
+      "rank_1_5_count": 255,
+      "rank_1_5_pct": 99.61,
+      "rank_6_10_count": 1,
+      "rank_6_10_pct": 0.39,
+      "rank_11_20_count": 0,
+      "rank_11_20_pct": 0.0,
+      "not_in_top20_count": 0,
+      "not_in_top20_pct": 0.0
+    }
+  },
+  "conditions": {
+    "c0_control": {
+      "total": 400,
+      "correct": 368,
+      "accuracy": 92.0,
+      "accuracy_ci_95": [
+        88.92,
+        94.28
+      ],
+      "macro_f1": 92.67,
+      "far": 3.6,
+      "far_ci_95": [
+        1.91,
+        6.7
+      ],
+      "frr": 13.33,
+      "frr_ci_95": [
+        8.8,
+        19.7
+      ],
+      "supported_recall": 86.67,
+      "refutation_recall": 93.33,
+      "not_established_recall": 98.0,
+      "ood_recall": 98.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 130,
+          "REFUTED": 20,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 8,
+          "REFUTED": 140,
+          "NOT_ESTABLISHED": 2
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 98
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 84,
+          "total": 100,
+          "accuracy": 84.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 94,
+          "total": 100,
+          "accuracy": 94.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 98,
+          "total": 100,
+          "accuracy": 98.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 46,
+          "total": 50,
+          "accuracy": 92.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 46,
+          "total": 50,
+          "accuracy": 92.0
+        }
+      }
+    },
+    "c4_20_reference": {
+      "total": 400,
+      "correct": 347,
+      "accuracy": 86.75,
+      "accuracy_ci_95": [
+        83.08,
+        89.73
+      ],
+      "macro_f1": 86.67,
+      "far": 3.6,
+      "far_ci_95": [
+        1.91,
+        6.7
+      ],
+      "frr": 12.67,
+      "frr_ci_95": [
+        8.26,
+        18.94
+      ],
+      "supported_recall": 87.33,
+      "refutation_recall": 94.0,
+      "not_established_recall": 75.0,
+      "ood_recall": 75.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 131,
+          "REFUTED": 19,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 8,
+          "REFUTED": 141,
+          "NOT_ESTABLISHED": 1
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 24,
+          "NOT_ESTABLISHED": 75
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 84,
+          "total": 100,
+          "accuracy": 84.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 95,
+          "total": 100,
+          "accuracy": 95.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 75,
+          "total": 100,
+          "accuracy": 75.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 47,
+          "total": 50,
+          "accuracy": 94.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 46,
+          "total": 50,
+          "accuracy": 92.0
+        }
+      }
+    },
+    "c4_10_reduced": {
+      "total": 400,
+      "correct": 346,
+      "accuracy": 86.5,
+      "accuracy_ci_95": [
+        82.8,
+        89.5
+      ],
+      "macro_f1": 86.45,
+      "far": 4.0,
+      "far_ci_95": [
+        2.19,
+        7.21
+      ],
+      "frr": 12.67,
+      "frr_ci_95": [
+        8.26,
+        18.94
+      ],
+      "supported_recall": 87.33,
+      "refutation_recall": 93.33,
+      "not_established_recall": 75.0,
+      "ood_recall": 75.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 131,
+          "REFUTED": 19,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 9,
+          "REFUTED": 140,
+          "NOT_ESTABLISHED": 1
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 24,
+          "NOT_ESTABLISHED": 75
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 84,
+          "total": 100,
+          "accuracy": 84.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 95,
+          "total": 100,
+          "accuracy": 95.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 75,
+          "total": 100,
+          "accuracy": 75.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 47,
+          "total": 50,
+          "accuracy": 94.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 45,
+          "total": 50,
+          "accuracy": 90.0
+        }
+      }
+    },
+    "c4_5_minimal": {
+      "total": 400,
+      "correct": 351,
+      "accuracy": 87.75,
+      "accuracy_ci_95": [
+        84.17,
+        90.61
+      ],
+      "macro_f1": 87.69,
+      "far": 3.6,
+      "far_ci_95": [
+        1.91,
+        6.7
+      ],
+      "frr": 11.33,
+      "frr_ci_95": [
+        7.2,
+        17.4
+      ],
+      "supported_recall": 88.67,
+      "refutation_recall": 94.0,
+      "not_established_recall": 77.0,
+      "ood_recall": 77.0,
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 133,
+          "REFUTED": 17,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 8,
+          "REFUTED": 141,
+          "NOT_ESTABLISHED": 1
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 22,
+          "NOT_ESTABLISHED": 77
+        }
+      },
+      "category_breakdown": {
+        "SUPPORTED_CURRICULUM": {
+          "correct": 86,
+          "total": 100,
+          "accuracy": 86.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "correct": 96,
+          "total": 100,
+          "accuracy": 96.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "correct": 77,
+          "total": 100,
+          "accuracy": 77.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "correct": 47,
+          "total": 50,
+          "accuracy": 94.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "correct": 45,
+          "total": 50,
+          "accuracy": 90.0
+        }
+      }
+    }
+  },
+  "efficiency": {
+    "c4_20": {
+      "context_tokens": {
+        "mean": 1331.9,
+        "median": 1348.5,
+        "p95": 1549.0
+      },
+      "a4_latency_ms": {
+        "mean": 1500.6,
+        "median": 1810.7,
+        "p95": 3564.3
+      },
+      "total_latency_ms": {
+        "mean": 3742.5,
+        "median": 4034.9,
+        "p95": 5811.6
+      }
+    },
+    "c4_10": {
+      "context_tokens": {
+        "mean": 587.5,
+        "median": 580.0,
+        "p95": 782.3
+      },
+      "a4_latency_ms": {
+        "mean": 28.8,
+        "median": 22.6,
+        "p95": 51.9
+      },
+      "total_latency_ms": {
+        "mean": 2270.7,
+        "median": 2292.1,
+        "p95": 2475.3
+      }
+    },
+    "c4_5": {
+      "context_tokens": {
+        "mean": 301.0,
+        "median": 304.5,
+        "p95": 450.0
+      },
+      "a4_latency_ms": {
+        "mean": 52.5,
+        "median": 11.9,
+        "p95": 30.5
+      },
+      "total_latency_ms": {
+        "mean": 2294.3,
+        "median": 2285.6,
+        "p95": 2495.7
+      }
+    }
+  },
+  "paired_comparisons": {
+    "c4_10_vs_c4_20": {
+      "comparator": "C4-10 vs C4-20",
+      "n11": 346,
+      "n00": 53,
+      "n10": 0,
+      "n01": 1,
+      "discordant_pairs": 1,
+      "mcnemar_exact_p": 1.0,
+      "accuracy_delta_pp": -0.25,
+      "accuracy_delta_ci_95": [
+        -0.74,
+        0.24
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-MIX-021",
+          "query": "Since useMemo memoizes calculations, why does it execute asynchronous API calls by default?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-10_WRONG_C4-20_CORRECT"
+        }
+      ]
+    },
+    "c4_5_vs_c4_20": {
+      "comparator": "C4-5 vs C4-20",
+      "n11": 346,
+      "n00": 48,
+      "n10": 5,
+      "n01": 1,
+      "discordant_pairs": 6,
+      "mcnemar_exact_p": 0.21875,
+      "accuracy_delta_pp": 1.0,
+      "accuracy_delta_ci_95": [
+        -0.2,
+        2.2
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-031",
+          "query": "How does async/await allow asynchronous code to be written sequentially?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5_CORRECT_C4-20_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-042",
+          "query": "How does the single main thread execute JavaScript sequentially in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5_CORRECT_C4-20_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-061",
+          "query": "Why does Atomicity allow partial changes to remain committed when a transaction fails?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4-5_CORRECT_C4-20_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-025",
+          "query": "How does Jetpack Compose handle state hoisting in Android applications?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5_CORRECT_C4-20_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-072",
+          "query": "How does external technology framework 72 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5_CORRECT_C4-20_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-021",
+          "query": "Since useMemo memoizes calculations, why does it execute asynchronous API calls by default?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5_WRONG_C4-20_CORRECT"
+        }
+      ]
+    },
+    "c4_5_vs_c0": {
+      "comparator": "C4-5 vs C0",
+      "n11": 342,
+      "n00": 23,
+      "n10": 9,
+      "n01": 26,
+      "discordant_pairs": 35,
+      "mcnemar_exact_p": 0.005988,
+      "accuracy_delta_pp": -4.25,
+      "accuracy_delta_ci_95": [
+        -7.12,
+        -1.38
+      ],
+      "discordant_cases": [
+        {
+          "query_id": "DEV-SUP-026",
+          "query": "How do rest parameters (...args) condense arguments into a true Array?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-SUP-031",
+          "query": "How does async/await allow asynchronous code to be written sequentially?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-041",
+          "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-SUP-077",
+          "query": "What index type is used for full-text search and JSONB containment in PostgreSQL?",
+          "category": "SUPPORTED_CURRICULUM",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-038",
+          "query": "Why does rest parameter syntax require parameters to be placed at the start of the list?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4-5_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-046",
+          "query": "Why does HTTP POST guarantee idempotency across multiple repeated requests?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4-5_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-FLS-077",
+          "query": "Why does COMMIT roll back changes made by preceding SQL statements in a transaction?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-FLS-098",
+          "query": "Why does shallow comparison (Object.is) detect mutations made directly to array contents?",
+          "category": "NOVEL_FALSE_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4-5_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-014",
+          "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "NOT_ESTABLISHED",
+          "pred_b": "REFUTED",
+          "type": "C4-5_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-UNK-029",
+          "query": "How does Android handle lifecycle events in ViewModel during configuration changes?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-051",
+          "query": "How does external technology framework 51 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-052",
+          "query": "How does external technology framework 52 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-060",
+          "query": "How does external technology framework 60 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-065",
+          "query": "How does external technology framework 65 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-066",
+          "query": "How does external technology framework 66 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-070",
+          "query": "How does external technology framework 70 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-078",
+          "query": "How does external technology framework 78 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-080",
+          "query": "How does external technology framework 80 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-082",
+          "query": "How does external technology framework 82 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-083",
+          "query": "How does external technology framework 83 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-084",
+          "query": "How does external technology framework 84 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-085",
+          "query": "How does external technology framework 85 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-086",
+          "query": "How does external technology framework 86 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-088",
+          "query": "How does external technology framework 88 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-090",
+          "query": "How does external technology framework 90 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-093",
+          "query": "How does external technology framework 93 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-094",
+          "query": "How does external technology framework 94 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-095",
+          "query": "How does external technology framework 95 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-097",
+          "query": "How does external technology framework 97 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-098",
+          "query": "How does external technology framework 98 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-UNK-100",
+          "query": "How does external technology framework 100 manage distributed cluster coordination?",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "expected": "NOT_ESTABLISHED",
+          "pred_a": "REFUTED",
+          "pred_b": "NOT_ESTABLISHED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-010",
+          "query": "Why doesn't Flexbox provide 2-dimensional grid layouts?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-NEG-026",
+          "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "REFUTED",
+          "pred_b": "SUPPORTED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        },
+        {
+          "query_id": "DEV-NEG-050",
+          "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?",
+          "category": "LEGITIMATE_NEGATION",
+          "expected": "SUPPORTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5_CORRECT_C0_WRONG"
+        },
+        {
+          "query_id": "DEV-MIX-027",
+          "query": "Since var is hoisted with undefined, why does let also hoist with initial value of undefined?",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "expected": "REFUTED",
+          "pred_a": "SUPPORTED",
+          "pred_b": "REFUTED",
+          "type": "C4-5_WRONG_C0_CORRECT"
+        }
+      ]
+    }
+  },
+  "ood_analysis": {
+    "c0": {
+      "total_ood": 100,
+      "correct": 98,
+      "accuracy": 98.0,
+      "false_acceptances": 1,
+      "false_refutations": 1,
+      "other_errors": 0
+    },
+    "c4_20": {
+      "total_ood": 100,
+      "correct": 75,
+      "accuracy": 75.0,
+      "false_acceptances": 1,
+      "false_refutations": 24,
+      "other_errors": 0
+    },
+    "c4_10": {
+      "total_ood": 100,
+      "correct": 75,
+      "accuracy": 75.0,
+      "false_acceptances": 1,
+      "false_refutations": 24,
+      "other_errors": 0
+    },
+    "c4_5": {
+      "total_ood": 100,
+      "correct": 77,
+      "accuracy": 77.0,
+      "false_acceptances": 1,
+      "false_refutations": 22,
+      "other_errors": 0
+    }
+  },
+  "forensics": {
+    "transition_causes": {
+      "ood_keyword_collision": 2,
+      "irrelevant_high_rank_evidence": 0,
+      "relevant_evidence_retained": 2,
+      "relevant_evidence_removed": 0,
+      "compound_premise": 1,
+      "legitimate_negation": 0,
+      "novel_false_premise": 1,
+      "section_contamination": 0,
+      "verifier_ambiguity": 0,
+      "other": 0
+    },
+    "transitions": [
+      {
+        "query_id": "DEV-MIX-021",
+        "category": "MIXED_COMPOUND_PREMISE",
+        "expected": "REFUTED",
+        "type": "C4-10_WRONG_C4-20_CORRECT",
+        "cause": "compound_premise",
+        "gold_in_top5": true,
+        "gold_in_top20": true
+      },
+      {
+        "query_id": "DEV-SUP-031",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "type": "C4-5_CORRECT_C4-20_WRONG",
+        "cause": "relevant_evidence_retained",
+        "gold_in_top5": true,
+        "gold_in_top20": true
+      },
+      {
+        "query_id": "DEV-SUP-042",
+        "category": "SUPPORTED_CURRICULUM",
+        "expected": "SUPPORTED",
+        "type": "C4-5_CORRECT_C4-20_WRONG",
+        "cause": "relevant_evidence_retained",
+        "gold_in_top5": true,
+        "gold_in_top20": true
+      },
+      {
+        "query_id": "DEV-FLS-061",
+        "category": "NOVEL_FALSE_PREMISE",
+        "expected": "REFUTED",
+        "type": "C4-5_CORRECT_C4-20_WRONG",
+        "cause": "novel_false_premise",
+        "gold_in_top5": true,
+        "gold_in_top20": true
+      },
+      {
+        "query_id": "DEV-UNK-025",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5_CORRECT_C4-20_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_top20": false
+      },
+      {
+        "query_id": "DEV-UNK-072",
+        "category": "OUT_OF_CURRICULUM_UNKNOWN",
+        "expected": "NOT_ESTABLISHED",
+        "type": "C4-5_CORRECT_C4-20_WRONG",
+        "cause": "ood_keyword_collision",
+        "gold_in_top5": false,
+        "gold_in_top20": false
+      }
+    ]
+  },
+  "primary_finding": "D: Evidence volume is not the dominant cause of the C4 downstream gap."
+}

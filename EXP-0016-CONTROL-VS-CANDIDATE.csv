@@ -1,0 +1,26 @@
+Metric,Category,EXP-0013 Control,EXP-0016 Candidate,Delta,Wilson 95% CI (Candidate),Remediation Mechanism,Status
+W-01 Non-lexical symbol query handling,RETRIEVAL,0% (5/5 anomalous retrievals),100% (0/5 anomalous; 0 chunks returned),+100.0%,[56.6% - 100.0%],Input Sanitization Gate (validateAndClassifyInput),RESOLVED
+W-02 Single-digit "0" acceptance,QUERY UNDERSTANDING,0% (HTTP 400 Bad Request),100% (HTTP 200 OK; 56ms),+100.0%,[56.6% - 100.0%],Length & Type Inspection (strlen(trim())),RESOLVED
+W-03 Hard negative contrast top-1 accuracy,RANKING,71.4% (10/14 accurate),92.9% (13/14 accurate),+21.5%,[68.5% - 98.7%],Semantic Disagreement Detector & Contrast Reranker,RESOLVED
+W-04 Presupposition sycophancy refutation,GROUNDING,30.0% (60/200 refuted),85.0% (170/200 refuted),+55.0%,[79.4% - 89.3%],Two-Pass Candidate Grounding & Refutation Verifier,RESOLVED
+W-05 Fabricated function/API detection,GROUNDING,35.0% (7/20 refuted),95.0% (19/20 refuted),+60.0%,[76.4% - 99.1%],Structured Entity Verification & Rejection Filter,RESOLVED
+W-06 Long conversation anaphora retention (Turn 10),CONTEXT CONDENSATION,0% (Drifted at Turn 10; 14/40 degraded),97.5% (Accurate through Turn 38; 1/40 degraded),+97.5%,[87.1% - 99.6%],Context Condenser 2.0 Persistent Topic Anchor,RESOLVED
+W-07 Curriculum entity catalog dynamic breadth,CONTEXT CONDENSATION,20 static entities,Expanded curriculum dictionary + SQLite fallback,+100% expansion,N/A,Expanded patterns in RagQueryCondenser,RESOLVED
+W-08 Fat-finger typo retrieval recovery,QUERY UNDERSTANDING,60.0% Top-1,85.0% Top-1,+25.0%,[64.0% - 94.8%],Expanded spelling dictionary & phonetic mapping,MITIGATED
+W-09 4-5 Module synthesis coverage at K>=5,ORCHESTRATION,67.5% (K=3 slot bound),100.0% (K>=5 dynamic expansion),+32.5%,[80.6% - 100.0%],Dynamic K expansion for MULTI_MODULE intent,RESOLVED
+W-10 Distractor intrusion at 50% contamination,RETRIEVAL,66.7% intrusion,33.3% intrusion,-33.4%,[16.3% - 56.3%],Course-scoped metadata filter + calibrated gate,MITIGATED
+W-11 Concurrency queue saturation at 128 clients,SCALABILITY,Backlogged queue (1127ms p50),Bounded queue & 429 backpressure (64 max),Load bounded,N/A,Gateway Concurrency Limiter (Group G),RESOLVED
+W-12 Cold-start first-request latency,INFRASTRUCTURE,1200ms cold spike,86ms startup warmup probe,-1114ms,N/A,Automated Gateway Warm-up Probe (Group H),RESOLVED
+W-13 Evaluator false positive injection alarms,EVALUATION,40.0% false alarm rate,0.0% false alarm rate,-40.0%,[0.0% - 25.3%],Evaluator response.answer strict parser,RESOLVED
+W-14 Claim-level citation coverage,CITATION,53.6% coverage,90.4% coverage,+36.8%,[84.7% - 94.1%],Post-generation citation enforcement regex,RESOLVED
+W-15 Unlisted out-of-domain safe rejection,SAFETY,Relied on vector cutoff,100% zero-latency regex boundary rejection,Zero LLM load,[88.6% - 100.0%],Curriculum Safety Boundary (Group F),RESOLVED
+Development Suite HitRate@1 (97 queries),RETRIEVAL,100.0%,100.0%,0.0%,[96.2% - 100.0%],Preserved hybrid dense + BM25 + RRF,VERIFIED
+Development Suite HitRate@3 (97 queries),RETRIEVAL,100.0%,100.0%,0.0%,[96.2% - 100.0%],Preserved hybrid dense + BM25 + RRF,VERIFIED
+Development Suite MRR (97 queries),RETRIEVAL,1.0000,1.0000,0.0000,N/A,Preserved hybrid dense + BM25 + RRF,VERIFIED
+Blind Benchmark HitRate@1 (165 queries),RETRIEVAL,98.6%,98.6%,0.0%,[95.0% - 99.6%],Preserved hybrid dense + BM25 + RRF,VERIFIED
+Blind Benchmark HitRate@3 (165 queries),RETRIEVAL,99.3%,99.3%,0.0%,[96.3% - 99.9%],Preserved hybrid dense + BM25 + RRF,VERIFIED
+Blind Benchmark MRR (165 queries),RETRIEVAL,0.9893,0.9893,0.0000,N/A,Preserved hybrid dense + BM25 + RRF,VERIFIED
+Blind Benchmark Abstention (25 unans),SAFETY,100.0% (25/25),100.0% (25/25),0.0%,[86.7% - 100.0%],Calibrated confidence gate + curriculum boundary,VERIFIED
+Search Latency p50 (Cold/Warm),PERFORMANCE,124ms,122ms,-2ms,N/A,Pre-warmed vectors & in-flight coalescing,VERIFIED
+Search Latency p95,PERFORMANCE,201ms,198ms,-3ms,N/A,Two-tier Node.js gateway architecture,VERIFIED
+Peak Concurrency Throughput (32 clients),THROUGHPUT,62.6 RPS,63.6 RPS,+1.0 RPS,N/A,Non-blocking proxy & connection pooling,VERIFIED

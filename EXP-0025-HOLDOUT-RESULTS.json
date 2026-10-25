@@ -1,0 +1,708 @@
+{
+  "experiment_tag": "EXP-0025-HOLDOUT-RESULTS",
+  "timestamp": "2026-09-13T07:06:06.541Z",
+  "total_cases": 1000,
+  "overall_accuracy": "87.50%",
+  "macro_f1": "87.71%",
+  "primary_gates": {
+    "false_acceptance_rate_far": {
+      "value": "7.67%",
+      "ci_95": "[5.16%, 11.24%]",
+      "target": "<= 15.00%",
+      "aspirational_target": "<= 5.00%",
+      "passed": true
+    },
+    "refutation_recall": {
+      "value": "85.33%",
+      "ci_95": "[80.88%, 88.89%]",
+      "target": ">= 80.00%",
+      "aspirational_target": ">= 90.00%",
+      "passed": true
+    },
+    "false_refutation_rate_frr": {
+      "value": "0.00%",
+      "ci_95": "[0.00%, 2.91%]",
+      "target": "<= 5.00%",
+      "passed": true
+    },
+    "unknown_recall": {
+      "value": "100.00%",
+      "ci_95": "[98.17%, 100.00%]",
+      "target": ">= 95.00%",
+      "passed": true
+    },
+    "evidence_used_invariant": {
+      "value": "100.00%",
+      "target": "100.00%",
+      "passed": true
+    }
+  },
+  "confusion_matrix": {
+    "SUPPORTED": {
+      "SUPPORTED": 318,
+      "REFUTED": 35,
+      "NOT_ESTABLISHED": 22
+    },
+    "REFUTED": {
+      "SUPPORTED": 41,
+      "REFUTED": 357,
+      "NOT_ESTABLISHED": 27
+    },
+    "NOT_ESTABLISHED": {
+      "SUPPORTED": 0,
+      "REFUTED": 0,
+      "NOT_ESTABLISHED": 200
+    }
+  },
+  "class_f1_scores": {
+    "SUPPORTED": {
+      "precision": "88.58%",
+      "recall": "84.80%",
+      "f1": "86.65%"
+    },
+    "REFUTED": {
+      "precision": "91.07%",
+      "recall": "84.00%",
+      "f1": "87.39%"
+    },
+    "NOT_ESTABLISHED": {
+      "precision": "80.32%",
+      "recall": "100.00%",
+      "f1": "89.09%"
+    }
+  },
+  "category_breakdown": {
+    "supported_curriculum": {
+      "total": 250,
+      "correct": 195,
+      "accuracy": "78.00%"
+    },
+    "novel_false_premises": {
+      "total": 300,
+      "refuted": 256,
+      "falsely_accepted": 23,
+      "far": "7.67%",
+      "refutation_recall": "85.33%"
+    },
+    "out_of_curriculum_unknown": {
+      "total": 200,
+      "not_established": 200,
+      "falsely_refuted": 0,
+      "falsely_supported": 0,
+      "unknown_recall": "100.00%"
+    },
+    "legitimate_negation": {
+      "total": 125,
+      "supported": 123,
+      "falsely_refuted": 0,
+      "frr": "0.00%"
+    },
+    "mixed_compound_premises": {
+      "total": 125,
+      "refuted": 101,
+      "refutation_rate": "80.80%"
+    }
+  },
+  "sample_records": [
+    {
+      "id": "HOLDOUT-SUP-0001",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does display: flex initiate a 1-dimensional flex formatting context?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 139
+    },
+    {
+      "id": "HOLDOUT-SUP-0002",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does justify-content space-between distribute equal space between flex items?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 2302
+    },
+    {
+      "id": "HOLDOUT-SUP-0003",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does align-items center align flex items along the cross axis?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 4074
+    },
+    {
+      "id": "HOLDOUT-SUP-0004",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What is the role of flex-wrap in allowing items to break across lines?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 5508
+    },
+    {
+      "id": "HOLDOUT-SUP-0005",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does flex-grow allow a flex child to expand into available space?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 7649
+    },
+    {
+      "id": "HOLDOUT-SUP-0006",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does flex-shrink allow an item to shrink when space is constrained?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 9660
+    },
+    {
+      "id": "HOLDOUT-SUP-0008",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does display: grid create a 2-dimensional grid formatting context?",
+      "expected": "SUPPORTED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Insufficient evidence in retrieved curriculum passages to establish premise",
+      "latency_ms": 7431
+    },
+    {
+      "id": "HOLDOUT-SUP-0007",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What is the function of the gap property in avoiding margin collapse in flex containers?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 10709
+    },
+    {
+      "id": "HOLDOUT-SUP-0010",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does grid-column: span 2 allow an element to span two grid tracks?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 7275
+    },
+    {
+      "id": "HOLDOUT-SUP-0009",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does grid-template-columns repeat(auto-fit, minmax(280px, 1fr)) create responsive columns?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 10541
+    },
+    {
+      "id": "HOLDOUT-SUP-0012",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does box-sizing: border-box include padding and border within the declared width?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 6793
+    },
+    {
+      "id": "HOLDOUT-SUP-0011",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What are the four layers of the CSS box model from inside to outside?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 11029
+    },
+    {
+      "id": "HOLDOUT-SUP-0014",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What is the semantic purpose of the <main> element in an HTML document?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 9112
+    },
+    {
+      "id": "HOLDOUT-SUP-0013",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "Why is box-sizing: border-box universally recommended in modern CSS?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 11711
+    },
+    {
+      "id": "HOLDOUT-SUP-0016",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What is the purpose of the <article> element for independently distributable content?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 7708
+    },
+    {
+      "id": "HOLDOUT-SUP-0018",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What content belongs in the <footer> element according to HTML5 semantics?",
+      "expected": "SUPPORTED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Insufficient evidence in retrieved curriculum passages to establish premise",
+      "latency_ms": 3736
+    },
+    {
+      "id": "HOLDOUT-SUP-0020",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What is the difference between block elements and inline elements in CSS layout?",
+      "expected": "SUPPORTED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Insufficient evidence in retrieved curriculum passages to establish premise",
+      "latency_ms": 1062
+    },
+    {
+      "id": "HOLDOUT-SUP-0015",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "Why must there be only one <main> element per HTML document?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 10786
+    },
+    {
+      "id": "HOLDOUT-SUP-0022",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What error is thrown when accessing a let variable in the Temporal Dead Zone?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 2487
+    },
+    {
+      "id": "HOLDOUT-SUP-0024",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "Why are properties of objects declared with const still mutable in JavaScript?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[React Hooks Tutorial - Chunk 1]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 1388
+    },
+    {
+      "id": "HOLDOUT-SUP-0017",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does the <section> element group thematic content in HTML5?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 10252
+    },
+    {
+      "id": "HOLDOUT-SUP-0026",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "Why do arrow functions eliminate the need for .bind(this) in event callbacks?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 3575
+    },
+    {
+      "id": "HOLDOUT-SUP-0019",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How do semantic HTML elements enhance screen-reader accessibility?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 10441
+    },
+    {
+      "id": "HOLDOUT-SUP-0028",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How do rest parameters (...args) condense function arguments into an Array?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 4459
+    },
+    {
+      "id": "HOLDOUT-SUP-0021",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does ES6 let confine variables to block scope?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 12328
+    },
+    {
+      "id": "HOLDOUT-SUP-0030",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does the spread operator perform shallow copying of JavaScript objects?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 3286
+    },
+    {
+      "id": "HOLDOUT-SUP-0032",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does the microtask queue take precedence over macrotasks in the event loop?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 71
+    },
+    {
+      "id": "HOLDOUT-SUP-0023",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does const require immediate initialization upon declaration?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 15552
+    },
+    {
+      "id": "HOLDOUT-SUP-0034",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does Promise.all fail fast upon the first rejected promise?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 1738
+    },
+    {
+      "id": "HOLDOUT-SUP-0025",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How do arrow functions inherit this lexically from their enclosing context?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 16310
+    },
+    {
+      "id": "HOLDOUT-SUP-0027",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What error is thrown if an arrow function is called with the new keyword?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 15721
+    },
+    {
+      "id": "HOLDOUT-SUP-0036",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does Promise.race resolve or reject as soon as the first promise settles?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 3811
+    },
+    {
+      "id": "HOLDOUT-SUP-0029",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does object destructuring extract properties into local variables?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 16503
+    },
+    {
+      "id": "HOLDOUT-SUP-0038",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does queueMicrotask schedule high-priority callbacks in JavaScript?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 5271
+    },
+    {
+      "id": "HOLDOUT-SUP-0031",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What are the three lifecycle states of a JavaScript Promise?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 17993
+    },
+    {
+      "id": "HOLDOUT-SUP-0033",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does async/await enable sequential asynchronous JavaScript syntax?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[Node.js & Express REST API Notes - Chunk 0]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 16362
+    },
+    {
+      "id": "HOLDOUT-SUP-0035",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does Promise.allSettled wait for all promises to resolve or reject?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 12990
+    },
+    {
+      "id": "HOLDOUT-SUP-0037",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does setTimeout place callbacks onto the macrotask queue in the event loop?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 10430
+    },
+    {
+      "id": "HOLDOUT-SUP-0040",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What is the single-threaded nature of JavaScript execution on the call stack?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 3903
+    },
+    {
+      "id": "HOLDOUT-SUP-0039",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What does Object.freeze do to top-level object properties?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 8977
+    },
+    {
+      "id": "HOLDOUT-SUP-0042",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does the Node.js event loop cycle through timers, poll, and check phases?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 7510
+    },
+    {
+      "id": "HOLDOUT-SUP-0041",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does Node.js utilize Libuv to manage background worker threads for file I/O?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 9903
+    },
+    {
+      "id": "HOLDOUT-SUP-0044",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What four parameters must Express error-handling middleware declare?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 10555
+    },
+    {
+      "id": "HOLDOUT-SUP-0046",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does res.status(401).json() terminate the request-response cycle on unauthorized access?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[Node.js & Express REST API Notes - Chunk 3]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 7628
+    },
+    {
+      "id": "HOLDOUT-SUP-0048",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What does HTTP 200 OK signify in REST API responses?",
+      "expected": "SUPPORTED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Insufficient evidence in retrieved curriculum passages to establish premise",
+      "latency_ms": 1003
+    },
+    {
+      "id": "HOLDOUT-SUP-0043",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What is the purpose of express.json() built-in middleware in Express?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 11313
+    },
+    {
+      "id": "HOLDOUT-SUP-0050",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What is the meaning of HTTP 400 Bad Request in client input validation?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 3100
+    },
+    {
+      "id": "HOLDOUT-SUP-0045",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does calling next() forward execution to the next middleware in Express?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 13641
+    },
+    {
+      "id": "HOLDOUT-SUP-0052",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What does HTTP 404 Not Found represent when querying a resource?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 5679
+    },
+    {
+      "id": "HOLDOUT-SUP-0047",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "Why should RESTful API endpoints use plural nouns for resources?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 11894
+    }
+  ]
+}

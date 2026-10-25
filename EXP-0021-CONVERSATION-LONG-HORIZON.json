@@ -1,0 +1,39 @@
+{
+  "experiment_tag": "EXP-0021-CERTIFICATION-2026-09-09",
+  "evaluation": "Conversational Long-Horizon Stress Test (30 Conversations × 20 Turns = 600 Turns)",
+  "total_conversations": 30,
+  "total_turns": 600,
+  "overall_top1_accuracy": "90.0% (540/600)",
+  "overall_top3_accuracy": "97.5% (585/600)",
+  "re_anchoring_recovery_rate": "66.7% (30/45)",
+  "turn_degradation_breakdown": {
+    "turns_01_05": {
+      "total_turns": 150,
+      "top1_accuracy": "100.0% (150/150)",
+      "top3_accuracy": "100.0% (150/150)",
+      "contamination_rate": "0.0% (0/150)",
+      "anchor_loss_rate": "0.0% (0/150)"
+    },
+    "turns_06_10": {
+      "total_turns": 150,
+      "top1_accuracy": "80.0% (120/150)",
+      "top3_accuracy": "90.0% (135/150)",
+      "contamination_rate": "20.0% (30/150)",
+      "anchor_loss_rate": "10.0% (15/150)"
+    },
+    "turns_11_15": {
+      "total_turns": 150,
+      "top1_accuracy": "100.0% (150/150)",
+      "top3_accuracy": "100.0% (150/150)",
+      "contamination_rate": "10.0% (15/150)",
+      "anchor_loss_rate": "0.0% (0/150)"
+    },
+    "turns_16_20": {
+      "total_turns": 150,
+      "top1_accuracy": "80.0% (120/150)",
+      "top3_accuracy": "100.0% (150/150)",
+      "contamination_rate": "0.0% (0/150)",
+      "anchor_loss_rate": "0.0% (0/150)"
+    }
+  }
+}

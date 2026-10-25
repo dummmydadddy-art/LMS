@@ -1,0 +1,259 @@
+{
+  "experiment_tag": "EXP-0021-CERTIFICATION-2026-09-09",
+  "timestamp": "2026-09-09T14:05:11.140Z",
+  "prewarm_and_cache": {
+    "all_workers_ram_active": true,
+    "all_workers_dim_768": true,
+    "active_corpus_version": 1788961720792,
+    "ram_core_latency_ms": 0.38,
+    "disk_core_latency_ms": 2.53,
+    "latency_reduction_percent": "85.0%",
+    "worker_telemetry": {
+      "port_8001": {
+        "online": true,
+        "retrieval_source": "PREWARMED_RAM",
+        "vector_dimension": 768,
+        "chunk_count": 23,
+        "corpus_version": 1788961720792,
+        "latency_ms": 0.4
+      },
+      "port_8002": {
+        "online": true,
+        "retrieval_source": "PREWARMED_RAM",
+        "vector_dimension": 768,
+        "chunk_count": 23,
+        "corpus_version": 1788961720792,
+        "latency_ms": 0.4
+      },
+      "port_8003": {
+        "online": true,
+        "retrieval_source": "PREWARMED_RAM",
+        "vector_dimension": 768,
+        "chunk_count": 23,
+        "corpus_version": 1788961720792,
+        "latency_ms": 0.4
+      },
+      "port_8004": {
+        "online": true,
+        "retrieval_source": "PREWARMED_RAM",
+        "vector_dimension": 768,
+        "chunk_count": 23,
+        "corpus_version": 1788961720792,
+        "latency_ms": 0.4
+      },
+      "port_8005": {
+        "online": true,
+        "retrieval_source": "PREWARMED_RAM",
+        "vector_dimension": 768,
+        "chunk_count": 23,
+        "corpus_version": 1788961720792,
+        "latency_ms": 0.4
+      },
+      "port_8006": {
+        "online": true,
+        "retrieval_source": "PREWARMED_RAM",
+        "vector_dimension": 768,
+        "chunk_count": 23,
+        "corpus_version": 1788961720792,
+        "latency_ms": 0.4
+      },
+      "port_8007": {
+        "online": true,
+        "retrieval_source": "PREWARMED_RAM",
+        "vector_dimension": 768,
+        "chunk_count": 23,
+        "corpus_version": 1788961720792,
+        "latency_ms": 0.4
+      },
+      "port_8008": {
+        "online": true,
+        "retrieval_source": "PREWARMED_RAM",
+        "vector_dimension": 768,
+        "chunk_count": 23,
+        "corpus_version": 1788961720792,
+        "latency_ms": 0.4
+      }
+    }
+  },
+  "worker_failure_recovery": {
+    "scenario_1_single_worker_crash": {
+      "killed_port": 8002,
+      "killed_pid": 21512,
+      "request_during_kill_succeeded": true,
+      "recovery_and_dispatch_time_ms": 583,
+      "status": "PASSED"
+    },
+    "scenario_2_two_simultaneous_crashes": {
+      "killed_ports": [
+        8003,
+        8004
+      ],
+      "request_during_kill_succeeded": true,
+      "recovery_and_dispatch_time_ms": 503,
+      "status": "PASSED"
+    },
+    "scenario_3_four_simultaneous_crashes": {
+      "killed_ports": [
+        8001,
+        8002,
+        8005,
+        8006
+      ],
+      "request_during_kill_succeeded": true,
+      "recovery_and_dispatch_time_ms": 1336,
+      "status": "PASSED"
+    },
+    "scenario_4_seven_workers_killed": {
+      "surviving_port": 8004,
+      "killed_ports": [
+        8001,
+        8002,
+        8003,
+        8005,
+        8006,
+        8007,
+        8008
+      ],
+      "request_during_kill_succeeded": true,
+      "recovery_and_dispatch_time_ms": 2377,
+      "status": "PASSED"
+    },
+    "cluster_restoration_health": {
+      "status": "HEALTHY",
+      "active_gen_requests": 0,
+      "queue_depth": 0,
+      "counter_leakage_detected": false,
+      "online_worker_count": 8
+    }
+  },
+  "concurrency_and_saturation": {
+    "concurrency_sweep": {
+      "c_1": {
+        "concurrency": 1,
+        "requests_total": 1,
+        "successful": 1,
+        "failed": 0,
+        "error_rate": "0.00%",
+        "throughput_rps": 9.4,
+        "duration_ms": 106.8,
+        "p50_latency_ms": 104.4,
+        "p95_latency_ms": 104.4,
+        "p99_latency_ms": 104.4
+      },
+      "c_4": {
+        "concurrency": 4,
+        "requests_total": 4,
+        "successful": 4,
+        "failed": 0,
+        "error_rate": "0.00%",
+        "throughput_rps": 94.1,
+        "duration_ms": 42.5,
+        "p50_latency_ms": 38.8,
+        "p95_latency_ms": 41.4,
+        "p99_latency_ms": 41.4
+      },
+      "c_8": {
+        "concurrency": 8,
+        "requests_total": 8,
+        "successful": 8,
+        "failed": 0,
+        "error_rate": "0.00%",
+        "throughput_rps": 113.9,
+        "duration_ms": 70.2,
+        "p50_latency_ms": 45.6,
+        "p95_latency_ms": 68.6,
+        "p99_latency_ms": 68.6
+      },
+      "c_16": {
+        "concurrency": 16,
+        "requests_total": 16,
+        "successful": 16,
+        "failed": 0,
+        "error_rate": "0.00%",
+        "throughput_rps": 150,
+        "duration_ms": 106.6,
+        "p50_latency_ms": 74.5,
+        "p95_latency_ms": 104.4,
+        "p99_latency_ms": 104.4
+      },
+      "c_32": {
+        "concurrency": 32,
+        "requests_total": 32,
+        "successful": 32,
+        "failed": 0,
+        "error_rate": "0.00%",
+        "throughput_rps": 163.4,
+        "duration_ms": 195.9,
+        "p50_latency_ms": 125.9,
+        "p95_latency_ms": 188.7,
+        "p99_latency_ms": 191.8
+      },
+      "c_64": {
+        "concurrency": 64,
+        "requests_total": 64,
+        "successful": 64,
+        "failed": 0,
+        "error_rate": "0.00%",
+        "throughput_rps": 179.4,
+        "duration_ms": 356.8,
+        "p50_latency_ms": 211.2,
+        "p95_latency_ms": 342.6,
+        "p99_latency_ms": 352.1
+      },
+      "c_96": {
+        "concurrency": 96,
+        "requests_total": 96,
+        "successful": 96,
+        "failed": 0,
+        "error_rate": "0.00%",
+        "throughput_rps": 174.6,
+        "duration_ms": 549.7,
+        "p50_latency_ms": 306,
+        "p95_latency_ms": 523.2,
+        "p99_latency_ms": 543.9
+      },
+      "c_128": {
+        "concurrency": 128,
+        "requests_total": 128,
+        "successful": 128,
+        "failed": 0,
+        "error_rate": "0.00%",
+        "throughput_rps": 179.7,
+        "duration_ms": 712.1,
+        "p50_latency_ms": 394,
+        "p95_latency_ms": 674.5,
+        "p99_latency_ms": 697.3
+      },
+      "c_256": {
+        "concurrency": 256,
+        "requests_total": 256,
+        "successful": 256,
+        "failed": 0,
+        "error_rate": "0.00%",
+        "throughput_rps": 188.9,
+        "duration_ms": 1354.9,
+        "p50_latency_ms": 727.9,
+        "p95_latency_ms": 1282.6,
+        "p99_latency_ms": 1331.1
+      },
+      "c_512": {
+        "concurrency": 512,
+        "requests_total": 512,
+        "successful": 512,
+        "failed": 0,
+        "error_rate": "0.00%",
+        "throughput_rps": 184.3,
+        "duration_ms": 2778.4,
+        "p50_latency_ms": 1517.4,
+        "p95_latency_ms": 2631.5,
+        "p99_latency_ms": 2733.9
+      }
+    },
+    "landmarks": {
+      "sustainable_operating_point": "16 clients (150.0 RPS, p95: 104ms)",
+      "saturation_knee": "64 clients (Latency knee at p95: 343ms, RPS: 179.4)",
+      "overload_point": "512 clients (Error rate: 0.0%, p95: 2631ms)",
+      "recommended_production_guardrail": "Max 64 concurrent search connections; queue limit 100"
+    }
+  }
+}

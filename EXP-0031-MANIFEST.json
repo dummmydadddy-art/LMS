@@ -1,0 +1,125 @@
+{
+    "experiment": "EXP-0031",
+    "title": "Tier-1 Semantic/Syntactic Decoupling & Clause-Grounded Polarity Disambiguation",
+    "branch": "exp-0031",
+    "base_commit": "3bd36c7",
+    "lineage": "EXP-0028 (B5) -> EXP-0029 (C7) -> EXP-0030 (D3) -> EXP-0031 (E4)",
+    "date": "2026-09-16",
+    "environment": {
+        "php_version": "8.3.32",
+        "os": "WINNT",
+        "model": "llama3.2:latest",
+        "retrieval_db": "database/rag_materials.sqlite3"
+    },
+    "sample_sizes": {
+        "challenge_set": 150,
+        "blind_evaluation_set": 500
+    },
+    "ablation_modes": {
+        "E0": "Frozen EXP-0030 D3 Baseline (Legacy Tier-1 Fast Path)",
+        "E1": "Entity & Sibling Alignment + Predicate Target Matching",
+        "E2": "E1 + Negative Polarity Concordance Scope",
+        "E3": "E2 + Subordinate Conditional & Disjunctive Scope",
+        "E4": "Full EXP-0031 Candidate (Decoupled Tier-1 + Conservative Fall-Through)"
+    },
+    "artifacts": [
+        {
+            "file": "backend/rag_premise_verifier.php",
+            "description": "Hybrid Evidence-Grounded Premise Verifier with Decoupled Tier-1 Fast-Path",
+            "size_bytes": 91483,
+            "sha256": "e9e00ac7fa4cb3aeddc6a4ebe3f2fd0191ab7af7996231edddaee8f6c9576f57",
+            "last_modified": "2026-09-16T09:54:50+00:00"
+        },
+        {
+            "file": "EXP-0031-TIER1-FORENSICS.md",
+            "description": "Forensic Analysis and Causal Taxonomy of 46 False Refutations",
+            "size_bytes": 15615,
+            "sha256": "10eb91173adfcb74877b52227560d281e5ce262b5112319656e14161334102e7",
+            "last_modified": "2026-09-16T09:38:02+00:00"
+        },
+        {
+            "file": "EXP-0031-DESIGN.md",
+            "description": "Technical Architecture and 5-Point Structural Validation Pipeline Specification",
+            "size_bytes": 7905,
+            "sha256": "60abe4d7bbc8a560ae6f102d999cd431e4977cb5d0b0870dba32ed95fb193a3e",
+            "last_modified": "2026-09-16T09:38:25+00:00"
+        },
+        {
+            "file": "EXP-0031-TIER1-CHALLENGE-DATASET.json",
+            "description": "Targeted Tier-1 Challenge Dataset (N = 150)",
+            "size_bytes": 45263,
+            "sha256": "88844632ee4420fb706dd89e91f9d17af9536ad9a9cdb57018e1831cb37acff9",
+            "last_modified": "2026-09-16T09:38:54+00:00"
+        },
+        {
+            "file": "EXP-0031-TIER1-CHALLENGE-VALIDATION.md",
+            "description": "Validation and Distribution Report for Tier-1 Challenge Dataset",
+            "size_bytes": 1418,
+            "sha256": "6d645a724b1e93535b189a9488f4d17ba77c0338d4ea7e9ab3c6fb0c2faa9c11",
+            "last_modified": "2026-09-16T09:39:09+00:00"
+        },
+        {
+            "file": "EXP-0031-BLIND-DATASET.json",
+            "description": "Main Blind Evaluation Benchmark Dataset (N = 500)",
+            "size_bytes": 134396,
+            "sha256": "712f9daea02d0f355ed11413ce0d98226937f59279508340d4ea13ec0e80039d",
+            "last_modified": "2026-09-16T09:42:39+00:00"
+        },
+        {
+            "file": "EXP-0031-BLIND-DATASET-VALIDATION.md",
+            "description": "Cryptographic and Collision Audit Report for 500-Case Blind Dataset",
+            "size_bytes": 3946,
+            "sha256": "04fc991c43a80c120859df23797b67f968aff16a175fc4d818d6ea8c27bb9538",
+            "last_modified": "2026-09-16T09:44:28+00:00"
+        },
+        {
+            "file": "scratch/exp0031_challenge_retrieval_cache.json",
+            "description": "Prefetched SQLite RRF/BM25 Retrieval Cache for Challenge Dataset (150 entries)",
+            "size_bytes": 41951410,
+            "sha256": "5a687177efd92daad8234cdaabe2efdd63ccae119c60151b27799261e55bbb90",
+            "last_modified": "2026-09-16T09:53:11+00:00"
+        },
+        {
+            "file": "scratch/exp0031_blind_retrieval_cache.json",
+            "description": "Prefetched SQLite RRF/BM25 Retrieval Cache for Blind Dataset (500 entries)",
+            "size_bytes": 139443665,
+            "sha256": "be122411aa58513731aff4ae0af570a6c69ddd745524de85ee37416b2f8030ab",
+            "last_modified": "2026-09-16T09:53:39+00:00"
+        },
+        {
+            "file": "EXP-0031-ABLATION-RESULTS.json",
+            "description": "Full Experimental Per-Case Predictions and Metrics for Ablation Modes E0-E4 on Challenge Set",
+            "size_bytes": 2404905,
+            "sha256": "3198316d7a3810938b5847b2f716a8d5f77cccefad4b6bdfe0eb83c204a8fcb2",
+            "last_modified": "2026-09-16T09:57:04+00:00"
+        },
+        {
+            "file": "EXP-0031-RESULTS.json",
+            "description": "Full Experimental Per-Case Predictions, Confusion Matrices, and Metrics for Blind Evaluation (N = 500)",
+            "size_bytes": 7407473,
+            "sha256": "ce1139313a70fd7d90b9985e0a15212c2869c4a169bab65da50e2ec38893b1cf",
+            "last_modified": "2026-09-16T10:09:56+00:00"
+        },
+        {
+            "file": "EXP-0031-ERROR-ANALYSIS.md",
+            "description": "Residual Error Categorization, Boundary Analysis, and Failure Modes",
+            "size_bytes": 7606,
+            "sha256": "f5c14ca70f369d539856705637d72817c94526a7802132617ab1c87ed79a1550",
+            "last_modified": "2026-09-16T10:10:31+00:00"
+        },
+        {
+            "file": "EXP-0031-REPRODUCIBILITY.md",
+            "description": "Comprehensive Replication Instructions and Audit Commands",
+            "size_bytes": 5435,
+            "sha256": "fa7923d9d2de399027f51d221710ec9031045425c699300c893f27e97eb082d3",
+            "last_modified": "2026-09-16T09:58:23+00:00"
+        },
+        {
+            "file": "EXP-0031-RESEARCH-REPORT.md",
+            "description": "Comprehensive 23-Section Research and Evaluation Report",
+            "size_bytes": 29366,
+            "sha256": "87456ce4e908baf18dbbd1d76227ac7844cc0ed25d4aa9690aaffdcd38525250",
+            "last_modified": "2026-09-16T10:12:15+00:00"
+        }
+    ]
+}

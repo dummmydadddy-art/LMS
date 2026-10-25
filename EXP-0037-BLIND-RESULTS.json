@@ -1,0 +1,2859 @@
+{
+    "experiment_id": "EXP-0037",
+    "evaluation_type": "FROZEN_BLIND_BENCHMARK",
+    "candidate_architecture": "A4",
+    "dataset_hash": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+    "predictions_artifact_hash": "bfa8ed1f95a73134a33bb99be674e68b307496fd152d5a35496f756a04a32c6f",
+    "execution_timestamp": "2026-09-17T08:13:30+00:00",
+    "metrics": {
+        "accuracy": 71.6,
+        "correct": 358,
+        "total": 500,
+        "macro_f1": 71.81,
+        "standard_far": 15.33,
+        "frr": 30.99,
+        "supported_recall": 69.01,
+        "refutation_recall": 70.37,
+        "ne_recall": 77.6,
+        "ood_recall": 94,
+        "novel_ood_recall": 92,
+        "false_abstentions": 19,
+        "false_acceptances": 44,
+        "class_metrics": {
+            "SUPPORTED": {
+                "precision": 76.96,
+                "recall": 69.01,
+                "f1": 72.77,
+                "tp": 147,
+                "pred_total": 191,
+                "true_total": 213
+            },
+            "REFUTED": {
+                "precision": 64.77,
+                "recall": 70.37,
+                "f1": 67.46,
+                "tp": 114,
+                "pred_total": 176,
+                "true_total": 162
+            },
+            "NOT_ESTABLISHED": {
+                "precision": 72.93,
+                "recall": 77.6,
+                "f1": 75.19,
+                "tp": 97,
+                "pred_total": 133,
+                "true_total": 125
+            }
+        },
+        "confusion_matrix": {
+            "SUPPORTED": {
+                "SUPPORTED": 147,
+                "REFUTED": 47,
+                "NOT_ESTABLISHED": 19
+            },
+            "REFUTED": {
+                "SUPPORTED": 31,
+                "REFUTED": 114,
+                "NOT_ESTABLISHED": 17
+            },
+            "NOT_ESTABLISHED": {
+                "SUPPORTED": 13,
+                "REFUTED": 15,
+                "NOT_ESTABLISHED": 97
+            }
+        },
+        "category_accuracies": {
+            "SUPPORTED": {
+                "total": 125,
+                "correct": 85,
+                "accuracy": 68
+            },
+            "FALSE_PREMISE": {
+                "total": 125,
+                "correct": 88,
+                "accuracy": 70.4
+            },
+            "AMBIGUOUS": {
+                "total": 75,
+                "correct": 50,
+                "accuracy": 66.67
+            },
+            "OOD": {
+                "total": 50,
+                "correct": 47,
+                "accuracy": 94
+            },
+            "PARAPHRASE": {
+                "total": 50,
+                "correct": 37,
+                "accuracy": 74
+            },
+            "ADVERSARIAL": {
+                "total": 75,
+                "correct": 51,
+                "accuracy": 68
+            }
+        },
+        "module_accuracies": {
+            "HTML_CSS": {
+                "total": 75,
+                "correct": 51,
+                "accuracy": 68
+            },
+            "JAVASCRIPT": {
+                "total": 78,
+                "correct": 51,
+                "accuracy": 65.38
+            },
+            "REACT": {
+                "total": 79,
+                "correct": 56,
+                "accuracy": 70.89
+            },
+            "NODEJS": {
+                "total": 74,
+                "correct": 43,
+                "accuracy": 58.11
+            },
+            "REST_API": {
+                "total": 72,
+                "correct": 57,
+                "accuracy": 79.17
+            },
+            "DATABASE": {
+                "total": 72,
+                "correct": 53,
+                "accuracy": 73.61
+            },
+            "BACKEND_EXTERNAL": {
+                "total": 36,
+                "correct": 34,
+                "accuracy": 94.44
+            },
+            "FRONTEND_EXTERNAL": {
+                "total": 8,
+                "correct": 7,
+                "accuracy": 87.5
+            },
+            "DATABASE_EXTERNAL": {
+                "total": 6,
+                "correct": 6,
+                "accuracy": 100
+            }
+        }
+    },
+    "hypotheses_evaluation": {
+        "H1_far_reduction": {
+            "expected": "<= 18.50%",
+            "actual": "15.33%",
+            "passed": true
+        },
+        "H2_ambiguity_mitigation": {
+            "expected": ">= +8.00 pp over N7 (48.00%)",
+            "actual": "66.67% (+18.67 pp)",
+            "passed": true
+        },
+        "H3_refutation_preservation": {
+            "expected": ">= 65.00%",
+            "actual": "70.37%",
+            "passed": true
+        },
+        "H4_ood_safety_invariant": {
+            "expected": ">= 90.00%",
+            "actual": "94%",
+            "novel_ood_actual": "92%",
+            "passed": true
+        },
+        "H5_overall_superiority": {
+            "expected": ">= 68.60% \/ 68.44%",
+            "actual": "71.6% \/ 71.81%",
+            "passed": true
+        }
+    },
+    "latency": {
+        "p50_ms": 640.42,
+        "p95_ms": 1158.57,
+        "mean_ms": 537.47,
+        "total_seconds": 268.76
+    },
+    "resource_usage": {
+        "ram_peak_mb": 44,
+        "vram": "2,315 MiB \/ 4,096 MiB (RTX 3050 Laptop)"
+    },
+    "statistical_test_a4_vs_n7": {
+        "n00": 139,
+        "n11": 340,
+        "n01": 18,
+        "n10": 3,
+        "discordant_count": 21,
+        "mcnemar_chi2": 9.3333,
+        "p_value": 0.00225,
+        "accuracy_diff_pp": 3,
+        "se_pp": 0.9066,
+        "ci_95_two_sided": [
+            1.22,
+            4.78
+        ],
+        "one_sided_lower_bound_95": 1.51,
+        "discordant_cases": [
+            {
+                "case_id": "EXP33-SUP-0002",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0023",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0032",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0053",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0101",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-AMB-0011",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0014",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0015",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_AMBIGUITY_GUARD",
+                "candidate_reason": "Ambiguity Routing Guard (Case B): Subjective or normative query lacks explicit universal rule mandate in curriculum evidence (normative_modal (should))"
+            },
+            {
+                "case_id": "EXP33-AMB-0030",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0031",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0035",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0038",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0042",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0047",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0056",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0057",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0064",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0067",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-ADV-0016",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0025",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "All decomposed atomic claim predicates independently verified"
+            },
+            {
+                "case_id": "EXP33-ADV-0046",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0036_N7",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            }
+        ]
+    },
+    "statistical_test_a4_vs_m2": {
+        "n00": 105,
+        "n11": 297,
+        "n01": 61,
+        "n10": 37,
+        "discordant_count": 98,
+        "mcnemar_chi2": 5.398,
+        "p_value": 0.02016,
+        "accuracy_diff_pp": 4.8,
+        "se_pp": 1.9682,
+        "ci_95_two_sided": [
+            0.94,
+            8.66
+        ],
+        "one_sided_lower_bound_95": 1.56,
+        "discordant_cases": [
+            {
+                "case_id": "EXP33-SUP-0002",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0003",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: border-box vs content-box"
+            },
+            {
+                "case_id": "EXP33-SUP-0010",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-SUP-0011",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0015",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0018",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0019",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-SUP-0020",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0022",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0023",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0024",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "All decomposed atomic claim predicates independently verified"
+            },
+            {
+                "case_id": "EXP33-SUP-0032",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: microtask vs macrotask"
+            },
+            {
+                "case_id": "EXP33-SUP-0041",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0046",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+            },
+            {
+                "case_id": "EXP33-SUP-0064",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: synchronous vs asynchronous"
+            },
+            {
+                "case_id": "EXP33-SUP-0065",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0068",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0069",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0071",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-SUP-0076",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0077",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0081",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0094",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0096",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0097",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0098",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0099",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0100",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0102",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0112",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0114",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0121",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0122",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: commit vs rollback"
+            },
+            {
+                "case_id": "EXP33-FLS-0005",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0006",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0008",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-FLS-0014",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0015",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_AMBIGUITY_GUARD",
+                "candidate_reason": "Ambiguity Routing Guard (Case B): Subjective or normative query lacks explicit universal rule mandate in curriculum evidence (universal_quantifier (always))"
+            },
+            {
+                "case_id": "EXP33-FLS-0016",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0032",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0034",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0036",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-FLS-0037",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0038",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0040",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0042",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0045",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+            },
+            {
+                "case_id": "EXP33-FLS-0056",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0060",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0061",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0063",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0068",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-FLS-0069",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0074",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0077",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0079",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0082",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0083",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0087",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0091",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0097",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0099",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0101",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0111",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0122",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-AMB-0005",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0020",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-AMB-0030",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0031",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0032",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-AMB-0045",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0063",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-AMB-0067",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0072",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-AMB-0074",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-OOD-0046",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "OOD",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-PAR-0002",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: border-box vs content-box"
+            },
+            {
+                "case_id": "EXP33-PAR-0003",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-PAR-0015",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: microtask vs macrotask"
+            },
+            {
+                "case_id": "EXP33-PAR-0029",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-PAR-0033",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-PAR-0036",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-PAR-0042",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-PAR-0044",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-ADV-0006",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: border-box vs content-box"
+            },
+            {
+                "case_id": "EXP33-ADV-0013",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0021",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0024",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0026",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-ADV-0037",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0038",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0046",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0047",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: microtask vs macrotask"
+            },
+            {
+                "case_id": "EXP33-ADV-0050",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0055",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0065",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-ADV-0072",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0074",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0035_M2",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            }
+        ]
+    },
+    "statistical_test_a4_vs_r0": {
+        "n00": 89,
+        "n11": 295,
+        "n01": 63,
+        "n10": 53,
+        "discordant_count": 116,
+        "mcnemar_chi2": 0.6983,
+        "p_value": 0.403364,
+        "accuracy_diff_pp": 2,
+        "se_pp": 2.1522,
+        "ci_95_two_sided": [
+            -2.22,
+            6.22
+        ],
+        "one_sided_lower_bound_95": -1.54,
+        "discordant_cases": [
+            {
+                "case_id": "EXP33-SUP-0002",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0003",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: border-box vs content-box"
+            },
+            {
+                "case_id": "EXP33-SUP-0010",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-SUP-0011",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0015",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0018",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0019",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-SUP-0022",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0023",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0024",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "All decomposed atomic claim predicates independently verified"
+            },
+            {
+                "case_id": "EXP33-SUP-0032",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: microtask vs macrotask"
+            },
+            {
+                "case_id": "EXP33-SUP-0041",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0046",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+            },
+            {
+                "case_id": "EXP33-SUP-0064",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: synchronous vs asynchronous"
+            },
+            {
+                "case_id": "EXP33-SUP-0065",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0068",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0069",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0071",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-SUP-0074",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-SUP-0077",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0081",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-SUP-0094",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0096",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0097",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0098",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0099",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0100",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0102",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0112",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0114",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-SUP-0115",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.26)"
+            },
+            {
+                "case_id": "EXP33-SUP-0116",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.26)"
+            },
+            {
+                "case_id": "EXP33-SUP-0120",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.26)"
+            },
+            {
+                "case_id": "EXP33-SUP-0122",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "SUPPORTED",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: commit vs rollback"
+            },
+            {
+                "case_id": "EXP33-FLS-0005",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0006",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0007",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-FLS-0008",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-FLS-0009",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-FLS-0012",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+            },
+            {
+                "case_id": "EXP33-FLS-0014",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0015",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_AMBIGUITY_GUARD",
+                "candidate_reason": "Ambiguity Routing Guard (Case B): Subjective or normative query lacks explicit universal rule mandate in curriculum evidence (universal_quantifier (always))"
+            },
+            {
+                "case_id": "EXP33-FLS-0016",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0032",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0033",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0034",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0035",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-FLS-0036",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-FLS-0037",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0038",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0040",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0041",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-FLS-0042",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0045",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+            },
+            {
+                "case_id": "EXP33-FLS-0056",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0060",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0061",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0063",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0068",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-FLS-0069",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0074",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0077",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0079",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0082",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0083",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0091",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0097",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0099",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0101",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0111",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-FLS-0116",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)"
+            },
+            {
+                "case_id": "EXP33-FLS-0120",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)"
+            },
+            {
+                "case_id": "EXP33-FLS-0122",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "FALSE_PREMISE",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-AMB-0005",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0014",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0030",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0031",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0032",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-AMB-0033",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+            },
+            {
+                "case_id": "EXP33-AMB-0039",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0045",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0051",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+            },
+            {
+                "case_id": "EXP33-AMB-0056",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0063",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-AMB-0067",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-AMB-0072",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-AMB-0074",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "AMBIGUOUS",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-OOD-0046",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "OOD",
+                "expected": "NOT_ESTABLISHED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-PAR-0002",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: border-box vs content-box"
+            },
+            {
+                "case_id": "EXP33-PAR-0003",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-PAR-0015",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: microtask vs macrotask"
+            },
+            {
+                "case_id": "EXP33-PAR-0017",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-PAR-0029",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-PAR-0033",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-PAR-0034",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.26)"
+            },
+            {
+                "case_id": "EXP33-PAR-0035",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.26)"
+            },
+            {
+                "case_id": "EXP33-PAR-0036",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-PAR-0042",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-PAR-0044",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "PARAPHRASE",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-ADV-0006",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: border-box vs content-box"
+            },
+            {
+                "case_id": "EXP33-ADV-0013",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0015",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Zero or insufficient evidence available in approved curriculum (maxSim < 0.28)"
+            },
+            {
+                "case_id": "EXP33-ADV-0021",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0024",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0026",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-ADV-0037",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0038",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "SUPPORTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0045",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "NOT_ESTABLISHED",
+                "candidate_tier": "TIER_2_ABSTENTION",
+                "candidate_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise"
+            },
+            {
+                "case_id": "EXP33-ADV-0046",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0047",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_1_DETERMINISTIC",
+                "candidate_reason": "Polarity inversion established: microtask vs macrotask"
+            },
+            {
+                "case_id": "EXP33-ADV-0050",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "SUPPORTED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0055",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0065",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "EXP33-ADV-0069",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0072",
+                "type": "BASELINE_FAIL_CANDIDATE_CORRECT",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "NOT_ESTABLISHED",
+                "candidate_predicted": "REFUTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "EXP33-ADV-0074",
+                "type": "BASELINE_CORRECT_CANDIDATE_FAIL",
+                "category": "ADVERSARIAL",
+                "expected": "REFUTED",
+                "baseline_name": "EXP-0031_R0",
+                "baseline_predicted": "REFUTED",
+                "candidate_predicted": "SUPPORTED",
+                "candidate_tier": "TIER_2_SEMANTIC_NLI",
+                "candidate_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            }
+        ],
+        "non_inferior_margin_pp": -3,
+        "non_inferiority_verdict": "ESTABLISHED"
+    },
+    "decision_criteria": {
+        "adopt_criteria": {
+            "far_le_18_5": true,
+            "acc_gt_66_8": true,
+            "non_inferior_to_r0": true,
+            "refutation_ge_65": true,
+            "ood_ge_90": true
+        },
+        "conditional_criteria": {
+            "far_le_19_0": true,
+            "acc_ge_67_5": true,
+            "refutation_ge_64": true,
+            "ambiguity_recovery": true
+        },
+        "reject_criteria": {
+            "far_gt_19_5": false,
+            "refutation_lt_60": false,
+            "ood_lt_88": false
+        }
+    },
+    "final_decision": "ADOPT",
+    "reproducibility": {
+        "git_commit": "4cd5b37",
+        "git_branch": "exp-0037",
+        "prompt_mode": "P4_neutral",
+        "thresholds": {
+            "tau_entail": 0.85,
+            "tau_contra": 0.8
+        },
+        "model_identifier": "llama3.2:latest",
+        "ollama_health": "OK",
+        "php_version": "8.3.32",
+        "python_version": "3.12.7",
+        "hardware": "AMD64 Family 25, 16 GB RAM, NVIDIA RTX 3050 Laptop 4GB"
+    }
+}

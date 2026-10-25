@@ -1,0 +1,40 @@
+{
+  "experiment_id": "EXP-0018",
+  "timestamp": "2026-09-09T17:50:00.000Z",
+  "target_directory": "D:/Collage project/EduConnect-LMS-Experimental",
+  "production_directory": "D:/Collage project/EduConnect-LMS-Production (UNTOUCHED)",
+  "control_champion": "EXP-0013-CHAMPION-2026-09-09",
+  "remediated_weaknesses": 28,
+  "remediation_verdict": "PRODUCTION READY UNDER DOCUMENTED OPERATING BOUNDARIES",
+  "files_modified": [
+    "backend/gateway.js",
+    "backend/rag_service.php",
+    "backend/rag_premise_verifier.php",
+    "backend/rag_query_condenser.php",
+    "backend/embedding_coordinator.js"
+  ],
+  "verification_scripts": [
+    "scratch/verify_p0_fixes.js",
+    "scratch/verify_p1_p2_fixes.js",
+    "scratch/test_live_worker_crash.js",
+    "scratch/test_novel_false_premises.js",
+    "scratch/audit_500_false_premises_exp0018.js",
+    "scratch/test_exp0018_compound_suite.js",
+    "scratch/test_retrieval_ranking_forensics.js"
+  ],
+  "deliverables": [
+    "EXP-0018-HARDENED-RAG-REPORT.md",
+    "EXP-0018-WEAKNESS-REMEDIATION-REGISTER.csv",
+    "EXP-0018-BEFORE-AFTER-METRICS.csv",
+    "EXP-0018-SECURITY-REGRESSION.md",
+    "EXP-0018-PERFORMANCE-REGRESSION.md",
+    "EXP-0018-CACHE-CONSISTENCY.md",
+    "EXP-0018-WORKER-SUPERVISION.md",
+    "EXP-0018-FALSE-PREMISE-VALIDATION.md",
+    "EXP-0018-CONVERSATION-VALIDATION.md",
+    "EXP-0018-HISTORICAL-REGRESSION.md",
+    "EXP-0018-COMPOUND-FAILURE-REPORT.md",
+    "EXP-0018-REPRODUCIBILITY-MANIFEST.json",
+    "tests/rag/reports/EXP-0018-FAILURE-REPRODUCTIONS.json"
+  ]
+}

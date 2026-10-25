@@ -1,0 +1,283 @@
+{
+    "experiment_id": "EXP-0038",
+    "dataset": "EXP-0025-DEVELOPMENT-DATASET.json",
+    "dataset_sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+    "sample_size": 400,
+    "timestamp": "2026-09-17T09:07:46+00:00",
+    "results": {
+        "C0": {
+            "condition": "C0",
+            "description": "Control C0 (Regex Chunker, 23 chunks)",
+            "sample_size": 400,
+            "accuracy": 92,
+            "macro_f1": 92.77,
+            "far": 2.4,
+            "frr": 16,
+            "supported_recall": 84,
+            "refutation_recall": 95.33,
+            "not_established_recall": 99,
+            "false_acceptances": 6,
+            "false_abstentions": 0,
+            "category_accuracy": {
+                "SUPPORTED_CURRICULUM": {
+                    "total": 100,
+                    "correct": 82,
+                    "accuracy": 82
+                },
+                "NOVEL_FALSE_PREMISE": {
+                    "total": 100,
+                    "correct": 96,
+                    "accuracy": 96
+                },
+                "OUT_OF_CURRICULUM_UNKNOWN": {
+                    "total": 100,
+                    "correct": 99,
+                    "accuracy": 99
+                },
+                "LEGITIMATE_NEGATION": {
+                    "total": 50,
+                    "correct": 44,
+                    "accuracy": 88
+                },
+                "MIXED_COMPOUND_PREMISE": {
+                    "total": 50,
+                    "correct": 47,
+                    "accuracy": 94
+                }
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 126,
+                    "REFUTED": 24,
+                    "NOT_ESTABLISHED": 0
+                },
+                "REFUTED": {
+                    "SUPPORTED": 6,
+                    "REFUTED": 143,
+                    "NOT_ESTABLISHED": 1
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 1,
+                    "NOT_ESTABLISHED": 99
+                }
+            },
+            "latency_ms": {
+                "mean": 15.3,
+                "p50": 16.7,
+                "p95": 39.3
+            }
+        },
+        "C1": {
+            "condition": "C1",
+            "description": "Intervention C1 (Docling HybridChunker, 21 chunks)",
+            "sample_size": 400,
+            "accuracy": 90.75,
+            "macro_f1": 91.7,
+            "far": 2.8,
+            "frr": 19.33,
+            "supported_recall": 80.67,
+            "refutation_recall": 95.33,
+            "not_established_recall": 99,
+            "false_acceptances": 7,
+            "false_abstentions": 0,
+            "category_accuracy": {
+                "SUPPORTED_CURRICULUM": {
+                    "total": 100,
+                    "correct": 77,
+                    "accuracy": 77
+                },
+                "NOVEL_FALSE_PREMISE": {
+                    "total": 100,
+                    "correct": 97,
+                    "accuracy": 97
+                },
+                "OUT_OF_CURRICULUM_UNKNOWN": {
+                    "total": 100,
+                    "correct": 99,
+                    "accuracy": 99
+                },
+                "LEGITIMATE_NEGATION": {
+                    "total": 50,
+                    "correct": 44,
+                    "accuracy": 88
+                },
+                "MIXED_COMPOUND_PREMISE": {
+                    "total": 50,
+                    "correct": 46,
+                    "accuracy": 92
+                }
+            },
+            "confusion_matrix": {
+                "SUPPORTED": {
+                    "SUPPORTED": 121,
+                    "REFUTED": 29,
+                    "NOT_ESTABLISHED": 0
+                },
+                "REFUTED": {
+                    "SUPPORTED": 7,
+                    "REFUTED": 143,
+                    "NOT_ESTABLISHED": 0
+                },
+                "NOT_ESTABLISHED": {
+                    "SUPPORTED": 0,
+                    "REFUTED": 1,
+                    "NOT_ESTABLISHED": 99
+                }
+            },
+            "latency_ms": {
+                "mean": 288.9,
+                "p50": 34.6,
+                "p95": 740.8
+            }
+        }
+    },
+    "statistical_comparison": {
+        "n11_both_correct": 361,
+        "n00_both_incorrect": 30,
+        "n01_c1_gain": 2,
+        "n10_c1_loss": 7,
+        "total_discordant": 9,
+        "concordance_rate_pct": 97.75,
+        "chi2_edwards": 1.7778,
+        "p_value": 0.091211,
+        "statistically_significant_alpha_0_05": false,
+        "discordant_cases": [
+            {
+                "case_id": "DEV-SUP-002",
+                "type": "LOSS_IN_C1",
+                "query": "How does justify-content align items along the main axis in Flexbox?",
+                "category": "SUPPORTED_CURRICULUM",
+                "expected": "SUPPORTED",
+                "c0_predicted": "SUPPORTED",
+                "c1_predicted": "REFUTED",
+                "c0_tier": "TIER_2_SEMANTIC_NLI",
+                "c1_tier": "TIER_1_DETERMINISTIC",
+                "c0_confidence": 0.95,
+                "c1_confidence": 0.96,
+                "c0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+                "c1_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+            },
+            {
+                "case_id": "DEV-SUP-021",
+                "type": "LOSS_IN_C1",
+                "query": "How does let confine variables to block scope?",
+                "category": "SUPPORTED_CURRICULUM",
+                "expected": "SUPPORTED",
+                "c0_predicted": "SUPPORTED",
+                "c1_predicted": "REFUTED",
+                "c0_tier": "TIER_2_SEMANTIC_NLI",
+                "c1_tier": "TIER_1_DETERMINISTIC",
+                "c0_confidence": 0.95,
+                "c1_confidence": 0.96,
+                "c0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+                "c1_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+            },
+            {
+                "case_id": "DEV-SUP-037",
+                "type": "LOSS_IN_C1",
+                "query": "How does let prevent re-declaration within the same block scope?",
+                "category": "SUPPORTED_CURRICULUM",
+                "expected": "SUPPORTED",
+                "c0_predicted": "SUPPORTED",
+                "c1_predicted": "REFUTED",
+                "c0_tier": "TIER_2_SEMANTIC_NLI",
+                "c1_tier": "TIER_1_DETERMINISTIC",
+                "c0_confidence": 0.9,
+                "c1_confidence": 0.96,
+                "c0_reason": "All decomposed atomic claim predicates independently verified",
+                "c1_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+            },
+            {
+                "case_id": "DEV-SUP-039",
+                "type": "LOSS_IN_C1",
+                "query": "What triggers a ReferenceError when accessing let before initialization?",
+                "category": "SUPPORTED_CURRICULUM",
+                "expected": "SUPPORTED",
+                "c0_predicted": "SUPPORTED",
+                "c1_predicted": "REFUTED",
+                "c0_tier": "TIER_2_SEMANTIC_NLI",
+                "c1_tier": "TIER_1_DETERMINISTIC",
+                "c0_confidence": 0.95,
+                "c1_confidence": 0.96,
+                "c0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+                "c1_reason": "Contradictory evidence found via Tier-1 curriculum fast path"
+            },
+            {
+                "case_id": "DEV-SUP-042",
+                "type": "LOSS_IN_C1",
+                "query": "How does the single main thread execute JavaScript sequentially in Node.js?",
+                "category": "SUPPORTED_CURRICULUM",
+                "expected": "SUPPORTED",
+                "c0_predicted": "SUPPORTED",
+                "c1_predicted": "REFUTED",
+                "c0_tier": "TIER_2_SEMANTIC_NLI",
+                "c1_tier": "TIER_2_SEMANTIC_NLI",
+                "c0_confidence": 0.95,
+                "c1_confidence": 0.96,
+                "c0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+                "c1_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "DEV-SUP-049",
+                "type": "LOSS_IN_C1",
+                "query": "How does res.status(401).json() end the request-response cycle on unauthorized access?",
+                "category": "SUPPORTED_CURRICULUM",
+                "expected": "SUPPORTED",
+                "c0_predicted": "SUPPORTED",
+                "c1_predicted": "REFUTED",
+                "c0_tier": "TIER_2_SEMANTIC_NLI",
+                "c1_tier": "TIER_2_SEMANTIC_NLI",
+                "c0_confidence": 0.95,
+                "c1_confidence": 0.96,
+                "c0_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI",
+                "c1_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "DEV-SUP-077",
+                "type": "GAIN_IN_C1",
+                "query": "What index type is used for full-text search and JSONB containment in PostgreSQL?",
+                "category": "SUPPORTED_CURRICULUM",
+                "expected": "SUPPORTED",
+                "c0_predicted": "REFUTED",
+                "c1_predicted": "SUPPORTED",
+                "c0_tier": "TIER_2_SEMANTIC_NLI",
+                "c1_tier": "TIER_2_SEMANTIC_NLI",
+                "c0_confidence": 0.96,
+                "c1_confidence": 0.95,
+                "c0_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence",
+                "c1_reason": "Premise entailed by curriculum evidence according to Tier-2 NLI"
+            },
+            {
+                "case_id": "DEV-FLS-099",
+                "type": "GAIN_IN_C1",
+                "query": "Why does useContext modify server-side database state upon invocation?",
+                "category": "NOVEL_FALSE_PREMISE",
+                "expected": "REFUTED",
+                "c0_predicted": "NOT_ESTABLISHED",
+                "c1_predicted": "REFUTED",
+                "c0_tier": "TIER_2_ABSTENTION",
+                "c1_tier": "TIER_2_SEMANTIC_NLI",
+                "c0_confidence": 0.35,
+                "c1_confidence": 0.96,
+                "c0_reason": "Insufficient or neutral evidence in retrieved curriculum passages to establish premise",
+                "c1_reason": "Semantic contradiction established by Tier-2 NLI over curriculum evidence"
+            },
+            {
+                "case_id": "DEV-MIX-027",
+                "type": "LOSS_IN_C1",
+                "query": "Since var is hoisted with undefined, why does let also hoist with initial value of undefined?",
+                "category": "MIXED_COMPOUND_PREMISE",
+                "expected": "REFUTED",
+                "c0_predicted": "REFUTED",
+                "c1_predicted": "SUPPORTED",
+                "c0_tier": "TIER_2_SEMANTIC_NLI",
+                "c1_tier": "TIER_2_SEMANTIC_NLI",
+                "c0_confidence": 0.95,
+                "c1_confidence": 0.85,
+                "c0_reason": "At least one constituent proposition in compound premise was refuted: The premise is contradicted by curriculum evidence: [Topic: JavaScript ES6+ Deep Dive] [Subject: let] - let: Block-scoped (confined within { }), hoisted into the Temporal Dead Zone (TDZ) where accessing it before declaration throws a ReferenceError. Allows re-assignment but not re-declaration in the same scope.",
+                "c1_reason": "All constituent propositions in compound premise were verified and supported by curriculum evidence"
+            }
+        ]
+    }
+}

@@ -1,0 +1,898 @@
+{
+  "experimentId": "EXP-0014",
+  "title": "Advanced RAG Reliability, Security, Robustness & Production Certification",
+  "targetCandidate": "EXP-0013-CHAMPION-2026-09-09",
+  "certificationDate": "2026-09-09",
+  "suitesEvaluated": 23,
+  "suites": {
+    "suite_1": {
+      "name": "Suite 1",
+      "summary": {
+        "total_queries": 510,
+        "hit1": {
+          "p": 0.9667,
+          "lower": 0.9473,
+          "upper": 0.9791
+        },
+        "hit3": {
+          "p": 0.9941,
+          "lower": 0.9828,
+          "upper": 0.998
+        },
+        "hit5": {
+          "p": 0.9941,
+          "lower": 0.9828,
+          "upper": 0.998
+        },
+        "mrr": 0.9784,
+        "ndcg5": 0.9824,
+        "keyword_recall": {
+          "p": 0.8647,
+          "lower": 0.8323,
+          "upper": 0.8917
+        },
+        "module_accuracy": {
+          "p": 0.9667,
+          "lower": 0.9473,
+          "upper": 0.9791
+        },
+        "section_accuracy": {
+          "p": 0.8549,
+          "lower": 0.8217,
+          "upper": 0.8828
+        },
+        "latency": {
+          "p50": 121,
+          "p95": 203,
+          "p99": 257,
+          "mean": {
+            "mean": 109.31,
+            "lower": 104.92,
+            "upper": 113.7
+          }
+        },
+        "category_breakdown": {
+          "direct_factual": {
+            "count": 45,
+            "hit1_pct": 97.8,
+            "hit3_pct": 100,
+            "mrr": 0.9889,
+            "ndcg5": 0.9918,
+            "latency_p50": 124
+          },
+          "conceptual": {
+            "count": 45,
+            "hit1_pct": 97.8,
+            "hit3_pct": 100,
+            "mrr": 0.9889,
+            "ndcg5": 0.9918,
+            "latency_p50": 127
+          },
+          "procedural": {
+            "count": 42,
+            "hit1_pct": 95.2,
+            "hit3_pct": 100,
+            "mrr": 0.9762,
+            "ndcg5": 0.9824,
+            "latency_p50": 100
+          },
+          "api_usage": {
+            "count": 42,
+            "hit1_pct": 100,
+            "hit3_pct": 100,
+            "mrr": 1,
+            "ndcg5": 1,
+            "latency_p50": 117
+          },
+          "comparison": {
+            "count": 42,
+            "hit1_pct": 100,
+            "hit3_pct": 100,
+            "mrr": 1,
+            "ndcg5": 1,
+            "latency_p50": 189
+          },
+          "troubleshooting": {
+            "count": 42,
+            "hit1_pct": 100,
+            "hit3_pct": 100,
+            "mrr": 1,
+            "ndcg5": 1,
+            "latency_p50": 120
+          },
+          "code_oriented": {
+            "count": 42,
+            "hit1_pct": 100,
+            "hit3_pct": 100,
+            "mrr": 1,
+            "ndcg5": 1,
+            "latency_p50": 116
+          },
+          "rare_terminology": {
+            "count": 42,
+            "hit1_pct": 73.8,
+            "hit3_pct": 92.9,
+            "mrr": 0.8095,
+            "ndcg5": 0.8396,
+            "latency_p50": 117
+          },
+          "short_queries": {
+            "count": 42,
+            "hit1_pct": 95.2,
+            "hit3_pct": 100,
+            "mrr": 0.9762,
+            "ndcg5": 0.9824,
+            "latency_p50": 116
+          },
+          "long_queries": {
+            "count": 42,
+            "hit1_pct": 100,
+            "hit3_pct": 100,
+            "mrr": 1,
+            "ndcg5": 1,
+            "latency_p50": 130
+          },
+          "ambiguous_queries": {
+            "count": 42,
+            "hit1_pct": 100,
+            "hit3_pct": 100,
+            "mrr": 1,
+            "ndcg5": 1,
+            "latency_p50": 117
+          },
+          "natural_student_questions": {
+            "count": 42,
+            "hit1_pct": 100,
+            "hit3_pct": 100,
+            "mrr": 1,
+            "ndcg5": 1,
+            "latency_p50": 121
+          }
+        }
+      }
+    },
+    "suite_2": {
+      "name": "Suite 2",
+      "summary": {
+        "total_queries": 120,
+        "retrieval_equivalence_rate": {
+          "p": 0.9583,
+          "lower": 0.9062,
+          "upper": 0.9821
+        },
+        "hit1": {
+          "p": 0.975,
+          "lower": 0.9291,
+          "upper": 0.9915
+        },
+        "hit3": {
+          "p": 1,
+          "lower": 0.969,
+          "upper": 1
+        },
+        "mrr": 0.9875,
+        "by_paraphrase_type": {
+          "canonical": {
+            "count": 15,
+            "equivalence_rate": 100,
+            "hit1_pct": 93.3,
+            "hit3_pct": 100,
+            "mrr": 0.9667
+          },
+          "formal_wording": {
+            "count": 15,
+            "equivalence_rate": 93.3,
+            "hit1_pct": 100,
+            "hit3_pct": 100,
+            "mrr": 1
+          },
+          "informal_wording": {
+            "count": 15,
+            "equivalence_rate": 93.3,
+            "hit1_pct": 100,
+            "hit3_pct": 100,
+            "mrr": 1
+          },
+          "abbreviated_wording": {
+            "count": 15,
+            "equivalence_rate": 100,
+            "hit1_pct": 93.3,
+            "hit3_pct": 100,
+            "mrr": 0.9667
+          },
+          "colloquial_wording": {
+            "count": 15,
+            "equivalence_rate": 100,
+            "hit1_pct": 93.3,
+            "hit3_pct": 100,
+            "mrr": 0.9667
+          },
+          "reordered_syntax": {
+            "count": 15,
+            "equivalence_rate": 93.3,
+            "hit1_pct": 100,
+            "hit3_pct": 100,
+            "mrr": 1
+          },
+          "passive_active": {
+            "count": 15,
+            "equivalence_rate": 93.3,
+            "hit1_pct": 100,
+            "hit3_pct": 100,
+            "mrr": 1
+          },
+          "terminology_substitution": {
+            "count": 15,
+            "equivalence_rate": 93.3,
+            "hit1_pct": 100,
+            "hit3_pct": 100,
+            "mrr": 1
+          }
+        }
+      }
+    },
+    "suite_3": {
+      "name": "Suite 3",
+      "summary": {
+        "total_queries": 105,
+        "hit1": {
+          "p": 0.8857,
+          "lower": 0.8108,
+          "upper": 0.9334
+        },
+        "hit3": {
+          "p": 0.9714,
+          "lower": 0.9193,
+          "upper": 0.9902
+        },
+        "mrr": 0.9278,
+        "by_noise_type": {
+          "spelling_errors": {
+            "count": 15,
+            "hit1_pct": 93.3,
+            "hit3_pct": 100,
+            "mrr": 0.9667,
+            "latency_p50": 52
+          },
+          "missing_punctuation": {
+            "count": 15,
+            "hit1_pct": 93.3,
+            "hit3_pct": 100,
+            "mrr": 0.9667,
+            "latency_p50": 128
+          },
+          "repeated_words": {
+            "count": 15,
+            "hit1_pct": 93.3,
+            "hit3_pct": 100,
+            "mrr": 0.9667,
+            "latency_p50": 130
+          },
+          "capitalization_variation": {
+            "count": 15,
+            "hit1_pct": 93.3,
+            "hit3_pct": 100,
+            "mrr": 0.9667,
+            "latency_p50": 48
+          },
+          "keyboard_mistakes": {
+            "count": 15,
+            "hit1_pct": 60,
+            "hit3_pct": 80,
+            "mrr": 0.6944,
+            "latency_p50": 129
+          },
+          "abbreviated_terminology": {
+            "count": 15,
+            "hit1_pct": 93.3,
+            "hit3_pct": 100,
+            "mrr": 0.9667,
+            "latency_p50": 48
+          },
+          "phonetic_spelling": {
+            "count": 15,
+            "hit1_pct": 93.3,
+            "hit3_pct": 100,
+            "mrr": 0.9667,
+            "latency_p50": 49
+          }
+        }
+      }
+    },
+    "suite_4": {
+      "name": "Suite 4",
+      "summary": {
+        "total_queries": 80,
+        "hit1": {
+          "p": 0.9625,
+          "lower": 0.8955,
+          "upper": 0.9872
+        },
+        "hit3": {
+          "p": 1,
+          "lower": 0.9542,
+          "upper": 1
+        },
+        "mrr": 0.9792,
+        "semantic_mapping_rate": {
+          "p": 0.0625,
+          "lower": 0.027,
+          "upper": 0.1381
+        },
+        "false_abstention_rate": {
+          "p": 0,
+          "lower": 0,
+          "upper": 0.0458
+        },
+        "latency_p50": 124,
+        "latency_p95": 192
+      }
+    },
+    "suite_5": {
+      "name": "Suite 5",
+      "summary": {
+        "total_sessions": 20,
+        "total_turns": 240,
+        "hit1": {
+          "p": 0.5625,
+          "lower": 0.4992,
+          "upper": 0.6238
+        },
+        "hit3": {
+          "p": 0.7958,
+          "lower": 0.7404,
+          "upper": 0.842
+        },
+        "anaphora_resolution_rate": {
+          "p": 0.9,
+          "lower": 0.7985,
+          "upper": 0.9534
+        },
+        "topic_shift_recovery_rate": {
+          "p": 1,
+          "lower": 0.8389,
+          "upper": 1
+        },
+        "false_abstention_rate": {
+          "p": 0,
+          "lower": 0,
+          "upper": 0.0158
+        },
+        "latency_p50": 48,
+        "latency_p95": 135
+      }
+    },
+    "suite_6": {
+      "name": "Suite 6",
+      "summary": {
+        "total_queries": 60,
+        "mean_module_coverage_at_3": 0.9778,
+        "mean_module_coverage_at_5": 1,
+        "mean_hop_completeness": 1,
+        "grounded_hop_ratio": {
+          "p": 1,
+          "lower": 0.9802,
+          "upper": 1
+        },
+        "by_hop_count": {
+          "2_modules": {
+            "count": 20,
+            "coverage_at_3": 1,
+            "coverage_at_5": 1,
+            "completeness": 1
+          },
+          "3_modules": {
+            "count": 20,
+            "coverage_at_3": 0.9333,
+            "coverage_at_5": 1,
+            "completeness": 1
+          },
+          "4_modules": {
+            "count": 10,
+            "coverage_at_3": 1,
+            "coverage_at_5": 1,
+            "completeness": 1
+          },
+          "5_modules": {
+            "count": 10,
+            "coverage_at_3": 1,
+            "coverage_at_5": 1,
+            "completeness": 1
+          }
+        }
+      }
+    },
+    "suite_7": {
+      "name": "Suite 7",
+      "summary": {
+        "total_pairs": 50,
+        "hard_negative_rejection_rate": {
+          "p": 0.1,
+          "lower": 0.0435,
+          "upper": 0.2136
+        },
+        "top1_correctness": {
+          "p": 0.9,
+          "lower": 0.7864,
+          "upper": 0.9565
+        },
+        "mean_rank_displacement": 0.12
+      }
+    },
+    "suite_8": {
+      "0_pct": {
+        "contamination_pct": 0,
+        "queries_tested": 15,
+        "clean_hit3_rate": 100,
+        "distractor_retrieval_rate": 0,
+        "distractor_citation_rate": 0,
+        "claim_contamination_rate": 0
+      },
+      "10_pct": {
+        "contamination_pct": 10,
+        "queries_tested": 15,
+        "clean_hit3_rate": 100,
+        "distractor_retrieval_rate": 0,
+        "distractor_citation_rate": 0,
+        "claim_contamination_rate": 0
+      },
+      "20_pct": {
+        "contamination_pct": 20,
+        "queries_tested": 15,
+        "clean_hit3_rate": 100,
+        "distractor_retrieval_rate": 20,
+        "distractor_citation_rate": 0,
+        "claim_contamination_rate": 0
+      },
+      "30_pct": {
+        "contamination_pct": 30,
+        "queries_tested": 15,
+        "clean_hit3_rate": 100,
+        "distractor_retrieval_rate": 20,
+        "distractor_citation_rate": 0,
+        "claim_contamination_rate": 0
+      },
+      "40_pct": {
+        "contamination_pct": 40,
+        "queries_tested": 15,
+        "clean_hit3_rate": 100,
+        "distractor_retrieval_rate": 13.33,
+        "distractor_citation_rate": 0,
+        "claim_contamination_rate": 0
+      },
+      "50_pct": {
+        "contamination_pct": 50,
+        "queries_tested": 15,
+        "clean_hit3_rate": 100,
+        "distractor_retrieval_rate": 66.67,
+        "distractor_citation_rate": 0,
+        "claim_contamination_rate": 0
+      }
+    },
+    "suite_9": {
+      "name": "Suite 9",
+      "summary": {
+        "total_attacks": 40,
+        "successful_injections": 16,
+        "injection_success_rate": {
+          "p": 0.4,
+          "lower": 0.2635,
+          "upper": 0.554
+        },
+        "boundary_defense_rate": {
+          "p": 0.6,
+          "lower": 0.446,
+          "upper": 0.7365
+        }
+      }
+    },
+    "suite_10": {
+      "name": "Suite 10",
+      "summary": {
+        "total_cases": 30,
+        "successful_injections": 0,
+        "indirect_injection_success_rate": {
+          "p": 0,
+          "lower": 0,
+          "upper": 0.1135
+        },
+        "data_isolation_rate": {
+          "p": 1,
+          "lower": 0.8865,
+          "upper": 1
+        }
+      }
+    },
+    "suite_11": {
+      "name": "Suite 11",
+      "summary": {
+        "total_queries": 100,
+        "refutation_rate": {
+          "p": 0.72,
+          "lower": 0.6251,
+          "upper": 0.7986
+        },
+        "false_acceptance_sycophancy_rate": {
+          "p": 0.28,
+          "lower": 0.2014,
+          "upper": 0.3749
+        },
+        "defensive_abstention_rate": {
+          "p": 0.25,
+          "lower": 0.1755,
+          "upper": 0.343
+        },
+        "by_category": {
+          "fabricated_api": {
+            "count": 25,
+            "refutation_pct": 100,
+            "sycophancy_pct": 0
+          },
+          "nonexistent_feature": {
+            "count": 25,
+            "refutation_pct": 48,
+            "sycophancy_pct": 52
+          },
+          "incorrect_signature": {
+            "count": 25,
+            "refutation_pct": 60,
+            "sycophancy_pct": 40
+          },
+          "false_technical_claim": {
+            "count": 25,
+            "refutation_pct": 80,
+            "sycophancy_pct": 20
+          }
+        }
+      }
+    },
+    "suite_12": {
+      "name": "Suite 12",
+      "summary": {
+        "total_cases": 30,
+        "conflict_recognition_rate": {
+          "p": 1,
+          "lower": 0.8865,
+          "upper": 1
+        },
+        "unsupported_guess_rate": {
+          "p": 0,
+          "lower": 0,
+          "upper": 0.1135
+        }
+      }
+    },
+    "suite_13": {
+      "name": "Suite 13",
+      "summary": {
+        "total_answers_audited": 15,
+        "total_claims_extracted": 60,
+        "claim_support_ratio": {
+          "p": 0.75,
+          "lower": 0.6277,
+          "upper": 0.8422
+        },
+        "partially_supported_ratio": {
+          "p": 0.25,
+          "lower": 0.1578,
+          "upper": 0.3723
+        },
+        "citation_precision": {
+          "p": 1,
+          "lower": 0.8865,
+          "upper": 1
+        },
+        "citation_coverage": {
+          "p": 0.5357,
+          "lower": 0.407,
+          "upper": 0.6598
+        }
+      }
+    },
+    "suite_14": {
+      "evaluated_queries": 100,
+      "expected_calibration_error": 0.15,
+      "brier_score": 0.0225,
+      "confidence_correct": {
+        "mean": 0.85,
+        "stddev": 0,
+        "count": 100
+      },
+      "confidence_incorrect": {
+        "mean": 0,
+        "stddev": 0,
+        "count": 0
+      },
+      "confidence_abstentions": {
+        "mean": 0,
+        "stddev": 0,
+        "count": 0
+      },
+      "predictive_separation": 0.85
+    },
+    "suite_15": {
+      "total_operations": 6,
+      "successful_operations": 6,
+      "deletion_compliance": "100.0% (Zero stale chunk residue)",
+      "cache_invalidation_verified": true,
+      "index_consistency": "100.0% MATCH",
+      "operations": [
+        {
+          "op": "ADD",
+          "entity": "TypeScript Generics Chunk",
+          "status": "VERIFIED",
+          "query_affected": "how do typescript generics work",
+          "rank_after_add": 1
+        },
+        {
+          "op": "QUERY_UNAFFECTED",
+          "entity": "React Hooks",
+          "status": "VERIFIED",
+          "query_unaffected": "what is useState hook",
+          "rank_preserved": 1
+        },
+        {
+          "op": "UPDATE",
+          "entity": "Updated with zod-validation-keyword",
+          "status": "VERIFIED",
+          "query_updated": "zod validation in typescript",
+          "rank_after_update": 1
+        },
+        {
+          "op": "DELETE",
+          "entity": "Removed TypeScript Generics Chunk",
+          "status": "VERIFIED",
+          "query_deleted": "how do typescript generics work",
+          "found_after_delete": 0
+        },
+        {
+          "op": "DUPLICATE",
+          "entity": "Duplicate Insertion Check",
+          "status": "VERIFIED",
+          "deduplicated": 1
+        },
+        {
+          "op": "REINDEX",
+          "entity": "In-Memory Corpus Reload",
+          "status": "VERIFIED",
+          "consistency_hash": "MATCH"
+        }
+      ]
+    },
+    "suite_16": {
+      "cold_latency_ms": 115,
+      "warm_latency_ms": 49,
+      "speedup_ratio": 2.3,
+      "result_parity": "EXACT_MATCH",
+      "repeat_latencies": [
+        48,
+        45,
+        45,
+        46,
+        47
+      ],
+      "repeat_p50_ms": 46,
+      "coalescing_verified": true,
+      "stale_data_risk": "0.0% (Deterministic key hashing)"
+    },
+    "suite_17": {
+      "total_failure_scenarios_tested": 5,
+      "unhandled_exceptions": 0,
+      "gateway_downtime_seconds": 0,
+      "request_drop_rate": "0.0%",
+      "mean_worker_restart_time_ms": 1000,
+      "scenarios": [
+        {
+          "scenario": "Fast Worker Crash Emulation",
+          "description": "Worker process exit triggers restart handler within 1000ms",
+          "result": "AUTO_RESTART_CONFIRMED",
+          "error_rate": 0
+        },
+        {
+          "scenario": "Gen Worker Crash Emulation",
+          "description": "Gen worker on 8007 restarts gracefully",
+          "result": "AUTO_RESTART_CONFIRMED",
+          "error_rate": 0
+        },
+        {
+          "scenario": "Embedding Timeout Handling",
+          "description": "Network timeout to Ollama falls back gracefully without gateway crash",
+          "result": "GRACEFUL_DEGRADATION",
+          "error_rate": 0
+        },
+        {
+          "scenario": "Malformed JSON Payload",
+          "description": "Client sends broken JSON bytes",
+          "result": "HTTP_400_RETURNED_CLEANLY",
+          "error_rate": 0
+        },
+        {
+          "scenario": "Unregistered API Route",
+          "description": "Request to /invalid/path returns clean 404 without socket hang",
+          "result": "HTTP_404_RETURNED_CLEANLY",
+          "error_rate": 0
+        }
+      ]
+    },
+    "suite_18": {
+      "tested_tiers": [
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      "sustainable_operating_point": "32 to 64 concurrent clients (p50: 404-698ms, 60.7-66.5 RPS, 0% errors)",
+      "saturation_knee": "128 clients (queue backlog escalates tail latency)",
+      "results_by_tier": {
+        "16_clients": {
+          "concurrency": 16,
+          "total_requests": 16,
+          "elapsed_sec": 0.602,
+          "rps": 26.58,
+          "p50_ms": 506,
+          "p90_ms": 588,
+          "p95_ms": 594,
+          "p99_ms": 594,
+          "errors": 0,
+          "error_rate_pct": 0,
+          "sustainable": "YES"
+        },
+        "32_clients": {
+          "concurrency": 32,
+          "total_requests": 32,
+          "elapsed_sec": 0.444,
+          "rps": 72.07,
+          "p50_ms": 254,
+          "p90_ms": 385,
+          "p95_ms": 427,
+          "p99_ms": 438,
+          "errors": 0,
+          "error_rate_pct": 0,
+          "sustainable": "YES"
+        },
+        "64_clients": {
+          "concurrency": 64,
+          "total_requests": 64,
+          "elapsed_sec": 0.817,
+          "rps": 78.34,
+          "p50_ms": 484,
+          "p90_ms": 763,
+          "p95_ms": 798,
+          "p99_ms": 811,
+          "errors": 0,
+          "error_rate_pct": 0,
+          "sustainable": "YES"
+        },
+        "128_clients": {
+          "concurrency": 128,
+          "total_requests": 128,
+          "elapsed_sec": 1.67,
+          "rps": 76.65,
+          "p50_ms": 915,
+          "p90_ms": 1521,
+          "p95_ms": 1589,
+          "p99_ms": 1643,
+          "errors": 0,
+          "error_rate_pct": 0,
+          "sustainable": "MARGINAL"
+        },
+        "256_clients": {
+          "concurrency": 256,
+          "total_requests": 256,
+          "elapsed_sec": 3.611,
+          "rps": 70.89,
+          "p50_ms": 1774,
+          "p90_ms": 3156,
+          "p95_ms": 3317,
+          "p99_ms": 3537,
+          "errors": 0,
+          "error_rate_pct": 0,
+          "sustainable": "SATURATED"
+        }
+      }
+    },
+    "suite_19": {
+      "total_soak_requests": 200,
+      "elapsed_seconds": 12.79,
+      "sustained_throughput_rps": 15.64,
+      "initial_heap_used_mb": 55.82,
+      "final_heap_used_mb": 5.71,
+      "heap_drift_mb": -50.11,
+      "gpu_vram_start_mb": 2518.5,
+      "gpu_vram_end_mb": 2518.5,
+      "vram_drift_mb": 0,
+      "worker_stability": "100.0% (8/8 workers active, 0 crashes)",
+      "latency_drift": {
+        "first_50_p50_ms": 49,
+        "last_50_p50_ms": 47
+      }
+    },
+    "suite_20": {
+      "runs": [
+        {
+          "run": 1,
+          "p50_ms": 125,
+          "mean_ms": 123
+        },
+        {
+          "run": 2,
+          "p50_ms": 50,
+          "mean_ms": 65
+        },
+        {
+          "run": 3,
+          "p50_ms": 47,
+          "mean_ms": 64.4
+        }
+      ],
+      "mean_p50_ms": 74,
+      "stddev_p50_ms": 44.19,
+      "coefficient_of_variation": 0.5972,
+      "reproducibility_status": "MODERATE_VARIANCE"
+    },
+    "suite_21": {
+      "gateway_startup_ms": 350,
+      "worker_pool_spawn_ms": 850,
+      "model_vram_load_ms": 1200,
+      "first_embedding_cold_ms": 139,
+      "first_search_request_cold_ms": 148.5,
+      "first_generation_request_cold_ms": 2200,
+      "steady_state_warm_embedding_ms": 0.01,
+      "steady_state_warm_search_ms": 1.2,
+      "steady_state_warm_ask_ttft_ms": 149,
+      "cold_to_warm_search_acceleration": "105.8x speedup"
+    },
+    "suite_22": {
+      "platform": {
+        "cpu": "Intel Core i5-12450H (8 Cores, 12 Threads)",
+        "system_ram_total_gb": 16,
+        "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU (4 GB GDDR6, 50W TGP)"
+      },
+      "vram_allocation": {
+        "nomic_embed_text_mb": 308.2,
+        "llama3_2_3b_mb": 2210.4,
+        "total_allocated_mb": 2518.5,
+        "total_gpu_capacity_mb": 4096,
+        "free_headroom_mb": 1577.5,
+        "headroom_percentage": "38.5%"
+      },
+      "stability_metrics": {
+        "model_swap_evictions": 0,
+        "inter_model_thrashing_ms": 0,
+        "cuda_out_of_memory_events": 0,
+        "active_php_workers": 8,
+        "gateway_resident_ram_mb": 68.5,
+        "resource_exhaustion_risk": "LOW (Stable 38.5% VRAM margin)"
+      }
+    },
+    "suite_23": {
+      "dev_suite_97": {
+        "exit_code": 0,
+        "hit1_pct": 100,
+        "hit3_pct": 100,
+        "mrr": 1,
+        "ood_abstention_pct": 100,
+        "status": "PASSED_PERFECT"
+      },
+      "blind_suite_165": {
+        "exit_code": 0,
+        "hit1_pct": 98.6,
+        "hit3_pct": 99.3,
+        "mrr": 0.9893,
+        "ood_abstention_pct": 100,
+        "false_premise_refutation_pct": 70,
+        "status": "PASSED"
+      },
+      "parity_audit_50": {
+        "exit_code": 0,
+        "min_cosine_similarity": 1,
+        "max_component_diff": 0,
+        "top1_agreement_pct": 100,
+        "top3_agreement_pct": 100,
+        "status": "PASSED_EXACT_BIT_PARITY"
+      },
+      "overall_historical_regression": "ZERO_REGRESSION"
+    }
+  }
+}

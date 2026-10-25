@@ -1,0 +1,267 @@
+[
+  {
+    "id": "adv_01",
+    "query": "how dos useEfect clenaup prevent memry leeks in recat",
+    "adversarial_type": "typos_misspellings",
+    "target_keywords": [
+      "useEffect",
+      "cleanup",
+      "memory leaks",
+      "React"
+    ],
+    "expected_doc": "React Hooks Tutorial",
+    "intent": "Explain useEffect cleanup function to prevent memory leaks"
+  },
+  {
+    "id": "adv_02",
+    "query": "postgre b-tre indexx vs full table scan performence",
+    "adversarial_type": "typos_misspellings",
+    "target_keywords": [
+      "B-tree",
+      "index",
+      "PostgreSQL",
+      "table scan"
+    ],
+    "expected_doc": "PostgreSQL Database Design",
+    "intent": "Explain B-tree index vs full table scan in PostgreSQL"
+  },
+  {
+    "id": "adv_03",
+    "query": "js const muttable propeties reassinment diference",
+    "adversarial_type": "typos_misspellings",
+    "target_keywords": [
+      "const",
+      "mutable",
+      "properties",
+      "reassignment"
+    ],
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "intent": "Explain mutable properties of const objects vs identifier reassignment"
+  },
+  {
+    "id": "adv_04",
+    "query": "cs flexboks main axiss vs crss axis justfy contnt",
+    "adversarial_type": "typos_misspellings",
+    "target_keywords": [
+      "flexbox",
+      "main axis",
+      "cross axis",
+      "justify-content"
+    ],
+    "expected_doc": "HTML & CSS Fundamentals",
+    "intent": "Explain justify-content along main axis vs cross axis in CSS flexbox"
+  },
+  {
+    "id": "adv_05",
+    "query": "exprss middlware 4 paramters err req res nxt syntax",
+    "adversarial_type": "typos_misspellings",
+    "target_keywords": [
+      "Express",
+      "middleware",
+      "err",
+      "req",
+      "res",
+      "next"
+    ],
+    "expected_doc": "Node.js & Express REST API Notes",
+    "intent": "Syntax of Express error-handling middleware with 4 arguments"
+  },
+  {
+    "id": "adv_06",
+    "query": "3nf databaes normalizaton transitve dependancy",
+    "adversarial_type": "typos_misspellings",
+    "target_keywords": [
+      "3NF",
+      "normalization",
+      "transitive dependency",
+      "database"
+    ],
+    "expected_doc": "PostgreSQL Database Design",
+    "intent": "Explain 3NF and elimination of transitive dependencies"
+  },
+  {
+    "id": "adv_07",
+    "query": "tempral ded zon tdz referenserror in javascrip",
+    "adversarial_type": "typos_misspellings",
+    "target_keywords": [
+      "Temporal Dead Zone",
+      "TDZ",
+      "ReferenceError",
+      "JavaScript"
+    ],
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "intent": "Explain Temporal Dead Zone in JS let and const"
+  },
+  {
+    "id": "adv_08",
+    "query": "that box sizing hack everyone puts at the top of their css to stop padding making things huge",
+    "adversarial_type": "slang_vague",
+    "target_keywords": [
+      "box-sizing",
+      "border-box",
+      "padding",
+      "CSS"
+    ],
+    "expected_doc": "HTML & CSS Fundamentals",
+    "intent": "Identify * { box-sizing: border-box; }"
+  },
+  {
+    "id": "adv_09",
+    "query": "how to freeze a callback in react so child components don't keep lagging and rerendering",
+    "adversarial_type": "slang_vague",
+    "target_keywords": [
+      "useCallback",
+      "memoizes",
+      "re-rendering",
+      "child"
+    ],
+    "expected_doc": "React Hooks Tutorial",
+    "intent": "Explain useCallback to prevent unnecessary child re-renders"
+  },
+  {
+    "id": "adv_10",
+    "query": "the secret sauce in node that lets it do disk and network stuff without freezing the main loop",
+    "adversarial_type": "slang_vague",
+    "target_keywords": [
+      "Libuv",
+      "worker pool",
+      "event loop",
+      "asynchronous",
+      "non-blocking"
+    ],
+    "expected_doc": "Node.js & Express REST API Notes",
+    "intent": "Explain Libuv worker pool handling I/O operations asynchronously"
+  },
+  {
+    "id": "adv_11",
+    "query": "magic variable container in react that holds stuff without refreshing the screen",
+    "adversarial_type": "slang_vague",
+    "target_keywords": [
+      "useRef",
+      ".current",
+      "without re-render"
+    ],
+    "expected_doc": "React Hooks Tutorial",
+    "intent": "Identify useRef for mutable state without triggering re-renders"
+  },
+  {
+    "id": "adv_12",
+    "query": "how to connect two tables when multiple things can have multiple other things",
+    "adversarial_type": "slang_vague",
+    "target_keywords": [
+      "Many-to-Many",
+      "junction table",
+      "foreign keys"
+    ],
+    "expected_doc": "PostgreSQL Database Design",
+    "intent": "Explain Many-to-Many relationship with a junction table"
+  },
+  {
+    "id": "adv_13",
+    "query": "the dot dot dot thing in js functions that sucks all arguments into a real array",
+    "adversarial_type": "slang_vague",
+    "target_keywords": [
+      "rest parameter",
+      "...",
+      "array",
+      "arguments"
+    ],
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "intent": "Identify rest parameter (...args) in JavaScript ES6"
+  },
+  {
+    "id": "adv_14",
+    "query": "What is the difference between middleware in Express and Hooks in React for managing state and side-effects?",
+    "adversarial_type": "cross_domain_distractor",
+    "target_keywords": [
+      "Express",
+      "middleware",
+      "React",
+      "hooks",
+      "pipeline",
+      "component"
+    ],
+    "expected_doc": "Node.js & Express REST API Notes",
+    "intent": "Distinguish Express request pipeline middleware from React component lifecycle hooks"
+  },
+  {
+    "id": "adv_15",
+    "query": "Compare CSS Grid 2D layout with HTML semantic article tags for content organization",
+    "adversarial_type": "cross_domain_distractor",
+    "target_keywords": [
+      "CSS Grid",
+      "2-dimensional",
+      "semantic",
+      "<article>"
+    ],
+    "expected_doc": "HTML & CSS Fundamentals",
+    "intent": "Distinguish CSS Grid visual layout from HTML5 semantic content tagging"
+  },
+  {
+    "id": "adv_16",
+    "query": "In PostgreSQL database normalization, how does 1NF atomicity compare to JavaScript object destructuring?",
+    "adversarial_type": "cross_domain_distractor",
+    "target_keywords": [
+      "1NF",
+      "atomic",
+      "destructuring",
+      "PostgreSQL"
+    ],
+    "expected_doc": "PostgreSQL Database Design",
+    "intent": "Explain 1NF atomic indivisible columns vs JS unpacking values"
+  },
+  {
+    "id": "adv_17",
+    "query": "Explain JWT token authentication in Express versus React Context for user sessions",
+    "adversarial_type": "cross_domain_distractor",
+    "target_keywords": [
+      "JWT",
+      "token",
+      "Express",
+      "React Context",
+      "authentication"
+    ],
+    "expected_doc": "Node.js & Express REST API Notes",
+    "intent": "Contrast backend signed JWT generation with client-side Context consumption"
+  },
+  {
+    "id": "adv_18",
+    "query": "How does the ACID Isolation property in SQL compare to JavaScript single-threaded asynchronous execution?",
+    "adversarial_type": "cross_domain_distractor",
+    "target_keywords": [
+      "ACID",
+      "Isolation",
+      "single-threaded",
+      "concurrency"
+    ],
+    "expected_doc": "PostgreSQL Database Design",
+    "intent": "Explain SQL ACID transaction isolation vs JS event loop concurrency"
+  },
+  {
+    "id": "adv_19",
+    "query": "Why does invoking arrow functions with new fail, and how does this relate to object modeling in databases?",
+    "adversarial_type": "cross_domain_distractor",
+    "target_keywords": [
+      "arrow function",
+      "new",
+      "TypeError",
+      "constructor"
+    ],
+    "expected_doc": "JavaScript ES6+ Deep Dive",
+    "intent": "Explain lack of constructor in arrow functions"
+  },
+  {
+    "id": "adv_20",
+    "query": "Difference between flex-basis in Flexbox and column width in CSS Grid",
+    "adversarial_type": "cross_domain_distractor",
+    "target_keywords": [
+      "flex-basis",
+      "Flexbox",
+      "CSS Grid",
+      "1-dimensional",
+      "2-dimensional"
+    ],
+    "expected_doc": "HTML & CSS Fundamentals",
+    "intent": "Clarify 1D flex item initial sizing vs 2D grid column template tracks"
+  }
+]

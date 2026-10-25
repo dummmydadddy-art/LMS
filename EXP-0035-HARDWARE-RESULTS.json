@@ -1,0 +1,71 @@
+{
+  "experiment_id": "EXP-0035",
+  "evaluation_type": "HARDWARE_RESOURCE_AND_LATENCY_AUDIT",
+  "timestamp": "2026-09-16T21:35:00+05:30",
+  "hardware_environment": {
+    "cpu": "Intel(R) Core(TM) i5-12450H (8 Cores, 12 Threads)",
+    "host_ram_total_gb": 15.68,
+    "gpu_device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpu_vram_total_mb": 4096,
+    "os": "Microsoft Windows 11 Home (x64)"
+  },
+  "memory_utilization": {
+    "python_retrieval_bridge_rss_mb": 860.4,
+    "python_retrieval_bridge_ceiling_mb": 1000.0,
+    "php_benchmark_process_rss_mb": 42.1,
+    "php_benchmark_process_ceiling_mb": 500.0,
+    "ollama_process_ram_mb": 2850.0,
+    "host_ram_peak_gb": 13.26,
+    "host_ram_ceiling_gb": 14.50,
+    "host_ram_utilization_percent": 84.57,
+    "host_ram_status": "PASS"
+  },
+  "gpu_vram_utilization": {
+    "retrieval_bridge_vram_mb": 0.0,
+    "intent_clause_verifier_vram_mb": 0.0,
+    "ollama_llama32_vram_allocated_mb": 2321.0,
+    "gpu_vram_ceiling_mb": 4096.0,
+    "gpu_vram_utilization_percent": 56.67,
+    "gpu_vram_headroom_mb": 1775.0,
+    "gpu_vram_status": "PASS"
+  },
+  "latency_metrics_ms": {
+    "dense_embedding_bge_small": {
+      "mean_ms": 28.4,
+      "p50_ms": 24.1,
+      "p95_ms": 54.8
+    },
+    "cross_encoder_minilm_pool15": {
+      "mean_ms": 56.2,
+      "p50_ms": 54.8,
+      "p95_ms": 63.1
+    },
+    "deterministic_intent_classification": {
+      "mean_ms": 0.2,
+      "p50_ms": 0.1,
+      "p95_ms": 0.4
+    },
+    "deterministic_clause_segmentation": {
+      "mean_ms": 0.3,
+      "p50_ms": 0.2,
+      "p95_ms": 0.6
+    },
+    "per_clause_grounding_check": {
+      "mean_ms": 0.6,
+      "p50_ms": 0.5,
+      "p95_ms": 1.2
+    },
+    "end_to_end_verification_pipeline": {
+      "uncached_mean_ms": 127.1,
+      "uncached_p50_ms": 79.2,
+      "uncached_p95_ms": 152.4,
+      "cached_mean_ms": 18.3
+    }
+  },
+  "hardware_compliance_verdict": {
+    "ram_constraint_satisfied": true,
+    "vram_constraint_satisfied": true,
+    "latency_budget_satisfied": true,
+    "overall_status": "PASS"
+  }
+}

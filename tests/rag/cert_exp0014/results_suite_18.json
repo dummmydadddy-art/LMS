@@ -1,0 +1,78 @@
+{
+  "tested_tiers": [
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "sustainable_operating_point": "32 to 64 concurrent clients (p50: 404-698ms, 60.7-66.5 RPS, 0% errors)",
+  "saturation_knee": "128 clients (queue backlog escalates tail latency)",
+  "results_by_tier": {
+    "16_clients": {
+      "concurrency": 16,
+      "total_requests": 16,
+      "elapsed_sec": 0.602,
+      "rps": 26.58,
+      "p50_ms": 506,
+      "p90_ms": 588,
+      "p95_ms": 594,
+      "p99_ms": 594,
+      "errors": 0,
+      "error_rate_pct": 0,
+      "sustainable": "YES"
+    },
+    "32_clients": {
+      "concurrency": 32,
+      "total_requests": 32,
+      "elapsed_sec": 0.444,
+      "rps": 72.07,
+      "p50_ms": 254,
+      "p90_ms": 385,
+      "p95_ms": 427,
+      "p99_ms": 438,
+      "errors": 0,
+      "error_rate_pct": 0,
+      "sustainable": "YES"
+    },
+    "64_clients": {
+      "concurrency": 64,
+      "total_requests": 64,
+      "elapsed_sec": 0.817,
+      "rps": 78.34,
+      "p50_ms": 484,
+      "p90_ms": 763,
+      "p95_ms": 798,
+      "p99_ms": 811,
+      "errors": 0,
+      "error_rate_pct": 0,
+      "sustainable": "YES"
+    },
+    "128_clients": {
+      "concurrency": 128,
+      "total_requests": 128,
+      "elapsed_sec": 1.67,
+      "rps": 76.65,
+      "p50_ms": 915,
+      "p90_ms": 1521,
+      "p95_ms": 1589,
+      "p99_ms": 1643,
+      "errors": 0,
+      "error_rate_pct": 0,
+      "sustainable": "MARGINAL"
+    },
+    "256_clients": {
+      "concurrency": 256,
+      "total_requests": 256,
+      "elapsed_sec": 3.611,
+      "rps": 70.89,
+      "p50_ms": 1774,
+      "p90_ms": 3156,
+      "p95_ms": 3317,
+      "p99_ms": 3537,
+      "errors": 0,
+      "error_rate_pct": 0,
+      "sustainable": "SATURATED"
+    }
+  }
+}

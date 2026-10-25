@@ -1,0 +1,1628 @@
+{
+    "metadata": {
+        "generated_at": "2026-09-16T08:01:47+00:00",
+        "source_database": "database/rag_materials.sqlite3",
+        "source_table": "material_chunks",
+        "chunk_count": 23,
+        "total_vocabulary_terms": 106,
+        "method": "Deterministic curriculum extraction"
+    },
+    "terms": {
+        "1nf": {
+            "term": "1nf",
+            "canonical": "1NF (First Normal Form)",
+            "category": "DB_NORMALIZATION",
+            "occurrences": 2,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1"
+            ],
+            "aliases": [
+                "first normal form"
+            ]
+        },
+        "200 ok": {
+            "term": "200 ok",
+            "canonical": "200 OK",
+            "category": "HTTP_STATUS",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+            ],
+            "aliases": [
+                "status 200",
+                "200"
+            ]
+        },
+        "201 created": {
+            "term": "201 created",
+            "canonical": "201 Created",
+            "category": "HTTP_STATUS",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+            ],
+            "aliases": [
+                "status 201",
+                "201"
+            ]
+        },
+        "2nf": {
+            "term": "2nf",
+            "canonical": "2NF (Second Normal Form)",
+            "category": "DB_NORMALIZATION",
+            "occurrences": 2,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1"
+            ],
+            "aliases": [
+                "second normal form"
+            ]
+        },
+        "3nf": {
+            "term": "3nf",
+            "canonical": "3NF (Third Normal Form)",
+            "category": "DB_NORMALIZATION",
+            "occurrences": 1,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1"
+            ],
+            "aliases": [
+                "third normal form"
+            ]
+        },
+        "400 bad request": {
+            "term": "400 bad request",
+            "canonical": "400 Bad Request",
+            "category": "HTTP_STATUS",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+            ],
+            "aliases": [
+                "status 400",
+                "400"
+            ]
+        },
+        "401 unauthorized": {
+            "term": "401 unauthorized",
+            "canonical": "401 Unauthorized",
+            "category": "HTTP_STATUS",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+            ],
+            "aliases": [
+                "status 401",
+                "401"
+            ]
+        },
+        "403 forbidden": {
+            "term": "403 forbidden",
+            "canonical": "403 Forbidden",
+            "category": "HTTP_STATUS",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+            ],
+            "aliases": [
+                "status 403",
+                "403"
+            ]
+        },
+        "404 not found": {
+            "term": "404 not found",
+            "canonical": "404 Not Found",
+            "category": "HTTP_STATUS",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+            ],
+            "aliases": [
+                "status 404",
+                "404"
+            ]
+        },
+        "500 internal server error": {
+            "term": "500 internal server error",
+            "canonical": "500 Internal Server Error",
+            "category": "HTTP_STATUS",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+            ],
+            "aliases": [
+                "status 500",
+                "500"
+            ]
+        },
+        "<article>": {
+            "term": "<article>",
+            "canonical": "<article>",
+            "category": "HTML_ELEMENT",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+            ],
+            "aliases": [
+                "article element",
+                "article"
+            ]
+        },
+        "<footer>": {
+            "term": "<footer>",
+            "canonical": "<footer>",
+            "category": "HTML_ELEMENT",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+            ],
+            "aliases": [
+                "footer element",
+                "footer"
+            ]
+        },
+        "<header>": {
+            "term": "<header>",
+            "canonical": "<header>",
+            "category": "HTML_ELEMENT",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+            ],
+            "aliases": [
+                "header element",
+                "header"
+            ]
+        },
+        "<main>": {
+            "term": "<main>",
+            "canonical": "<main>",
+            "category": "HTML_ELEMENT",
+            "occurrences": 2,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+            ],
+            "aliases": [
+                "main element",
+                "main"
+            ]
+        },
+        "<nav>": {
+            "term": "<nav>",
+            "canonical": "<nav>",
+            "category": "HTML_ELEMENT",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+            ],
+            "aliases": [
+                "nav element",
+                "nav"
+            ]
+        },
+        "<section>": {
+            "term": "<section>",
+            "canonical": "<section>",
+            "category": "HTML_ELEMENT",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0"
+            ],
+            "aliases": [
+                "section element",
+                "section"
+            ]
+        },
+        "acid": {
+            "term": "acid",
+            "canonical": "ACID Properties",
+            "category": "DATABASE_CONCEPT",
+            "occurrences": 1,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+            ],
+            "aliases": [
+                "acid transactions"
+            ]
+        },
+        "align-items": {
+            "term": "align-items",
+            "canonical": "align-items",
+            "category": "CSS_PROPERTY",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+            ],
+            "aliases": []
+        },
+        "arrow function": {
+            "term": "arrow function",
+            "canonical": "Arrow Functions",
+            "category": "JS_SYNTAX",
+            "occurrences": 1,
+            "sources": [
+                "JavaScript ES6+ Deep Dive"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1"
+            ],
+            "aliases": [
+                "arrow functions"
+            ]
+        },
+        "async/await": {
+            "term": "async/await",
+            "canonical": "async/await",
+            "category": "JS_ASYNC",
+            "occurrences": 2,
+            "sources": [
+                "JavaScript ES6+ Deep Dive"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+            ],
+            "aliases": [
+                "async function",
+                "await"
+            ]
+        },
+        "atomicity": {
+            "term": "atomicity",
+            "canonical": "Atomicity",
+            "category": "ACID_PROPERTY",
+            "occurrences": 1,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+            ],
+            "aliases": []
+        },
+        "b-tree index": {
+            "term": "b-tree index",
+            "canonical": "B-Tree Index",
+            "category": "DB_INDEX",
+            "occurrences": 1,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2"
+            ],
+            "aliases": [
+                "b-tree",
+                "btree"
+            ]
+        },
+        "base64url": {
+            "term": "base64url",
+            "canonical": "Base64Url",
+            "category": "SECURITY",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4"
+            ],
+            "aliases": [
+                "base64 encoding"
+            ]
+        },
+        "border": {
+            "term": "border",
+            "canonical": "Border",
+            "category": "CSS_BOX_MODEL",
+            "occurrences": 7,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+            ],
+            "aliases": []
+        },
+        "border-box": {
+            "term": "border-box",
+            "canonical": "border-box",
+            "category": "CSS_VALUE",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+            ],
+            "aliases": []
+        },
+        "box-sizing": {
+            "term": "box-sizing",
+            "canonical": "box-sizing",
+            "category": "CSS_PROPERTY",
+            "occurrences": 2,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+            ],
+            "aliases": []
+        },
+        "call stack": {
+            "term": "call stack",
+            "canonical": "Call Stack",
+            "category": "JS_RUNTIME",
+            "occurrences": 1,
+            "sources": [
+                "JavaScript ES6+ Deep Dive"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+            ],
+            "aliases": []
+        },
+        "cleanup function": {
+            "term": "cleanup function",
+            "canonical": "Cleanup Function",
+            "category": "REACT_CONCEPT",
+            "occurrences": 1,
+            "sources": [
+                "React Hooks Tutorial"
+            ],
+            "chunk_ids": [
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+            ],
+            "aliases": []
+        },
+        "composite index": {
+            "term": "composite index",
+            "canonical": "Composite Index",
+            "category": "DB_INDEX",
+            "occurrences": 1,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2"
+            ],
+            "aliases": []
+        },
+        "consistency": {
+            "term": "consistency",
+            "canonical": "Consistency",
+            "category": "ACID_PROPERTY",
+            "occurrences": 1,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+            ],
+            "aliases": []
+        },
+        "const": {
+            "term": "const",
+            "canonical": "const",
+            "category": "JS_KEYWORD",
+            "occurrences": 19,
+            "sources": [
+                "JavaScript ES6+ Deep Dive",
+                "React Hooks Tutorial",
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1",
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_3",
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4"
+            ],
+            "aliases": [
+                "const declaration"
+            ]
+        },
+        "content-box": {
+            "term": "content-box",
+            "canonical": "content-box",
+            "category": "CSS_VALUE",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+            ],
+            "aliases": []
+        },
+        "cross axis": {
+            "term": "cross axis",
+            "canonical": "Cross Axis",
+            "category": "CSS_CONCEPT",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+            ],
+            "aliases": [
+                "cross-axis"
+            ]
+        },
+        "css": {
+            "term": "css",
+            "canonical": "CSS",
+            "category": "LANGUAGE",
+            "occurrences": 9,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+            ],
+            "aliases": [
+                "css3"
+            ]
+        },
+        "delete": {
+            "term": "delete",
+            "canonical": "DELETE Method",
+            "category": "HTTP_METHOD",
+            "occurrences": 2,
+            "sources": [
+                "Node.js & Express REST API Notes",
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3",
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2"
+            ],
+            "aliases": []
+        },
+        "dependency array": {
+            "term": "dependency array",
+            "canonical": "Dependency Array",
+            "category": "REACT_CONCEPT",
+            "occurrences": 1,
+            "sources": [
+                "React Hooks Tutorial"
+            ],
+            "chunk_ids": [
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+            ],
+            "aliases": [
+                "dependencies array"
+            ]
+        },
+        "destructuring": {
+            "term": "destructuring",
+            "canonical": "Destructuring",
+            "category": "JS_SYNTAX",
+            "occurrences": 3,
+            "sources": [
+                "JavaScript ES6+ Deep Dive"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2"
+            ],
+            "aliases": [
+                "object destructuring",
+                "array destructuring"
+            ]
+        },
+        "display: flex": {
+            "term": "display: flex",
+            "canonical": "display: flex",
+            "category": "CSS_PROPERTY",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+            ],
+            "aliases": [
+                "display flex"
+            ]
+        },
+        "display: grid": {
+            "term": "display: grid",
+            "canonical": "display: grid",
+            "category": "CSS_PROPERTY",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+            ],
+            "aliases": [
+                "display grid"
+            ]
+        },
+        "durability": {
+            "term": "durability",
+            "canonical": "Durability",
+            "category": "ACID_PROPERTY",
+            "occurrences": 1,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+            ],
+            "aliases": []
+        },
+        "event loop": {
+            "term": "event loop",
+            "canonical": "Event Loop",
+            "category": "JS_EVENT_LOOP",
+            "occurrences": 3,
+            "sources": [
+                "JavaScript ES6+ Deep Dive",
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+            ],
+            "aliases": []
+        },
+        "express": {
+            "term": "express",
+            "canonical": "Express",
+            "category": "FRAMEWORK",
+            "occurrences": 12,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4"
+            ],
+            "aliases": [
+                "express.js",
+                "expressjs"
+            ]
+        },
+        "flex-basis": {
+            "term": "flex-basis",
+            "canonical": "flex-basis",
+            "category": "CSS_PROPERTY",
+            "occurrences": 2,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+            ],
+            "aliases": []
+        },
+        "flex-direction": {
+            "term": "flex-direction",
+            "canonical": "flex-direction",
+            "category": "CSS_PROPERTY",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+            ],
+            "aliases": []
+        },
+        "flex-grow": {
+            "term": "flex-grow",
+            "canonical": "flex-grow",
+            "category": "CSS_PROPERTY",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+            ],
+            "aliases": []
+        },
+        "flex-shrink": {
+            "term": "flex-shrink",
+            "canonical": "flex-shrink",
+            "category": "CSS_PROPERTY",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+            ],
+            "aliases": []
+        },
+        "flex-wrap": {
+            "term": "flex-wrap",
+            "canonical": "flex-wrap",
+            "category": "CSS_PROPERTY",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+            ],
+            "aliases": []
+        },
+        "flexbox": {
+            "term": "flexbox",
+            "canonical": "Flexbox",
+            "category": "CSS_FEATURE",
+            "occurrences": 2,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+            ],
+            "aliases": [
+                "flexible box"
+            ]
+        },
+        "foreign key": {
+            "term": "foreign key",
+            "canonical": "Foreign Key",
+            "category": "DB_CONSTRAINT",
+            "occurrences": 2,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0"
+            ],
+            "aliases": [
+                "referential integrity"
+            ]
+        },
+        "gap": {
+            "term": "gap",
+            "canonical": "gap",
+            "category": "CSS_PROPERTY",
+            "occurrences": 4,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+            ],
+            "aliases": [
+                "grid-gap"
+            ]
+        },
+        "get": {
+            "term": "get",
+            "canonical": "GET Method",
+            "category": "HTTP_METHOD",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+            ],
+            "aliases": []
+        },
+        "grid": {
+            "term": "grid",
+            "canonical": "CSS Grid",
+            "category": "CSS_FEATURE",
+            "occurrences": 10,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+            ],
+            "aliases": [
+                "grid layout"
+            ]
+        },
+        "grid-template-columns": {
+            "term": "grid-template-columns",
+            "canonical": "grid-template-columns",
+            "category": "CSS_PROPERTY",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+            ],
+            "aliases": []
+        },
+        "grid-template-rows": {
+            "term": "grid-template-rows",
+            "canonical": "grid-template-rows",
+            "category": "CSS_PROPERTY",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+            ],
+            "aliases": []
+        },
+        "html": {
+            "term": "html",
+            "canonical": "HTML",
+            "category": "LANGUAGE",
+            "occurrences": 6,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3"
+            ],
+            "aliases": [
+                "html5"
+            ]
+        },
+        "http": {
+            "term": "http",
+            "canonical": "HTTP",
+            "category": "PROTOCOL",
+            "occurrences": 2,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+            ],
+            "aliases": [
+                "http/1.1",
+                "hypertext transfer protocol"
+            ]
+        },
+        "idempotent": {
+            "term": "idempotent",
+            "canonical": "Idempotency",
+            "category": "HTTP_CONCEPT",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+            ],
+            "aliases": [
+                "idempotence"
+            ]
+        },
+        "isolation": {
+            "term": "isolation",
+            "canonical": "Isolation",
+            "category": "ACID_PROPERTY",
+            "occurrences": 2,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+            ],
+            "aliases": []
+        },
+        "javascript": {
+            "term": "javascript",
+            "canonical": "JavaScript",
+            "category": "LANGUAGE",
+            "occurrences": 11,
+            "sources": [
+                "JavaScript ES6+ Deep Dive",
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1",
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1"
+            ],
+            "aliases": [
+                "js",
+                "ecmascript",
+                "es6",
+                "es2015"
+            ]
+        },
+        "json": {
+            "term": "json",
+            "canonical": "JSON",
+            "category": "FORMAT",
+            "occurrences": 4,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4"
+            ],
+            "aliases": [
+                "javascript object notation"
+            ]
+        },
+        "justify-content": {
+            "term": "justify-content",
+            "canonical": "justify-content",
+            "category": "CSS_PROPERTY",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+            ],
+            "aliases": []
+        },
+        "jwt": {
+            "term": "jwt",
+            "canonical": "JSON Web Token",
+            "category": "SECURITY",
+            "occurrences": 2,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4"
+            ],
+            "aliases": [
+                "json web token",
+                "bearer token"
+            ]
+        },
+        "let": {
+            "term": "let",
+            "canonical": "let",
+            "category": "JS_KEYWORD",
+            "occurrences": 2,
+            "sources": [
+                "JavaScript ES6+ Deep Dive"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+            ],
+            "aliases": [
+                "let declaration"
+            ]
+        },
+        "lexical this": {
+            "term": "lexical this",
+            "canonical": "Lexical this",
+            "category": "JS_CONCEPT",
+            "occurrences": 1,
+            "sources": [
+                "JavaScript ES6+ Deep Dive"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1"
+            ],
+            "aliases": [
+                "lexical scope"
+            ]
+        },
+        "libuv": {
+            "term": "libuv",
+            "canonical": "Libuv",
+            "category": "RUNTIME",
+            "occurrences": 2,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+            ],
+            "aliases": [
+                "libuv thread pool"
+            ]
+        },
+        "main axis": {
+            "term": "main axis",
+            "canonical": "Main Axis",
+            "category": "CSS_CONCEPT",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2"
+            ],
+            "aliases": [
+                "main-axis"
+            ]
+        },
+        "margin": {
+            "term": "margin",
+            "canonical": "Margin",
+            "category": "CSS_BOX_MODEL",
+            "occurrences": 1,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+            ],
+            "aliases": []
+        },
+        "microtask": {
+            "term": "microtask",
+            "canonical": "Microtask",
+            "category": "JS_EVENT_LOOP",
+            "occurrences": 1,
+            "sources": [
+                "JavaScript ES6+ Deep Dive"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+            ],
+            "aliases": [
+                "microtasks",
+                "microtask queue"
+            ]
+        },
+        "middleware": {
+            "term": "middleware",
+            "canonical": "Middleware",
+            "category": "EXPRESS_CONCEPT",
+            "occurrences": 7,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4"
+            ],
+            "aliases": [
+                "middleware functions",
+                "express middleware"
+            ]
+        },
+        "node.js": {
+            "term": "node.js",
+            "canonical": "Node.js",
+            "category": "RUNTIME",
+            "occurrences": 8,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4"
+            ],
+            "aliases": [
+                "node",
+                "nodejs"
+            ]
+        },
+        "non-blocking": {
+            "term": "non-blocking",
+            "canonical": "Non-blocking I/O",
+            "category": "NODE_ARCHITECTURE",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+            ],
+            "aliases": [
+                "asynchronous i/o"
+            ]
+        },
+        "normalization": {
+            "term": "normalization",
+            "canonical": "Normalization",
+            "category": "DB_DESIGN",
+            "occurrences": 2,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1"
+            ],
+            "aliases": [
+                "database normalization"
+            ]
+        },
+        "padding": {
+            "term": "padding",
+            "canonical": "Padding",
+            "category": "CSS_BOX_MODEL",
+            "occurrences": 4,
+            "sources": [
+                "HTML & CSS Fundamentals"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1"
+            ],
+            "aliases": []
+        },
+        "patch": {
+            "term": "patch",
+            "canonical": "PATCH Method",
+            "category": "HTTP_METHOD",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+            ],
+            "aliases": []
+        },
+        "post": {
+            "term": "post",
+            "canonical": "POST Method",
+            "category": "HTTP_METHOD",
+            "occurrences": 3,
+            "sources": [
+                "HTML & CSS Fundamentals",
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+            ],
+            "aliases": []
+        },
+        "postgresql": {
+            "term": "postgresql",
+            "canonical": "PostgreSQL",
+            "category": "DATABASE",
+            "occurrences": 5,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0",
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+            ],
+            "aliases": [
+                "postgres",
+                "psql"
+            ]
+        },
+        "primary key": {
+            "term": "primary key",
+            "canonical": "Primary Key",
+            "category": "DB_CONSTRAINT",
+            "occurrences": 4,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0",
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1"
+            ],
+            "aliases": []
+        },
+        "promise": {
+            "term": "promise",
+            "canonical": "Promise",
+            "category": "JS_ASYNC",
+            "occurrences": 9,
+            "sources": [
+                "JavaScript ES6+ Deep Dive"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+            ],
+            "aliases": [
+                "promises",
+                "promise.resolve"
+            ]
+        },
+        "prop drilling": {
+            "term": "prop drilling",
+            "canonical": "Prop Drilling",
+            "category": "REACT_CONCEPT",
+            "occurrences": 1,
+            "sources": [
+                "React Hooks Tutorial"
+            ],
+            "chunk_ids": [
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_3"
+            ],
+            "aliases": []
+        },
+        "provider": {
+            "term": "provider",
+            "canonical": "Context Provider",
+            "category": "REACT_COMPONENT",
+            "occurrences": 2,
+            "sources": [
+                "React Hooks Tutorial"
+            ],
+            "chunk_ids": [
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_3"
+            ],
+            "aliases": [
+                "<authcontext.provider>",
+                "context.provider"
+            ]
+        },
+        "put": {
+            "term": "put",
+            "canonical": "PUT Method",
+            "category": "HTTP_METHOD",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3"
+            ],
+            "aliases": []
+        },
+        "re-render": {
+            "term": "re-render",
+            "canonical": "Re-render",
+            "category": "REACT_CONCEPT",
+            "occurrences": 1,
+            "sources": [
+                "React Hooks Tutorial"
+            ],
+            "chunk_ids": [
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5"
+            ],
+            "aliases": [
+                "re-rendering",
+                "render cycle"
+            ]
+        },
+        "react": {
+            "term": "react",
+            "canonical": "React",
+            "category": "FRAMEWORK",
+            "occurrences": 11,
+            "sources": [
+                "React Hooks Tutorial"
+            ],
+            "chunk_ids": [
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_3",
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5"
+            ],
+            "aliases": [
+                "react.js",
+                "reactjs"
+            ]
+        },
+        "read committed": {
+            "term": "read committed",
+            "canonical": "Read Committed",
+            "category": "DB_ISOLATION",
+            "occurrences": 1,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+            ],
+            "aliases": []
+        },
+        "repeatable read": {
+            "term": "repeatable read",
+            "canonical": "Repeatable Read",
+            "category": "DB_ISOLATION",
+            "occurrences": 1,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+            ],
+            "aliases": []
+        },
+        "req": {
+            "term": "req",
+            "canonical": "req (Request)",
+            "category": "EXPRESS_OBJECT",
+            "occurrences": 3,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+            ],
+            "aliases": [
+                "req.body",
+                "req.params",
+                "request object"
+            ]
+        },
+        "res": {
+            "term": "res",
+            "canonical": "res (Response)",
+            "category": "EXPRESS_OBJECT",
+            "occurrences": 3,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2"
+            ],
+            "aliases": [
+                "res.status",
+                "res.json",
+                "res.send",
+                "response object"
+            ]
+        },
+        "rest": {
+            "term": "rest",
+            "canonical": "REST",
+            "category": "PROTOCOL",
+            "occurrences": 9,
+            "sources": [
+                "JavaScript ES6+ Deep Dive",
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1",
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4"
+            ],
+            "aliases": [
+                "restful",
+                "rest api",
+                "restful api"
+            ]
+        },
+        "serializable": {
+            "term": "serializable",
+            "canonical": "Serializable",
+            "category": "DB_ISOLATION",
+            "occurrences": 1,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+            ],
+            "aliases": []
+        },
+        "settimeout": {
+            "term": "settimeout",
+            "canonical": "setTimeout",
+            "category": "JS_API",
+            "occurrences": 3,
+            "sources": [
+                "JavaScript ES6+ Deep Dive",
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+            ],
+            "aliases": [
+                "setinterval"
+            ]
+        },
+        "single-threaded": {
+            "term": "single-threaded",
+            "canonical": "Single-threaded",
+            "category": "NODE_ARCHITECTURE",
+            "occurrences": 1,
+            "sources": [
+                "JavaScript ES6+ Deep Dive"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3"
+            ],
+            "aliases": []
+        },
+        "spread operator": {
+            "term": "spread operator",
+            "canonical": "Spread Operator",
+            "category": "JS_SYNTAX",
+            "occurrences": 1,
+            "sources": [
+                "JavaScript ES6+ Deep Dive"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2"
+            ],
+            "aliases": [
+                "spread syntax",
+                "..."
+            ]
+        },
+        "sql": {
+            "term": "sql",
+            "canonical": "SQL",
+            "category": "LANGUAGE",
+            "occurrences": 1,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+            ],
+            "aliases": [
+                "structured query language"
+            ]
+        },
+        "temporal dead zone": {
+            "term": "temporal dead zone",
+            "canonical": "Temporal Dead Zone",
+            "category": "JS_CONCEPT",
+            "occurrences": 1,
+            "sources": [
+                "JavaScript ES6+ Deep Dive"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+            ],
+            "aliases": [
+                "tdz"
+            ]
+        },
+        "transaction": {
+            "term": "transaction",
+            "canonical": "Transaction",
+            "category": "DB_TRANSACTION",
+            "occurrences": 2,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3"
+            ],
+            "aliases": [
+                "commit",
+                "rollback"
+            ]
+        },
+        "typeerror": {
+            "term": "typeerror",
+            "canonical": "TypeError",
+            "category": "JS_ERROR",
+            "occurrences": 1,
+            "sources": [
+                "JavaScript ES6+ Deep Dive"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1"
+            ],
+            "aliases": []
+        },
+        "unique index": {
+            "term": "unique index",
+            "canonical": "Unique Index",
+            "category": "DB_INDEX",
+            "occurrences": 2,
+            "sources": [
+                "PostgreSQL Database Design"
+            ],
+            "chunk_ids": [
+                "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2"
+            ],
+            "aliases": [
+                "unique constraint"
+            ]
+        },
+        "usecallback": {
+            "term": "usecallback",
+            "canonical": "useCallback",
+            "category": "REACT_HOOK",
+            "occurrences": 3,
+            "sources": [
+                "React Hooks Tutorial"
+            ],
+            "chunk_ids": [
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+            ],
+            "aliases": []
+        },
+        "usecontext": {
+            "term": "usecontext",
+            "canonical": "useContext",
+            "category": "REACT_HOOK",
+            "occurrences": 2,
+            "sources": [
+                "React Hooks Tutorial"
+            ],
+            "chunk_ids": [
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_3"
+            ],
+            "aliases": [
+                "react context",
+                "context api",
+                "createcontext"
+            ]
+        },
+        "useeffect": {
+            "term": "useeffect",
+            "canonical": "useEffect",
+            "category": "REACT_HOOK",
+            "occurrences": 5,
+            "sources": [
+                "React Hooks Tutorial"
+            ],
+            "chunk_ids": [
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2"
+            ],
+            "aliases": []
+        },
+        "usememo": {
+            "term": "usememo",
+            "canonical": "useMemo",
+            "category": "REACT_HOOK",
+            "occurrences": 3,
+            "sources": [
+                "React Hooks Tutorial"
+            ],
+            "chunk_ids": [
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4"
+            ],
+            "aliases": [
+                "memoization"
+            ]
+        },
+        "useref": {
+            "term": "useref",
+            "canonical": "useRef",
+            "category": "REACT_HOOK",
+            "occurrences": 1,
+            "sources": [
+                "React Hooks Tutorial"
+            ],
+            "chunk_ids": [
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5"
+            ],
+            "aliases": [
+                ".current"
+            ]
+        },
+        "usestate": {
+            "term": "usestate",
+            "canonical": "useState",
+            "category": "REACT_HOOK",
+            "occurrences": 2,
+            "sources": [
+                "React Hooks Tutorial"
+            ],
+            "chunk_ids": [
+                "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1"
+            ],
+            "aliases": []
+        },
+        "v8": {
+            "term": "v8",
+            "canonical": "V8 Engine",
+            "category": "RUNTIME",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+            ],
+            "aliases": [
+                "v8 engine",
+                "google v8"
+            ]
+        },
+        "var": {
+            "term": "var",
+            "canonical": "var",
+            "category": "JS_KEYWORD",
+            "occurrences": 2,
+            "sources": [
+                "JavaScript ES6+ Deep Dive"
+            ],
+            "chunk_ids": [
+                "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0"
+            ],
+            "aliases": [
+                "var declaration"
+            ]
+        },
+        "worker threads": {
+            "term": "worker threads",
+            "canonical": "Worker Threads",
+            "category": "NODE_RUNTIME",
+            "occurrences": 1,
+            "sources": [
+                "Node.js & Express REST API Notes"
+            ],
+            "chunk_ids": [
+                "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0"
+            ],
+            "aliases": [
+                "thread pool",
+                "libuv worker threads"
+            ]
+        }
+    }
+}

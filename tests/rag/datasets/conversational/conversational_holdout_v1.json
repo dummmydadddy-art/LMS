@@ -1,0 +1,217 @@
+[
+  {
+    "session_id": "conv_01",
+    "topic": "React Hooks & Effects",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What is useEffect and what is its primary purpose in React?",
+        "entity": "useEffect"
+      },
+      {
+        "turn": 2,
+        "query": "Why does it run again when my component re-renders?",
+        "entity": "dependency array"
+      },
+      {
+        "turn": 3,
+        "query": "What happens if I pass an empty array to it instead?",
+        "entity": "mount execution"
+      },
+      {
+        "turn": 4,
+        "query": "Does returning a function from it prevent memory leaks?",
+        "entity": "cleanup function"
+      }
+    ]
+  },
+  {
+    "session_id": "conv_02",
+    "topic": "JavaScript Variables & TDZ",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What is the Temporal Dead Zone in modern JavaScript?",
+        "entity": "TDZ"
+      },
+      {
+        "turn": 2,
+        "query": "Does it apply to var or only let and const?",
+        "entity": "let and const scoping"
+      },
+      {
+        "turn": 3,
+        "query": "What specific error is thrown if I access a variable inside it?",
+        "entity": "ReferenceError"
+      }
+    ]
+  },
+  {
+    "session_id": "conv_03",
+    "topic": "CSS Box Model & Universal Sizing",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What are the four layers of the CSS box model from inside out?",
+        "entity": "box model"
+      },
+      {
+        "turn": 2,
+        "query": "Which layer is transparent and separates elements from neighbors?",
+        "entity": "margin"
+      },
+      {
+        "turn": 3,
+        "query": "Why does universal border-box fix unexpected width issues with it?",
+        "entity": "box-sizing: border-box"
+      }
+    ]
+  },
+  {
+    "session_id": "conv_04",
+    "topic": "Express Middleware & Error Handling",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What is middleware in Express.js?",
+        "entity": "middleware"
+      },
+      {
+        "turn": 2,
+        "query": "How does it pass control to the next function in the chain?",
+        "entity": "next()"
+      },
+      {
+        "turn": 3,
+        "query": "How many arguments are needed if it needs to handle errors?",
+        "entity": "four parameters (err, req, res, next)"
+      }
+    ]
+  },
+  {
+    "session_id": "conv_05",
+    "topic": "PostgreSQL Normalization",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What is database normalization and what problems does it solve?",
+        "entity": "normalization"
+      },
+      {
+        "turn": 2,
+        "query": "What is the requirement for First Normal Form?",
+        "entity": "1NF atomic values"
+      },
+      {
+        "turn": 3,
+        "query": "How does Third Normal Form handle transitive dependencies?",
+        "entity": "3NF separate tables"
+      }
+    ]
+  },
+  {
+    "session_id": "conv_06",
+    "topic": "CSS Flexbox Alignment",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What is the difference between justify-content and align-items in flexbox?",
+        "entity": "main vs cross axis"
+      },
+      {
+        "turn": 2,
+        "query": "Can an individual child element override that cross-axis alignment?",
+        "entity": "align-self"
+      },
+      {
+        "turn": 3,
+        "query": "What shorthand sets grow, shrink, and basis in one property?",
+        "entity": "flex: 1 1 auto"
+      }
+    ]
+  },
+  {
+    "session_id": "conv_07",
+    "topic": "JWT Authentication Flow",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What are the three parts of a JSON Web Token?",
+        "entity": "Header.Payload.Signature"
+      },
+      {
+        "turn": 2,
+        "query": "Where does the client put it when sending a request to the server?",
+        "entity": "Authorization header Bearer"
+      },
+      {
+        "turn": 3,
+        "query": "What status code should the server return if it is missing or invalid?",
+        "entity": "401 Unauthorized"
+      }
+    ]
+  },
+  {
+    "session_id": "conv_08",
+    "topic": "React State Management & Stale Closures",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "How does useState work in functional components?",
+        "entity": "useState"
+      },
+      {
+        "turn": 2,
+        "query": "Why should I pass a function to setState instead of a raw value?",
+        "entity": "updater function"
+      },
+      {
+        "turn": 3,
+        "query": "What hook should I use if I want to persist values without causing a re-render?",
+        "entity": "useRef"
+      }
+    ]
+  },
+  {
+    "session_id": "conv_09",
+    "topic": "PostgreSQL B-Tree Indexes",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "What is a B-tree index in PostgreSQL?",
+        "entity": "B-tree index"
+      },
+      {
+        "turn": 2,
+        "query": "What search time complexity does it achieve for range queries?",
+        "entity": "O(log N)"
+      },
+      {
+        "turn": 3,
+        "query": "What are the downsides of adding too many of them to a table?",
+        "entity": "write overhead and storage"
+      }
+    ]
+  },
+  {
+    "session_id": "conv_10",
+    "topic": "JavaScript Promises & Event Loop",
+    "turns": [
+      {
+        "turn": 1,
+        "query": "How does the JavaScript event loop handle asynchronous code?",
+        "entity": "event loop"
+      },
+      {
+        "turn": 2,
+        "query": "What are the three states a Promise can be in?",
+        "entity": "Pending, Fulfilled, Rejected"
+      },
+      {
+        "turn": 3,
+        "query": "Why does Promise.then() execute before setTimeout() callbacks?",
+        "entity": "microtasks vs macrotasks"
+      }
+    ]
+  }
+]

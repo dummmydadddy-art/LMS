@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "POLARITY-LEGIT-001",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't const variables be reassigned in JavaScript?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-002",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't var respect block scoping within curly braces?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-003",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't arrow functions be called with the new operator?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-004",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why don't arrow functions have their own arguments object?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-005",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't let variables be accessed before their declaration?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-006",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't React allow calling Hooks inside conditional if statements?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-007",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't Hooks be executed inside for loops or nested functions?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-008",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't useEffect cleanup execute before the component mounts?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-009",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't React state be mutated directly without triggering bugs?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-010",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't useContext require manual prop drilling across intermediate components?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-011",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't a document contain more than one <main> element in HTML5?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-012",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't display: flex create a 2-dimensional grid layout?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-013",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't flex items wrap onto new lines when flex-wrap is nowrap?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-014",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't padding clear space outside the border in the box model?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-015",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't margin be styled with background colors or images?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-016",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't Node.js run JavaScript code on multiple OS threads concurrently?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-017",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't Express middleware continue executing after calling res.end()?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-018",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't HTTP GET modify server resources in RESTful design?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-019",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't clients modify JWT payload claims without invalidating the signature?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-020",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't status 401 indicate that an authenticated user has permission?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-021",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't a Many-to-Many relationship exist without a junction associative table?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-022",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't First Normal Form (1NF) permit repeating column groups?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-023",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't non-key attributes have partial dependencies in Second Normal Form (2NF)?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-024",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't Third Normal Form (3NF) allow transitive dependencies between non-key fields?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-025",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't PostgreSQL COMMIT be undone once written to the Write-Ahead Log?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-026",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't a Unique index permit duplicate values in indexed columns?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-027",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't child rows reference non-existent parent primary keys in PostgreSQL?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-028",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't Read Committed isolation level permit reading uncommitted dirty data?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-029",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't Libuv worker threads execute the JavaScript Call Stack directly?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-030",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't Promise.race wait for all promises to settle before returning?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-031",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't Object.is shallow comparison detect deep mutations in nested objects?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-032",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't useRef trigger component re-renders when .current changes?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-033",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't <nav> elements be used for non-navigational paragraph content?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-034",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't CSS grid-template-columns define row track dimensions?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-035",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't box-sizing: content-box include padding inside declared width?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-036",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't flex-shrink: 0 allow items to shrink when space is constrained?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-037",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't var prevent accidental global variable leakage across functions?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-038",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't const freeze array elements against push and pop operations?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-039",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't arrow functions bind a new dynamic this context using .bind()?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-040",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't Promise.all continue executing if any promise encounters an error?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-041",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't synchronous file operations fs.readFileSync avoid blocking the event loop?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-042",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't Express route matching execute middleware registered after the route handler?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-043",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't HTTP PUT perform partial field updates without replacing the entity?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-044",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't status 404 signify that authentication credentials were invalid?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-045",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't Base64Url encoding prevent unauthorized viewing of JWT payload data?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-046",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't Atomicity allow half of a transaction to commit when a crash occurs?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-047",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't B-Tree indexes accelerate queries filtering only on non-indexed columns?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-048",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't a composite index on (a, b) accelerate queries filtering on b alone?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-049",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't Durability preserve uncommitted transaction data across server power failures?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-050",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't PostgreSQL permit duplicate primary key values in the same table?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-051",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't custom Hooks be called from plain vanilla utility classes?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-052",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't useState preserve mutations made directly to state objects?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-053",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't useEffect without dependencies avoid running after every single render?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-054",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't <article> represent generic meaningless page wrappers like <div>?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-055",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't grid-column: span 2 delete neighboring track cells in CSS grid?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-056",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't flex-basis: auto override fixed pixel width settings in all cases?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-057",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't let variables be re-declared within the identical block scope?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-058",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't rest syntax (...args) permit trailing parameters after it?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-059",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't Promise.allSettled reject immediately upon encountering the first failure?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-060",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't setTimeout(fn, 0) execute before the current synchronous Call Stack finishes?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-061",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't error middleware with three arguments handle Express exceptions?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-062",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't HTTP POST guarantee idempotent safety across duplicate requests?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-063",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't JWT signatures be forged without possession of the server secret?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-064",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't status 500 indicate an invalid query syntax submitted by the user?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-065",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't a One-to-Many relationship place the foreign key in the parent entity?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-066",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't 2NF address transitive dependencies between non-primary key attributes?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-067",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't uncommitted SQL statements survive a database power failure?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-068",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't B-Tree indexing speed up table write operations during bulk inserts?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-069",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't GIN indexes replace B-tree indexes for simple integer primary keys?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-070",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't consistency permit transactions to violate database foreign key rules?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-071",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't React functional components declare lifecycle methods like componentDidMount?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-072",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't useMemo execute its calculation asynchronously in a background thread?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-073",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't useCallback prevent child re-renders when callback dependencies change?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-074",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't useContext share state between unrelated browser tabs automatically?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-075",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't semantic HTML elements improve styling without CSS stylesheet rules?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-076",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't flex-grow: 0 cause an element to expand into remaining available space?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-077",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't justify-content align items along the cross axis in CSS flexbox?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-078",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't the CSS box model exclude borders from total width in content-box?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-079",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't const objects be reassigned to entirely new memory references?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-080",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't TDZ allow accessing let variables prior to their declaration line?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-081",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't arrow functions provide an arguments object for variadic parameters?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-082",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't Promise.race wait for rejected promises if a fulfilled promise settles first?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-083",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't microtasks be preempted by macrotasks in the Node.js event loop?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-084",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't Express app.use(express.json()) parse urlencoded form payloads?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-085",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't next() in Express pass control backwards to previous middleware layers?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-086",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't HTTP DELETE create new database records when called repeatedly?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-087",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't status 201 indicate that an existing resource was successfully retrieved?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-088",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't JWT header tampering go unnoticed by the signature verification algorithm?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-089",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't Many-to-Many relationships link two tables without a third junction table?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-090",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't 1NF permit comma-separated multi-valued entries in a single table cell?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-091",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't 3NF eliminate partial dependencies from composite primary keys?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-092",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't ROLLBACK save uncommitted database changes to permanent storage?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-093",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't isolation level Read Committed prevent non-repeatable read anomalies?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-094",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't WAL record changes after writing them to the main table pages?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-095",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't React state updates in React 18 bypass automatic event batching?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-096",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't useEffect cleanup run after the component has completely unmounted?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-097",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't useRef.current trigger DOM repaints without React state modification?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-098",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't <header> represent footer copyright statements in HTML5?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-099",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why can't CSS Grid gap apply spacing to outer container margins?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-LEGIT-100",
+    "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+    "query": "Why doesn't flex-direction: column align child elements horizontally from left to right?",
+    "expected": "SUPPORTED",
+    "category": "LEGITIMATE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-101",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that const does not allow variable reassignment in JavaScript?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-102",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it the case that var doesn't respect block scoping within curly braces?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-103",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why arrow functions do not fail to inherit lexical this from their parent scope?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-104",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that let does not permit duplicate re-declaration in the same block scope?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-105",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it incorrect that React state is not mutable directly by components?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-106",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why React Hooks are not allowed to be called inside conditional if blocks?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-107",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that useEffect cleanup functions do not run before initial component mount?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-108",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it false that useContext does not require manual prop drilling through intermediates?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-109",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why HTML5 documents do not permit more than one single <main> element?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-110",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that flex-wrap: nowrap does not allow items to break across multiple rows?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-111",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it false that display: flex does not establish a two-dimensional grid context?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-112",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why CSS box-sizing: content-box does not include padding inside declared width?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-113",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that Node.js main thread does not execute multiple JavaScript functions in parallel?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-114",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it incorrect that HTTP GET requests do not modify server-side database records?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-115",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why clients cannot alter JWT payload claims without invalidating the signature?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-116",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that HTTP status 401 does not signify that an authenticated user has permissions?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-117",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it false that Many-to-Many relationships cannot exist without a junction associative table?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-118",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why First Normal Form (1NF) does not permit non-atomic repeating groups?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-119",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that 2NF does not allow partial functional dependencies on composite keys?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-120",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it incorrect that 3NF does not permit transitive dependencies between non-key fields?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-121",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why PostgreSQL transactions cannot commit partially when Atomicity is enforced?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-122",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that ROLLBACK does not make uncommitted transaction changes permanent?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-123",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it false that Unique indexes do not permit duplicate values in indexed columns?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-124",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why foreign keys do not allow referencing nonexistent primary key records?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-125",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that B-Tree indexes do not scan every single table row for equality lookups?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-126",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it incorrect that arrow functions cannot be instantiated with the new keyword?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-127",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why Promise.all does not continue when one of its promises rejects?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-128",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that rest parameters do not create an arguments-like pseudo-array?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-129",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it false that Object.is shallow comparison does not detect internal object mutations?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-130",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why useRef does not trigger component re-renders when its .current value updates?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-131",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that <article> does not represent meaningless inline layout styling?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-132",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it incorrect that CSS grid-template-columns does not define vertical row heights?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-133",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why flex-shrink: 0 does not allow items to reduce in dimension when constrained?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-134",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that async/await does not execute outside the JavaScript event loop runtime?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-135",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it false that Express middleware functions do not execute after calling res.end()?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-136",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why HTTP POST requests do not guarantee safe idempotent execution?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-137",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that status 500 does not indicate invalid client query syntax?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-138",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it incorrect that Write-Ahead Logging does not write to tables before recording to disk?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-139",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why Read Committed isolation does not permit dirty reads of uncommitted rows?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-140",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that React 18 does not fail to batch state updates inside timeout callbacks?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-141",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it false that useMemo does not store calculated outputs in browser localStorage?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-142",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why useCallback does not prevent child re-renders when dependencies change?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-143",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that <nav> does not specify document footer copyright information?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-144",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it incorrect that CSS margin does not sit inside the border layer touching content?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-145",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why const objects do not lose the mutability of their internal properties?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-146",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that TDZ access does not return undefined instead of throwing a ReferenceError?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-147",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it false that Libuv does not execute the main JavaScript Call Stack directly?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-148",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Can you explain why Express res.status(201) does not signify that a resource was not found?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-149",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Is it not true that One-to-Many relationships do not place the foreign key in the parent table?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOUBLENEG-150",
+    "subtype": "DOUBLE_NEGATION",
+    "query": "Why isn't it incorrect that PostgreSQL Durability does not lose committed records upon power failure?",
+    "expected": "SUPPORTED",
+    "category": "DOUBLE_NEGATION"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-151",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does CSS flexbox support 3D spatial cube rendering along the Z axis by default?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-152",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does JavaScript let allow declaring the identical variable name twice in the same scope block?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-153",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does an arrow function bind its own dynamic this context when invoked as an event listener?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-154",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does React useState update component state synchronously on the very next code line?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-155",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does React useEffect with empty dependencies [] run after every single component render?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-156",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does Express middleware automatically spawn a multi-process operating system cluster?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-157",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does HTTP GET create new database records and send status 201 Created by default?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-158",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does JWT Base64Url encoding securely encrypt sensitive student passwords against all inspection?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-159",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does PostgreSQL First Normal Form (1NF) permit comma-separated arrays in a single column?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-160",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does PostgreSQL Second Normal Form (2NF) eliminate transitive dependencies between non-keys?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-161",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does a PostgreSQL B-Tree index scan every row in the table when executing equality lookups?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-162",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does PostgreSQL ROLLBACK save uncommitted transaction changes to permanent storage?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-163",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does HTML5 allow putting multiple <main> elements in a single valid document?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-164",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does CSS display: flex initiate a two-dimensional grid layout covering rows and columns?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-165",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does the CSS box model place margins inside the border layer touching inner content?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-166",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does CSS border-box exclude borders and padding from the declared width calculation?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-167",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does var declare block-scoped variables confined strictly within { } curly braces?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-168",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does const prevent developers from mutating the properties of an object or array?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-169",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does an arrow function expose an arguments object containing all passed parameters?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-170",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does Promise.all continue successfully when one of its promises rejects with an error?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-171",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does the JavaScript event loop execute macrotasks before microtasks take priority?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-172",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does React permit calling custom Hooks conditionally inside if statements or loops?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-173",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does mutating React state arrays directly with push() trigger an automatic component re-render?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-174",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does React useContext require passing props manually through every intermediate child?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-175",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does useMemo store its calculated results across different browser tabs in localStorage?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-176",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does changing useRef.current trigger an immediate component re-render in React?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-177",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does Node.js execute user JavaScript functions on multiple parallel OS threads?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-178",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does Express route handling require four parameters for standard request handlers?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-179",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does HTTP status 401 Unauthorized indicate that an authenticated user lacks permissions?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-180",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does status 500 Internal Server Error represent invalid query input parameters from clients?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-181",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does a One-to-Many relationship store the foreign key in the parent entity table?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-182",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does a Many-to-Many relationship connect two tables directly without an associative table?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-183",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does adding database indexes speed up INSERT and UPDATE write performance in PostgreSQL?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-184",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does PostgreSQL Write-Ahead Logging write table records before logging changes to disk?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-185",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does PostgreSQL Durability discard committed transaction data during server power failures?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-186",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does <article> represent meaningless inline decorative icons in semantic HTML5?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-187",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does <header> contain solely legal author copyright statements at the bottom of the page?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-188",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does flex-wrap: nowrap allow flex items to wrap across multiple lines when overflowing?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-189",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does flex-direction: row align child elements vertically from top to bottom by default?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-190",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does accessing a let variable in the Temporal Dead Zone return undefined silently?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-191",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does invoking an arrow function with new instantiate a new object instance successfully?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-192",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does object destructuring fail when renaming extracted properties with colon syntax?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-193",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does React 18 execute state updates synchronously one by one across promises and timeouts?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-194",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does useEffect cleanup execute exclusively before the component initially mounts to DOM?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-195",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does Object.is shallow comparison detect modifications made inside existing nested objects?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-196",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does Express app.use(express.urlencoded()) parse incoming application/json bodies?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-197",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does calling next() in Express middleware terminate the HTTP request-response cycle immediately?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-198",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does HTTP DELETE create new records when executed multiple times against the same URI?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-199",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does a Unique index in PostgreSQL permit multiple identical values in the indexed column?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  },
+  {
+    "id": "POLARITY-DOESNOTDO-200",
+    "subtype": "DOES_NOT_DO",
+    "query": "Does Atomicity in ACID allow partial transaction changes to persist when a query fails?",
+    "expected": "REFUTED",
+    "category": "DOES_NOT_DO_FALSE_PREMISE"
+  }
+]

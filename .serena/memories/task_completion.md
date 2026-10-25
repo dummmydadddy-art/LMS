@@ -1,0 +1,3 @@
+- For frontend-only changes, run `cd frontend && npm run build && npm run lint` before finishing.
+- For backend PHP edits, run a PHP syntax check on touched files and smoke-start the backend with `backend/start-backend.ps1`.
+- If a task changes both halves of the app, validate both sides before considering it done.
