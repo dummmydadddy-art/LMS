@@ -1,0 +1,107 @@
+[
+  {
+    "id": "unans_01",
+    "query": "What is quantum entanglement and how does the Einstein-Podolsky-Rosen paradox describe it?",
+    "category": "quantum_physics",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "Query is about quantum physics, which is not present in the LMS web development curriculum."
+  },
+  {
+    "id": "unans_02",
+    "query": "How do you prepare authentic French Beef Bourguignon with red wine and pearl onions?",
+    "category": "culinary",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "Query is a cooking recipe, completely outside LMS course materials."
+  },
+  {
+    "id": "unans_03",
+    "query": "How do you configure Kubernetes PodDisruptionBudgets and StatefulSets for MongoDB replication?",
+    "category": "devops_k8s",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "Kubernetes StatefulSets and PodDisruptionBudgets are not part of the covered curriculum."
+  },
+  {
+    "id": "unans_04",
+    "query": "Explain the biochemical pathway of glycolysis and Krebs cycle in cellular respiration.",
+    "category": "biology",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "Cellular respiration is a biochemistry topic not contained in the LMS course materials."
+  },
+  {
+    "id": "unans_05",
+    "query": "How does Python Django ORM implement select_related vs prefetch_related for foreign keys?",
+    "category": "python_django",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "The LMS teaches PostgreSQL and Express/Node.js, not Python Django ORM."
+  },
+  {
+    "id": "unans_06",
+    "query": "What are the rules of Texas Hold'em poker and how does the pot-odds ratio work?",
+    "category": "gaming",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "Gambling and card games are out of scope."
+  },
+  {
+    "id": "unans_07",
+    "query": "What is the aerodynamic difference between a cambered airfoil and a symmetrical airfoil?",
+    "category": "aerodynamics",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "Aerodynamics is not covered in the web development curriculum."
+  },
+  {
+    "id": "unans_08",
+    "query": "How do you tune the carburetor on a 1968 Chevrolet Camaro V8 engine?",
+    "category": "automotive",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "Automotive mechanics is not part of this platform."
+  },
+  {
+    "id": "unans_09",
+    "query": "What were the geopolitical consequences of the Treaty of Westphalia in 1648?",
+    "category": "history",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "17th-century European history is not in the course curriculum."
+  },
+  {
+    "id": "unans_10",
+    "query": "How do you calculate the Black-Scholes formula for pricing European call options in financial derivatives?",
+    "category": "finance",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "Options pricing and financial derivatives are out of scope."
+  },
+  {
+    "id": "unans_11",
+    "query": "What is the CRISPR-Cas9 mechanism for targeted gene editing in mammalian zygotes?",
+    "category": "genetics",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "CRISPR gene editing is outside the computer science curriculum."
+  },
+  {
+    "id": "unans_12",
+    "query": "How do you write smart contracts in Solidity using the ERC-721 non-fungible token standard?",
+    "category": "blockchain",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "Solidity and Ethereum smart contracts are not covered in the curriculum."
+  },
+  {
+    "id": "unans_13",
+    "query": "What is the difference between supervised gradient boosting and unsupervised t-SNE dimensionality reduction?",
+    "category": "machine_learning",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "Classical machine learning algorithms are not part of the web development notes."
+  },
+  {
+    "id": "unans_14",
+    "query": "How do you tune guitar strings to Open D tuning (D-A-D-F#-A-D)?",
+    "category": "music",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "Musical instrument tuning is completely out of scope."
+  },
+  {
+    "id": "unans_15",
+    "query": "What are the dental requirements for tooth extraction under general anesthesia?",
+    "category": "dentistry",
+    "expected_behavior": "abstain",
+    "ground_truth_reason": "Medical and dental surgery procedures are out of scope."
+  }
+]

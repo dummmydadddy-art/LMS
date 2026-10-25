@@ -1,0 +1,70 @@
+{
+  "experimentId": "EXP-0023",
+  "description": "Observability, Caching & Page-Aware Citations",
+  "hypothesis": "Adding per-stage pipeline latency logging, semantic query caching (cosine threshold 0.92, 24h TTL, LRU-500), and page-number-aware chunk metadata will: (1) provide microsecond-resolution profiling without measurable overhead (<0.5ms), (2) eliminate redundant LLM calls for semantically similar queries (>60% cache hit rate under typical usage), (3) enable page-specific citations in generated answers. Zero regression on retrieval metrics (HitRate, MRR, nDCG) and generation quality (Claim Support, Abstention Accuracy).",
+  "controlChampion": "EXP-0022_BLIND",
+  "features": {
+    "pipeline_timer": {
+      "description": "Per-stage microsecond-resolution timing via RagPipelineTimer class",
+      "stages_instrumented": ["cache_lookup", "retrieval", "confidence_gate", "context_compression", "llm_generation", "total_pipeline"],
+      "output": "backend/storage/pipeline_logs/pipeline_YYYY-MM-DD.jsonl",
+      "overhead_target_ms": 0.5
+    },
+    "semantic_cache": {
+      "description": "Two-tier query cache: exact string match + cosine similarity (threshold 0.92)",
+      "backend": "SQLite WAL mode at backend/storage/semantic_cache.sqlite",
+      "ttl_seconds": 86400,
+      "max_entries": 500,
+      "eviction": "LRU (least recently used)",
+      "invalidation": "Automatic on corpus version bump (ingestMaterial, deleteMaterialChunks)"
+    },
+    "page_tracking": {
+      "description": "PDF page number tracking in chunk metadata for precise citations",
+      "markers": ["<!-- PAGE:N -->", "[PAGE N]", "--- Page N ---"],
+      "metadata_keys": ["page_start", "page_end", "pages", "page_citation"],
+      "pdf_backend": "PyMuPDF (fitz) via shell_exec"
+    },
+    "ground_truth_benchmark": {
+      "description": "Offline retrieval quality benchmark against SQLite vector store",
+      "metrics": ["Precision@1", "Precision@3", "Precision@5", "Recall@5", "MRR", "NDCG@5", "HitRate@1", "HitRate@3", "HitRate@5", "Keyword Recall"],
+      "runner": "tests/rag/runners/offline_ground_truth_benchmark.js",
+      "comparator": "tests/rag/runners/compare_benchmarks.js"
+    }
+  },
+  "files_created": [
+    "backend/rag_pipeline_timer.php",
+    "backend/rag_pipeline_analytics.php",
+    "backend/rag_semantic_cache.php",
+    "backend/rag_page_tracker.php",
+    "backend/seed_rag_knowledge_with_pages.php",
+    "database/add_page_tracking.sql",
+    "tests/rag/runners/offline_ground_truth_benchmark.js",
+    "tests/rag/runners/compare_benchmarks.js",
+    "tests/rag/runners/pipeline_profiler.js",
+    "tests/rag/runners/test_semantic_cache.js",
+    "tests/rag/runners/test_page_tracking.js"
+  ],
+  "files_modified": [
+    "backend/rag_service.php",
+    "backend/rag_flags.json"
+  ],
+  "champion_backup": "backend/rag_service.exp0022_champion.php",
+  "hardware": {
+    "gpu": "NVIDIA RTX 3050 Laptop (4GB VRAM)",
+    "cpu": "Intel i5-12450H (8c/12t)",
+    "ram": "16GB DDR4",
+    "vram_usage": "2.47 GB (nomic-embed-text 308MB + llama3.2 2.16GB)",
+    "new_vram_overhead": "0 MB (all new features are CPU-only SQLite + PHP)"
+  },
+  "acceptance_criteria": [
+    "Zero regression on HitRate@1, HitRate@3, HitRate@5 across Golden, Adversarial, Cross-Module suites",
+    "Zero regression on MRR and nDCG@5",
+    "Zero regression on Abstention Accuracy (must remain 100%)",
+    "Pipeline timer overhead < 0.5ms per request",
+    "Semantic cache hit rate > 60% on repeated query patterns",
+    "Cache hit latency < 50ms (vs ~1800ms for full pipeline)",
+    "Page metadata present in chunk metadata JSON for page-marked documents",
+    "No new VRAM consumption"
+  ],
+  "timestamp": "2026-10-02T13:30:00+05:30"
+}

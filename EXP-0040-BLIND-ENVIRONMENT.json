@@ -1,0 +1,27 @@
+{
+  "experiment": "EXP-0040",
+  "timestamp": "2026-09-17T12:08:45+00:00",
+  "environment": {
+    "os": "Windows 11 (build 10.0.26100)",
+    "php_version": "8.2.12",
+    "python_version": "3.12.8",
+    "ollama_version": "0.5.12",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "llm_verifier_model": "llama3.2:latest",
+    "retrieval_bridge_port": 8100,
+    "ollama_port": 11434
+  },
+  "repository_state": {
+    "experimental_branch": "exp-0040",
+    "experimental_starting_head": "4e06365d85612ed8236b0f3a6ec78e4ece251e6f",
+    "parent_exp0039_head": "f556585ea166406bbe8961ebeedac8b8950c3f54",
+    "production_head": "176883227602671b545e061dacf228aedc3271a5",
+    "production_clean": true
+  },
+  "verified_hashes": {
+    "blind_dataset_sha256": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+    "blind_predictions_sha256": "56003df48c432baca1f042be75c12bf652f2a298a875727d7b694421bfd5ebd1",
+    "verifier_a4_sha256": "31c7c31ef6301156bb0318cb35ba5879e5ca3c25acdd6f705cd2f6c0e3b0fc2e"
+  }
+}

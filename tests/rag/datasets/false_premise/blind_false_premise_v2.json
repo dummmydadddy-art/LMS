@@ -1,0 +1,142 @@
+[
+  {
+    "id": "blind_fp_01",
+    "query": "Why does HTML5 require every document to contain at least five <main> elements for accessibility?",
+    "false_premise": "There must be at least five <main> elements.",
+    "truth": "There must not be more than one <main> element in a document.",
+    "expected_doc": "HTML & CSS Fundamentals"
+  },
+  {
+    "id": "blind_fp_02",
+    "query": "Since CSS content-box includes padding inside the declared width, why do we use border-box to expand the width?",
+    "false_premise": "content-box includes padding inside the declared width.",
+    "truth": "border-box includes padding inside the declared width; content-box adds padding onto the width.",
+    "expected_doc": "HTML & CSS Fundamentals"
+  },
+  {
+    "id": "blind_fp_03",
+    "query": "How does Flexbox arrange items in both rows and columns simultaneously like CSS Grid?",
+    "false_premise": "Flexbox arranges items in both rows and columns simultaneously.",
+    "truth": "Flexbox is 1-dimensional (row or column); only CSS Grid is 2-dimensional.",
+    "expected_doc": "HTML & CSS Fundamentals"
+  },
+  {
+    "id": "blind_fp_04",
+    "query": "When using var in JavaScript, why does accessing it before declaration throw a ReferenceError?",
+    "false_premise": "Accessing var before declaration throws a ReferenceError.",
+    "truth": "var is hoisted with undefined and does not throw ReferenceError; let and const throw ReferenceError due to TDZ.",
+    "expected_doc": "JavaScript ES6+ Deep Dive"
+  },
+  {
+    "id": "blind_fp_05",
+    "query": "Why can an arrow function be used as a class constructor with the new keyword in ES6?",
+    "false_premise": "Arrow functions can be used as constructors with new.",
+    "truth": "Arrow functions lack prototype and constructor capability; invoking with new throws a TypeError.",
+    "expected_doc": "JavaScript ES6+ Deep Dive"
+  },
+  {
+    "id": "blind_fp_06",
+    "query": "How does Object.freeze() automatically deep-freeze all nested objects within a complex object?",
+    "false_premise": "Object.freeze automatically deep-freezes nested objects.",
+    "truth": "Object.freeze() is shallow; nested objects remain mutable unless recursively frozen.",
+    "expected_doc": "JavaScript ES6+ Deep Dive"
+  },
+  {
+    "id": "blind_fp_07",
+    "query": "In the JavaScript event loop, why do macrotasks (setTimeout) execute before microtasks (Promises)?",
+    "false_premise": "Macrotasks execute before microtasks.",
+    "truth": "Microtasks have higher priority and always run before macrotasks.",
+    "expected_doc": "JavaScript ES6+ Deep Dive"
+  },
+  {
+    "id": "blind_fp_08",
+    "query": "Why does calling the useEffect.cancel() method prevent effect execution in React functional components?",
+    "false_premise": "useEffect has a .cancel() method.",
+    "truth": "useEffect has no .cancel() method; cancellation is achieved by returning a cleanup function.",
+    "expected_doc": "React Hooks Tutorial"
+  },
+  {
+    "id": "blind_fp_09",
+    "query": "Since mutating useRef.current immediately triggers a component re-render, how can we persist values without re-rendering?",
+    "false_premise": "Mutating useRef.current triggers a component re-render.",
+    "truth": "useRef.current does NOT trigger a re-render when mutated; it already persists values without re-rendering.",
+    "expected_doc": "React Hooks Tutorial"
+  },
+  {
+    "id": "blind_fp_10",
+    "query": "Why does React permit calling hooks inside if statements as long as the condition evaluates to true?",
+    "false_premise": "React permits calling hooks inside if statements.",
+    "truth": "Hooks must only be called at the top level, never inside conditions, loops, or nested functions.",
+    "expected_doc": "React Hooks Tutorial"
+  },
+  {
+    "id": "blind_fp_11",
+    "query": "How does Node.js execute CPU-intensive cryptography on its main JavaScript thread without blocking other requests?",
+    "false_premise": "Node executes CPU-intensive crypto on its main thread without blocking.",
+    "truth": "CPU-intensive tasks block the single main JavaScript thread; they must be offloaded to worker threads or libuv.",
+    "expected_doc": "Node.js & Express REST API Notes"
+  },
+  {
+    "id": "blind_fp_12",
+    "query": "In Express error-handling middleware, why must the first parameter be next instead of err?",
+    "false_premise": "The first parameter must be next in error-handling middleware.",
+    "truth": "Express error-handling middleware requires exactly four parameters in order: (err, req, res, next). The first is err.",
+    "expected_doc": "Node.js & Express REST API Notes"
+  },
+  {
+    "id": "blind_fp_13",
+    "query": "Why is HTTP status code 200 OK returned by standard REST APIs when authentication fails due to missing tokens?",
+    "false_premise": "200 OK is returned when authentication fails.",
+    "truth": "Failed authentication returns HTTP 401 Unauthorized, not 200 OK.",
+    "expected_doc": "Node.js & Express REST API Notes"
+  },
+  {
+    "id": "blind_fp_14",
+    "query": "How does a B-tree index in PostgreSQL force the database engine to perform a full sequential table scan on every query?",
+    "false_premise": "A B-tree index forces the engine to perform a full sequential table scan.",
+    "truth": "A B-tree index avoids full table scans by providing logarithmic O(log N) lookups.",
+    "expected_doc": "PostgreSQL Database Design"
+  },
+  {
+    "id": "blind_fp_15",
+    "query": "Why does Third Normal Form (3NF) mandate keeping transitive dependencies in the same table?",
+    "false_premise": "3NF mandates keeping transitive dependencies in the same table.",
+    "truth": "3NF strictly eliminates transitive dependencies by moving non-key attributes into separate tables.",
+    "expected_doc": "PostgreSQL Database Design"
+  },
+  {
+    "id": "blind_fp_16",
+    "query": "Since relational primary keys can be set to NULL in PostgreSQL, how do we enforce uniqueness?",
+    "false_premise": "Primary keys can be set to NULL.",
+    "truth": "Primary keys cannot be NULL; they must always contain unique, non-null values.",
+    "expected_doc": "PostgreSQL Database Design"
+  },
+  {
+    "id": "blind_fp_17",
+    "query": "Why does the ACID Durability property mean uncommitted transactions survive server power crashes?",
+    "false_premise": "Durability means uncommitted transactions survive power crashes.",
+    "truth": "Durability guarantees only COMMITTED transactions survive crashes; uncommitted ones are rolled back.",
+    "expected_doc": "PostgreSQL Database Design"
+  },
+  {
+    "id": "blind_fp_18",
+    "query": "How does a Many-to-Many relationship between students and courses get stored without any junction table?",
+    "false_premise": "Many-to-Many relationships are stored without any junction table.",
+    "truth": "Relational Many-to-Many relationships require a junction (bridge) table containing foreign keys to both parent tables.",
+    "expected_doc": "PostgreSQL Database Design"
+  },
+  {
+    "id": "blind_fp_19",
+    "query": "Why does React useContext automatically write user authentication data directly into the PostgreSQL database without any backend server?",
+    "false_premise": "React useContext writes directly into PostgreSQL without a backend.",
+    "truth": "React useContext is client-side state propagation; it cannot connect directly to PostgreSQL without an API server.",
+    "expected_doc": "Cross-Module"
+  },
+  {
+    "id": "blind_fp_20",
+    "query": "Since Express middleware executes in reverse order from bottom to top, how do we place our logging middleware at the end of the file?",
+    "false_premise": "Express middleware executes in reverse order from bottom to top.",
+    "truth": "Express middleware executes sequentially in the exact order declared from top to bottom.",
+    "expected_doc": "Node.js & Express REST API Notes"
+  }
+]

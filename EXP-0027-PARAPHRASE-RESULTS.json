@@ -1,0 +1,886 @@
+{
+    "experiment_tag": "EXP-0027-PARAPHRASE-RESULTS",
+    "timestamp": "2026-09-13T10:45:22+00:00",
+    "dataset": "EXP-0027-PARAPHRASE-DATASET.json",
+    "total_triples": 300,
+    "total_queries": 900,
+    "target": ">= 90.0% classification consistency",
+    "summary": {
+        "baseline_exp0025_consistency": "67%",
+        "candidate_exp0027_consistency": "58.33%",
+        "consistency_delta": "-8.67%",
+        "verdict": "PARAPHRASE_STABILITY_FAILED"
+    },
+    "modes": {
+        "A0": {
+            "mode": "A0",
+            "description": "EXP-0025 Frozen Baseline",
+            "total_triples": 300,
+            "total_queries": 900,
+            "overall_paraphrase_consistency_pct": 67,
+            "consistency_by_category": {
+                "SUPPORTED_CURRICULUM": 41,
+                "REFUTED_CURRICULUM": 0,
+                "NOT_ESTABLISHED_CURRICULUM": 0,
+                "FALSE_PREMISE": 60,
+                "OUT_OF_CURRICULUM": 100
+            },
+            "accuracy_by_phrasing_form": {
+                "canonical": 64.67,
+                "colloquial": 57.33,
+                "syntactically_complex": 63
+            },
+            "tier_usage": {
+                "canonical": {
+                    "tier1": 300,
+                    "tier2": 0
+                },
+                "colloquial": {
+                    "tier1": 300,
+                    "tier2": 0
+                },
+                "syntactically_complex": {
+                    "tier1": 300,
+                    "tier2": 0
+                }
+            },
+            "elapsed_seconds": 6.69
+        },
+        "A5": {
+            "mode": "A5",
+            "description": "EXP-0027 Two-Tier Candidate",
+            "total_triples": 300,
+            "total_queries": 900,
+            "overall_paraphrase_consistency_pct": 58.33,
+            "consistency_by_category": {
+                "SUPPORTED_CURRICULUM": 44,
+                "REFUTED_CURRICULUM": 0,
+                "NOT_ESTABLISHED_CURRICULUM": 0,
+                "FALSE_PREMISE": 31,
+                "OUT_OF_CURRICULUM": 100
+            },
+            "accuracy_by_phrasing_form": {
+                "canonical": 68.67,
+                "colloquial": 77.67,
+                "syntactically_complex": 69.67
+            },
+            "tier_usage": {
+                "canonical": {
+                    "tier1": 144,
+                    "tier2": 156
+                },
+                "colloquial": {
+                    "tier1": 136,
+                    "tier2": 164
+                },
+                "syntactically_complex": {
+                    "tier1": 167,
+                    "tier2": 133
+                }
+            },
+            "elapsed_seconds": 441.35
+        }
+    },
+    "sample_evaluations": [
+        {
+            "id": "PARA-SUP-001",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-002",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-003",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-004",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-005",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_1_DETERMINISTIC",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-006",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-007",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-008",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-009",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_1_DETERMINISTIC",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-010",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-011",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-012",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_1_DETERMINISTIC",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-013",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-014",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_1_DETERMINISTIC",
+                "colloquial": "TIER_1_DETERMINISTIC",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-015",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-016",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_1_DETERMINISTIC",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-017",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-018",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-019",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_1_DETERMINISTIC",
+                "colloquial": "TIER_1_DETERMINISTIC",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-020",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-021",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-022",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_1_DETERMINISTIC",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-023",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-024",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-025",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-026",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_1_DETERMINISTIC",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-027",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_1_DETERMINISTIC",
+                "colloquial": "TIER_1_DETERMINISTIC",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-028",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-029",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_1_DETERMINISTIC",
+                "colloquial": "TIER_1_DETERMINISTIC",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-030",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-031",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_1_DETERMINISTIC",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-032",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-033",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-034",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-035",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-036",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "NOT_ESTABLISHED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_ABSTENTION",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-037",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_1_DETERMINISTIC",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-038",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_1_DETERMINISTIC",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-039",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-040",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-041",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-042",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-043",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-044",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_1_DETERMINISTIC",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-045",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_1_DETERMINISTIC",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-046",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-047",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-048",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": false
+        },
+        {
+            "id": "PARA-SUP-049",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "SUPPORTED",
+                "colloquial": "SUPPORTED",
+                "syntactically_complex": "SUPPORTED"
+            },
+            "tiers": {
+                "canonical": "TIER_2_SEMANTIC_NLI",
+                "colloquial": "TIER_2_SEMANTIC_NLI",
+                "syntactically_complex": "TIER_2_SEMANTIC_NLI"
+            },
+            "consistent": true
+        },
+        {
+            "id": "PARA-SUP-050",
+            "category": "SUPPORTED_CURRICULUM",
+            "expected": "SUPPORTED",
+            "predictions": {
+                "canonical": "REFUTED",
+                "colloquial": "REFUTED",
+                "syntactically_complex": "REFUTED"
+            },
+            "tiers": {
+                "canonical": "TIER_1_DETERMINISTIC",
+                "colloquial": "TIER_1_DETERMINISTIC",
+                "syntactically_complex": "TIER_1_DETERMINISTIC"
+            },
+            "consistent": true
+        }
+    ]
+}

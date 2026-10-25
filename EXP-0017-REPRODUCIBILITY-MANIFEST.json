@@ -1,0 +1,82 @@
+{
+  "experiment_id": "EXP-0017",
+  "codename": "MAXIMUM-DEPTH FORENSIC RAG RED-TEAM, LEAK, FAILURE & ARCHITECTURAL WEAKNESS DISCOVERY",
+  "date": "2026-09-09",
+  "auditor": "Antigravity Deep Forensic Agent",
+  "candidate_commit": "main (working tree experimental)",
+  "control_baseline": "EXP-0013-CHAMPION-2026-09-09",
+  "champion_preservation_status": "UNTOUCHED (Control files verified)",
+  "production_repository_status": "UNTOUCHED (D:/Collage project/EduConnect-LMS-Production clean)",
+  "runtime_environment": {
+    "os": "Windows 11 Home 10.0.26100",
+    "node_version": "v24.11.0",
+    "php_version": "PHP 8.3.16 (cli) (built: Jan 15 2025 14:48:51)",
+    "ollama_host": "http://127.0.0.1:11434",
+    "embedding_model": "nomic-embed-text:latest (768 dimensions)",
+    "generation_model": "deepseek-r1:1.5b / llama3:8b-instruct-q4_K_M",
+    "gateway_port": 8000,
+    "php_fast_workers": [
+      8001,
+      8002,
+      8003,
+      8004,
+      8005,
+      8006
+    ],
+    "php_gen_workers": [
+      8007,
+      8008
+    ]
+  },
+  "candidate_file_checksums_sha256": {
+    "backend/gateway.js": "2662ad6780000657ad2e4419fed3cd7df88866a0c51133093c0726bc452a4207",
+    "backend/embedding_coordinator.js": "221d86ede96ebe2938d6bd9a39b56ed718bee9586af0b5dcc70ba40f39854859",
+    "backend/index.php": "c469adb1fd5fdd6553506db5f33b01736ee4559146d3d95e195917a786faf04a",
+    "backend/rag_service.php": "9cc310449072c3a2477e2fd93d2afb261d58a7b84c5624c27273a6dd6fa19332",
+    "backend/rag_premise_verifier.php": "7a11ca716b90859a8c18cac06ec1e6bbaece7fd868ffbcddf87c43c3e16d725b",
+    "backend/rag_query_condenser.php": "c0c00f593f7b50a47c737b2994e567c34171fe89d1bf4dbf051109cee084e30a",
+    "backend/rag_safety_boundary.php": "805d501efb9a339dea21ed8d158522398c8f4dadaccc6beb9c4c81450e5121a2",
+    "backend/rag_semantic_mapper.php": "a1314dc897e5c1dc9ccb0eadf24f3d78060627a3cf9063aa5fb96d4cd353318c",
+    "backend/rag_query_orchestrator.php": "644f466c88c1107ff5605e0dc60f0dc11b238b0842b6901ba571d955a21e82cc",
+    "backend/rag_flags.php": "aa8d3051873ea28cb6e8c7f7fa2ea4f47499614e7e6c63403390dd5d6829ed84",
+    "backend/rag_flags.json": "c814568feadfda105e84730d943fbe700ef55d61532a4067594e354b7c18f423"
+  },
+  "empirical_datasets_generated": {
+    "static_audit": "tests/rag/reports/STATIC_AUDIT_FINDINGS.json",
+    "input_forensics": "tests/rag/reports/EXP-0017-INPUT-FORENSICS.json",
+    "payload_size_audit": "tests/rag/reports/EXP-0017-PAYLOAD-SIZE-AUDIT.json",
+    "coordinator_cache_audit": "tests/rag/reports/EXP-0017-COORDINATOR-CACHE-AUDIT.json",
+    "retrieval_ranking_audit": "tests/rag/reports/EXP-0017-RETRIEVAL-RANKING-AUDIT.json",
+    "conversation_forensics": "tests/rag/reports/EXP-0017-CONVERSATION-FORENSICS.json",
+    "false_premise_audit": "tests/rag/reports/EXP-0017-FALSE-PREMISE-500-AUDIT.json",
+    "compound_attacks": "tests/rag/reports/EXP-0017-COMPOUND-ATTACKS-REPORT.json",
+    "worker_supervision_audit": "tests/rag/reports/EXP-0017-WORKER-SUPERVISION-AUDIT.json"
+  },
+  "reproduction_instructions": [
+    "1. Start Gateway: node backend/gateway.js (listens on port 8000, starts 8 workers on 8001-8008)",
+    "2. Run Static Code Audit: node scratch/static_audit.js",
+    "3. Run Input Forensics: node scratch/test_input_forensics.js",
+    "4. Run Payload Exhaustion Audit: node scratch/test_payload_size.js",
+    "5. Run Coordinator Cache Forensics: node scratch/test_coordinator_cache.js",
+    "6. Run Retrieval & Ranking Forensics: node scratch/test_retrieval_ranking_forensics.js",
+    "7. Run Conversation Forensics: node scratch/test_conversation_forensics.js",
+    "8. Run 500 False-Premise Audit: node scratch/audit_500_false_premises.js",
+    "9. Run Compound Attacks (A-G): node scratch/test_compound_attacks.js",
+    "10. Run Worker Supervision Audit: node scratch/test_worker_leak_and_crash.js"
+  ],
+  "forensic_summary_metrics": {
+    "total_weaknesses_identified": 28,
+    "critical_weaknesses": 2,
+    "high_weaknesses": 9,
+    "medium_weaknesses": 10,
+    "low_weaknesses": 7,
+    "false_premise_sycophancy_rate_pct": 30,
+    "false_premise_safe_refutation_pct": 54,
+    "false_premise_abstention_pct": 16,
+    "conversational_retrieval_accuracy_50_turn_pct": 100,
+    "max_stable_payload_bytes": 1048576,
+    "payload_rejection_rst_rate_above_1mb_pct": 60,
+    "greedy_worker_8001_sequential_traffic_share_pct": 100
+  },
+  "final_verdict": "REQUIRES REMEDIATION"
+}

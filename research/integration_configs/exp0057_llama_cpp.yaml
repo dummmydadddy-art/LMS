@@ -1,0 +1,23 @@
+experiment_id: EXP-0057
+base_commit: fc7e5021a40566f040fbbdaea4d5f04e770a6b40
+description: llama.cpp Quantized GGUF Local Inference Efficiency
+feature_flags:
+  ENABLE_DOCLING_RS: false
+  ENABLE_PAGEINDEX: false
+  ENABLE_LLAMA_CPP: true
+  ENABLE_LLMLINGUA: false
+  ENABLE_SURYA: false
+  ENABLE_GEMMA3N: false
+  ENABLE_BITNET: false
+  ENABLE_MARKER: false
+llm_backend: llama_cpp
+model_path: research/model_cache/llama3.2_q4.gguf
+quantization: Q4_K_M
+n_gpu_layers: 16
+n_threads: 6
+retriever: exp0040
+verifier:
+  name: A4
+  frozen: true
+device: cuda
+seed: 42

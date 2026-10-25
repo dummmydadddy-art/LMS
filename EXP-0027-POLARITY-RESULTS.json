@@ -1,0 +1,1441 @@
+{
+    "experiment_tag": "EXP-0027-POLARITY-RESULTS",
+    "timestamp": "2026-09-13T10:48:10+00:00",
+    "dataset": "EXP-0027-POLARITY-DATASET.json",
+    "total_cases": 200,
+    "targets": {
+        "legitimate_negation_frr": "<= 2.0%"
+    },
+    "summary": {
+        "baseline_exp0025_frr": "1%",
+        "candidate_exp0027_frr": "1%",
+        "frr_delta": "0%",
+        "verdict": "POLARITY_HANDLING_CERTIFIED"
+    },
+    "modes": {
+        "A0": {
+            "mode": "A0",
+            "description": "EXP-0025 Frozen Baseline",
+            "total_cases": 200,
+            "overall_accuracy_pct": 77.5,
+            "legitimate_negation_frr_pct": 1,
+            "subtype_accuracy": {
+                "LEGITIMATE_NEGATIVE_CONSTRAINT": {
+                    "total": 100,
+                    "correct": 99,
+                    "accuracy_pct": 99
+                },
+                "DOUBLE_NEGATION": {
+                    "total": 50,
+                    "correct": 38,
+                    "accuracy_pct": 76
+                },
+                "DOES_NOT_DO": {
+                    "total": 50,
+                    "correct": 18,
+                    "accuracy_pct": 36
+                }
+            },
+            "tier1_usage_pct": 100,
+            "tier2_usage_pct": 0,
+            "tier2_latency_p50_ms": 0,
+            "tier2_latency_p95_ms": 0,
+            "evidence_used_invariant_pct": 100,
+            "elapsed_seconds": 2.27
+        },
+        "A5": {
+            "mode": "A5",
+            "description": "EXP-0027 Two-Tier Candidate",
+            "total_cases": 200,
+            "overall_accuracy_pct": 74,
+            "legitimate_negation_frr_pct": 1,
+            "subtype_accuracy": {
+                "LEGITIMATE_NEGATIVE_CONSTRAINT": {
+                    "total": 100,
+                    "correct": 91,
+                    "accuracy_pct": 91
+                },
+                "DOUBLE_NEGATION": {
+                    "total": 50,
+                    "correct": 30,
+                    "accuracy_pct": 60
+                },
+                "DOES_NOT_DO": {
+                    "total": 50,
+                    "correct": 27,
+                    "accuracy_pct": 54
+                }
+            },
+            "tier1_usage_pct": 30.5,
+            "tier2_usage_pct": 69.5,
+            "tier2_latency_p50_ms": 1003.4,
+            "tier2_latency_p95_ms": 1252.4,
+            "evidence_used_invariant_pct": 100,
+            "elapsed_seconds": 147.91
+        }
+    },
+    "sample_evaluations": [
+        {
+            "id": "POLARITY-LEGIT-001",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't const variables be reassigned in JavaScript?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why can't const variables be reassigned in JavaScript?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-002",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't var respect block scoping within curly braces?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't var respect block scoping within curly braces?",
+                    "extracted_proposition": "Why doesn't var respect block scoping within curly braces",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - var: Function-scoped, hoisted with an initial value of undefined, and allows re-declaration. This often caused subtle bugs.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1339.6
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-003",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't arrow functions be called with the new operator?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't arrow functions be called with the new operator?",
+                    "extracted_proposition": "Why can't arrow functions be called with the new operator",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: 3. Cannot be used as constructors: Invoking an arrow function with `new` throws a TypeError.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1148.8
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-004",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why don't arrow functions have their own arguments object?",
+            "expected": "SUPPORTED",
+            "predicted": "REFUTED",
+            "match": false,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": "The premise is incorrect according to the course curriculum: 2. No `arguments` object: Use rest parameters `(...args)` instead.",
+            "citation": "[JavaScript ES6+ Deep Dive - Chunk 1]",
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why don't arrow functions have their own arguments object?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-005",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't let variables be accessed before their declaration?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't let variables be accessed before their declaration?",
+                    "extracted_proposition": "Why can't let variables be accessed before their declaration",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - let: Block-scoped (confined within { }), hoisted into the Temporal Dead Zone (TDZ) where accessing it before declaration throws a ReferenceError. Allows re-assignment but not re-declaration in the same scope.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1159.8
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-006",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't React allow calling Hooks inside conditional if statements?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why doesn't React allow calling Hooks inside conditional if statements?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-007",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't Hooks be executed inside for loops or nested functions?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't Hooks be executed inside for loops or nested functions?",
+                    "extracted_proposition": "Why can't Hooks be executed inside for loops or nested functions",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "React Hooks Tutorial: 1. Only call Hooks at the top level of your component. Do not call Hooks inside loops, conditions, or nested functions.",
+                    "citation": "[React Hooks Tutorial - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1001.3
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-008",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't useEffect cleanup execute before the component mounts?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't useEffect cleanup execute before the component mounts?",
+                    "extracted_proposition": "Why doesn't useEffect cleanup execute before the component mounts",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "React Hooks Tutorial: - Cleanup function: Returned function executes before the component unmounts and before each re-execution of the effect to clear subscriptions, abort network controllers, or remove event listeners.",
+                    "citation": "[React Hooks Tutorial - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1019
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-009",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't React state be mutated directly without triggering bugs?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't React state be mutated directly without triggering bugs?",
+                    "extracted_proposition": "Why can't React state be mutated directly without triggering bugs",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "React Hooks Tutorial: Hooks allow functional components to utilize state and lifecycle features without writing class components.",
+                    "citation": "[React Hooks Tutorial - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 990.9
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-010",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't useContext require manual prop drilling across intermediate components?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why doesn't useContext require manual prop drilling across intermediate components?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-011",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't a document contain more than one <main> element in HTML5?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't a document contain more than one <main> element in HTML5?",
+                    "extracted_proposition": "Why can't a document contain more than one <main> element in HTML5",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <main>: Specifies the main, unique content of the document. There must not be more than one <main> element in a document.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1011.3
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-012",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't display: flex create a 2-dimensional grid layout?",
+            "expected": "SUPPORTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't display: flex create a 2-dimensional grid layout?",
+                    "extracted_proposition": "Why doesn't display: flex create a 2-dimensional grid layout",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.8,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 964
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-013",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't flex items wrap onto new lines when flex-wrap is nowrap?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't flex items wrap onto new lines when flex-wrap is nowrap?",
+                    "extracted_proposition": "Why can't flex items wrap onto new lines when flex-wrap is nowrap",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-wrap: nowrap (default) | wrap | wrap-reverse. Allows items to break into multiple lines.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1047.5
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-014",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't padding clear space outside the border in the box model?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why doesn't padding clear space outside the border in the box model?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-015",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't margin be styled with background colors or images?",
+            "expected": "SUPPORTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't margin be styled with background colors or images?",
+                    "extracted_proposition": "Why can't margin be styled with background colors or images",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: 4. Margin: Transparent space outside the border separating the element from neighboring elements.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.8,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 924.1
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-016",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't Node.js run JavaScript code on multiple OS threads concurrently?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't Node.js run JavaScript code on multiple OS threads concurrently?",
+                    "extracted_proposition": "Why doesn't Node.js run JavaScript code on multiple OS threads concurrently",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "Node.js & Express REST API Notes: - Single Main Thread executes JavaScript code sequentially.",
+                    "citation": "[Node.js & Express REST API Notes - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 996.1
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-017",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't Express middleware continue executing after calling res.end()?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't Express middleware continue executing after calling res.end()?",
+                    "extracted_proposition": "Why can't Express middleware continue executing after calling res.end()",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "Node.js & Express REST API Notes: Middleware functions are functions that have access to the request object (`req`), response object (`res`), and the next middleware function (`next`).",
+                    "citation": "[Node.js & Express REST API Notes - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1240.3
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-018",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't HTTP GET modify server resources in RESTful design?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't HTTP GET modify server resources in RESTful design?",
+                    "extracted_proposition": "Why doesn't HTTP GET modify server resources in RESTful design",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "Node.js & Express REST API Notes: - GET: Retrieve resource(s). Must be idempotent and safe.",
+                    "citation": "[Node.js & Express REST API Notes - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1030.1
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-019",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't clients modify JWT payload claims without invalidating the signature?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't clients modify JWT payload claims without invalidating the signature?",
+                    "extracted_proposition": "Why can't clients modify JWT payload claims without invalidating the signature",
+                    "retrieved_evidence_chunk_ids": [
+                        4
+                    ],
+                    "evidence_sentence": "Node.js & Express REST API Notes: Structure: Header.Payload.Signature (Base64Url-encoded).",
+                    "citation": "[Node.js & Express REST API Notes - Chunk 4]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 964.1
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-020",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't status 401 indicate that an authenticated user has permission?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't status 401 indicate that an authenticated user has permission?",
+                    "extracted_proposition": "Why doesn't status 401 indicate that an authenticated user has permission",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "Node.js & Express REST API Notes: - 403 Forbidden: Authenticated user lacks permission for this action.",
+                    "citation": "[Node.js & Express REST API Notes - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1018.6
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-021",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't a Many-to-Many relationship exist without a junction associative table?",
+            "expected": "SUPPORTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't a Many-to-Many relationship exist without a junction associative table?",
+                    "extracted_proposition": "Why can't a Many-to-Many relationship exist without a junction associative table",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "PostgreSQL Database Design: - Many-to-Many (M:N): e.g., Students to Batches. Requires a junction (associative) table with composite primary key or foreign keys (student_batches table with student_id and batch_id).",
+                    "citation": "[PostgreSQL Database Design - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 925
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-022",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't First Normal Form (1NF) permit repeating column groups?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't First Normal Form (1NF) permit repeating column groups?",
+                    "extracted_proposition": "Why doesn't First Normal Form (1NF) permit repeating column groups",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "PostgreSQL Database Design: 1. First Normal Form (1NF):",
+                    "citation": "[PostgreSQL Database Design - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 992.8
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-023",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't non-key attributes have partial dependencies in Second Normal Form (2NF)?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why can't non-key attributes have partial dependencies in Second Normal Form (2NF)?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-024",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't Third Normal Form (3NF) allow transitive dependencies between non-key fields?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why doesn't Third Normal Form (3NF) allow transitive dependencies between non-key fields?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-025",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't PostgreSQL COMMIT be undone once written to the Write-Ahead Log?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why can't PostgreSQL COMMIT be undone once written to the Write-Ahead Log?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-026",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't a Unique index permit duplicate values in indexed columns?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't a Unique index permit duplicate values in indexed columns?",
+                    "extracted_proposition": "Why doesn't a Unique index permit duplicate values in indexed columns",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "PostgreSQL Database Design: - Unique Index: Enforces uniqueness constraint while indexing (`CREATE UNIQUE INDEX ...`).",
+                    "citation": "[PostgreSQL Database Design - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1320.5
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-027",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't child rows reference non-existent parent primary keys in PostgreSQL?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't child rows reference non-existent parent primary keys in PostgreSQL?",
+                    "extracted_proposition": "Why can't child rows reference non-existent parent primary keys in PostgreSQL",
+                    "retrieved_evidence_chunk_ids": [
+                        1
+                    ],
+                    "evidence_sentence": "PostgreSQL Database Design: - All non-key attributes must be fully functionally dependent on the entire primary key (eliminates partial dependency in composite primary keys).",
+                    "citation": "[PostgreSQL Database Design - Chunk 1]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1259.3
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-028",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't Read Committed isolation level permit reading uncommitted dirty data?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why doesn't Read Committed isolation level permit reading uncommitted dirty data?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-029",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't Libuv worker threads execute the JavaScript Call Stack directly?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't Libuv worker threads execute the JavaScript Call Stack directly?",
+                    "extracted_proposition": "Why can't Libuv worker threads execute the JavaScript Call Stack directly",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: JavaScript is single-threaded and uses an event loop with a Call Stack, Web APIs, Task Queue (Macrotasks: setTimeout, setInterval), and Microtask Queue (Promises, queueMicrotask). Microtasks always take priority over macrotasks.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1070.7
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-030",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't Promise.race wait for all promises to settle before returning?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why doesn't Promise.race wait for all promises to settle before returning?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-031",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't Object.is shallow comparison detect deep mutations in nested objects?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't Object.is shallow comparison detect deep mutations in nested objects?",
+                    "extracted_proposition": "Why can't Object.is shallow comparison detect deep mutations in nested objects",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - const: Block-scoped, also TDZ hoisted. Must be initialized upon declaration and cannot be reassigned. However, objects and arrays declared with const remain mutable in their properties and elements.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1166
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-032",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't useRef trigger component re-renders when .current changes?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why doesn't useRef trigger component re-renders when .current changes?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-033",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't <nav> elements be used for non-navigational paragraph content?",
+            "expected": "SUPPORTED",
+            "predicted": "NOT_ESTABLISHED",
+            "match": false,
+            "decision_tier": "TIER_2_ABSTENTION",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't <nav> elements be used for non-navigational paragraph content?",
+                    "extracted_proposition": "Why can't <nav> elements be used for non-navigational paragraph content",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - <nav>: Defines a set of major navigation links.",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "NEUTRAL",
+                    "entailment_score": 0,
+                    "contradiction_score": 0,
+                    "neutral_score": 0.5,
+                    "confidence": 0.5,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 967.9
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-034",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't CSS grid-template-columns define row track dimensions?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't CSS grid-template-columns define row track dimensions?",
+                    "extracted_proposition": "Why doesn't CSS grid-template-columns define row track dimensions",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - grid-template-columns: Defines track sizes for columns (e.g., repeat(3, 1fr) creates 3 equal columns; repeat(auto-fit, minmax(280px, 1fr)) creates responsive fluid columns without media queries).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1012.5
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-035",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't box-sizing: content-box include padding inside declared width?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why can't box-sizing: content-box include padding inside declared width?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-036",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't flex-shrink: 0 allow items to shrink when space is constrained?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't flex-shrink: 0 allow items to shrink when space is constrained?",
+                    "extracted_proposition": "Why doesn't flex-shrink: 0 allow items to shrink when space is constrained",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "HTML & CSS Fundamentals: - flex-shrink: Defines the ability for a flex item to shrink if necessary (default 1).",
+                    "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1003.4
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-037",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't var prevent accidental global variable leakage across functions?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't var prevent accidental global variable leakage across functions?",
+                    "extracted_proposition": "Why can't var prevent accidental global variable leakage across functions",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - var: Function-scoped, hoisted with an initial value of undefined, and allows re-declaration. This often caused subtle bugs.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 927.2
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-038",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't const freeze array elements against push and pop operations?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't const freeze array elements against push and pop operations?",
+                    "extracted_proposition": "Why doesn't const freeze array elements against push and pop operations",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - const: Block-scoped, also TDZ hoisted. Must be initialized upon declaration and cannot be reassigned. However, objects and arrays declared with const remain mutable in their properties and elements.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 0.8,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 0.8,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1156.5
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-039",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't arrow functions bind a new dynamic this context using .bind()?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why can't arrow functions bind a new dynamic this context using .bind()?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-040",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't Promise.all continue executing if any promise encounters an error?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't Promise.all continue executing if any promise encounters an error?",
+                    "extracted_proposition": "Why doesn't Promise.all continue executing if any promise encounters an error",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "JavaScript ES6+ Deep Dive: - Promise.all([p1, p2]): Fails fast if any promise rejects; returns array of results when all resolve.",
+                    "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1196
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-041",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't synchronous file operations fs.readFileSync avoid blocking the event loop?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why can't synchronous file operations fs.readFileSync avoid blocking the event loop?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-042",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't Express route matching execute middleware registered after the route handler?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't Express route matching execute middleware registered after the route handler?",
+                    "extracted_proposition": "Why doesn't Express route matching execute middleware registered after the route handler",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "Node.js & Express REST API Notes: MIDDLEWARE IN EXPRESS:",
+                    "citation": "[Node.js & Express REST API Notes - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1025.5
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-043",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't HTTP PUT perform partial field updates without replacing the entity?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why can't HTTP PUT perform partial field updates without replacing the entity?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-044",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't status 404 signify that authentication credentials were invalid?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't status 404 signify that authentication credentials were invalid?",
+                    "extracted_proposition": "Why doesn't status 404 signify that authentication credentials were invalid",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "Node.js & Express REST API Notes: - 401 Unauthorized: Missing or invalid authentication token.",
+                    "citation": "[Node.js & Express REST API Notes - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 1201.3
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-045",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't Base64Url encoding prevent unauthorized viewing of JWT payload data?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why can't Base64Url encoding prevent unauthorized viewing of JWT payload data?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-046",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't Atomicity allow half of a transaction to commit when a crash occurs?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_1_DETERMINISTIC",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "clause": "Why doesn't Atomicity allow half of a transaction to commit when a crash occurs?",
+                    "decision_tier": "TIER_1_DETERMINISTIC",
+                    "reason": "Resolved by Tier-1 fast-path contradiction"
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-047",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't B-Tree indexes accelerate queries filtering only on non-indexed columns?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't B-Tree indexes accelerate queries filtering only on non-indexed columns?",
+                    "extracted_proposition": "Why can't B-Tree indexes accelerate queries filtering only on non-indexed columns",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "PostgreSQL Database Design: - B-Tree Index: Default index. Excellent for equality (`=`), range queries (`<`, `<=`, `>`, `>=`), and sorting (`ORDER BY`).",
+                    "citation": "[PostgreSQL Database Design - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 949.5
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-048",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't a composite index on (a, b) accelerate queries filtering on b alone?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't a composite index on (a, b) accelerate queries filtering on b alone?",
+                    "extracted_proposition": "Why doesn't a composite index on (a, b) accelerate queries filtering on b alone",
+                    "retrieved_evidence_chunk_ids": [
+                        2
+                    ],
+                    "evidence_sentence": "PostgreSQL Database Design: - Composite Index: Indexes multiple columns together. Column order matters (Leftmost prefix rule: an index on (course_id, date) supports queries on course_id alone, but not date alone).",
+                    "citation": "[PostgreSQL Database Design - Chunk 2]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 990
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-049",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why can't Durability preserve uncommitted transaction data across server power failures?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why can't Durability preserve uncommitted transaction data across server power failures?",
+                    "extracted_proposition": "Why can't Durability preserve uncommitted transaction data across server power failures",
+                    "retrieved_evidence_chunk_ids": [
+                        3
+                    ],
+                    "evidence_sentence": "PostgreSQL Database Design: - Durability: Once a transaction commits, its changes survive crashes and power failures (persisted via Write-Ahead Logging \/ WAL).",
+                    "citation": "[PostgreSQL Database Design - Chunk 3]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "CONTRADICTION",
+                    "entailment_score": 0,
+                    "contradiction_score": 1,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 981.7
+                }
+            ]
+        },
+        {
+            "id": "POLARITY-LEGIT-050",
+            "subtype": "LEGITIMATE_NEGATIVE_CONSTRAINT",
+            "query": "Why doesn't PostgreSQL permit duplicate primary key values in the same table?",
+            "expected": "SUPPORTED",
+            "predicted": "SUPPORTED",
+            "match": true,
+            "decision_tier": "TIER_2_SEMANTIC_NLI",
+            "refutation": null,
+            "citation": null,
+            "tier2_diagnostics": [
+                {
+                    "original_query": "Why doesn't PostgreSQL permit duplicate primary key values in the same table?",
+                    "extracted_proposition": "Why doesn't PostgreSQL permit duplicate primary key values in the same table",
+                    "retrieved_evidence_chunk_ids": [
+                        0
+                    ],
+                    "evidence_sentence": "PostgreSQL Database Design: - Many-to-Many (M:N): e.g., Students to Batches. Requires a junction (associative) table with composite primary key or foreign keys (student_batches table with student_id and batch_id).",
+                    "citation": "[PostgreSQL Database Design - Chunk 0]",
+                    "model_identifier": "llama3.2:latest",
+                    "nli_label": "ENTAILMENT",
+                    "entailment_score": 1,
+                    "contradiction_score": 0,
+                    "neutral_score": 0,
+                    "confidence": 1,
+                    "threshold_version": "EXP-0027-V1",
+                    "decision_tier": "TIER_2_SEMANTIC_NLI",
+                    "rationale": "",
+                    "latency_ms": 926.5
+                }
+            ]
+        }
+    ]
+}

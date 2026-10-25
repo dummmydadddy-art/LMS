@@ -1,0 +1,84 @@
+{
+    "experiment": "EXP-0056",
+    "phase": "DEVELOPMENT_EVALUATION",
+    "dataset": {
+        "name": "EXP-0025-DEVELOPMENT-DATASET.json",
+        "total_cases": 400,
+        "sha256": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b"
+    },
+    "b0_control": {
+        "name": "EXP-0040 Global Hierarchy Baseline",
+        "accuracy": 92.75,
+        "macro_f1": 93.39,
+        "far": 3.2,
+        "frr": 12.67,
+        "supported_recall": 87.33,
+        "refutation_recall": 94.67,
+        "not_established_recall": 98,
+        "confusion_matrix": {
+            "SUPPORTED": {
+                "SUPPORTED": 131,
+                "REFUTED": 19,
+                "NOT_ESTABLISHED": 0
+            },
+            "REFUTED": {
+                "SUPPORTED": 7,
+                "REFUTED": 142,
+                "NOT_ESTABLISHED": 1
+            },
+            "NOT_ESTABLISHED": {
+                "SUPPORTED": 1,
+                "REFUTED": 1,
+                "NOT_ESTABLISHED": 98
+            }
+        },
+        "latency": {
+            "mean_ms": 12.66,
+            "p50_ms": 13.9,
+            "p95_ms": 29.6
+        }
+    },
+    "c1_candidate": {
+        "name": "PageIndex Structural Navigation Guided Retrieval",
+        "accuracy": 92,
+        "macro_f1": 92.67,
+        "far": 3.6,
+        "frr": 13.33,
+        "supported_recall": 86.67,
+        "refutation_recall": 93.33,
+        "not_established_recall": 98,
+        "confusion_matrix": {
+            "SUPPORTED": {
+                "SUPPORTED": 130,
+                "REFUTED": 20,
+                "NOT_ESTABLISHED": 0
+            },
+            "REFUTED": {
+                "SUPPORTED": 8,
+                "REFUTED": 140,
+                "NOT_ESTABLISHED": 2
+            },
+            "NOT_ESTABLISHED": {
+                "SUPPORTED": 1,
+                "REFUTED": 1,
+                "NOT_ESTABLISHED": 98
+            }
+        },
+        "latency": {
+            "mean_ms": 39.83,
+            "p50_ms": 14.5,
+            "p95_ms": 31
+        }
+    },
+    "paired_comparison": {
+        "n11_both_correct": 368,
+        "n00_both_incorrect": 29,
+        "n10_b0_correct_c1_wrong": 3,
+        "n01_b0_wrong_c1_correct": 0,
+        "discordant_pairs": 3,
+        "mcnemar_chi2": 1.3333,
+        "mcnemar_p_value": 0.25000000000000006,
+        "accuracy_delta_pp": -0.75,
+        "far_delta_pp": 0.4
+    }
+}

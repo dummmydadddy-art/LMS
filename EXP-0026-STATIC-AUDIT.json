@@ -1,0 +1,69 @@
+{
+  "experiment_tag": "EXP-0026-STATIC-AUDIT",
+  "timestamp": "2026-09-13T07:36:26.143Z",
+  "verdict": "STATIC_AUDIT_PASSED",
+  "anti_cheating_audit": {
+    "benchmark_ids_found": 0,
+    "leaked_benchmark_ids": [],
+    "exact_benchmark_queries_found": 0,
+    "leaked_queries": [],
+    "evidence_used_contract_enforced": true,
+    "dynamic_evidence_scoring_verified": true
+  },
+  "active_files_audited": [
+    {
+      "file": "rag_premise_verifier.php",
+      "exists": true,
+      "size_bytes": 40160,
+      "has_syntax_markers": true
+    },
+    {
+      "file": "rag_service.php",
+      "exists": true,
+      "size_bytes": 102115,
+      "has_syntax_markers": true
+    },
+    {
+      "file": "rag_flags.php",
+      "exists": true,
+      "size_bytes": 4540,
+      "has_syntax_markers": true
+    },
+    {
+      "file": "gateway.js",
+      "exists": true,
+      "size_bytes": 20122,
+      "has_syntax_markers": true
+    },
+    {
+      "file": "index.php",
+      "exists": true,
+      "size_bytes": 120178,
+      "has_syntax_markers": true
+    },
+    {
+      "file": "rag_safety_boundary.php",
+      "exists": true,
+      "size_bytes": 15942,
+      "has_syntax_markers": true
+    },
+    {
+      "file": "rag_query_condenser.php",
+      "exists": true,
+      "size_bytes": 15362,
+      "has_syntax_markers": true
+    },
+    {
+      "file": "rag_semantic_mapper.php",
+      "exists": true,
+      "size_bytes": 25041,
+      "has_syntax_markers": true
+    },
+    {
+      "file": "rag_query_orchestrator.php",
+      "exists": true,
+      "size_bytes": 13546,
+      "has_syntax_markers": true
+    }
+  ]
+}

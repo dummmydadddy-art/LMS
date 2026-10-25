@@ -1,0 +1,42 @@
+{
+    "experiment_id": "EXP-0030",
+    "title": "Dynamic Curriculum Grounding + Asymmetric Pass-2 Calibration",
+    "timestamp": "2026-09-16T08:52:41+00:00",
+    "git_branch": "exp-0030",
+    "git_base_commit": "d5aa6d7",
+    "verifier_model": "llama3.2:latest",
+    "embedding_model": "nomic-embed-text",
+    "ollama_endpoint": "http://127.0.0.1:11434",
+    "parameters": {
+        "pass1_entailment_threshold": 0.7,
+        "pass2_contradiction_threshold": 0.75,
+        "dense_similarity_threshold": 0.2,
+        "top_k_chunks": 4,
+        "stem_overlap_ratio_adequate": 0.4,
+        "stem_overlap_ratio_inadequate": 0.2
+    },
+    "checksums": {
+        "backend/rag_premise_verifier.php": "f4b50e0fd62cfc8c6970c1999bd22c528f98ae71dfbb3e4169b7e643056f480e",
+        "EXP-0030-CURRICULUM-VOCABULARY.json": "493ef48325ee5d1565e913189f03e97f1494831f34bad62d81e4cfea22958167",
+        "EXP-0030-BLIND-DATASET.json": "4372b569eeb9cd22afea73d10971a384084036795f8aa63c4f4052363e864ab9",
+        "scratch/blind_retrieval_cache_400.json": "eb93153c07933cf1374086265ff3ddd1bf91fbcd9e1788001d2b1077376ec0a9",
+        "EXP-0030-RESULTS.json": "d25dd32ce365a60175546e2237591bbf618998c6be80dd5f249fd30153ec4815",
+        "EXP-0030-ABLATION-RESULTS.json": "bdb2ce76cc4790c5aebaf1bfd42ca9a053a9d8f5274b588fd3f8f50498dd3877"
+    },
+    "blind_evaluation_summary": {
+        "total_cases": 400,
+        "d0_baseline_accuracy_pct": 73.25,
+        "d0_baseline_f1_pct": 73.78,
+        "d3_candidate_accuracy_pct": 74,
+        "d3_candidate_f1_pct": 74.51,
+        "d3_ood_accuracy_pct": 96,
+        "d3_novel_ood_accuracy_pct": 96,
+        "d0_novel_ood_accuracy_pct": 84,
+        "mcnemar_favorable_n01": 3,
+        "mcnemar_regression_n10": 0,
+        "zero_regression": true,
+        "evidence_used_invariant_pct": 100,
+        "production_unmodified": true
+    },
+    "decision_gate_outcome": "PROMISING"
+}

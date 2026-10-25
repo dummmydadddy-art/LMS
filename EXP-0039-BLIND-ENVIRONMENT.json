@@ -1,0 +1,39 @@
+{
+  "experiment": "EXP-0039",
+  "timestamp": "2026-09-17T11:00:00+00:00",
+  "hardware": {
+    "os": "Windows 11",
+    "cpu_cores": 8,
+    "ram_gb": 16,
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU (4 GB VRAM)",
+    "device_inference": "CPU for Bridge (bge-small + MiniLM-L-6-v2); CPU/GPU for Ollama (llama3.2:latest)"
+  },
+  "software": {
+    "python_version": "3.12",
+    "php_version": "8.2",
+    "chonkie_version": "1.7.0",
+    "chonkie_core": "0.10.2",
+    "tokie": "0.1.4",
+    "sentence_transformers": "3.0.1",
+    "ollama_version": "0.34.1",
+    "sqlite3_database": "database/rag_materials.sqlite3"
+  },
+  "models": {
+    "dense_embedding": "BAAI/bge-small-en-v1.5 (384-dim, normalized)",
+    "cross_encoder": "cross-encoder/ms-marco-MiniLM-L-6-v2 (Platt calibrated)",
+    "verifier_llm": "llama3.2:latest (temperature 0.0, num_predict 25)"
+  },
+  "artifacts_hashes": {
+    "EXP-0033-BLIND-DATASET.json": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+    "EXP-0039-BLIND-PREDICTIONS.json": "e3522d62f948d977b40aa5aba3bb90d438d453a161117825e94bb77668db49e5"
+  },
+  "latency_profile": {
+    "retrieval_wallclock_seconds": 205.1,
+    "retrieval_p50_ms": 413.04,
+    "retrieval_p95_ms": 474.79,
+    "verifier_wallclock_seconds": 123.0,
+    "verifier_p50_ms": 17.59,
+    "verifier_p95_ms": 723.38,
+    "total_wallclock_seconds": 328.1
+  }
+}

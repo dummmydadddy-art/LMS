@@ -1,0 +1,45 @@
+{
+  "test_id": "EXP-0019-HARD-NEGATIVE-AUDIT",
+  "total_evaluated": 300,
+  "top1_correct": 283,
+  "top3_correct": 299,
+  "mrr_sum": 291.08333333333337,
+  "dense_bm25_disagreements": 0,
+  "score_manipulation_tests": [
+    {
+      "repetition_count": 10,
+      "top_title": "PostgreSQL Database Design",
+      "top_chunk": 3,
+      "react_rank": 3,
+      "displaced": true
+    },
+    {
+      "repetition_count": 50,
+      "top_title": "PostgreSQL Database Design",
+      "top_chunk": 3,
+      "react_rank": 3,
+      "displaced": true
+    },
+    {
+      "repetition_count": 100,
+      "top_title": "PostgreSQL Database Design",
+      "top_chunk": 3,
+      "react_rank": 3,
+      "displaced": true
+    },
+    {
+      "repetition_count": 500,
+      "top_title": "PostgreSQL Database Design",
+      "top_chunk": 3,
+      "react_rank": 3,
+      "displaced": true
+    },
+    {
+      "repetition_count": 1000,
+      "top_title": "PostgreSQL Database Design",
+      "top_chunk": 3,
+      "react_rank": 3,
+      "displaced": true
+    }
+  ]
+}

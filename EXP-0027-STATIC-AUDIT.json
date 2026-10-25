@@ -1,0 +1,32 @@
+{
+    "experiment_tag": "EXP-0027-STATIC-AUDIT",
+    "timestamp": "2026-09-13T09:00:02+00:00",
+    "verdict": "STATIC_AUDIT_PASSED",
+    "audit_summary": {
+        "semantic_opposite_pair_count": 319,
+        "frozen_baseline_expected_count": 319,
+        "dictionary_expansion_detected": false,
+        "hardcoded_benchmark_queries_count": 0,
+        "suspicious_patterns_detected": 0,
+        "evidence_used_invariant_guaranteed": true,
+        "closed_domain_fallback_present": true
+    },
+    "checks": {
+        "check_1_frozen_dictionary": {
+            "status": "PASS",
+            "detail": "Dictionary pair count: 319 (frozen at 319)"
+        },
+        "check_2_no_hardcoded_queries": {
+            "status": "PASS",
+            "detail": "Scanned 7 benchmark datasets. Found 0 hardcoded matches."
+        },
+        "check_3_no_hidden_catalogues": {
+            "status": "PASS",
+            "detail": "Zero hidden rule catalogues or coerced outputs detected."
+        },
+        "check_4_closed_domain_evidence_boundary": {
+            "status": "PASS",
+            "detail": "evidence_used invariant strictly enforced; missing evidence maps to NOT_ESTABLISHED."
+        }
+    }
+}

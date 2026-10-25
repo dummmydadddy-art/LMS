@@ -1,0 +1,108 @@
+{
+  "C1": {
+    "total_inferences": 382,
+    "overall_confidence": {
+      "count": 382,
+      "mean": 0.763,
+      "std": 0.1705,
+      "p25": 0.6064,
+      "median": 0.7831,
+      "p75": 0.921,
+      "p95": 0.9831
+    },
+    "overall_margin": {
+      "count": 382,
+      "mean": 0.5743,
+      "std": 0.3117,
+      "p25": 0.3001,
+      "median": 0.6384,
+      "p75": 0.8586,
+      "p95": 0.9695
+    },
+    "overall_entropy": {
+      "count": 382,
+      "mean": 0.5599,
+      "std": 0.289,
+      "p25": 0.3095,
+      "median": 0.5966,
+      "p75": 0.7876,
+      "p95": 0.9743
+    },
+    "correct_predictions_confidence": {
+      "count": 96,
+      "mean": 0.9071,
+      "std": 0.1563,
+      "p25": 0.95,
+      "median": 0.95,
+      "p75": 0.95,
+      "p95": 0.96
+    },
+    "incorrect_predictions_confidence": {
+      "count": 107,
+      "mean": 0.3595,
+      "std": 0.2005,
+      "p25": 0.35,
+      "median": 0.35,
+      "p75": 0.35,
+      "p95": 0.96
+    },
+    "mean_class_probabilities": {
+      "CONTRADICTION": 0.2332,
+      "ENTAILMENT": 0.2784,
+      "NEUTRAL": 0.4884
+    }
+  },
+  "C2": {
+    "total_inferences": 382,
+    "overall_confidence": {
+      "count": 382,
+      "mean": 0.8573,
+      "std": 0.1512,
+      "p25": 0.7666,
+      "median": 0.9282,
+      "p75": 0.9785,
+      "p95": 0.9961
+    },
+    "overall_margin": {
+      "count": 382,
+      "mean": 0.7374,
+      "std": 0.2793,
+      "p25": 0.5513,
+      "median": 0.8675,
+      "p75": 0.9635,
+      "p95": 0.9941
+    },
+    "overall_entropy": {
+      "count": 382,
+      "mean": 0.3705,
+      "std": 0.2829,
+      "p25": 0.1152,
+      "median": 0.2963,
+      "p75": 0.6178,
+      "p95": 0.8257
+    },
+    "correct_predictions_confidence": {
+      "count": 89,
+      "mean": 0.8893,
+      "std": 0.181,
+      "p25": 0.95,
+      "median": 0.95,
+      "p75": 0.95,
+      "p95": 0.956
+    },
+    "incorrect_predictions_confidence": {
+      "count": 115,
+      "mean": 0.3617,
+      "std": 0.1728,
+      "p25": 0.35,
+      "median": 0.35,
+      "p75": 0.35,
+      "p95": 0.88
+    },
+    "mean_class_probabilities": {
+      "CONTRADICTION": 0.1184,
+      "ENTAILMENT": 0.241,
+      "NEUTRAL": 0.6405
+    }
+  }
+}

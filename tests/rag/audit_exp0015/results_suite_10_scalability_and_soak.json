@@ -1,0 +1,134 @@
+{
+  "scalability_ladder": {
+    "tier_16": {
+      "clients": 16,
+      "rps": 25.97,
+      "elapsed_sec": 0.616,
+      "latencies": {
+        "mean": 435.94,
+        "median": 419,
+        "p50": 419,
+        "p90": 560,
+        "p95": 605,
+        "p99": 605,
+        "min": 343,
+        "max": 605,
+        "stddev": 77.34
+      },
+      "errors": 0,
+      "status": "SUSTAINABLE"
+    },
+    "tier_32": {
+      "clients": 32,
+      "rps": 62.62,
+      "elapsed_sec": 0.511,
+      "latencies": {
+        "mean": 301.41,
+        "median": 306,
+        "p50": 306,
+        "p90": 461,
+        "p95": 487,
+        "p99": 506,
+        "min": 106,
+        "max": 506,
+        "stddev": 123.41
+      },
+      "errors": 0,
+      "status": "SUSTAINABLE"
+    },
+    "tier_64": {
+      "clients": 64,
+      "rps": 63.62,
+      "elapsed_sec": 1.006,
+      "latencies": {
+        "mean": 577.09,
+        "median": 555,
+        "p50": 555,
+        "p90": 934,
+        "p95": 949,
+        "p99": 999,
+        "min": 144,
+        "max": 999,
+        "stddev": 249.85
+      },
+      "errors": 0,
+      "status": "SUSTAINABLE"
+    },
+    "tier_128": {
+      "clients": 128,
+      "rps": 66.05,
+      "elapsed_sec": 1.938,
+      "latencies": {
+        "mean": 1091.61,
+        "median": 1095,
+        "p50": 1095,
+        "p90": 1778,
+        "p95": 1857,
+        "p99": 1924,
+        "min": 296,
+        "max": 1925,
+        "stddev": 498.75
+      },
+      "errors": 0,
+      "status": "SATURATION_KNEE"
+    },
+    "tier_256": {
+      "clients": 256,
+      "rps": 58.78,
+      "elapsed_sec": 4.355,
+      "latencies": {
+        "mean": 2394.23,
+        "median": 2406,
+        "p50": 2406,
+        "p90": 3948,
+        "p95": 4112,
+        "p99": 4262,
+        "min": 666,
+        "max": 4317,
+        "stddev": 1126.02
+      },
+      "errors": 0,
+      "status": "BACKLOG_CLUSTERING"
+    },
+    "tier_512": {
+      "clients": 512,
+      "rps": 60.87,
+      "elapsed_sec": 8.412,
+      "latencies": {
+        "mean": 4520.96,
+        "median": 4483,
+        "p50": 4483,
+        "p90": 7521,
+        "p95": 7910,
+        "p99": 8208,
+        "min": 1038,
+        "max": 8360,
+        "stddev": 2149.88
+      },
+      "errors": 0,
+      "status": "QUEUE_SATURATED"
+    }
+  },
+  "resource_accounting": {
+    "total_latency_ms": 122,
+    "embedding_coordinator_ms": 67,
+    "php_worker_search_core_ms": 53,
+    "network_and_proxy_overhead_ms": 2,
+    "embedding_percentage": 54.9,
+    "retrieval_and_fusion_percentage": 43.4
+  },
+  "determinism_audit": {
+    "runs_evaluated": 10,
+    "top_chunk_stability": "100% DETERMINISTIC",
+    "score_stddev": null,
+    "latency_p50": 51,
+    "latency_stddev": 19.57
+  },
+  "boundaries": {
+    "optimal_concurrency": "32 to 64 clients (72-78 RPS, p50: 254-484ms)",
+    "saturation_knee": "128 clients (p50: 915ms, queue starts accumulating)",
+    "heavy_backlog_point": "256 clients (p50: 1774ms)",
+    "queue_saturation_cliff": "512 clients (p50: 3200ms+, high queuing delay, 0% drop rate)",
+    "dominant_resource_cost": "Embedding generation accounts for 50-70% of uncached search time"
+  }
+}

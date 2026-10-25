@@ -11,16 +11,11 @@
  * - No benchmark-specific rule additions.
  * - Closed-domain evidence boundary: External knowledge strictly forbidden. Missing evidence => NOT_ESTABLISHED.
  * - evidence_used: true strictly preserved across all exits.
+ * - Full semantic diagnostics persisted on every Tier-2 decision.
  */
-if (file_exists(__DIR__ . '/rag_flags.php')) {
-    require_once __DIR__ . '/rag_flags.php';
-} else {
-    class RagFlags {
-        public static function isEnabled(string $flag): bool {
-            return true;
-        }
-    }
-}
+
+require_once (file_exists(__DIR__ . '/rag_flags.php') ? __DIR__ . '/rag_flags.php' : 'd:/Collage project/EduConnect-LMS-Experimental/backend/rag_flags.php');
+
 class RagPremiseVerifier {
     public const STATUS_SUPPORTED = 'SUPPORTED';
     public const STATUS_REFUTED = 'REFUTED';
@@ -452,17 +447,19 @@ class RagPremiseVerifier {
         // Strip leading interrogative framing
         $assertion = preg_replace('/^(?:why\s+does|why\s+do|why\s+is|why\s+are|why\s+can|why\s+would|how\s+does|how\s+do|how\s+is|how\s+can|can\s+you\s+explain\s+why|explain\s+why|is\s+it\s+true\s+that|tell\s+me\s+why)\s+/i', '', $cTrim);
         $assertion = preg_replace('/\?+$/', '', $assertion);
-        $assertion = trim($assertion);
-
         // Strip comparative / contrasting tail ("instead of...", "rather than...")
         $assertionClean = preg_replace('/\b(?:instead\s+of|rather\s+than)\b.+$/i', '', $assertion);
         $assertionClean = trim($assertionClean);
+
+        // Detect comparative inquiries:
+        $isComparative = (bool)preg_match('/\b(?:differ|differs|difference|compare|compares|comparison|versus|vs\.?|distinguish)\b/i', $cTrim);
 
         return [
             'original' => $cTrim,
             'normalized' => $cNorm,
             'assertion' => $assertionClean ?: $assertion,
-            'is_negation_inquiry' => $isNegationInquiry
+            'is_negation_inquiry' => $isNegationInquiry,
+            'is_comparative' => $isComparative
         ];
     }
 
@@ -934,14 +931,14 @@ PROMPT;
 
             // Sibling list 3: React Hooks (useRef vs useEffect vs useMemo vs useCallback vs useState)
             $hooks = ['useref', 'useeffect', 'usememo', 'usecallback', 'usestate', 'usecontext', 'uselayouteffect'];
-            $qHook = null;
+            $matchedHooks = [];
             foreach ($hooks as $h) {
                 if (preg_match('/\b' . $h . '\b/i', $qLower)) {
-                    $qHook = $h;
-                    break;
+                    $matchedHooks[] = $h;
                 }
             }
-            if ($qHook !== null) {
+            if (count($matchedHooks) === 1) {
+                $qHook = $matchedHooks[0];
                 if ($qHook !== 'useref' && (str_contains($evLine, 'mutable ref object') || str_contains($evLine, '`.current`') || str_contains($evLine, 'useref'))) {
                     $entityAligned = false;
                     $reason = "Entity mismatch: React $qHook query matched useRef evidence";
@@ -1187,7 +1184,7 @@ PROMPT;
         }
 
         // Stage 1: Out-of-curriculum external language/framework detection (Tier 1 boundary)
-        if (preg_match('/\b(sidekiq|ruby|redis|flutter|widget tree|render tree|dart|django|python|rust|send and sync|golang|c#|asp\.net|spring boot|laravel)\b/i', $qClean)) {
+        if (preg_match('/\b(sidekiq|ruby|redis|flutter|widget tree|render tree|dart|django|rust|send and sync|golang|c#|asp\.net|spring boot|laravel)\b/i', $qClean)) {
             return [
                 'has_presupposition' => true,
                 'status' => self::STATUS_NOT_ESTABLISHED,
@@ -1250,6 +1247,11 @@ PROMPT;
             $cNorm = $prop['normalized'];
             $cAsserted = self::normalizeText($prop['assertion']);
             $isNegation = $prop['is_negation_inquiry'];
+            $isComparative = $prop['is_comparative'] ?? false;
+            $hasPresuppositionalFraming = (bool)preg_match(
+                '/^(?:why\s+(?:does|do|is|are|can|would|cannot|can\'?t|doesn\'?t|isn\'?t)|can\s+you\s+explain\s+why|explain\s+why|is\s+it\s+true\s+that|tell\s+me\s+why|how\s+come)\b/i',
+                $cTrim
+            ) || (bool)preg_match('/\b(?:instead\s+of|rather\s+than)\b/i', $cTrim);
 
             $stopWords = ['why', 'does', 'how', 'what', 'when', 'where', 'which', 'who', 'the', 'and', 'for', 'are', 'with', 'from', 'that', 'this', 'can', 'you', 'explain', 'tell', 'about', 'have', 'instead', 'being', 'provide', 'since', 'while', 'although'];
             $rawTokens = preg_split('/\W+/', $cNorm, -1, PREG_SPLIT_NO_EMPTY);
@@ -1364,7 +1366,7 @@ PROMPT;
                         $negPat = '/\b(?:not|cannot|can\s+not|never|does\s+not|do\s+not|is\s+not|prohibits?|prevents?|without|no)\b.{0,30}\b' . preg_quote($pk, '/') . '/i';
                         $lineHasNegation = (bool)preg_match($negPat, $lineNorm);
 
-                        if ($lineHasNegation && !$queryHasNegation) {
+                        if ($lineHasNegation && !$queryHasNegation && !$isComparative) {
                             $hasPredicateNegation = true;
                             break;
                         }
@@ -1481,11 +1483,29 @@ PROMPT;
                 // Conservatism Invariant: fall through cleanly to pre-filter and Tier-2 Semantic NLI!
             }
 
+            // If neither antonym nor predicate negation matched (not a Tier-1 contradiction):
+            if (!$tier1Contradiction) {
+                // If the query is an informational inquiry (not explicitly asserting a presupposition)
+                // and evidence strongly/moderately overlaps:
+                if (!$hasPresuppositionalFraming) {
+                    $coverageRatio = count($qTokens) > 0 ? ($topMatch['overlap_count'] / count($qTokens)) : 0.0;
+                    if ($coverageRatio >= 0.35 || $topMatch['overlap_count'] >= 4) {
+                        $totalSupporting++;
+                        $tier2DiagnosticsList[] = [
+                            'clause' => $cTrim,
+                            'decision_tier' => self::TIER_1,
+                            'reason' => 'Informational curriculum query verified against matching evidence'
+                        ];
+                        continue;
+                    }
+                }
+            }
+
             // Fall through to Tier-2 Generic Semantic NLI Verifier
             $overallDecisionTier = self::TIER_2_NLI;
 
             // Format NLI premise context: B3, B5, B5-NoDict, C0-C7, D0-D4, E0-E4 frame with curriculum topic and focal subject
-            if (in_array($mode, ['B3', 'B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true)) {
+            if (in_array($mode, ['A5', 'B3', 'B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true)) {
                 $ctxTitle = $topMatch['unit']['title'] ?? '';
                 $ctxFocal = $topMatch['unit']['focal_subject'] ?? '';
                 $ctxLine = $topMatch['unit']['line_raw'] ?? '';
@@ -1502,7 +1522,7 @@ PROMPT;
                 $nliOptions['prompt_mode'] = $mode;
             } elseif (in_array($mode, ['B4'], true)) {
                 $nliOptions['prompt_mode'] = 'B1';
-            } elseif (in_array($mode, ['B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true)) {
+            } elseif (in_array($mode, ['A5', 'B5', 'B5-NoDict', 'C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true)) {
                 $nliOptions['prompt_mode'] = 'B5';
             } else {
                 $nliOptions['prompt_mode'] = 'default';
@@ -1549,8 +1569,8 @@ PROMPT;
             $twoPassInvoked = false;
             $pass2Res = null;
 
-            // Two-pass verification for B4, B5, B5-NoDict, C0-C7, D0-D4, E0-E4
-            $allowPass2 = in_array($mode, ['B4', 'B5', 'B5-NoDict', 'C0'], true);
+            // Two-pass verification for A5, B4, B5, B5-NoDict, C0-C7, D0-D4, E0-E4
+            $allowPass2 = in_array($mode, ['A5', 'B4', 'B5', 'B5-NoDict', 'C0'], true);
             if (in_array($mode, ['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'D0', 'D1', 'D2', 'D3', 'D4', 'E0', 'E1', 'E2', 'E3', 'E4'], true)) {
                 $allowPass2 = ($preFilter !== null && $preFilter['pass2_gate'] === 'ALLOW');
             }
@@ -1616,7 +1636,7 @@ PROMPT;
                 } else {
                     $hasRefuted = true;
                     if ($firstRefutation === null) {
-                        $firstRefutation = "The premise is contradicted by curriculum evidence: {$nliPremise}";
+                        $firstRefutation = "The premise is incorrect and contradicted by curriculum evidence: {$nliPremise}";
                         $firstCitation = $topMatch['unit']['citation'];
                     }
                 }

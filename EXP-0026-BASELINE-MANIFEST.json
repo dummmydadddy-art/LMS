@@ -1,0 +1,91 @@
+{
+  "manifest_version": "EXP-0026-BASELINE-MANIFEST",
+  "timestamp": "2026-09-13T07:15:39.897Z",
+  "target_experiment": "EXP-0026",
+  "audit_subject": "EXP-0025 (Premise Polarity & Contradiction Forensic Remediation)",
+  "git_metadata": {
+    "frozen_baseline_commit": "cc06561b446a24fa86a07d207f606b5438b14990",
+    "previous_baseline_commit": "a236929cf3ef6693a02798e910e53a516086f6eb",
+    "active_audit_branch": "exp-0026"
+  },
+  "runtime_environment": {
+    "node_version": "v24.11.0",
+    "php_version": "8.3.32",
+    "ollama_version": "ollama version is 0.34.0",
+    "embedding_model": "nomic-embed-text (768-dim)",
+    "generation_model": "llama3.2:latest (3B parameters)"
+  },
+  "architecture_configuration": {
+    "gateway_port": 8000,
+    "worker_count": 8,
+    "fast_workers": [
+      8001,
+      8002,
+      8003,
+      8004,
+      8005,
+      8006
+    ],
+    "generation_workers": [
+      8007,
+      8008
+    ],
+    "load_balancer_policy": "healthy-aware least-loaded with fair tie-breaking",
+    "concurrency_ceiling": 6
+  },
+  "cryptographic_hashes": {
+    "active_verifier": {
+      "file": "backend/rag_premise_verifier.php",
+      "sha256": "83a8a1860ea8dd4a81ae81fd20907e6a41fd238ebd7c90c3790ad2027e5f41cb"
+    },
+    "database": {
+      "file": "database/rag_materials.sqlite3",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "corpus": {
+      "version_tag": "1789199698190",
+      "file": "database/rag_corpus_version.txt",
+      "sha256": "a5fb73d9256a60e8487520bc1d398edae01994abced180f5ed69403c976a855e"
+    },
+    "benchmark_datasets": {
+      "EXP-0025-INDEPENDENT-HOLDOUT.json": "8ae4913e837b595c1dc1aec36dad9125b7ba6a0d3a028efd69dfdc74523b5ef8",
+      "EXP-0024-PREMISE-INDEPENDENT-HOLDOUT.json": "8ae4913e837b595c1dc1aec36dad9125b7ba6a0d3a028efd69dfdc74523b5ef8",
+      "EXP-0023-PREMISE-DATASET.json": "18bf7b4a85711d989bbafbd839b7e16c812bdf91d0a003d7f9bf865c83b926db",
+      "EXP-0023-INJECTION-DATASET.json": "940fbf39a68665c64c43201fca0915b76d7e799da1b5df1ac69f0b5159fe3f11",
+      "exp0024_dev_dataset.json": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b"
+    }
+  },
+  "active_feature_flags": {
+    "ENABLE_INPUT_SANITY": true,
+    "ENABLE_TYPO_NORMALIZATION": true,
+    "ENABLE_SEMANTIC_RERANK": true,
+    "ENABLE_DYNAMIC_K": true,
+    "ENABLE_ENTITY_MEMORY": true,
+    "ENABLE_PREMISE_VERIFIER": true,
+    "ENABLE_CITATION_ENFORCEMENT": true,
+    "ENABLE_CURRICULUM_BOUNDARY": true,
+    "ENABLE_RATE_LIMIT": true,
+    "ENABLE_WARMUP": true
+  },
+  "changed_files_relative_to_exp0024": [
+    "backend/rag_premise_verifier.php",
+    "EXP-0025-ABLATION-RESULTS.json",
+    "EXP-0025-DEVELOPMENT-RESULTS.json",
+    "EXP-0025-ERROR-TAXONOMY.csv",
+    "EXP-0025-EXP0023-REGRESSION.json",
+    "EXP-0025-EXP0024-REGRESSION.json",
+    "EXP-0025-FAILURE-REGISTER.csv",
+    "EXP-0025-FINAL-REPORT.md",
+    "EXP-0025-HOLDOUT-RESULTS.json",
+    "EXP-0025-INDEPENDENT-HOLDOUT.json",
+    "EXP-0025-PREMISE-RESULTS.json",
+    "EXP-0025-SECURITY-RESULTS.json",
+    "EXP-0025-STATIC-AUDIT.json"
+  ],
+  "safety_invariants": {
+    "production_repository_unmodified": true,
+    "production_path": "d:/Collage project/EduConnect-LMS-Production",
+    "verifier_logic_frozen": true,
+    "feature_flags_immutable_over_http": true
+  }
+}

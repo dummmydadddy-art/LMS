@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../../services/api';
 import { supabase } from '../../supabaseClient';
+import { AiTutorModal } from '../../components/AiTutorModal';
 import {
   BookOpen,
   Calendar,
@@ -22,17 +23,8 @@ import {
   Hand,
   Mic,
   Square,
-  Sparkles,
-  Zap,
-  Brain,
-  CheckCircle2,
-  XCircle,
-  X,
-  ChevronRight,
-  Stethoscope
+  Sparkles
 } from 'lucide-react';
-import StudentMasteryJourney from '../../components/StudentMasteryJourney';
-import ConceptDoctorModal from '../../components/ConceptDoctorModal';
 
 const StudentDashboard: React.FC = () => {
   const { tab } = useParams();
@@ -59,10 +51,7 @@ const StudentDashboard: React.FC = () => {
   const [chatInputText, setChatInputText] = useState('');
   const [hasRaisedHand, setHasRaisedHand] = useState(false);
   const [studentId, setStudentId] = useState<string>('');
-  const [pendingPopQuiz, setPendingPopQuiz] = useState<any | null>(null);
-  const [dismissedQuizId, setDismissedQuizId] = useState<string>('');
-  const [examReviewData, setExamReviewData] = useState<any | null>(null);
-  const [conceptDoctorTarget, setConceptDoctorTarget] = useState<any | null>(null);
+  const [isAiTutorOpen, setIsAiTutorOpen] = useState(false);
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -70,27 +59,6 @@ const StudentDashboard: React.FC = () => {
         setStudentId(user.id);
       }
     });
-
-    const checkPendingPopQuiz = async () => {
-      try {
-        const res = await api.get('/api/exams');
-        if (res.data?.success && Array.isArray(res.data?.exams)) {
-          const list = res.data.exams;
-          setExams(list);
-          const found = list.find((e: any) => 
-            !e.attempted && 
-            e.exam_type === 'MCQ' &&
-            (e.title?.toLowerCase().includes('pop quiz') || e.title?.toLowerCase().includes('remedial'))
-          );
-          if (found) {
-            setPendingPopQuiz(found);
-          }
-        }
-      } catch (err) {
-        console.error('Failed to load pending pop quizzes:', err);
-      }
-    };
-    checkPendingPopQuiz();
   }, []);
 
   const getGoogleDriveEmbedUrl = (url: string) => {
@@ -487,16 +455,7 @@ const StudentDashboard: React.FC = () => {
         answers: mcqAnswers
       });
       if (res.data?.success) {
-        const pct = res.data.percentage ?? (res.data.max_score > 0 ? Math.round((res.data.score / res.data.max_score) * 100) : 0);
-        setMsg(`MCQ Exam submitted! Your Score: ${res.data.score}/${res.data.max_score} (${pct}%)`);
-        setExamReviewData({
-          exam: activeExam,
-          score: res.data.score,
-          max_score: res.data.max_score,
-          percentage: pct,
-          breakdown: res.data.breakdown || [],
-          guidance: res.data.guidance || ''
-        });
+        setMsg(`MCQ Exam submitted! Your Score: ${res.data.score}/${res.data.max_score}`);
         setActiveExam(null);
         fetchStudentProfileData();
       } else {
@@ -715,7 +674,7 @@ const StudentDashboard: React.FC = () => {
     <div className="space-y-6">
       {/* Navigation tabs */}
       <div className="flex border-b border-slate-800 overflow-x-auto pb-1 gap-1">
-        {['courses', 'timetable', 'exams', 'results', 'mastery', 'fees', 'certificates', 'live-sessions'].map((tabName) => (
+        {['courses', 'timetable', 'exams', 'results', 'fees', 'certificates', 'live-sessions'].map((tabName) => (
           <button
             key={tabName}
             onClick={() => {
@@ -734,7 +693,7 @@ const StudentDashboard: React.FC = () => {
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            {tabName === 'live-sessions' ? 'Live Sessions' : tabName === 'mastery' ? '🎯 AI Concept Mastery' : tabName}
+            {tabName === 'live-sessions' ? 'Live Sessions' : tabName}
           </button>
         ))}
       </div>
@@ -742,256 +701,6 @@ const StudentDashboard: React.FC = () => {
       {msg && (
         <div className="bg-primary-950/40 border border-primary-500/20 text-primary-400 px-4 py-3 rounded-xl text-sm max-w-lg text-center mx-auto">
           {msg}
-        </div>
-      )}
-
-      {/* --- EXAM REVIEW & PEDAGOGICAL BREAKDOWN MODAL --- */}
-      {examReviewData && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200">
-          <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl p-6 space-y-6 max-h-[90vh] overflow-y-auto">
-            {/* Header */}
-            <div className="flex items-start justify-between border-b border-slate-800 pb-4">
-              <div className="flex items-center gap-3">
-                <div className={`p-2.5 rounded-xl ${examReviewData.percentage >= 70 ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'}`}>
-                  {examReviewData.percentage >= 70 ? <CheckCircle2 className="h-6 w-6" /> : <Sparkles className="h-6 w-6" />}
-                </div>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                      examReviewData.percentage >= 70 ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                    }`}>
-                      {examReviewData.percentage >= 70 ? 'Concept Mastered' : 'Remedial Review'}
-                    </span>
-                    <span className="text-xs text-slate-400 font-mono">
-                      Score: {examReviewData.score} / {examReviewData.max_score} ({examReviewData.percentage}%)
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-100 mt-1">{examReviewData.exam?.title || 'Exam Completed'}</h3>
-                </div>
-              </div>
-              <button
-                onClick={() => setExamReviewData(null)}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-
-            {/* Pedagogical Guidance Alert */}
-            {examReviewData.guidance && (
-              <div className="p-4 rounded-xl bg-primary-950/40 border border-primary-500/30 text-xs text-primary-200 leading-relaxed flex items-start gap-3">
-                <Sparkles className="h-4 w-4 text-primary-400 flex-shrink-0 mt-0.5" />
-                <div>
-                  <span className="font-bold block text-primary-300 mb-0.5">AI Pedagogical Guidance:</span>
-                  {examReviewData.guidance}
-                </div>
-              </div>
-            )}
-
-            {/* Question by Question Breakdown */}
-            <div className="space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                Detailed Question Review ({examReviewData.breakdown?.length || 0} Questions)
-              </h4>
-
-              {examReviewData.breakdown?.map((item: any, qIdx: number) => (
-                <div
-                  key={qIdx}
-                  className={`p-4 rounded-xl border text-xs space-y-2.5 transition ${
-                    item.is_correct
-                      ? 'bg-emerald-950/15 border-emerald-500/30'
-                      : 'bg-rose-950/15 border-rose-500/30'
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <p className="font-bold text-slate-200 text-xs leading-relaxed">
-                      Q{qIdx + 1}: {item.question_text}
-                    </p>
-                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase flex-shrink-0 ${
-                      item.is_correct
-                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
-                        : 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
-                    }`}>
-                      {item.is_correct ? `+${item.score_awarded} pts (Correct)` : `0 pts (Incorrect)`}
-                    </span>
-                  </div>
-
-                  {/* Answers */}
-                  <div className="space-y-1 pt-1">
-                    <div className="flex items-center gap-2">
-                      <span className="text-slate-400 w-24 flex-shrink-0">Your Answer:</span>
-                      <span className={`font-semibold flex items-center gap-1.5 ${item.is_correct ? 'text-emerald-400' : 'text-rose-400'}`}>
-                        {item.is_correct ? <CheckCircle2 className="h-3.5 w-3.5" /> : <XCircle className="h-3.5 w-3.5" />}
-                        {item.submitted_option_text}
-                      </span>
-                    </div>
-
-                    {!item.is_correct && (
-                      <div className="flex items-center gap-2">
-                        <span className="text-slate-400 w-24 flex-shrink-0">Correct Answer:</span>
-                        <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
-                          <CheckCircle2 className="h-3.5 w-3.5" />
-                          {item.correct_option_text}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Pedagogical Explanation */}
-                  {item.explanation && (
-                    <div className="mt-2.5 p-3 rounded-lg bg-slate-950/60 border border-slate-800 text-[11px] text-slate-300 leading-relaxed flex items-start gap-2">
-                      <Sparkles className="h-3.5 w-3.5 text-primary-400 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <span className="font-bold text-primary-300 block mb-0.5">Syllabus Rationale:</span>
-                        {item.explanation}
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="pt-2 flex justify-end">
-                    <button
-                      onClick={() => setConceptDoctorTarget({
-                        topic: examReviewData.exam?.title?.replace(/pop quiz:?/i, '').trim() || 'Core Curriculum Concept',
-                        question: item.question_text,
-                        studentChoice: item.submitted_option_text || 'Selected option',
-                        correctChoice: item.correct_option_text || 'Correct principle',
-                        citation: item.explanation || ''
-                      })}
-                      className="py-1 px-2.5 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 text-teal-300 border border-teal-500/30 text-[11px] font-semibold flex items-center gap-1.5 transition"
-                    >
-                      <Stethoscope className="h-3.5 w-3.5 text-teal-400" />
-                      Diagnose with AI Concept Doctor
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Recommended Study Resources */}
-            {examReviewData.recommendations?.length > 0 && (
-              <div className="space-y-3 pt-3 border-t border-slate-800">
-                <div className="flex items-center justify-between">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-                    <BookOpen className="h-3.5 w-3.5 text-primary-400" /> Recommended Syllabus Resources
-                  </h4>
-                  <span className="text-[11px] text-slate-400">Targeted reinforcement</span>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  {examReviewData.recommendations.map((rec: any, rIdx: number) => (
-                    <div
-                      key={rIdx}
-                      className="p-3 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between text-xs space-y-1.5"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between gap-2">
-                          <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-primary-500/15 text-primary-300 border border-primary-500/30">
-                            {rec.section}
-                          </span>
-                          <span className="text-[10px] text-slate-400 flex items-center gap-1">
-                            <Clock className="h-3 w-3" /> {rec.estimated_minutes}m read
-                          </span>
-                        </div>
-                        <h5 className="font-bold text-slate-200 text-xs mt-1.5 line-clamp-1">{rec.title}</h5>
-                        <p className="text-[11px] text-slate-400 leading-snug line-clamp-2 mt-1">
-                          {rec.key_takeaway}
-                        </p>
-                      </div>
-
-                      <div className="pt-2 border-t border-slate-850 flex items-center justify-between text-[11px] text-primary-400 font-semibold">
-                        <span>Relevance: {Math.round(rec.similarity * 100)}%</span>
-                        <span 
-                          onClick={() => {
-                            setExamReviewData(null);
-                            navigate('/student/courses');
-                          }}
-                          className="flex items-center gap-0.5 hover:underline cursor-pointer"
-                        >
-                          Study Material <ChevronRight className="h-3 w-3" />
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Footer */}
-            <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-800">
-              <button
-                onClick={() => setExamReviewData(null)}
-                className="btn-primary px-5 py-2 text-xs font-semibold"
-              >
-                Close & Return to Dashboard
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* --- IN-CONTEXT AI CONCEPT DOCTOR MODAL --- */}
-      {conceptDoctorTarget && (
-        <ConceptDoctorModal
-          isOpen={!!conceptDoctorTarget}
-          onClose={() => setConceptDoctorTarget(null)}
-          topic={conceptDoctorTarget.topic}
-          question={conceptDoctorTarget.question}
-          studentChoice={conceptDoctorTarget.studentChoice}
-          correctChoice={conceptDoctorTarget.correctChoice}
-          citation={conceptDoctorTarget.citation}
-          studentId={studentId}
-          onBreakthroughResolved={() => {
-            fetchStudentProfileData();
-          }}
-        />
-      )}
-
-      {/* --- LIVE REMEDIAL POP-QUIZ BANNER --- */}
-      {pendingPopQuiz && !activeExam && pendingPopQuiz.id !== dismissedQuizId && (
-        <div className="relative overflow-hidden rounded-2xl p-4 bg-gradient-to-r from-amber-500/15 via-primary-500/15 to-purple-500/15 border border-amber-500/30 shadow-lg shadow-amber-500/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-in fade-in duration-300">
-          <div className="flex items-start sm:items-center gap-3.5">
-            <div className="p-2.5 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex-shrink-0 animate-pulse">
-              <Zap className="h-5 w-5" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                  Targeted Remedial Pop-Quiz
-                </span>
-                <span className="text-xs text-slate-400 flex items-center gap-1">
-                  <Clock className="h-3 w-3" /> {pendingPopQuiz.time_limit_minutes} Mins
-                </span>
-                {pendingPopQuiz.due_date && (
-                  <span className="text-[11px] text-slate-400 hidden md:inline">
-                    • Due: {new Date(pendingPopQuiz.due_date).toLocaleDateString()} {new Date(pendingPopQuiz.due_date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                  </span>
-                )}
-              </div>
-              <h4 className="font-bold text-slate-100 text-sm mt-1">{pendingPopQuiz.title}</h4>
-              <p className="text-xs text-slate-400 mt-0.5">
-                Your instructor dispatched this quiz to reinforce recent curriculum topics and eliminate misconceptions. Test your understanding!
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2 self-end sm:self-center flex-shrink-0">
-            <button
-              onClick={() => {
-                navigate('/student/exams');
-                startExamAttempt(pendingPopQuiz);
-              }}
-              className="btn-primary text-xs py-2 px-4 whitespace-nowrap shadow-md shadow-primary-500/20 flex items-center gap-1.5"
-            >
-              <Play className="h-3.5 w-3.5 fill-current" />
-              Take Pop Quiz Now
-            </button>
-            <button
-              onClick={() => setDismissedQuizId(pendingPopQuiz.id)}
-              className="text-slate-400 hover:text-slate-200 text-xs px-2.5 py-2 rounded-lg hover:bg-slate-800/40 transition-colors"
-              title="Dismiss banner"
-            >
-              Dismiss
-            </button>
-          </div>
         </div>
       )}
 
@@ -1026,6 +735,13 @@ const StudentDashboard: React.FC = () => {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/60 pb-3">
               <div className="flex items-center gap-3">
                 <h3 className="text-sm font-bold text-slate-300">Materials Vault - {activeCourse?.course_name}</h3>
+                <button
+                  onClick={() => setIsAiTutorOpen(true)}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-500 hover:to-indigo-500 transition shadow-sm"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
+                  AI Course Tutor (RAG)
+                </button>
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {[
@@ -1063,22 +779,7 @@ const StudentDashboard: React.FC = () => {
                       <span className="text-[9px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-bold uppercase">{mat.file_type}</span>
                       <h4 className="font-bold text-slate-200 text-xs truncate mt-1">{mat.title}</h4>
                       <p className="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">{mat.description}</p>
-                      <div className="border-t border-slate-800/80 pt-2 flex items-center justify-between">
-                        <button
-                          onClick={() => {
-                            window.dispatchEvent(new CustomEvent('open-ai-tutor', {
-                              detail: {
-                                initialPrompt: `Can you explain the key concepts from "${mat.title}"?`,
-                                courseId: activeCourse?.id,
-                                courseName: activeCourse?.course_name
-                              }
-                            }));
-                          }}
-                          className="text-[11px] text-indigo-400 hover:text-indigo-300 font-bold flex items-center gap-1 cursor-pointer transition-colors"
-                          title="Ask AI Tutor about this document"
-                        >
-                          <Sparkles className="h-3 w-3 text-yellow-400" /> Ask Tutor
-                        </button>
+                      <div className="border-t border-slate-800/80 pt-2 flex justify-end">
                         {mat.file_type === 'video' ? (
                           <button
                             onClick={() => setActiveVideo(mat)}
@@ -1247,62 +948,46 @@ const StudentDashboard: React.FC = () => {
         </div>
       )}
 
-      {/* --- 5. RESULTS & MASTERY TABS --- */}
-      {(activeTab === 'results' || activeTab === 'mastery') && (
-        <div className="space-y-6">
-          <StudentMasteryJourney
-            studentId={studentId}
-            onLaunchQuiz={(examId) => {
-              const ex = exams.find((e: any) => e.id === examId);
-              if (ex) {
-                startExamAttempt(ex);
-              } else {
-                navigate('/student/exams');
-              }
-            }}
-          />
+      {/* --- 5. RESULTS TAB --- */}
+      {activeTab === 'results' && (
+        <div className="glass-card p-6 space-y-4">
+          <h3 className="text-base font-bold text-slate-200">Grades & Results Card</h3>
+          <div className="space-y-4 pt-2">
+            <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider">Exam Results</h4>
+            {grades.exams?.length === 0 ? (
+              <p className="text-slate-500 text-xs">No exam grades recorded yet.</p>
+            ) : (
+              grades.exams?.map((e: any) => (
+                <div key={e.id} className="flex justify-between items-center bg-slate-800/20 border border-slate-800/40 p-4 rounded-xl">
+                  <div>
+                    <h5 className="font-bold text-slate-200 text-xs">{e.exams?.title}</h5>
+                    <p className="text-[10px] text-slate-400 mt-1">Feedback: {e.feedback || 'None provided.'}</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-sm font-bold text-primary-400">{e.score} / {e.max_score}</span>
+                    <p className="text-[9px] text-slate-500 mt-0.5">Scored On: {new Date(e.evaluated_at).toLocaleDateString()}</p>
+                  </div>
+                </div>
+              ))
+            )}
 
-          {activeTab === 'results' && (
-            <div className="glass-card p-6 space-y-4">
-              <h3 className="text-base font-bold text-slate-200">Grades & Results Card</h3>
-              <div className="space-y-4 pt-2">
-                <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider">Exam Results</h4>
-                {grades.exams?.length === 0 ? (
-                  <p className="text-slate-500 text-xs">No exam grades recorded yet.</p>
-                ) : (
-                  grades.exams?.map((e: any) => (
-                    <div key={e.id} className="flex justify-between items-center bg-slate-800/20 border border-slate-800/40 p-4 rounded-xl">
-                      <div>
-                        <h5 className="font-bold text-slate-200 text-xs">{e.exams?.title}</h5>
-                        <p className="text-[10px] text-slate-400 mt-1">Feedback: {e.feedback || 'None provided.'}</p>
-                      </div>
-                      <div className="text-right">
-                        <span className="text-sm font-bold text-primary-400">{e.score} / {e.max_score}</span>
-                        <p className="text-[9px] text-slate-500 mt-0.5">Scored On: {new Date(e.evaluated_at).toLocaleDateString()}</p>
-                      </div>
-                    </div>
-                  ))
-                )}
-
-                <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider pt-4">Assignment Scores</h4>
-                {grades.assignments?.length === 0 ? (
-                  <p className="text-slate-500 text-xs">No assignment grades evaluated yet.</p>
-                ) : (
-                  grades.assignments?.map((a: any) => (
-                    <div key={a.id} className="flex justify-between items-center bg-slate-800/20 border border-slate-800/40 p-4 rounded-xl">
-                      <div>
-                        <h5 className="font-bold text-slate-200 text-xs">{a.assignments?.title}</h5>
-                        <p className="text-[10px] text-slate-400 mt-1">Feedback: {a.feedback || 'Good attempt.'}</p>
-                      </div>
-                      <div className="text-right">
-                        <span className="text-sm font-bold text-green-400">{a.score} / 100</span>
-                      </div>
-                    </div>
-                  ))
-                )}
-              </div>
-            </div>
-          )}
+            <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider pt-4">Assignment Scores</h4>
+            {grades.assignments?.length === 0 ? (
+              <p className="text-slate-500 text-xs">No assignment grades evaluated yet.</p>
+            ) : (
+              grades.assignments?.map((a: any) => (
+                <div key={a.id} className="flex justify-between items-center bg-slate-800/20 border border-slate-800/40 p-4 rounded-xl">
+                  <div>
+                    <h5 className="font-bold text-slate-200 text-xs">{a.assignments?.title}</h5>
+                    <p className="text-[10px] text-slate-400 mt-1">Feedback: {a.feedback || 'Good attempt.'}</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-sm font-bold text-green-400">{a.score} / 100</span>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
         </div>
       )}
 
@@ -1896,6 +1581,16 @@ const StudentDashboard: React.FC = () => {
           )}
         </div>
       )}
+
+      {/* AI Course Tutor Modal */}
+      <AiTutorModal
+        isOpen={isAiTutorOpen}
+        onClose={() => setIsAiTutorOpen(false)}
+        studentId={studentId}
+        courseId={activeCourse?.id}
+        batchId={activeCourse?.batch_id}
+        courseName={activeCourse?.course_name || 'Full Stack Web Development'}
+      />
     </div>
   );
 };

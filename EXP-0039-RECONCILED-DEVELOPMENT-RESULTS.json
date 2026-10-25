@@ -1,0 +1,1055 @@
+{
+  "experiment": "EXP-0039",
+  "timestamp": "2026-09-17T10:45:00+00:00",
+  "status": "RECONCILED",
+  "dataset": "EXP-0025-DEVELOPMENT-DATASET.json",
+  "dataset_hash": "8ce7313c48fd11086d478952a524f250e4afeab1530fbafba527f44a6203427b",
+  "sample_size": 400,
+  "conditions": {
+    "C0": {
+      "condition": "C0",
+      "description": "Control C0 (Legacy Regex Chunker, 23 chunks)",
+      "sample_size": 400,
+      "accuracy": 92.0,
+      "macro_f1": 92.77,
+      "standard_far": 2.4,
+      "frr": 16.0,
+      "supported_recall": 84.0,
+      "refutation_recall": 95.33,
+      "not_established_recall": 99.0,
+      "ood_recall": 99.0,
+      "novel_ood_recall": "N/A \u2014 separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json",
+      "false_acceptances": 6,
+      "false_refutations": 1,
+      "false_abstentions_supported": 0,
+      "false_abstentions_all": 1,
+      "class_metrics": {
+        "SUPPORTED": {
+          "precision": 95.45,
+          "recall": 84.0,
+          "f1": 89.36,
+          "tp": 126,
+          "pred_total": 132,
+          "actual_total": 150
+        },
+        "REFUTED": {
+          "precision": 85.12,
+          "recall": 95.33,
+          "f1": 89.94,
+          "tp": 143,
+          "pred_total": 168,
+          "actual_total": 150
+        },
+        "NOT_ESTABLISHED": {
+          "precision": 99.0,
+          "recall": 99.0,
+          "f1": 99.0,
+          "tp": 99,
+          "pred_total": 100,
+          "actual_total": 100
+        }
+      },
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 126,
+          "REFUTED": 24,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 6,
+          "REFUTED": 143,
+          "NOT_ESTABLISHED": 1
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 0,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 99
+        }
+      },
+      "category_accuracy": {
+        "SUPPORTED_CURRICULUM": {
+          "total": 100,
+          "correct": 82,
+          "accuracy": 82.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "total": 100,
+          "correct": 96,
+          "accuracy": 96.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "total": 100,
+          "correct": 99,
+          "accuracy": 99.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "total": 50,
+          "correct": 44,
+          "accuracy": 88.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "total": 50,
+          "correct": 47,
+          "accuracy": 94.0
+        }
+      },
+      "retrieval": {
+        "condition": "C0",
+        "description": "Control C0 (Legacy Regex Chunker, 23 chunks)",
+        "table": "material_chunks_exp0032",
+        "corpus_chunks": 23,
+        "total_queries": 400,
+        "eval_queries_with_gold": 256,
+        "mean_gold_chunks_per_query": 1.76,
+        "max_gold_chunks_per_query": 4,
+        "recall_at_1": 98.44,
+        "recall_at_5": 100.0,
+        "mrr": 99.06,
+        "ndcg_at_5_defective_reported": 123.77,
+        "ndcg_at_5_corrected_proper": 90.29,
+        "latency_p50_ms": 851.29,
+        "latency_p95_ms": 907.1,
+        "latency_mean_ms": 838.47
+      },
+      "latency_ms": {
+        "mean": 14.99,
+        "p50": 16.6,
+        "p95": 36.92
+      }
+    },
+    "C1": {
+      "condition": "C1",
+      "description": "Intervention C1 (Chonkie RecursiveChunker, 10 chunks)",
+      "sample_size": 400,
+      "accuracy": 91.0,
+      "macro_f1": 91.67,
+      "standard_far": 2.4,
+      "frr": 18.0,
+      "supported_recall": 82.0,
+      "refutation_recall": 94.67,
+      "not_established_recall": 99.0,
+      "ood_recall": 99.0,
+      "novel_ood_recall": "N/A \u2014 separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json",
+      "false_acceptances": 6,
+      "false_refutations": 1,
+      "false_abstentions_supported": 2,
+      "false_abstentions_all": 4,
+      "class_metrics": {
+        "SUPPORTED": {
+          "precision": 95.35,
+          "recall": 82.0,
+          "f1": 88.17,
+          "tp": 123,
+          "pred_total": 129,
+          "actual_total": 150
+        },
+        "REFUTED": {
+          "precision": 84.52,
+          "recall": 94.67,
+          "f1": 89.31,
+          "tp": 142,
+          "pred_total": 168,
+          "actual_total": 150
+        },
+        "NOT_ESTABLISHED": {
+          "precision": 96.12,
+          "recall": 99.0,
+          "f1": 97.54,
+          "tp": 99,
+          "pred_total": 103,
+          "actual_total": 100
+        }
+      },
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 123,
+          "REFUTED": 25,
+          "NOT_ESTABLISHED": 2
+        },
+        "REFUTED": {
+          "SUPPORTED": 6,
+          "REFUTED": 142,
+          "NOT_ESTABLISHED": 2
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 0,
+          "REFUTED": 1,
+          "NOT_ESTABLISHED": 99
+        }
+      },
+      "category_accuracy": {
+        "SUPPORTED_CURRICULUM": {
+          "total": 100,
+          "correct": 78,
+          "accuracy": 78.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "total": 100,
+          "correct": 95,
+          "accuracy": 95.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "total": 100,
+          "correct": 99,
+          "accuracy": 99.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "total": 50,
+          "correct": 45,
+          "accuracy": 90.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "total": 50,
+          "correct": 47,
+          "accuracy": 94.0
+        }
+      },
+      "retrieval": {
+        "condition": "C1",
+        "description": "Intervention C1 (Chonkie RecursiveChunker, 10 chunks)",
+        "table": "C1_ChonkieRecursive",
+        "corpus_chunks": 10,
+        "total_queries": 400,
+        "eval_queries_with_gold": 256,
+        "mean_gold_chunks_per_query": 1.51,
+        "max_gold_chunks_per_query": 3,
+        "recall_at_1": 99.22,
+        "recall_at_5": 100.0,
+        "mrr": 99.61,
+        "ndcg_at_5_defective_reported": 124.7,
+        "ndcg_at_5_corrected_proper": 95.45,
+        "latency_p50_ms": 663.88,
+        "latency_p95_ms": 742.02,
+        "latency_mean_ms": 674.14
+      },
+      "latency_ms": {
+        "mean": 73.64,
+        "p50": 44.0,
+        "p95": 125.92
+      }
+    },
+    "C2_075": {
+      "condition": "C2_075",
+      "description": "Intervention C2 (Chonkie SemanticChunker 0.75, 69 chunks)",
+      "sample_size": 400,
+      "accuracy": 93.75,
+      "macro_f1": 94.27,
+      "standard_far": 2.8,
+      "frr": 10.67,
+      "supported_recall": 89.33,
+      "refutation_recall": 94.67,
+      "not_established_recall": 99.0,
+      "ood_recall": 99.0,
+      "novel_ood_recall": "N/A \u2014 separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json",
+      "false_acceptances": 7,
+      "false_refutations": 0,
+      "false_abstentions_supported": 0,
+      "false_abstentions_all": 2,
+      "class_metrics": {
+        "SUPPORTED": {
+          "precision": 95.04,
+          "recall": 89.33,
+          "f1": 92.1,
+          "tp": 134,
+          "pred_total": 141,
+          "actual_total": 150
+        },
+        "REFUTED": {
+          "precision": 89.87,
+          "recall": 94.67,
+          "f1": 92.21,
+          "tp": 142,
+          "pred_total": 158,
+          "actual_total": 150
+        },
+        "NOT_ESTABLISHED": {
+          "precision": 98.02,
+          "recall": 99.0,
+          "f1": 98.51,
+          "tp": 99,
+          "pred_total": 101,
+          "actual_total": 100
+        }
+      },
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 134,
+          "REFUTED": 16,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 6,
+          "REFUTED": 142,
+          "NOT_ESTABLISHED": 2
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 0,
+          "NOT_ESTABLISHED": 99
+        }
+      },
+      "category_accuracy": {
+        "SUPPORTED_CURRICULUM": {
+          "total": 100,
+          "correct": 86,
+          "accuracy": 86.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "total": 100,
+          "correct": 95,
+          "accuracy": 95.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "total": 100,
+          "correct": 99,
+          "accuracy": 99.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "total": 50,
+          "correct": 48,
+          "accuracy": 96.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "total": 50,
+          "correct": 47,
+          "accuracy": 94.0
+        }
+      },
+      "retrieval": {
+        "condition": "C2_075",
+        "description": "Intervention C2 (Chonkie SemanticChunker 0.75, 69 chunks)",
+        "table": "C2_ChonkieSemantic_075",
+        "corpus_chunks": 69,
+        "total_queries": 400,
+        "eval_queries_with_gold": 256,
+        "mean_gold_chunks_per_query": 4.83,
+        "max_gold_chunks_per_query": 11,
+        "recall_at_1": 93.36,
+        "recall_at_5": 100.0,
+        "mrr": 96.48,
+        "ndcg_at_5_defective_reported": 207.86,
+        "ndcg_at_5_corrected_proper": 86.09,
+        "latency_p50_ms": 459.49,
+        "latency_p95_ms": 516.52,
+        "latency_mean_ms": 457.38
+      },
+      "latency_ms": {
+        "mean": 123.13,
+        "p50": 13.4,
+        "p95": 638.05
+      }
+    },
+    "C2_080": {
+      "condition": "C2_080",
+      "description": "Intervention C2 (Chonkie SemanticChunker 0.80, 71 chunks)",
+      "sample_size": 400,
+      "accuracy": 93.5,
+      "macro_f1": 94.05,
+      "standard_far": 2.8,
+      "frr": 11.33,
+      "supported_recall": 88.67,
+      "refutation_recall": 94.67,
+      "not_established_recall": 99.0,
+      "ood_recall": 99.0,
+      "novel_ood_recall": "N/A \u2014 separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json",
+      "false_acceptances": 7,
+      "false_refutations": 0,
+      "false_abstentions_supported": 0,
+      "false_abstentions_all": 2,
+      "class_metrics": {
+        "SUPPORTED": {
+          "precision": 95.0,
+          "recall": 88.67,
+          "f1": 91.72,
+          "tp": 133,
+          "pred_total": 140,
+          "actual_total": 150
+        },
+        "REFUTED": {
+          "precision": 89.31,
+          "recall": 94.67,
+          "f1": 91.91,
+          "tp": 142,
+          "pred_total": 159,
+          "actual_total": 150
+        },
+        "NOT_ESTABLISHED": {
+          "precision": 98.02,
+          "recall": 99.0,
+          "f1": 98.51,
+          "tp": 99,
+          "pred_total": 101,
+          "actual_total": 100
+        }
+      },
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 133,
+          "REFUTED": 17,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 6,
+          "REFUTED": 142,
+          "NOT_ESTABLISHED": 2
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 0,
+          "NOT_ESTABLISHED": 99
+        }
+      },
+      "category_accuracy": {
+        "SUPPORTED_CURRICULUM": {
+          "total": 100,
+          "correct": 86,
+          "accuracy": 86.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "total": 100,
+          "correct": 95,
+          "accuracy": 95.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "total": 100,
+          "correct": 99,
+          "accuracy": 99.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "total": 50,
+          "correct": 47,
+          "accuracy": 94.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "total": 50,
+          "correct": 47,
+          "accuracy": 94.0
+        }
+      },
+      "retrieval": {
+        "condition": "C2_080",
+        "description": "Intervention C2 (Chonkie SemanticChunker 0.80, 71 chunks)",
+        "table": "C2_ChonkieSemantic_080",
+        "corpus_chunks": 71,
+        "total_queries": 400,
+        "eval_queries_with_gold": 256,
+        "mean_gold_chunks_per_query": 4.92,
+        "max_gold_chunks_per_query": 12,
+        "recall_at_1": 93.36,
+        "recall_at_5": 100.0,
+        "mrr": 96.48,
+        "ndcg_at_5_defective_reported": 208.27,
+        "ndcg_at_5_corrected_proper": 86.23,
+        "latency_p50_ms": 457.4,
+        "latency_p95_ms": 501.91,
+        "latency_mean_ms": 453.46
+      },
+      "latency_ms": {
+        "mean": 10.41,
+        "p50": 8.9,
+        "p95": 21.73
+      }
+    },
+    "C2_085": {
+      "condition": "C2_085",
+      "description": "Intervention C2 (Chonkie SemanticChunker 0.85, 76 chunks)",
+      "sample_size": 400,
+      "accuracy": 93.75,
+      "macro_f1": 94.33,
+      "standard_far": 2.8,
+      "frr": 11.33,
+      "supported_recall": 88.67,
+      "refutation_recall": 95.33,
+      "not_established_recall": 99.0,
+      "ood_recall": 99.0,
+      "novel_ood_recall": "N/A \u2014 separate Novel-OOD subset is not present in EXP-0025-DEVELOPMENT-DATASET.json",
+      "false_acceptances": 7,
+      "false_refutations": 0,
+      "false_abstentions_supported": 0,
+      "false_abstentions_all": 1,
+      "class_metrics": {
+        "SUPPORTED": {
+          "precision": 95.0,
+          "recall": 88.67,
+          "f1": 91.72,
+          "tp": 133,
+          "pred_total": 140,
+          "actual_total": 150
+        },
+        "REFUTED": {
+          "precision": 89.38,
+          "recall": 95.33,
+          "f1": 92.26,
+          "tp": 143,
+          "pred_total": 160,
+          "actual_total": 150
+        },
+        "NOT_ESTABLISHED": {
+          "precision": 99.0,
+          "recall": 99.0,
+          "f1": 99.0,
+          "tp": 99,
+          "pred_total": 100,
+          "actual_total": 100
+        }
+      },
+      "confusion_matrix": {
+        "SUPPORTED": {
+          "SUPPORTED": 133,
+          "REFUTED": 17,
+          "NOT_ESTABLISHED": 0
+        },
+        "REFUTED": {
+          "SUPPORTED": 6,
+          "REFUTED": 143,
+          "NOT_ESTABLISHED": 1
+        },
+        "NOT_ESTABLISHED": {
+          "SUPPORTED": 1,
+          "REFUTED": 0,
+          "NOT_ESTABLISHED": 99
+        }
+      },
+      "category_accuracy": {
+        "SUPPORTED_CURRICULUM": {
+          "total": 100,
+          "correct": 86,
+          "accuracy": 86.0
+        },
+        "NOVEL_FALSE_PREMISE": {
+          "total": 100,
+          "correct": 96,
+          "accuracy": 96.0
+        },
+        "OUT_OF_CURRICULUM_UNKNOWN": {
+          "total": 100,
+          "correct": 99,
+          "accuracy": 99.0
+        },
+        "LEGITIMATE_NEGATION": {
+          "total": 50,
+          "correct": 47,
+          "accuracy": 94.0
+        },
+        "MIXED_COMPOUND_PREMISE": {
+          "total": 50,
+          "correct": 47,
+          "accuracy": 94.0
+        }
+      },
+      "retrieval": {
+        "condition": "C2_085",
+        "description": "Intervention C2 (Chonkie SemanticChunker 0.85, 76 chunks)",
+        "table": "C2_ChonkieSemantic_085",
+        "corpus_chunks": 76,
+        "total_queries": 400,
+        "eval_queries_with_gold": 256,
+        "mean_gold_chunks_per_query": 5.09,
+        "max_gold_chunks_per_query": 13,
+        "recall_at_1": 92.97,
+        "recall_at_5": 100.0,
+        "mrr": 96.19,
+        "ndcg_at_5_defective_reported": 212.88,
+        "ndcg_at_5_corrected_proper": 86.02,
+        "latency_p50_ms": 409.21,
+        "latency_p95_ms": 460.9,
+        "latency_mean_ms": 407.81
+      },
+      "latency_ms": {
+        "mean": 19.76,
+        "p50": 9.0,
+        "p95": 21.91
+      }
+    }
+  },
+  "paired_comparisons": {
+    "C1": {
+      "candidate": "C1",
+      "control": "C0",
+      "sample_size": 400,
+      "convention": "n01 = baseline incorrect, candidate correct; n10 = baseline correct, candidate incorrect",
+      "n11": 362,
+      "n00": 30,
+      "n01": 2,
+      "n10": 6,
+      "total_discordant": 8,
+      "delta_accuracy_pp": -1.0,
+      "mcnemar_chi2_cc": 1.125,
+      "mcnemar_chi2_raw": 2.0,
+      "exact_binomial_p": 0.28906,
+      "paired_se_pp": 0.7053,
+      "one_sided_95_lcb_pp": -2.1602,
+      "non_inferiority_margin_pp": -3.0,
+      "non_inferiority_established": true,
+      "superiority_established": false,
+      "discordant_cases_count": 8,
+      "discordant_cases": [
+        {
+          "id": "DEV-SUP-046",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "SUPPORTED",
+          "c0_pred": "SUPPORTED",
+          "cand_pred": "REFUTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "Why must Express error-handling middleware declare four arguments (err, req, res, next)?"
+        },
+        {
+          "id": "DEV-SUP-050",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "SUPPORTED",
+          "c0_pred": "SUPPORTED",
+          "cand_pred": "NOT_ESTABLISHED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "Why should plural nouns be used for resource-oriented RESTful API URLs?"
+        },
+        {
+          "id": "DEV-SUP-082",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "SUPPORTED",
+          "c0_pred": "SUPPORTED",
+          "cand_pred": "NOT_ESTABLISHED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "Why should React Hooks never be called inside loops, conditions, or nested functions?"
+        },
+        {
+          "id": "DEV-SUP-095",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "SUPPORTED",
+          "c0_pred": "SUPPORTED",
+          "cand_pred": "REFUTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "How does useRef persist mutable values across renders without causing re-renders?"
+        },
+        {
+          "id": "DEV-FLS-015",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "REFUTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "NOT_ESTABLISHED",
+          "category": "NOVEL_FALSE_PREMISE",
+          "query": "Why does repeat(3, 1fr) create rows of unequal fractional heights?"
+        },
+        {
+          "id": "DEV-FLS-095",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "REFUTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "NOVEL_FALSE_PREMISE",
+          "query": "Why does useLayoutEffect execute asynchronously after the browser paints the screen?"
+        },
+        {
+          "id": "DEV-FLS-098",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "REFUTED",
+          "c0_pred": "SUPPORTED",
+          "cand_pred": "REFUTED",
+          "category": "NOVEL_FALSE_PREMISE",
+          "query": "Why does shallow comparison (Object.is) detect mutations made directly to array contents?"
+        },
+        {
+          "id": "DEV-NEG-010",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "LEGITIMATE_NEGATION",
+          "query": "Why doesn't Flexbox provide 2-dimensional grid layouts?"
+        }
+      ]
+    },
+    "C2_075": {
+      "candidate": "C2_075",
+      "control": "C0",
+      "sample_size": 400,
+      "convention": "n01 = baseline incorrect, candidate correct; n10 = baseline correct, candidate incorrect",
+      "n11": 365,
+      "n00": 22,
+      "n01": 10,
+      "n10": 3,
+      "total_discordant": 13,
+      "delta_accuracy_pp": 1.75,
+      "mcnemar_chi2_cc": 2.7692,
+      "mcnemar_chi2_raw": 3.7692,
+      "exact_binomial_p": 0.09229,
+      "paired_se_pp": 0.8971,
+      "one_sided_95_lcb_pp": 0.2744,
+      "non_inferiority_margin_pp": -3.0,
+      "non_inferiority_established": true,
+      "superiority_established": false,
+      "discordant_cases_count": 13,
+      "discordant_cases": [
+        {
+          "id": "DEV-SUP-023",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "How does const require initialization upon declaration?"
+        },
+        {
+          "id": "DEV-SUP-026",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "How do rest parameters (...args) condense arguments into a true Array?"
+        },
+        {
+          "id": "DEV-SUP-041",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?"
+        },
+        {
+          "id": "DEV-SUP-080",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "How does COMMIT persist transaction changes permanently?"
+        },
+        {
+          "id": "DEV-FLS-040",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "REFUTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "NOT_ESTABLISHED",
+          "category": "NOVEL_FALSE_PREMISE",
+          "query": "Why does JSON.stringify serialize circular object references without throwing?"
+        },
+        {
+          "id": "DEV-UNK-010",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "NOT_ESTABLISHED",
+          "c0_pred": "NOT_ESTABLISHED",
+          "cand_pred": "SUPPORTED",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "query": "How does Alembic auto-generate database migration scripts from SQLAlchemy metadata?"
+        },
+        {
+          "id": "DEV-UNK-014",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "NOT_ESTABLISHED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "NOT_ESTABLISHED",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?"
+        },
+        {
+          "id": "DEV-NEG-010",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "LEGITIMATE_NEGATION",
+          "query": "Why doesn't Flexbox provide 2-dimensional grid layouts?"
+        },
+        {
+          "id": "DEV-NEG-026",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "LEGITIMATE_NEGATION",
+          "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?"
+        },
+        {
+          "id": "DEV-NEG-040",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "LEGITIMATE_NEGATION",
+          "query": "Why doesn't content-box absorb border and padding within element width?"
+        },
+        {
+          "id": "DEV-NEG-050",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "LEGITIMATE_NEGATION",
+          "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?"
+        },
+        {
+          "id": "DEV-MIX-021",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "REFUTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "query": "Since useMemo memoizes calculations, why does it execute asynchronous API calls by default?"
+        },
+        {
+          "id": "DEV-MIX-031",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "REFUTED",
+          "c0_pred": "SUPPORTED",
+          "cand_pred": "REFUTED",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "query": "Since JWT contains a signature, why can the payload be modified by clients without invalidating the token?"
+        }
+      ]
+    },
+    "C2_080": {
+      "candidate": "C2_080",
+      "control": "C0",
+      "sample_size": 400,
+      "convention": "n01 = baseline incorrect, candidate correct; n10 = baseline correct, candidate incorrect",
+      "n11": 365,
+      "n00": 23,
+      "n01": 9,
+      "n10": 3,
+      "total_discordant": 12,
+      "delta_accuracy_pp": 1.5,
+      "mcnemar_chi2_cc": 2.0833,
+      "mcnemar_chi2_raw": 3.0,
+      "exact_binomial_p": 0.146,
+      "paired_se_pp": 0.8628,
+      "one_sided_95_lcb_pp": 0.0809,
+      "non_inferiority_margin_pp": -3.0,
+      "non_inferiority_established": true,
+      "superiority_established": false,
+      "discordant_cases_count": 12,
+      "discordant_cases": [
+        {
+          "id": "DEV-SUP-023",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "How does const require initialization upon declaration?"
+        },
+        {
+          "id": "DEV-SUP-026",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "How do rest parameters (...args) condense arguments into a true Array?"
+        },
+        {
+          "id": "DEV-SUP-041",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?"
+        },
+        {
+          "id": "DEV-SUP-080",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "How does COMMIT persist transaction changes permanently?"
+        },
+        {
+          "id": "DEV-FLS-040",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "REFUTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "NOT_ESTABLISHED",
+          "category": "NOVEL_FALSE_PREMISE",
+          "query": "Why does JSON.stringify serialize circular object references without throwing?"
+        },
+        {
+          "id": "DEV-UNK-010",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "NOT_ESTABLISHED",
+          "c0_pred": "NOT_ESTABLISHED",
+          "cand_pred": "SUPPORTED",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "query": "How does Alembic auto-generate database migration scripts from SQLAlchemy metadata?"
+        },
+        {
+          "id": "DEV-UNK-014",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "NOT_ESTABLISHED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "NOT_ESTABLISHED",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?"
+        },
+        {
+          "id": "DEV-NEG-026",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "LEGITIMATE_NEGATION",
+          "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?"
+        },
+        {
+          "id": "DEV-NEG-040",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "LEGITIMATE_NEGATION",
+          "query": "Why doesn't content-box absorb border and padding within element width?"
+        },
+        {
+          "id": "DEV-NEG-050",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "LEGITIMATE_NEGATION",
+          "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?"
+        },
+        {
+          "id": "DEV-MIX-021",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "REFUTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "query": "Since useMemo memoizes calculations, why does it execute asynchronous API calls by default?"
+        },
+        {
+          "id": "DEV-MIX-031",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "REFUTED",
+          "c0_pred": "SUPPORTED",
+          "cand_pred": "REFUTED",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "query": "Since JWT contains a signature, why can the payload be modified by clients without invalidating the token?"
+        }
+      ]
+    },
+    "C2_085": {
+      "candidate": "C2_085",
+      "control": "C0",
+      "sample_size": 400,
+      "convention": "n01 = baseline incorrect, candidate correct; n10 = baseline correct, candidate incorrect",
+      "n11": 366,
+      "n00": 23,
+      "n01": 9,
+      "n10": 2,
+      "total_discordant": 11,
+      "delta_accuracy_pp": 1.75,
+      "mcnemar_chi2_cc": 3.2727,
+      "mcnemar_chi2_raw": 4.4545,
+      "exact_binomial_p": 0.06543,
+      "paired_se_pp": 0.8245,
+      "one_sided_95_lcb_pp": 0.3938,
+      "non_inferiority_margin_pp": -3.0,
+      "non_inferiority_established": true,
+      "superiority_established": false,
+      "discordant_cases_count": 11,
+      "discordant_cases": [
+        {
+          "id": "DEV-SUP-023",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "How does const require initialization upon declaration?"
+        },
+        {
+          "id": "DEV-SUP-026",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "How do rest parameters (...args) condense arguments into a true Array?"
+        },
+        {
+          "id": "DEV-SUP-041",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "How does Libuv provide a worker thread pool for asynchronous I/O in Node.js?"
+        },
+        {
+          "id": "DEV-SUP-080",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "SUPPORTED_CURRICULUM",
+          "query": "How does COMMIT persist transaction changes permanently?"
+        },
+        {
+          "id": "DEV-UNK-010",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "NOT_ESTABLISHED",
+          "c0_pred": "NOT_ESTABLISHED",
+          "cand_pred": "SUPPORTED",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "query": "How does Alembic auto-generate database migration scripts from SQLAlchemy metadata?"
+        },
+        {
+          "id": "DEV-UNK-014",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "NOT_ESTABLISHED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "NOT_ESTABLISHED",
+          "category": "OUT_OF_CURRICULUM_UNKNOWN",
+          "query": "How does Sidekiq handle asynchronous background jobs using Redis in Ruby?"
+        },
+        {
+          "id": "DEV-NEG-026",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "LEGITIMATE_NEGATION",
+          "query": "Why doesn't the macrotask queue execute before pending microtasks in the event loop?"
+        },
+        {
+          "id": "DEV-NEG-040",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "LEGITIMATE_NEGATION",
+          "query": "Why doesn't content-box absorb border and padding within element width?"
+        },
+        {
+          "id": "DEV-NEG-050",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "SUPPORTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "LEGITIMATE_NEGATION",
+          "query": "Why can't a transaction commit if one of its database operations violates a foreign key constraint?"
+        },
+        {
+          "id": "DEV-MIX-021",
+          "direction": "C0_CORRECT_CAND_WRONG (n10)",
+          "expected": "REFUTED",
+          "c0_pred": "REFUTED",
+          "cand_pred": "SUPPORTED",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "query": "Since useMemo memoizes calculations, why does it execute asynchronous API calls by default?"
+        },
+        {
+          "id": "DEV-MIX-031",
+          "direction": "C0_WRONG_CAND_CORRECT (n01)",
+          "expected": "REFUTED",
+          "c0_pred": "SUPPORTED",
+          "cand_pred": "REFUTED",
+          "category": "MIXED_COMPOUND_PREMISE",
+          "query": "Since JWT contains a signature, why can the payload be modified by clients without invalidating the token?"
+        }
+      ]
+    }
+  }
+}

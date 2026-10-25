@@ -1,0 +1,426 @@
+{
+  "experiment_tag": "EXP-0024-DEVELOPMENT-RESULTS",
+  "timestamp": "2026-09-12T09:49:14.698Z",
+  "total_cases": 400,
+  "overall_accuracy": "81.50%",
+  "core_metrics": {
+    "false_acceptance_rate_far": "11.00%",
+    "refutation_recall": "72.00%",
+    "false_refutation_rate_frr": "2.00%",
+    "unknown_recall": "100.00%",
+    "supported_recall": "72.00%",
+    "mixed_refutation_recall": "74.00%",
+    "evidence_used_compliance": "100.00%"
+  },
+  "confusion_matrix": {
+    "SUPPORTED": {
+      "SUPPORTED": 117,
+      "REFUTED": 22,
+      "NOT_ESTABLISHED": 11
+    },
+    "REFUTED": {
+      "SUPPORTED": 15,
+      "REFUTED": 109,
+      "NOT_ESTABLISHED": 26
+    },
+    "NOT_ESTABLISHED": {
+      "SUPPORTED": 0,
+      "REFUTED": 0,
+      "NOT_ESTABLISHED": 100
+    }
+  },
+  "category_breakdown": {
+    "supported_curriculum": {
+      "total": 100,
+      "correct": 72,
+      "accuracy": "72.00%"
+    },
+    "novel_false_premises": {
+      "total": 100,
+      "refuted": 72,
+      "falsely_accepted": 11,
+      "far": "11.00%",
+      "refutation_recall": "72.00%"
+    },
+    "out_of_curriculum_unknown": {
+      "total": 100,
+      "not_established": 100,
+      "falsely_refuted": 0,
+      "falsely_supported": 0,
+      "unknown_recall": "100.00%"
+    },
+    "legitimate_negation": {
+      "total": 50,
+      "supported": 45,
+      "falsely_refuted": 1,
+      "frr": "2.00%"
+    },
+    "mixed_compound_premises": {
+      "total": 50,
+      "refuted": 37,
+      "refutation_rate": "74.00%"
+    }
+  },
+  "sample_records": [
+    {
+      "id": "DEV-SUP-001",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does display: flex initiate flex formatting context?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 3852
+    },
+    {
+      "id": "DEV-SUP-002",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does justify-content align items along the main axis in Flexbox?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 5424
+    },
+    {
+      "id": "DEV-SUP-004",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What is the function of the gap property in CSS Flexbox?",
+      "expected": "SUPPORTED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Insufficient evidence in retrieved curriculum passages to establish premise",
+      "latency_ms": 5466
+    },
+    {
+      "id": "DEV-SUP-003",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does align-items control cross-axis alignment in Flexbox?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 6944
+    },
+    {
+      "id": "DEV-SUP-005",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does flex-direction column stack items vertically?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 3166
+    },
+    {
+      "id": "DEV-SUP-006",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does flex-grow distribute remaining space in a flex container?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 3506
+    },
+    {
+      "id": "DEV-SUP-008",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does display: grid activate a 2-dimensional layout system?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[HTML & CSS Fundamentals - Chunk 2]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 2043
+    },
+    {
+      "id": "DEV-SUP-007",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does flex-shrink allow items to shrink when space is constrained?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 5698
+    },
+    {
+      "id": "DEV-SUP-010",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does minmax(280px, 1fr) provide responsive columns in CSS Grid?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 5241
+    },
+    {
+      "id": "DEV-SUP-012",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does box-sizing: border-box include padding and border within element width?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 3069
+    },
+    {
+      "id": "DEV-SUP-009",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does grid-template-columns repeat(3, 1fr) create three equal tracks?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 8589
+    },
+    {
+      "id": "DEV-SUP-011",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What is the difference between content-box and border-box in the CSS Box Model?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[HTML & CSS Fundamentals - Chunk 1]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 6664
+    },
+    {
+      "id": "DEV-SUP-013",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What is the purpose of the semantic <main> element in HTML5?",
+      "expected": "SUPPORTED",
+      "predicted": "NOT_ESTABLISHED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Insufficient evidence in retrieved curriculum passages to establish premise",
+      "latency_ms": 1536
+    },
+    {
+      "id": "DEV-SUP-015",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What is the purpose of semantic <article> elements for self-contained content?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[HTML & CSS Fundamentals - Chunk 0]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 184
+    },
+    {
+      "id": "DEV-SUP-014",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "Why can there only be one <main> element per HTML document?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 2819
+    },
+    {
+      "id": "DEV-SUP-017",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does semantic <footer> contain copyright and author links?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 2562
+    },
+    {
+      "id": "DEV-SUP-016",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does semantic <header> represent introductory content?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 3872
+    },
+    {
+      "id": "DEV-SUP-019",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does grid-column span 2 span an item across two tracks?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 3747
+    },
+    {
+      "id": "DEV-SUP-018",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How do semantic HTML tags improve accessibility and screen-reader navigation?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 6733
+    },
+    {
+      "id": "DEV-SUP-021",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does let confine variables to block scope?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 5399
+    },
+    {
+      "id": "DEV-SUP-020",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What layers constitute the CSS box model from inside out?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 8541
+    },
+    {
+      "id": "DEV-SUP-023",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does const require initialization upon declaration?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 6152
+    },
+    {
+      "id": "DEV-SUP-025",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "Why do arrow functions eliminate the need for .bind(this) in callbacks?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[React Hooks Tutorial - Chunk 0]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 1891
+    },
+    {
+      "id": "DEV-SUP-022",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What happens when a variable in the Temporal Dead Zone is accessed before declaration?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 9606
+    },
+    {
+      "id": "DEV-SUP-027",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does object destructuring extract properties into local variables?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 3454
+    },
+    {
+      "id": "DEV-SUP-024",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How do arrow functions inherit this from their enclosing lexical context?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 8511
+    },
+    {
+      "id": "DEV-SUP-029",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "What are the three distinct states of a JavaScript Promise?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 2958
+    },
+    {
+      "id": "DEV-SUP-031",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does async/await allow asynchronous code to be written sequentially?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[Node.js & Express REST API Notes - Chunk 0]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 53
+    },
+    {
+      "id": "DEV-SUP-026",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How do rest parameters (...args) condense arguments into a true Array?",
+      "expected": "SUPPORTED",
+      "predicted": "SUPPORTED",
+      "correct": true,
+      "evidence_used": true,
+      "citation": "",
+      "decision_reason": "Premise supported by retrieved curriculum evidence with matching polarity",
+      "latency_ms": 8435
+    },
+    {
+      "id": "DEV-SUP-033",
+      "category": "SUPPORTED_CURRICULUM",
+      "query": "How does Promise.allSettled wait for all promises to settle regardless of outcome?",
+      "expected": "SUPPORTED",
+      "predicted": "REFUTED",
+      "correct": false,
+      "evidence_used": true,
+      "citation": "[JavaScript ES6+ Deep Dive - Chunk 3]",
+      "decision_reason": "Contradictory evidence found in curriculum passages",
+      "latency_ms": 46
+    }
+  ]
+}

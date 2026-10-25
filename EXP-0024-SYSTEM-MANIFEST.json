@@ -1,0 +1,62 @@
+{
+    "experiment_tag": "EXP-0024",
+    "status": "REMEDIATION_CANDIDATE",
+    "timestamp": "2026-09-13T05:29:26+00:00",
+    "git_commit": "176883227602671b545e061dacf228aedc3271a5",
+    "runtime_versions": {
+        "php": "8.3.32",
+        "node": "v24.11.0",
+        "os": "WINNT 10.0"
+    },
+    "sha256_file_hashes": {
+        "rag_premise_verifier.php": "4aa58c3283ef4ce8ec5f8853b318d5531425c657952764faced6425fac768705",
+        "rag_service.php": "72ed914be01bfc7f18b7a323ba5ba74e916970d03e12ffc0d2a769a06b7c077f",
+        "rag_flags.php": "dfc0c01b195f6e15f35c0c0711fbde812d849bc14784cc7376c91dde877989bb",
+        "rag_flags.json": "c814568feadfda105e84730d943fbe700ef55d61532a4067594e354b7c18f423",
+        "gateway.js": "425c88d0ced81b672fa2003e51fb67b63a5817e40158fea7b4f95e1da5290741",
+        "index.php": "c399719cedcbef00cb011580e8dde4b770f9ccdeda66ced23d70d84cc622a3cb",
+        "rag_safety_boundary.php": "ec2870bc4b84b694aaa85033ca2cfca4382f8eb57aac4ae3ca2d9c4615592541",
+        "rag_query_condenser.php": "80292a0b5b944066b1c40c5d692ee1316c1949b0666cda5d32dedd4bb5f1e105"
+    },
+    "active_flags": {
+        "ENABLE_INPUT_SANITY": true,
+        "ENABLE_TYPO_NORMALIZATION": true,
+        "ENABLE_SEMANTIC_RERANK": true,
+        "ENABLE_DYNAMIC_K": true,
+        "ENABLE_ENTITY_MEMORY": true,
+        "ENABLE_PREMISE_VERIFIER": true,
+        "ENABLE_CITATION_ENFORCEMENT": true,
+        "ENABLE_CURRICULUM_BOUNDARY": true,
+        "ENABLE_RATE_LIMIT": true,
+        "ENABLE_WARMUP": true
+    },
+    "worker_configuration": {
+        "gateway_port": 8000,
+        "fast_ports": [
+            8001,
+            8002,
+            8003,
+            8004,
+            8005,
+            8006
+        ],
+        "gen_ports": [
+            8007,
+            8008
+        ],
+        "total_workers": 8,
+        "service_key_enforced": true
+    },
+    "corpus_metadata": {
+        "total_chunks": 17,
+        "total_courses": 5,
+        "embedding_dimension": 768,
+        "embedding_model": "nomic-embed-text:latest",
+        "generation_model": "llama3.2:latest"
+    },
+    "certifications": {
+        "static_audit": "EXP-0024-STATIC-AUDIT.json",
+        "security_lockdown": "EXP-0024A-SECURITY-RESULTS.json",
+        "verifier_architecture": "EXP-0024-VERIFIER-ARCHITECTURE.md"
+    }
+}

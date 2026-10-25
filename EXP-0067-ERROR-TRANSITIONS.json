@@ -1,0 +1,75 @@
+{
+  "C1": {
+    "b_fixed": 2,
+    "c_broken": 96,
+    "net_gain": -94,
+    "mcnemar_p_value": 0.0,
+    "statistically_significant": true,
+    "accuracy_delta_pp": -23.5,
+    "transitions_sample": {
+      "SUPPORTED: C0(SUPPORTED) -> C1(NOT_ESTABLISHED)": 69,
+      "REFUTED: C0(REFUTED) -> C1(NOT_ESTABLISHED)": 24,
+      "REFUTED: C0(SUPPORTED) -> C1(NOT_ESTABLISHED)": 8,
+      "SUPPORTED: C0(REFUTED) -> C1(NOT_ESTABLISHED)": 7,
+      "SUPPORTED: C0(SUPPORTED) -> C1(REFUTED)": 3,
+      "NOT_ESTABLISHED: C0(SUPPORTED) -> C1(NOT_ESTABLISHED)": 1,
+      "REFUTED: C0(SUPPORTED) -> C1(REFUTED)": 1
+    }
+  },
+  "C2": {
+    "b_fixed": 10,
+    "c_broken": 66,
+    "net_gain": -56,
+    "mcnemar_p_value": 0.0,
+    "statistically_significant": true,
+    "accuracy_delta_pp": -14.0,
+    "transitions_sample": {
+      "SUPPORTED: C0(SUPPORTED) -> C2(REFUTED)": 29,
+      "SUPPORTED: C0(SUPPORTED) -> C2(NOT_ESTABLISHED)": 26,
+      "REFUTED: C0(REFUTED) -> C2(NOT_ESTABLISHED)": 11,
+      "REFUTED: C0(SUPPORTED) -> C2(REFUTED)": 6,
+      "REFUTED: C0(SUPPORTED) -> C2(NOT_ESTABLISHED)": 3,
+      "SUPPORTED: C0(REFUTED) -> C2(SUPPORTED)": 2,
+      "NOT_ESTABLISHED: C0(SUPPORTED) -> C2(NOT_ESTABLISHED)": 1,
+      "REFUTED: C0(NOT_ESTABLISHED) -> C2(REFUTED)": 1
+    }
+  },
+  "C3": {
+    "b_fixed": 2,
+    "c_broken": 70,
+    "net_gain": -68,
+    "mcnemar_p_value": 0.0,
+    "statistically_significant": true,
+    "accuracy_delta_pp": -17.0,
+    "transitions_sample": {
+      "SUPPORTED: C0(SUPPORTED) -> C3(NOT_ESTABLISHED)": 45,
+      "REFUTED: C0(REFUTED) -> C3(NOT_ESTABLISHED)": 20,
+      "SUPPORTED: C0(REFUTED) -> C3(NOT_ESTABLISHED)": 7,
+      "REFUTED: C0(SUPPORTED) -> C3(NOT_ESTABLISHED)": 7,
+      "SUPPORTED: C0(SUPPORTED) -> C3(REFUTED)": 5,
+      "NOT_ESTABLISHED: C0(SUPPORTED) -> C3(NOT_ESTABLISHED)": 1,
+      "REFUTED: C0(SUPPORTED) -> C3(REFUTED)": 1
+    }
+  },
+  "C4": {
+    "b_fixed": 9,
+    "c_broken": 54,
+    "net_gain": -45,
+    "mcnemar_p_value": 0.0,
+    "statistically_significant": true,
+    "accuracy_delta_pp": -11.25,
+    "transitions_sample": {
+      "SUPPORTED: C0(SUPPORTED) -> C4(REFUTED)": 44,
+      "SUPPORTED: C0(SUPPORTED) -> C4(NOT_ESTABLISHED)": 6,
+      "REFUTED: C0(SUPPORTED) -> C4(REFUTED)": 6,
+      "REFUTED: C0(REFUTED) -> C4(NOT_ESTABLISHED)": 2,
+      "REFUTED: C0(NOT_ESTABLISHED) -> C4(REFUTED)": 2,
+      "SUPPORTED: C0(REFUTED) -> C4(SUPPORTED)": 1,
+      "SUPPORTED: C0(REFUTED) -> C4(NOT_ESTABLISHED)": 1,
+      "REFUTED: C0(REFUTED) -> C4(SUPPORTED)": 1,
+      "NOT_ESTABLISHED: C0(SUPPORTED) -> C4(REFUTED)": 1,
+      "NOT_ESTABLISHED: C0(NOT_ESTABLISHED) -> C4(REFUTED)": 1,
+      "REFUTED: C0(SUPPORTED) -> C4(NOT_ESTABLISHED)": 1
+    }
+  }
+}

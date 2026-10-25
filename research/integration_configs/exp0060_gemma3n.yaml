@@ -1,0 +1,21 @@
+experiment_id: EXP-0060
+base_commit: fc7e5021a40566f040fbbdaea4d5f04e770a6b40
+description: Gemma 3n E2B Lightweight Local Router and Preliminary Helper Inference
+feature_flags:
+  ENABLE_DOCLING_RS: false
+  ENABLE_PAGEINDEX: false
+  ENABLE_LLAMA_CPP: false
+  ENABLE_LLMLINGUA: false
+  ENABLE_SURYA: false
+  ENABLE_GEMMA3N: true
+  ENABLE_BITNET: false
+  ENABLE_MARKER: false
+llm_backend: gemma3n
+model_id: google/gemma-3n-E2B-it
+role: retrieval_router
+retriever: exp0040
+verifier:
+  name: A4
+  frozen: true
+device: cpu
+seed: 42

@@ -1,0 +1,81 @@
+{
+    "manifest_version": "1.0.0",
+    "experiment_id": "EXP-0028 SHADOW",
+    "timestamp": "2026-09-16T06:51:10+00:00",
+    "git_branch": "exp-0028",
+    "git_commit": "2cfc95a",
+    "production_status": "UNTOUCHED",
+    "dataset": {
+        "file": "EXP-0028-SHADOW-DATASET.json",
+        "total_cases": 500,
+        "sha256": "54586d27794d9539bff8ec89ba8b7f8de1b274ea392fec55053c217679dc1272",
+        "categories": {
+            "SUPPORTED": 150,
+            "FALSE_PREMISE": 100,
+            "AMBIGUOUS": 75,
+            "OOD": 75,
+            "PARAPHRASE": 50,
+            "MULTI_TURN": 25,
+            "ADVERSARIAL": 25
+        }
+    },
+    "verifier": {
+        "file": "backend\/rag_premise_verifier.php",
+        "sha256": "bd800f2eaa3e10398e4abd328e6b699b7621e83bc2ae42682cf9192c965543aa",
+        "candidate_mode": "B5 (FROZEN CHAMPION)",
+        "baseline_mode": "A5 (EXP-0027 CHAMPION)",
+        "ollama_model": "llama3.2:latest",
+        "temperature": 0
+    },
+    "evaluation_summary": {
+        "A5": {
+            "accuracy_pct": 63.4,
+            "macro_f1_pct": 61.23,
+            "refutation_recall_pct": 46.4,
+            "far_pct": 26.4,
+            "frr_pct": 23.56,
+            "uncached_p50_ms": 976.9,
+            "uncached_p95_ms": 1223,
+            "evidence_used_pct": 100
+        },
+        "B5": {
+            "accuracy_pct": 64.8,
+            "macro_f1_pct": 63.98,
+            "refutation_recall_pct": 64.8,
+            "far_pct": 26.4,
+            "frr_pct": 24.44,
+            "uncached_p50_ms": 1019.7,
+            "uncached_p95_ms": 2112.6,
+            "two_pass_rate_pct": 31,
+            "evidence_used_pct": 100
+        },
+        "deltas": {
+            "accuracy_delta_pct": 1.4,
+            "macro_f1_delta_pct": 2.75,
+            "refutation_recall_delta_pct": 18.4,
+            "far_delta_pct": 0
+        },
+        "statistical_test": {
+            "mcnemar_chi2": 0.3186,
+            "p_value": 0.109577,
+            "statistically_significant": false,
+            "net_improvement": 7
+        },
+        "multi_turn": {
+            "total_scenarios": 25,
+            "total_turns": 88,
+            "a5_turn_acc_pct": 65.91,
+            "b5_turn_acc_pct": 64.77,
+            "a5_contamination_pct": 9.09,
+            "b5_contamination_pct": 7.95
+        }
+    },
+    "security_regression": {
+        "status": "PASS",
+        "production_repo_isolated": true,
+        "flags_protected": true,
+        "evidence_used_invariant": "100.0%"
+    },
+    "decision": "SHADOW CONDITIONAL",
+    "next_step": "Maintain B5 as experimental champion; address ambiguous query over-refutation in EXP-0029 before production deployment"
+}

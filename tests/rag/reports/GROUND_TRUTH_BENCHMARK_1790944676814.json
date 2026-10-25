@@ -1,0 +1,1982 @@
+{
+  "metadata": {
+    "timestamp": "2026-10-02T12:37:56.807Z",
+    "corpusSize": 1323,
+    "embeddingModel": "nomic-embed-text",
+    "vectorDimensions": 768
+  },
+  "aggregateMetrics": {
+    "precision1": 0.9,
+    "precision3": 0.5333,
+    "precision5": 0.345,
+    "recall5": 1,
+    "mrr": 0.9458,
+    "ndcg5": 0.7175,
+    "keywordRecall": 0.8025,
+    "hitRate1": 0.9,
+    "hitRate3": 1,
+    "hitRate5": 1
+  },
+  "queryResults": [
+    {
+      "id": "gold_01",
+      "query": "What is the purpose of the <main> HTML5 semantic element and how many can exist in a document?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.8302817258600731
+        },
+        {
+          "id": "book_ejs_chunk_138",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6291467844262297
+        },
+        {
+          "id": "book_ejs_chunk_130",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6287976877690609
+        },
+        {
+          "id": "book_ejs_chunk_131",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6256038771758335
+        },
+        {
+          "id": "book_ejs_chunk_127",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6130544914208386
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.75,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_02",
+      "query": "Explain the four layers of the CSS Box Model from inside out.",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.798874385356961
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6538546259607939
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6400200116272197
+        },
+        {
+          "id": "book_ejs_chunk_173",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.614460193692384
+        },
+        {
+          "id": "book_ejs_chunk_201",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.5895165525874264
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_03",
+      "query": "Why is * { box-sizing: border-box; } recommended over content-box in CSS?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.8001064073817038
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6483874852225077
+        },
+        {
+          "id": "book_ejs_chunk_141",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6266476836288752
+        },
+        {
+          "id": "book_ejs_chunk_173",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6077489247867887
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6068255166015998
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.6
+        },
+        "ndcg5": 0.9625594291468043,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_04",
+      "query": "In CSS Flexbox, what is the difference between justify-content and align-items?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.7540862498341739
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6716306735692007
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6100662148609018
+        },
+        {
+          "id": "book_ejs_chunk_173",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6090217060874229
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.597807236022427
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_05",
+      "query": "What are the core child flex properties that make up the flex shorthand in CSS?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.7462137373826538
+        },
+        {
+          "id": "book_ejs_chunk_173",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6302050664380247
+        },
+        {
+          "id": "book_ejs_chunk_141",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6138072316825832
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.5980697864306146
+        },
+        {
+          "id": "book_ejs_chunk_140",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.5956139558982197
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.75,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.6824874185069553,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_06",
+      "query": "What is CSS Grid and how does it differ in dimensionality from Flexbox?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.7744963233944258
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.7618327039055499
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.7079671352059381
+        },
+        {
+          "id": "book_ejs_chunk_173",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6320172574251827
+        },
+        {
+          "id": "book_ejs_chunk_158",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6169655843820695
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_07",
+      "query": "What are the benefits of using HTML5 semantic elements instead of generic div tags?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.8219692335808685
+        },
+        {
+          "id": "book_ejs_chunk_135",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6366412232590175
+        },
+        {
+          "id": "book_ejs_chunk_130",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.632348140776628
+        },
+        {
+          "id": "book_ejs_chunk_131",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6097451616221189
+        },
+        {
+          "id": "book_ejs_chunk_144",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.5995587820074793
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_08",
+      "query": "How does the gap property in CSS Flexbox simplify spacing between items?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.767655955321258
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6851192106188813
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6785368574511332
+        },
+        {
+          "id": "book_ejs_chunk_173",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6031137724613505
+        },
+        {
+          "id": "book_pg16_chunk_186",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5967551374828495
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_09",
+      "query": "How do var, let, and const differ in terms of scoping, hoisting, and Temporal Dead Zone?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.7560377917190677
+        },
+        {
+          "id": "book_ejs_chunk_7",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6457051838383326
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.6394362832293332
+        },
+        {
+          "id": "book_pg16_chunk_207",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6385831700426398
+        },
+        {
+          "id": "book_ejs_chunk_32",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6264849090649176
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.875,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_10",
+      "query": "Can you mutate object properties or array elements declared with const in JavaScript?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.7149610101720812
+        },
+        {
+          "id": "book_ejs_chunk_32",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.7023888064788556
+        },
+        {
+          "id": "book_py_chunk_145",
+          "title": "Think Python: How to Think Like a Computer Scientist",
+          "score": 0.6817464796593701
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.6811674282627955
+        },
+        {
+          "id": "book_pg16_chunk_207",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6440142036403145
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.9522357846460809,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_11",
+      "query": "How do arrow functions handle this differently from traditional function declarations?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "book_ejs_chunk_26",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.8139171913434577
+        },
+        {
+          "id": "book_ejs_chunk_19",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.7886456920140704
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.7506512409689489
+        },
+        {
+          "id": "book_ejs_chunk_18",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.7130080689617353
+        },
+        {
+          "id": "book_py_chunk_24",
+          "title": "Think Python: How to Think Like a Computer Scientist",
+          "score": 0.6341413053097976
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 0.3333333333333333,
+        "keywordRecall": 0.75,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.7302516338608744,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_12",
+      "query": "What happens if you invoke an arrow function using the new keyword?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.6725476241227696
+        },
+        {
+          "id": "book_ejs_chunk_19",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6662676324125826
+        },
+        {
+          "id": "book_ejs_chunk_26",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6270017858675951
+        },
+        {
+          "id": "book_ejs_chunk_194",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6076145843534174
+        },
+        {
+          "id": "book_pg16_chunk_271",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5913099482021247
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.7467866000122104,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_13",
+      "query": "What is the difference between the spread operator and rest parameters in JavaScript ES6?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.7363059316206745
+        },
+        {
+          "id": "book_ejs_chunk_199",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.644299282817586
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.6236675164049127
+        },
+        {
+          "id": "book_ejs_chunk_17",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.5961708083928265
+        },
+        {
+          "id": "book_pg16_chunk_207",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5930350577421505
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.9583179484464869,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_14",
+      "query": "What are the three possible states of a JavaScript Promise?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.7387674565441231
+        },
+        {
+          "id": "book_ejs_chunk_107",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6846929858564316
+        },
+        {
+          "id": "book_ejs_chunk_112",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6479177311060557
+        },
+        {
+          "id": "book_ejs_chunk_197",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.634961935834149
+        },
+        {
+          "id": "book_ejs_chunk_67",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.632161615743931
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.75,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_15",
+      "query": "How does async/await interact with JavaScript Promises and error handling?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.8473053559612146
+        },
+        {
+          "id": "book_ejs_chunk_112",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.7654585363429298
+        },
+        {
+          "id": "book_ejs_chunk_108",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.7561257481156344
+        },
+        {
+          "id": "book_ejs_chunk_106",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.7243322614978245
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.6905470000377659
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8333333333333334,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.9417829822951509,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_16",
+      "query": "What is the Temporal Dead Zone (TDZ) in JavaScript let and const declarations?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.7408689232869342
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.6384699710198013
+        },
+        {
+          "id": "book_ejs_chunk_7",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6319088802421347
+        },
+        {
+          "id": "book_ejs_chunk_32",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6229811570538483
+        },
+        {
+          "id": "book_ejs_chunk_106",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6193151769774217
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_17",
+      "query": "What are the two fundamental Rules of Hooks in React?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.8333671708679874
+        },
+        {
+          "id": "book_pg16_chunk_222",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6322551044379592
+        },
+        {
+          "id": "book_git_chunk_182",
+          "title": "Pro Git (2nd Ed)",
+          "score": 0.6289966455226298
+        },
+        {
+          "id": "book_git_chunk_103",
+          "title": "Pro Git (2nd Ed)",
+          "score": 0.6217424481913915
+        },
+        {
+          "id": "book_git_chunk_180",
+          "title": "Pro Git (2nd Ed)",
+          "score": 0.6171117121346603
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_18",
+      "query": "Why must state updates in useState be immutable when updating objects or arrays?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.8021987967478054
+        },
+        {
+          "id": "book_ejs_chunk_67",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.7089120396393123
+        },
+        {
+          "id": "book_py_chunk_60",
+          "title": "Think Python: How to Think Like a Computer Scientist",
+          "score": 0.6897601532607356
+        },
+        {
+          "id": "book_ejs_chunk_202",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6709029127245786
+        },
+        {
+          "id": "book_ejs_chunk_37",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6661455377396648
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.2,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.7197988315099445,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_19",
+      "query": "How does the dependency array in useEffect determine when the effect runs?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.7719092696949883
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "title": "React Hooks Tutorial",
+          "score": 0.5988974984286035
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.5842668430483285
+        },
+        {
+          "id": "book_py_chunk_19",
+          "title": "Think Python: How to Think Like a Computer Scientist",
+          "score": 0.562490028413281
+        },
+        {
+          "id": "book_ejs_chunk_35",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.5591466439595757
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_20",
+      "query": "What is the purpose of the cleanup function returned by a useEffect hook?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.7608249599143072
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "title": "React Hooks Tutorial",
+          "score": 0.6204886647239238
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.6088133246574585
+        },
+        {
+          "id": "book_py_chunk_22",
+          "title": "Think Python: How to Think Like a Computer Scientist",
+          "score": 0.6029201149496378
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "title": "React Hooks Tutorial",
+          "score": 0.5942017054438711
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.6666666666666666,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_21",
+      "query": "What is the difference between useMemo and useCallback in React?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "title": "React Hooks Tutorial",
+          "score": 0.7580166895541335
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.5940306819047975
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.5818528473147426
+        },
+        {
+          "id": "book_py_chunk_14",
+          "title": "Think Python: How to Think Like a Computer Scientist",
+          "score": 0.5749411849958871
+        },
+        {
+          "id": "book_ejs_chunk_99",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.5569418882488167
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.4,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_22",
+      "query": "How does useRef differ from useState in triggering component re-renders?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "title": "React Hooks Tutorial",
+          "score": 0.7024923853752999
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.6643020466592338
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.6322081721091724
+        },
+        {
+          "id": "book_ejs_chunk_202",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6128831633014292
+        },
+        {
+          "id": "book_ejs_chunk_234",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.5727134860605354
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_23",
+      "query": "How do createContext and useContext work together to eliminate prop drilling?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_3",
+          "title": "React Hooks Tutorial",
+          "score": 0.6664503752895836
+        },
+        {
+          "id": "book_pg16_chunk_222",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5871797365747952
+        },
+        {
+          "id": "book_pg16_chunk_314",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5863275149277557
+        },
+        {
+          "id": "book_pg16_chunk_76",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5835101650724591
+        },
+        {
+          "id": "book_git_chunk_180",
+          "title": "Pro Git (2nd Ed)",
+          "score": 0.5731509802765254
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_24",
+      "query": "What is the functional update form of useState and when should it be used?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.7509696581013545
+        },
+        {
+          "id": "book_ejs_chunk_202",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6703484353276753
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.6496160751800535
+        },
+        {
+          "id": "book_py_chunk_60",
+          "title": "Think Python: How to Think Like a Computer Scientist",
+          "score": 0.6271812872022097
+        },
+        {
+          "id": "book_ejs_chunk_199",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6168001446662793
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.75,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.7155573508096272,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_25",
+      "query": "What is the Node.js architecture and how does the Event Loop handle asynchronous operations?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.8607712827114354
+        },
+        {
+          "id": "book_ejs_chunk_106",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.7378256413735946
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.701925275754095
+        },
+        {
+          "id": "book_ejs_chunk_214",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.7013754258592299
+        },
+        {
+          "id": "book_ejs_chunk_105",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6690374074205121
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8333333333333334,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.5962977923413559,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_26",
+      "query": "What are the four parameters required in Express error-handling middleware?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7285756094804688
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.625948814891482
+        },
+        {
+          "id": "book_pg16_chunk_324",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6024334143533412
+        },
+        {
+          "id": "book_py_chunk_25",
+          "title": "Think Python: How to Think Like a Computer Scientist",
+          "score": 0.5953561032222413
+        },
+        {
+          "id": "book_ejs_chunk_187",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.5888516223893201
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_27",
+      "query": "What does the next() function do in an Express middleware chain?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7643854810953423
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.6663691249706479
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.5938578254803427
+        },
+        {
+          "id": "book_py_chunk_24",
+          "title": "Think Python: How to Think Like a Computer Scientist",
+          "score": 0.587144759174021
+        },
+        {
+          "id": "book_pg16_chunk_222",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5830442502707874
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.25,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.7780158492147935,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_28",
+      "query": "What are the three parts of a JSON Web Token (JWT) and how are they separated?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7424857107635736
+        },
+        {
+          "id": "book_ejs_chunk_41",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6222131897540507
+        },
+        {
+          "id": "book_pg16_chunk_273",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5858879726966286
+        },
+        {
+          "id": "book_pg16_chunk_271",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.57604155267192
+        },
+        {
+          "id": "book_ejs_chunk_227",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.5712860953153689
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_29",
+      "query": "What are the key differences between HTTP 401 Unauthorized and 403 Forbidden status codes?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "book_ejs_chunk_187",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.733360502693101
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.6189509756330105
+        },
+        {
+          "id": "book_ejs_chunk_199",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6004742347608131
+        },
+        {
+          "id": "book_git_chunk_239",
+          "title": "Pro Git (2nd Ed)",
+          "score": 0.5971122961382258
+        },
+        {
+          "id": "book_git_chunk_49",
+          "title": "Pro Git (2nd Ed)",
+          "score": 0.5793171133619467
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 0.5,
+        "keywordRecall": 0.5,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.3009776153417087,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_30",
+      "query": "What are the RESTful naming conventions for API endpoint URIs?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7170507622250769
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.6239638687349223
+        },
+        {
+          "id": "book_ejs_chunk_221",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.5862593986920311
+        },
+        {
+          "id": "book_pg16_chunk_342",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5858647791274287
+        },
+        {
+          "id": "book_pg16_chunk_171",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.58001879940671
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.875,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_31",
+      "query": "What built-in Express middleware is used to parse incoming JSON request bodies?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7305906000447582
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7160008668048147
+        },
+        {
+          "id": "book_ejs_chunk_189",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6242738716633205
+        },
+        {
+          "id": "book_ejs_chunk_231",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6065147386511717
+        },
+        {
+          "id": "book_pg16_chunk_277",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5749579818752147
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.6666666666666666,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.7780158492147935,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_32",
+      "query": "Why should CPU-intensive tasks not be executed directly on the Node.js main thread?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7062391106698195
+        },
+        {
+          "id": "book_ejs_chunk_214",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6274021888855714
+        },
+        {
+          "id": "book_ejs_chunk_106",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6218023659915386
+        },
+        {
+          "id": "book_ejs_chunk_154",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.6120645983462605
+        },
+        {
+          "id": "book_ejs_chunk_218",
+          "title": "Eloquent JavaScript (4th Ed)",
+          "score": 0.5951812289465671
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.5,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_33",
+      "query": "How is a Many-to-Many relationship implemented between tables in a relational database?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0",
+          "title": "PostgreSQL Database Design",
+          "score": 0.7907107316756842
+        },
+        {
+          "id": "book_pg16_chunk_112",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6958825484422877
+        },
+        {
+          "id": "book_pg16_chunk_61",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.689001153672392
+        },
+        {
+          "id": "book_py_chunk_171",
+          "title": "Think Python: How to Think Like a Computer Scientist",
+          "score": 0.6449129833711829
+        },
+        {
+          "id": "book_pg16_chunk_62",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6425753565980428
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.6,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_34",
+      "query": "What are the requirements for a database table to satisfy First Normal Form (1NF)?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "title": "PostgreSQL Database Design",
+          "score": 0.7766715039331391
+        },
+        {
+          "id": "book_pg16_chunk_295",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.636044872742903
+        },
+        {
+          "id": "book_fds_chunk_164",
+          "title": "Foundations of Data Science (Blum, Hopcroft, Kannan)",
+          "score": 0.6306531066823327
+        },
+        {
+          "id": "book_pg16_chunk_137",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6217213600833792
+        },
+        {
+          "id": "book_pg16_chunk_300",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6171482248613425
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_35",
+      "query": "What constitutes Second Normal Form (2NF) and how does it prevent partial dependency?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "title": "PostgreSQL Database Design",
+          "score": 0.7176949509515432
+        },
+        {
+          "id": "book_fds_chunk_164",
+          "title": "Foundations of Data Science (Blum, Hopcroft, Kannan)",
+          "score": 0.6260351946675884
+        },
+        {
+          "id": "book_pg16_chunk_296",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5965614701788645
+        },
+        {
+          "id": "book_pg16_chunk_191",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.571913909453616
+        },
+        {
+          "id": "book_pg16_chunk_225",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5697847996973905
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_36",
+      "query": "What is Third Normal Form (3NF) and how does it eliminate transitive dependencies?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "title": "PostgreSQL Database Design",
+          "score": 0.7219542165435378
+        },
+        {
+          "id": "book_fds_chunk_164",
+          "title": "Foundations of Data Science (Blum, Hopcroft, Kannan)",
+          "score": 0.5985084799030269
+        },
+        {
+          "id": "book_fds_chunk_169",
+          "title": "Foundations of Data Science (Blum, Hopcroft, Kannan)",
+          "score": 0.5930916503390353
+        },
+        {
+          "id": "book_pg16_chunk_201",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5787072396422607
+        },
+        {
+          "id": "book_pg16_chunk_296",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.5769747384011078
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.75,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_37",
+      "query": "What are the four ACID properties in database transactions and what do they guarantee?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3",
+          "title": "PostgreSQL Database Design",
+          "score": 0.8055317752659602
+        },
+        {
+          "id": "book_pg16_chunk_38",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6329958860929784
+        },
+        {
+          "id": "book_pg16_chunk_61",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6324108110829904
+        },
+        {
+          "id": "book_pg16_chunk_76",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6249454935895901
+        },
+        {
+          "id": "book_pg16_chunk_268",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6229405833504533
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.4770382338730848,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_38",
+      "query": "What is a B-tree index in PostgreSQL and what types of queries does it optimize?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "title": "PostgreSQL Database Design",
+          "score": 0.8252991090737155
+        },
+        {
+          "id": "book_pg16_chunk_355",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.7606847920970616
+        },
+        {
+          "id": "book_pg16_chunk_358",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.697889236479266
+        },
+        {
+          "id": "book_pg16_chunk_295",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6968038144971699
+        },
+        {
+          "id": "book_pg16_chunk_356",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6952097381470818
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8333333333333334,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.9417829822951509,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_39",
+      "query": "What is the trade-off or downside of having too many indexes on a database table?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "book_pg16_chunk_354",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.7221625649989608
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "title": "PostgreSQL Database Design",
+          "score": 0.6611132478730756
+        },
+        {
+          "id": "book_pg16_chunk_355",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6398682262105588
+        },
+        {
+          "id": "book_pg16_chunk_358",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6343019021290864
+        },
+        {
+          "id": "book_pg16_chunk_295",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6333128082423709
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 0.5,
+        "keywordRecall": 0.6666666666666666,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.3009776153417087,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_40",
+      "query": "What is the purpose of a composite primary key in database junction tables?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "book_pg16_chunk_68",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.656206680713554
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0",
+          "title": "PostgreSQL Database Design",
+          "score": 0.6194098766396122
+        },
+        {
+          "id": "book_pg16_chunk_178",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6057612201268043
+        },
+        {
+          "id": "book_pg16_chunk_180",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6055212153654399
+        },
+        {
+          "id": "book_pg16_chunk_97",
+          "title": "PostgreSQL 16 Reference Manual",
+          "score": 0.6022846084995288
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 0,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 0.5,
+        "keywordRecall": 0.5,
+        "precision": {
+          "p@1": 0,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.2
+        },
+        "ndcg5": 0.393249405307714,
+        "recall5": 1
+      }
+    }
+  ]
+}

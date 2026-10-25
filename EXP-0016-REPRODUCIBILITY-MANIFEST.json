@@ -1,0 +1,117 @@
+{
+  "experiment_id": "EXP-0016-CANDIDATE-HARDENED-2026-09-09",
+  "control_id": "EXP-0013-CHAMPION-2026-09-09",
+  "timestamp": "2026-09-09T11:06:00Z",
+  "environment": {
+    "os": "Windows 11 Pro",
+    "runtime": "Node.js v24.11.0",
+    "backend_language": "PHP 8.2.12 (cli)",
+    "database": "SQLite 3.45.1 (WAL mode)",
+    "embedding_model": "nomic-embed-text (768 dimensions)",
+    "generation_model": "llama3.2:latest (3B parameters, num_predict 256, temperature 0.05)",
+    "gateway_port": 8000,
+    "fast_worker_ports": [8001, 8002, 8003, 8004, 8005, 8006],
+    "gen_worker_ports": [8007, 8008]
+  },
+  "candidate_artifacts": {
+    "backend/rag_service.php": {
+      "sha256": "9cc310449072c3a2477e2fd93d2afb261d58a7b84c5624c27273a6dd6fa19332",
+      "bytes": 85312,
+      "lines": 1948,
+      "description": "Hardened RAG service with input categorization gate, semantic contrast reranker, dynamic K expansion, false-premise verifier hook, and citation enforcement"
+    },
+    "backend/gateway.js": {
+      "sha256": "2662ad6780000657ad2e4419fed3cd7df88866a0c51133093c0726bc452a4207",
+      "bytes": 11057,
+      "lines": 344,
+      "description": "Two-tier asynchronous gateway with 1MB payload cap, 64-concurrency bounded queue limiter, and cold-start warmup probe"
+    },
+    "backend/embedding_coordinator.js": {
+      "sha256": "221d86ede96ebe2938d6bd9a39b56ed718bee9586af0b5dcc70ba40f39854859",
+      "bytes": 6782,
+      "lines": 253,
+      "description": "In-flight request coalescing coordinator with LRU memory cache and nomic-embed-text batching"
+    },
+    "backend/rag_query_condenser.php": {
+      "sha256": "c0c00f593f7b50a47c737b2994e567c34171fe89d1bf4dbf051109cee084e30a",
+      "bytes": 16517,
+      "lines": 345,
+      "description": "Context Condenser 2.0 with forward chronological topic anchor tracking across long multi-turn sessions"
+    },
+    "backend/rag_safety_boundary.php": {
+      "sha256": "805d501efb9a339dea21ed8d158522398c8f4dadaccc6beb9c4c81450e5121a2",
+      "bytes": 12520,
+      "lines": 276,
+      "description": "Curriculum safety boundary with zero-latency abstention on unlisted technologies (Haskell, Zig, WebGPU, Erlang, ClickHouse)"
+    },
+    "backend/rag_premise_verifier.php": {
+      "sha256": "7a11ca716b90859a8c18cac06ec1e6bbaece7fd868ffbcddf87c43c3e16d725b",
+      "bytes": 9993,
+      "lines": 198,
+      "description": "Two-pass candidate false-premise verifier detecting fabricated APIs and presuppositional hallucinations with bracketed citations"
+    },
+    "backend/rag_flags.php": {
+      "sha256": "aa8d3051873ea28cb6e8c7f7fa2ea4f47499614e7e6c63403390dd5d6829ed84",
+      "bytes": 2458,
+      "lines": 74,
+      "description": "Runtime feature flag manager supporting dynamic per-request overrides via HTTP X-RAG-Flags header"
+    },
+    "backend/rag_flags.json": {
+      "sha256": "c814568feadfda105e84730d943fbe700ef55d61532a4067594e354b7c18f423",
+      "bytes": 331,
+      "lines": 13,
+      "description": "Default configuration flags for candidate modules (ENABLE_INPUT_SANITY, ENABLE_TYPO_NORMALIZATION, etc.)"
+    },
+    "backend/index.php": {
+      "sha256": "c469adb1fd5fdd6553506db5f33b01736ee4559146d3d95e195917a786faf04a",
+      "bytes": 119856,
+      "lines": 2451,
+      "description": "REST API entry points updated with explicit strlen/trim validation on search/ask query parameters"
+    }
+  },
+  "control_baseline_artifacts": {
+    "backend/rag_service.exp0013_champion.php": {
+      "sha256": "78106272e60b58dbe05744fef599e3545f62ea3735433f2cac78f84b4b8b4d39",
+      "bytes": 72952,
+      "lines": 1717
+    },
+    "backend/gateway.exp0013_champion.js": {
+      "sha256": "f20feb370466ead92d25037781cb14904060a7156b3e712f81cffc2c1ace5fe6",
+      "bytes": 6766,
+      "lines": 208
+    },
+    "backend/embedding_coordinator.exp0013_champion.js": {
+      "sha256": "221d86ede96ebe2938d6bd9a39b56ed718bee9586af0b5dcc70ba40f39854859",
+      "bytes": 6782,
+      "lines": 253
+    },
+    "backend/rag_query_condenser.exp0013_champion.php": {
+      "sha256": "401e50cf6dd88dc226d6ba0394ec93b023ffeb6f4e696c7c223a79fcbda0d559",
+      "bytes": 15069,
+      "lines": 311
+    },
+    "backend/rag_safety_boundary.exp0013_champion.php": {
+      "sha256": "8d4ed3fd87f5a86bfe9cb01d11fe4fb26de728d241cee823975d55ac7dc695c8",
+      "bytes": 12161,
+      "lines": 269
+    },
+    "backend/index.exp0013_champion.php": {
+      "sha256": "8a1c91a4284659546f77865db31c02c18645d88a3bed16001225935e3a0dfaa8",
+      "bytes": 118755,
+      "lines": 2428
+    }
+  },
+  "reproduction_commands": {
+    "start_services": "node backend/gateway.js",
+    "run_ablation_matrix": "node scratch/run_ablation_matrix.js",
+    "run_fuzzing_suite": "node tests/rag/audit_exp0015/audit_suite_01_fuzzing.js",
+    "run_semantic_contrast_suite": "node tests/rag/audit_exp0015/audit_suite_02_semantic_adversarial.js",
+    "run_false_premise_suite": "node tests/rag/audit_exp0015/audit_suite_03_false_premise.js",
+    "run_conversation_breakpoint_suite": "node tests/rag/audit_exp0015/audit_suite_04_conversation_breakpoint.js",
+    "run_multihop_breakpoint_suite": "node tests/rag/audit_exp0015/audit_suite_05_multihop_breakpoint.js",
+    "run_security_redteam_suite": "node tests/rag/audit_exp0015/audit_suite_07_security_redteam.js",
+    "run_scalability_soak_suite": "node tests/rag/audit_exp0015/audit_suite_10_scalability_and_soak.js",
+    "run_development_regression": "node tests/rag/runners/benchmark_runner.js",
+    "run_blind_holdout_regression": "node tests/rag/runners/blind_benchmark_runner.js"
+  }
+}

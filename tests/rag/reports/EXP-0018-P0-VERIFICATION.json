@@ -1,0 +1,38 @@
+{
+  "W27_health_probes": {
+    "pass": true,
+    "healthStatus": "HEALTHY",
+    "readyStatus": "HEALTHY",
+    "healthyWorkers": 8
+  },
+  "W26_load_balancing": {
+    "pass": true,
+    "portHits": {
+      "8001": 2,
+      "8002": 2,
+      "8003": 2,
+      "8004": 2,
+      "8005": 2,
+      "8006": 2
+    },
+    "uniquePorts": 6,
+    "preFixShare8001": "100%",
+    "postFixShare8001": "16.7%"
+  },
+  "W18_payload_cutoff": {
+    "pass": true,
+    "statusCode": 413,
+    "noSocketReset": true
+  },
+  "W25_counter_leak": {
+    "pass": true,
+    "activeBefore": 0,
+    "activeAfterOversized": 0
+  },
+  "W24_supervisor_audit": {
+    "pass": true,
+    "hasSingleAuthoritativeSpawn": true,
+    "hasAuthoritativeExitHandler": true,
+    "hasHealthyFiltering": true
+  }
+}

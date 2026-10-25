@@ -1,0 +1,1451 @@
+[
+  {
+    "id": "sem_01",
+    "query": "the dot dot dot thing in js functions that sucks all arguments into a real array",
+    "category": "colloquial_description",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "rest parameters",
+      "...args"
+    ],
+    "intent": "Gather arguments into array via rest parameters"
+  },
+  {
+    "id": "sem_02",
+    "query": "box sizing hack everyone puts at the top to stop padding from breaking layouts",
+    "category": "colloquial_description",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "box-sizing: border-box"
+    ],
+    "intent": "border-box prevents padding expansion"
+  },
+  {
+    "id": "sem_03",
+    "query": "secret sauce in node that lets it do disk and network stuff without freezing the main loop",
+    "category": "colloquial_description",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "Libuv",
+      "worker thread pool"
+    ],
+    "intent": "Libuv thread pool executes async I/O"
+  },
+  {
+    "id": "sem_04",
+    "query": "special html tag you can only use once per page for the real content",
+    "category": "colloquial_description",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "<main>"
+    ],
+    "intent": "Unique main content semantic element"
+  },
+  {
+    "id": "sem_05",
+    "query": "the thing in postgres that keeps concurrent queries from stepping on each other's toes",
+    "category": "colloquial_description",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "ACID",
+      "Isolation"
+    ],
+    "intent": "Transaction isolation prevents concurrency issues"
+  },
+  {
+    "id": "sem_06",
+    "query": "way to spread array elements out into a brand new array in js",
+    "category": "colloquial_description",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "spread operator",
+      "..."
+    ],
+    "intent": "Spread operator expands iterables"
+  },
+  {
+    "id": "sem_07",
+    "query": "css trick to center things horizontally along the main flex line",
+    "category": "colloquial_description",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "justify-content: center"
+    ],
+    "intent": "justify-content aligns along main axis"
+  },
+  {
+    "id": "sem_08",
+    "query": "database table you make just to connect two other tables together when they have a many to many relationship",
+    "category": "colloquial_description",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "junction table",
+      "composite primary key"
+    ],
+    "intent": "Junction associative table for M:N relationships"
+  },
+  {
+    "id": "sem_09",
+    "query": "promise helper that waits for everything to finish even if some of them fail",
+    "category": "colloquial_description",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "Promise.allSettled"
+    ],
+    "intent": "Promise.allSettled waits for all promises regardless of rejection"
+  },
+  {
+    "id": "sem_10",
+    "query": "express function with four arguments that catches errors before they crash the app",
+    "category": "colloquial_description",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "error-handling middleware",
+      "(err, req, res, next)"
+    ],
+    "intent": "Four-parameter error handling middleware in Express"
+  },
+  {
+    "id": "sem_11",
+    "query": "magic variable container in react that holds stuff without refreshing the screen",
+    "category": "beginner_mental_model",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useRef"
+    ],
+    "intent": "useRef persists mutable values across renders without re-rendering"
+  },
+  {
+    "id": "sem_12",
+    "query": "freeze a callback in react so child components don't re-render for no reason",
+    "category": "beginner_mental_model",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useCallback"
+    ],
+    "intent": "useCallback memoizes callback functions for React.memo children"
+  },
+  {
+    "id": "sem_13",
+    "query": "variable in javascript where accessing it before the line where you declared it gives you a big crash",
+    "category": "beginner_mental_model",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "Temporal Dead Zone (TDZ)",
+      "let",
+      "const"
+    ],
+    "intent": "TDZ throws ReferenceError on early access"
+  },
+  {
+    "id": "sem_14",
+    "query": "react state updater where you pass a function that takes the old value and gives back the new value",
+    "category": "beginner_mental_model",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useState",
+      "functional updater"
+    ],
+    "intent": "Functional updater pattern prev => prev + 1"
+  },
+  {
+    "id": "sem_15",
+    "query": "prevent expensive calculation in react from re-running on every single keystroke",
+    "category": "beginner_mental_model",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useMemo"
+    ],
+    "intent": "useMemo memoizes expensive computation results"
+  },
+  {
+    "id": "sem_16",
+    "query": "cleanup code in react that runs right before a component gets destroyed or before the next effect",
+    "category": "beginner_mental_model",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useEffect",
+      "cleanup function"
+    ],
+    "intent": "useEffect returned cleanup function"
+  },
+  {
+    "id": "sem_17",
+    "query": "react way to pass user login info to deeply nested components without passing props through ten layers",
+    "category": "beginner_mental_model",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useContext",
+      "Provider"
+    ],
+    "intent": "useContext avoids prop drilling for global state"
+  },
+  {
+    "id": "sem_18",
+    "query": "why does modifying an array with push in react state not update the ui?",
+    "category": "beginner_mental_model",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useState",
+      "immutability"
+    ],
+    "intent": "React requires immutable state updates to trigger re-renders"
+  },
+  {
+    "id": "sem_19",
+    "query": "what happens if you forget to put a dependency array in useEffect?",
+    "category": "beginner_mental_model",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useEffect"
+    ],
+    "intent": "Omitting dependency array causes effect to run after every render"
+  },
+  {
+    "id": "sem_20",
+    "query": "why does const let you change an object property if it's supposed to be constant?",
+    "category": "beginner_mental_model",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "const",
+      "scoping"
+    ],
+    "intent": "const prevents binding reassignment while object properties remain mutable"
+  },
+  {
+    "id": "sem_21",
+    "query": "What is TDZ in ES6 scoping?",
+    "category": "abbreviations",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "Temporal Dead Zone (TDZ)"
+    ],
+    "intent": "Explain Temporal Dead Zone"
+  },
+  {
+    "id": "sem_22",
+    "query": "Explain 3NF rules for relational tables",
+    "category": "abbreviations",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "3NF",
+      "Third Normal Form"
+    ],
+    "intent": "Explain Third Normal Form rules"
+  },
+  {
+    "id": "sem_23",
+    "query": "How is JWT structured and signed?",
+    "category": "abbreviations",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "JWT",
+      "JSON Web Token"
+    ],
+    "intent": "Explain JWT structure Header.Payload.Signature"
+  },
+  {
+    "id": "sem_24",
+    "query": "What is WAL in PostgreSQL durability?",
+    "category": "abbreviations",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "WAL",
+      "Write-Ahead Logging",
+      "Durability"
+    ],
+    "intent": "Explain Write-Ahead Logging for ACID durability"
+  },
+  {
+    "id": "sem_25",
+    "query": "How do GIN indexes help in PostgreSQL?",
+    "category": "abbreviations",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "GIN",
+      "Inverted Index"
+    ],
+    "intent": "Explain Generalized Inverted Index for JSONB and search"
+  },
+  {
+    "id": "sem_26",
+    "query": "Why is A11y improved by semantic HTML tags?",
+    "category": "abbreviations",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "A11y",
+      "Accessibility",
+      "semantic elements"
+    ],
+    "intent": "Explain accessibility benefits of semantic HTML"
+  },
+  {
+    "id": "sem_27",
+    "query": "What does 2NF require regarding partial dependencies?",
+    "category": "abbreviations",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "2NF",
+      "Second Normal Form"
+    ],
+    "intent": "Explain eliminating partial dependencies in 2NF"
+  },
+  {
+    "id": "sem_28",
+    "query": "What are IVFFlat and HNSW used for in PostgreSQL?",
+    "category": "abbreviations",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "pgvector",
+      "IVFFlat",
+      "HNSW"
+    ],
+    "intent": "Vector index algorithms in pgvector"
+  },
+  {
+    "id": "sem_29",
+    "query": "What HTTP status code represents 401 vs 403 in REST APIs?",
+    "category": "abbreviations",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "401",
+      "403",
+      "REST"
+    ],
+    "intent": "Distinguish 401 Unauthorized from 403 Forbidden"
+  },
+  {
+    "id": "sem_30",
+    "query": "Explain 1NF atomic value requirements",
+    "category": "abbreviations",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "1NF",
+      "First Normal Form"
+    ],
+    "intent": "First normal form atomic column requirements"
+  },
+  {
+    "id": "sem_31",
+    "query": "how does useefect cleanup work when unmounting?",
+    "category": "misspellings",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useEffect"
+    ],
+    "intent": "useEffect cleanup function"
+  },
+  {
+    "id": "sem_32",
+    "query": "what does promiss.all do when one promise rejects?",
+    "category": "misspellings",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "Promise.all"
+    ],
+    "intent": "Promise.all fail-fast behavior"
+  },
+  {
+    "id": "sem_33",
+    "query": "how does a b-tree indx speed up range queries in postgres?",
+    "category": "misspellings",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "B-tree",
+      "index"
+    ],
+    "intent": "B-tree index range queries"
+  },
+  {
+    "id": "sem_34",
+    "query": "difference between justfy-content and align-items in flexbox",
+    "category": "misspellings",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "justify-content",
+      "align-items"
+    ],
+    "intent": "Main axis vs cross axis alignment"
+  },
+  {
+    "id": "sem_35",
+    "query": "why should you pass a function to usestate updater?",
+    "category": "misspellings",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useState"
+    ],
+    "intent": "useState functional updater pattern"
+  },
+  {
+    "id": "sem_36",
+    "query": "how does libuv thead pool handle file io in node?",
+    "category": "misspellings",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "Libuv",
+      "thread pool"
+    ],
+    "intent": "Libuv thread pool handling async I/O"
+  },
+  {
+    "id": "sem_37",
+    "query": "what does object.frezze do to javascript objects?",
+    "category": "misspellings",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "Object.freeze"
+    ],
+    "intent": "Object immutability in ES6"
+  },
+  {
+    "id": "sem_38",
+    "query": "how to prevent padding from expanding box with box-sizzing",
+    "category": "misspellings",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "box-sizing: border-box"
+    ],
+    "intent": "border-box prevents dimension expansion"
+  },
+  {
+    "id": "sem_39",
+    "query": "why does arrow functon not have its own this context?",
+    "category": "misspellings",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "arrow function",
+      "lexical this"
+    ],
+    "intent": "Lexical this in arrow functions"
+  },
+  {
+    "id": "sem_40",
+    "query": "what is the fourth parameter of experss error middleware?",
+    "category": "misspellings",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "error middleware",
+      "(err, req, res, next)"
+    ],
+    "intent": "Express 4-parameter error middleware"
+  },
+  {
+    "id": "sem_41",
+    "query": "prop drilling escape hatch for global auth state in react",
+    "category": "informal_terminology",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useContext"
+    ],
+    "intent": "useContext eliminates prop drilling"
+  },
+  {
+    "id": "sem_42",
+    "query": "function hoisting trap with var vs let in loops",
+    "category": "informal_terminology",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "Temporal Dead Zone (TDZ)",
+      "let",
+      "var"
+    ],
+    "intent": "Scoping differences between var and let"
+  },
+  {
+    "id": "sem_43",
+    "query": "zombie effect subscription memory leak when component unmounts",
+    "category": "informal_terminology",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useEffect",
+      "cleanup"
+    ],
+    "intent": "useEffect cleanup prevents memory leaks"
+  },
+  {
+    "id": "sem_44",
+    "query": "phantom re-render caused by passing inline arrow functions to children",
+    "category": "informal_terminology",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useCallback"
+    ],
+    "intent": "useCallback memoizes handler identity"
+  },
+  {
+    "id": "sem_45",
+    "query": "table join explosion in un-normalized databases",
+    "category": "informal_terminology",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "normalization",
+      "1NF",
+      "2NF",
+      "3NF"
+    ],
+    "intent": "Database normalization forms"
+  },
+  {
+    "id": "sem_46",
+    "query": "leftmost prefix rule for compound indices in postgres",
+    "category": "informal_terminology",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "composite index",
+      "leftmost prefix"
+    ],
+    "intent": "Composite indexing rules"
+  },
+  {
+    "id": "sem_47",
+    "query": "stale state closure inside setTimeout or useEffect in react",
+    "category": "informal_terminology",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useState",
+      "functional updater"
+    ],
+    "intent": "Functional state updater avoids stale state closures"
+  },
+  {
+    "id": "sem_48",
+    "query": "main thread starvation caused by crypto in node",
+    "category": "informal_terminology",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "main thread",
+      "Libuv"
+    ],
+    "intent": "Node event loop main thread vs thread pool"
+  },
+  {
+    "id": "sem_49",
+    "query": "cascading rerenders from top-level state changes in react components",
+    "category": "informal_terminology",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useMemo",
+      "useCallback"
+    ],
+    "intent": "Performance optimization hooks in React"
+  },
+  {
+    "id": "sem_50",
+    "query": "dirty reads and phantom reads isolation levels in postgres",
+    "category": "informal_terminology",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "ACID",
+      "Isolation"
+    ],
+    "intent": "Transaction isolation levels in PostgreSQL"
+  },
+  {
+    "id": "sem_51",
+    "query": "What is the difference between middleware in Express and Hooks in React for managing state and side-effects?",
+    "category": "multi_concept_comparison",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "Node.js & Express REST API Notes",
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "Express middleware",
+      "React Hooks"
+    ],
+    "intent": "Cross-module comparison between Express middleware and React Hooks"
+  },
+  {
+    "id": "sem_52",
+    "query": "Compare Flexbox 1D layout along main axis with CSS Grid 2D track sizing",
+    "category": "multi_concept_comparison",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "Flexbox",
+      "CSS Grid"
+    ],
+    "intent": "1D flexbox vs 2D grid"
+  },
+  {
+    "id": "sem_53",
+    "query": "Compare let and var in terms of hoisting, scope, and Temporal Dead Zone",
+    "category": "multi_concept_comparison",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "let",
+      "var",
+      "TDZ"
+    ],
+    "intent": "Scoping and hoisting differences between let and var"
+  },
+  {
+    "id": "sem_54",
+    "query": "Compare B-tree index lookups with sequential scans in PostgreSQL",
+    "category": "multi_concept_comparison",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "B-tree",
+      "sequential scan"
+    ],
+    "intent": "Index lookup vs full table scan"
+  },
+  {
+    "id": "sem_55",
+    "query": "Compare microtasks in Promises with macrotasks in setTimeout",
+    "category": "multi_concept_comparison",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "microtasks",
+      "macrotasks",
+      "event loop"
+    ],
+    "intent": "Task queue vs microtask queue in event loop"
+  },
+  {
+    "id": "sem_56",
+    "query": "Compare useMemo and useCallback for React performance optimization",
+    "category": "multi_concept_comparison",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useMemo",
+      "useCallback"
+    ],
+    "intent": "Memoizing values vs memoizing callbacks"
+  },
+  {
+    "id": "sem_57",
+    "query": "Compare 2NF partial dependencies with 3NF transitive dependencies",
+    "category": "multi_concept_comparison",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "2NF",
+      "3NF"
+    ],
+    "intent": "Eliminating partial vs transitive dependencies"
+  },
+  {
+    "id": "sem_58",
+    "query": "Compare PUT and PATCH in RESTful HTTP API design",
+    "category": "multi_concept_comparison",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "PUT",
+      "PATCH",
+      "REST"
+    ],
+    "intent": "Full resource replacement vs partial update"
+  },
+  {
+    "id": "sem_59",
+    "query": "Compare spread operator copying with rest parameter gathering in ES6",
+    "category": "multi_concept_comparison",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "spread operator",
+      "rest parameters"
+    ],
+    "intent": "Expanding iterables vs gathering arguments"
+  },
+  {
+    "id": "sem_60",
+    "query": "Compare Atomicity and Durability in PostgreSQL ACID transactions",
+    "category": "multi_concept_comparison",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "Atomicity",
+      "Durability",
+      "ACID"
+    ],
+    "intent": "All-or-nothing rollback vs crash survival via WAL"
+  },
+  {
+    "id": "sem_61",
+    "query": "persisting mutable values across component lifecycles without triggering visual interface updates",
+    "category": "synonym_heavy",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useRef"
+    ],
+    "intent": "useRef persists values without re-rendering"
+  },
+  {
+    "id": "sem_62",
+    "query": "retaining lexical execution context without explicit method binding in callbacks",
+    "category": "synonym_heavy",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "arrow function",
+      "lexical this"
+    ],
+    "intent": "Lexical this in arrow functions"
+  },
+  {
+    "id": "sem_63",
+    "query": "restricting attribute dependency strictly to candidate keys in relational architecture",
+    "category": "synonym_heavy",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "3NF",
+      "Third Normal Form"
+    ],
+    "intent": "Eliminating transitive dependencies to non-key attributes"
+  },
+  {
+    "id": "sem_64",
+    "query": "delegating blocking input-output operations to auxiliary background threads",
+    "category": "synonym_heavy",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "Libuv",
+      "thread pool"
+    ],
+    "intent": "Libuv thread pool handling async I/O"
+  },
+  {
+    "id": "sem_65",
+    "query": "enclosing content, interior clearance, perimeter stroke, and exterior clearance",
+    "category": "synonym_heavy",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "CSS Box Model",
+      "content",
+      "padding",
+      "border",
+      "margin"
+    ],
+    "intent": "The 4 layers of the CSS box model"
+  },
+  {
+    "id": "sem_66",
+    "query": "combining independent asynchronous operations into a single settled collection",
+    "category": "synonym_heavy",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "Promise.allSettled"
+    ],
+    "intent": "Promise.allSettled waiting for all promises"
+  },
+  {
+    "id": "sem_67",
+    "query": "transmitting cryptographic assertions between decoupled distributed endpoints",
+    "category": "synonym_heavy",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "JWT",
+      "JSON Web Token"
+    ],
+    "intent": "JWT authentication claims transfer"
+  },
+  {
+    "id": "sem_68",
+    "query": "preventing cascading rendering updates via deterministic reference equality",
+    "category": "synonym_heavy",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useCallback",
+      "useMemo"
+    ],
+    "intent": "useCallback and useMemo reference equality"
+  },
+  {
+    "id": "sem_69",
+    "query": "guaranteeing database state persistence against catastrophic hardware failure",
+    "category": "synonym_heavy",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "Durability",
+      "WAL",
+      "ACID"
+    ],
+    "intent": "ACID durability via Write-Ahead Logging"
+  },
+  {
+    "id": "sem_70",
+    "query": "partitioning visual document space across simultaneous horizontal and vertical tracks",
+    "category": "synonym_heavy",
+    "is_trap": false,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "CSS Grid"
+    ],
+    "intent": "CSS Grid 2D layout model"
+  },
+  {
+    "id": "sem_71",
+    "query": "How do you create a reactive ref in React using Vue 3 Composition syntax?",
+    "category": "near_synonym_trap",
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "expected_docs": [],
+    "canonical_concepts": [],
+    "intent": "Trap: Vue 3 Composition ref syntax does not exist in React"
+  },
+  {
+    "id": "sem_72",
+    "query": "How to configure CSS Flexbox 3D matrix physics perspective?",
+    "category": "near_synonym_trap",
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "expected_docs": [],
+    "canonical_concepts": [],
+    "intent": "Trap: Flexbox is 1D and has no 3D physics engine"
+  },
+  {
+    "id": "sem_73",
+    "query": "How to enable automatic thread clustering in Express via express.autoCluster()?",
+    "category": "near_synonym_trap",
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "expected_docs": [],
+    "canonical_concepts": [],
+    "intent": "Trap: express.autoCluster() is a fabricated nonexistent API"
+  },
+  {
+    "id": "sem_74",
+    "query": "How does Django ORM handle migrations in PostgreSQL?",
+    "category": "near_synonym_trap",
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "expected_docs": [],
+    "canonical_concepts": [],
+    "intent": "Trap: Django ORM is outside the curriculum"
+  },
+  {
+    "id": "sem_75",
+    "query": "How do you cancel a running useEffect in React using useEffect.cancel()?",
+    "category": "near_synonym_trap",
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useEffect"
+    ],
+    "intent": "Trap: useEffect has no .cancel() method, cleanup is via return callback"
+  },
+  {
+    "id": "sem_76",
+    "query": "How to reassign a const variable identifier by setting const.force = true in ES6?",
+    "category": "near_synonym_trap",
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "const"
+    ],
+    "intent": "Trap: const cannot be reassigned"
+  },
+  {
+    "id": "sem_77",
+    "query": "How to achieve 3NF normalization by merging non-key attributes into the same table?",
+    "category": "near_synonym_trap",
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "3NF"
+    ],
+    "intent": "Trap: 3NF requires moving transitive dependencies into separate tables"
+  },
+  {
+    "id": "sem_78",
+    "query": "How does B-tree index in PostgreSQL perform a full sequential table scan?",
+    "category": "near_synonym_trap",
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "B-tree"
+    ],
+    "intent": "Trap: B-tree avoids sequential table scans via logarithmic search"
+  },
+  {
+    "id": "sem_79",
+    "query": "How to put three <main> elements in a single semantic HTML document?",
+    "category": "near_synonym_trap",
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "<main>"
+    ],
+    "intent": "Trap: Document must not contain more than one <main> element"
+  },
+  {
+    "id": "sem_80",
+    "query": "In Express error middleware, why must next be the first parameter before err?",
+    "category": "near_synonym_trap",
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "error middleware"
+    ],
+    "intent": "Trap: Express error middleware requires err as the first parameter (err, req, res, next)"
+  },
+  {
+    "id": "sem_81",
+    "query": "Explain PostgreSQL ACID transactions and how Bitcoin blockchain achieves Nakamoto consensus",
+    "category": "false_semantic_trap",
+    "is_trap": true,
+    "expected_action": "PARTIAL",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "ACID",
+      "transactions"
+    ],
+    "intent": "Partial Trap: Answer Postgres ACID, decline Bitcoin blockchain"
+  },
+  {
+    "id": "sem_82",
+    "query": "How does JavaScript quantum entanglement synchronize variables across web workers?",
+    "category": "false_semantic_trap",
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "expected_docs": [],
+    "canonical_concepts": [],
+    "intent": "Trap: Quantum entanglement in JavaScript is nonexistent science fiction"
+  },
+  {
+    "id": "sem_83",
+    "query": "How to configure React useState with Redux Toolkit createSlice store?",
+    "category": "false_semantic_trap",
+    "is_trap": true,
+    "expected_action": "PARTIAL",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useState"
+    ],
+    "intent": "Partial Trap: Answer useState, decline Redux Toolkit"
+  },
+  {
+    "id": "sem_84",
+    "query": "How does CSS border-box interact with Tailwind JIT compiler runtime?",
+    "category": "false_semantic_trap",
+    "is_trap": true,
+    "expected_action": "PARTIAL",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "box-sizing: border-box"
+    ],
+    "intent": "Partial Trap: Answer border-box, decline Tailwind compiler"
+  },
+  {
+    "id": "sem_85",
+    "query": "How to connect Node.js Libuv worker pool directly to Apache Kafka streaming brokers?",
+    "category": "false_semantic_trap",
+    "is_trap": true,
+    "expected_action": "PARTIAL",
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "Libuv",
+      "thread pool"
+    ],
+    "intent": "Partial Trap: Answer Libuv thread pool, decline Apache Kafka"
+  },
+  {
+    "id": "sem_86",
+    "query": "How do you use Solidity smart contract transactions inside PostgreSQL SERIALIZABLE isolation?",
+    "category": "false_semantic_trap",
+    "is_trap": true,
+    "expected_action": "PARTIAL",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "Isolation",
+      "SERIALIZABLE"
+    ],
+    "intent": "Partial Trap: Answer SERIALIZABLE isolation, decline Solidity"
+  },
+  {
+    "id": "sem_87",
+    "query": "Explain how CSS flex-direction row maps to SwiftUI HStack view hierarchy",
+    "category": "false_semantic_trap",
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "expected_docs": [],
+    "canonical_concepts": [],
+    "intent": "Trap: SwiftUI is outside the curriculum"
+  },
+  {
+    "id": "sem_88",
+    "query": "How to deploy Express JWT auth to AWS Lambda serverless edge computing?",
+    "category": "false_semantic_trap",
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "expected_docs": [],
+    "canonical_concepts": [],
+    "intent": "Trap: AWS Lambda is outside the curriculum"
+  },
+  {
+    "id": "sem_89",
+    "query": "How does Spring Boot JPA repository relate to PostgreSQL 3NF normalization?",
+    "category": "false_semantic_trap",
+    "is_trap": true,
+    "expected_action": "ABSTAIN",
+    "expected_docs": [],
+    "canonical_concepts": [],
+    "intent": "Trap: Spring Boot JPA is outside the curriculum"
+  },
+  {
+    "id": "sem_90",
+    "query": "How to implement Next.js Server Components with React useEffect?",
+    "category": "false_semantic_trap",
+    "is_trap": true,
+    "expected_action": "PARTIAL",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useEffect"
+    ],
+    "intent": "Partial Trap: Answer useEffect, decline Next.js Server Components"
+  },
+  {
+    "id": "sem_91",
+    "query": "Can you modify properties of an object declared with const in JavaScript?",
+    "category": "meaning_preservation_trap",
+    "is_trap": true,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "const",
+      "scoping"
+    ],
+    "intent": "Boundary Trap: Distinguish object mutation (allowed) from identifier reassignment (forbidden)"
+  },
+  {
+    "id": "sem_92",
+    "query": "Does useEffect without a dependency array run once or after every render?",
+    "category": "meaning_preservation_trap",
+    "is_trap": true,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useEffect"
+    ],
+    "intent": "Boundary Trap: Without array runs after EVERY render; empty array runs ONCE"
+  },
+  {
+    "id": "sem_93",
+    "query": "Does useRef.current modification trigger a re-render in React?",
+    "category": "meaning_preservation_trap",
+    "is_trap": true,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "React Hooks Tutorial"
+    ],
+    "canonical_concepts": [
+      "useRef"
+    ],
+    "intent": "Boundary Trap: Modifying .current does NOT trigger re-renders"
+  },
+  {
+    "id": "sem_94",
+    "query": "Does setTimeout callback execute in the microtask queue or the macrotask/task queue?",
+    "category": "meaning_preservation_trap",
+    "is_trap": true,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "macrotask",
+      "event loop"
+    ],
+    "intent": "Boundary Trap: setTimeout is a macrotask; Promises are microtasks"
+  },
+  {
+    "id": "sem_95",
+    "query": "Does display: inline-flex activate CSS Grid 2-dimensional tracks?",
+    "category": "meaning_preservation_trap",
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "Flexbox",
+      "CSS Grid"
+    ],
+    "intent": "Boundary Trap: Flexbox is 1-dimensional; Grid is 2-dimensional"
+  },
+  {
+    "id": "sem_96",
+    "query": "Does 3NF allow transitive dependencies on non-key attributes?",
+    "category": "meaning_preservation_trap",
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "expected_docs": [
+      "PostgreSQL Database Design"
+    ],
+    "canonical_concepts": [
+      "3NF",
+      "normalization"
+    ],
+    "intent": "Boundary Trap: 3NF strictly eliminates transitive dependencies"
+  },
+  {
+    "id": "sem_97",
+    "query": "Does box-sizing: content-box include padding and border inside the declared width?",
+    "category": "meaning_preservation_trap",
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "box-sizing",
+      "content-box",
+      "border-box"
+    ],
+    "intent": "Boundary Trap: content-box adds padding onto width; border-box includes it"
+  },
+  {
+    "id": "sem_98",
+    "query": "Does an arrow function have its own prototype and this binding?",
+    "category": "meaning_preservation_trap",
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "expected_docs": [
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "canonical_concepts": [
+      "arrow function",
+      "lexical this"
+    ],
+    "intent": "Boundary Trap: Arrow functions lack their own this and prototype"
+  },
+  {
+    "id": "sem_99",
+    "query": "Can there be multiple <main> elements in an HTML5 document?",
+    "category": "meaning_preservation_trap",
+    "is_trap": true,
+    "expected_action": "REFUTE",
+    "expected_docs": [
+      "HTML & CSS Fundamentals"
+    ],
+    "canonical_concepts": [
+      "<main>",
+      "semantic elements"
+    ],
+    "intent": "Boundary Trap: Only one <main> element allowed per document"
+  },
+  {
+    "id": "sem_100",
+    "query": "What is the parameter order in Express error-handling middleware?",
+    "category": "meaning_preservation_trap",
+    "is_trap": true,
+    "expected_action": "RETRIEVE",
+    "expected_docs": [
+      "Node.js & Express REST API Notes"
+    ],
+    "canonical_concepts": [
+      "error middleware",
+      "(err, req, res, next)"
+    ],
+    "intent": "Boundary Trap: Must be exactly (err, req, res, next) with err first"
+  }
+]

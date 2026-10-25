@@ -1,0 +1,81 @@
+{
+  "fast_worker_crash_series": [
+    {
+      "crash_number": 1,
+      "port": 8002,
+      "recovered": true,
+      "restarts": 1,
+      "state": "HEALTHY"
+    },
+    {
+      "crash_number": 2,
+      "port": 8002,
+      "recovered": true,
+      "restarts": 2,
+      "state": "HEALTHY"
+    },
+    {
+      "crash_number": 3,
+      "port": 8002,
+      "recovered": true,
+      "restarts": 3,
+      "state": "HEALTHY"
+    },
+    {
+      "crash_number": 4,
+      "port": 8002,
+      "recovered": false,
+      "restarts": 4,
+      "state": "RESTARTING"
+    },
+    {
+      "crash_number": 5,
+      "port": 8002,
+      "recovered": false,
+      "restarts": 5,
+      "state": "RESTARTING"
+    }
+  ],
+  "gen_worker_crash_series": [
+    {
+      "crash_number": 1,
+      "port": 8007,
+      "recovered": true,
+      "restarts": 1,
+      "state": "HEALTHY"
+    },
+    {
+      "crash_number": 2,
+      "port": 8007,
+      "recovered": true,
+      "restarts": 2,
+      "state": "HEALTHY"
+    },
+    {
+      "crash_number": 3,
+      "port": 8007,
+      "recovered": true,
+      "restarts": 3,
+      "state": "HEALTHY"
+    },
+    {
+      "crash_number": 4,
+      "port": 8007,
+      "recovered": false,
+      "restarts": 4,
+      "state": "RESTARTING"
+    },
+    {
+      "crash_number": 5,
+      "port": 8007,
+      "recovered": false,
+      "restarts": 5,
+      "state": "RESTARTING"
+    }
+  ],
+  "active_in_flight_crash": {
+    "status_code": 200,
+    "peer_served": true
+  },
+  "queue_backlog_crash": {}
+}

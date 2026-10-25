@@ -1,0 +1,295 @@
+{
+  "experiment_id": "EXP-0036",
+  "dataset": "EXP-0025-DEVELOPMENT-DATASET.json",
+  "sample_size": 400,
+  "timestamp": "2026-09-16T23:10:00+05:30",
+  "baseline_mode": "N0",
+  "champion_mode": "N7",
+  "modes": {
+    "N0": {
+      "name": "Frozen G6 Baseline (Unstructured B5 Prompt)",
+      "accuracy": 91.25,
+      "macro_f1": 91.31,
+      "far": 5.2,
+      "frr": 11.33,
+      "supported_recall": 88.67,
+      "refutation_recall": 87.33,
+      "ne_recall": 100.0,
+      "ood_recall": 100.0,
+      "novel_ood_recall": 100.0,
+      "false_abstentions": 5,
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": 86.0,
+        "NOVEL_FALSE_PREMISE": 91.0,
+        "OUT_OF_CURRICULUM_UNKNOWN": 100.0,
+        "LEGITIMATE_NEGATION": 94.0,
+        "MIXED_COMPOUND_PREMISE": 82.0
+      },
+      "tier2_metrics": {
+        "entailment_precision": 91.1,
+        "entailment_recall": 88.67,
+        "entailment_f1": 89.87,
+        "contradiction_precision": 91.61,
+        "contradiction_recall": 87.33,
+        "contradiction_f1": 89.42,
+        "unknown_precision": 90.91,
+        "unknown_recall": 100.0,
+        "unknown_f1": 95.24
+      }
+    },
+    "N1": {
+      "name": "Structured Evidence Prompt (P1)",
+      "accuracy": 91.75,
+      "macro_f1": 92.04,
+      "far": 5.2,
+      "frr": 10.0,
+      "supported_recall": 90.0,
+      "refutation_recall": 87.33,
+      "ne_recall": 100.0,
+      "ood_recall": 100.0,
+      "novel_ood_recall": 100.0,
+      "false_abstentions": 4,
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": 88.0,
+        "NOVEL_FALSE_PREMISE": 91.0,
+        "OUT_OF_CURRICULUM_UNKNOWN": 100.0,
+        "LEGITIMATE_NEGATION": 94.0,
+        "MIXED_COMPOUND_PREMISE": 82.0
+      },
+      "tier2_metrics": {
+        "entailment_precision": 91.22,
+        "entailment_recall": 90.0,
+        "entailment_f1": 90.6,
+        "contradiction_precision": 91.61,
+        "contradiction_recall": 87.33,
+        "contradiction_f1": 89.42,
+        "unknown_precision": 91.74,
+        "unknown_recall": 100.0,
+        "unknown_f1": 95.69
+      }
+    },
+    "N2": {
+      "name": "Explicit Polarity Reasoning (P2)",
+      "accuracy": 92.25,
+      "macro_f1": 92.52,
+      "far": 4.4,
+      "frr": 11.33,
+      "supported_recall": 88.67,
+      "refutation_recall": 89.33,
+      "ne_recall": 100.0,
+      "ood_recall": 100.0,
+      "novel_ood_recall": 100.0,
+      "false_abstentions": 5,
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": 86.0,
+        "NOVEL_FALSE_PREMISE": 93.0,
+        "OUT_OF_CURRICULUM_UNKNOWN": 100.0,
+        "LEGITIMATE_NEGATION": 94.0,
+        "MIXED_COMPOUND_PREMISE": 84.0
+      },
+      "tier2_metrics": {
+        "entailment_precision": 92.36,
+        "entailment_recall": 88.67,
+        "entailment_f1": 90.48,
+        "contradiction_precision": 93.06,
+        "contradiction_recall": 89.33,
+        "contradiction_f1": 91.16,
+        "unknown_precision": 90.91,
+        "unknown_recall": 100.0,
+        "unknown_f1": 95.24
+      }
+    },
+    "N3": {
+      "name": "Claim Predicate Decomposition",
+      "accuracy": 91.5,
+      "macro_f1": 91.78,
+      "far": 5.2,
+      "frr": 10.67,
+      "supported_recall": 89.33,
+      "refutation_recall": 87.33,
+      "ne_recall": 100.0,
+      "ood_recall": 100.0,
+      "novel_ood_recall": 100.0,
+      "false_abstentions": 4,
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": 87.0,
+        "NOVEL_FALSE_PREMISE": 91.0,
+        "OUT_OF_CURRICULUM_UNKNOWN": 100.0,
+        "LEGITIMATE_NEGATION": 94.0,
+        "MIXED_COMPOUND_PREMISE": 82.0
+      },
+      "tier2_metrics": {
+        "entailment_precision": 91.16,
+        "entailment_recall": 89.33,
+        "entailment_f1": 90.24,
+        "contradiction_precision": 91.61,
+        "contradiction_recall": 87.33,
+        "contradiction_f1": 89.42,
+        "unknown_precision": 91.74,
+        "unknown_recall": 100.0,
+        "unknown_f1": 95.69
+      }
+    },
+    "N4": {
+      "name": "Few-Shot NLI Demonstrations (P3)",
+      "accuracy": 92.0,
+      "macro_f1": 92.29,
+      "far": 4.8,
+      "frr": 10.0,
+      "supported_recall": 90.0,
+      "refutation_recall": 88.0,
+      "ne_recall": 100.0,
+      "ood_recall": 100.0,
+      "novel_ood_recall": 100.0,
+      "false_abstentions": 4,
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": 88.0,
+        "NOVEL_FALSE_PREMISE": 92.0,
+        "OUT_OF_CURRICULUM_UNKNOWN": 100.0,
+        "LEGITIMATE_NEGATION": 94.0,
+        "MIXED_COMPOUND_PREMISE": 82.0
+      },
+      "tier2_metrics": {
+        "entailment_precision": 91.84,
+        "entailment_recall": 90.0,
+        "entailment_f1": 90.91,
+        "contradiction_precision": 92.31,
+        "contradiction_recall": 88.0,
+        "contradiction_f1": 90.1,
+        "unknown_precision": 91.74,
+        "unknown_recall": 100.0,
+        "unknown_f1": 95.69
+      }
+    },
+    "N5": {
+      "name": "Structured + Polarity (N1 + N2)",
+      "accuracy": 93.0,
+      "macro_f1": 93.28,
+      "far": 4.0,
+      "frr": 9.33,
+      "supported_recall": 90.67,
+      "refutation_recall": 90.67,
+      "ne_recall": 100.0,
+      "ood_recall": 100.0,
+      "novel_ood_recall": 100.0,
+      "false_abstentions": 3,
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": 88.0,
+        "NOVEL_FALSE_PREMISE": 94.0,
+        "OUT_OF_CURRICULUM_UNKNOWN": 100.0,
+        "LEGITIMATE_NEGATION": 96.0,
+        "MIXED_COMPOUND_PREMISE": 84.0
+      },
+      "tier2_metrics": {
+        "entailment_precision": 93.15,
+        "entailment_recall": 90.67,
+        "entailment_f1": 91.89,
+        "contradiction_precision": 93.79,
+        "contradiction_recall": 90.67,
+        "contradiction_f1": 92.2,
+        "unknown_precision": 92.59,
+        "unknown_recall": 100.0,
+        "unknown_f1": 96.15
+      }
+    },
+    "N6": {
+      "name": "Structured + Clause Decomp (N1 + N3)",
+      "accuracy": 92.5,
+      "macro_f1": 92.79,
+      "far": 4.8,
+      "frr": 9.33,
+      "supported_recall": 90.67,
+      "refutation_recall": 88.67,
+      "ne_recall": 100.0,
+      "ood_recall": 100.0,
+      "novel_ood_recall": 100.0,
+      "false_abstentions": 4,
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": 89.0,
+        "NOVEL_FALSE_PREMISE": 91.0,
+        "OUT_OF_CURRICULUM_UNKNOWN": 100.0,
+        "LEGITIMATE_NEGATION": 94.0,
+        "MIXED_COMPOUND_PREMISE": 84.0
+      },
+      "tier2_metrics": {
+        "entailment_precision": 91.89,
+        "entailment_recall": 90.67,
+        "entailment_f1": 91.28,
+        "contradiction_precision": 92.36,
+        "contradiction_recall": 88.67,
+        "contradiction_f1": 90.48,
+        "unknown_precision": 92.59,
+        "unknown_recall": 100.0,
+        "unknown_f1": 96.15
+      }
+    },
+    "N7": {
+      "name": "Full Candidate Champion (N1 + N2 + N3 + N4)",
+      "accuracy": 93.75,
+      "macro_f1": 94.02,
+      "far": 3.6,
+      "frr": 8.0,
+      "supported_recall": 92.0,
+      "refutation_recall": 91.33,
+      "ne_recall": 100.0,
+      "ood_recall": 100.0,
+      "novel_ood_recall": 100.0,
+      "false_abstentions": 2,
+      "category_accuracies": {
+        "SUPPORTED_CURRICULUM": 90.0,
+        "NOVEL_FALSE_PREMISE": 93.0,
+        "OUT_OF_CURRICULUM_UNKNOWN": 100.0,
+        "LEGITIMATE_NEGATION": 96.0,
+        "MIXED_COMPOUND_PREMISE": 88.0
+      },
+      "tier2_metrics": {
+        "entailment_precision": 93.88,
+        "entailment_recall": 92.0,
+        "entailment_f1": 92.93,
+        "contradiction_precision": 94.48,
+        "contradiction_recall": 91.33,
+        "contradiction_f1": 92.88,
+        "unknown_precision": 93.46,
+        "unknown_recall": 100.0,
+        "unknown_f1": 96.62
+      }
+    }
+  },
+  "error_subset_evaluations": {
+    "descriptive_evidence_subset": {
+      "size": 35,
+      "N0_accuracy": 77.14,
+      "N1_accuracy": 82.86,
+      "N7_accuracy": 88.57,
+      "delta_N7_vs_N0": 11.43
+    },
+    "paraphrase_subset": {
+      "size": 40,
+      "N0_accuracy": 80.0,
+      "N4_accuracy": 87.5,
+      "N7_accuracy": 92.5,
+      "delta_N7_vs_N0": 12.5
+    },
+    "negation_subset": {
+      "size": 50,
+      "N0_accuracy": 94.0,
+      "N2_accuracy": 94.0,
+      "N7_accuracy": 96.0,
+      "delta_N7_vs_N0": 2.0
+    },
+    "comparative_opposite_subset": {
+      "size": 45,
+      "N0_accuracy": 73.33,
+      "N2_accuracy": 84.44,
+      "N7_accuracy": 88.89,
+      "delta_N7_vs_N0": 15.56
+    },
+    "multi_predicate_subset": {
+      "size": 50,
+      "N0_accuracy": 82.0,
+      "N3_accuracy": 82.0,
+      "N7_accuracy": 88.0,
+      "delta_N7_vs_N0": 6.0
+    }
+  }
+}

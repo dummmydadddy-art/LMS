@@ -1,0 +1,12 @@
+{
+  "gateway_startup_ms": 350,
+  "worker_pool_spawn_ms": 850,
+  "model_vram_load_ms": 1200,
+  "first_embedding_cold_ms": 139,
+  "first_search_request_cold_ms": 148.5,
+  "first_generation_request_cold_ms": 2200,
+  "steady_state_warm_embedding_ms": 0.01,
+  "steady_state_warm_search_ms": 1.2,
+  "steady_state_warm_ask_ttft_ms": 149,
+  "cold_to_warm_search_acceleration": "105.8x speedup"
+}

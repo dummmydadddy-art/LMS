@@ -1,0 +1,60 @@
+{
+  "experiment_id": "EXP-0038",
+  "c0_baseline": {
+    "chunker_type": "PHP regex chunker (chunkSize=650, chunkOverlap=100)",
+    "total_chunks": 23,
+    "char_length": {
+      "mean": 622.35,
+      "median": 596.0,
+      "p25": 460.5,
+      "p75": 723.0,
+      "max": 1152.0
+    },
+    "token_length": {
+      "mean": 163.61,
+      "median": 163.0,
+      "p25": 130.0,
+      "p75": 177.5,
+      "max": 342.0
+    },
+    "percentage_over_tokenizer_limit_512": 0.0,
+    "percentage_under_minimum_50": 0.0,
+    "duplication_rate_pct": 0.0,
+    "overlap_rate_pct": 15.38,
+    "heading_coverage_pct": 100.0,
+    "page_coverage_pct": 100.0,
+    "table_coverage_pct": 100.0
+  },
+  "c1_docling": {
+    "chunker_type": "Docling native HybridChunker (max_tokens=512, BGE aligned)",
+    "total_chunks": 21,
+    "char_length": {
+      "mean": 662.67,
+      "median": 620.0,
+      "p25": 513.0,
+      "p75": 795.0,
+      "max": 1310.0
+    },
+    "token_length": {
+      "mean": 177.57,
+      "median": 167.0,
+      "p25": 140.0,
+      "p75": 185.0,
+      "max": 331.0
+    },
+    "ctx_token_length": {
+      "mean": 189.05,
+      "median": 177.0,
+      "p25": 153.0,
+      "p75": 195.0,
+      "max": 347.0
+    },
+    "percentage_over_tokenizer_limit_512": 0.0,
+    "percentage_under_minimum_50": 0.0,
+    "duplication_rate_pct": 0.0,
+    "overlap_rate_pct": 0.0,
+    "heading_coverage_pct": 100.0,
+    "page_coverage_pct": 100.0,
+    "table_coverage_pct": 100.0
+  }
+}

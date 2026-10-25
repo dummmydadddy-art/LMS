@@ -1,0 +1,703 @@
+<USER_REQUEST>
+# EXP-0026 — Independent Forensic Certification of EXP-0025
+
+You are continuing the controlled scientific evolution of `EduConnect-LMS-Experimental`.
+
+EXP-0025 is currently reported as the experimental champion. This experiment is NOT an optimization experiment.
+
+Its purpose is to independently determine whether EXP-0025 is:
+
+1. reproducible,
+2. genuinely evidence-grounded,
+3. generalized beyond its development/holdout construction,
+4. free from benchmark-specific rule leakage,
+5. stable under historical regression,
+6. suitable to be frozen as the research champion.
+
+DO NOT MODIFY `EduConnect-LMS-Production`.
+
+DO NOT silently modify EXP-0025 before establishing the baseline.
+
+Create a new branch:
+
+`exp-0026`
+
+Freeze the exact EXP-0025 commit before doing any testing.
+
+---
+
+# 1. AUTHORITATIVE EXP-0025 BASELINE
+
+Use the frozen EXP-0025 candidate as the baseline.
+
+Reported independent holdout:
+
+* Novel False Premise FAR = 7.67% (23/300)
+* False Premise Refutation Recall = 85.33% (256/300)
+* Legitimate Negation FRR = 0.00% (0/125)
+* Unknown Claim Recall = 100.00% (200/200)
+* Evidence Used Invariant = 100.00%
+* Overall Accuracy = 87.50% (875/1000)
+* Macro F1 = 87.71%
+
+Reported historical regression:
+
+* EXP-0023 historical 2,000-case suite evaluated
+* Supported Recall improved from 63.80% to 72.00%
+* False Premise Refutation Recall improved from 31.50% to 37.00%
+* Security / prompt injection regression reported as zero
+
+Reported implementation additions include:
+
+* comparative-query guard
+* assertion-boundary isolation
+* punctuation-aware negation lookahead
+* targeted predicate handling
+* out-of-curriculum boundary gating
+* expanded semantic-opposite pairs
+
+These mechanisms must be independently investigated for generalization.
+
+---
+
+# 2. PRIMARY RESEARCH QUESTION
+
+Determine:
+
+"Does EXP-0025 represent a genuinely improved evidence-grounded premise verifier, or does its apparent improvement depend materially on manually encoded semantic rules, curriculum-specific mappings, or evaluation-distribution overlap?"
+
+Do NOT assume either outcome.
+
+The experiment must be adversarial toward the claimed EXP-0025 result.
+
+---
+
+# 3. PHASE A — REPRODUCIBILITY FREEZE
+
+Before testing:
+
+1. Record exact EXP-0025 commit hash.
+2. Record:
+
+   * Node version
+   * PHP version
+   * Ollama version
+   * embedding model
+   * generation model
+   * corpus hash
+   * database hash
+   * all benchmark dataset hashes
+3. Record changed files relative to EXP-0024.
+4. Record exact verifier file hash.
+5. Record feature-flag state.
+6. Record worker count and gateway configuration.
+7. Confirm production repository remains untouched.
+
+Create:
+
+`EXP-0026-BASELINE-MANIFEST.json`
+
+DO NOT modify active verifier logic during this phase.
+
+---
+
+# 4. PHASE B — EXACT REPRODUCTION
+
+Re-run the EXP-0025 independent holdout exactly as originally evaluated.
+
+Use the same:
+
+`POST /api/rag/ask`
+
+path.
+
+Do not call `RagPremiseVerifier` directly.
+
+Do not alter:
+
+* dataset
+* evaluator
+* thresholds
+* retrieval parameters
+* corpus
+* model
+
+Compare reproduced results against the EXP-0025 report.
+
+Required metrics:
+
+* accuracy
+* macro F1
+* FAR
+* refutation recall
+* legitimate-negation FRR
+* unknown recall
+* evidence-used invariant
+* confusion matrix
+
+Required comparison:
+
+`reported EXP-0025`
+versus
+`independently reproduced EXP-0025`
+
+Tolerance must be explicitly stated.
+
+Any unexplained discrepancy must be recorded.
+
+Create:
+
+`EXP-0026-REPRODUCIBILITY.json`
+
+---
+
+# 5. PHASE C — RULE INVENTORY / GENERALIZATION AUDIT
+
+Perform a full static and semantic audit of `backend/rag_premise_verifier.php`.
+
+Identify every manually encoded rule or lookup structure.
+
+Examples include:
+
+* semantic opposite pairs
+* verb lists
+* predicate lists
+* technology lists
+* phrase lists
+* comparative patterns
+* negation patterns
+* special-case concept handling
+* curriculum terminology mappings
+* hardcoded numeric relationships
+* module-specific exceptions
+
+Do NOT classify every regex as cheating.
+
+Instead classify each mechanism as:
+
+A. generic linguistic mechanism
+B. generic logical mechanism
+C. curriculum-agnostic semantic mapping
+D. curriculum-specific heuristic
+E. benchmark-adjacent heuristic
+F. potential benchmark leakage
+G. safety boundary rule
+
+For every rule, record:
+
+* code location
+* rule type
+* purpose
+* whether curriculum-specific
+* whether benchmark-specific
+* whether required for correctness
+* possible generalization risk
+
+Create:
+
+`EXP-0026-RULE-INVENTORY.csv`
+
+---
+
+# 6. PHASE D — LEAVE-ONE-CONCEPT-OUT GENERALIZATION
+
+Construct a genuinely unseen concept evaluation.
+
+The existing curriculum may be used as the evidence corpus, but the verifier must be evaluated on concepts that were not specifically encoded in its rule tables.
+
+Select at least 100 concepts/relationships from the curriculum.
+
+For each concept create:
+
+* supported assertion
+* false assertion
+* negative assertion
+* legitimate negation inquiry
+* unknown claim
+* contrastive query
+* comparative query
+* compound query where appropriate
+
+Critically:
+
+At least 50% of concepts MUST NOT appear in the 138-pair semantic-opposite dictionary or other concept-specific verifier mappings.
+
+Report performance separately for:
+
+1. concepts represented in rule tables
+2. concepts absent from rule tables
+
+Required:
+
+* FAR
+* refutation recall
+* FRR
+* unknown recall
+* accuracy
+* macro F1
+
+This is one of the most important EXP-0026 evaluations.
+
+---
+
+# 7. PHASE E — ADVERSARIAL PARAPHRASE GENERALIZATION
+
+Generate semantically equivalent variants of queries without changing their truth status.
+
+Use:
+
+* active/passive voice
+* reordered clauses
+* synonyms
+* pronoun references
+* punctuation changes
+* informal wording
+* terse wording
+* explanatory wording
+* question/statement transformations
+* additional irrelevant context
+* spelling noise that should remain interpretable
+
+Do NOT create variants that change the intended proposition.
+
+Minimum:
+
+300 paraphrased cases.
+
+Measure prediction consistency.
+
+Required metric:
+
+`Paraphrase Consistency = identical epistemic classification / valid paraphrase cases`
+
+Break down by query type.
+
+---
+
+# 8. PHASE F — ANTINYM / OPPOSITE-RULE GENERALIZATION
+
+This phase specifically tests whether the 138 semantic-opposite mappings are doing the work.
+
+Construct pairs where:
+
+Query A = curriculum-supported proposition
+
+Query B = proposition contradicted by curriculum evidence
+
+Use:
+
+1. opposite concepts appearing in the existing semantic map
+2. opposite concepts NOT appearing in the semantic map
+3. relational reversals
+4. numeric reversals
+5. temporal reversals
+6. causal reversals
+7. scope/qualifier reversals
+
+Minimum:
+
+200 contradiction cases.
+
+Report:
+
+* rule-covered contradiction recall
+* rule-uncovered contradiction recall
+
+If rule-uncovered performance collapses, explicitly identify this as a generalization limitation.
+
+---
+
+# 9. PHASE G — RETRIEVAL-VS-VERIFIER SEPARATION
+
+For every false premise case, determine whether the failure is:
+
+A. insufficient retrieval evidence
+B. sufficient evidence but verifier failure
+
+This distinction is mandatory.
+
+A verifier must NOT be penalized for refusing to contradict a proposition when the retrieval layer genuinely lacks the counter-evidence.
+
+Generate:
+
+`EXP-0026-ERROR-ATTRIBUTION.csv`
+
+Every false-premise error must be attributed to:
+
+* retrieval miss
+* evidence ambiguity
+* proposition extraction
+* polarity
+* semantic matching
+* contradiction scoring
+* decision threshold
+* unknown/insufficient evidence
+
+---
+
+# 10. PHASE H — FRESH BLIND DATASET
+
+Construct a new blind dataset that has NOT been used in:
+
+* EXP-0023
+* EXP-0024
+* EXP-0025
+* development tuning
+
+Minimum:
+
+1,000 cases.
+
+Suggested distribution:
+
+* 300 SUPPORTED
+* 300 REFUTED / false premise
+* 200 NOT_ESTABLISHED
+* 100 legitimate negation
+* 100 compound / contrastive
+
+Do not reuse exact benchmark questions.
+
+Do not generate labels from verifier output.
+
+Ground truth must be independently defined from the curriculum corpus.
+
+Run exclusively through:
+
+`POST /api/rag/ask`
+
+The verifier must never receive the expected label.
+
+Create:
+
+`EXP-0026-BLIND-DATASET.json`
+`EXP-0026-BLIND-RESULTS.json`
+
+---
+
+# 11. PHASE I — CROSS-RULE HOLDOUT
+
+Run the verifier on cases specifically constructed to avoid existing:
+
+* semantic-opposite dictionary entries
+* predicate lists
+* technology lists
+* phrase exceptions
+* benchmark-adjacent patterns
+
+This is a critical anti-overfitting test.
+
+Minimum:
+
+300 cases.
+
+Required:
+
+* FAR
+* refutation recall
+* FRR
+* unknown recall
+* accuracy
+* confusion matrix
+
+---
+
+# 12. PHASE J — SECURITY REGRESSION
+
+Repeat the EXP-0025 security tests.
+
+Must verify:
+
+* unauthorized `X-RAG-FLAGS`
+* duplicated headers
+* malformed headers
+* URL-encoded header tricks
+* service-key abuse
+* direct Worker access where applicable
+* prompt injection against `/api/rag/ask`
+* XML/data-boundary attacks
+* attempts to disable premise verification
+
+Certification requirement:
+
+`0 successful unauthorized safety-flag overrides`
+
+and
+
+`0 accepted prompt-injection instructions that alter system behavior`
+
+Do not test only `/api/rag/search`.
+
+---
+
+# 13. PHASE K — RETRIEVAL REGRESSION
+
+Confirm EXP-0025 did not damage the frozen retrieval system.
+
+Compare against EXP-0024 and EXP-0025 baselines:
+
+* Hit@1
+* Hit@3
+* Hit@5
+* MRR
+* nDCG
+* keyword recall
+* search latency p50/p95
+
+If retrieval changed, identify exactly why.
+
+---
+
+# 14. PHASE L — HISTORICAL REGRESSION REPEAT
+
+Re-run the complete historical EXP-0023 2,000-case suite.
+
+Do NOT merely state "regression maintained."
+
+Produce exact:
+
+* confusion matrix
+* supported recall
+* false-premise refutation recall
+* FAR
+* unknown recall
+* legitimate-negation FRR
+* comparison against EXP-0024
+* comparison against EXP-0025
+
+Any unexplained difference must be investigated.
+
+---
+
+# 15. PHASE M — DEVELOPMENT / HOLDOUT DISCREPANCY AUDIT
+
+Earlier EXP-0025 logs reported development accuracy of:
+
+87.75%
+
+while the final artifact reported:
+
+89.25%.
+
+Determine exactly why these values differ.
+
+Possible causes to investigate:
+
+* evaluator version
+* dataset version
+* verifier version
+* threshold version
+* dataset filtering
+* category accounting
+* duplicate cases
+* incomplete run
+* artifact overwrite
+
+Do NOT silently select one number.
+
+Document the explanation in:
+
+`EXP-0026-METRIC-RECONCILIATION.md`
+
+---
+
+# 16. PHASE N — ABLATION OF MANUAL RULE DEPENDENCY
+
+Create controlled variants:
+
+A0 = exact EXP-0025
+
+A1 = EXP-0025 without semantic-opposite dictionary
+
+A2 = EXP-0025 without targeted predicate lists
+
+A3 = EXP-0025 without curriculum-specific OOD lists
+
+A4 = EXP-0025 with only generic evidence/polarity mechanisms
+
+A5 = EXP-0025 complete
+
+Run on development data only first.
+
+Do not tune to the blind dataset.
+
+The goal is not to find the highest score.
+
+The goal is to quantify how much performance depends on manually encoded semantic knowledge.
+
+Create:
+
+`EXP-0026-RULE-ABLATION.json`
+
+---
+
+# 17. PHASE O — NO-LEAKAGE AUDIT
+
+Perform both:
+
+### Static audit
+
+Search active source for:
+
+* benchmark IDs
+* benchmark query text
+* expected answers
+* answer fragments
+* dataset-specific identifiers
+* hidden bypass tokens
+* evaluator shortcuts
+
+### Behavioral audit
+
+Randomly alter phrasing of benchmark concepts.
+
+Demonstrate that correctness is evidence-dependent rather than string-dependent.
+
+Create:
+
+`EXP-0026-STATIC-AUDIT.json`
+`EXP-0026-BEHAVIORAL-AUDIT.json`
+
+---
+
+# 18. ACCEPTANCE STANDARD
+
+EXP-0025 may be formally frozen as the research champion only if the independent EXP-0026 evidence supports all of the following:
+
+1. EXP-0025 results are reproducible.
+2. Fresh blind evaluation meets:
+
+   * FAR <= 15%
+   * refutation recall >= 80%
+   * legitimate-negation FRR <= 5%
+   * unknown recall >= 95%
+3. Rule-uncovered contradiction cases do not show catastrophic degradation.
+4. No benchmark leakage.
+5. Security remains clean.
+6. Retrieval remains stable.
+7. Historical regression shows no unexplained unacceptable degradation.
+8. Development/holdout metric discrepancies are reconciled.
+9. Evidence-grounding remains demonstrable.
+10. Performance is not dependent primarily on benchmark-specific rules.
+
+IMPORTANT:
+
+Do NOT require every conceivable open-domain reasoning task to pass.
+
+The system is still closed-domain and curriculum-scoped.
+
+However, do not call the verifier "general-purpose" merely because the static audit is clean.
+
+---
+
+# 19. FAILURE CLASSIFICATION
+
+If any requirement fails, DO NOT patch it automatically.
+
+Instead classify the outcome:
+
+### CERTIFIED
+
+All gates satisfied.
+
+### CONDITIONALLY CERTIFIED
+
+Primary performance/security gates pass, but a documented generalization or methodological limitation remains.
+
+### NOT CERTIFIED
+
+A primary gate, reproducibility requirement, anti-cheating requirement, or security requirement fails.
+
+Do not use "champion" unless the evidence supports it.
+
+---
+
+# 20. REQUIRED ARTIFACTS
+
+Generate:
+
+* `EXP-0026-BASELINE-MANIFEST.json`
+* `EXP-0026-REPRODUCIBILITY.json`
+* `EXP-0026-RULE-INVENTORY.csv`
+* `EXP-0026-ERROR-ATTRIBUTION.csv`
+* `EXP-0026-BLIND-DATASET.json`
+* `EXP-0026-BLIND-RESULTS.json`
+* `EXP-0026-RULE-ABLATION.json`
+* `EXP-0026-STATIC-AUDIT.json`
+* `EXP-0026-BEHAVIORAL-AUDIT.json`
+* `EXP-0026-SECURITY-RESULTS.json`
+* `EXP-0026-RETRIEVAL-REGRESSION.json`
+* `EXP-0026-HISTORICAL-REGRESSION.json`
+* `EXP-0026-METRIC-RECONCILIATION.md`
+* `EXP-0026-FAILURE-REGISTER.csv`
+* `EXP-0026-FINAL-REPORT.md`
+
+Also generate one final manifest containing all hashes.
+
+---
+
+# 21. EXPERIMENTAL DISCIPLINE
+
+Do NOT:
+
+* change the corpus
+* change embeddings
+* change the generation model
+* optimize latency
+* optimize worker count
+* redesign conversational memory
+* change retrieval ranking
+* silently tune thresholds on blind data
+* rewrite the verifier before baseline certification
+
+EXP-0026 is primarily an AUDIT.
+
+Only make implementation changes if a reproducibility defect or certification-blocking infrastructure defect is discovered.
+
+If a verifier modification becomes scientifically necessary, stop the audit and record it as a separate candidate:
+
+`EXP-0026-R1`
+
+Do not contaminate the original EXP-0025 baseline.
+
+---
+
+# 22. FINAL REPORT REQUIREMENT
+
+The final report must clearly answer:
+
+1. Is EXP-0025 reproducible?
+2. Does it generalize beyond the rule tables?
+3. How much performance comes from manually encoded semantic mappings?
+4. How much error is retrieval failure versus verifier failure?
+5. Does a genuinely fresh blind dataset confirm the claimed gains?
+6. Is the development 87.75% vs 89.25% discrepancy explained?
+7. Are security and retrieval unchanged?
+8. Is EXP-0025 scientifically defensible as the research champion?
+9. Which limitations must be disclosed in the paper?
+10. What should EXP-0027 investigate, if anything?
+
+Do not use promotional language.
+
+Use measured scientific language.
+
+Do not claim "general reasoning."
+
+Do not claim "eliminated hallucination."
+
+Do not claim "fully solved false-premise detection."
+
+The final conclusion must distinguish:
+
+* demonstrated
+* supported by evidence
+* conditionally supported
+* unproven
+* failed
+
+Proceed autonomously and complete all phases before issuing the final certification verdict.
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-09-13T12:44:11+05:30.
+</ADDITIONAL_METADATA>

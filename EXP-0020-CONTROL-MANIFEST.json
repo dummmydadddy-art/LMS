@@ -1,0 +1,52 @@
+{
+  "experiment_id": "EXP-0020",
+  "timestamp": "2026-09-09T18:55:00.000Z",
+  "mission": "TARGETED_REMEDIATION_OF_EXP0019_FALSIFIED_CLAIMS",
+  "candidate_target": "EXP-0020-CANDIDATE-REMEDIATED-2026-09-09",
+  "baseline_candidates": {
+    "historical_champion": "EXP-0013-CHAMPION-2026-09-09",
+    "preceding_hardened": "EXP-0018-CANDIDATE-HARDENED-2026-09-09"
+  },
+  "git": {
+    "commit": "176883227602671b545e061dacf228aedc3271a5",
+    "production_untouched": true
+  },
+  "runtime": {
+    "os": "Windows 11 (NT 10.0.26100)",
+    "node_version": "v24.11.0",
+    "php_version": "8.3.32"
+  },
+  "corpus": {
+    "corpus_version": "1788958315672",
+    "total_chunks": 23
+  },
+  "source_file_hashes_sha256": {
+    "backend/gateway.js": "3c0308560a9a2bef75b2fed32a539a86a6378c73f642c1819c05b817a43a93c4",
+    "backend/rag_service.php": "a550d5f1fffea1aa0e46b97c7c99ba68efe5c2cd625519a684a7332cfbec6cee",
+    "backend/rag_premise_verifier.php": "957c40f40d3853fc5070689c1f455e3b810972a82da5166f6b8026dfe0bdb819",
+    "backend/rag_query_condenser.php": "6b400fc1d093712c385c42450af543708034781ca9ecbbbf02f676ae80b3cfb1",
+    "backend/rag_query_orchestrator.php": "644f466c88c1107ff5605e0dc60f0dc11b238b0842b6901ba571d955a21e82cc",
+    "backend/rag_safety_boundary.php": "805d501efb9a339dea21ed8d158522398c8f4dadaccc6beb9c4c81450e5121a2",
+    "backend/rag_semantic_mapper.php": "a1314dc897e5c1dc9ccb0eadf24f3d78060627a3cf9063aa5fb96d4cd353318c",
+    "backend/rag_flags.php": "aa8d3051873ea28cb6e8c7f7fa2ea4f47499614e7e6c63403390dd5d6829ed84",
+    "backend/rag_flags.json": "c814568feadfda105e84730d943fbe700ef55d61532a4067594e354b7c18f423",
+    "backend/embedding_coordinator.js": "221d86ede96ebe2938d6bd9a39b56ed718bee9586af0b5dcc70ba40f39854859",
+    "backend/seed_rag_knowledge.php": "ce188304300af7d4e8b7f5651ed653eeaeec4a6d1e6d79f91dd3be79dd7ed04f",
+    "database/rag_corpus_version.txt": "cdab963c693b543017b381f27da1d9f96a6ad604b71737f8307ea3c6852b6bad",
+    "database/rag_schema.sql": "9cc10d6e028a0761ef0acbef01cdfb700a2a759e7c34cb17df44b23807114960"
+  },
+  "reproduced_exp0019_failures": {
+    "failure_1_prewarm_dead_code": {
+      "experimentMode": "EXP-0018",
+      "isPrewarmed": false,
+      "retrieval_path": "SQLITE_DISK"
+    },
+    "failure_2_false_premise_overfitting": {
+      "query": "Why do microtasks have lower priority than macrotasks in the Node.js event loop?",
+      "safety_boundary_action": "PROCEED",
+      "premise_verifier_status": "CONFIRMED",
+      "calibrated_confidence_abstain": false,
+      "result_sent_to_llm": true
+    }
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "verdict": "REQUEST_CHANGES",
+  "timestamp": "2026-10-03T08:43:21Z",
+  "all_ok": false,
+  "suites": [
+    {
+      "suite": "Resource Audit",
+      "all_passed": true,
+      "device": "cpu",
+      "vram_mb": 0.0,
+      "loaded": true
+    },
+    {
+      "suite": "Semantic Discrimination",
+      "all_passed": false,
+      "cases": [
+        {
+          "name": "Case 1: React useEffect Pitfalls (Dispatch Requirement)",
+          "passed": true,
+          "top_id": "target_useeffect",
+          "top_score": 0.999874,
+          "rank2_id": "distractor_usestate",
+          "rank2_score": 0.011334,
+          "margin": 0.9885400000000001,
+          "latency_ms": 49.4180999994569,
+          "all_ranks": [
+            [
+              1,
+              "target_useeffect",
+              0.999874
+            ],
+            [
+              2,
+              "distractor_usestate",
+              0.011334
+            ],
+            [
+              3,
+              "distractor_express_middleware",
+              1.1e-05
+            ],
+            [
+              4,
+              "distractor_postgres_btree",
+              1.1e-05
+            ],
+            [
+              5,
+              "distractor_css_flexbox",
+              1.1e-05
+            ]
+          ]
+        },
+        {
+          "name": "Case 2: Python GIL vs Multiprocessing vs Node.js Event Loop",
+          "passed": false,
+          "top_id": "target_python_gil",
+          "top_score": 0.999786,
+          "rank2_id": "distractor_python_multiprocessing",
+          "rank2_score": 0.944735,
+          "margin": 0.05505099999999996,
+          "latency_ms": 54.07039999954577,
+          "all_ranks": [
+            [
+              1,
+              "target_python_gil",
+              0.999786
+            ],
+            [
+              2,
+              "distractor_python_multiprocessing",
+              0.944735
+            ],
+            [
+              3,
+              "distractor_nodejs_event_loop",
+              0.032556
+            ],
+            [
+              4,
+              "distractor_os_threads",
+              0.001141
+            ],
+            [
+              5,
+              "distractor_git_branches",
+              1.4e-05
+            ]
+          ]
+        },
+        {
+          "name": "Case 3: PostgreSQL B-Tree vs Hash vs GIN for Range Queries",
+          "passed": false,
+          "top_id": "target_postgres_btree",
+          "top_score": 0.999619,
+          "rank2_id": "distractor_postgres_hash",
+          "rank2_score": 0.997812,
+          "margin": 0.001807000000000003,
+          "latency_ms": 48.98929999944812,
+          "all_ranks": [
+            [
+              1,
+              "target_postgres_btree",
+              0.999619
+            ],
+            [
+              2,
+              "distractor_postgres_hash",
+              0.997812
+            ],
+            [
+              3,
+              "distractor_postgres_gin",
+              0.392153
+            ],
+            [
+              4,
+              "distractor_js_array_filter",
+              1.1e-05
+            ]
+          ]
+        },
+        {
+          "name": "Case 4: Git Rebase vs Merge History Rewriting",
+          "passed": true,
+          "top_id": "target_git_rebase",
+          "top_score": 0.999314,
+          "rank2_id": "distractor_git_cherrypick",
+          "rank2_score": 0.338065,
+          "margin": 0.661249,
+          "latency_ms": 44.725599998855614,
+          "all_ranks": [
+            [
+              1,
+              "target_git_rebase",
+              0.999314
+            ],
+            [
+              2,
+              "distractor_git_cherrypick",
+              0.338065
+            ],
+            [
+              3,
+              "distractor_git_reset",
+              0.013626
+            ],
+            [
+              4,
+              "distractor_docker_layers",
+              1.1e-05
+            ]
+          ]
+        },
+        {
+          "name": "Case 5: Adversarial Rule of Hooks Trap (Conditional Execution)",
+          "passed": false,
+          "top_id": "target_rules_of_hooks",
+          "top_score": 0.997838,
+          "rank2_id": "adversarial_trap_distractor",
+          "rank2_score": 0.997632,
+          "margin": 0.00020600000000003948,
+          "latency_ms": 33.917799999471754,
+          "all_ranks": [
+            [
+              1,
+              "target_rules_of_hooks",
+              0.997838
+            ],
+            [
+              2,
+              "adversarial_trap_distractor",
+              0.997632
+            ],
+            [
+              3,
+              "distractor_css_media_queries",
+              0.000142
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "suite": "Sequential Burst",
+      "all_passed": true,
+      "count": 20,
+      "failures": 0,
+      "total_ms": 1712.0965000012802,
+      "p50_ms": 83.99484999972628,
+      "p90_ms": 95.01070999922376,
+      "p95_ms": 95.6097949996547,
+      "p99_ms": 96.1234789988157,
+      "min_ms": 73.94829999975627,
+      "max_ms": 96.25189999860595,
+      "avg_ms": 85.35488499974235,
+      "srv_p50_ms": 80.11,
+      "srv_p95_ms": 92.7915
+    },
+    {
+      "suite": "Concurrency Stress",
+      "all_passed": true,
+      "levels": [
+        {
+          "workers": 5,
+          "passed": true,
+          "failures": 0,
+          "contamination_errors": 0,
+          "p50_ms": 275.1645999996981,
+          "max_ms": 277.58479999829433,
+          "total_ms": 283.74780000012834
+        },
+        {
+          "workers": 10,
+          "passed": true,
+          "failures": 0,
+          "contamination_errors": 0,
+          "p50_ms": 449.6706999998423,
+          "max_ms": 486.1922999989474,
+          "total_ms": 496.8087999986892
+        }
+      ]
+    },
+    {
+      "suite": "Edge Cases",
+      "all_passed": true,
+      "cases": [
+        {
+          "name": "Empty Passages List",
+          "passed": true,
+          "status": 200,
+          "expected_status": 200,
+          "elapsed_ms": 2.395900000919937
+        },
+        {
+          "name": "Single Passage Scoring",
+          "passed": true,
+          "status": 200,
+          "expected_status": 200,
+          "elapsed_ms": 19.962099999247584
+        },
+        {
+          "name": "Alternative Key 'documents' with 'content'",
+          "passed": true,
+          "status": 200,
+          "expected_status": 200,
+          "elapsed_ms": 17.50250000077358
+        },
+        {
+          "name": "Large Batch (50 Passages)",
+          "passed": true,
+          "status": 200,
+          "expected_status": 200,
+          "elapsed_ms": 265.65239999945334
+        },
+        {
+          "name": "Long Passage Exceeding 512 Tokens (Truncation Safety)",
+          "passed": true,
+          "status": 200,
+          "expected_status": 200,
+          "elapsed_ms": 164.20540000035544
+        },
+        {
+          "name": "Empty and Whitespace-only Passage Texts",
+          "passed": true,
+          "status": 200,
+          "expected_status": 200,
+          "elapsed_ms": 20.214199999827542
+        },
+        {
+          "name": "Empty Query String",
+          "passed": true,
+          "status": 200,
+          "expected_status": 200,
+          "elapsed_ms": 11.546000001544598
+        },
+        {
+          "name": "Unicode, Emojis, and Foreign Characters",
+          "passed": true,
+          "status": 200,
+          "expected_status": 200,
+          "elapsed_ms": 28.47239999937301
+        },
+        {
+          "name": "SQL Injection and XSS Payloads",
+          "passed": true,
+          "status": 200,
+          "expected_status": 200,
+          "elapsed_ms": 29.632799998580595
+        },
+        {
+          "name": "top_n Parameter Truncation",
+          "passed": true,
+          "status": 200,
+          "expected_status": 200,
+          "elapsed_ms": 39.47440000047209
+        },
+        {
+          "name": "Malformed Schema (Missing query field)",
+          "passed": true,
+          "status": 422,
+          "expected_status": 422,
+          "elapsed_ms": 2.1527000008063624
+        }
+      ]
+    },
+    {
+      "suite": "PHP End-to-End",
+      "all_passed": true,
+      "cases": [
+        {
+          "query": "Explain the four layers of the CSS Box Model from inside out.",
+          "passed": true,
+          "status": 200,
+          "latency_ms": 137.70909999948344,
+          "answer_len": 570,
+          "sources_count": 4
+        },
+        {
+          "query": "What is the time complexity of searching in a balanced B-tree index in PostgreSQL?",
+          "passed": true,
+          "status": 200,
+          "latency_ms": 2134.8571999988053,
+          "answer_len": 211,
+          "sources_count": 4
+        },
+        {
+          "query": "How does Git store commit objects and tree objects internally?",
+          "passed": true,
+          "status": 200,
+          "latency_ms": 3208.6326999997254,
+          "answer_len": 548,
+          "sources_count": 4
+        }
+      ]
+    }
+  ]
+}

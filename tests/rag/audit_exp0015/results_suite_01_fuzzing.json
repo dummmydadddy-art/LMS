@@ -1,0 +1,72 @@
+{
+  "total_fuzz_inputs": 71,
+  "success_count": 68,
+  "crash_count": 3,
+  "timeout_count": 0,
+  "abstention_count": 11,
+  "anomalous_retrievals": 0,
+  "latencies": {
+    "mean": 119.44,
+    "median": 127,
+    "p50": 127,
+    "p90": 158,
+    "p95": 211,
+    "p99": 438,
+    "min": 22,
+    "max": 438,
+    "stddev": 67.12
+  },
+  "failure_cases": [
+    {
+      "index": 28,
+      "category": "whitespace_only",
+      "query": " ",
+      "statusCode": 400,
+      "latency": 28,
+      "abstain": false,
+      "confidence": 0,
+      "chunksReturned": 0,
+      "topChunk": null,
+      "status": "ERROR",
+      "failureDetail": {
+        "type": "ERROR",
+        "statusCode": 400,
+        "error": "query parameter is required"
+      }
+    },
+    {
+      "index": 29,
+      "category": "whitespace_only",
+      "query": "    ",
+      "statusCode": 400,
+      "latency": 23,
+      "abstain": false,
+      "confidence": 0,
+      "chunksReturned": 0,
+      "topChunk": null,
+      "status": "ERROR",
+      "failureDetail": {
+        "type": "ERROR",
+        "statusCode": 400,
+        "error": "query parameter is required"
+      }
+    },
+    {
+      "index": 30,
+      "category": "whitespace_only",
+      "query": "\t\t\n\n  ",
+      "statusCode": 400,
+      "latency": 22,
+      "abstain": false,
+      "confidence": 0,
+      "chunksReturned": 0,
+      "topChunk": null,
+      "status": "ERROR",
+      "failureDetail": {
+        "type": "ERROR",
+        "statusCode": 400,
+        "error": "query parameter is required"
+      }
+    }
+  ]
+}

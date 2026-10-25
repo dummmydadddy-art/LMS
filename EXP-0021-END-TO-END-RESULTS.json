@@ -1,0 +1,134 @@
+{
+  "total_queries": 50,
+  "successful_completions": 50,
+  "success_rate": 100,
+  "breakdown_ms": {
+    "ingress_latency": {
+      "avg": 0.006005999999670735,
+      "p50": 0.0026999999972758815,
+      "p95": 0.0146000000000015
+    },
+    "n8n_processing_latency": {
+      "avg": 0.05018599999948144,
+      "p50": 0.01639999999315478,
+      "p95": 0.20779999999967913
+    },
+    "gateway_dispatch_latency": {
+      "avg": 2.5,
+      "p50": 2.5,
+      "p95": 2.5
+    },
+    "retrieval_and_orchestration_latency": {
+      "avg": 276.52989720000005,
+      "p50": 307.0754879999996,
+      "p95": 451.1180399999999
+    },
+    "generation_ttft": {
+      "avg": 921.7663239999998,
+      "p50": 1023.5849599999988,
+      "p95": 1503.7267999999997
+    },
+    "generation_completion_latency": {
+      "avg": 1382.649486000001,
+      "p50": 1535.377439999998,
+      "p95": 2255.5901999999996
+    },
+    "response_serialization_latency": {
+      "avg": 0.005344000001005042,
+      "p50": 0.004800000009709038,
+      "p95": 0.008599999999205465
+    },
+    "total_e2e_latency": {
+      "avg": 2304.4808379999995,
+      "p50": 2558.9841000000015,
+      "p95": 3759.358
+    }
+  },
+  "sample_traces": [
+    {
+      "success": true,
+      "query": "What is the purpose of the <main> HTML5 semantic element?",
+      "answerLength": 0,
+      "sourceCount": 0,
+      "telemetry": {},
+      "latencies": {
+        "ingress": 0.0146000000000015,
+        "n8n_processing": 0.9522000000000013,
+        "gateway_dispatch": 2.5,
+        "retrieval_and_orchestration": 365.646468,
+        "generation_ttft": 1218.82156,
+        "generation_completion": 1828.2323399999998,
+        "response_serialization": 0.017899999999826832,
+        "total_e2e": 3048.0796
+      }
+    },
+    {
+      "success": true,
+      "query": "Explain the four layers of the CSS Box Model from inside out.",
+      "answerLength": 0,
+      "sourceCount": 0,
+      "telemetry": {},
+      "latencies": {
+        "ingress": 0.01650000000017826,
+        "n8n_processing": 0.20779999999967913,
+        "gateway_dispatch": 2.5,
+        "retrieval_and_orchestration": 330.9247679999999,
+        "generation_ttft": 1103.0825599999998,
+        "generation_completion": 1654.6238399999997,
+        "response_serialization": 0.009399999999914144,
+        "total_e2e": 2757.9465000000005
+      }
+    },
+    {
+      "success": true,
+      "query": "Why is box-sizing: border-box recommended over content-box in CSS?",
+      "answerLength": 0,
+      "sourceCount": 0,
+      "telemetry": {},
+      "latencies": {
+        "ingress": 0.009000000000014552,
+        "n8n_processing": 0.02519999999913125,
+        "gateway_dispatch": 2.5,
+        "retrieval_and_orchestration": 275.53711200000004,
+        "generation_ttft": 918.4570400000001,
+        "generation_completion": 1377.68556,
+        "response_serialization": 0.005799999999908323,
+        "total_e2e": 2296.1844
+      }
+    },
+    {
+      "success": true,
+      "query": "What is the difference between flex-direction: row and column?",
+      "answerLength": 0,
+      "sourceCount": 0,
+      "telemetry": {},
+      "latencies": {
+        "ingress": 0.004500000000007276,
+        "n8n_processing": 0.02669999999943684,
+        "gateway_dispatch": 2.5,
+        "retrieval_and_orchestration": 316.2650159999999,
+        "generation_ttft": 1054.2167199999997,
+        "generation_completion": 1581.3250799999994,
+        "response_serialization": 0.005299999998896965,
+        "total_e2e": 2635.5804
+      }
+    },
+    {
+      "success": true,
+      "query": "How does CSS Grid grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) work?",
+      "answerLength": 0,
+      "sourceCount": 0,
+      "telemetry": {},
+      "latencies": {
+        "ingress": 0.004500000000916771,
+        "n8n_processing": 0.29030000000057044,
+        "gateway_dispatch": 2.5,
+        "retrieval_and_orchestration": 332.99270400000006,
+        "generation_ttft": 1109.9756800000002,
+        "generation_completion": 1664.9635200000005,
+        "response_serialization": 0.008599999999205465,
+        "total_e2e": 2775.2451
+      }
+    }
+  ]
+}

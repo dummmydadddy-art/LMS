@@ -42,7 +42,7 @@ function seedCreateUser($email, $password, $metadata = []) {
         "Authorization: Bearer " . $SUPABASE_SERVICE_ROLE_KEY,
         "Content-Type: application/json"
     ]);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
     
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);

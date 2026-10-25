@@ -1,0 +1,238 @@
+{
+  "experiment_id": "EXP-0071",
+  "strata_definitions": {
+    "S1": "Antonym-Assisted Refutation",
+    "S2": "Non-Antonym Structural Refutation",
+    "S3": "High-Overlap Supported Curriculum",
+    "S4": "Low-Overlap Paraphrase & Legitimate Negation",
+    "S5": "Normative & Universal Assertions",
+    "S6": "Compound Multi-Clause Queries",
+    "S7": "Out-of-Domain Inquiries"
+  },
+  "strata_metrics": {
+    "S1_antonym_assisted": {
+      "C0": {
+        "n": 166,
+        "correct": 155,
+        "accuracy": 93.37
+      },
+      "C1": {
+        "n": 166,
+        "correct": 139,
+        "accuracy": 83.73
+      },
+      "C2": {
+        "n": 166,
+        "correct": 145,
+        "accuracy": 87.35
+      },
+      "C3": {
+        "n": 166,
+        "correct": 156,
+        "accuracy": 93.98
+      },
+      "C4": {
+        "n": 166,
+        "correct": 128,
+        "accuracy": 77.11
+      },
+      "C5": {
+        "n": 166,
+        "correct": 156,
+        "accuracy": 93.98
+      }
+    },
+    "S2_non_antonym": {
+      "C0": {
+        "n": 234,
+        "correct": 213,
+        "accuracy": 91.03
+      },
+      "C1": {
+        "n": 234,
+        "correct": 192,
+        "accuracy": 82.05
+      },
+      "C2": {
+        "n": 234,
+        "correct": 195,
+        "accuracy": 83.33
+      },
+      "C3": {
+        "n": 234,
+        "correct": 208,
+        "accuracy": 88.89
+      },
+      "C4": {
+        "n": 234,
+        "correct": 185,
+        "accuracy": 79.06
+      },
+      "C5": {
+        "n": 234,
+        "correct": 208,
+        "accuracy": 88.89
+      }
+    },
+    "S3_high_overlap_support": {
+      "C0": {
+        "n": 100,
+        "correct": 85,
+        "accuracy": 85.0
+      },
+      "C1": {
+        "n": 100,
+        "correct": 61,
+        "accuracy": 61.0
+      },
+      "C2": {
+        "n": 100,
+        "correct": 64,
+        "accuracy": 64.0
+      },
+      "C3": {
+        "n": 100,
+        "correct": 81,
+        "accuracy": 81.0
+      },
+      "C4": {
+        "n": 100,
+        "correct": 56,
+        "accuracy": 56.0
+      },
+      "C5": {
+        "n": 100,
+        "correct": 82,
+        "accuracy": 82.0
+      }
+    },
+    "S4_low_overlap_paraphrase": {
+      "C0": {
+        "n": 50,
+        "correct": 46,
+        "accuracy": 92.0
+      },
+      "C1": {
+        "n": 50,
+        "correct": 37,
+        "accuracy": 74.0
+      },
+      "C2": {
+        "n": 50,
+        "correct": 39,
+        "accuracy": 78.0
+      },
+      "C3": {
+        "n": 50,
+        "correct": 46,
+        "accuracy": 92.0
+      },
+      "C4": {
+        "n": 50,
+        "correct": 36,
+        "accuracy": 72.0
+      },
+      "C5": {
+        "n": 50,
+        "correct": 46,
+        "accuracy": 92.0
+      }
+    },
+    "S5_normative_universal": {
+      "C0": {
+        "n": 81,
+        "correct": 74,
+        "accuracy": 91.36
+      },
+      "C1": {
+        "n": 81,
+        "correct": 65,
+        "accuracy": 80.25
+      },
+      "C2": {
+        "n": 81,
+        "correct": 69,
+        "accuracy": 85.19
+      },
+      "C3": {
+        "n": 81,
+        "correct": 73,
+        "accuracy": 90.12
+      },
+      "C4": {
+        "n": 81,
+        "correct": 55,
+        "accuracy": 67.9
+      },
+      "C5": {
+        "n": 81,
+        "correct": 73,
+        "accuracy": 90.12
+      }
+    },
+    "S6_compound_multi_clause": {
+      "C0": {
+        "n": 75,
+        "correct": 68,
+        "accuracy": 90.67
+      },
+      "C1": {
+        "n": 75,
+        "correct": 65,
+        "accuracy": 86.67
+      },
+      "C2": {
+        "n": 75,
+        "correct": 66,
+        "accuracy": 88.0
+      },
+      "C3": {
+        "n": 75,
+        "correct": 68,
+        "accuracy": 90.67
+      },
+      "C4": {
+        "n": 75,
+        "correct": 58,
+        "accuracy": 77.33
+      },
+      "C5": {
+        "n": 75,
+        "correct": 68,
+        "accuracy": 90.67
+      }
+    },
+    "S7_ood": {
+      "C0": {
+        "n": 100,
+        "correct": 98,
+        "accuracy": 98.0
+      },
+      "C1": {
+        "n": 100,
+        "correct": 99,
+        "accuracy": 99.0
+      },
+      "C2": {
+        "n": 100,
+        "correct": 98,
+        "accuracy": 98.0
+      },
+      "C3": {
+        "n": 100,
+        "correct": 98,
+        "accuracy": 98.0
+      },
+      "C4": {
+        "n": 100,
+        "correct": 99,
+        "accuracy": 99.0
+      },
+      "C5": {
+        "n": 100,
+        "correct": 98,
+        "accuracy": 98.0
+      }
+    }
+  }
+}

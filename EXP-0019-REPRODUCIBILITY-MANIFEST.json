@@ -1,0 +1,76 @@
+{
+  "experiment_id": "EXP-0019",
+  "timestamp": "2026-09-09T18:20:00Z",
+  "git_commit": "176883227602671b545e061dacf228aedc3271a5",
+  "environment": {
+    "os": "Windows 11 (NT 10.0.26100)",
+    "node_version": "v22.14.0",
+    "php_version": "8.2.12",
+    "ollama_host": "http://127.0.0.1:11434",
+    "embed_model": "nomic-embed-text",
+    "chat_model": "llama3.2:latest"
+  },
+  "cluster_topology": {
+    "gateway_port": 8000,
+    "fast_workers": [
+      8001,
+      8002,
+      8003,
+      8004,
+      8005,
+      8006
+    ],
+    "gen_workers": [
+      8007,
+      8008
+    ]
+  },
+  "test_suites_executed": [
+    {
+      "name": "Cluster Worker Recovery",
+      "script": "scratch/test_exp0019_phase1_cluster.js",
+      "artifact": "EXP-0019-WORKER-RECOVERY.json"
+    },
+    {
+      "name": "Cluster Concurrency & Lifecycle",
+      "script": "scratch/test_exp0019_phase1_cluster.js",
+      "artifact": "EXP-0019-CONCURRENCY-RESULTS.json"
+    },
+    {
+      "name": "Cache Consistency",
+      "script": "scratch/test_exp0019_phase2_cache.js",
+      "artifact": "EXP-0019-CACHE-CONSISTENCY.json"
+    },
+    {
+      "name": "Hard Negatives & Score Manipulation",
+      "script": "scratch/test_exp0019_phase4_hard_negatives.js",
+      "artifact": "EXP-0019-HARD-NEGATIVE-RESULTS.json"
+    },
+    {
+      "name": "Conversational Generalization",
+      "script": "scratch/test_exp0019_phase5_conversation.js",
+      "artifact": "EXP-0019-CONVERSATION-RESULTS.json"
+    },
+    {
+      "name": "1,000 Unseen False Premises",
+      "script": "scratch/run_phase7_fast.js",
+      "artifact": "EXP-0019-FALSE-PREMISE-BLIND-RESULTS.json"
+    },
+    {
+      "name": "300 Answer Citation Audit",
+      "script": "scratch/test_exp0019_citations_multihop.js",
+      "artifact": "EXP-0019-CITATION-AUDIT.md"
+    },
+    {
+      "name": "Prompt Injection & Security",
+      "script": "scratch/test_exp0019_security_and_compound.js",
+      "artifact": "EXP-0019-SECURITY-VERIFICATION.md"
+    },
+    {
+      "name": "10 Compound Stress Attacks",
+      "script": "scratch/test_exp0019_security_and_compound.js",
+      "artifact": "EXP-0019-COMPOUND-ATTACKS.json"
+    }
+  ],
+  "production_untouched": true
+}

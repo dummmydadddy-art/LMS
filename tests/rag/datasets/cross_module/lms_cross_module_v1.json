@@ -1,0 +1,382 @@
+[
+  {
+    "id": "cm_01",
+    "query": "How does the HTML5 <main> semantic element interact with CSS Flexbox when building responsive application layouts?",
+    "expected_modules": [
+      "HTML & CSS Fundamentals"
+    ],
+    "category": "html_css",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "<main>",
+      "unique content",
+      "flexbox",
+      "main axis",
+      "display: flex"
+    ]
+  },
+  {
+    "id": "cm_02",
+    "query": "Compare CSS Box Model border-box sizing with CSS Grid repeat(auto-fit, minmax()) for preventing layout overflow.",
+    "expected_modules": [
+      "HTML & CSS Fundamentals"
+    ],
+    "category": "html_css",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "border-box",
+      "content-box",
+      "padding and border",
+      "grid-template-columns",
+      "minmax"
+    ]
+  },
+  {
+    "id": "cm_03",
+    "query": "Why does an HTML5 <header> or <nav> container commonly use justify-content: space-between in Flexbox?",
+    "expected_modules": [
+      "HTML & CSS Fundamentals"
+    ],
+    "category": "html_css",
+    "type": "SYNTHESIS",
+    "target_keywords": [
+      "<header>",
+      "<nav>",
+      "justify-content",
+      "space-between",
+      "flex container"
+    ]
+  },
+  {
+    "id": "cm_04",
+    "query": "What is the structural difference between 1-dimensional Flexbox layout and 2-dimensional CSS Grid layout in HTML5 pages?",
+    "expected_modules": [
+      "HTML & CSS Fundamentals"
+    ],
+    "category": "html_css",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "1-dimensional",
+      "single axis",
+      "2-dimensional",
+      "columns and rows",
+      "display: grid"
+    ]
+  },
+  {
+    "id": "cm_05",
+    "query": "How does JavaScript object immutability and the spread operator relate to React useState state update rules?",
+    "expected_modules": [
+      "JavaScript ES6+ Deep Dive",
+      "React Hooks Tutorial"
+    ],
+    "category": "js_react",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "spread operator",
+      "immutable",
+      "Object.freeze",
+      "useState",
+      "re-render",
+      "prev =>"
+    ]
+  },
+  {
+    "id": "cm_06",
+    "query": "How do JavaScript closures retain lexical scope variables and how does that cause stale state in React useEffect?",
+    "expected_modules": [
+      "JavaScript ES6+ Deep Dive",
+      "React Hooks Tutorial"
+    ],
+    "category": "js_react",
+    "type": "DEPENDENCY",
+    "target_keywords": [
+      "closure",
+      "lexical environment",
+      "stale closure",
+      "useEffect",
+      "dependency array"
+    ]
+  },
+  {
+    "id": "cm_07",
+    "query": "Compare JavaScript arrow function lexical this binding with React custom hook logic extraction.",
+    "expected_modules": [
+      "JavaScript ES6+ Deep Dive",
+      "React Hooks Tutorial"
+    ],
+    "category": "js_react",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "arrow function",
+      "lexical this",
+      "enclosing scope",
+      "custom hook",
+      "usePrefix"
+    ]
+  },
+  {
+    "id": "cm_08",
+    "query": "How does the JavaScript Temporal Dead Zone (TDZ) for let and const differ from the React Rules of Hooks top-level execution rule?",
+    "expected_modules": [
+      "JavaScript ES6+ Deep Dive",
+      "React Hooks Tutorial"
+    ],
+    "category": "js_react",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "temporal dead zone",
+      "ReferenceError",
+      "top level",
+      "never inside loops",
+      "call order"
+    ]
+  },
+  {
+    "id": "cm_09",
+    "query": "What is the difference between middleware in Express and custom hooks in React when sharing reusable logic across an application?",
+    "expected_modules": [
+      "Node.js & Express REST API Notes",
+      "React Hooks Tutorial"
+    ],
+    "category": "react_node",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "middleware",
+      "req, res, next",
+      "custom hook",
+      "stateful logic",
+      "usePrefix"
+    ]
+  },
+  {
+    "id": "cm_10",
+    "query": "Explain JWT token authentication in an Express backend vs client-side session storage with React useContext.",
+    "expected_modules": [
+      "Node.js & Express REST API Notes",
+      "React Hooks Tutorial"
+    ],
+    "category": "react_node",
+    "type": "ARCHITECTURE_FLOW",
+    "target_keywords": [
+      "jwt",
+      "header, payload, signature",
+      "useContext",
+      "createContext",
+      "bearer token"
+    ]
+  },
+  {
+    "id": "cm_11",
+    "query": "How does handling an asynchronous HTTP 401 Unauthorized error in an Express API differ from handling state updates in React useEffect cleanup?",
+    "expected_modules": [
+      "Node.js & Express REST API Notes",
+      "React Hooks Tutorial"
+    ],
+    "category": "react_node",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "401 unauthorized",
+      "authenticate",
+      "cleanup function",
+      "unmount",
+      "abort"
+    ]
+  },
+  {
+    "id": "cm_12",
+    "query": "Compare CORS middleware configuration in Express with React component re-rendering triggered by useState.",
+    "expected_modules": [
+      "Node.js & Express REST API Notes",
+      "React Hooks Tutorial"
+    ],
+    "category": "react_node",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "cors",
+      "cross-origin",
+      "re-render",
+      "useState",
+      "headers"
+    ]
+  },
+  {
+    "id": "cm_13",
+    "query": "How does the ACID Atomicity property in PostgreSQL transactions correspond to error-handling middleware calling next(err) in Express?",
+    "expected_modules": [
+      "PostgreSQL Database Design",
+      "Node.js & Express REST API Notes"
+    ],
+    "category": "node_postgres",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "atomicity",
+      "commit",
+      "rollback",
+      "next(err)",
+      "error-handling middleware",
+      "(err, req, res, next)"
+    ]
+  },
+  {
+    "id": "cm_14",
+    "query": "How does a PostgreSQL B-tree index optimize API response latency when an Express route performs a SELECT query with a WHERE clause?",
+    "expected_modules": [
+      "PostgreSQL Database Design",
+      "Node.js & Express REST API Notes"
+    ],
+    "category": "node_postgres",
+    "type": "DEPENDENCY",
+    "target_keywords": [
+      "b-tree",
+      "logarithmic",
+      "o(log n)",
+      "full table scan",
+      "rest api",
+      "get endpoint"
+    ]
+  },
+  {
+    "id": "cm_15",
+    "query": "Explain how a composite primary key in a PostgreSQL junction table supports a RESTful Express route like POST /api/courses/:id/enroll.",
+    "expected_modules": [
+      "PostgreSQL Database Design",
+      "Node.js & Express REST API Notes"
+    ],
+    "category": "node_postgres",
+    "type": "ARCHITECTURE_FLOW",
+    "target_keywords": [
+      "junction table",
+      "composite primary key",
+      "many-to-many",
+      "foreign key",
+      "restful naming"
+    ]
+  },
+  {
+    "id": "cm_16",
+    "query": "Compare database connection pooling in Node.js with the ACID Durability WAL mechanism in PostgreSQL.",
+    "expected_modules": [
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design"
+    ],
+    "category": "node_postgres",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "connection pool",
+      "non-blocking i/o",
+      "durability",
+      "write-ahead logging",
+      "wal",
+      "crash survival"
+    ]
+  },
+  {
+    "id": "cm_17",
+    "query": "In PostgreSQL database normalization, how does 3NF eliminate redundancy compared to JavaScript object immutability preventing mutation?",
+    "expected_modules": [
+      "PostgreSQL Database Design",
+      "JavaScript ES6+ Deep Dive"
+    ],
+    "category": "js_postgres",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "3nf",
+      "transitive dependency",
+      "immutability",
+      "reassignment",
+      "redundancy"
+    ]
+  },
+  {
+    "id": "cm_18",
+    "query": "How does JavaScript Promise async/await microtask queuing contrast with PostgreSQL ACID Isolation transaction levels?",
+    "expected_modules": [
+      "JavaScript ES6+ Deep Dive",
+      "PostgreSQL Database Design"
+    ],
+    "category": "js_postgres",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "async/await",
+      "microtask",
+      "event loop",
+      "isolation",
+      "read committed",
+      "serializable"
+    ]
+  },
+  {
+    "id": "cm_19",
+    "query": "Explain the complete full-stack flow: a React form submission using useState, handled by an Express POST route with express.json(), inserting into a PostgreSQL 3NF table.",
+    "expected_modules": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design"
+    ],
+    "category": "three_module",
+    "type": "SYNTHESIS",
+    "target_keywords": [
+      "useState",
+      "express.json()",
+      "post route",
+      "3nf",
+      "insert into",
+      "primary key"
+    ]
+  },
+  {
+    "id": "cm_20",
+    "query": "How do React useEffect cleanup functions, Express error middleware (err, req, res, next), and PostgreSQL ROLLBACK collaborate to handle a failed payment transaction?",
+    "expected_modules": [
+      "React Hooks Tutorial",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design"
+    ],
+    "category": "three_module",
+    "type": "SYNTHESIS",
+    "target_keywords": [
+      "cleanup function",
+      "error-handling middleware",
+      "(err, req, res, next)",
+      "rollback",
+      "atomicity"
+    ]
+  },
+  {
+    "id": "cm_21",
+    "query": "Compare how JavaScript const scoping, Node.js environment variables, and PostgreSQL unique constraints each prevent duplicate entity creation.",
+    "expected_modules": [
+      "JavaScript ES6+ Deep Dive",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design"
+    ],
+    "category": "three_module",
+    "type": "COMPARATIVE",
+    "target_keywords": [
+      "const",
+      "block scope",
+      "unique constraint",
+      "primary key",
+      "environment"
+    ]
+  },
+  {
+    "id": "cm_22",
+    "query": "Trace how an HTML5 <main> dashboard displays data fetched from an Express REST API backed by a PostgreSQL B-tree indexed table.",
+    "expected_modules": [
+      "HTML & CSS Fundamentals",
+      "Node.js & Express REST API Notes",
+      "PostgreSQL Database Design"
+    ],
+    "category": "three_module",
+    "type": "ARCHITECTURE_FLOW",
+    "target_keywords": [
+      "<main>",
+      "restful naming",
+      "get endpoint",
+      "b-tree index",
+      "select"
+    ]
+  }
+]

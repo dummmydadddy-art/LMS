@@ -1,0 +1,38 @@
+{
+  "experiment": "EXP-0040",
+  "audit_type": "INDEPENDENT_BLIND_EVALUATION_AUDIT",
+  "timestamp": "2026-09-17T12:08:45+00:00",
+  "hashes": {
+    "blind_dataset_sha256": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08",
+    "blind_predictions_sha256": "56003df48c432baca1f042be75c12bf652f2a298a875727d7b694421bfd5ebd1",
+    "verifier_a4_sha256": "31c7c31ef6301156bb0318cb35ba5879e5ca3c25acdd6f705cd2f6c0e3b0fc2e"
+  },
+  "gates_verified": {
+    "blind_dataset_hash": "PASS",
+    "prediction_hash_lock": "PASS",
+    "sample_size_500": "PASS",
+    "two_phase_isolation": "PASS",
+    "verifier_freeze": "PASS",
+    "embedding_freeze": "PASS",
+    "far_safety_ceiling": "PASS",
+    "non_inferiority": "PASS",
+    "production_isolation": "PASS",
+    "git_hygiene": "PASS"
+  },
+  "headline_metrics_verified": {
+    "accuracy": 72.0,
+    "macro_f1": 72.24,
+    "far": 17.07,
+    "frr": 27.7,
+    "refutation_recall": 67.9,
+    "supported_recall": 72.3,
+    "not_established_recall": 76.8,
+    "ood_recall": 94.0,
+    "novel_ood_recall": "N/A",
+    "n01": 13,
+    "n10": 10,
+    "mcnemar_p": 0.67764,
+    "one_sided_95_lcb_pp": -0.9771
+  },
+  "audit_verdict": "PASS \u2014 FULL PROTOCOL COMPLIANCE"
+}

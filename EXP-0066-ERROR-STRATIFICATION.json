@@ -1,0 +1,611 @@
+{
+  "metadata": {
+    "experiment_id": "EXP-0066",
+    "phase": "Error Stratification & Attribution Diagnostic",
+    "reference_models": {
+      "development": "C0 (llama3.2:latest, frozen A4)",
+      "blind_b0": "B0 (un-gated frozen A4 reference)",
+      "blind_b1": "B1 (structural coherence gated A4)"
+    }
+  },
+  "overall_accuracies": {
+    "development_c0": 0.92,
+    "blind_b0": 0.728,
+    "blind_b1": 0.728,
+    "dev_blind_gap": 0.192
+  },
+  "confusion_matrices": {
+    "development_c0": {
+      "SUPPORTED->SUPPORTED": 131,
+      "SUPPORTED->REFUTED": 19,
+      "SUPPORTED->NOT_ESTABLISHED": 0,
+      "REFUTED->SUPPORTED": 9,
+      "REFUTED->REFUTED": 139,
+      "REFUTED->NOT_ESTABLISHED": 2,
+      "NOT_ESTABLISHED->SUPPORTED": 1,
+      "NOT_ESTABLISHED->REFUTED": 1,
+      "NOT_ESTABLISHED->NOT_ESTABLISHED": 98
+    },
+    "blind_b0": {
+      "SUPPORTED->SUPPORTED": 155,
+      "SUPPORTED->REFUTED": 45,
+      "SUPPORTED->NOT_ESTABLISHED": 13,
+      "REFUTED->SUPPORTED": 35,
+      "REFUTED->REFUTED": 111,
+      "REFUTED->NOT_ESTABLISHED": 16,
+      "NOT_ESTABLISHED->SUPPORTED": 11,
+      "NOT_ESTABLISHED->REFUTED": 16,
+      "NOT_ESTABLISHED->NOT_ESTABLISHED": 98
+    },
+    "blind_b1": {
+      "SUPPORTED->SUPPORTED": 155,
+      "SUPPORTED->REFUTED": 42,
+      "SUPPORTED->NOT_ESTABLISHED": 16,
+      "REFUTED->SUPPORTED": 36,
+      "REFUTED->REFUTED": 115,
+      "REFUTED->NOT_ESTABLISHED": 11,
+      "NOT_ESTABLISHED->SUPPORTED": 13,
+      "NOT_ESTABLISHED->REFUTED": 18,
+      "NOT_ESTABLISHED->NOT_ESTABLISHED": 94
+    }
+  },
+  "category_stratification": {
+    "development": {
+      "SUPPORTED_CURRICULUM": {
+        "n": 100,
+        "accuracy": 0.85,
+        "errors": {
+          "SUPPORTED->REFUTED": 15
+        }
+      },
+      "NOVEL_FALSE_PREMISE": {
+        "n": 100,
+        "accuracy": 0.94,
+        "errors": {
+          "REFUTED->SUPPORTED": 5,
+          "REFUTED->NOT_ESTABLISHED": 1
+        }
+      },
+      "OUT_OF_CURRICULUM_UNKNOWN": {
+        "n": 100,
+        "accuracy": 0.98,
+        "errors": {
+          "NOT_ESTABLISHED->SUPPORTED": 1,
+          "NOT_ESTABLISHED->REFUTED": 1
+        }
+      },
+      "LEGITIMATE_NEGATION": {
+        "n": 50,
+        "accuracy": 0.92,
+        "errors": {
+          "SUPPORTED->REFUTED": 4
+        }
+      },
+      "MIXED_COMPOUND_PREMISE": {
+        "n": 50,
+        "accuracy": 0.9,
+        "errors": {
+          "REFUTED->NOT_ESTABLISHED": 1,
+          "REFUTED->SUPPORTED": 4
+        }
+      }
+    },
+    "blind": {
+      "SUPPORTED": {
+        "n": 125,
+        "accuracy_b0": 0.728,
+        "accuracy_b1": 0.736,
+        "errors_b0": {
+          "SUPPORTED->REFUTED": 25,
+          "SUPPORTED->NOT_ESTABLISHED": 9
+        }
+      },
+      "FALSE_PREMISE": {
+        "n": 125,
+        "accuracy_b0": 0.696,
+        "accuracy_b1": 0.72,
+        "errors_b0": {
+          "REFUTED->SUPPORTED": 24,
+          "REFUTED->NOT_ESTABLISHED": 14
+        }
+      },
+      "AMBIGUOUS": {
+        "n": 75,
+        "accuracy_b0": 0.6667,
+        "accuracy_b1": 0.64,
+        "errors_b0": {
+          "NOT_ESTABLISHED->REFUTED": 14,
+          "NOT_ESTABLISHED->SUPPORTED": 11
+        }
+      },
+      "OOD": {
+        "n": 50,
+        "accuracy_b0": 0.96,
+        "accuracy_b1": 0.92,
+        "errors_b0": {
+          "NOT_ESTABLISHED->REFUTED": 2
+        }
+      },
+      "PARAPHRASE": {
+        "n": 50,
+        "accuracy_b0": 0.76,
+        "accuracy_b1": 0.76,
+        "errors_b0": {
+          "SUPPORTED->REFUTED": 9,
+          "SUPPORTED->NOT_ESTABLISHED": 3
+        }
+      },
+      "ADVERSARIAL": {
+        "n": 75,
+        "accuracy_b0": 0.6667,
+        "accuracy_b1": 0.6667,
+        "errors_b0": {
+          "SUPPORTED->REFUTED": 11,
+          "SUPPORTED->NOT_ESTABLISHED": 1,
+          "REFUTED->SUPPORTED": 11,
+          "REFUTED->NOT_ESTABLISHED": 2
+        }
+      }
+    }
+  },
+  "length_stratification": {
+    "development": {
+      "SHORT (<11 words)": {
+        "n": 133,
+        "accuracy": 0.9248
+      },
+      "MEDIUM (11-15 words)": {
+        "n": 235,
+        "accuracy": 0.9277
+      },
+      "LONG (>15 words)": {
+        "n": 32,
+        "accuracy": 0.8438
+      }
+    },
+    "blind": {
+      "MEDIUM (11-15 words)": {
+        "n": 342,
+        "accuracy": 0.7193
+      },
+      "LONG (>15 words)": {
+        "n": 130,
+        "accuracy": 0.7538
+      },
+      "SHORT (<11 words)": {
+        "n": 28,
+        "accuracy": 0.7143
+      }
+    }
+  },
+  "false_premise_antonym_stratification": {
+    "development": {
+      "total_refuted": 150,
+      "antonym_cue_present": {
+        "count": 133,
+        "pct": 88.67,
+        "correct": 123,
+        "accuracy": 0.9248,
+        "false_acceptance_to_sup": 8,
+        "abstention_to_ne": 2
+      },
+      "antonym_cue_absent": {
+        "count": 17,
+        "pct": 11.33,
+        "correct": 16,
+        "accuracy": 0.9412,
+        "false_acceptance_to_sup": 1,
+        "abstention_to_ne": 0
+      }
+    },
+    "blind": {
+      "total_refuted": 162,
+      "antonym_cue_present": {
+        "count": 74,
+        "pct": 45.68,
+        "correct": 60,
+        "accuracy": 0.8108,
+        "false_acceptance_to_sup": 10,
+        "abstention_to_ne": 4
+      },
+      "antonym_cue_absent": {
+        "count": 88,
+        "pct": 54.32,
+        "correct": 51,
+        "accuracy": 0.5795,
+        "false_acceptance_to_sup": 25,
+        "abstention_to_ne": 12
+      }
+    }
+  },
+  "error_attribution_taxonomy": {
+    "total_blind_errors": 136,
+    "summary_counts": {
+      "C2_VERIFIER_TIER2_FALSE_ACCEPTANCE": {
+        "count": 35,
+        "pct_of_errors": 25.74,
+        "pct_of_all_blind": 7.0
+      },
+      "C3_VERIFIER_TIER2_FALSE_REJECTION": {
+        "count": 28,
+        "pct_of_errors": 20.59,
+        "pct_of_all_blind": 5.6
+      },
+      "D_AMBIGUITY_GUARD_MISROUTING": {
+        "count": 25,
+        "pct_of_errors": 18.38,
+        "pct_of_all_blind": 5.0
+      },
+      "C1_VERIFIER_TIER1_COLLISION": {
+        "count": 21,
+        "pct_of_errors": 15.44,
+        "pct_of_all_blind": 4.2
+      },
+      "C4_VERIFIER_TIER2_ABSTENTION": {
+        "count": 17,
+        "pct_of_errors": 12.5,
+        "pct_of_all_blind": 3.4
+      },
+      "B_RETRIEVAL_DEFICIENT": {
+        "count": 8,
+        "pct_of_errors": 5.88,
+        "pct_of_all_blind": 1.6
+      },
+      "E_UNKNOWN": {
+        "count": 1,
+        "pct_of_errors": 0.74,
+        "pct_of_all_blind": 0.2
+      },
+      "C5_VERIFIER_TIER2_OTHER": {
+        "count": 1,
+        "pct_of_errors": 0.74,
+        "pct_of_all_blind": 0.2
+      }
+    },
+    "high_level_attribution": {
+      "A_retrieval_supported_total": 492,
+      "B_retrieval_deficient": 8,
+      "C_verifier_wrong_evidence_present": 102,
+      "D_ambiguity_guard_error": 25,
+      "E_unknown": 1
+    },
+    "sample_cases": {
+      "C1_VERIFIER_TIER1_COLLISION": [
+        {
+          "case_id": "EXP33-SUP-0001",
+          "query": "Does flex-direction: column establish the vertical axis as the main axis?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "REFUTED",
+          "tier": "TIER_1_DETERMINISTIC",
+          "confidence": "High",
+          "description": "Tier-1 fast path collision on evidence terms (Contradictory evidence found via Tier-1 curri)"
+        },
+        {
+          "case_id": "EXP33-SUP-0003",
+          "query": "Does box-sizing: border-box incorporate padding and border directly into the declared width?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "REFUTED",
+          "tier": "TIER_1_DETERMINISTIC",
+          "confidence": "High",
+          "description": "Tier-1 fast path collision on evidence terms (Polarity inversion established: border-box vs)"
+        },
+        {
+          "case_id": "EXP33-SUP-0006",
+          "query": "Does flex-wrap: wrap permit flex items to break onto multiple lines along the cross axis?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "REFUTED",
+          "tier": "TIER_1_DETERMINISTIC",
+          "confidence": "High",
+          "description": "Tier-1 fast path collision on evidence terms (Contradictory evidence found via Tier-1 curri)"
+        },
+        {
+          "case_id": "EXP33-SUP-0026",
+          "query": "Do arrow functions lack their own arguments object binding?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "REFUTED",
+          "tier": "TIER_1_DETERMINISTIC",
+          "confidence": "High",
+          "description": "Tier-1 fast path collision on evidence terms (Contradictory evidence found via Tier-1 curri)"
+        },
+        {
+          "case_id": "EXP33-SUP-0028",
+          "query": "Does Promise.all reject immediately when any of the input promises rejects?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "REFUTED",
+          "tier": "TIER_1_DETERMINISTIC",
+          "confidence": "High",
+          "description": "Tier-1 fast path collision on evidence terms (Contradictory evidence found via Tier-1 curri)"
+        }
+      ],
+      "C3_VERIFIER_TIER2_FALSE_REJECTION": [
+        {
+          "case_id": "EXP33-SUP-0002",
+          "query": "Can align-items: stretch expand flex items across the cross axis if their cross size is auto?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "REFUTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Tier-2 NLI over-rejected valid claim (semantic hyper-skepticism)"
+        },
+        {
+          "case_id": "EXP33-SUP-0015",
+          "query": "Can display: grid establish a two-dimensional layout system with rows and columns?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "REFUTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Tier-2 NLI over-rejected valid claim (semantic hyper-skepticism)"
+        },
+        {
+          "case_id": "EXP33-SUP-0018",
+          "query": "Can CSS media queries apply conditional styles according to the viewport width?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "REFUTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Tier-2 NLI over-rejected valid claim (semantic hyper-skepticism)"
+        },
+        {
+          "case_id": "EXP33-SUP-0023",
+          "query": "Does let declare block-scoped variables that cannot be accessed before initialization?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "REFUTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Tier-2 NLI over-rejected valid claim (semantic hyper-skepticism)"
+        },
+        {
+          "case_id": "EXP33-SUP-0034",
+          "query": "Does Array.prototype.filter construct a shallow copy array containing elements passing the predicate?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "REFUTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Tier-2 NLI over-rejected valid claim (semantic hyper-skepticism)"
+        }
+      ],
+      "C4_VERIFIER_TIER2_ABSTENTION": [
+        {
+          "case_id": "EXP33-SUP-0010",
+          "query": "Does position: relative keep the element in the normal flow while allowing offset via top and left?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "NOT_ESTABLISHED",
+          "tier": "TIER_2_ABSTENTION",
+          "confidence": "High",
+          "description": "Tier-2 NLI epistemic abstention on SUPPORTED"
+        },
+        {
+          "case_id": "EXP33-SUP-0012",
+          "query": "Can z-index specify the stacking order of positioned elements along the z-axis?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "NOT_ESTABLISHED",
+          "tier": "TIER_2_ABSTENTION",
+          "confidence": "High",
+          "description": "Tier-2 NLI epistemic abstention on SUPPORTED"
+        },
+        {
+          "case_id": "EXP33-SUP-0019",
+          "query": "Does rem unit calculate font size relative to the root html element?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "NOT_ESTABLISHED",
+          "tier": "TIER_2_ABSTENTION",
+          "confidence": "High",
+          "description": "Tier-2 NLI epistemic abstention on SUPPORTED"
+        },
+        {
+          "case_id": "EXP33-SUP-0057",
+          "query": "Does JSX require adjacent sibling elements to be wrapped in an enclosing parent tag or fragment?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "NOT_ESTABLISHED",
+          "tier": "TIER_2_ABSTENTION",
+          "confidence": "High",
+          "description": "Tier-2 NLI epistemic abstention on SUPPORTED"
+        },
+        {
+          "case_id": "EXP33-SUP-0074",
+          "query": "Does pipe() channel data from a Readable stream directly into a Writable stream?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "NOT_ESTABLISHED",
+          "tier": "TIER_2_ABSTENTION",
+          "confidence": "High",
+          "description": "Tier-2 NLI epistemic abstention on SUPPORTED"
+        }
+      ],
+      "B_RETRIEVAL_DEFICIENT": [
+        {
+          "case_id": "EXP33-SUP-0083",
+          "query": "Does path.join concatenate path segments using the platform-specific separator?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "NOT_ESTABLISHED",
+          "tier": "TIER_1_DETERMINISTIC",
+          "confidence": "High",
+          "description": "Evidence absent from top-5 (maxSim=0.215)"
+        },
+        {
+          "case_id": "EXP33-SUP-0115",
+          "query": "Does an INNER JOIN return only matching rows that satisfy the join condition across both tables?",
+          "category": "SUPPORTED",
+          "expected": "SUPPORTED",
+          "predicted": "NOT_ESTABLISHED",
+          "tier": "TIER_1_DETERMINISTIC",
+          "confidence": "High",
+          "description": "Evidence absent from top-5 (maxSim=0.259)"
+        },
+        {
+          "case_id": "EXP33-FLS-0080",
+          "query": "Why does path.join always use forward slashes even on Windows operating systems?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "predicted": "NOT_ESTABLISHED",
+          "tier": "TIER_1_DETERMINISTIC",
+          "confidence": "High",
+          "description": "Evidence absent from top-5 (maxSim=0.171)"
+        },
+        {
+          "case_id": "EXP33-FLS-0081",
+          "query": "How does npm install save production dependencies into devDependencies by default?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "predicted": "NOT_ESTABLISHED",
+          "tier": "TIER_1_DETERMINISTIC",
+          "confidence": "High",
+          "description": "Evidence absent from top-5 (maxSim=0.270)"
+        },
+        {
+          "case_id": "EXP33-FLS-0101",
+          "query": "Why does HTTP 301 Moved Permanently indicate a temporary redirect that clients should not cache?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "predicted": "NOT_ESTABLISHED",
+          "tier": "TIER_1_DETERMINISTIC",
+          "confidence": "High",
+          "description": "Evidence absent from top-5 (maxSim=0.261)"
+        }
+      ],
+      "C2_VERIFIER_TIER2_FALSE_ACCEPTANCE": [
+        {
+          "case_id": "EXP33-FLS-0004",
+          "query": "How does flex-shrink: 0 force a flex item to shrink smaller than its base size when space is tight?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "predicted": "SUPPORTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Tier-2 NLI affirmed false premise (sycophancy / subtle contradiction failure)"
+        },
+        {
+          "case_id": "EXP33-FLS-0007",
+          "query": "Why does a class selector have higher CSS specificity weight than an ID selector?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "predicted": "SUPPORTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Tier-2 NLI affirmed false premise (sycophancy / subtle contradiction failure)"
+        },
+        {
+          "case_id": "EXP33-FLS-0008",
+          "query": "How does display: inline allow developers to explicitly set width and height dimensions?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "predicted": "SUPPORTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Tier-2 NLI affirmed false premise (sycophancy / subtle contradiction failure)"
+        },
+        {
+          "case_id": "EXP33-FLS-0009",
+          "query": "Why does display: none keep an element visible and interactive while only removing its margin?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "predicted": "SUPPORTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Tier-2 NLI affirmed false premise (sycophancy / subtle contradiction failure)"
+        },
+        {
+          "case_id": "EXP33-FLS-0010",
+          "query": "How does visibility: hidden completely remove an element from the document layout flow?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "predicted": "SUPPORTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Tier-2 NLI affirmed false premise (sycophancy / subtle contradiction failure)"
+        }
+      ],
+      "E_UNKNOWN": [
+        {
+          "case_id": "EXP33-FLS-0015",
+          "query": "Why does em unit always scale strictly against the root HTML document element font size?",
+          "category": "FALSE_PREMISE",
+          "expected": "REFUTED",
+          "predicted": "NOT_ESTABLISHED",
+          "tier": "TIER_2_AMBIGUITY_GUARD",
+          "confidence": "Low",
+          "description": "Unclassified borderline error"
+        }
+      ],
+      "D_AMBIGUITY_GUARD_MISROUTING": [
+        {
+          "case_id": "EXP33-AMB-0004",
+          "query": "Should developers always prefer arrow functions over standard function declarations in all files?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "predicted": "REFUTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Ambiguity Guard failed on in-curriculum ambiguous query; passed to TIER_2_SEMANTIC_NLI"
+        },
+        {
+          "case_id": "EXP33-AMB-0012",
+          "query": "Is JWT authentication more secure than server-side session cookies in all circumstances?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "predicted": "REFUTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Ambiguity Guard failed on in-curriculum ambiguous query; passed to TIER_2_SEMANTIC_NLI"
+        },
+        {
+          "case_id": "EXP33-AMB-0014",
+          "query": "Is functional programming style universally cleaner than object-oriented style in JS?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "predicted": "REFUTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Ambiguity Guard failed on in-curriculum ambiguous query; passed to TIER_2_SEMANTIC_NLI"
+        },
+        {
+          "case_id": "EXP33-AMB-0018",
+          "query": "Should an API always return 200 OK with error messages inside the response payload?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "predicted": "REFUTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "High",
+          "description": "Ambiguity Guard failed on in-curriculum ambiguous query; passed to TIER_2_SEMANTIC_NLI"
+        },
+        {
+          "case_id": "EXP33-AMB-0020",
+          "query": "How many microtasks can run before the browser UI experiences visible stutter?",
+          "category": "AMBIGUOUS",
+          "expected": "NOT_ESTABLISHED",
+          "predicted": "REFUTED",
+          "tier": "TIER_1_DETERMINISTIC",
+          "confidence": "High",
+          "description": "Ambiguity Guard failed on in-curriculum ambiguous query; passed to TIER_1_DETERMINISTIC"
+        }
+      ],
+      "C5_VERIFIER_TIER2_OTHER": [
+        {
+          "case_id": "EXP33-OOD-0045",
+          "query": "How does Nginx utilize event-driven epoll loops to handle concurrent reverse proxy connections?",
+          "category": "OOD",
+          "expected": "NOT_ESTABLISHED",
+          "predicted": "REFUTED",
+          "tier": "TIER_2_SEMANTIC_NLI",
+          "confidence": "Medium",
+          "description": "Tier-2 NLI classification error (NOT_ESTABLISHED->REFUTED)"
+        }
+      ]
+    }
+  }
+}

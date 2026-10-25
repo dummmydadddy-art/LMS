@@ -27,7 +27,10 @@ function supabaseRequest($method, $path, $body = null, $headers = []) {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $mergedHeaders);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // For local environments
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    if (defined('CURLSSLOPT_NATIVE_CA')) {
+        curl_setopt($ch, CURLOPT_SSL_OPTIONS, CURLSSLOPT_NATIVE_CA);
+    }
     curl_setopt($ch, CURLOPT_TIMEOUT, 10); // 10 seconds execution timeout
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5); // 5 seconds connection timeout
     curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1); // Force HTTP/1.1 for connection reuse
@@ -120,12 +123,4 @@ function supabaseDelete($table, $params = []) {
         $path .= '?' . $queryString;
     }
     return supabaseRequest('DELETE', $path);
-}
-
-function supabaseRPC($functionName, $params = []) {
-    $path = 'rpc/' . $functionName;
-    $headers = [
-        "Prefer: return=representation"
-    ];
-    return supabaseRequest('POST', $path, $params, $headers);
 }

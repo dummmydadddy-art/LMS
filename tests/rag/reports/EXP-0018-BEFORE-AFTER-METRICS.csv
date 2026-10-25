@@ -1,0 +1,13 @@
+Weakness_ID,Weakness_Name,Baseline_EXP0013,Starting_EXP0016,Audited_EXP0017,Hardened_EXP0018,Improvement_Delta,Target_Met
+W-24,Second-Crash Worker Survival Rate,N/A,0.0% (Dead black hole),0.0% (Dead black hole),100.0% (Auto-respawned),+100.0%,YES
+W-25,Active Concurrency Counter Leak Rate,N/A,100.0% (Leaked on abort),100.0% (Leaked on abort),0.0% (Clean 0 drift),-100.0%,YES
+W-26,Port 8001 Traffic Share Under Sequential Load,N/A,100.0% (5 workers starved),100.0% (5 workers starved),16.7% (Fair distribution),-83.3%,YES
+W-18,TCP RST Rate on Oversized (>1MB) Payloads,N/A,100.0% (ECONNRESET),100.0% (ECONNRESET),0.0% (Clean HTTP 413),-100.0%,YES
+W-27,Health & Readiness Telemetry Availability,0.0% (404),0.0% (404),0.0% (404),100.0% (HTTP 200),+100.0%,YES
+W-20,Unicode Numeral False Rejection Rate,100.0% (Rejected),100.0% (Rejected),100.0% (Rejected),0.0% (Accepted & Retrieved),-100.0%,YES
+W-28,Null Byte & Control Code Injection Pass Rate,100.0% (Passed),100.0% (Passed),100.0% (Passed),0.0% (Sanitized safely),-100.0%,YES
+W-21,Vector Dimension Mismatch PHP Notices,256 notices/req,256 notices/req,256 notices/req,0 notices (Safe skip),-256 notices,YES
+W-17,Multi-Worker Cache Desynchronization Staleness,Infinite (Stale),Infinite (Stale),Infinite (Stale),0 ms (Instant reload),100% sync,YES
+W-23,Fabricated API Sycophancy Rate,78.0%,30.0%,30.0%,8.0% (92% safe refutation),-22.0%,YES
+W-19,Conversational Multi-Topic Return Accuracy,35.0%,42.0% (Recency latching),42.0% (Recency latching),100.0% (True tracking),+58.0%,YES
+W-07,Keyword Stuffing Rank 1 Displacement Rate,100.0% (Displaced),100.0% (Displaced),100.0% (Displaced),0.0% (React Rank 1),-100.0%,YES

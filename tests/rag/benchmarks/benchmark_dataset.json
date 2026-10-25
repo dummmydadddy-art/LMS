@@ -1,0 +1,182 @@
+[
+  {
+    "id": "rgb_noise_01",
+    "dimension": "Noise_Robustness",
+    "question": "Explain the four layers of the CSS Box Model from inside out.",
+    "expected_answer": "Content (the actual media/text), Padding (clears area around content), Border (frame surrounding padding), Margin (clears area outside border).",
+    "target_concepts": ["content", "padding", "border", "margin"],
+    "requires_refusal": false,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_noise_02",
+    "dimension": "Noise_Robustness",
+    "question": "What is the mandatory four-parameter signature required for error-handling middleware in Express?",
+    "expected_answer": "app.use((err, req, res, next) => { ... }) with err as the first parameter.",
+    "target_concepts": ["err", "req", "res", "next", "four parameters"],
+    "requires_refusal": false,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_noise_03",
+    "dimension": "Noise_Robustness",
+    "question": "What are the requirements for Third Normal Form (3NF) in relational database design?",
+    "expected_answer": "Must be in 2NF and have no transitive dependencies (non-key attributes depend directly on primary key).",
+    "target_concepts": ["second normal form", "2nf", "transitive dependencies", "primary key"],
+    "requires_refusal": false,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_noise_04",
+    "dimension": "Noise_Robustness",
+    "question": "What is a B-tree index in PostgreSQL and what types of queries does it optimize?",
+    "expected_answer": "Default index type optimizing equality (=), range queries (<, <=, >, >=), and sorting (ORDER BY).",
+    "target_concepts": ["equality", "range queries", "order by", "sorting"],
+    "requires_refusal": false,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_noise_05",
+    "dimension": "Noise_Robustness",
+    "question": "How does Git represent file revisions and directories using blobs and trees under the hood?",
+    "expected_answer": "Blobs store file contents/data without filenames; trees store directory entries with filenames, modes, and SHA-1 hashes pointing to blobs or subtrees.",
+    "target_concepts": ["blobs", "file contents", "trees", "directory entries", "sha-1"],
+    "requires_refusal": false,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_neg_01",
+    "dimension": "Negative_Rejection",
+    "question": "How do Vue 3 Composition API reactive() and ref() observables differ in memory allocation?",
+    "expected_answer": "Refusal: Vue.js is outside curriculum scope.",
+    "target_concepts": ["outside scope", "not in curriculum", "cannot answer"],
+    "requires_refusal": true,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_neg_02",
+    "dimension": "Negative_Rejection",
+    "question": "Explain how Angular 17 signals integrate with the RxJS change detection cycle without Zone.js.",
+    "expected_answer": "Refusal: Angular is outside curriculum scope.",
+    "target_concepts": ["outside scope", "not in curriculum", "cannot answer"],
+    "requires_refusal": true,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_neg_03",
+    "dimension": "Negative_Rejection",
+    "question": "How do you configure Django settings.py DATABASES dictionary to connect to a CockroachDB cluster?",
+    "expected_answer": "Refusal: Django / CockroachDB is outside curriculum scope.",
+    "target_concepts": ["outside scope", "not in curriculum", "cannot answer"],
+    "requires_refusal": true,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_neg_04",
+    "dimension": "Negative_Rejection",
+    "question": "What is the syntax for the SQL INVERT TABLE statement to reverse database rows in PostgreSQL?",
+    "expected_answer": "Refusal: INVERT TABLE does not exist in SQL or PostgreSQL.",
+    "target_concepts": ["does not exist", "no evidence", "not supported"],
+    "requires_refusal": true,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_neg_05",
+    "dimension": "Negative_Rejection",
+    "question": "How do you configure quantum teleportation entanglement inside a CSS Flexbox container?",
+    "expected_answer": "Refusal: Quantum computing is outside curriculum scope and impossible in CSS.",
+    "target_concepts": ["outside scope", "not in curriculum", "cannot answer"],
+    "requires_refusal": true,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_integ_01",
+    "dimension": "Information_Integration",
+    "question": "How does Temporal Dead Zone (TDZ) hoisting in ES6 differ between let and const declarations?",
+    "expected_answer": "Both are block-scoped and hoisted into TDZ throwing ReferenceError before declaration, but const must be initialized at declaration and cannot be reassigned, whereas let allows reassignment.",
+    "target_concepts": ["temporal dead zone", "referenceerror", "reassignment", "initialized", "block-scoped"],
+    "requires_refusal": false,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_integ_02",
+    "dimension": "Information_Integration",
+    "question": "How does useRef differ from useState in triggering component re-renders?",
+    "expected_answer": "useState updates trigger re-renders to update UI, while useRef returns a mutable ref object (.current) that persists across renders without causing re-renders.",
+    "target_concepts": ["useref", "usestate", "mutable", ".current", "without triggering", "re-render"],
+    "requires_refusal": false,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_integ_03",
+    "dimension": "Information_Integration",
+    "question": "How does useEffect cleanup function execution relate to component unmounting and dependency changes?",
+    "expected_answer": "Cleanup function executes before the effect runs again when dependencies change, and runs one final time when the component unmounts to prevent memory leaks.",
+    "target_concepts": ["cleanup", "unmount", "dependencies", "memory leaks"],
+    "requires_refusal": false,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_integ_04",
+    "dimension": "Information_Integration",
+    "question": "How do dictionaries achieve average constant time O(1) lookups in Python and what happens during hash collisions?",
+    "expected_answer": "Python dictionaries use hash tables where keys are transformed via hash() to compute bucket indices, resolving collisions via open addressing.",
+    "target_concepts": ["hash table", "hash", "constant time", "collisions"],
+    "requires_refusal": false,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_integ_05",
+    "dimension": "Information_Integration",
+    "question": "In relational database design, why does achieving Second Normal Form (2NF) require understanding candidate keys and functional dependencies?",
+    "expected_answer": "2NF requires 1NF plus eliminating partial dependencies, meaning every non-prime attribute must depend on the whole candidate key, not a proper subset.",
+    "target_concepts": ["2nf", "partial dependency", "candidate key", "functional dependency"],
+    "requires_refusal": false,
+    "has_false_premise": false
+  },
+  {
+    "id": "rgb_counter_01",
+    "dimension": "Counterfactual_Robustness",
+    "question": "Why does HTML5 require every document to contain at least five <main> elements for accessibility?",
+    "expected_answer": "Refutation: False premise. HTML5 specifies that a document must not have more than one <main> element.",
+    "target_concepts": ["incorrect", "premise", "not more than one", "<main>"],
+    "requires_refusal": true,
+    "has_false_premise": true
+  },
+  {
+    "id": "rgb_counter_02",
+    "dimension": "Counterfactual_Robustness",
+    "question": "Why is flex-direction: row oriented vertically from top to bottom?",
+    "expected_answer": "Refutation: False premise. flex-direction: row lays out items horizontally from left to right; flex-direction: column lays out items vertically.",
+    "target_concepts": ["incorrect", "premise", "horizontal", "left to right"],
+    "requires_refusal": true,
+    "has_false_premise": true
+  },
+  {
+    "id": "rgb_counter_03",
+    "dimension": "Counterfactual_Robustness",
+    "question": "When using var in JavaScript, why does accessing it before declaration throw a ReferenceError?",
+    "expected_answer": "Refutation: False premise. var is hoisted and initialized to undefined, so accessing it before declaration returns undefined without throwing. let and const throw ReferenceError.",
+    "target_concepts": ["incorrect", "premise", "undefined", "does not throw", "let and const"],
+    "requires_refusal": true,
+    "has_false_premise": true
+  },
+  {
+    "id": "rgb_counter_04",
+    "dimension": "Counterfactual_Robustness",
+    "question": "Why can an arrow function be used as a class constructor with the new keyword in ES6?",
+    "expected_answer": "Refutation: False premise. Arrow functions do not have a [[Construct]] method or prototype and cannot be invoked with new; doing so throws a TypeError.",
+    "target_concepts": ["incorrect", "premise", "cannot be used", "typeerror", "no prototype"],
+    "requires_refusal": true,
+    "has_false_premise": true
+  },
+  {
+    "id": "rgb_counter_05",
+    "dimension": "Counterfactual_Robustness",
+    "question": "Why does useEffect execute synchronously before the browser paints the screen?",
+    "expected_answer": "Refutation: False premise. useEffect runs asynchronously AFTER the browser paints. useLayoutEffect runs synchronously before paint.",
+    "target_concepts": ["incorrect", "premise", "after", "asynchronously", "uselayouteffect"],
+    "requires_refusal": true,
+    "has_false_premise": true
+  }
+]

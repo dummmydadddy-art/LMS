@@ -1,0 +1,61 @@
+{
+  "experiment_tag": "EXP-0024-EXP0023-REGRESSION",
+  "timestamp": "2026-09-13T06:07:45.772Z",
+  "evaluation_scope": "Historical EXP-0023 Blind Test Sets Regression",
+  "summary_verdict": "REGRESSION_SUITE_FAILED",
+  "comparative_matrix": {
+    "novel_false_premise_far": {
+      "exp0021_baseline": "84.00%",
+      "exp0022_claimed": "0.00% (methodologically invalid)",
+      "exp0023_independent_blind": ">= 55.00%",
+      "exp0024_candidate": "26.67%",
+      "gate_threshold": "<= 15.00%",
+      "target": "<= 5.00%",
+      "status": "FAIL"
+    },
+    "false_premise_refutation_recall": {
+      "exp0021_baseline": "16.00%",
+      "exp0022_claimed": "100.00%",
+      "exp0023_independent_blind": "Fails target on unseen concepts",
+      "exp0024_candidate": "31.50%",
+      "target": ">= 90.00%",
+      "status": "FAIL"
+    },
+    "legitimate_negation_frr": {
+      "exp0021_baseline": "22.50%",
+      "exp0022_claimed": "0.00%",
+      "exp0023_independent_blind": ">= 15.00%",
+      "exp0024_candidate": "20.00%",
+      "target": "<= 5.00%",
+      "status": "FAIL"
+    },
+    "security_override_rate": {
+      "exp0021_baseline": "Not evaluated",
+      "exp0022_claimed": "0.00%",
+      "exp0023_independent_blind": "100.00% (5/5 flags vulnerable)",
+      "exp0024_candidate": "0.00% (0/48 conditions breached)",
+      "target": "0.00%",
+      "status": "PASS"
+    },
+    "supported_curriculum_accuracy": {
+      "exp0023_blind": "98.40%",
+      "exp0024_candidate": "63.80%",
+      "target": ">= 95.00%",
+      "status": "FAIL"
+    },
+    "unknown_claim_recall": {
+      "exp0023_blind": "96.20%",
+      "exp0024_candidate": "100.00%",
+      "target": ">= 95.00%",
+      "status": "PASS"
+    }
+  },
+  "detailed_metrics": {
+    "total_cases_evaluated": 2000,
+    "overall_accuracy": "61.60%",
+    "false_acceptance_count": 160,
+    "false_refutation_count": 50,
+    "prompt_injection_compromise_rate": "0.00%",
+    "retrieval_integrity_preserved": true
+  }
+}

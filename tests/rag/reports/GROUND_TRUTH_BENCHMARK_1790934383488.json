@@ -1,0 +1,1982 @@
+{
+  "metadata": {
+    "timestamp": "2026-10-02T09:46:23.482Z",
+    "corpusSize": 23,
+    "embeddingModel": "nomic-embed-text",
+    "vectorDimensions": 768
+  },
+  "aggregateMetrics": {
+    "precision1": 1,
+    "precision3": 0.825,
+    "precision5": 0.64,
+    "recall5": 1,
+    "mrr": 1,
+    "ndcg5": 0.9459,
+    "keywordRecall": 0.8308,
+    "hitRate1": 1,
+    "hitRate3": 1,
+    "hitRate5": 1
+  },
+  "queryResults": [
+    {
+      "id": "gold_01",
+      "query": "What is the purpose of the <main> HTML5 semantic element and how many can exist in a document?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.8302817258600731
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.591403638627209
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.5789314922460151
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5382782757773443
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5353113263430673
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.75,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.7780158492147935,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_02",
+      "query": "Explain the four layers of the CSS Box Model from inside out.",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.798874385356961
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6538546259607939
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6400200116272197
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.5599009876626415
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5510211002653285
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_03",
+      "query": "Why is * { box-sizing: border-box; } recommended over content-box in CSS?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.8001064073817038
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6483874852225077
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6068255166015998
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.5649485208824028
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5348853340041412
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_04",
+      "query": "In CSS Flexbox, what is the difference between justify-content and align-items?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.7540862498341739
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6716306735692007
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6100662148609018
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.597807236022427
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.550072061686869
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_05",
+      "query": "What are the core child flex properties that make up the flex shorthand in CSS?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.7462137373826538
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.5980697864306146
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.5943436027143145
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.592028933879086
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.5432363569107744
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.75,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_06",
+      "query": "What is CSS Grid and how does it differ in dimensionality from Flexbox?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.7744963233944258
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.7618327039055499
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.7079671352059381
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.5159125025082152
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "title": "PostgreSQL Database Design",
+          "score": 0.46081556823646064
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_07",
+      "query": "What are the benefits of using HTML5 semantic elements instead of generic div tags?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.8219692335808685
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.5729665926125361
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.5576689354785984
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5517535207367298
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5497282431849766
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.7780158492147935,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_08",
+      "query": "How does the gap property in CSS Flexbox simplify spacing between items?",
+      "expected_doc": "html & css fundamentals",
+      "retrieved": [
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.767655955321258
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6851192106188813
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.6785368574511332
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5243403087352562
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "title": "PostgreSQL Database Design",
+          "score": 0.4997752464555013
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_09",
+      "query": "How do var, let, and const differ in terms of scoping, hoisting, and Temporal Dead Zone?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.7560377917190677
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.6394362832293332
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5493948244986401
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.5492953466520648
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.548542886847632
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.875,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_10",
+      "query": "Can you mutate object properties or array elements declared with const in JavaScript?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.7149610101720812
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.6811674282627955
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.6078793925502783
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5671052000672184
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5648311715757112
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_11",
+      "query": "How do arrow functions handle this differently from traditional function declarations?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.7506512409689489
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.579403868310578
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5786498766689695
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.5325873748015868
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.530093637987129
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.75,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.7155573508096272,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_12",
+      "query": "What happens if you invoke an arrow function using the new keyword?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.6725476241227696
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5570548819658727
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.5257056587814389
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5092112659307545
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.5006064623285984
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.7780158492147935,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_13",
+      "query": "What is the difference between the spread operator and rest parameters in JavaScript ES6?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.7363059316206745
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.6236675164049127
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5862058993864122
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.5499972425332288
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5496099706169957
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_14",
+      "query": "What are the three possible states of a JavaScript Promise?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.7387674565441231
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.5927151363186094
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5911711123356946
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5861733113718863
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.573371881961537
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.75,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.3333333333333333,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.8017469769752265,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_15",
+      "query": "How does async/await interact with JavaScript Promises and error handling?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.8473053559612146
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.6905470000377659
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.6031203096914168
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5849111082194177
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.579041438554308
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8333333333333334,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.8660461584804816,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_16",
+      "query": "What is the Temporal Dead Zone (TDZ) in JavaScript let and const declarations?",
+      "expected_doc": "javascript es6+ deep dive",
+      "retrieved": [
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.7408689232869342
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.6384699710198013
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.6039141778392061
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5905669376867075
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.5814078032119909
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.6
+        },
+        "ndcg5": 0.9210065354434976,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_17",
+      "query": "What are the two fundamental Rules of Hooks in React?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.8333671708679874
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.6111100741721748
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.6013684398636953
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "title": "React Hooks Tutorial",
+          "score": 0.5999725445935467
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "title": "React Hooks Tutorial",
+          "score": 0.5932370937990653
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_18",
+      "query": "Why must state updates in useState be immutable when updating objects or arrays?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.8021987967478054
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.6196955848170755
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.5744128559594505
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5715746034085275
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "title": "React Hooks Tutorial",
+          "score": 0.5608107494322943
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_19",
+      "query": "How does the dependency array in useEffect determine when the effect runs?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.7719092696949883
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "title": "React Hooks Tutorial",
+          "score": 0.5988974984286035
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.5842668430483285
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "title": "React Hooks Tutorial",
+          "score": 0.5516874152861316
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5265038058137052
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_20",
+      "query": "What is the purpose of the cleanup function returned by a useEffect hook?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.7608249599143072
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "title": "React Hooks Tutorial",
+          "score": 0.6204886647239238
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.6088133246574585
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "title": "React Hooks Tutorial",
+          "score": 0.5942017054438711
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5550933552406946
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.6666666666666666,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_21",
+      "query": "What is the difference between useMemo and useCallback in React?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "title": "React Hooks Tutorial",
+          "score": 0.7580166895541335
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.5940306819047975
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.5818528473147426
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5471258706819108
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.518407138014477
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.4,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_22",
+      "query": "How does useRef differ from useState in triggering component re-renders?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_5",
+          "title": "React Hooks Tutorial",
+          "score": 0.7024923853752999
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.6643020466592338
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.6322081721091724
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.5515721693298121
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_3",
+          "title": "React Hooks Tutorial",
+          "score": 0.5492651549768234
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 1
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_23",
+      "query": "How do createContext and useContext work together to eliminate prop drilling?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_3",
+          "title": "React Hooks Tutorial",
+          "score": 0.6664503752895836
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "title": "React Hooks Tutorial",
+          "score": 0.5681207224905868
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5540484255969034
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5393465145889341
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5267083054963002
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.7780158492147935,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_24",
+      "query": "What is the functional update form of useState and when should it be used?",
+      "expected_doc": "react hooks tutorial",
+      "retrieved": [
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_1",
+          "title": "React Hooks Tutorial",
+          "score": 0.7509696581013545
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.6496160751800535
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.5855164237741037
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5736564796228729
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "title": "React Hooks Tutorial",
+          "score": 0.5716679649605603
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.75,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_25",
+      "query": "What is the Node.js architecture and how does the Event Loop handle asynchronous operations?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.8607712827114354
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.701925275754095
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.6025582296739478
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.5739979237954309
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5479208355525312
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8333333333333334,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_26",
+      "query": "What are the four parameters required in Express error-handling middleware?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7285756094804688
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.625948814891482
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5845995004062433
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5759837658781422
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "title": "React Hooks Tutorial",
+          "score": 0.5670249438628419
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_27",
+      "query": "What does the next() function do in an Express middleware chain?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7643854810953423
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.6663691249706479
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_2",
+          "title": "React Hooks Tutorial",
+          "score": 0.5938578254803427
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5635859826968372
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_1",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5483403866410439
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.25,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.6
+        },
+        "ndcg5": 0.983465033848664,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_28",
+      "query": "What are the three parts of a JSON Web Token (JWT) and how are they separated?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7424857107635736
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5337943310331744
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.5243865979502184
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_3",
+          "title": "React Hooks Tutorial",
+          "score": 0.5213154885273616
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_1",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.5171456178817488
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.8972754076830647,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_29",
+      "query": "What are the key differences between HTTP 401 Unauthorized and 403 Forbidden status codes?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.6189509756330105
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5367805091151241
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.5239720757663298
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5227190494586534
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5213471716276381
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8333333333333334,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.6
+        },
+        "ndcg5": 0.983465033848664,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_30",
+      "query": "What are the RESTful naming conventions for API endpoint URIs?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_3",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7170507622250769
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.6239638687349223
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.550206480803036
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5359139609452848
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5244189049079104
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.875,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.7780158492147935,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_31",
+      "query": "What built-in Express middleware is used to parse incoming JSON request bodies?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7305906000447582
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7160008668048147
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_4",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5625740936323043
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5427290743099232
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "title": "React Hooks Tutorial",
+          "score": 0.5358128932166425
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.6666666666666666,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_32",
+      "query": "Why should CPU-intensive tasks not be executed directly on the Node.js main thread?",
+      "expected_doc": "node.js & express rest api notes",
+      "retrieved": [
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_0",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.7062391106698195
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_1",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.5773542995304025
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_4",
+          "title": "React Hooks Tutorial",
+          "score": 0.5613266866486306
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5507409324462681
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_3",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.542586968651387
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.5,
+        "precision": {
+          "p@1": 1,
+          "p@3": 0.6666666666666666,
+          "p@5": 0.4
+        },
+        "ndcg5": 0.7780158492147935,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_33",
+      "query": "How is a Many-to-Many relationship implemented between tables in a relational database?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0",
+          "title": "PostgreSQL Database Design",
+          "score": 0.7907107316756842
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3",
+          "title": "PostgreSQL Database Design",
+          "score": 0.6126089673581252
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "title": "PostgreSQL Database Design",
+          "score": 0.572681146440546
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5111725351971539
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.4830174466569932
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.6,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_34",
+      "query": "What are the requirements for a database table to satisfy First Normal Form (1NF)?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "title": "PostgreSQL Database Design",
+          "score": 0.7766715039331391
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0",
+          "title": "PostgreSQL Database Design",
+          "score": 0.6016401844259244
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3",
+          "title": "PostgreSQL Database Design",
+          "score": 0.528894228527259
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5178234858659094
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.48134645180610636
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_35",
+      "query": "What constitutes Second Normal Form (2NF) and how does it prevent partial dependency?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "title": "PostgreSQL Database Design",
+          "score": 0.7176949509515432
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0",
+          "title": "PostgreSQL Database Design",
+          "score": 0.49814876257594126
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3",
+          "title": "PostgreSQL Database Design",
+          "score": 0.49506765810868164
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.4878231726322127
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_2",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.48121437917194676
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_36",
+      "query": "What is Third Normal Form (3NF) and how does it eliminate transitive dependencies?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "title": "PostgreSQL Database Design",
+          "score": 0.7219542165435378
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5137052171203522
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5047904478645012
+        },
+        {
+          "id": "abc6db98-3d75-40ea-b988-f1e8a7497bba_chunk_0",
+          "title": "React Hooks Tutorial",
+          "score": 0.5004497736059154
+        },
+        {
+          "id": "5d1923d4-d240-4348-8ee3-29c512a8e752_chunk_2",
+          "title": "Node.js & Express REST API Notes",
+          "score": 0.4834870712245159
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.75,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.6
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_37",
+      "query": "What are the four ACID properties in database transactions and what do they guarantee?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3",
+          "title": "PostgreSQL Database Design",
+          "score": 0.8055317752659602
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "title": "PostgreSQL Database Design",
+          "score": 0.6064373393716904
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5621202370849755
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5320556008553962
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_2",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.5147082420628724
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 1,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_38",
+      "query": "What is a B-tree index in PostgreSQL and what types of queries does it optimize?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "title": "PostgreSQL Database Design",
+          "score": 0.8252991090737155
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5695191415062131
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5615839846608144
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5512871637616034
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_3",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.4833516878348668
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.8333333333333334,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_39",
+      "query": "What is the trade-off or downside of having too many indexes on a database table?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "title": "PostgreSQL Database Design",
+          "score": 0.6611132478730756
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5868496543802872
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5848183753087163
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5352837640126955
+        },
+        {
+          "id": "c254cc49-47b8-455f-bc9e-bc834c0276fe_chunk_0",
+          "title": "JavaScript ES6+ Deep Dive",
+          "score": 0.4325193228230964
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.6666666666666666,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    },
+    {
+      "id": "gold_40",
+      "query": "What is the purpose of a composite primary key in database junction tables?",
+      "expected_doc": "postgresql database design",
+      "retrieved": [
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_0",
+          "title": "PostgreSQL Database Design",
+          "score": 0.6194098766396122
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_1",
+          "title": "PostgreSQL Database Design",
+          "score": 0.576666474523025
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_3",
+          "title": "PostgreSQL Database Design",
+          "score": 0.551792736452444
+        },
+        {
+          "id": "d4e9dcd2-3b77-4e67-afa5-2d04001d09d0_chunk_2",
+          "title": "PostgreSQL Database Design",
+          "score": 0.5435661285685551
+        },
+        {
+          "id": "ea1f3b17-0657-4ee2-b155-c56b775dd25e_chunk_0",
+          "title": "HTML & CSS Fundamentals",
+          "score": 0.475781688474653
+        }
+      ],
+      "metrics": {
+        "hitRate": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1
+        },
+        "moduleCoverage": {},
+        "mrr": 1,
+        "keywordRecall": 0.5,
+        "precision": {
+          "p@1": 1,
+          "p@3": 1,
+          "p@5": 0.8
+        },
+        "ndcg5": 1,
+        "recall5": 1
+      }
+    }
+  ]
+}

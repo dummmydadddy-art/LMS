@@ -1,0 +1,47 @@
+{
+  "experiment": "EXP-0040",
+  "audit_type": "RETRIEVAL_AND_HIERARCHY_AUDIT",
+  "timestamp": "2026-09-17T11:25:00+00:00",
+  "gates": {
+    "gate_a_integrity": "PASS (36 parents, 76 children)",
+    "gate_b_cross_document": "PASS (0 cross-document contamination)",
+    "gate_c_cross_section": "PASS (0 cross-section contamination)",
+    "gate_d_token_overflow": "PASS (Max parent token count 210 <= 512)",
+    "gate_e_content_preservation": "PASS (100.00% word coverage relative to C2_085)"
+  },
+  "retrieval_metrics": {
+    "experiment": "EXP-0040",
+    "dataset": "EXP-0025-DEVELOPMENT-DATASET.json",
+    "eval_queries_with_gold": 256,
+    "total_queries": 400,
+    "p0_child_metrics": {
+      "recall_at_1": 92.97,
+      "recall_at_3": 99.61,
+      "recall_at_5": 100.0,
+      "recall_at_10": 100.0,
+      "ndcg_at_5": 86.12,
+      "ndcg_at_10": 85.77
+    },
+    "p1_parent_metrics": {
+      "recall_at_1": 97.66,
+      "recall_at_3": 100.0,
+      "recall_at_5": 100.0,
+      "recall_at_10": 100.0,
+      "ndcg_at_5": 87.55,
+      "ndcg_at_10": 90.99
+    },
+    "structural_metrics": {
+      "child_chunks_count": 76,
+      "parent_groups_count": 36,
+      "mean_parent_tokens": 106.86,
+      "p50_parent_tokens": 117,
+      "p95_parent_tokens": 180,
+      "max_parent_tokens": 210,
+      "min_parent_tokens": 18,
+      "expansion_query_percentage": 100.0,
+      "mean_children_per_retrieved_parent": 2.007,
+      "duplicate_parent_rate": 38.31
+    }
+  },
+  "verdict": "PASS"
+}

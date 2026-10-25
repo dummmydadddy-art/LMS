@@ -1,0 +1,94 @@
+{
+  "test_id": "EXP-0019-CONVERSATION-VERIFICATION",
+  "timestamp": "2026-09-09T12:39:13.785Z",
+  "total_sessions": 50,
+  "total_turns": 1329,
+  "turn_metrics": {
+    "early_turns_evaluated": 250,
+    "early_turns_correct": 230,
+    "late_turns_evaluated": 657,
+    "late_turns_correct": 548,
+    "total_correct": 1132
+  },
+  "cross_topic_return_suite": {
+    "total_tested": 30,
+    "correct_returns": 20,
+    "hybrid_contamination_detected": 10,
+    "history_poisoning_pass": 5,
+    "history_poisoning_tested": 5,
+    "cases": [
+      {
+        "cycle": 1,
+        "return_a_course": "React Hooks Tutorial",
+        "return_a_pure": false,
+        "return_b_course": "PostgreSQL Database Design",
+        "return_c_course": "PostgreSQL Database Design"
+      },
+      {
+        "cycle": 2,
+        "return_a_course": "React Hooks Tutorial",
+        "return_a_pure": false,
+        "return_b_course": "PostgreSQL Database Design",
+        "return_c_course": "PostgreSQL Database Design"
+      },
+      {
+        "cycle": 3,
+        "return_a_course": "React Hooks Tutorial",
+        "return_a_pure": false,
+        "return_b_course": "PostgreSQL Database Design",
+        "return_c_course": "PostgreSQL Database Design"
+      },
+      {
+        "cycle": 4,
+        "return_a_course": "React Hooks Tutorial",
+        "return_a_pure": false,
+        "return_b_course": "PostgreSQL Database Design",
+        "return_c_course": "PostgreSQL Database Design"
+      },
+      {
+        "cycle": 5,
+        "return_a_course": "React Hooks Tutorial",
+        "return_a_pure": false,
+        "return_b_course": "PostgreSQL Database Design",
+        "return_c_course": "PostgreSQL Database Design"
+      },
+      {
+        "cycle": 6,
+        "return_a_course": "React Hooks Tutorial",
+        "return_a_pure": false,
+        "return_b_course": "PostgreSQL Database Design",
+        "return_c_course": "PostgreSQL Database Design"
+      },
+      {
+        "cycle": 7,
+        "return_a_course": "React Hooks Tutorial",
+        "return_a_pure": false,
+        "return_b_course": "PostgreSQL Database Design",
+        "return_c_course": "PostgreSQL Database Design"
+      },
+      {
+        "cycle": 8,
+        "return_a_course": "React Hooks Tutorial",
+        "return_a_pure": false,
+        "return_b_course": "PostgreSQL Database Design",
+        "return_c_course": "PostgreSQL Database Design"
+      },
+      {
+        "cycle": 9,
+        "return_a_course": "React Hooks Tutorial",
+        "return_a_pure": false,
+        "return_b_course": "PostgreSQL Database Design",
+        "return_c_course": "PostgreSQL Database Design"
+      },
+      {
+        "cycle": 10,
+        "return_a_course": "React Hooks Tutorial",
+        "return_a_pure": false,
+        "return_b_course": "PostgreSQL Database Design",
+        "return_c_course": "PostgreSQL Database Design"
+      }
+    ]
+  },
+  "cross_session_leakage_detected": false,
+  "context_overflow_or_truncation": false
+}

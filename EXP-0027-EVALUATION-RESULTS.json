@@ -1,0 +1,2052 @@
+{
+    "experiment": "EXP-0027",
+    "timestamp": "2026-09-15T10:57:24+00:00",
+    "commit": "dea0027",
+    "branch": "exp-0027",
+    "model_identifier": "llama3.2:latest",
+    "total_cases_evaluated": 2200,
+    "modes_evaluated": [
+        "A0",
+        "A5",
+        "A1",
+        "A4"
+    ],
+    "datasets_evaluated": [
+        "BLIND",
+        "CROSS-DOMAIN",
+        "LEAVEOUT",
+        "POLARITY",
+        "PARAPHRASE",
+        "OOD"
+    ],
+    "results": {
+        "A0": {
+            "BLIND": {
+                "total": 1000,
+                "correct": 647,
+                "accuracy_pct": 64.7,
+                "macro_f1_pct": 63.73,
+                "far_pct": 47,
+                "refutation_recall_pct": 40.67,
+                "frr_pct": 25,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 90,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 100,
+                "tier2_usage_pct": 0,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 0,
+                "uncached_tier2_p50_ms": 0,
+                "uncached_tier2_p95_ms": 0,
+                "tier2_calls_count": 0,
+                "uncached_inferences_count": 0,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 255,
+                        "REFUTED": 100,
+                        "NOT_ESTABLISHED": 45
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 141,
+                        "REFUTED": 122,
+                        "NOT_ESTABLISHED": 37
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 20,
+                        "REFUTED": 10,
+                        "NOT_ESTABLISHED": 270
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 61.3,
+                        "recall": 63.75,
+                        "f1": 62.5
+                    },
+                    "REFUTED": {
+                        "precision": 52.59,
+                        "recall": 40.67,
+                        "f1": 45.86
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 76.7,
+                        "recall": 90,
+                        "f1": 82.82
+                    }
+                },
+                "elapsed_s": 13.1
+            },
+            "CROSS-DOMAIN": {
+                "total": 200,
+                "correct": 75,
+                "accuracy_pct": 37.5,
+                "macro_f1_pct": 30.77,
+                "far_pct": 30,
+                "refutation_recall_pct": 36,
+                "frr_pct": 20,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 100,
+                "tier2_usage_pct": 0,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 0,
+                "uncached_tier2_p50_ms": 0,
+                "uncached_tier2_p95_ms": 0,
+                "tier2_calls_count": 0,
+                "uncached_inferences_count": 0,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 39,
+                        "REFUTED": 20,
+                        "NOT_ESTABLISHED": 41
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 30,
+                        "REFUTED": 36,
+                        "NOT_ESTABLISHED": 34
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 56.52,
+                        "recall": 39,
+                        "f1": 46.15
+                    },
+                    "REFUTED": {
+                        "precision": 64.29,
+                        "recall": 36,
+                        "f1": 46.15
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 5.39
+            },
+            "LEAVEOUT": {
+                "total": 300,
+                "correct": 70,
+                "accuracy_pct": 23.33,
+                "macro_f1_pct": 12.61,
+                "far_pct": 43.67,
+                "refutation_recall_pct": 23.33,
+                "frr_pct": 0,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 100,
+                "tier2_usage_pct": 0,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 0,
+                "uncached_tier2_p50_ms": 0,
+                "uncached_tier2_p95_ms": 0,
+                "tier2_calls_count": 0,
+                "uncached_inferences_count": 0,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 131,
+                        "REFUTED": 70,
+                        "NOT_ESTABLISHED": 99
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    },
+                    "REFUTED": {
+                        "precision": 100,
+                        "recall": 23.33,
+                        "f1": 37.84
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 5.24
+            },
+            "POLARITY": {
+                "total": 200,
+                "correct": 155,
+                "accuracy_pct": 77.5,
+                "macro_f1_pct": 44.46,
+                "far_pct": 50,
+                "refutation_recall_pct": 36,
+                "frr_pct": 7.33,
+                "legitimate_negation_frr_pct": 1,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 100,
+                "tier2_usage_pct": 0,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 0,
+                "uncached_tier2_p50_ms": 0,
+                "uncached_tier2_p95_ms": 0,
+                "tier2_calls_count": 0,
+                "uncached_inferences_count": 0,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 137,
+                        "REFUTED": 11,
+                        "NOT_ESTABLISHED": 2
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 25,
+                        "REFUTED": 18,
+                        "NOT_ESTABLISHED": 7
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 84.57,
+                        "recall": 91.33,
+                        "f1": 87.82
+                    },
+                    "REFUTED": {
+                        "precision": 62.07,
+                        "recall": 36,
+                        "f1": 45.57
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 2.67
+            },
+            "PARAPHRASE": {
+                "total": 300,
+                "correct": 174,
+                "accuracy_pct": 58,
+                "macro_f1_pct": 53.29,
+                "far_pct": 60,
+                "refutation_recall_pct": 20,
+                "frr_pct": 16,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 100,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 100,
+                "tier2_usage_pct": 0,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 0,
+                "uncached_tier2_p50_ms": 0,
+                "uncached_tier2_p95_ms": 0,
+                "tier2_calls_count": 0,
+                "uncached_inferences_count": 0,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 54,
+                        "REFUTED": 16,
+                        "NOT_ESTABLISHED": 30
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 60,
+                        "REFUTED": 20,
+                        "NOT_ESTABLISHED": 20
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 47.37,
+                        "recall": 54,
+                        "f1": 50.47
+                    },
+                    "REFUTED": {
+                        "precision": 55.56,
+                        "recall": 20,
+                        "f1": 29.41
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 66.67,
+                        "recall": 100,
+                        "f1": 80
+                    }
+                },
+                "elapsed_s": 2.92
+            },
+            "OOD": {
+                "total": 200,
+                "correct": 50,
+                "accuracy_pct": 25,
+                "macro_f1_pct": 18.8,
+                "far_pct": 31,
+                "refutation_recall_pct": 1,
+                "frr_pct": 1,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 100,
+                "tier2_usage_pct": 0,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 0,
+                "uncached_tier2_p50_ms": 0,
+                "uncached_tier2_p95_ms": 0,
+                "tier2_calls_count": 0,
+                "uncached_inferences_count": 0,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 49,
+                        "REFUTED": 1,
+                        "NOT_ESTABLISHED": 50
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 31,
+                        "REFUTED": 1,
+                        "NOT_ESTABLISHED": 68
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 61.25,
+                        "recall": 49,
+                        "f1": 54.44
+                    },
+                    "REFUTED": {
+                        "precision": 50,
+                        "recall": 1,
+                        "f1": 1.96
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 2.79
+            },
+            "OVERALL_2200": {
+                "total": 2200,
+                "correct": 1171,
+                "accuracy_pct": 53.23,
+                "macro_f1_pct": 52.99,
+                "far_pct": 44,
+                "refutation_recall_pct": 28.11,
+                "frr_pct": 17.41,
+                "legitimate_negation_frr_pct": 1,
+                "unknown_recall_pct": 92.5,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 100,
+                "tier2_usage_pct": 0,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 0,
+                "uncached_tier2_p50_ms": 0,
+                "uncached_tier2_p95_ms": 0,
+                "tier2_calls_count": 0,
+                "uncached_inferences_count": 0,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 534,
+                        "REFUTED": 148,
+                        "NOT_ESTABLISHED": 168
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 418,
+                        "REFUTED": 267,
+                        "NOT_ESTABLISHED": 265
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 20,
+                        "REFUTED": 10,
+                        "NOT_ESTABLISHED": 370
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 54.94,
+                        "recall": 62.82,
+                        "f1": 58.62
+                    },
+                    "REFUTED": {
+                        "precision": 62.82,
+                        "recall": 28.11,
+                        "f1": 38.84
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 46.08,
+                        "recall": 92.5,
+                        "f1": 61.51
+                    }
+                },
+                "elapsed_s": 32.12,
+                "cold_first_call_ms": null,
+                "cache_entries": 0
+            }
+        },
+        "A5": {
+            "BLIND": {
+                "total": 1000,
+                "correct": 669,
+                "accuracy_pct": 66.9,
+                "macro_f1_pct": 65.8,
+                "far_pct": 19.67,
+                "refutation_recall_pct": 46.67,
+                "frr_pct": 27.75,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 85.67,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 31.3,
+                "tier2_usage_pct": 68.7,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1008.6,
+                "uncached_tier2_p50_ms": 967.5,
+                "uncached_tier2_p95_ms": 1198.3,
+                "tier2_calls_count": 687,
+                "uncached_inferences_count": 683,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 272,
+                        "REFUTED": 111,
+                        "NOT_ESTABLISHED": 17
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 59,
+                        "REFUTED": 140,
+                        "NOT_ESTABLISHED": 101
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 17,
+                        "REFUTED": 26,
+                        "NOT_ESTABLISHED": 257
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 78.16,
+                        "recall": 68,
+                        "f1": 72.73
+                    },
+                    "REFUTED": {
+                        "precision": 50.54,
+                        "recall": 46.67,
+                        "f1": 48.53
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 68.53,
+                        "recall": 85.67,
+                        "f1": 76.15
+                    }
+                },
+                "elapsed_s": 708.51
+            },
+            "CROSS-DOMAIN": {
+                "total": 200,
+                "correct": 109,
+                "accuracy_pct": 54.5,
+                "macro_f1_pct": 42.28,
+                "far_pct": 11,
+                "refutation_recall_pct": 56,
+                "frr_pct": 24,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 16,
+                "tier2_usage_pct": 84,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1443.6,
+                "uncached_tier2_p50_ms": 1072.8,
+                "uncached_tier2_p95_ms": 2371.7,
+                "tier2_calls_count": 168,
+                "uncached_inferences_count": 168,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 53,
+                        "REFUTED": 24,
+                        "NOT_ESTABLISHED": 23
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 11,
+                        "REFUTED": 56,
+                        "NOT_ESTABLISHED": 33
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 82.81,
+                        "recall": 53,
+                        "f1": 64.63
+                    },
+                    "REFUTED": {
+                        "precision": 70,
+                        "recall": 56,
+                        "f1": 62.22
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 250.62
+            },
+            "LEAVEOUT": {
+                "total": 300,
+                "correct": 151,
+                "accuracy_pct": 50.33,
+                "macro_f1_pct": 22.32,
+                "far_pct": 29.33,
+                "refutation_recall_pct": 50.33,
+                "frr_pct": 0,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 16.33,
+                "tier2_usage_pct": 83.67,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1280.7,
+                "uncached_tier2_p50_ms": 1030.6,
+                "uncached_tier2_p95_ms": 2208.4,
+                "tier2_calls_count": 251,
+                "uncached_inferences_count": 250,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 88,
+                        "REFUTED": 151,
+                        "NOT_ESTABLISHED": 61
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    },
+                    "REFUTED": {
+                        "precision": 100,
+                        "recall": 50.33,
+                        "f1": 66.96
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 327.85
+            },
+            "POLARITY": {
+                "total": 200,
+                "correct": 148,
+                "accuracy_pct": 74,
+                "macro_f1_pct": 47.87,
+                "far_pct": 28,
+                "refutation_recall_pct": 54,
+                "frr_pct": 10,
+                "legitimate_negation_frr_pct": 1,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 31,
+                "tier2_usage_pct": 69,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1032.6,
+                "uncached_tier2_p50_ms": 1007.8,
+                "uncached_tier2_p95_ms": 1238.5,
+                "tier2_calls_count": 138,
+                "uncached_inferences_count": 138,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 121,
+                        "REFUTED": 15,
+                        "NOT_ESTABLISHED": 14
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 14,
+                        "REFUTED": 27,
+                        "NOT_ESTABLISHED": 9
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 89.63,
+                        "recall": 80.67,
+                        "f1": 84.91
+                    },
+                    "REFUTED": {
+                        "precision": 64.29,
+                        "recall": 54,
+                        "f1": 58.7
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 146.6
+            },
+            "PARAPHRASE": {
+                "total": 300,
+                "correct": 224,
+                "accuracy_pct": 74.67,
+                "macro_f1_pct": 73.81,
+                "far_pct": 8,
+                "refutation_recall_pct": 55,
+                "frr_pct": 21,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 100,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 45.33,
+                "tier2_usage_pct": 54.67,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1048.6,
+                "uncached_tier2_p50_ms": 1007.4,
+                "uncached_tier2_p95_ms": 1239.8,
+                "tier2_calls_count": 164,
+                "uncached_inferences_count": 144,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 69,
+                        "REFUTED": 21,
+                        "NOT_ESTABLISHED": 10
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 8,
+                        "REFUTED": 55,
+                        "NOT_ESTABLISHED": 37
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 89.61,
+                        "recall": 69,
+                        "f1": 77.97
+                    },
+                    "REFUTED": {
+                        "precision": 72.37,
+                        "recall": 55,
+                        "f1": 62.5
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 68.03,
+                        "recall": 100,
+                        "f1": 80.97
+                    }
+                },
+                "elapsed_s": 155.2
+            },
+            "OOD": {
+                "total": 200,
+                "correct": 80,
+                "accuracy_pct": 40,
+                "macro_f1_pct": 27.78,
+                "far_pct": 40,
+                "refutation_recall_pct": 10,
+                "frr_pct": 10,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 2,
+                "tier2_usage_pct": 98,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1047.3,
+                "uncached_tier2_p50_ms": 998,
+                "uncached_tier2_p95_ms": 1250.7,
+                "tier2_calls_count": 196,
+                "uncached_inferences_count": 194,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 70,
+                        "REFUTED": 10,
+                        "NOT_ESTABLISHED": 20
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 40,
+                        "REFUTED": 10,
+                        "NOT_ESTABLISHED": 50
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 63.64,
+                        "recall": 70,
+                        "f1": 66.67
+                    },
+                    "REFUTED": {
+                        "precision": 50,
+                        "recall": 10,
+                        "f1": 16.67
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 207.26
+            },
+            "OVERALL_2200": {
+                "total": 2200,
+                "correct": 1381,
+                "accuracy_pct": 62.77,
+                "macro_f1_pct": 62.69,
+                "far_pct": 23.16,
+                "refutation_recall_pct": 46.21,
+                "frr_pct": 21.29,
+                "legitimate_negation_frr_pct": 1,
+                "unknown_recall_pct": 89.25,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 27.09,
+                "tier2_usage_pct": 72.91,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1108.6,
+                "uncached_tier2_p50_ms": 992.4,
+                "uncached_tier2_p95_ms": 1973.3,
+                "tier2_calls_count": 1604,
+                "uncached_inferences_count": 1577,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 585,
+                        "REFUTED": 181,
+                        "NOT_ESTABLISHED": 84
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 220,
+                        "REFUTED": 439,
+                        "NOT_ESTABLISHED": 291
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 17,
+                        "REFUTED": 26,
+                        "NOT_ESTABLISHED": 357
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 71.17,
+                        "recall": 68.82,
+                        "f1": 69.98
+                    },
+                    "REFUTED": {
+                        "precision": 67.96,
+                        "recall": 46.21,
+                        "f1": 55.01
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 48.77,
+                        "recall": 89.25,
+                        "f1": 63.07
+                    }
+                },
+                "elapsed_s": 1796.04,
+                "cold_first_call_ms": 1264,
+                "cache_entries": 1699
+            }
+        },
+        "A1": {
+            "BLIND": {
+                "total": 1000,
+                "correct": 691,
+                "accuracy_pct": 69.1,
+                "macro_f1_pct": 62.41,
+                "far_pct": 32,
+                "refutation_recall_pct": 20.67,
+                "frr_pct": 3.75,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 89,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 8.1,
+                "tier2_usage_pct": 91.9,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1011.7,
+                "uncached_tier2_p50_ms": 973.1,
+                "uncached_tier2_p95_ms": 1199.7,
+                "tier2_calls_count": 919,
+                "uncached_inferences_count": 915,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 362,
+                        "REFUTED": 15,
+                        "NOT_ESTABLISHED": 23
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 96,
+                        "REFUTED": 62,
+                        "NOT_ESTABLISHED": 142
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 17,
+                        "REFUTED": 16,
+                        "NOT_ESTABLISHED": 267
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 76.21,
+                        "recall": 90.5,
+                        "f1": 82.74
+                    },
+                    "REFUTED": {
+                        "precision": 66.67,
+                        "recall": 20.67,
+                        "f1": 31.55
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 61.81,
+                        "recall": 89,
+                        "f1": 72.95
+                    }
+                },
+                "elapsed_s": 926.61
+            },
+            "CROSS-DOMAIN": {
+                "total": 200,
+                "correct": 105,
+                "accuracy_pct": 52.5,
+                "macro_f1_pct": 41.47,
+                "far_pct": 20,
+                "refutation_recall_pct": 35,
+                "frr_pct": 3,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 0,
+                "tier2_usage_pct": 100,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1517.7,
+                "uncached_tier2_p50_ms": 1188.8,
+                "uncached_tier2_p95_ms": 2353,
+                "tier2_calls_count": 200,
+                "uncached_inferences_count": 200,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 70,
+                        "REFUTED": 3,
+                        "NOT_ESTABLISHED": 27
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 20,
+                        "REFUTED": 35,
+                        "NOT_ESTABLISHED": 45
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 77.78,
+                        "recall": 70,
+                        "f1": 73.68
+                    },
+                    "REFUTED": {
+                        "precision": 92.11,
+                        "recall": 35,
+                        "f1": 50.72
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 303.86
+            },
+            "LEAVEOUT": {
+                "total": 300,
+                "correct": 109,
+                "accuracy_pct": 36.33,
+                "macro_f1_pct": 17.77,
+                "far_pct": 40.67,
+                "refutation_recall_pct": 36.33,
+                "frr_pct": 0,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 0,
+                "tier2_usage_pct": 100,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1328.9,
+                "uncached_tier2_p50_ms": 1054.6,
+                "uncached_tier2_p95_ms": 2298.6,
+                "tier2_calls_count": 300,
+                "uncached_inferences_count": 298,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 122,
+                        "REFUTED": 109,
+                        "NOT_ESTABLISHED": 69
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    },
+                    "REFUTED": {
+                        "precision": 100,
+                        "recall": 36.33,
+                        "f1": 53.3
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 396.38
+            },
+            "POLARITY": {
+                "total": 200,
+                "correct": 139,
+                "accuracy_pct": 69.5,
+                "macro_f1_pct": 40.47,
+                "far_pct": 50,
+                "refutation_recall_pct": 26,
+                "frr_pct": 4,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 0,
+                "tier2_usage_pct": 100,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1040.9,
+                "uncached_tier2_p50_ms": 1012.1,
+                "uncached_tier2_p95_ms": 1231.2,
+                "tier2_calls_count": 200,
+                "uncached_inferences_count": 200,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 126,
+                        "REFUTED": 6,
+                        "NOT_ESTABLISHED": 18
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 25,
+                        "REFUTED": 13,
+                        "NOT_ESTABLISHED": 12
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 83.44,
+                        "recall": 84,
+                        "f1": 83.72
+                    },
+                    "REFUTED": {
+                        "precision": 68.42,
+                        "recall": 26,
+                        "f1": 37.68
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 208.38
+            },
+            "PARAPHRASE": {
+                "total": 300,
+                "correct": 230,
+                "accuracy_pct": 76.67,
+                "macro_f1_pct": 75.25,
+                "far_pct": 9,
+                "refutation_recall_pct": 45,
+                "frr_pct": 5,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 100,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 33.33,
+                "tier2_usage_pct": 66.67,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1052.5,
+                "uncached_tier2_p50_ms": 1010.3,
+                "uncached_tier2_p95_ms": 1246.8,
+                "tier2_calls_count": 200,
+                "uncached_inferences_count": 179,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 85,
+                        "REFUTED": 5,
+                        "NOT_ESTABLISHED": 10
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 9,
+                        "REFUTED": 45,
+                        "NOT_ESTABLISHED": 46
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 90.43,
+                        "recall": 85,
+                        "f1": 87.63
+                    },
+                    "REFUTED": {
+                        "precision": 90,
+                        "recall": 45,
+                        "f1": 60
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 64.1,
+                        "recall": 100,
+                        "f1": 78.13
+                    }
+                },
+                "elapsed_s": 188.71
+            },
+            "OOD": {
+                "total": 200,
+                "correct": 82,
+                "accuracy_pct": 41,
+                "macro_f1_pct": 28.24,
+                "far_pct": 40,
+                "refutation_recall_pct": 10,
+                "frr_pct": 9,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 1,
+                "tier2_usage_pct": 99,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1059.7,
+                "uncached_tier2_p50_ms": 1009.6,
+                "uncached_tier2_p95_ms": 1271.8,
+                "tier2_calls_count": 198,
+                "uncached_inferences_count": 196,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 72,
+                        "REFUTED": 9,
+                        "NOT_ESTABLISHED": 19
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 40,
+                        "REFUTED": 10,
+                        "NOT_ESTABLISHED": 50
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 64.29,
+                        "recall": 72,
+                        "f1": 67.92
+                    },
+                    "REFUTED": {
+                        "precision": 52.63,
+                        "recall": 10,
+                        "f1": 16.81
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 207.93
+            },
+            "OVERALL_2200": {
+                "total": 2200,
+                "correct": 1356,
+                "accuracy_pct": 61.64,
+                "macro_f1_pct": 59.38,
+                "far_pct": 32.84,
+                "refutation_recall_pct": 28.84,
+                "frr_pct": 4.47,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 91.75,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 8.32,
+                "tier2_usage_pct": 91.68,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1121.5,
+                "uncached_tier2_p50_ms": 1002.1,
+                "uncached_tier2_p95_ms": 2027.1,
+                "tier2_calls_count": 2017,
+                "uncached_inferences_count": 1988,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 715,
+                        "REFUTED": 38,
+                        "NOT_ESTABLISHED": 97
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 312,
+                        "REFUTED": 274,
+                        "NOT_ESTABLISHED": 364
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 17,
+                        "REFUTED": 16,
+                        "NOT_ESTABLISHED": 367
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 68.49,
+                        "recall": 84.12,
+                        "f1": 75.5
+                    },
+                    "REFUTED": {
+                        "precision": 83.54,
+                        "recall": 28.84,
+                        "f1": 42.88
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 44.32,
+                        "recall": 91.75,
+                        "f1": 59.77
+                    }
+                },
+                "elapsed_s": 2231.89,
+                "cold_first_call_ms": 955.5,
+                "cache_entries": 2160
+            }
+        },
+        "A4": {
+            "BLIND": {
+                "total": 1000,
+                "correct": 689,
+                "accuracy_pct": 68.9,
+                "macro_f1_pct": 62.06,
+                "far_pct": 32.67,
+                "refutation_recall_pct": 20,
+                "frr_pct": 3.75,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 89,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 8.1,
+                "tier2_usage_pct": 91.9,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1012.7,
+                "uncached_tier2_p50_ms": 978.4,
+                "uncached_tier2_p95_ms": 1204.6,
+                "tier2_calls_count": 919,
+                "uncached_inferences_count": 915,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 362,
+                        "REFUTED": 15,
+                        "NOT_ESTABLISHED": 23
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 98,
+                        "REFUTED": 60,
+                        "NOT_ESTABLISHED": 142
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 17,
+                        "REFUTED": 16,
+                        "NOT_ESTABLISHED": 267
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 75.89,
+                        "recall": 90.5,
+                        "f1": 82.55
+                    },
+                    "REFUTED": {
+                        "precision": 65.93,
+                        "recall": 20,
+                        "f1": 30.69
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 61.81,
+                        "recall": 89,
+                        "f1": 72.95
+                    }
+                },
+                "elapsed_s": 927.65
+            },
+            "CROSS-DOMAIN": {
+                "total": 200,
+                "correct": 104,
+                "accuracy_pct": 52,
+                "macro_f1_pct": 41.13,
+                "far_pct": 20,
+                "refutation_recall_pct": 35,
+                "frr_pct": 4,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 0,
+                "tier2_usage_pct": 100,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1525.6,
+                "uncached_tier2_p50_ms": 1270.2,
+                "uncached_tier2_p95_ms": 2288.6,
+                "tier2_calls_count": 200,
+                "uncached_inferences_count": 200,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 69,
+                        "REFUTED": 4,
+                        "NOT_ESTABLISHED": 27
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 20,
+                        "REFUTED": 35,
+                        "NOT_ESTABLISHED": 45
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 77.53,
+                        "recall": 69,
+                        "f1": 73.02
+                    },
+                    "REFUTED": {
+                        "precision": 89.74,
+                        "recall": 35,
+                        "f1": 50.36
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 305.46
+            },
+            "LEAVEOUT": {
+                "total": 300,
+                "correct": 109,
+                "accuracy_pct": 36.33,
+                "macro_f1_pct": 17.77,
+                "far_pct": 40.33,
+                "refutation_recall_pct": 36.33,
+                "frr_pct": 0,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 0,
+                "tier2_usage_pct": 100,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1324.2,
+                "uncached_tier2_p50_ms": 1053,
+                "uncached_tier2_p95_ms": 2340.5,
+                "tier2_calls_count": 300,
+                "uncached_inferences_count": 298,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 121,
+                        "REFUTED": 109,
+                        "NOT_ESTABLISHED": 70
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    },
+                    "REFUTED": {
+                        "precision": 100,
+                        "recall": 36.33,
+                        "f1": 53.3
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 395.07
+            },
+            "POLARITY": {
+                "total": 200,
+                "correct": 139,
+                "accuracy_pct": 69.5,
+                "macro_f1_pct": 40.47,
+                "far_pct": 50,
+                "refutation_recall_pct": 26,
+                "frr_pct": 4,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 0,
+                "tier2_usage_pct": 100,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1039.1,
+                "uncached_tier2_p50_ms": 1015.5,
+                "uncached_tier2_p95_ms": 1230.5,
+                "tier2_calls_count": 200,
+                "uncached_inferences_count": 200,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 126,
+                        "REFUTED": 6,
+                        "NOT_ESTABLISHED": 18
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 25,
+                        "REFUTED": 13,
+                        "NOT_ESTABLISHED": 12
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 83.44,
+                        "recall": 84,
+                        "f1": 83.72
+                    },
+                    "REFUTED": {
+                        "precision": 68.42,
+                        "recall": 26,
+                        "f1": 37.68
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 208.09
+            },
+            "PARAPHRASE": {
+                "total": 300,
+                "correct": 230,
+                "accuracy_pct": 76.67,
+                "macro_f1_pct": 75.25,
+                "far_pct": 9,
+                "refutation_recall_pct": 45,
+                "frr_pct": 5,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 100,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 33.33,
+                "tier2_usage_pct": 66.67,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1047.4,
+                "uncached_tier2_p50_ms": 1009.4,
+                "uncached_tier2_p95_ms": 1232.2,
+                "tier2_calls_count": 200,
+                "uncached_inferences_count": 179,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 85,
+                        "REFUTED": 5,
+                        "NOT_ESTABLISHED": 10
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 9,
+                        "REFUTED": 45,
+                        "NOT_ESTABLISHED": 46
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 90.43,
+                        "recall": 85,
+                        "f1": 87.63
+                    },
+                    "REFUTED": {
+                        "precision": 90,
+                        "recall": 45,
+                        "f1": 60
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 64.1,
+                        "recall": 100,
+                        "f1": 78.13
+                    }
+                },
+                "elapsed_s": 187.74
+            },
+            "OOD": {
+                "total": 200,
+                "correct": 83,
+                "accuracy_pct": 41.5,
+                "macro_f1_pct": 29.1,
+                "far_pct": 39,
+                "refutation_recall_pct": 12,
+                "frr_pct": 10,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 1,
+                "tier2_usage_pct": 99,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1079.7,
+                "uncached_tier2_p50_ms": 1033.2,
+                "uncached_tier2_p95_ms": 1348.7,
+                "tier2_calls_count": 198,
+                "uncached_inferences_count": 196,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 71,
+                        "REFUTED": 10,
+                        "NOT_ESTABLISHED": 19
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 39,
+                        "REFUTED": 12,
+                        "NOT_ESTABLISHED": 49
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 64.55,
+                        "recall": 71,
+                        "f1": 67.62
+                    },
+                    "REFUTED": {
+                        "precision": 54.55,
+                        "recall": 12,
+                        "f1": 19.67
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "elapsed_s": 211.82
+            },
+            "OVERALL_2200": {
+                "total": 2200,
+                "correct": 1354,
+                "accuracy_pct": 61.55,
+                "macro_f1_pct": 59.32,
+                "far_pct": 32.84,
+                "refutation_recall_pct": 28.84,
+                "frr_pct": 4.71,
+                "legitimate_negation_frr_pct": 0,
+                "unknown_recall_pct": 91.75,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 8.32,
+                "tier2_usage_pct": 91.68,
+                "tier2_abstain_pct": 0,
+                "uncached_tier2_avg_ms": 1123.4,
+                "uncached_tier2_p50_ms": 1004.5,
+                "uncached_tier2_p95_ms": 2014.1999999999998,
+                "tier2_calls_count": 2017,
+                "uncached_inferences_count": 1988,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 713,
+                        "REFUTED": 40,
+                        "NOT_ESTABLISHED": 97
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 312,
+                        "REFUTED": 274,
+                        "NOT_ESTABLISHED": 364
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 17,
+                        "REFUTED": 16,
+                        "NOT_ESTABLISHED": 367
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 68.43,
+                        "recall": 83.88,
+                        "f1": 75.37
+                    },
+                    "REFUTED": {
+                        "precision": 83.03,
+                        "recall": 28.84,
+                        "f1": 42.81
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 44.32,
+                        "recall": 91.75,
+                        "f1": 59.77
+                    }
+                },
+                "elapsed_s": 2235.83,
+                "cold_first_call_ms": 970.2,
+                "cache_entries": 2160
+            }
+        }
+    },
+    "mcnemar_tests": {
+        "A0_vs_A5": {
+            "BLIND": {
+                "b": 67,
+                "c": 45,
+                "discordant": 112,
+                "chi2": 3.938,
+                "p_value": 0.05,
+                "significant": false,
+                "diff_pct": 2.2,
+                "ci95_lower": 0.13,
+                "ci95_upper": 4.27,
+                "practically_significant": false,
+                "accuracy_A": 64.7,
+                "accuracy_B": 66.9,
+                "delta_pp": 2.2
+            },
+            "CROSS-DOMAIN": {
+                "b": 43,
+                "c": 9,
+                "discordant": 52,
+                "chi2": 20.942,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 17,
+                "ci95_lower": 10.34,
+                "ci95_upper": 23.66,
+                "practically_significant": true,
+                "accuracy_A": 37.5,
+                "accuracy_B": 54.5,
+                "delta_pp": 17
+            },
+            "LEAVEOUT": {
+                "b": 81,
+                "c": 0,
+                "discordant": 81,
+                "chi2": 79.012,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 27,
+                "ci95_lower": 21.98,
+                "ci95_upper": 32.02,
+                "practically_significant": true,
+                "accuracy_A": 23.33,
+                "accuracy_B": 50.33,
+                "delta_pp": 27
+            },
+            "POLARITY": {
+                "b": 11,
+                "c": 18,
+                "discordant": 29,
+                "chi2": 1.241,
+                "p_value": 0.5,
+                "significant": false,
+                "diff_pct": -3.5,
+                "ci95_lower": -8.76,
+                "ci95_upper": 1.76,
+                "practically_significant": false,
+                "accuracy_A": 77.5,
+                "accuracy_B": 74,
+                "delta_pp": -3.5
+            },
+            "PARAPHRASE": {
+                "b": 60,
+                "c": 10,
+                "discordant": 70,
+                "chi2": 34.3,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 16.67,
+                "ci95_lower": 11.54,
+                "ci95_upper": 21.8,
+                "practically_significant": true,
+                "accuracy_A": 58,
+                "accuracy_B": 74.67,
+                "delta_pp": 16.67
+            },
+            "OOD": {
+                "b": 37,
+                "c": 7,
+                "discordant": 44,
+                "chi2": 19.114,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 15,
+                "ci95_lower": 8.84,
+                "ci95_upper": 21.16,
+                "practically_significant": true,
+                "accuracy_A": 25,
+                "accuracy_B": 40,
+                "delta_pp": 15
+            },
+            "OVERALL_2200": {
+                "b": 299,
+                "c": 89,
+                "discordant": 388,
+                "chi2": 112.58,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 9.55,
+                "ci95_lower": 7.84,
+                "ci95_upper": 11.25,
+                "practically_significant": true,
+                "accuracy_A": 53.23,
+                "accuracy_B": 62.77,
+                "delta_pp": 9.54
+            }
+        },
+        "A0_vs_A1": {
+            "BLIND": {
+                "b": 170,
+                "c": 126,
+                "discordant": 296,
+                "chi2": 6.247,
+                "p_value": 0.05,
+                "significant": false,
+                "diff_pct": 4.4,
+                "ci95_lower": 1.04,
+                "ci95_upper": 7.76,
+                "practically_significant": false,
+                "accuracy_A": 64.7,
+                "accuracy_B": 69.1,
+                "delta_pp": 4.4
+            },
+            "CROSS-DOMAIN": {
+                "b": 60,
+                "c": 30,
+                "discordant": 90,
+                "chi2": 9.344,
+                "p_value": 0.01,
+                "significant": true,
+                "diff_pct": 15,
+                "ci95_lower": 5.94,
+                "ci95_upper": 24.06,
+                "practically_significant": true,
+                "accuracy_A": 37.5,
+                "accuracy_B": 52.5,
+                "delta_pp": 15
+            },
+            "LEAVEOUT": {
+                "b": 80,
+                "c": 41,
+                "discordant": 121,
+                "chi2": 11.934,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 13,
+                "ci95_lower": 5.97,
+                "ci95_upper": 20.03,
+                "practically_significant": true,
+                "accuracy_A": 23.33,
+                "accuracy_B": 36.33,
+                "delta_pp": 13
+            },
+            "POLARITY": {
+                "b": 19,
+                "c": 35,
+                "discordant": 54,
+                "chi2": 4.167,
+                "p_value": 0.05,
+                "significant": false,
+                "diff_pct": -8,
+                "ci95_lower": -15.12,
+                "ci95_upper": -0.88,
+                "practically_significant": false,
+                "accuracy_A": 77.5,
+                "accuracy_B": 69.5,
+                "delta_pp": -8
+            },
+            "PARAPHRASE": {
+                "b": 76,
+                "c": 20,
+                "discordant": 96,
+                "chi2": 31.51,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 18.67,
+                "ci95_lower": 12.62,
+                "ci95_upper": 24.71,
+                "practically_significant": true,
+                "accuracy_A": 58,
+                "accuracy_B": 76.67,
+                "delta_pp": 18.67
+            },
+            "OOD": {
+                "b": 39,
+                "c": 7,
+                "discordant": 46,
+                "chi2": 20.891,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 16,
+                "ci95_lower": 9.73,
+                "ci95_upper": 22.27,
+                "practically_significant": true,
+                "accuracy_A": 25,
+                "accuracy_B": 41,
+                "delta_pp": 16
+            },
+            "OVERALL_2200": {
+                "b": 444,
+                "c": 259,
+                "discordant": 703,
+                "chi2": 48.159,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 8.41,
+                "ci95_lower": 6.07,
+                "ci95_upper": 10.74,
+                "practically_significant": true,
+                "accuracy_A": 53.23,
+                "accuracy_B": 61.64,
+                "delta_pp": 8.41
+            }
+        },
+        "A4_vs_A5": {
+            "BLIND": {
+                "b": 82,
+                "c": 102,
+                "discordant": 184,
+                "chi2": 1.962,
+                "p_value": 0.5,
+                "significant": false,
+                "diff_pct": -2,
+                "ci95_lower": -4.66,
+                "ci95_upper": 0.66,
+                "practically_significant": false,
+                "accuracy_A": 68.9,
+                "accuracy_B": 66.9,
+                "delta_pp": -2
+            },
+            "CROSS-DOMAIN": {
+                "b": 22,
+                "c": 17,
+                "discordant": 39,
+                "chi2": 0.41,
+                "p_value": 0.5,
+                "significant": false,
+                "diff_pct": 2.5,
+                "ci95_lower": -3.61,
+                "ci95_upper": 8.61,
+                "practically_significant": false,
+                "accuracy_A": 52,
+                "accuracy_B": 54.5,
+                "delta_pp": 2.5
+            },
+            "LEAVEOUT": {
+                "b": 42,
+                "c": 0,
+                "discordant": 42,
+                "chi2": 40.024,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 14,
+                "ci95_lower": 10.07,
+                "ci95_upper": 17.93,
+                "practically_significant": true,
+                "accuracy_A": 36.33,
+                "accuracy_B": 50.33,
+                "delta_pp": 14
+            },
+            "POLARITY": {
+                "b": 17,
+                "c": 8,
+                "discordant": 25,
+                "chi2": 2.56,
+                "p_value": 0.5,
+                "significant": false,
+                "diff_pct": 4.5,
+                "ci95_lower": -0.36,
+                "ci95_upper": 9.36,
+                "practically_significant": false,
+                "accuracy_A": 69.5,
+                "accuracy_B": 74,
+                "delta_pp": 4.5
+            },
+            "PARAPHRASE": {
+                "b": 10,
+                "c": 16,
+                "discordant": 26,
+                "chi2": 0.962,
+                "p_value": 0.5,
+                "significant": false,
+                "diff_pct": -2,
+                "ci95_lower": -5.32,
+                "ci95_upper": 1.32,
+                "practically_significant": false,
+                "accuracy_A": 76.67,
+                "accuracy_B": 74.67,
+                "delta_pp": -2
+            },
+            "OOD": {
+                "b": 1,
+                "c": 4,
+                "discordant": 5,
+                "chi2": 0.8,
+                "p_value": 0.5,
+                "significant": false,
+                "diff_pct": -1.5,
+                "ci95_lower": -3.68,
+                "ci95_upper": 0.68,
+                "practically_significant": false,
+                "accuracy_A": 41.5,
+                "accuracy_B": 40,
+                "delta_pp": -1.5
+            },
+            "OVERALL_2200": {
+                "b": 174,
+                "c": 147,
+                "discordant": 321,
+                "chi2": 2.106,
+                "p_value": 0.5,
+                "significant": false,
+                "diff_pct": 1.23,
+                "ci95_lower": -0.37,
+                "ci95_upper": 2.82,
+                "practically_significant": false,
+                "accuracy_A": 61.55,
+                "accuracy_B": 62.77,
+                "delta_pp": 1.22
+            }
+        }
+    },
+    "error_taxonomy": {
+        "A0": {
+            "routing_error": 198,
+            "BLIND_routing_error": 75,
+            "polarity_error": 148,
+            "BLIND_polarity_error": 100,
+            "insufficient_evidence_tier1": 265,
+            "BLIND_insufficient_evidence_tier1": 37,
+            "lexical_rule_miss": 418,
+            "BLIND_lexical_rule_miss": 141,
+            "CROSS-DOMAIN_routing_error": 41,
+            "CROSS-DOMAIN_polarity_error": 20,
+            "CROSS-DOMAIN_lexical_rule_miss": 30,
+            "CROSS-DOMAIN_insufficient_evidence_tier1": 34,
+            "LEAVEOUT_insufficient_evidence_tier1": 99,
+            "LEAVEOUT_lexical_rule_miss": 131,
+            "POLARITY_polarity_error": 11,
+            "POLARITY_routing_error": 2,
+            "POLARITY_lexical_rule_miss": 25,
+            "POLARITY_insufficient_evidence_tier1": 7,
+            "PARAPHRASE_routing_error": 30,
+            "PARAPHRASE_polarity_error": 16,
+            "PARAPHRASE_insufficient_evidence_tier1": 20,
+            "PARAPHRASE_lexical_rule_miss": 60,
+            "OOD_routing_error": 50,
+            "OOD_polarity_error": 1,
+            "OOD_insufficient_evidence_tier1": 68,
+            "OOD_lexical_rule_miss": 31
+        },
+        "A5": {
+            "insufficient_evidence": 224,
+            "BLIND_insufficient_evidence": 68,
+            "semantic_false_contradiction": 31,
+            "BLIND_semantic_false_contradiction": 11,
+            "polarity_error": 140,
+            "BLIND_polarity_error": 100,
+            "timeout_or_fallback": 131,
+            "BLIND_timeout_or_fallback": 50,
+            "semantic_contradiction_miss": 236,
+            "BLIND_semantic_contradiction_miss": 59,
+            "routing_error": 11,
+            "BLIND_routing_error": 10,
+            "nli_model_error": 45,
+            "BLIND_nli_model_error": 33,
+            "CROSS-DOMAIN_insufficient_evidence": 28,
+            "CROSS-DOMAIN_timeout_or_fallback": 21,
+            "CROSS-DOMAIN_polarity_error": 12,
+            "CROSS-DOMAIN_nli_model_error": 10,
+            "CROSS-DOMAIN_semantic_false_contradiction": 2,
+            "CROSS-DOMAIN_semantic_contradiction_miss": 18,
+            "LEAVEOUT_insufficient_evidence": 32,
+            "LEAVEOUT_timeout_or_fallback": 18,
+            "LEAVEOUT_semantic_contradiction_miss": 97,
+            "LEAVEOUT_nli_model_error": 2,
+            "POLARITY_polarity_error": 11,
+            "POLARITY_insufficient_evidence": 22,
+            "POLARITY_semantic_false_contradiction": 4,
+            "POLARITY_semantic_contradiction_miss": 14,
+            "POLARITY_timeout_or_fallback": 1,
+            "PARAPHRASE_semantic_false_contradiction": 5,
+            "PARAPHRASE_insufficient_evidence": 31,
+            "PARAPHRASE_polarity_error": 16,
+            "PARAPHRASE_timeout_or_fallback": 16,
+            "PARAPHRASE_semantic_contradiction_miss": 8,
+            "OOD_insufficient_evidence": 43,
+            "OOD_semantic_false_contradiction": 9,
+            "OOD_polarity_error": 1,
+            "OOD_timeout_or_fallback": 25,
+            "OOD_routing_error": 1,
+            "OOD_semantic_contradiction_miss": 40,
+            "insufficient_evidence_tier1": 1,
+            "OOD_insufficient_evidence_tier1": 1
+        },
+        "A1": {
+            "insufficient_evidence": 285,
+            "BLIND_insufficient_evidence": 102,
+            "semantic_false_contradiction": 36,
+            "BLIND_semantic_false_contradiction": 15,
+            "timeout_or_fallback": 151,
+            "BLIND_timeout_or_fallback": 63,
+            "semantic_contradiction_miss": 333,
+            "BLIND_semantic_contradiction_miss": 96,
+            "nli_model_error": 37,
+            "BLIND_nli_model_error": 33,
+            "CROSS-DOMAIN_insufficient_evidence": 33,
+            "CROSS-DOMAIN_timeout_or_fallback": 29,
+            "CROSS-DOMAIN_semantic_contradiction_miss": 30,
+            "CROSS-DOMAIN_semantic_false_contradiction": 1,
+            "CROSS-DOMAIN_nli_model_error": 2,
+            "LEAVEOUT_insufficient_evidence": 38,
+            "LEAVEOUT_timeout_or_fallback": 18,
+            "LEAVEOUT_semantic_contradiction_miss": 133,
+            "LEAVEOUT_nli_model_error": 2,
+            "POLARITY_insufficient_evidence": 29,
+            "POLARITY_semantic_false_contradiction": 6,
+            "POLARITY_semantic_contradiction_miss": 25,
+            "POLARITY_timeout_or_fallback": 1,
+            "PARAPHRASE_semantic_false_contradiction": 5,
+            "PARAPHRASE_insufficient_evidence": 40,
+            "PARAPHRASE_semantic_contradiction_miss": 9,
+            "PARAPHRASE_timeout_or_fallback": 16,
+            "OOD_insufficient_evidence": 43,
+            "OOD_semantic_false_contradiction": 9,
+            "OOD_timeout_or_fallback": 24,
+            "routing_error": 1,
+            "OOD_routing_error": 1,
+            "OOD_semantic_contradiction_miss": 40,
+            "insufficient_evidence_tier1": 1,
+            "OOD_insufficient_evidence_tier1": 1
+        },
+        "A4": {
+            "insufficient_evidence": 284,
+            "BLIND_insufficient_evidence": 101,
+            "semantic_false_contradiction": 38,
+            "BLIND_semantic_false_contradiction": 15,
+            "timeout_or_fallback": 152,
+            "BLIND_timeout_or_fallback": 64,
+            "semantic_contradiction_miss": 333,
+            "BLIND_semantic_contradiction_miss": 98,
+            "nli_model_error": 37,
+            "BLIND_nli_model_error": 33,
+            "CROSS-DOMAIN_insufficient_evidence": 32,
+            "CROSS-DOMAIN_timeout_or_fallback": 30,
+            "CROSS-DOMAIN_semantic_false_contradiction": 2,
+            "CROSS-DOMAIN_semantic_contradiction_miss": 30,
+            "CROSS-DOMAIN_nli_model_error": 2,
+            "LEAVEOUT_insufficient_evidence": 39,
+            "LEAVEOUT_timeout_or_fallback": 18,
+            "LEAVEOUT_semantic_contradiction_miss": 132,
+            "LEAVEOUT_nli_model_error": 2,
+            "POLARITY_insufficient_evidence": 29,
+            "POLARITY_semantic_false_contradiction": 6,
+            "POLARITY_semantic_contradiction_miss": 25,
+            "POLARITY_timeout_or_fallback": 1,
+            "PARAPHRASE_semantic_false_contradiction": 5,
+            "PARAPHRASE_insufficient_evidence": 40,
+            "PARAPHRASE_semantic_contradiction_miss": 9,
+            "PARAPHRASE_timeout_or_fallback": 16,
+            "OOD_insufficient_evidence": 43,
+            "OOD_semantic_false_contradiction": 10,
+            "OOD_timeout_or_fallback": 23,
+            "routing_error": 1,
+            "OOD_routing_error": 1,
+            "OOD_semantic_contradiction_miss": 39,
+            "insufficient_evidence_tier1": 1,
+            "OOD_insufficient_evidence_tier1": 1
+        }
+    },
+    "total_errors_recorded": 3538
+}

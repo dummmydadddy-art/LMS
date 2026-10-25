@@ -1,0 +1,2042 @@
+[
+  {
+    "session_id": "exp14_s5_sess_01",
+    "theme": "React State Management",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does useState work in React Hooks Tutorial?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useState Hook",
+        "expected_kw": "useState"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useState Hook",
+        "expected_kw": "useState"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useState Hook",
+        "expected_kw": "useState"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useState Hook",
+        "expected_kw": "useState"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useState Hook",
+        "expected_kw": "useState"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useState Hook",
+        "expected_kw": "useState"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to useState in React?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useState Hook",
+        "expected_kw": "useState"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how useState and database transactions coordinate in this full stack flow.",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useState Hook",
+        "expected_kw": "useState"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_02",
+    "theme": "React Lifecycle & Effects",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does useEffect work in React Hooks Tutorial?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useEffect Hook",
+        "expected_kw": "useEffect"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useEffect Hook",
+        "expected_kw": "useEffect"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useEffect Hook",
+        "expected_kw": "useEffect"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useEffect Hook",
+        "expected_kw": "useEffect"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useEffect Hook",
+        "expected_kw": "useEffect"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useEffect Hook",
+        "expected_kw": "useEffect"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to useEffect in React?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useEffect Hook",
+        "expected_kw": "useEffect"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how useEffect and database transactions coordinate in this full stack flow.",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useEffect Hook",
+        "expected_kw": "useEffect"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_03",
+    "theme": "React Context & Global State",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does useContext work in React Hooks Tutorial?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useContext & State Propagation",
+        "expected_kw": "useContext"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useContext & State Propagation",
+        "expected_kw": "useContext"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useContext & State Propagation",
+        "expected_kw": "useContext"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useContext & State Propagation",
+        "expected_kw": "useContext"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useContext & State Propagation",
+        "expected_kw": "useContext"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useContext & State Propagation",
+        "expected_kw": "useContext"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to useContext in React?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useContext & State Propagation",
+        "expected_kw": "useContext"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how useContext and database transactions coordinate in this full stack flow.",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useContext & State Propagation",
+        "expected_kw": "useContext"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_04",
+    "theme": "React Performance Optimization",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does useMemo work in React Hooks Tutorial?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "Performance Hooks: useMemo & useCallback",
+        "expected_kw": "useMemo"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "Performance Hooks: useMemo & useCallback",
+        "expected_kw": "useMemo"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "Performance Hooks: useMemo & useCallback",
+        "expected_kw": "useMemo"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "Performance Hooks: useMemo & useCallback",
+        "expected_kw": "useMemo"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "Performance Hooks: useMemo & useCallback",
+        "expected_kw": "useMemo"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "Performance Hooks: useMemo & useCallback",
+        "expected_kw": "useMemo"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to useMemo in React?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "Performance Hooks: useMemo & useCallback",
+        "expected_kw": "useMemo"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how useMemo and database transactions coordinate in this full stack flow.",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "Performance Hooks: useMemo & useCallback",
+        "expected_kw": "useMemo"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_05",
+    "theme": "React Refs & Imperative DOM",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does useRef work in React Hooks Tutorial?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useRef Hook",
+        "expected_kw": "useRef"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useRef Hook",
+        "expected_kw": "useRef"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useRef Hook",
+        "expected_kw": "useRef"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useRef Hook",
+        "expected_kw": "useRef"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useRef Hook",
+        "expected_kw": "useRef"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useRef Hook",
+        "expected_kw": "useRef"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to useRef in React?",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useRef Hook",
+        "expected_kw": "useRef"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how useRef and database transactions coordinate in this full stack flow.",
+        "expected_doc": "React Hooks Tutorial",
+        "expected_section": "useRef Hook",
+        "expected_kw": "useRef"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_06",
+    "theme": "JavaScript Asynchronous Flow",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does async/await work in JavaScript ES6+ Deep Dive?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Asynchronous JavaScript & Promises",
+        "expected_kw": "async/await"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Asynchronous JavaScript & Promises",
+        "expected_kw": "async/await"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Asynchronous JavaScript & Promises",
+        "expected_kw": "async/await"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Asynchronous JavaScript & Promises",
+        "expected_kw": "async/await"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Asynchronous JavaScript & Promises",
+        "expected_kw": "async/await"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Asynchronous JavaScript & Promises",
+        "expected_kw": "async/await"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to async/await in JavaScript?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Asynchronous JavaScript & Promises",
+        "expected_kw": "async/await"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how async/await and database transactions coordinate in this full stack flow.",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Asynchronous JavaScript & Promises",
+        "expected_kw": "async/await"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_07",
+    "theme": "JavaScript Scoping & Closures",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does let work in JavaScript ES6+ Deep Dive?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Variable Declarations & Scoping",
+        "expected_kw": "let"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Variable Declarations & Scoping",
+        "expected_kw": "let"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Variable Declarations & Scoping",
+        "expected_kw": "let"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Variable Declarations & Scoping",
+        "expected_kw": "let"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Variable Declarations & Scoping",
+        "expected_kw": "let"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Variable Declarations & Scoping",
+        "expected_kw": "let"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to let in JavaScript?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Variable Declarations & Scoping",
+        "expected_kw": "let"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how let and database transactions coordinate in this full stack flow.",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Variable Declarations & Scoping",
+        "expected_kw": "let"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_08",
+    "theme": "JavaScript Arrow Functions & This",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does lexical this work in JavaScript ES6+ Deep Dive?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Arrow Functions & Lexical this",
+        "expected_kw": "lexical this"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Arrow Functions & Lexical this",
+        "expected_kw": "lexical this"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Arrow Functions & Lexical this",
+        "expected_kw": "lexical this"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Arrow Functions & Lexical this",
+        "expected_kw": "lexical this"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Arrow Functions & Lexical this",
+        "expected_kw": "lexical this"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Arrow Functions & Lexical this",
+        "expected_kw": "lexical this"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to lexical this in JavaScript?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Arrow Functions & Lexical this",
+        "expected_kw": "lexical this"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how lexical this and database transactions coordinate in this full stack flow.",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Arrow Functions & Lexical this",
+        "expected_kw": "lexical this"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_09",
+    "theme": "JavaScript Modern Syntax",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does destructuring work in JavaScript ES6+ Deep Dive?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Destructuring, Spread & Rest Operators",
+        "expected_kw": "destructuring"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Destructuring, Spread & Rest Operators",
+        "expected_kw": "destructuring"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Destructuring, Spread & Rest Operators",
+        "expected_kw": "destructuring"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Destructuring, Spread & Rest Operators",
+        "expected_kw": "destructuring"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Destructuring, Spread & Rest Operators",
+        "expected_kw": "destructuring"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Destructuring, Spread & Rest Operators",
+        "expected_kw": "destructuring"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to destructuring in JavaScript?",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Destructuring, Spread & Rest Operators",
+        "expected_kw": "destructuring"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how destructuring and database transactions coordinate in this full stack flow.",
+        "expected_doc": "JavaScript ES6+ Deep Dive",
+        "expected_section": "Destructuring, Spread & Rest Operators",
+        "expected_kw": "destructuring"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_10",
+    "theme": "Node.js Architecture & Libuv",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does event loop work in Node.js & Express REST API Notes?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Node.js Architecture & Event Loop",
+        "expected_kw": "event loop"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Node.js Architecture & Event Loop",
+        "expected_kw": "event loop"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Node.js Architecture & Event Loop",
+        "expected_kw": "event loop"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Node.js Architecture & Event Loop",
+        "expected_kw": "event loop"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Node.js Architecture & Event Loop",
+        "expected_kw": "event loop"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Node.js Architecture & Event Loop",
+        "expected_kw": "event loop"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to event loop in Node.js?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Node.js Architecture & Event Loop",
+        "expected_kw": "event loop"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how event loop and database transactions coordinate in this full stack flow.",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Node.js Architecture & Event Loop",
+        "expected_kw": "event loop"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_11",
+    "theme": "Express Application Routing",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does app.use work in Node.js & Express REST API Notes?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Express.js Core Concepts",
+        "expected_kw": "app.use"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Express.js Core Concepts",
+        "expected_kw": "app.use"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Express.js Core Concepts",
+        "expected_kw": "app.use"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Express.js Core Concepts",
+        "expected_kw": "app.use"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Express.js Core Concepts",
+        "expected_kw": "app.use"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Express.js Core Concepts",
+        "expected_kw": "app.use"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to app.use in Node.js?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Express.js Core Concepts",
+        "expected_kw": "app.use"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how app.use and database transactions coordinate in this full stack flow.",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Express.js Core Concepts",
+        "expected_kw": "app.use"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_12",
+    "theme": "Express Middleware Pipeline",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does next() work in Node.js & Express REST API Notes?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to next() in Node.js?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how next() and database transactions coordinate in this full stack flow.",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_13",
+    "theme": "RESTful API Architecture",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does HTTP status codes work in Node.js & Express REST API Notes?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "RESTful API Design Principles",
+        "expected_kw": "HTTP status codes"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "RESTful API Design Principles",
+        "expected_kw": "HTTP status codes"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "RESTful API Design Principles",
+        "expected_kw": "HTTP status codes"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "RESTful API Design Principles",
+        "expected_kw": "HTTP status codes"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "RESTful API Design Principles",
+        "expected_kw": "HTTP status codes"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "RESTful API Design Principles",
+        "expected_kw": "HTTP status codes"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to HTTP status codes in Node.js?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "RESTful API Design Principles",
+        "expected_kw": "HTTP status codes"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how HTTP status codes and database transactions coordinate in this full stack flow.",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "RESTful API Design Principles",
+        "expected_kw": "HTTP status codes"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_14",
+    "theme": "JWT Token Security",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does JWT work in Node.js & Express REST API Notes?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "JWT Authentication",
+        "expected_kw": "JWT"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "JWT Authentication",
+        "expected_kw": "JWT"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "JWT Authentication",
+        "expected_kw": "JWT"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "JWT Authentication",
+        "expected_kw": "JWT"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "JWT Authentication",
+        "expected_kw": "JWT"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "JWT Authentication",
+        "expected_kw": "JWT"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to JWT in Node.js?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "JWT Authentication",
+        "expected_kw": "JWT"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how JWT and database transactions coordinate in this full stack flow.",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "JWT Authentication",
+        "expected_kw": "JWT"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_15",
+    "theme": "Relational Modeling & Keys",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does foreign key work in PostgreSQL Database Design?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Relational Database Modeling",
+        "expected_kw": "foreign key"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Relational Database Modeling",
+        "expected_kw": "foreign key"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Relational Database Modeling",
+        "expected_kw": "foreign key"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Relational Database Modeling",
+        "expected_kw": "foreign key"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Relational Database Modeling",
+        "expected_kw": "foreign key"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Relational Database Modeling",
+        "expected_kw": "foreign key"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to foreign key in PostgreSQL?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Relational Database Modeling",
+        "expected_kw": "foreign key"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how foreign key and database transactions coordinate in this full stack flow.",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Relational Database Modeling",
+        "expected_kw": "foreign key"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_16",
+    "theme": "Schema Normalization 1NF-3NF",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does 3NF work in PostgreSQL Database Design?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Database Normalization Forms",
+        "expected_kw": "3NF"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Database Normalization Forms",
+        "expected_kw": "3NF"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Database Normalization Forms",
+        "expected_kw": "3NF"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Database Normalization Forms",
+        "expected_kw": "3NF"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Database Normalization Forms",
+        "expected_kw": "3NF"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Database Normalization Forms",
+        "expected_kw": "3NF"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to 3NF in PostgreSQL?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Database Normalization Forms",
+        "expected_kw": "3NF"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how 3NF and database transactions coordinate in this full stack flow.",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Database Normalization Forms",
+        "expected_kw": "3NF"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_17",
+    "theme": "PostgreSQL Indexing & B-Trees",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does B-tree work in PostgreSQL Database Design?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Indexing Strategies & Performance",
+        "expected_kw": "B-tree"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Indexing Strategies & Performance",
+        "expected_kw": "B-tree"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Indexing Strategies & Performance",
+        "expected_kw": "B-tree"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Indexing Strategies & Performance",
+        "expected_kw": "B-tree"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Indexing Strategies & Performance",
+        "expected_kw": "B-tree"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Indexing Strategies & Performance",
+        "expected_kw": "B-tree"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to B-tree in PostgreSQL?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Indexing Strategies & Performance",
+        "expected_kw": "B-tree"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how B-tree and database transactions coordinate in this full stack flow.",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "Indexing Strategies & Performance",
+        "expected_kw": "B-tree"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_18",
+    "theme": "ACID Transaction Guarantees",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does ACID work in PostgreSQL Database Design?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ACID"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ACID"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ACID"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ACID"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ACID"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ACID"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to ACID in PostgreSQL?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ACID"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how ACID and database transactions coordinate in this full stack flow.",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ACID"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_19",
+    "theme": "CSS Box Model Mechanics",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does box-sizing work in HTML & CSS Fundamentals?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Box Model",
+        "expected_kw": "box-sizing"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Box Model",
+        "expected_kw": "box-sizing"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Box Model",
+        "expected_kw": "box-sizing"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Box Model",
+        "expected_kw": "box-sizing"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Box Model",
+        "expected_kw": "box-sizing"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Box Model",
+        "expected_kw": "box-sizing"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to box-sizing in HTML?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Box Model",
+        "expected_kw": "box-sizing"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how box-sizing and database transactions coordinate in this full stack flow.",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Box Model",
+        "expected_kw": "box-sizing"
+      }
+    ]
+  },
+  {
+    "session_id": "exp14_s5_sess_20",
+    "theme": "Flexbox Layout Mechanics",
+    "turns": [
+      {
+        "turn": 1,
+        "type": "initiation",
+        "query": "How does justify-content work in HTML & CSS Fundamentals?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Flexbox Layout Guide",
+        "expected_kw": "justify-content"
+      },
+      {
+        "turn": 2,
+        "type": "anaphora",
+        "query": "Can you show me a basic code example of it?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Flexbox Layout Guide",
+        "expected_kw": "justify-content"
+      },
+      {
+        "turn": 3,
+        "type": "clarification",
+        "query": "Why is that preferred over older patterns?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Flexbox Layout Guide",
+        "expected_kw": "justify-content"
+      },
+      {
+        "turn": 4,
+        "type": "follow_up",
+        "query": "What parameters does it take in practice?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Flexbox Layout Guide",
+        "expected_kw": "justify-content"
+      },
+      {
+        "turn": 5,
+        "type": "edge_case",
+        "query": "What common mistake or bug happens when using this?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Flexbox Layout Guide",
+        "expected_kw": "justify-content"
+      },
+      {
+        "turn": 6,
+        "type": "correction",
+        "query": "Wait, earlier I thought you said it re-renders every time?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Flexbox Layout Guide",
+        "expected_kw": "justify-content"
+      },
+      {
+        "turn": 7,
+        "type": "topic_change",
+        "query": "Switching topics, how does Express handle authentication middleware with next()?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "next()"
+      },
+      {
+        "turn": 8,
+        "type": "anaphora",
+        "query": "What happens if I forget to call it in the middleware function?",
+        "expected_doc": "Node.js & Express REST API Notes",
+        "expected_section": "Middleware in Express",
+        "expected_kw": "hangs"
+      },
+      {
+        "turn": 9,
+        "type": "cross_module",
+        "query": "How does that relate back to justify-content in HTML?",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Flexbox Layout Guide",
+        "expected_kw": "justify-content"
+      },
+      {
+        "turn": 10,
+        "type": "database_link",
+        "query": "And if we need to persist that state to PostgreSQL, how do transactions handle it?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "COMMIT"
+      },
+      {
+        "turn": 11,
+        "type": "anaphora",
+        "query": "Can they be rolled back if an error occurs?",
+        "expected_doc": "PostgreSQL Database Design",
+        "expected_section": "ACID Transactions",
+        "expected_kw": "ROLLBACK"
+      },
+      {
+        "turn": 12,
+        "type": "synthesis",
+        "query": "Summarize how justify-content and database transactions coordinate in this full stack flow.",
+        "expected_doc": "HTML & CSS Fundamentals",
+        "expected_section": "CSS Flexbox Layout Guide",
+        "expected_kw": "justify-content"
+      }
+    ]
+  }
+]

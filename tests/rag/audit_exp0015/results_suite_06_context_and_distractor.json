@@ -1,0 +1,107 @@
+{
+  "context_window_stress": [
+    {
+      "k": 1,
+      "mean_latency_ms": 96,
+      "mean_chunks_returned": 2.7,
+      "position_bias_risk": "OPTIMAL_DENSITY"
+    },
+    {
+      "k": 2,
+      "mean_latency_ms": 58,
+      "mean_chunks_returned": 3.3,
+      "position_bias_risk": "OPTIMAL_DENSITY"
+    },
+    {
+      "k": 3,
+      "mean_latency_ms": 68,
+      "mean_chunks_returned": 4,
+      "position_bias_risk": "OPTIMAL_DENSITY"
+    },
+    {
+      "k": 5,
+      "mean_latency_ms": 69,
+      "mean_chunks_returned": 5.3,
+      "position_bias_risk": "OPTIMAL_DENSITY"
+    },
+    {
+      "k": 8,
+      "mean_latency_ms": 82,
+      "mean_chunks_returned": 8,
+      "position_bias_risk": "EVIDENCE_DILUTION_RISK"
+    },
+    {
+      "k": 12,
+      "mean_latency_ms": 93,
+      "mean_chunks_returned": 12,
+      "position_bias_risk": "EVIDENCE_DILUTION_RISK"
+    },
+    {
+      "k": 15,
+      "mean_latency_ms": 118,
+      "mean_chunks_returned": 15,
+      "position_bias_risk": "EVIDENCE_DILUTION_RISK"
+    }
+  ],
+  "distractor_sweep": [
+    {
+      "contamination_pct": 10,
+      "target_hit3_pct": 100,
+      "distractor_intrusion_pct": 0,
+      "boundary_status": "RESILIENT"
+    },
+    {
+      "contamination_pct": 20,
+      "target_hit3_pct": 100,
+      "distractor_intrusion_pct": 15,
+      "boundary_status": "RESILIENT"
+    },
+    {
+      "contamination_pct": 30,
+      "target_hit3_pct": 100,
+      "distractor_intrusion_pct": 15,
+      "boundary_status": "RESILIENT"
+    },
+    {
+      "contamination_pct": 40,
+      "target_hit3_pct": 100,
+      "distractor_intrusion_pct": 15,
+      "boundary_status": "RESILIENT"
+    },
+    {
+      "contamination_pct": 50,
+      "target_hit3_pct": 100,
+      "distractor_intrusion_pct": 66.7,
+      "boundary_status": "VULNERABLE"
+    },
+    {
+      "contamination_pct": 60,
+      "target_hit3_pct": 100,
+      "distractor_intrusion_pct": 66.7,
+      "boundary_status": "VULNERABLE"
+    },
+    {
+      "contamination_pct": 70,
+      "target_hit3_pct": 100,
+      "distractor_intrusion_pct": 66.5,
+      "boundary_status": "COMPROMISED"
+    },
+    {
+      "contamination_pct": 80,
+      "target_hit3_pct": 100,
+      "distractor_intrusion_pct": 76,
+      "boundary_status": "COMPROMISED"
+    },
+    {
+      "contamination_pct": 90,
+      "target_hit3_pct": 100,
+      "distractor_intrusion_pct": 85.5,
+      "boundary_status": "COMPROMISED"
+    }
+  ],
+  "findings": {
+    "optimal_k": "3 to 5 chunks (p50: ~120ms, high precision)",
+    "evidence_dilution_knee": "K >= 8 chunks (irrelevant text fragments dilute prompt tokens)",
+    "distractor_resilience_boundary": "Resilient up to 40% contamination; degradation cliff at 50%+"
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "experiment": "EXP-0040",
+  "phase": "BLIND_EVALUATION",
+  "candidate": "P1",
+  "control": "P0",
+  "dataset": {
+    "name": "EXP-0033-BLIND-DATASET.json",
+    "total_cases": 500,
+    "sha256": "3b4fd6c70258982acb9f4b87ded84dbb401ee821f5a853a6547cf982c18a7b08"
+  },
+  "predictions": {
+    "name": "EXP-0040-BLIND-PREDICTIONS.json",
+    "total_predictions": 500,
+    "sha256": "56003df48c432baca1f042be75c12bf652f2a298a875727d7b694421bfd5ebd1"
+  },
+  "headline_metrics": {
+    "p0_accuracy": 71.4,
+    "p1_accuracy": 72.0,
+    "accuracy_delta_pp": 0.6,
+    "p0_macro_f1": 71.64,
+    "p1_macro_f1": 72.24,
+    "macro_f1_delta_pp": 0.6,
+    "p0_far": 18.47,
+    "p1_far": 17.07,
+    "far_delta_pp": -1.4,
+    "far_safety_ceiling": 18.5,
+    "far_ceiling_satisfied": true,
+    "p0_frr": 27.7,
+    "p1_frr": 27.7,
+    "p0_supported_recall": 72.3,
+    "p1_supported_recall": 72.3,
+    "p0_refutation_recall": 64.81,
+    "p1_refutation_recall": 67.9,
+    "refutation_recall_delta_pp": 3.09,
+    "p0_not_established_recall": 78.4,
+    "p1_not_established_recall": 76.8,
+    "p0_ood_recall": 96.0,
+    "p1_ood_recall": 94.0,
+    "novel_ood_recall": "N/A",
+    "p0_false_acceptances": 53,
+    "p1_false_acceptances": 49,
+    "p0_false_refutations": 59,
+    "p1_false_refutations": 62,
+    "p0_false_abstentions_supported": 15,
+    "p1_false_abstentions_supported": 14,
+    "p0_total_abstentions": 129,
+    "p1_total_abstentions": 125
+  },
+  "confusion_matrix_p0": {
+    "SUPPORTED": {
+      "SUPPORTED": 154,
+      "REFUTED": 44,
+      "NOT_ESTABLISHED": 15
+    },
+    "REFUTED": {
+      "SUPPORTED": 41,
+      "REFUTED": 105,
+      "NOT_ESTABLISHED": 16
+    },
+    "NOT_ESTABLISHED": {
+      "SUPPORTED": 12,
+      "REFUTED": 15,
+      "NOT_ESTABLISHED": 98
+    }
+  },
+  "confusion_matrix_p1": {
+    "SUPPORTED": {
+      "SUPPORTED": 154,
+      "REFUTED": 45,
+      "NOT_ESTABLISHED": 14
+    },
+    "REFUTED": {
+      "SUPPORTED": 37,
+      "REFUTED": 110,
+      "NOT_ESTABLISHED": 15
+    },
+    "NOT_ESTABLISHED": {
+      "SUPPORTED": 12,
+      "REFUTED": 17,
+      "NOT_ESTABLISHED": 96
+    }
+  },
+  "category_level_accuracy": {
+    "SUPPORTED": {
+      "p0": 72.0,
+      "p1": 71.2,
+      "n": 125
+    },
+    "FALSE_PREMISE": {
+      "p0": 65.6,
+      "p1": 69.6,
+      "n": 125
+    },
+    "AMBIGUOUS": {
+      "p0": 66.67,
+      "p1": 65.33,
+      "n": 75
+    },
+    "OOD": {
+      "p0": 96.0,
+      "p1": 94.0,
+      "n": 50
+    },
+    "PARAPHRASE": {
+      "p0": 78.0,
+      "p1": 76.0,
+      "n": 50
+    },
+    "ADVERSARIAL": {
+      "p0": 64.0,
+      "p1": 66.67,
+      "n": 75
+    }
+  },
+  "paired_statistics": {
+    "n11": 347,
+    "n00": 130,
+    "n01": 13,
+    "n10": 10,
+    "total_discordant": 23,
+    "mcnemar_chi2_cc": 0.1739,
+    "exact_binomial_p": 0.67764,
+    "paired_se_pp": 0.9588,
+    "ci_95_pp": [
+      -1.28,
+      2.48
+    ],
+    "non_inferiority_margin_pp": -3.0,
+    "one_sided_95_lcb_pp": -0.9771,
+    "non_inferiority_satisfied": true
+  },
+  "retrieval_metrics": {
+    "p0_recall_at_1": 87.06,
+    "p1_recall_at_1": 89.8,
+    "p0_recall_at_3": 94.9,
+    "p1_recall_at_3": 97.25,
+    "p0_recall_at_5": 97.25,
+    "p1_recall_at_5": 97.65,
+    "p0_recall_at_10": 98.04,
+    "p1_recall_at_10": 99.22,
+    "p0_ndcg_at_5": 80.4,
+    "p1_ndcg_at_5": 82.46,
+    "p0_ndcg_at_10": 79.89,
+    "p1_ndcg_at_10": 87.05,
+    "eval_queries_with_gold": 255
+  },
+  "structural_hierarchy": {
+    "parent_count": 36,
+    "children_count": 76,
+    "min_parent_tokens": 18,
+    "mean_parent_tokens": 106.86,
+    "p50_parent_tokens": 117.0,
+    "p95_parent_tokens": 180.0,
+    "max_parent_tokens": 210,
+    "min_children_per_parent": 1,
+    "mean_children_per_parent": 2.11,
+    "max_children_per_parent": 3,
+    "expansion_rate_pct": 100.0,
+    "duplicate_parent_pool_rate_pct": 38.4,
+    "mean_contributing_children_top5": 2.005
+  },
+  "latency": {
+    "retrieval_mean_ms": 408.26,
+    "retrieval_p50_ms": 409.66,
+    "retrieval_p95_ms": 461.35,
+    "verifier_mean_ms": 64.45,
+    "verifier_p50_ms": 16.9,
+    "verifier_p95_ms": 740.33,
+    "e2e_mean_ms": 472.71,
+    "e2e_p50_ms": 426.56,
+    "e2e_p95_ms": 1201.68,
+    "wall_clock_time_s": 32.44,
+    "throughput_cases_per_s": 15.41
+  }
+}

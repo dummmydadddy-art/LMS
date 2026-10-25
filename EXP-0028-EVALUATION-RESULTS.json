@@ -1,0 +1,1476 @@
+{
+    "experiment": "EXP-0028",
+    "timestamp": "2026-09-15T16:57:39+00:00",
+    "commit": "e40be39",
+    "branch": "exp-0028",
+    "model_identifier": "llama3.2:latest",
+    "certified_champion_mode": "B5",
+    "total_cases_evaluated": 2200,
+    "modes_evaluated": [
+        "A5",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "B5",
+        "B5-NoDict"
+    ],
+    "benchmarks_evaluated": [
+        "FAILURE_600",
+        "LEAVEOUT",
+        "CROSS-DOMAIN",
+        "OOD",
+        "PARAPHRASE",
+        "GENERALIZATION_POOL_1000"
+    ],
+    "results": {
+        "FAILURE_600": {
+            "A5": {
+                "total": 600,
+                "correct": 295,
+                "accuracy_pct": 49.17,
+                "macro_f1_pct": 47.01,
+                "far_pct": 47,
+                "refutation_recall_pct": 21,
+                "frr_pct": 8.5,
+                "unknown_recall_pct": 62,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 1.5,
+                "tier2_usage_pct": 98.5,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 0,
+                "two_pass_invoked_pct": 0,
+                "uncached_tier2_avg_ms": 1034.1,
+                "uncached_tier2_p50_ms": 980.6,
+                "uncached_tier2_p95_ms": 1215.2,
+                "tier2_calls_count": 600,
+                "uncached_inferences_count": 600,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 170,
+                        "REFUTED": 17,
+                        "NOT_ESTABLISHED": 13
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 141,
+                        "REFUTED": 63,
+                        "NOT_ESTABLISHED": 96
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 32,
+                        "REFUTED": 6,
+                        "NOT_ESTABLISHED": 62
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 49.56,
+                        "recall": 85,
+                        "f1": 62.62
+                    },
+                    "REFUTED": {
+                        "precision": 73.26,
+                        "recall": 21,
+                        "f1": 32.64
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 36.26,
+                        "recall": 62,
+                        "f1": 45.76
+                    }
+                },
+                "cold_latency_ms": 35652.1,
+                "total_time_s": 620.69
+            },
+            "B5": {
+                "total": 600,
+                "correct": 334,
+                "accuracy_pct": 55.67,
+                "macro_f1_pct": 53.89,
+                "far_pct": 50.67,
+                "refutation_recall_pct": 39.67,
+                "frr_pct": 7,
+                "unknown_recall_pct": 46,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 1.5,
+                "tier2_usage_pct": 98.5,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 213,
+                "two_pass_invoked_pct": 35.5,
+                "uncached_tier2_avg_ms": 1353.3,
+                "uncached_tier2_p50_ms": 1076.7,
+                "uncached_tier2_p95_ms": 2267.4,
+                "tier2_calls_count": 600,
+                "uncached_inferences_count": 600,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 169,
+                        "REFUTED": 14,
+                        "NOT_ESTABLISHED": 17
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 152,
+                        "REFUTED": 119,
+                        "NOT_ESTABLISHED": 29
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 54,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 46
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 45.07,
+                        "recall": 84.5,
+                        "f1": 58.78
+                    },
+                    "REFUTED": {
+                        "precision": 89.47,
+                        "recall": 39.67,
+                        "f1": 54.97
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 50,
+                        "recall": 46,
+                        "f1": 47.92
+                    }
+                },
+                "cold_latency_ms": 2018.4,
+                "total_time_s": 812.07
+            },
+            "B5-NoDict": {
+                "total": 600,
+                "correct": 329,
+                "accuracy_pct": 54.83,
+                "macro_f1_pct": 53.16,
+                "far_pct": 52.33,
+                "refutation_recall_pct": 38,
+                "frr_pct": 7,
+                "unknown_recall_pct": 46,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 0.67,
+                "tier2_usage_pct": 99.33,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 213,
+                "two_pass_invoked_pct": 35.5,
+                "uncached_tier2_avg_ms": 1375.2,
+                "uncached_tier2_p50_ms": 1067.6,
+                "uncached_tier2_p95_ms": 2105.6,
+                "tier2_calls_count": 600,
+                "uncached_inferences_count": 579,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 169,
+                        "REFUTED": 14,
+                        "NOT_ESTABLISHED": 17
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 157,
+                        "REFUTED": 114,
+                        "NOT_ESTABLISHED": 29
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 54,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 46
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 44.47,
+                        "recall": 84.5,
+                        "f1": 58.28
+                    },
+                    "REFUTED": {
+                        "precision": 89.06,
+                        "recall": 38,
+                        "f1": 53.27
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 50,
+                        "recall": 46,
+                        "f1": 47.92
+                    }
+                },
+                "cold_latency_ms": 2050.7,
+                "total_time_s": 796.44
+            },
+            "B1": {
+                "total": 600,
+                "correct": 249,
+                "accuracy_pct": 41.5,
+                "macro_f1_pct": 36.42,
+                "far_pct": 53,
+                "refutation_recall_pct": 7,
+                "frr_pct": 2,
+                "unknown_recall_pct": 53,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 1.5,
+                "tier2_usage_pct": 98.5,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 0,
+                "two_pass_invoked_pct": 0,
+                "uncached_tier2_avg_ms": 1006.5,
+                "uncached_tier2_p50_ms": 1023.4,
+                "uncached_tier2_p95_ms": 1258.5,
+                "tier2_calls_count": 600,
+                "uncached_inferences_count": 600,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 175,
+                        "REFUTED": 4,
+                        "NOT_ESTABLISHED": 21
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 159,
+                        "REFUTED": 21,
+                        "NOT_ESTABLISHED": 120
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 46,
+                        "REFUTED": 1,
+                        "NOT_ESTABLISHED": 53
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 46.05,
+                        "recall": 87.5,
+                        "f1": 60.34
+                    },
+                    "REFUTED": {
+                        "precision": 80.77,
+                        "recall": 7,
+                        "f1": 12.88
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 27.32,
+                        "recall": 53,
+                        "f1": 36.05
+                    }
+                },
+                "cold_latency_ms": 1041,
+                "total_time_s": 604.28
+            },
+            "B2": {
+                "total": 600,
+                "correct": 234,
+                "accuracy_pct": 39,
+                "macro_f1_pct": 31.72,
+                "far_pct": 77,
+                "refutation_recall_pct": 1.67,
+                "frr_pct": 0,
+                "unknown_recall_pct": 38,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 1.5,
+                "tier2_usage_pct": 98.5,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 0,
+                "two_pass_invoked_pct": 0,
+                "uncached_tier2_avg_ms": 1017.7,
+                "uncached_tier2_p50_ms": 1045.6,
+                "uncached_tier2_p95_ms": 1224.9,
+                "tier2_calls_count": 600,
+                "uncached_inferences_count": 600,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 191,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 9
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 231,
+                        "REFUTED": 5,
+                        "NOT_ESTABLISHED": 64
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 62,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 38
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 39.46,
+                        "recall": 95.5,
+                        "f1": 55.85
+                    },
+                    "REFUTED": {
+                        "precision": 100,
+                        "recall": 1.67,
+                        "f1": 3.28
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 34.23,
+                        "recall": 38,
+                        "f1": 36.02
+                    }
+                },
+                "cold_latency_ms": 1321,
+                "total_time_s": 610.81
+            },
+            "B3": {
+                "total": 600,
+                "correct": 239,
+                "accuracy_pct": 39.83,
+                "macro_f1_pct": 32.1,
+                "far_pct": 68,
+                "refutation_recall_pct": 7.33,
+                "frr_pct": 0.5,
+                "unknown_recall_pct": 27,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 1.5,
+                "tier2_usage_pct": 98.5,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 0,
+                "two_pass_invoked_pct": 0,
+                "uncached_tier2_avg_ms": 971.8,
+                "uncached_tier2_p50_ms": 995.7,
+                "uncached_tier2_p95_ms": 1212.1,
+                "tier2_calls_count": 600,
+                "uncached_inferences_count": 600,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 190,
+                        "REFUTED": 1,
+                        "NOT_ESTABLISHED": 9
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 204,
+                        "REFUTED": 22,
+                        "NOT_ESTABLISHED": 74
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 73,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 27
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 40.69,
+                        "recall": 95,
+                        "f1": 56.97
+                    },
+                    "REFUTED": {
+                        "precision": 95.65,
+                        "recall": 7.33,
+                        "f1": 13.62
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 24.55,
+                        "recall": 27,
+                        "f1": 25.71
+                    }
+                },
+                "cold_latency_ms": 1048.8,
+                "total_time_s": 583.15
+            },
+            "B4": {
+                "total": 600,
+                "correct": 344,
+                "accuracy_pct": 57.33,
+                "macro_f1_pct": 56.8,
+                "far_pct": 53.33,
+                "refutation_recall_pct": 38,
+                "frr_pct": 7.5,
+                "unknown_recall_pct": 53,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 1.5,
+                "tier2_usage_pct": 98.5,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 189,
+                "two_pass_invoked_pct": 31.5,
+                "uncached_tier2_avg_ms": 1318.7,
+                "uncached_tier2_p50_ms": 1061.5,
+                "uncached_tier2_p95_ms": 2197.4,
+                "tier2_calls_count": 600,
+                "uncached_inferences_count": 600,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 177,
+                        "REFUTED": 15,
+                        "NOT_ESTABLISHED": 8
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 160,
+                        "REFUTED": 114,
+                        "NOT_ESTABLISHED": 26
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 45,
+                        "REFUTED": 2,
+                        "NOT_ESTABLISHED": 53
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 46.34,
+                        "recall": 88.5,
+                        "f1": 60.82
+                    },
+                    "REFUTED": {
+                        "precision": 87.02,
+                        "recall": 38,
+                        "f1": 52.9
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 60.92,
+                        "recall": 53,
+                        "f1": 56.68
+                    }
+                },
+                "cold_latency_ms": 1024.5,
+                "total_time_s": 791.39
+            }
+        },
+        "LEAVEOUT": {
+            "A5": {
+                "total": 300,
+                "correct": 148,
+                "accuracy_pct": 49.33,
+                "macro_f1_pct": 22.02,
+                "far_pct": 29,
+                "refutation_recall_pct": 49.33,
+                "frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 16.33,
+                "tier2_usage_pct": 83.67,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 0,
+                "two_pass_invoked_pct": 0,
+                "uncached_tier2_avg_ms": 1100.7,
+                "uncached_tier2_p50_ms": 1025.4,
+                "uncached_tier2_p95_ms": 2215.5,
+                "tier2_calls_count": 300,
+                "uncached_inferences_count": 300,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 87,
+                        "REFUTED": 148,
+                        "NOT_ESTABLISHED": 65
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    },
+                    "REFUTED": {
+                        "precision": 100,
+                        "recall": 49.33,
+                        "f1": 66.07
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "cold_latency_ms": 1095.8,
+                "total_time_s": 330.28
+            },
+            "B5": {
+                "total": 300,
+                "correct": 196,
+                "accuracy_pct": 65.33,
+                "macro_f1_pct": 26.34,
+                "far_pct": 22.67,
+                "refutation_recall_pct": 65.33,
+                "frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 16.33,
+                "tier2_usage_pct": 83.67,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 163,
+                "two_pass_invoked_pct": 54.33,
+                "uncached_tier2_avg_ms": 1709.5,
+                "uncached_tier2_p50_ms": 1998.8,
+                "uncached_tier2_p95_ms": 3981,
+                "tier2_calls_count": 300,
+                "uncached_inferences_count": 300,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 68,
+                        "REFUTED": 196,
+                        "NOT_ESTABLISHED": 36
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    },
+                    "REFUTED": {
+                        "precision": 100,
+                        "recall": 65.33,
+                        "f1": 79.03
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "cold_latency_ms": 2099.4,
+                "total_time_s": 512.87
+            },
+            "B5-NoDict": {
+                "total": 300,
+                "correct": 166,
+                "accuracy_pct": 55.33,
+                "macro_f1_pct": 23.75,
+                "far_pct": 30,
+                "refutation_recall_pct": 55.33,
+                "frr_pct": 0,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 0,
+                "tier2_usage_pct": 100,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 196,
+                "two_pass_invoked_pct": 65.33,
+                "uncached_tier2_avg_ms": 2090,
+                "uncached_tier2_p50_ms": 2019.7,
+                "uncached_tier2_p95_ms": 4036.4,
+                "tier2_calls_count": 300,
+                "uncached_inferences_count": 300,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 90,
+                        "REFUTED": 166,
+                        "NOT_ESTABLISHED": 44
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    },
+                    "REFUTED": {
+                        "precision": 100,
+                        "recall": 55.33,
+                        "f1": 71.24
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "cold_latency_ms": 2149.4,
+                "total_time_s": 627
+            }
+        },
+        "CROSS-DOMAIN": {
+            "A5": {
+                "total": 200,
+                "correct": 113,
+                "accuracy_pct": 56.5,
+                "macro_f1_pct": 43.34,
+                "far_pct": 12,
+                "refutation_recall_pct": 56,
+                "frr_pct": 23,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 16,
+                "tier2_usage_pct": 84,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 0,
+                "two_pass_invoked_pct": 0,
+                "uncached_tier2_avg_ms": 1259.1,
+                "uncached_tier2_p50_ms": 1050.2,
+                "uncached_tier2_p95_ms": 2401.9,
+                "tier2_calls_count": 200,
+                "uncached_inferences_count": 200,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 57,
+                        "REFUTED": 23,
+                        "NOT_ESTABLISHED": 20
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 12,
+                        "REFUTED": 56,
+                        "NOT_ESTABLISHED": 32
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 82.61,
+                        "recall": 57,
+                        "f1": 67.46
+                    },
+                    "REFUTED": {
+                        "precision": 70.89,
+                        "recall": 56,
+                        "f1": 62.57
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "cold_latency_ms": 1955.4,
+                "total_time_s": 251.88
+            },
+            "B5": {
+                "total": 200,
+                "correct": 127,
+                "accuracy_pct": 63.5,
+                "macro_f1_pct": 47.08,
+                "far_pct": 5,
+                "refutation_recall_pct": 75,
+                "frr_pct": 25,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 16,
+                "tier2_usage_pct": 84,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 99,
+                "two_pass_invoked_pct": 49.5,
+                "uncached_tier2_avg_ms": 1813.6,
+                "uncached_tier2_p50_ms": 2035.5,
+                "uncached_tier2_p95_ms": 4021.6,
+                "tier2_calls_count": 200,
+                "uncached_inferences_count": 200,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 52,
+                        "REFUTED": 25,
+                        "NOT_ESTABLISHED": 23
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 5,
+                        "REFUTED": 75,
+                        "NOT_ESTABLISHED": 20
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 91.23,
+                        "recall": 52,
+                        "f1": 66.24
+                    },
+                    "REFUTED": {
+                        "precision": 75,
+                        "recall": 75,
+                        "f1": 75
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "cold_latency_ms": 2097.1,
+                "total_time_s": 362.72
+            },
+            "B5-NoDict": {
+                "total": 200,
+                "correct": 125,
+                "accuracy_pct": 62.5,
+                "macro_f1_pct": 48.57,
+                "far_pct": 9,
+                "refutation_recall_pct": 60,
+                "frr_pct": 9,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 0,
+                "tier2_usage_pct": 100,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 123,
+                "two_pass_invoked_pct": 61.5,
+                "uncached_tier2_avg_ms": 2281.4,
+                "uncached_tier2_p50_ms": 2072.6,
+                "uncached_tier2_p95_ms": 4201.7,
+                "tier2_calls_count": 200,
+                "uncached_inferences_count": 200,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 65,
+                        "REFUTED": 9,
+                        "NOT_ESTABLISHED": 26
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 9,
+                        "REFUTED": 60,
+                        "NOT_ESTABLISHED": 31
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 87.84,
+                        "recall": 65,
+                        "f1": 74.71
+                    },
+                    "REFUTED": {
+                        "precision": 86.96,
+                        "recall": 60,
+                        "f1": 71.01
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "cold_latency_ms": 2003.3,
+                "total_time_s": 456.29
+            }
+        },
+        "OOD": {
+            "A5": {
+                "total": 200,
+                "correct": 82,
+                "accuracy_pct": 41,
+                "macro_f1_pct": 28.13,
+                "far_pct": 39,
+                "refutation_recall_pct": 9,
+                "frr_pct": 7,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 2,
+                "tier2_usage_pct": 98,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 0,
+                "two_pass_invoked_pct": 0,
+                "uncached_tier2_avg_ms": 1056.6,
+                "uncached_tier2_p50_ms": 1025.9,
+                "uncached_tier2_p95_ms": 1369.5,
+                "tier2_calls_count": 199,
+                "uncached_inferences_count": 199,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 73,
+                        "REFUTED": 7,
+                        "NOT_ESTABLISHED": 20
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 39,
+                        "REFUTED": 9,
+                        "NOT_ESTABLISHED": 52
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 65.18,
+                        "recall": 73,
+                        "f1": 68.87
+                    },
+                    "REFUTED": {
+                        "precision": 56.25,
+                        "recall": 9,
+                        "f1": 15.52
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "cold_latency_ms": 1183.2,
+                "total_time_s": 210.31
+            },
+            "B5": {
+                "total": 200,
+                "correct": 109,
+                "accuracy_pct": 54.5,
+                "macro_f1_pct": 39.93,
+                "far_pct": 33,
+                "refutation_recall_pct": 35,
+                "frr_pct": 10,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 2,
+                "tier2_usage_pct": 98,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 88,
+                "two_pass_invoked_pct": 44,
+                "uncached_tier2_avg_ms": 1508.5,
+                "uncached_tier2_p50_ms": 1212.2,
+                "uncached_tier2_p95_ms": 2267.9,
+                "tier2_calls_count": 199,
+                "uncached_inferences_count": 199,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 74,
+                        "REFUTED": 10,
+                        "NOT_ESTABLISHED": 16
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 33,
+                        "REFUTED": 35,
+                        "NOT_ESTABLISHED": 32
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 69.16,
+                        "recall": 74,
+                        "f1": 71.5
+                    },
+                    "REFUTED": {
+                        "precision": 77.78,
+                        "recall": 35,
+                        "f1": 48.28
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "cold_latency_ms": 1136.5,
+                "total_time_s": 300.19
+            },
+            "B5-NoDict": {
+                "total": 200,
+                "correct": 111,
+                "accuracy_pct": 55.5,
+                "macro_f1_pct": 40.61,
+                "far_pct": 32,
+                "refutation_recall_pct": 37,
+                "frr_pct": 11,
+                "unknown_recall_pct": 0,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 1,
+                "tier2_usage_pct": 99,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 91,
+                "two_pass_invoked_pct": 45.5,
+                "uncached_tier2_avg_ms": 1487.7,
+                "uncached_tier2_p50_ms": 1235.1,
+                "uncached_tier2_p95_ms": 2317,
+                "tier2_calls_count": 199,
+                "uncached_inferences_count": 197,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 74,
+                        "REFUTED": 11,
+                        "NOT_ESTABLISHED": 15
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 32,
+                        "REFUTED": 37,
+                        "NOT_ESTABLISHED": 31
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 0
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 69.81,
+                        "recall": 74,
+                        "f1": 71.84
+                    },
+                    "REFUTED": {
+                        "precision": 77.08,
+                        "recall": 37,
+                        "f1": 50
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 0,
+                        "recall": 0,
+                        "f1": 0
+                    }
+                },
+                "cold_latency_ms": 873.3,
+                "total_time_s": 293.09
+            }
+        },
+        "PARAPHRASE": {
+            "A5": {
+                "total": 300,
+                "correct": 230,
+                "accuracy_pct": 76.67,
+                "macro_f1_pct": 76,
+                "far_pct": 6,
+                "refutation_recall_pct": 58,
+                "frr_pct": 21,
+                "unknown_recall_pct": 100,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 45.33,
+                "tier2_usage_pct": 54.67,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 0,
+                "two_pass_invoked_pct": 0,
+                "uncached_tier2_avg_ms": 781,
+                "uncached_tier2_p50_ms": 986.6,
+                "uncached_tier2_p95_ms": 1319.4,
+                "tier2_calls_count": 200,
+                "uncached_inferences_count": 200,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 72,
+                        "REFUTED": 21,
+                        "NOT_ESTABLISHED": 7
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 6,
+                        "REFUTED": 58,
+                        "NOT_ESTABLISHED": 36
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 92.31,
+                        "recall": 72,
+                        "f1": 80.9
+                    },
+                    "REFUTED": {
+                        "precision": 73.42,
+                        "recall": 58,
+                        "f1": 64.8
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 69.93,
+                        "recall": 100,
+                        "f1": 82.3
+                    }
+                },
+                "cold_latency_ms": 1205.2,
+                "total_time_s": 156.28
+            },
+            "B5": {
+                "total": 300,
+                "correct": 263,
+                "accuracy_pct": 87.67,
+                "macro_f1_pct": 87.42,
+                "far_pct": 10,
+                "refutation_recall_pct": 90,
+                "frr_pct": 22,
+                "unknown_recall_pct": 100,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 45.33,
+                "tier2_usage_pct": 54.67,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 80,
+                "two_pass_invoked_pct": 26.67,
+                "uncached_tier2_avg_ms": 1083.1,
+                "uncached_tier2_p50_ms": 1019.1,
+                "uncached_tier2_p95_ms": 2234.7,
+                "tier2_calls_count": 200,
+                "uncached_inferences_count": 200,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 73,
+                        "REFUTED": 22,
+                        "NOT_ESTABLISHED": 5
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 10,
+                        "REFUTED": 90,
+                        "NOT_ESTABLISHED": 0
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 87.95,
+                        "recall": 73,
+                        "f1": 79.78
+                    },
+                    "REFUTED": {
+                        "precision": 80.36,
+                        "recall": 90,
+                        "f1": 84.91
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 95.24,
+                        "recall": 100,
+                        "f1": 97.56
+                    }
+                },
+                "cold_latency_ms": 1129,
+                "total_time_s": 216.62
+            },
+            "B5-NoDict": {
+                "total": 300,
+                "correct": 275,
+                "accuracy_pct": 91.67,
+                "macro_f1_pct": 91.6,
+                "far_pct": 12,
+                "refutation_recall_pct": 88,
+                "frr_pct": 8,
+                "unknown_recall_pct": 100,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 33.33,
+                "tier2_usage_pct": 66.67,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 90,
+                "two_pass_invoked_pct": 30,
+                "uncached_tier2_avg_ms": 1420.8,
+                "uncached_tier2_p50_ms": 1106.4,
+                "uncached_tier2_p95_ms": 2166.6,
+                "tier2_calls_count": 200,
+                "uncached_inferences_count": 179,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 87,
+                        "REFUTED": 8,
+                        "NOT_ESTABLISHED": 5
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 12,
+                        "REFUTED": 88,
+                        "NOT_ESTABLISHED": 0
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 87.88,
+                        "recall": 87,
+                        "f1": 87.44
+                    },
+                    "REFUTED": {
+                        "precision": 91.67,
+                        "recall": 88,
+                        "f1": 89.8
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 95.24,
+                        "recall": 100,
+                        "f1": 97.56
+                    }
+                },
+                "cold_latency_ms": 1189.2,
+                "total_time_s": 254.33
+            }
+        },
+        "GENERALIZATION_POOL_1000": {
+            "A5": {
+                "total": 1000,
+                "correct": 573,
+                "accuracy_pct": 57.3,
+                "macro_f1_pct": 55.88,
+                "far_pct": 24,
+                "refutation_recall_pct": 45.17,
+                "frr_pct": 17,
+                "unknown_recall_pct": 100,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 22.1,
+                "tier2_usage_pct": 77.9,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 0,
+                "two_pass_invoked_pct": 0,
+                "uncached_tier2_avg_ms": 1055.1,
+                "uncached_tier2_p50_ms": 1024.6,
+                "uncached_tier2_p95_ms": 2190.5,
+                "tier2_calls_count": 899,
+                "uncached_inferences_count": 899,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 202,
+                        "REFUTED": 51,
+                        "NOT_ESTABLISHED": 47
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 144,
+                        "REFUTED": 271,
+                        "NOT_ESTABLISHED": 185
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 58.38,
+                        "recall": 67.33,
+                        "f1": 62.54
+                    },
+                    "REFUTED": {
+                        "precision": 84.16,
+                        "recall": 45.17,
+                        "f1": 58.79
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 30.12,
+                        "recall": 100,
+                        "f1": 46.3
+                    }
+                }
+            },
+            "B5": {
+                "total": 1000,
+                "correct": 695,
+                "accuracy_pct": 69.5,
+                "macro_f1_pct": 66.72,
+                "far_pct": 19.33,
+                "refutation_recall_pct": 66,
+                "frr_pct": 19,
+                "unknown_recall_pct": 100,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 22.1,
+                "tier2_usage_pct": 77.9,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 430,
+                "two_pass_invoked_pct": 43,
+                "uncached_tier2_avg_ms": 1548.8,
+                "uncached_tier2_p50_ms": 1511.3,
+                "uncached_tier2_p95_ms": 3148.4,
+                "tier2_calls_count": 899,
+                "uncached_inferences_count": 899,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 199,
+                        "REFUTED": 57,
+                        "NOT_ESTABLISHED": 44
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 116,
+                        "REFUTED": 396,
+                        "NOT_ESTABLISHED": 88
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 63.17,
+                        "recall": 66.33,
+                        "f1": 64.72
+                    },
+                    "REFUTED": {
+                        "precision": 87.42,
+                        "recall": 66,
+                        "f1": 75.21
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 43.1,
+                        "recall": 100,
+                        "f1": 60.24
+                    }
+                }
+            },
+            "B5-NoDict": {
+                "total": 1000,
+                "correct": 677,
+                "accuracy_pct": 67.7,
+                "macro_f1_pct": 65.36,
+                "far_pct": 23.83,
+                "refutation_recall_pct": 58.5,
+                "frr_pct": 9.33,
+                "unknown_recall_pct": 100,
+                "evidence_used_invariant_pct": 100,
+                "tier1_usage_pct": 10.2,
+                "tier2_usage_pct": 89.8,
+                "tier2_abstain_pct": 0,
+                "two_pass_invoked_count": 500,
+                "two_pass_invoked_pct": 50,
+                "uncached_tier2_avg_ms": 1861.5,
+                "uncached_tier2_p50_ms": 1946.4,
+                "uncached_tier2_p95_ms": 3938.3,
+                "tier2_calls_count": 899,
+                "uncached_inferences_count": 876,
+                "confusion_matrix": {
+                    "SUPPORTED": {
+                        "SUPPORTED": 226,
+                        "REFUTED": 28,
+                        "NOT_ESTABLISHED": 46
+                    },
+                    "REFUTED": {
+                        "SUPPORTED": 143,
+                        "REFUTED": 351,
+                        "NOT_ESTABLISHED": 106
+                    },
+                    "NOT_ESTABLISHED": {
+                        "SUPPORTED": 0,
+                        "REFUTED": 0,
+                        "NOT_ESTABLISHED": 100
+                    }
+                },
+                "class_metrics": {
+                    "SUPPORTED": {
+                        "precision": 61.25,
+                        "recall": 75.33,
+                        "f1": 67.56
+                    },
+                    "REFUTED": {
+                        "precision": 92.61,
+                        "recall": 58.5,
+                        "f1": 71.71
+                    },
+                    "NOT_ESTABLISHED": {
+                        "precision": 39.68,
+                        "recall": 100,
+                        "f1": 56.82
+                    }
+                }
+            }
+        }
+    },
+    "mcnemar_significance_tests": {
+        "FAILURE_600": {
+            "A5_vs_B5": {
+                "b": 103,
+                "c": 64,
+                "discordant": 167,
+                "chi2": 8.647,
+                "p_value": 0.01,
+                "significant": true,
+                "diff_pct": 6.5,
+                "ci95_lower": 2.31,
+                "ci95_upper": 10.69
+            },
+            "B5_vs_B5_NoDict": {
+                "b": 0,
+                "c": 5,
+                "discordant": 5,
+                "chi2": 3.2,
+                "p_value": 0.1,
+                "significant": false,
+                "diff_pct": -0.83,
+                "ci95_lower": -1.56,
+                "ci95_upper": -0.11
+            }
+        },
+        "LEAVEOUT": {
+            "A5_vs_B5": {
+                "b": 74,
+                "c": 26,
+                "discordant": 100,
+                "chi2": 22.09,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 16,
+                "ci95_lower": 9.72,
+                "ci95_upper": 22.28
+            },
+            "B5_vs_B5_NoDict": {
+                "b": 0,
+                "c": 30,
+                "discordant": 30,
+                "chi2": 28.033,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": -10,
+                "ci95_lower": -13.39,
+                "ci95_upper": -6.61
+            }
+        },
+        "CROSS-DOMAIN": {
+            "A5_vs_B5": {
+                "b": 28,
+                "c": 14,
+                "discordant": 42,
+                "chi2": 4.024,
+                "p_value": 0.05,
+                "significant": false,
+                "diff_pct": 7,
+                "ci95_lower": 0.72,
+                "ci95_upper": 13.28
+            },
+            "B5_vs_B5_NoDict": {
+                "b": 15,
+                "c": 17,
+                "discordant": 32,
+                "chi2": 0.031,
+                "p_value": 0.5,
+                "significant": false,
+                "diff_pct": -1,
+                "ci95_lower": -6.54,
+                "ci95_upper": 4.54
+            }
+        },
+        "OOD": {
+            "A5_vs_B5": {
+                "b": 37,
+                "c": 10,
+                "discordant": 47,
+                "chi2": 14.383,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 13.5,
+                "ci95_lower": 7.05,
+                "ci95_upper": 19.95
+            },
+            "B5_vs_B5_NoDict": {
+                "b": 3,
+                "c": 1,
+                "discordant": 4,
+                "chi2": 0.25,
+                "p_value": 0.5,
+                "significant": false,
+                "diff_pct": 1,
+                "ci95_lower": -0.96,
+                "ci95_upper": 2.96
+            }
+        },
+        "PARAPHRASE": {
+            "A5_vs_B5": {
+                "b": 42,
+                "c": 9,
+                "discordant": 51,
+                "chi2": 20.078,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 11,
+                "ci95_lower": 6.5,
+                "ci95_upper": 15.5
+            },
+            "B5_vs_B5_NoDict": {
+                "b": 14,
+                "c": 2,
+                "discordant": 16,
+                "chi2": 7.563,
+                "p_value": 0.01,
+                "significant": true,
+                "diff_pct": 4,
+                "ci95_lower": 1.43,
+                "ci95_upper": 6.57
+            }
+        },
+        "GENERALIZATION_POOL_1000": {
+            "A5_vs_B5": {
+                "b": 181,
+                "c": 59,
+                "discordant": 240,
+                "chi2": 61.004,
+                "p_value": 0.001,
+                "significant": true,
+                "diff_pct": 12.2,
+                "ci95_lower": 9.26,
+                "ci95_upper": 15.14
+            },
+            "B5_vs_B5_NoDict": {
+                "b": 32,
+                "c": 50,
+                "discordant": 82,
+                "chi2": 3.524,
+                "p_value": 0.1,
+                "significant": false,
+                "diff_pct": -1.8,
+                "ci95_lower": -3.57,
+                "ci95_upper": -0.03
+            }
+        }
+    },
+    "file_hashes": {
+        "EXP-0028-FAILURE-DATASET.json": {
+            "sha256": "1F05411DB9101F08D450D7115DF420D6AB2876D4D58003CD2F8A7DFA18DAF92B",
+            "size_bytes": 162377,
+            "lines": 4202
+        },
+        "EXP-0027-LEAVEOUT-DATASET.json": {
+            "sha256": "7CEDCEFCA1FA7F95B4954A93EEB428B2DA2D93C24EA374CD4DE6151120C0F54A",
+            "size_bytes": 78029,
+            "lines": 2102
+        },
+        "EXP-0027-CROSS-DOMAIN-DATASET.json": {
+            "sha256": "55DDFC52D1FA557CBF4E42D3788938E7151BFEC1214B4D3142511228C1437238",
+            "size_bytes": 55811,
+            "lines": 1402
+        },
+        "EXP-0027-OOD-DATASET.json": {
+            "sha256": "9DA525333226F652EDA737E65FA9D11A6E68727536F77646F9BFAE65FADECD48",
+            "size_bytes": 47267,
+            "lines": 1402
+        },
+        "EXP-0027-PARAPHRASE-DATASET.json": {
+            "sha256": "8BEE0785E60E40340961EE88F499DA519776539E77701D36F442F4AAA9E59F63",
+            "size_bytes": 153066,
+            "lines": 2402
+        },
+        "EXP-0027-BLIND-DATASET.json": {
+            "sha256": "599B018097EAF56E817302B1BA6DCEE0A91CF773FD7E89898BB9FFCDAA87A9DB",
+            "size_bytes": 245380,
+            "lines": 7002
+        },
+        "EXP-0027-POLARITY-DATASET.json": {
+            "sha256": "0FBE22E07FC372B6DEBB1B0C5F12AC5917A996C85D47E2247C749C63004E7B7A",
+            "size_bytes": 49855,
+            "lines": 1402
+        },
+        "backend\/rag_premise_verifier.php": {
+            "sha256": "BD800F2EAA3E10398E4ABD328E6B699B7621E83BC2AE42682CF9192C965543AA",
+            "size_bytes": 57213,
+            "lines": 1073
+        }
+    }
+}

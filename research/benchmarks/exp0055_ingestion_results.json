@@ -1,0 +1,107 @@
+[
+  {
+    "test_case": "5_pages_curriculum",
+    "pages": 5,
+    "b0_batch": {
+      "condition": "B0_MONOLITHIC_BATCH",
+      "pdf_path": "D:\\Collage project\\EduConnect-LMS-Experimental\\tests\\research\\data\\multipage_curriculum.pdf",
+      "total_pages": 5,
+      "elapsed_sec": 0.3326,
+      "ms_per_page": 66.52,
+      "peak_rss_mb": 437.67,
+      "baseline_rss_mb": 413.37,
+      "delta_rss_mb": 24.3,
+      "total_chars": 541,
+      "headings_count": 10,
+      "text_sample": "Curriculum Overview\nPage 1: Complete Web Engineering and Systems Architecture overview.\nCSS Flexbox Layout\nPage 2: CSS Flexbox properties: flex-direction, justify-content, align-items, flex-wrap.\nJava"
+    },
+    "c1_streaming": {
+      "condition": "C1_WINDOWED_STREAMING",
+      "pdf_path": "D:\\Collage project\\EduConnect-LMS-Experimental\\tests\\research\\data\\multipage_curriculum.pdf",
+      "total_pages": 5,
+      "window_size": 5,
+      "elapsed_sec": 0.3014,
+      "ms_per_page": 60.27,
+      "peak_rss_mb": 439.25,
+      "baseline_rss_mb": 424.31,
+      "delta_rss_mb": 14.94,
+      "total_chars": 541,
+      "pages_processed": 5,
+      "headings_count": 5,
+      "text_sample": "Curriculum Overview\nPage 1: Complete Web Engineering and Systems Architecture overview.\nCSS Flexbox Layout\nPage 2: CSS Flexbox properties: flex-direction, justify-content, align-items, flex-wrap.\nJava"
+    },
+    "char_fidelity_pct": 100.0,
+    "memory_reduction_mb": -1.58,
+    "delta_memory_pct_of_batch": 61.48
+  },
+  {
+    "test_case": "20_pages_curriculum",
+    "pages": 20,
+    "b0_batch": {
+      "condition": "B0_MONOLITHIC_BATCH",
+      "pdf_path": "D:\\Collage project\\EduConnect-LMS-Experimental\\scratch\\data_benchmarks\\curriculum_20p.pdf",
+      "total_pages": 20,
+      "elapsed_sec": 0.4512,
+      "ms_per_page": 22.56,
+      "peak_rss_mb": 478.51,
+      "baseline_rss_mb": 425.85,
+      "delta_rss_mb": 52.66,
+      "total_chars": 5386,
+      "headings_count": 140,
+      "text_sample": "Module 1: Introduction to Web Architecture\nPage 1 Curriculum Material:\nOverview of client-server models, HTTP/HTTPS, DNS resolution, and TCP/IP handshakes.\nTechnical Details:\n- Section Index: SEC_001\n"
+    },
+    "c1_streaming": {
+      "condition": "C1_WINDOWED_STREAMING",
+      "pdf_path": "D:\\Collage project\\EduConnect-LMS-Experimental\\scratch\\data_benchmarks\\curriculum_20p.pdf",
+      "total_pages": 20,
+      "window_size": 5,
+      "elapsed_sec": 8.2474,
+      "ms_per_page": 412.37,
+      "peak_rss_mb": 547.88,
+      "baseline_rss_mb": 435.51,
+      "delta_rss_mb": 112.36,
+      "total_chars": 5386,
+      "pages_processed": 20,
+      "headings_count": 20,
+      "text_sample": "Module 1: Introduction to Web Architecture\nPage 1 Curriculum Material:\nOverview of client-server models, HTTP/HTTPS, DNS resolution, and TCP/IP handshakes.\nTechnical Details:\n- Section Index: SEC_001\n"
+    },
+    "char_fidelity_pct": 100.0,
+    "memory_reduction_mb": -69.37,
+    "delta_memory_pct_of_batch": 213.37
+  },
+  {
+    "test_case": "50_pages_curriculum",
+    "pages": 50,
+    "b0_batch": {
+      "condition": "B0_MONOLITHIC_BATCH",
+      "pdf_path": "D:\\Collage project\\EduConnect-LMS-Experimental\\scratch\\data_benchmarks\\curriculum_50p.pdf",
+      "total_pages": 50,
+      "elapsed_sec": 0.9395,
+      "ms_per_page": 18.79,
+      "peak_rss_mb": 658.54,
+      "baseline_rss_mb": 538.17,
+      "delta_rss_mb": 120.38,
+      "total_chars": 14640,
+      "headings_count": 350,
+      "text_sample": "Chapter 1 Part 1: Module 1: Introduction to Web Architecture\nPage 1 Full Course Curriculum:\nOverview of client-server models, HTTP/HTTPS, DNS resolution, and TCP/IP handshakes. Extensive lecture tra\nS"
+    },
+    "c1_streaming": {
+      "condition": "C1_WINDOWED_STREAMING",
+      "pdf_path": "D:\\Collage project\\EduConnect-LMS-Experimental\\scratch\\data_benchmarks\\curriculum_50p.pdf",
+      "total_pages": 50,
+      "window_size": 5,
+      "elapsed_sec": 3.045,
+      "ms_per_page": 60.9,
+      "peak_rss_mb": 551.28,
+      "baseline_rss_mb": 536.21,
+      "delta_rss_mb": 15.07,
+      "total_chars": 14640,
+      "pages_processed": 50,
+      "headings_count": 50,
+      "text_sample": "Chapter 1 Part 1: Module 1: Introduction to Web Architecture\nPage 1 Full Course Curriculum:\nOverview of client-server models, HTTP/HTTPS, DNS resolution, and TCP/IP handshakes. Extensive lecture tra\nS"
+    },
+    "char_fidelity_pct": 100.0,
+    "memory_reduction_mb": 107.26,
+    "delta_memory_pct_of_batch": 12.52
+  }
+]
